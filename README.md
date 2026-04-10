@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BAC Platform
+
+Collaborative BAC (Baccalaureate) exercise practice and learning platform for Algerian students.
+
+## Features
+
+- Browse and filter exercises by subject, topic, subtopic, and difficulty
+- Post exercises and submit solutions
+- Like and comment on solutions
+- Reputation points and badge system
+- AI-generated hints (experimental)
+- Similar exercise suggestions
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Next.js App Router, TypeScript, Tailwind CSS |
+| Backend | Next.js server components and route handlers |
+| Database | MongoDB with Mongoose |
+| i18n | next-intl |
+
+## Supported Languages
+
+| Code | Language | Direction |
+|------|----------|-----------|
+| `en` | English | LTR |
+| `fr` | French | LTR |
+| `ar` | Arabic (MSA) | RTL |
+
+Arabic is automatically served with `dir="rtl"` on the `<html>` element.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- MongoDB (local or Atlas)
+
+### Installation
 
 ```bash
+git clone https://github.com/<your-username>/bac-platform.git
+cd bac-platform
+npm install
+cp .env.local.example .env.local
+# Edit .env.local and fill in your values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Locale middleware redirects `/` to `/en` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Folder Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/
+├── app/
+│   └── [locale]/
+│       ├── (auth)/
+│       │   ├── login/page.tsx
+│       │   └── register/page.tsx
+│       ├── admin/page.tsx
+│       ├── exercises/
+│       │   ├── [id]/page.tsx
+│       │   └── page.tsx
+│       ├── profile/page.tsx
+│       ├── layout.tsx
+│       └── page.tsx
+├── components/
+│   ├── layout/
+│   │   ├── LocaleSwitcher.tsx
+│   │   └── Navbar.tsx
+│   └── ui/
+├── i18n/
+│   ├── request.ts
+│   └── routing.ts
+├── lib/
+│   └── mongodb.ts
+├── models/
+│   ├── Comment.ts
+│   ├── Exercise.ts
+│   ├── Solution.ts
+│   └── User.ts
+└── proxy.ts
+messages/
+├── ar.json
+├── en.json
+└── fr.json
+```
 
-## Learn More
+## Adding Translations
 
-To learn more about Next.js, take a look at the following resources:
+1. Add the key to `messages/en.json`.
+2. Mirror the key in `messages/fr.json` and `messages/ar.json`.
+3. Read it in components with `useTranslations('namespace')`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## User Roles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Role | Description |
+|------|-------------|
+| `student` | Default role for learners posting exercises and solutions |
+| `teacher` | Teacher account that can be verified by admin |
+| `admin` | Moderation and platform management access |
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `.env.local.example` for the full local development template.
