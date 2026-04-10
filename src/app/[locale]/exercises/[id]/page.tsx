@@ -8,6 +8,7 @@ import { useAuth } from '@/components/providers/AuthProvider';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import SolutionList from '@/components/solutions/SolutionList';
+import AttachmentViewer from '@/components/exercises/AttachmentViewer';
 import type { ExerciseDTO } from '@/types';
 
 const difficultyColors = {
@@ -95,26 +96,7 @@ export default function ExerciseDetailPage() {
           {exercise.description}
         </div>
 
-        {exercise.attachments.length > 0 && (
-          <div className="mt-6">
-            <h3 className="text-sm font-semibold text-slate-500">
-              Attachments
-            </h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {exercise.attachments.map((url, i) => (
-                <a
-                  key={i}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs text-blue-600 hover:underline"
-                >
-                  {url.split('/').pop()}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        <AttachmentViewer attachments={exercise.attachments} />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl bg-slate-50 p-5">

@@ -59,18 +59,20 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
         </div>
 
         {solution.images.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className={`mt-3 grid gap-2 ${solution.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
             {solution.images.map((url, i) => (
               <a
                 key={i}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block overflow-hidden rounded-lg border border-slate-200 bg-slate-50"
               >
                 <img
                   src={url}
                   alt={`Solution image ${i + 1}`}
-                  className="h-24 w-24 rounded-lg border border-slate-200 object-cover"
+                  className="w-full object-contain transition hover:opacity-90"
+                  style={{ maxHeight: '300px' }}
                 />
               </a>
             ))}
