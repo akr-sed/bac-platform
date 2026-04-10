@@ -27,6 +27,7 @@ export default function LocaleSwitcher() {
               key={code}
               href={pathname}
               locale={code}
+              style={isActive ? { color: '#ffffff' } : undefined}
               className={
                 isActive
                   ? 'rounded-full bg-slate-900 px-3 py-1 text-sm font-semibold text-white'

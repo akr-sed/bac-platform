@@ -13,13 +13,16 @@ export async function uploadFile(
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
+  const isPdf = file.type === 'application/pdf';
+  const resourceType = isPdf ? 'raw' : 'image';
+
   return new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream(
         {
           folder,
-          resource_type: 'auto',
-          allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf'],
+          resource_type: resourceType,
+          allowed_formats: isPdf ? ['pdf'] : ['jpg', 'jpeg', 'png', 'gif', 'webp'],
           max_bytes: 5 * 1024 * 1024,
         },
         (error, result) => {
