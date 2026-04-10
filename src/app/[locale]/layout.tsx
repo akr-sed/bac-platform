@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/layout/Navbar';
+import { AuthProvider } from '@/components/providers/AuthProvider';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
 
@@ -31,10 +32,12 @@ export default async function LocaleLayout({
     <html lang={locale} dir={dir}>
       <body className="min-h-screen bg-slate-50 text-slate-950 antialiased">
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen">
-            <Navbar />
-            {children}
-          </div>
+          <AuthProvider>
+            <div className="min-h-screen">
+              <Navbar />
+              {children}
+            </div>
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
