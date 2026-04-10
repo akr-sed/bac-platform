@@ -175,7 +175,7 @@ export default function ExerciseForm({ exercise, onSuccess }: ExerciseFormProps)
             render={({ field }) => (
               <Select
                 value={field.value}
-                onValueChange={(value) => field.onChange(value)}
+                onValueChange={(value) => value && field.onChange(value)}
               >
                 <SelectTrigger className="w-full">
                   <SelectValue />

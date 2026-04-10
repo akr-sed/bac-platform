@@ -173,7 +173,7 @@ export default function UserTable() {
                       <Select
                         value={user.role}
                         onValueChange={(value) =>
-                          handleRoleChange(user._id, value as string)
+                          value && handleRoleChange(user._id, value as string)
                         }
                       >
                         <SelectTrigger size="sm">

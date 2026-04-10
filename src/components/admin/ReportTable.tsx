@@ -82,9 +82,11 @@ export default function ReportTable() {
     }
   };
 
-  const handleFilterChange = (value: string) => {
-    setStatusFilter(value as StatusFilter);
-    setPage(1);
+  const handleFilterChange = (value: string | null) => {
+    if (value) {
+      setStatusFilter(value as StatusFilter);
+      setPage(1);
+    }
   };
 
   const formatDate = (dateStr: string) => {

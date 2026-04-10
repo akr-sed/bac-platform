@@ -84,7 +84,7 @@ export default function ReportDialog({
           </p>
         ) : (
           <div className="space-y-4 py-2">
-            <Select value={reason} onValueChange={setReason}>
+            <Select value={reason} onValueChange={(v) => setReason(v ?? '')}>
               <SelectTrigger>
                 <SelectValue placeholder={t('reportReason')} />
               </SelectTrigger>

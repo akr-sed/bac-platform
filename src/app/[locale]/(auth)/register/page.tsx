@@ -152,7 +152,7 @@ export default function RegisterPage() {
               render={({ field }) => (
                 <Select
                   value={field.value}
-                  onValueChange={(value) => field.onChange(value)}
+                  onValueChange={(value) => value && field.onChange(value)}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue />
