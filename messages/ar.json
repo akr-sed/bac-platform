@@ -1,0 +1,180 @@
+{
+  "common": {
+    "welcome": "مرحباً بك في منصة البكالوريا",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ ما",
+    "success": "تمّ بنجاح",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "close": "إغلاق",
+    "confirm": "تأكيد",
+    "learnMore": "اقرأ المزيد"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "exercises": "التمارين",
+    "profile": "الملف الشخصي",
+    "admin": "الإدارة",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "noAccount": "ليس لديك حساب؟",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "registerLink": "إنشاء حساب"
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "submit": "إنشاء الحساب",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "role": "أنا",
+      "student": "طالب",
+      "teacher": "أستاذ"
+    },
+    "errors": {
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+      "emailTaken": "هذا البريد الإلكتروني مستخدم بالفعل",
+      "weakPassword": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين",
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "البريد الإلكتروني غير صالح",
+      "serverError": "خطأ في الخادم، يرجى المحاولة مرة أخرى"
+    }
+  },
+  "exercises": {
+    "title": "التمارين",
+    "browse": "تصفّح التمارين",
+    "post": "نشر تمرين",
+    "noResults": "لم يُعثر على أي تمرين",
+    "filter": {
+      "subject": "المادة",
+      "topic": "الموضوع",
+      "subtopic": "الموضوع الفرعي",
+      "difficulty": "المستوى",
+      "all": "الكل"
+    },
+    "difficulty": {
+      "easy": "سهل",
+      "medium": "متوسط",
+      "hard": "صعب"
+    },
+    "fields": {
+      "title": "العنوان",
+      "description": "الوصف",
+      "subject": "المادة",
+      "topic": "الموضوع",
+      "subtopic": "الموضوع الفرعي",
+      "attachments": "المرفقات"
+    },
+    "detail": {
+      "solutions": "الحلول",
+      "noSolutions": "لا توجد حلول بعد. كن أول من يشارك!",
+      "similarExercises": "تمارين مشابهة",
+      "postedBy": "نشره",
+      "postedAt": "تاريخ النشر"
+    }
+  },
+  "solutions": {
+    "submit": "إرسال الحل",
+    "view": "عرض الحل",
+    "like": "إعجاب",
+    "unlike": "إلغاء الإعجاب",
+    "likes": "{count} إعجاب",
+    "comment": "تعليق",
+    "comments": "{count} تعليق",
+    "addComment": "أضف تعليقاً",
+    "fields": {
+      "content": "حلّك",
+      "images": "إرفاق صور"
+    },
+    "placeholder": "اكتب حلّك هنا...",
+    "submitSuccess": "تم إرسال الحل بنجاح",
+    "editSuccess": "تم تحديث الحل بنجاح"
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "points": "النقاط",
+    "role": "الدور",
+    "badge": "الشارة",
+    "exercises": "تمارينى",
+    "solutions": "حلولي",
+    "reputation": "السمعة",
+    "joinedAt": "عضو منذ",
+    "verifiedTeacher": "أستاذ موثّق",
+    "editProfile": "تعديل الملف الشخصي"
+  },
+  "moderation": {
+    "delete": "حذف",
+    "report": "إبلاغ",
+    "reportReason": "سبب الإبلاغ",
+    "confirmDelete": "هل أنت متأكد من الحذف؟ لا يمكن التراجع عن هذا الإجراء.",
+    "deleted": "تم الحذف بنجاح",
+    "reported": "شكراً، تم تقديم بلاغك بنجاح",
+    "reasons": {
+      "spam": "رسالة مزعجة",
+      "inappropriate": "محتوى غير لائق",
+      "incorrect": "حل خاطئ",
+      "other": "أخرى"
+    }
+  },
+  "reputation": {
+    "points": "{count} نقطة",
+    "badges": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم",
+      "expert": "خبير"
+    },
+    "earned": "لقد حصلت على {points} نقاط!"
+  },
+  "ai": {
+    "hint": "احصل على تلميح ذكاء اصطناعي",
+    "hintButton": "تلميح",
+    "disclaimer": "التلميحات المولَّدة بالذكاء الاصطناعي تجريبية وقد تحتوي على أخطاء. تحقق دائماً مع أستاذك.",
+    "generating": "جارٍ توليد التلميح...",
+    "similarExercises": "تمارين مشابهة",
+    "noSimilar": "لم يُعثر على تمارين مشابهة",
+    "error": "تعذّر توليد التلميح. يرجى المحاولة مجدداً."
+  },
+  "roles": {
+    "student": "طالب",
+    "teacher": "أستاذ",
+    "admin": "مدير",
+    "moderator": "مشرف"
+  },
+  "admin": {
+    "title": "لوحة التحكم",
+    "users": "المستخدمون",
+    "exercises": "التمارين",
+    "solutions": "الحلول",
+    "reports": "البلاغات",
+    "verifyTeacher": "توثيق الأستاذ",
+    "revokeTeacher": "إلغاء توثيق الأستاذ",
+    "stats": "الإحصائيات",
+    "totalUsers": "إجمالي المستخدمين",
+    "totalExercises": "إجمالي التمارين",
+    "pendingReports": "البلاغات المعلّقة"
+  }
+}

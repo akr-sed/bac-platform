@@ -1,0 +1,180 @@
+{
+  "common": {
+    "welcome": "Bienvenue sur la plateforme BAC",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "submit": "Soumettre",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "learnMore": "En savoir plus"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "exercises": "Exercices",
+    "profile": "Profil",
+    "admin": "Administration",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "language": "Langue"
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "forgotPassword": "Mot de passe oublié ?",
+      "registerLink": "S'inscrire"
+    },
+    "register": {
+      "title": "Inscription",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "submit": "Créer un compte",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "loginLink": "Se connecter",
+      "role": "Je suis",
+      "student": "Élève",
+      "teacher": "Professeur"
+    },
+    "errors": {
+      "invalidCredentials": "Adresse e-mail ou mot de passe incorrect",
+      "emailTaken": "Cette adresse e-mail est déjà utilisée",
+      "weakPassword": "Le mot de passe doit contenir au moins 8 caractères",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "required": "Ce champ est obligatoire",
+      "invalidEmail": "Adresse e-mail invalide",
+      "serverError": "Erreur serveur, veuillez réessayer"
+    }
+  },
+  "exercises": {
+    "title": "Exercices",
+    "browse": "Parcourir les exercices",
+    "post": "Publier un exercice",
+    "noResults": "Aucun exercice trouvé",
+    "filter": {
+      "subject": "Matière",
+      "topic": "Thème",
+      "subtopic": "Sous-thème",
+      "difficulty": "Difficulté",
+      "all": "Tous"
+    },
+    "difficulty": {
+      "easy": "Facile",
+      "medium": "Moyen",
+      "hard": "Difficile"
+    },
+    "fields": {
+      "title": "Titre",
+      "description": "Description",
+      "subject": "Matière",
+      "topic": "Thème",
+      "subtopic": "Sous-thème",
+      "attachments": "Pièces jointes"
+    },
+    "detail": {
+      "solutions": "Solutions",
+      "noSolutions": "Aucune solution pour le moment. Soyez le premier !",
+      "similarExercises": "Exercices similaires",
+      "postedBy": "Publié par",
+      "postedAt": "Publié le"
+    }
+  },
+  "solutions": {
+    "submit": "Soumettre une solution",
+    "view": "Voir la solution",
+    "like": "J'aime",
+    "unlike": "Je n'aime plus",
+    "likes": "{count, plural, one {# j'aime} other {# j'aimes}}",
+    "comment": "Commenter",
+    "comments": "{count, plural, one {# commentaire} other {# commentaires}}",
+    "addComment": "Ajouter un commentaire",
+    "fields": {
+      "content": "Votre solution",
+      "images": "Joindre des images"
+    },
+    "placeholder": "Rédigez votre solution ici...",
+    "submitSuccess": "Solution soumise avec succès",
+    "editSuccess": "Solution mise à jour avec succès"
+  },
+  "profile": {
+    "title": "Mon profil",
+    "points": "Points",
+    "role": "Rôle",
+    "badge": "Badge",
+    "exercises": "Mes exercices",
+    "solutions": "Mes solutions",
+    "reputation": "Réputation",
+    "joinedAt": "Membre depuis",
+    "verifiedTeacher": "Professeur vérifié",
+    "editProfile": "Modifier le profil"
+  },
+  "moderation": {
+    "delete": "Supprimer",
+    "report": "Signaler",
+    "reportReason": "Motif du signalement",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ceci ? Cette action est irréversible.",
+    "deleted": "Supprimé avec succès",
+    "reported": "Merci, votre signalement a été pris en compte",
+    "reasons": {
+      "spam": "Spam",
+      "inappropriate": "Contenu inapproprié",
+      "incorrect": "Solution incorrecte",
+      "other": "Autre"
+    }
+  },
+  "reputation": {
+    "points": "{count, plural, one {# point} other {# points}}",
+    "badges": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé",
+      "expert": "Expert"
+    },
+    "earned": "Vous avez gagné {points} points !"
+  },
+  "ai": {
+    "hint": "Obtenir un indice IA",
+    "hintButton": "Indice",
+    "disclaimer": "Les indices générés par l'IA sont expérimentaux et peuvent contenir des inexactitudes. Vérifiez toujours auprès de votre professeur.",
+    "generating": "Génération de l'indice...",
+    "similarExercises": "Exercices similaires",
+    "noSimilar": "Aucun exercice similaire trouvé",
+    "error": "Impossible de générer un indice. Veuillez réessayer."
+  },
+  "roles": {
+    "student": "Élève",
+    "teacher": "Professeur",
+    "admin": "Administrateur",
+    "moderator": "Modérateur"
+  },
+  "admin": {
+    "title": "Tableau de bord",
+    "users": "Utilisateurs",
+    "exercises": "Exercices",
+    "solutions": "Solutions",
+    "reports": "Signalements",
+    "verifyTeacher": "Vérifier le professeur",
+    "revokeTeacher": "Révoquer le statut de professeur",
+    "stats": "Statistiques",
+    "totalUsers": "Total utilisateurs",
+    "totalExercises": "Total exercices",
+    "pendingReports": "Signalements en attente"
+  }
+}
