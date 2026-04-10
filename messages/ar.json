@@ -101,9 +101,9 @@
     "view": "عرض الحل",
     "like": "إعجاب",
     "unlike": "إلغاء الإعجاب",
-    "likes": "{count} إعجاب",
+    "likes": "{count, plural, zero {لا إعجابات} one {إعجاب واحد} two {إعجابان} few {# إعجابات} many {# إعجاباً} other {# إعجاب}}",
     "comment": "تعليق",
-    "comments": "{count} تعليق",
+    "comments": "{count, plural, zero {لا تعليقات} one {تعليق واحد} two {تعليقان} few {# تعليقات} many {# تعليقاً} other {# تعليق}}",
     "addComment": "أضف تعليقاً",
     "fields": {
       "content": "حلّك",
@@ -118,7 +118,7 @@
     "points": "النقاط",
     "role": "الدور",
     "badge": "الشارة",
-    "exercises": "تمارينى",
+    "exercises": "تماريني",
     "solutions": "حلولي",
     "reputation": "السمعة",
     "joinedAt": "عضو منذ",
@@ -140,7 +140,7 @@
     }
   },
   "reputation": {
-    "points": "{count} نقطة",
+    "points": "{count, plural, zero {لا نقاط} one {نقطة واحدة} two {نقطتان} few {# نقاط} many {# نقطة} other {# نقطة}}",
     "badges": {
       "beginner": "مبتدئ",
       "intermediate": "متوسط",
@@ -175,6 +175,7 @@
     "stats": "الإحصائيات",
     "totalUsers": "إجمالي المستخدمين",
     "totalExercises": "إجمالي التمارين",
+    "totalSolutions": "إجمالي الحلول",
     "pendingReports": "البلاغات المعلّقة"
   }
 }

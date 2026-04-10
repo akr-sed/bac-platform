@@ -175,6 +175,7 @@
     "stats": "Statistics",
     "totalUsers": "Total Users",
     "totalExercises": "Total Exercises",
+    "totalSolutions": "Total Solutions",
     "pendingReports": "Pending Reports"
   }
 }
