@@ -53,6 +53,21 @@
       "student": "Élève",
       "teacher": "Professeur"
     },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "email": "Adresse e-mail",
+      "submit": "Envoyer le lien de réinitialisation",
+      "success": "Si un compte existe avec cet e-mail, un lien de réinitialisation a été envoyé.",
+      "backToLogin": "Retour à la connexion"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "submit": "Réinitialiser le mot de passe",
+      "success": "Votre mot de passe a été réinitialisé avec succès.",
+      "invalidToken": "Ce lien de réinitialisation est invalide ou a expiré."
+    },
     "errors": {
       "invalidCredentials": "Adresse e-mail ou mot de passe incorrect",
       "emailTaken": "Cette adresse e-mail est déjà utilisée",
@@ -177,5 +192,38 @@
     "totalExercises": "Total exercices",
     "totalSolutions": "Total solutions",
     "pendingReports": "Signalements en attente"
+  },
+  "categories": {
+    "manage": "Gérer les catégories",
+    "addSubject": "Ajouter une matière",
+    "addTopic": "Ajouter un thème",
+    "addSubtopic": "Ajouter un sous-thème",
+    "editCategory": "Modifier la catégorie",
+    "deleteCategory": "Supprimer la catégorie",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette catégorie ? Toutes les sous-catégories seront également supprimées.",
+    "noCategories": "Aucune catégorie trouvée",
+    "subject": "Matière",
+    "topic": "Thème",
+    "subtopic": "Sous-thème"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {name} !",
+    "exercisesPosted": "Exercices publiés",
+    "solutionsSubmitted": "Solutions soumises",
+    "commentsCount": "Commentaires",
+    "likesReceived": "J'aime reçus",
+    "recentActivity": "Activité récente",
+    "noActivity": "Pas encore d'activité. Commencez par publier un exercice ou soumettre une solution !",
+    "postExercise": "Publier un exercice",
+    "browseExercises": "Parcourir les exercices",
+    "viewProfile": "Voir le profil",
+    "pointsBreakdown": "Répartition des points"
+  },
+  "errors": {
+    "notFound": "Introuvable",
+    "pageNotFound": "La page que vous cherchez n'existe pas.",
+    "backToHome": "Retour à l'accueil",
+    "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer plus tard."
   }
 }

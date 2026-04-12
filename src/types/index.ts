@@ -60,3 +60,41 @@ export interface PaginatedResponse<T> {
   page: number;
   totalPages: number;
 }
+
+export interface CategoryDTO {
+  _id: string;
+  name: { en: string; fr: string; ar: string };
+  type: 'subject' | 'topic' | 'subtopic';
+  parentId: string | null;
+  order: number;
+  children?: CategoryDTO[];
+}
+
+export interface HintDTO {
+  hint: string;
+  disclaimer: string;
+  exerciseId: string;
+}
+
+export interface DashboardDTO {
+  user: UserDTO;
+  stats: {
+    exercisesPosted: number;
+    solutionsSubmitted: number;
+    commentsCount: number;
+    likesReceived: number;
+  };
+  recentActivity: ActivityItem[];
+  pointsBreakdown: {
+    fromSolutions: number;
+    fromComments: number;
+    fromLikes: number;
+  };
+}
+
+export interface ActivityItem {
+  type: 'solution' | 'comment' | 'exercise';
+  title: string;
+  targetId: string;
+  createdAt: string;
+}
