@@ -31,7 +31,14 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(mongodbUri);
+    cached.promise = mongoose.connect(mongodbUri).then((m) => {
+      console.log(`✓ MongoDB connected: ${m.connection.host}/${m.connection.name}`);
+      return m;
+    }).catch((err) => {
+      console.error('✗ MongoDB connection failed:', err.message);
+      cached.promise = null;
+      throw err;
+    });
   }
 
   cached.conn = await cached.promise;
