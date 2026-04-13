@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
       Exercise.find(filter)
         .populate({
           path: 'authorId',
-          select: 'name email role points isVerifiedTeacher createdAt',
+          select: 'name email role points isVerifiedTeacher avatar createdAt',
         })
         .sort({ createdAt: -1 })
         .skip((page - 1) * limit)
@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
     const populated = await Exercise.findById(exercise._id)
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .lean();
 

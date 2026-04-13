@@ -27,7 +27,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     })
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .sort({ createdAt: -1 })
       .limit(5)

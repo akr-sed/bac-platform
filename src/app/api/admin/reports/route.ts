@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       Report.find(filter)
         .populate({
           path: 'reportedBy',
-          select: 'name email role points isVerifiedTeacher createdAt',
+          select: 'name email role points isVerifiedTeacher avatar createdAt',
         })
         .sort({ createdAt: -1 })
         .skip((page - 1) * limit)

@@ -5,6 +5,7 @@ export interface UserDTO {
   role: 'student' | 'teacher' | 'admin';
   points: number;
   isVerifiedTeacher: boolean;
+  avatar?: string | null;
   createdAt: string;
 }
 

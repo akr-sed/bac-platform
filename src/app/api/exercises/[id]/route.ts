@@ -27,7 +27,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const exercise = await Exercise.findById(id)
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .lean();
 
@@ -97,7 +97,7 @@ export async function PUT(request: NextRequest, context: RouteContext) {
     })
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .lean();
 

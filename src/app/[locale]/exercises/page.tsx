@@ -1,120 +1,280 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/routing';
-import { useAuth } from '@/components/providers/AuthProvider';
-import { Button } from '@/components/ui/button';
-import ExerciseCard from '@/components/exercises/ExerciseCard';
-import ExerciseFilters from '@/components/exercises/ExerciseFilters';
-import type { ExerciseDTO, PaginatedResponse } from '@/types';
+import { useState, useEffect } from 'react';
+import {
+  Search,
+  SlidersHorizontal,
+  BookOpen,
+  MessageCircle,
+  User,
+  Plus,
+} from 'lucide-react';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
+import { Label } from '@/components/ui/label';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
+import { DifficultyBadge } from '@/components/ui/difficulty-badge';
+import { Pagination } from '@/components/ui/pagination';
+import { cn } from '@/lib/utils';
+
+interface Exercise {
+  _id: string;
+  title: string;
+  subject?: string;
+  topic?: string;
+  difficulty?: 'easy' | 'medium' | 'hard';
+  author?: { name: string };
+  solutionCount?: number;
+  createdAt?: string;
+}
+
+const DIFFICULTIES = ['easy', 'medium', 'hard'] as const;
+
+function FilterSidebar({
+  selectedDifficulty,
+  setSelectedDifficulty,
+}: {
+  selectedDifficulty: string;
+  setSelectedDifficulty: (d: string) => void;
+}) {
+  const t = useTranslations('exercises');
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <Label className="mb-3 block text-sm font-semibold text-foreground">
+          {t('filter.subject')}
+        </Label>
+        <div className="relative">
+          <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Input placeholder={t('filter.subject')} className="ps-10" />
+        </div>
+      </div>
+
+      <div>
+        <Label className="mb-3 block text-sm font-semibold text-foreground">
+          {t('filter.topic')}
+        </Label>
+        <Input placeholder={t('filter.topic')} />
+      </div>
+
+      <div>
+        <Label className="mb-3 block text-sm font-semibold text-foreground">
+          {t('filter.difficulty')}
+        </Label>
+        <div className="flex flex-col gap-2">
+          <label className="flex cursor-pointer items-center gap-2">
+            <input
+              type="radio"
+              name="difficulty"
+              value=""
+              checked={selectedDifficulty === ''}
+              onChange={() => setSelectedDifficulty('')}
+              className="accent-[var(--primary)]"
+            />
+            <span className="text-sm">{t('filter.all')}</span>
+          </label>
+          {DIFFICULTIES.map((d) => (
+            <label key={d} className="flex cursor-pointer items-center gap-2">
+              <input
+                type="radio"
+                name="difficulty"
+                value={d}
+                checked={selectedDifficulty === d}
+                onChange={() => setSelectedDifficulty(d)}
+                className="accent-[var(--primary)]"
+              />
+              <span className="text-sm">{t(`difficulty.${d}`)}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function ExercisesPage() {
   const t = useTranslations('exercises');
-  const tCommon = useTranslations('common');
-  const { user } = useAuth();
-  const searchParams = useSearchParams();
-
-  const [data, setData] = useState<PaginatedResponse<ExerciseDTO> | null>(null);
+  const [exercises, setExercises] = useState<Exercise[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const search = searchParams.get('search') || '';
-  const subject = searchParams.get('subject') || '';
-  const topic = searchParams.get('topic') || '';
-  const difficulty = searchParams.get('difficulty') || '';
-  const page = parseInt(searchParams.get('page') || '1');
-
-  const fetchExercises = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      params.set('page', String(page));
-      params.set('limit', '10');
-      if (search) params.set('search', search);
-      if (subject) params.set('subject', subject);
-      if (topic) params.set('topic', topic);
-      if (difficulty) params.set('difficulty', difficulty);
-
-      const res = await fetch(`/api/exercises?${params.toString()}`);
-      if (res.ok) {
-        const json = await res.json();
-        setData(json);
-      }
-    } catch {
-      // ignore
-    } finally {
-      setLoading(false);
-    }
-  }, [page, search, subject, topic, difficulty]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [selectedDifficulty, setSelectedDifficulty] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetchExercises();
-  }, [fetchExercises]);
+    const fetchExercises = async () => {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams({
+          page: String(currentPage),
+          limit: '9',
+        });
+        if (selectedDifficulty) params.set('difficulty', selectedDifficulty);
+        if (searchQuery) params.set('search', searchQuery);
 
-  function buildPageUrl(newPage: number) {
-    const params = new URLSearchParams();
-    if (search) params.set('search', search);
-    if (subject) params.set('subject', subject);
-    if (topic) params.set('topic', topic);
-    if (difficulty) params.set('difficulty', difficulty);
-    params.set('page', String(newPage));
-    return `/exercises?${params.toString()}`;
-  }
+        const res = await fetch(`/api/exercises?${params}`);
+        if (res.ok) {
+          const data = await res.json();
+          setExercises(data.data ?? []);
+          setTotalPages(data.totalPages ?? 1);
+        }
+      } catch {
+        /* API not available yet */
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchExercises();
+  }, [currentPage, selectedDifficulty, searchQuery]);
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-950">
-          {t('browse')}
-        </h1>
-        {user && (
-          <Link href="/exercises/new">
-            <Button>{t('post')}</Button>
-          </Link>
-        )}
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      {/* Page header */}
+      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground">
+            {t('browse')}
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {t('title')}
+          </p>
+        </div>
+        <Link
+          href="/exercises/new"
+          className={cn(buttonVariants(), 'cursor-pointer gap-2 rounded-xl')}
+        >
+          <Plus className="size-4" />
+          {t('post')}
+        </Link>
       </div>
 
-      <div className="mt-8">
-        <ExerciseFilters
-          search={search}
-          subject={subject}
-          topic={topic}
-          difficulty={difficulty}
-        />
+      {/* Search bar + mobile filter */}
+      <div className="mb-6 flex items-center gap-3">
+        <div className="relative flex-1">
+          <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            placeholder={t('filter.subject')}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="ps-10"
+          />
+        </div>
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger
+              render={<Button variant="outline" size="icon" className="cursor-pointer" />}
+            >
+              <SlidersHorizontal className="size-4" />
+              <span className="sr-only">Filters</span>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-72 p-6">
+              <h2 className="mb-6 font-heading text-lg font-semibold text-foreground">Filters</h2>
+              <FilterSidebar
+                selectedDifficulty={selectedDifficulty}
+                setSelectedDifficulty={setSelectedDifficulty}
+              />
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
 
-      {loading ? (
-        <p className="mt-12 text-center text-slate-500">{tCommon('loading')}</p>
-      ) : !data || data.data.length === 0 ? (
-        <p className="mt-12 text-center text-slate-500">{t('noResults')}</p>
-      ) : (
-        <>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {data.data.map((exercise) => (
-              <ExerciseCard key={exercise._id} exercise={exercise} />
-            ))}
-          </div>
+      <div className="flex gap-8">
+        {/* Desktop sidebar */}
+        <aside className="hidden w-70 shrink-0 lg:block">
+          <Card className="sticky top-20 rounded-xl border border-border p-6 shadow-sm">
+            <FilterSidebar
+              selectedDifficulty={selectedDifficulty}
+              setSelectedDifficulty={setSelectedDifficulty}
+            />
+          </Card>
+        </aside>
 
-          {data.totalPages > 1 && (
-            <div className="mt-8 flex items-center justify-center gap-4">
-              {page > 1 && (
-                <Link href={buildPageUrl(page - 1)}>
-                  <Button variant="outline">{tCommon('previous')}</Button>
-                </Link>
-              )}
-              <span className="text-sm text-slate-600">
-                {page} / {data.totalPages}
-              </span>
-              {page < data.totalPages && (
-                <Link href={buildPageUrl(page + 1)}>
-                  <Button variant="outline">{tCommon('next')}</Button>
-                </Link>
-              )}
+        {/* Exercise grid */}
+        <div className="flex-1">
+          {loading ? (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <Card key={i} className="rounded-xl border border-border p-6">
+                  <Skeleton className="mb-3 h-5 w-3/4" />
+                  <Skeleton className="mb-2 h-4 w-1/2" />
+                  <Skeleton className="h-4 w-1/4" />
+                </Card>
+              ))}
             </div>
+          ) : exercises.length === 0 ? (
+            <Card className="flex flex-col items-center rounded-xl border border-border p-12 text-center shadow-sm">
+              <BookOpen className="mb-4 size-12 text-muted-foreground/40" />
+              <p className="text-lg font-medium text-foreground">{t('noResults')}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Try adjusting your filters or post an exercise.
+              </p>
+              <Link
+                href="/exercises/new"
+                className={cn(buttonVariants(), 'mt-6 cursor-pointer gap-2 rounded-xl')}
+              >
+                <Plus className="size-4" />
+                {t('post')}
+              </Link>
+            </Card>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                {exercises.map((ex) => (
+                  <Link key={ex._id} href={`/exercises/${ex._id}`}>
+                    <Card className="group cursor-pointer rounded-xl border border-border p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                      <CardContent className="flex flex-col gap-3 p-0">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="line-clamp-2 font-heading text-lg font-semibold text-foreground">
+                            {ex.title}
+                          </h3>
+                          {ex.difficulty && (
+                            <DifficultyBadge level={ex.difficulty} />
+                          )}
+                        </div>
+
+                        {ex.subject && (
+                          <Badge variant="secondary" className="w-fit text-xs">
+                            {ex.subject}
+                          </Badge>
+                        )}
+
+                        <div className="mt-auto flex items-center gap-4 text-xs text-muted-foreground">
+                          {ex.author && (
+                            <span className="flex items-center gap-1">
+                              <User className="size-3.5" />
+                              {ex.author.name}
+                            </span>
+                          )}
+                          {typeof ex.solutionCount === 'number' && (
+                            <span className="flex items-center gap-1">
+                              <MessageCircle className="size-3.5" />
+                              {ex.solutionCount}
+                            </span>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
+                />
+              </div>
+            </>
           )}
-        </>
-      )}
+        </div>
+      </div>
     </main>
   );
 }

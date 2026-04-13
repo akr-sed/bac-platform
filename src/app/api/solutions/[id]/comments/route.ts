@@ -20,7 +20,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const comments = await Comment.find({ solutionId: id })
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .sort({ createdAt: 1 })
       .lean();
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest, context: RouteContext) {
     const populated = await Comment.findById(comment._id)
       .populate({
         path: 'authorId',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .lean();
 

@@ -5,7 +5,7 @@ import { verifyToken } from './lib/auth';
 
 const intlMiddleware = createMiddleware(routing);
 
-const protectedPaths = ['/profile', '/exercises/new'];
+const protectedPaths = ['/profile', '/exercises/new', '/dashboard'];
 const adminPaths = ['/admin'];
 const authPaths = ['/login', '/register'];
 
@@ -18,7 +18,7 @@ function extractLocale(pathname: string): string {
   return match ? match[1] : 'en';
 }
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const stripped = stripLocale(pathname);
   const locale = extractLocale(pathname);

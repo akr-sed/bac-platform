@@ -26,12 +26,15 @@ export async function GET() {
       return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
-    // Fetch stats in parallel
+    // Fetch all stats + activity in a single parallel round
     const [
       exercisesPosted,
       solutionsSubmitted,
       commentsCount,
       likesReceivedAgg,
+      recentExercises,
+      recentSolutions,
+      recentComments,
     ] = await Promise.all([
       Exercise.countDocuments({ authorId: userId }),
       Solution.countDocuments({ authorId: userId }),
@@ -41,36 +44,31 @@ export async function GET() {
         { $project: { likesCount: { $size: '$likes' } } },
         { $group: { _id: null, total: { $sum: '$likesCount' } } },
       ]),
+      Exercise.find({ authorId: userId })
+        .select('title createdAt')
+        .sort({ createdAt: -1 })
+        .limit(10)
+        .lean(),
+      Solution.find({ authorId: userId })
+        .select('exerciseId createdAt')
+        .populate({ path: 'exerciseId', select: 'title' })
+        .sort({ createdAt: -1 })
+        .limit(10)
+        .lean(),
+      Comment.find({ authorId: userId })
+        .select('solutionId content createdAt')
+        .populate({
+          path: 'solutionId',
+          select: 'exerciseId',
+          populate: { path: 'exerciseId', select: 'title' },
+        })
+        .sort({ createdAt: -1 })
+        .limit(10)
+        .lean(),
     ]);
 
     const likesReceived =
       likesReceivedAgg.length > 0 ? likesReceivedAgg[0].total : 0;
-
-    // Fetch recent activity: last 10 items across exercises, solutions, comments
-    const [recentExercises, recentSolutions, recentComments] =
-      await Promise.all([
-        Exercise.find({ authorId: userId })
-          .select('title createdAt')
-          .sort({ createdAt: -1 })
-          .limit(10)
-          .lean(),
-        Solution.find({ authorId: userId })
-          .select('exerciseId createdAt')
-          .populate({ path: 'exerciseId', select: 'title' })
-          .sort({ createdAt: -1 })
-          .limit(10)
-          .lean(),
-        Comment.find({ authorId: userId })
-          .select('solutionId content createdAt')
-          .populate({
-            path: 'solutionId',
-            select: 'exerciseId',
-            populate: { path: 'exerciseId', select: 'title' },
-          })
-          .sort({ createdAt: -1 })
-          .limit(10)
-          .lean(),
-      ]);
 
     // Merge and sort all activity items
     const activityItems: {

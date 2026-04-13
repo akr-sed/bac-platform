@@ -31,7 +31,7 @@ export async function PUT(request: NextRequest, context: RouteContext) {
     )
       .populate({
         path: 'reportedBy',
-        select: 'name email role points isVerifiedTeacher createdAt',
+        select: 'name email role points isVerifiedTeacher avatar createdAt',
       })
       .lean();
 

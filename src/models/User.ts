@@ -7,6 +7,7 @@ export interface IUser extends Document {
   role: 'student' | 'teacher' | 'admin';
   points: number;
   isVerifiedTeacher: boolean;
+  avatar?: string;
   resetToken?: string;
   resetTokenExpiry?: Date;
   createdAt: Date;
@@ -31,6 +32,7 @@ const UserSchema = new Schema<IUser>(
     },
     points: { type: Number, default: 0, min: 0 },
     isVerifiedTeacher: { type: Boolean, default: false },
+    avatar: { type: String, default: undefined },
     resetToken: { type: String, default: undefined },
     resetTokenExpiry: { type: Date, default: undefined },
   },
