@@ -53,6 +53,21 @@
       "student": "Student",
       "teacher": "Teacher"
     },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "email": "Email Address",
+      "submit": "Send Reset Link",
+      "success": "If an account exists with this email, a reset link has been sent.",
+      "backToLogin": "Back to Login"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Reset Password",
+      "success": "Your password has been reset successfully.",
+      "invalidToken": "This reset link is invalid or has expired."
+    },
     "errors": {
       "invalidCredentials": "Invalid email or password",
       "emailTaken": "This email is already in use",
@@ -175,6 +190,40 @@
     "stats": "Statistics",
     "totalUsers": "Total Users",
     "totalExercises": "Total Exercises",
+    "totalSolutions": "Total Solutions",
     "pendingReports": "Pending Reports"
+  },
+  "categories": {
+    "manage": "Manage Categories",
+    "addSubject": "Add Subject",
+    "addTopic": "Add Topic",
+    "addSubtopic": "Add Subtopic",
+    "editCategory": "Edit Category",
+    "deleteCategory": "Delete Category",
+    "confirmDelete": "Are you sure you want to delete this category? All subcategories will also be deleted.",
+    "noCategories": "No categories found",
+    "subject": "Subject",
+    "topic": "Topic",
+    "subtopic": "Subtopic"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "exercisesPosted": "Exercises Posted",
+    "solutionsSubmitted": "Solutions Submitted",
+    "commentsCount": "Comments",
+    "likesReceived": "Likes Received",
+    "recentActivity": "Recent Activity",
+    "noActivity": "No activity yet. Start by posting an exercise or submitting a solution!",
+    "postExercise": "Post an Exercise",
+    "browseExercises": "Browse Exercises",
+    "viewProfile": "View Profile",
+    "pointsBreakdown": "Points Breakdown"
+  },
+  "errors": {
+    "notFound": "Not Found",
+    "pageNotFound": "The page you are looking for does not exist.",
+    "backToHome": "Back to Home",
+    "somethingWentWrong": "Something went wrong. Please try again later."
   }
 }

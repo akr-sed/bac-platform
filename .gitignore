@@ -41,7 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#codex
+# editors & AI tools
 .codex
 .vscode
 .claude/
+.mcp.json
+design-system/
+docs/superpowers/

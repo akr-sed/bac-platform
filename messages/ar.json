@@ -53,6 +53,21 @@
       "student": "طالب",
       "teacher": "أستاذ"
     },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "email": "البريد الإلكتروني",
+      "submit": "إرسال رابط إعادة التعيين",
+      "success": "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فقد تم إرسال رابط إعادة التعيين.",
+      "backToLogin": "العودة إلى تسجيل الدخول"
+    },
+    "resetPassword": {
+      "title": "إعادة تعيين كلمة المرور",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور الجديدة",
+      "submit": "إعادة تعيين كلمة المرور",
+      "success": "تم إعادة تعيين كلمة المرور بنجاح.",
+      "invalidToken": "رابط إعادة التعيين غير صالح أو منتهي الصلاحية."
+    },
     "errors": {
       "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
       "emailTaken": "هذا البريد الإلكتروني مستخدم بالفعل",
@@ -101,9 +116,9 @@
     "view": "عرض الحل",
     "like": "إعجاب",
     "unlike": "إلغاء الإعجاب",
-    "likes": "{count} إعجاب",
+    "likes": "{count, plural, zero {لا إعجابات} one {إعجاب واحد} two {إعجابان} few {# إعجابات} many {# إعجاباً} other {# إعجاب}}",
     "comment": "تعليق",
-    "comments": "{count} تعليق",
+    "comments": "{count, plural, zero {لا تعليقات} one {تعليق واحد} two {تعليقان} few {# تعليقات} many {# تعليقاً} other {# تعليق}}",
     "addComment": "أضف تعليقاً",
     "fields": {
       "content": "حلّك",
@@ -118,7 +133,7 @@
     "points": "النقاط",
     "role": "الدور",
     "badge": "الشارة",
-    "exercises": "تمارينى",
+    "exercises": "تماريني",
     "solutions": "حلولي",
     "reputation": "السمعة",
     "joinedAt": "عضو منذ",
@@ -140,7 +155,7 @@
     }
   },
   "reputation": {
-    "points": "{count} نقطة",
+    "points": "{count, plural, zero {لا نقاط} one {نقطة واحدة} two {نقطتان} few {# نقاط} many {# نقطة} other {# نقطة}}",
     "badges": {
       "beginner": "مبتدئ",
       "intermediate": "متوسط",
@@ -175,6 +190,40 @@
     "stats": "الإحصائيات",
     "totalUsers": "إجمالي المستخدمين",
     "totalExercises": "إجمالي التمارين",
+    "totalSolutions": "إجمالي الحلول",
     "pendingReports": "البلاغات المعلّقة"
+  },
+  "categories": {
+    "manage": "إدارة التصنيفات",
+    "addSubject": "إضافة مادة",
+    "addTopic": "إضافة موضوع",
+    "addSubtopic": "إضافة موضوع فرعي",
+    "editCategory": "تعديل التصنيف",
+    "deleteCategory": "حذف التصنيف",
+    "confirmDelete": "هل أنت متأكد من حذف هذا التصنيف؟ سيتم حذف جميع التصنيفات الفرعية أيضاً.",
+    "noCategories": "لا توجد تصنيفات",
+    "subject": "المادة",
+    "topic": "الموضوع",
+    "subtopic": "الموضوع الفرعي"
+  },
+  "dashboard": {
+    "title": "لوحة المعلومات",
+    "welcome": "مرحباً بعودتك، {name}!",
+    "exercisesPosted": "التمارين المنشورة",
+    "solutionsSubmitted": "الحلول المقدّمة",
+    "commentsCount": "التعليقات",
+    "likesReceived": "الإعجابات المتلقّاة",
+    "recentActivity": "النشاط الأخير",
+    "noActivity": "لا يوجد نشاط بعد. ابدأ بنشر تمرين أو تقديم حل!",
+    "postExercise": "نشر تمرين",
+    "browseExercises": "تصفّح التمارين",
+    "viewProfile": "عرض الملف الشخصي",
+    "pointsBreakdown": "تفصيل النقاط"
+  },
+  "errors": {
+    "notFound": "غير موجود",
+    "pageNotFound": "الصفحة التي تبحث عنها غير موجودة.",
+    "backToHome": "العودة إلى الرئيسية",
+    "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقاً."
   }
 }
