@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 const SUBJECTS = [
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export function SubjectPicker({ initial, onSave }: Props) {
+  const tSubjects = useTranslations('subjects');
+  const tPrefs = useTranslations('preferences');
   const [picked, setPicked] = useState<Set<string>>(new Set(initial));
   const [saving, setSaving] = useState(false);
 
@@ -45,7 +48,7 @@ export function SubjectPicker({ initial, onSave }: Props) {
                 : 'border-border hover:bg-muted'
             )}
           >
-            {s}
+            {tSubjects(s)}
           </button>
         ))}
       </div>
@@ -54,7 +57,7 @@ export function SubjectPicker({ initial, onSave }: Props) {
         disabled={saving}
         className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground disabled:opacity-50"
       >
-        {saving ? 'Saving…' : 'Save preferences'}
+        {saving ? tPrefs('saving') : tPrefs('save')}
       </button>
     </div>
   );
