@@ -38,9 +38,8 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --font-heading: 'Libre Bodoni', 'Noto Naskh Arabic', Georgia, serif;
-  --font-sans: 'Public Sans', 'Noto Sans Arabic', system-ui, sans-serif;
-  --font-arabic: 'Noto Sans Arabic', Arial, sans-serif;
+  --font-sans: var(--font-sans), var(--font-arabic), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-serif), var(--font-arabic), Georgia, serif;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -121,6 +120,20 @@
   --sidebar-accent-foreground: oklch(0.98 0.014 180);
   --sidebar-border: oklch(0.36 0.018 260);
   --sidebar-ring: oklch(0.79 0.126 181);
+}
+
+html[dir="rtl"] {
+  --font-sans: var(--font-arabic), var(--font-sans), system-ui, sans-serif;
+  --font-heading: var(--font-arabic), var(--font-serif), Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-heading,
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
 
 @layer base {
