@@ -72,6 +72,8 @@ export default function ProfilePage() {
   const tCommon = useTranslations('common');
   const roles = useTranslations('roles');
   const reputation = useTranslations('reputation.badges');
+  const tSaved = useTranslations('saved');
+  const tPrefs = useTranslations('preferences');
 
   const { refreshUser } = useAuth();
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -172,7 +174,7 @@ export default function ProfilePage() {
           });
         setSavedItems(adapted);
       })
-      .catch(() => setSavedError('Failed to load saved exercises'))
+      .catch(() => setSavedError(tSaved('loadError')))
       .finally(() => setSavedLoading(false));
   }, [activeTab, savedItems, savedLoading]);
 
@@ -194,9 +196,9 @@ export default function ProfilePage() {
       const data = await res.json();
       setProfile((prev) => (prev ? { ...prev, ...data.user, badge: prev.badge } : prev));
       await refreshUser();
-      setPrefsSuccess('Preferences saved');
+      setPrefsSuccess(tPrefs('savedOk'));
     } catch {
-      setPrefsError('Server error');
+      setPrefsError(tPrefs('saveError'));
     }
   };
 
@@ -430,7 +432,7 @@ export default function ProfilePage() {
           </TabsTrigger>
           <TabsTrigger value="saved" className="cursor-pointer gap-1.5">
             <Bookmark className="size-4" />
-            Saved
+            {tSaved('tab')}
           </TabsTrigger>
         </TabsList>
 
@@ -523,7 +525,7 @@ export default function ProfilePage() {
           ) : (
             <Card className="flex flex-col items-center rounded-xl border border-border p-10 text-center shadow-sm">
               <Bookmark className="mb-3 size-10 text-muted-foreground/40" />
-              <p className="text-sm text-muted-foreground">No saved exercises yet.</p>
+              <p className="text-sm text-muted-foreground">{tSaved('empty')}</p>
             </Card>
           )}
         </TabsContent>
@@ -609,7 +611,7 @@ export default function ProfilePage() {
 
             {/* Subject preferences */}
             <div className="space-y-3">
-              <Label>Subject preferences</Label>
+              <Label>{tPrefs('title')}</Label>
               {prefsError && (
                 <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
                   {prefsError}

@@ -234,7 +234,9 @@
     "title": "Préférences de matières",
     "help": "Choisis les matières à suivre dans ton fil",
     "save": "Enregistrer les préférences",
-    "saving": "Enregistrement…"
+    "saving": "Enregistrement…",
+    "savedOk": "Préférences enregistrées",
+    "saveError": "Erreur du serveur"
   },
   "saved": {
     "tab": "Enregistrés",

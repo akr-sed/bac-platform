@@ -234,7 +234,9 @@
     "title": "Subject preferences",
     "help": "Pick the subjects you want in your feed",
     "save": "Save preferences",
-    "saving": "Saving…"
+    "saving": "Saving…",
+    "savedOk": "Preferences saved",
+    "saveError": "Server error"
   },
   "saved": {
     "tab": "Saved",
