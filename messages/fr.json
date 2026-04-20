@@ -218,7 +218,39 @@
     "postExercise": "Publier un exercice",
     "browseExercises": "Parcourir les exercices",
     "viewProfile": "Voir le profil",
-    "pointsBreakdown": "Répartition des points"
+    "pointsBreakdown": "Répartition des points",
+    "feedTitle": "Fil",
+    "emptyTitle": "Pas encore d'exercices à afficher",
+    "emptyDescription": "Choisis les matières qui t'intéressent pour un fil personnalisé",
+    "pickSubjects": "Choisir les matières"
+  },
+  "feed": {
+    "like": "J'aime",
+    "save": "Enregistrer",
+    "comments": "Commentaires",
+    "loading": "Chargement…"
+  },
+  "preferences": {
+    "title": "Préférences de matières",
+    "help": "Choisis les matières à suivre dans ton fil",
+    "save": "Enregistrer les préférences",
+    "saving": "Enregistrement…"
+  },
+  "saved": {
+    "tab": "Enregistrés",
+    "empty": "Aucun exercice enregistré",
+    "loadError": "Échec du chargement des enregistrés"
+  },
+  "subjects": {
+    "math": "Mathématiques",
+    "physics": "Physique",
+    "chemistry": "Chimie",
+    "biology": "Sciences naturelles",
+    "arabic-lit": "Lettres arabes",
+    "french-lit": "Lettres françaises",
+    "philosophy": "Philosophie",
+    "history": "Histoire",
+    "english": "Anglais"
   },
   "errors": {
     "notFound": "Introuvable",
