@@ -100,3 +100,20 @@ export interface ActivityItem {
   targetId: string;
   createdAt: string;
 }
+
+export interface FeedItemDTO {
+  _id: string;
+  title: string;
+  description: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  subject: string;
+  topic: string;
+  attachments: string[];
+  likesCount: number;
+  solutionCount: number;
+  commentsCount: number;
+  lastActivityAt: string;
+  author: Pick<UserDTO, '_id' | 'name' | 'avatar' | 'role' | 'isVerifiedTeacher'>;
+  isLiked?: boolean;
+  isSaved?: boolean;
+}
