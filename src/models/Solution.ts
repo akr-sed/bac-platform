@@ -21,6 +21,28 @@ const SolutionSchema = new Schema<ISolution>(
   { timestamps: true }
 );
 
+import Exercise from './Exercise';
+import Comment from './Comment';
+
+SolutionSchema.post('save', async function (doc) {
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    { $inc: { solutionCount: 1 }, $set: { lastActivityAt: new Date() } }
+  );
+});
+
+SolutionSchema.post('findOneAndDelete', async function (doc: any) {
+  if (!doc) return;
+  const commentsDeleted = await Comment.countDocuments({ solutionId: doc._id });
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    {
+      $inc: { solutionCount: -1, commentsCount: -commentsDeleted },
+      $set: { lastActivityAt: new Date() },
+    }
+  );
+});
+
 const Solution: Model<ISolution> =
   (mongoose.models.Solution as Model<ISolution>) ??
   mongoose.model<ISolution>('Solution', SolutionSchema);
