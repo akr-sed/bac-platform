@@ -3,7 +3,7 @@ import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { MessageCircle, FileText } from 'lucide-react';
-import { firstPreview } from '@/lib/cloudinary-preview';
+import { firstPreview, imageUrl, blurUrl } from '@/lib/cloudinary-preview';
 import { LikeButton } from './like-button';
 import { SaveButton } from './save-button';
 import type { FeedItemDTO } from '@/types';
@@ -35,12 +35,14 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
         <div className="relative mx-4 mb-4 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
           {preview.kind === 'image' && preview.url ? (
             <Image
-              src={preview.url}
+              src={imageUrl(preview.url)}
               alt=""
               fill
               sizes="(max-width: 640px) 100vw, 600px"
               className="object-cover"
               loading="lazy"
+              placeholder={blurUrl(preview.url) ? 'blur' : 'empty'}
+              blurDataURL={blurUrl(preview.url) ?? undefined}
             />
           ) : preview.kind === 'pdf' ? (
             <div className="flex h-full flex-col justify-between bg-gradient-to-br from-primary/10 via-muted to-secondary/10 p-4">
