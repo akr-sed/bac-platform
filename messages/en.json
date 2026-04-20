@@ -218,7 +218,39 @@
     "postExercise": "Post an Exercise",
     "browseExercises": "Browse Exercises",
     "viewProfile": "View Profile",
-    "pointsBreakdown": "Points Breakdown"
+    "pointsBreakdown": "Points Breakdown",
+    "feedTitle": "Feed",
+    "emptyTitle": "No exercises to show yet",
+    "emptyDescription": "Pick the subjects you care about to personalize your feed",
+    "pickSubjects": "Pick subjects"
+  },
+  "feed": {
+    "like": "Like",
+    "save": "Save",
+    "comments": "Comments",
+    "loading": "Loading…"
+  },
+  "preferences": {
+    "title": "Subject preferences",
+    "help": "Pick the subjects you want in your feed",
+    "save": "Save preferences",
+    "saving": "Saving…"
+  },
+  "saved": {
+    "tab": "Saved",
+    "empty": "No saved exercises yet",
+    "loadError": "Failed to load saved exercises"
+  },
+  "subjects": {
+    "math": "Math",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "biology": "Biology",
+    "arabic-lit": "Arabic Literature",
+    "french-lit": "French Literature",
+    "philosophy": "Philosophy",
+    "history": "History",
+    "english": "English"
   },
   "errors": {
     "notFound": "Not Found",
