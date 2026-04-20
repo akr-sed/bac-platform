@@ -46,5 +46,6 @@ next-env.d.ts
 .vscode
 .claude/
 .mcp.json
+.superpowers/
 design-system/
 docs/superpowers/
