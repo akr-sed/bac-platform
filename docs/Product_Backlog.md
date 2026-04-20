@@ -268,6 +268,7 @@ As a user, I want to switch the platform language so that I can use it in my pre
 - Supports: English (`en`), French (`fr`), Arabic (`ar`)
 - Switching language preserves the current page/context
 - Selected language persists across sessions (stored in cookie or localStorage)
+- Default language: **Arabic (`ar`)** — root `/` redirects to `/ar`
 
 **Priority:** High
 
@@ -299,6 +300,91 @@ As a user, I want all interface text to appear in my chosen language so that I c
 
 ---
 
+## 🧩 EPIC 8 — Feed & Engagement
+
+### 🔴 US21 — Personalized dashboard feed
+**User Story:**
+As a logged-in user, I want a ranked feed of exercises on my dashboard so I can discover what's relevant without hunting through filters.
+
+**Acceptance Criteria:**
+- Feed sorted by engagement score + recency decay + subject-preference boost
+- 10 items per page, infinite scroll
+- First page SSR for fast paint
+- Personalization uses `User.preferences.subjects`
+
+**Priority:** High
+
+---
+
+### 🔴 US22 — Modern exercise card with PDF preview
+**User Story:**
+As a user, I want a modern card for every exercise with an inline preview so I can quickly decide whether to open it.
+
+**Acceptance Criteria:**
+- Author avatar, name, subject, timestamp, difficulty badge
+- Image attachment → first image rendered via `next/image`
+- PDF attachment → text-fallback card (PDF icon + description excerpt) in this sprint
+  - First-page image render tracked in follow-up spec `2026-04-20-pdf-preview-followup.md`
+- Fixed 16:10 aspect ratio (no layout shift)
+
+**Priority:** High
+
+---
+
+### 🟠 US23 — Save exercises for later
+**User Story:**
+As a user, I want to bookmark exercises so I can come back to them from my profile.
+
+**Acceptance Criteria:**
+- Bookmark button on every feed card (optimistic toggle)
+- Dedicated `Saved` tab on the profile page
+- Saves persisted server-side in a `SavedExercise` collection
+
+**Priority:** Medium
+
+---
+
+### 🟠 US24 — Subject preferences
+**User Story:**
+As a user, I want to pick my subjects of interest so the feed prioritizes them.
+
+**Acceptance Criteria:**
+- Editable from the profile edit dialog
+- Stored in `User.preferences.subjects`
+- Empty dashboard feed prompts the user to pick subjects
+
+**Priority:** Medium
+
+---
+
+### 🟠 US25 — Exercise-level likes
+**User Story:**
+As a user, I want to like the exercise itself (not only its solutions) so I can signal interest quickly.
+
+**Acceptance Criteria:**
+- Heart button on each feed card (optimistic toggle, persists)
+- Likes feed into the ranking score
+- Stored in a dedicated `ExerciseLike` collection
+
+**Priority:** Medium
+
+---
+
+## 🧩 EPIC 9 — Design System
+
+### 🟠 US26 — IBM Plex typography rollout
+**User Story:**
+As a user, I want consistent, readable typography across Arabic/French/English so the platform feels unified and serious.
+
+**Acceptance Criteria:**
+- IBM Plex Sans / Plex Serif / Plex Sans Arabic loaded via `next/font/google`
+- Old fonts (Libre Bodoni, Public Sans, Noto Naskh Arabic, Noto Sans Arabic) removed
+- In Arabic locale, Plex Arabic first in the font stack
+
+**Priority:** Medium
+
+---
+
 ## 📊 Priority Summary
 
 ### 🔴 MUST HAVE (Sprint 1–2)
@@ -310,6 +396,8 @@ As a user, I want all interface text to appear in my chosen language so that I c
 - Admin delete — US12
 - Language switcher — US18
 - RTL layout — US19
+- Personalized dashboard feed — US21
+- Modern exercise card with PDF preview — US22
 
 ### 🟠 SHOULD HAVE (Sprint 2–3)
 - Comments — US11
@@ -318,6 +406,10 @@ As a user, I want all interface text to appear in my chosen language so that I c
 - Teacher verification — US4
 - AI hint — US16
 - Translated content — US20
+- Save exercises for later — US23
+- Subject preferences — US24
+- Exercise-level likes — US25
+- IBM Plex typography rollout — US26
 
 ### 🟡 COULD HAVE (Later)
 - Similar exercises — US17
