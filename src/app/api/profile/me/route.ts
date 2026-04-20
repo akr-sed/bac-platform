@@ -43,6 +43,7 @@ export async function GET() {
         points: user.points,
         isVerifiedTeacher: user.isVerifiedTeacher,
         avatar: user.avatar ?? null,
+        preferences: user.preferences ?? { subjects: [] },
         createdAt: user.createdAt,
       },
       exercises: exercises.map((ex) => ({
@@ -139,6 +140,7 @@ export async function PUT(request: NextRequest) {
         points: user.points,
         isVerifiedTeacher: user.isVerifiedTeacher,
         avatar: user.avatar ?? null,
+        preferences: user.preferences ?? { subjects: [] },
         createdAt: user.createdAt,
       },
     });
