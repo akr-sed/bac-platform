@@ -218,7 +218,39 @@
     "postExercise": "نشر تمرين",
     "browseExercises": "تصفّح التمارين",
     "viewProfile": "عرض الملف الشخصي",
-    "pointsBreakdown": "تفصيل النقاط"
+    "pointsBreakdown": "تفصيل النقاط",
+    "feedTitle": "الموجز",
+    "emptyTitle": "لا توجد تمارين لعرضها بعد",
+    "emptyDescription": "اختر المواد التي تهمك لنعرض لك ما يناسبك",
+    "pickSubjects": "اختر المواد"
+  },
+  "feed": {
+    "like": "إعجاب",
+    "save": "حفظ",
+    "comments": "تعليقات",
+    "loading": "جارٍ التحميل…"
+  },
+  "preferences": {
+    "title": "تفضيلات المواد",
+    "help": "اختر المواد التي تريد متابعتها في موجزك",
+    "save": "حفظ التفضيلات",
+    "saving": "جارٍ الحفظ…"
+  },
+  "saved": {
+    "tab": "المحفوظة",
+    "empty": "لم تحفظ أي تمرين بعد",
+    "loadError": "تعذّر تحميل المحفوظات"
+  },
+  "subjects": {
+    "math": "الرياضيات",
+    "physics": "الفيزياء",
+    "chemistry": "الكيمياء",
+    "biology": "العلوم الطبيعية",
+    "arabic-lit": "الأدب العربي",
+    "french-lit": "الأدب الفرنسي",
+    "philosophy": "الفلسفة",
+    "history": "التاريخ",
+    "english": "الإنجليزية"
   },
   "errors": {
     "notFound": "غير موجود",
