@@ -10,6 +10,7 @@ export interface IUser extends Document {
   avatar?: string;
   resetToken?: string;
   resetTokenExpiry?: Date;
+  preferences?: { subjects: string[] };
   createdAt: Date;
   updatedAt: Date;
 }
@@ -35,6 +36,9 @@ const UserSchema = new Schema<IUser>(
     avatar: { type: String, default: undefined },
     resetToken: { type: String, default: undefined },
     resetTokenExpiry: { type: Date, default: undefined },
+    preferences: {
+      subjects: { type: [String], default: [] },
+    },
   },
   { timestamps: true }
 );

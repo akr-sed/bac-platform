@@ -6,6 +6,7 @@ export interface UserDTO {
   points: number;
   isVerifiedTeacher: boolean;
   avatar?: string | null;
+  preferences?: { subjects: string[] };
   createdAt: string;
 }
 
