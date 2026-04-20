@@ -16,6 +16,7 @@ import {
   Loader2,
   Lock,
   Mail,
+  Bookmark,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -37,6 +38,9 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { FileUploadZone } from '@/components/ui/file-upload-zone';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { SubjectPicker } from '@/components/profile/subject-picker';
+import { ExerciseCard } from '@/components/exercises/exercise-card';
+import type { FeedItemDTO } from '@/types';
 
 interface Profile {
   _id: string;
@@ -48,6 +52,7 @@ interface Profile {
   avatar?: string | null;
   badge: string;
   createdAt: string;
+  preferences?: { subjects: string[] };
   exercises: Array<{
     _id: string;
     title: string;
@@ -93,6 +98,16 @@ export default function ProfilePage() {
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
 
+  // Saved tab
+  const [activeTab, setActiveTab] = useState<string>('exercises');
+  const [savedItems, setSavedItems] = useState<FeedItemDTO[] | null>(null);
+  const [savedLoading, setSavedLoading] = useState(false);
+  const [savedError, setSavedError] = useState('');
+
+  // Subject preferences save feedback
+  const [prefsError, setPrefsError] = useState('');
+  const [prefsSuccess, setPrefsSuccess] = useState('');
+
   useEffect(() => {
     fetch('/api/profile/me')
       .then(async (res) => {
@@ -110,12 +125,84 @@ export default function ProfilePage() {
       .finally(() => setLoading(false));
   }, []);
 
+  // Lazy-fetch saved exercises when Saved tab becomes active
+  useEffect(() => {
+    if (activeTab !== 'saved' || savedItems !== null || savedLoading) return;
+    setSavedLoading(true);
+    setSavedError('');
+    fetch('/api/saves')
+      .then(async (res) => {
+        if (!res.ok) throw new Error();
+        const json = await res.json();
+        const raw = Array.isArray(json.data) ? json.data : [];
+        // Adapt Exercise documents (with populated authorId) to FeedItemDTO shape
+        const adapted: FeedItemDTO[] = (raw as unknown[])
+          .filter((ex): ex is Record<string, unknown> => !!ex && typeof ex === 'object')
+          .map((ex: Record<string, unknown>) => {
+            const author = (ex.authorId as Record<string, unknown>) ?? {};
+            return {
+              _id: String(ex._id ?? ''),
+              title: String(ex.title ?? ''),
+              description: String(ex.description ?? ''),
+              difficulty: (ex.difficulty as 'easy' | 'medium' | 'hard') ?? 'medium',
+              subject: String(ex.subject ?? ''),
+              topic: String(ex.topic ?? ''),
+              attachments: Array.isArray(ex.attachments) ? (ex.attachments as string[]) : [],
+              likesCount: Number(ex.likesCount ?? 0),
+              solutionCount: Number(ex.solutionCount ?? 0),
+              commentsCount: Number(ex.commentsCount ?? 0),
+              lastActivityAt: ex.lastActivityAt
+                ? new Date(ex.lastActivityAt as string).toISOString()
+                : new Date().toISOString(),
+              author: {
+                _id: String(author._id ?? ''),
+                name: String(author.name ?? ''),
+                avatar: (author.avatar as string | null | undefined) ?? null,
+                role: (author.role as 'student' | 'teacher' | 'admin') ?? 'student',
+                isVerifiedTeacher: Boolean(author.isVerifiedTeacher),
+              },
+              isLiked: false,
+              isSaved: true,
+            };
+          });
+        setSavedItems(adapted);
+      })
+      .catch(() => setSavedError('Failed to load saved exercises'))
+      .finally(() => setSavedLoading(false));
+  }, [activeTab, savedItems, savedLoading]);
+
+  // Save subject preferences
+  const savePreferences = async (subjects: string[]) => {
+    setPrefsError('');
+    setPrefsSuccess('');
+    try {
+      const res = await fetch('/api/profile/me', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ preferences: { subjects } }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setPrefsError(data.error || 'Failed to save preferences');
+        return;
+      }
+      const data = await res.json();
+      setProfile((prev) => (prev ? { ...prev, ...data.user, badge: prev.badge } : prev));
+      await refreshUser();
+      setPrefsSuccess('Preferences saved');
+    } catch {
+      setPrefsError('Server error');
+    }
+  };
+
   // Open edit dialog with current values
   const openEdit = () => {
     if (!profile) return;
     setEditName(profile.name);
     setEditFiles([]);
     setEditError('');
+    setPrefsError('');
+    setPrefsSuccess('');
     setEditOpen(true);
   };
 
@@ -326,7 +413,7 @@ export default function ProfilePage() {
       </Card>
 
       {/* Tabs */}
-      <Tabs defaultValue="exercises">
+      <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="mb-6">
           <TabsTrigger value="exercises" className="cursor-pointer gap-1.5">
             <BookOpen className="size-4" />
@@ -335,6 +422,10 @@ export default function ProfilePage() {
           <TabsTrigger value="solutions" className="cursor-pointer gap-1.5">
             <MessageCircle className="size-4" />
             {t('solutions')} ({profile.solutions.length})
+          </TabsTrigger>
+          <TabsTrigger value="saved" className="cursor-pointer gap-1.5">
+            <Bookmark className="size-4" />
+            Saved
           </TabsTrigger>
         </TabsList>
 
@@ -402,6 +493,32 @@ export default function ProfilePage() {
             <Card className="flex flex-col items-center rounded-xl border border-border p-10 text-center shadow-sm">
               <MessageCircle className="mb-3 size-10 text-muted-foreground/40" />
               <p className="text-sm text-muted-foreground">No solutions submitted yet.</p>
+            </Card>
+          )}
+        </TabsContent>
+
+        <TabsContent value="saved">
+          {savedLoading ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <Skeleton className="h-64 w-full rounded-2xl" />
+              <Skeleton className="h-64 w-full rounded-2xl" />
+              <Skeleton className="h-64 w-full rounded-2xl" />
+            </div>
+          ) : savedError ? (
+            <Card className="flex flex-col items-center rounded-xl border border-border p-10 text-center shadow-sm">
+              <Bookmark className="mb-3 size-10 text-muted-foreground/40" />
+              <p className="text-sm text-destructive">{savedError}</p>
+            </Card>
+          ) : savedItems && savedItems.length > 0 ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {savedItems.map((ex) => (
+                <ExerciseCard key={ex._id} variant="compact" exercise={ex} />
+              ))}
+            </div>
+          ) : (
+            <Card className="flex flex-col items-center rounded-xl border border-border p-10 text-center shadow-sm">
+              <Bookmark className="mb-3 size-10 text-muted-foreground/40" />
+              <p className="text-sm text-muted-foreground">No saved exercises yet.</p>
             </Card>
           )}
         </TabsContent>
@@ -482,6 +599,27 @@ export default function ProfilePage() {
               {editSaving && <Loader2 className="me-2 size-4 animate-spin" />}
               {tCommon('save')}
             </Button>
+
+            <Separator />
+
+            {/* Subject preferences */}
+            <div className="space-y-3">
+              <Label>Subject preferences</Label>
+              {prefsError && (
+                <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                  {prefsError}
+                </div>
+              )}
+              {prefsSuccess && (
+                <div role="status" className="rounded-lg bg-primary/10 px-4 py-3 text-sm text-primary">
+                  {prefsSuccess}
+                </div>
+              )}
+              <SubjectPicker
+                initial={profile.preferences?.subjects ?? []}
+                onSave={savePreferences}
+              />
+            </div>
           </div>
         </DialogContent>
       </Dialog>
