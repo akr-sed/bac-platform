@@ -9,6 +9,10 @@ export interface IExercise extends Document {
   subtopic: string;
   authorId: Types.ObjectId;
   attachments: string[];
+  likesCount: number;
+  solutionCount: number;
+  commentsCount: number;
+  lastActivityAt: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -27,9 +31,15 @@ const ExerciseSchema = new Schema<IExercise>(
     subtopic: { type: String, default: '', trim: true },
     authorId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     attachments: [{ type: String }],
+    likesCount: { type: Number, default: 0, min: 0, index: true },
+    solutionCount: { type: Number, default: 0, min: 0 },
+    commentsCount: { type: Number, default: 0, min: 0 },
+    lastActivityAt: { type: Date, default: () => new Date(), index: true },
   },
   { timestamps: true }
 );
+
+ExerciseSchema.index({ subject: 1, lastActivityAt: -1 });
 
 const Exercise: Model<IExercise> =
   (mongoose.models.Exercise as Model<IExercise>) ??
