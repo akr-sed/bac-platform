@@ -76,7 +76,7 @@ export async function PUT(request: NextRequest) {
     await connectToDatabase();
 
     const body = await request.json();
-    const { name, avatar, email, currentPassword, newPassword } = body;
+    const { name, avatar, email, currentPassword, newPassword, preferences } = body;
 
     const user = await User.findById(session.userId);
     if (!user) {
@@ -118,6 +118,14 @@ export async function PUT(request: NextRequest) {
         return NextResponse.json({ error: 'New password must be at least 6 characters' }, { status: 400 });
       }
       user.passwordHash = await bcrypt.hash(newPassword, 10);
+    }
+
+    // Update preferences.subjects (feed personalization)
+    if (preferences?.subjects && Array.isArray(preferences.subjects)) {
+      const cleaned = preferences.subjects
+        .filter((s: unknown): s is string => typeof s === 'string')
+        .slice(0, 10);
+      user.preferences = { subjects: cleaned };
     }
 
     await user.save();
