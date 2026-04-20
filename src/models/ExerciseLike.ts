@@ -17,6 +17,23 @@ const ExerciseLikeSchema = new Schema<IExerciseLike>(
 ExerciseLikeSchema.index({ userId: 1, exerciseId: 1 }, { unique: true });
 ExerciseLikeSchema.index({ exerciseId: 1 });
 
+import Exercise from './Exercise';
+
+ExerciseLikeSchema.post('save', async function (doc) {
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    { $inc: { likesCount: 1 }, $set: { lastActivityAt: new Date() } }
+  );
+});
+
+ExerciseLikeSchema.post('findOneAndDelete', async function (doc: any) {
+  if (!doc) return;
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    { $inc: { likesCount: -1 } }
+  );
+});
+
 const ExerciseLike: Model<IExerciseLike> =
   (mongoose.models.ExerciseLike as Model<IExerciseLike>) ??
   mongoose.model<IExerciseLike>('ExerciseLike', ExerciseLikeSchema);
