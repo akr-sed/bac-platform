@@ -135,9 +135,14 @@ export default function ProfilePage() {
         if (!res.ok) throw new Error();
         const json = await res.json();
         const raw = Array.isArray(json.data) ? json.data : [];
-        // Adapt Exercise documents (with populated authorId) to FeedItemDTO shape
+        // Adapt Exercise documents (with populated authorId) to FeedItemDTO shape.
+        // `/api/saves` populates exerciseId; if the referenced Exercise was
+        // deleted (legacy data), the populate yields `null` — skip those.
         const adapted: FeedItemDTO[] = (raw as unknown[])
-          .filter((ex): ex is Record<string, unknown> => !!ex && typeof ex === 'object')
+          .filter(
+            (ex): ex is Record<string, unknown> =>
+              ex !== null && ex !== undefined && typeof ex === 'object'
+          )
           .map((ex: Record<string, unknown>) => {
             const author = (ex.authorId as Record<string, unknown>) ?? {};
             return {

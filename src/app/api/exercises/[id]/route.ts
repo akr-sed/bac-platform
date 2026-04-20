@@ -5,6 +5,8 @@ import { getSession } from '@/lib/auth';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
 import Comment from '@/models/Comment';
+import SavedExercise from '@/models/SavedExercise';
+import ExerciseLike from '@/models/ExerciseLike';
 
 const updateExerciseSchema = z.object({
   title: z.string().min(1).optional(),
@@ -157,6 +159,8 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
 
     await Comment.deleteMany({ solutionId: { $in: solutionIds } });
     await Solution.deleteMany({ exerciseId: id });
+    await SavedExercise.deleteMany({ exerciseId: id });
+    await ExerciseLike.deleteMany({ exerciseId: id });
     await Exercise.findByIdAndDelete(id);
 
     return NextResponse.json({ success: true });
