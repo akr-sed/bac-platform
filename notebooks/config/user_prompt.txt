@@ -1,0 +1,65 @@
+Extract all exercises from the attached exam PDF and return a JSON object.
+
+Exam context (use these values exactly in your output):
+- exam_id:    {exam_id}
+- subject:    {subject}
+- filiere:    {filiere}
+- year:       {year}
+- session:    {session}
+- trimester:  {trimester}
+- language:   {language}
+
+Expected output structure:
+
+{
+  "exam_id": "{exam_id}",
+  "exercises": [
+    {
+      "id": "<uuid-v4>",
+      "exam_id": "{exam_id}",
+      "number": 1,
+      "title": null,
+      "statement": "...",
+      "topic": "...",
+      "concepts": [],
+      "difficulty": "medium",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "tags": [],
+      "metadata": {},
+      "parts": [
+        {
+          "id": "<uuid-v4>",
+          "exercise_id": "<same as parent exercise id>",
+          "label": "1",
+          "sub_label": "a",
+          "statement": "...",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "<uuid-v4>",
+      "exam_id": "{exam_id}",
+      "exercise_ref": 1,
+      "part_ref": "1-a",
+      "figure_type": "graph",
+      "description": "...",
+      "source_page": 2
+    }
+  ]
+}
+
+Notes:
+- "figures" is a top-level array, not nested inside exercises.
+- Your ingestion script will resolve exercise_ref and part_ref to the actual
+  exercise_id and part_id UUIDs when writing to the figures table.
+- If there are no figures in this exam, return "figures": [].
