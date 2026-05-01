@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { Loader2, Upload, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { topicLabel } from '@/lib/exam-topic-labels';
+import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 
 interface ParsedExercise {
   id?: string;
@@ -42,6 +42,9 @@ const inferYearFromName = (name: string): string => {
 
 export function ExamImportForm() {
   const t = useTranslations('admin.importExam');
+  const locale = useLocale();
+  const topicLocale: ExamTopicLocale =
+    locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
   const router = useRouter();
 
   const [pasted, setPasted] = useState('');
@@ -268,7 +271,7 @@ export function ExamImportForm() {
                   </span>
                   {ex.topic && (
                     <Badge variant="secondary" className="text-xs">
-                      {topicLabel(ex.topic, 'ar')}
+                      {topicLabel(ex.topic, topicLocale)}
                     </Badge>
                   )}
                   {typeof ex.marks === 'number' && (

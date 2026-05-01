@@ -148,3 +148,47 @@ describe('POST /api/exams/import — auth gate', () => {
     expect(res.status).toBe(201);
   });
 });
+
+describe('POST /api/exams/import — topic-slug storage', () => {
+  it('persists the topic slug verbatim instead of the resolved Arabic label', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(201);
+    expect(Exercise.create).toHaveBeenCalledTimes(1);
+    const created = vi.mocked(Exercise.create).mock.calls[0][0] as {
+      topic: string;
+    };
+    // The slug, not the Arabic label "الحسابيات". Render layer resolves
+    // per-locale via topicLabel(slug, locale).
+    expect(created.topic).toBe('arithmetique');
+  });
+
+  it('does not embed Arabic in the default title', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    await POST(buildRequest(validPayload));
+
+    const created = vi.mocked(Exercise.create).mock.calls[0][0] as {
+      title: string;
+    };
+    // No Arabic characters: locale-agnostic default so French/English
+    // viewers don't get "التمرين 1 — الحسابيات".
+    expect(created.title).not.toMatch(/[؀-ۿ]/);
+  });
+});

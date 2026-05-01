@@ -5,7 +5,6 @@ import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
 import Exam, { type IExam } from '@/models/Exam';
 import Exercise from '@/models/Exercise';
-import { topicLabel } from '@/lib/exam-topic-labels';
 
 const ParsedExerciseSchema = z.object({
   id: z.string(),
@@ -115,17 +114,21 @@ export async function POST(request: NextRequest) {
     });
 
     for (const ex of data.exercises) {
-      const topicLabelAr = topicLabel(ex.topic, 'ar');
       const figureDescriptions = data.figures
         .filter((f) => f.exercise_ref === ex.number)
         .map((f) => f.description)
         .filter((d) => d && d.length > 0);
 
+      // Persist the topic slug verbatim. The render layer (exam page,
+      // exercise detail page, import-form preview) resolves it via
+      // `topicLabel(slug, locale)` so French/English viewers get the
+      // right language. Storing the resolved Arabic label would lock
+      // every viewer into Arabic regardless of locale.
       const exerciseDoc = await Exercise.create({
-        title: ex.title?.trim() || `التمرين ${ex.number} — ${topicLabelAr}`,
+        title: ex.title?.trim() || `BAC ${year} — ${ex.topic} #${ex.number}`,
         description: ex.statement,
         subject,
-        topic: topicLabelAr,
+        topic: ex.topic,
         subtopic: '',
         difficulty: normaliseDifficulty(ex.difficulty ?? null),
         authorId: session.userId,

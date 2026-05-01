@@ -8,6 +8,7 @@ import Exercise from '@/models/Exercise';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
+import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 
 type RouteParams = { params: Promise<{ id: string; locale: string }> };
 
@@ -73,8 +74,10 @@ async function loadExam(id: string): Promise<ExamView | null> {
 }
 
 export default async function ExamPage({ params }: RouteParams) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const t = await getTranslations('exam');
+  const topicLocale: ExamTopicLocale =
+    locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
 
   const exam = await loadExam(id);
   if (!exam) {
@@ -121,42 +124,47 @@ export default async function ExamPage({ params }: RouteParams) {
               </h2>
 
               <ol className="space-y-3">
-                {items.map((ex) => (
-                  <li key={ex._id}>
-                    <Link
-                      href={`/exercises/${ex._id}` as `/exercises/${string}`}
-                      className="group block"
-                    >
-                      <Card className="rounded-xl border border-border p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
-                        <CardContent className="flex items-start justify-between gap-4 p-0">
-                          <div className="min-w-0 flex-1">
-                            <p className="text-xs font-medium text-muted-foreground">
-                              {typeof ex.examNumber === 'number'
-                                ? t('exerciseLabel', { number: ex.examNumber })
-                                : null}
-                            </p>
-                            <p className="mt-1 truncate font-medium text-foreground">
-                              {ex.title}
-                            </p>
-                            <div className="mt-2 flex flex-wrap items-center gap-2">
-                              {ex.topic && (
-                                <Badge variant="secondary" className="text-xs">
-                                  {ex.topic}
-                                </Badge>
-                              )}
-                              {typeof ex.marks === 'number' && (
-                                <Badge variant="outline" className="text-xs">
-                                  {t('marks', { marks: ex.marks })}
-                                </Badge>
-                              )}
+                {items.map((ex) => {
+                  const localizedTopic = ex.topic
+                    ? topicLabel(ex.topic, topicLocale)
+                    : '';
+                  return (
+                    <li key={ex._id}>
+                      <Link
+                        href={`/exercises/${ex._id}`}
+                        className="group block"
+                      >
+                        <Card className="rounded-xl border border-border p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                          <CardContent className="flex items-start justify-between gap-4 p-0">
+                            <div className="min-w-0 flex-1">
+                              <p className="text-xs font-medium text-muted-foreground">
+                                {typeof ex.examNumber === 'number'
+                                  ? t('exerciseLabel', { number: ex.examNumber })
+                                  : null}
+                              </p>
+                              <p className="mt-1 truncate font-medium text-foreground">
+                                {ex.title}
+                              </p>
+                              <div className="mt-2 flex flex-wrap items-center gap-2">
+                                {localizedTopic && (
+                                  <Badge variant="secondary" className="text-xs">
+                                    {localizedTopic}
+                                  </Badge>
+                                )}
+                                {typeof ex.marks === 'number' && (
+                                  <Badge variant="outline" className="text-xs">
+                                    {t('marks', { marks: ex.marks })}
+                                  </Badge>
+                                )}
+                              </div>
                             </div>
-                          </div>
-                          <ArrowRight className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  </li>
-                ))}
+                            <ArrowRight className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ol>
             </section>
           ))}
