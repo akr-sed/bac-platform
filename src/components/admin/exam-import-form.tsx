@@ -88,7 +88,7 @@ export function ExamImportForm() {
         const inferredYear = inferYearFromName(file.name);
         setMeta((m) => ({
           ...m,
-          title: m.title || `BAC ${inferredYear || ''} — math`.trim(),
+          title: m.title || [`BAC${inferredYear ? ` ${inferredYear}` : ''}`, 'math'].join(' — '),
           year: m.year || inferredYear,
         }));
       } catch {
