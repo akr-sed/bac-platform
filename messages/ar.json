@@ -191,7 +191,32 @@
     "totalUsers": "إجمالي المستخدمين",
     "totalExercises": "إجمالي التمارين",
     "totalSolutions": "إجمالي الحلول",
-    "pendingReports": "البلاغات المعلّقة"
+    "pendingReports": "البلاغات المعلّقة",
+    "importExam": {
+      "title": "استيراد امتحان بكالوريا",
+      "subtitle": "ارفع ملف JSON الناتج عن المحلّل أو الصق محتواه ثم عاين التمارين قبل الاستيراد.",
+      "uploadLabel": "ملف JSON",
+      "uploadHelp": "اختر ملف .json نتج عن مرحلة التحليل",
+      "pasteLabel": "أو ألصق محتوى JSON هنا",
+      "pastePlaceholder": "{\n  \"exam_id\": \"...\",\n  \"exercises\": [...]\n}",
+      "examMetadata": "بيانات الامتحان",
+      "fieldTitle": "عنوان الامتحان",
+      "fieldYear": "السنة",
+      "fieldSubject": "المادة",
+      "fieldLevel": "المستوى",
+      "preview": "معاينة التمارين",
+      "previewEmpty": "لا توجد بيانات للمعاينة بعد. ارفع ملفاً أو ألصق JSON.",
+      "previewExerciseLabel": "التمرين {number}",
+      "previewMarks": "{marks} نقاط",
+      "previewHasFigure": "يحتوي على شكل",
+      "previewPage": "الصفحة {page}",
+      "submit": "استيراد الامتحان",
+      "submitting": "جارٍ الاستيراد…",
+      "successRedirect": "تم الاستيراد بنجاح، جاري التحويل…",
+      "errorParse": "تعذّر تحليل JSON — تحقق من صحة المحتوى.",
+      "errorRequired": "الرجاء توفير ملف أو لصق محتوى JSON.",
+      "errorServer": "تعذّر إكمال الاستيراد، حاول مرة أخرى."
+    }
   },
   "categories": {
     "manage": "إدارة التصنيفات",
@@ -242,6 +267,19 @@
     "tab": "المحفوظة",
     "empty": "لم تحفظ أي تمرين بعد",
     "loadError": "تعذّر تحميل المحفوظات"
+  },
+  "exam": {
+    "headerLabel": "امتحان البكالوريا",
+    "year": "السنة",
+    "subject": "المادة",
+    "level": "المستوى",
+    "exerciseCount": "{count, plural, zero {لا تمارين} one {تمرين واحد} two {تمرينان} few {# تمارين} many {# تمريناً} other {# تمرين}}",
+    "pageHeading": "الصفحة {page}",
+    "exerciseLabel": "التمرين {number}",
+    "marks": "{marks} نقاط",
+    "openExercise": "فتح التمرين",
+    "noExercises": "لا توجد تمارين في هذا الامتحان",
+    "notFound": "الامتحان غير موجود"
   },
   "subjects": {
     "math": "الرياضيات",

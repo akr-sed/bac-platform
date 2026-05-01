@@ -191,7 +191,32 @@
     "totalUsers": "Total utilisateurs",
     "totalExercises": "Total exercices",
     "totalSolutions": "Total solutions",
-    "pendingReports": "Signalements en attente"
+    "pendingReports": "Signalements en attente",
+    "importExam": {
+      "title": "Importer un examen BAC",
+      "subtitle": "Téléverse le fichier JSON produit par le parseur ou colle son contenu, puis vérifie la liste des exercices avant l'import.",
+      "uploadLabel": "Fichier JSON",
+      "uploadHelp": "Sélectionne un fichier .json issu de l'étape de parsing",
+      "pasteLabel": "Ou colle le contenu JSON ici",
+      "pastePlaceholder": "{\n  \"exam_id\": \"...\",\n  \"exercises\": [...]\n}",
+      "examMetadata": "Métadonnées de l'examen",
+      "fieldTitle": "Titre de l'examen",
+      "fieldYear": "Année",
+      "fieldSubject": "Matière",
+      "fieldLevel": "Niveau",
+      "preview": "Aperçu des exercices",
+      "previewEmpty": "Aucun aperçu pour l'instant. Téléverse un fichier ou colle du JSON.",
+      "previewExerciseLabel": "Exercice {number}",
+      "previewMarks": "{marks} pts",
+      "previewHasFigure": "Contient une figure",
+      "previewPage": "Page {page}",
+      "submit": "Importer l'examen",
+      "submitting": "Import en cours…",
+      "successRedirect": "Import réussi, redirection…",
+      "errorParse": "Impossible d'analyser le JSON — vérifie le contenu.",
+      "errorRequired": "Veuillez fournir un fichier ou coller du JSON.",
+      "errorServer": "L'import a échoué, réessaie."
+    }
   },
   "categories": {
     "manage": "Gérer les catégories",
@@ -242,6 +267,19 @@
     "tab": "Enregistrés",
     "empty": "Aucun exercice enregistré",
     "loadError": "Échec du chargement des enregistrés"
+  },
+  "exam": {
+    "headerLabel": "Examen du BAC",
+    "year": "Année",
+    "subject": "Matière",
+    "level": "Niveau",
+    "exerciseCount": "{count, plural, one {# exercice} other {# exercices}}",
+    "pageHeading": "Page {page}",
+    "exerciseLabel": "Exercice {number}",
+    "marks": "{marks} pts",
+    "openExercise": "Ouvrir l'exercice",
+    "noExercises": "Aucun exercice dans cet examen",
+    "notFound": "Examen introuvable"
   },
   "subjects": {
     "math": "Mathématiques",

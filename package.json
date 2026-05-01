@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "seed:feed": "tsx scripts/seed-feed-data.ts",
-    "backfill:counters": "tsx scripts/backfill-exercise-counters.ts"
+    "backfill:counters": "tsx scripts/backfill-exercise-counters.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -17,6 +19,7 @@
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.9.0",
     "clsx": "^2.1.1",
+    "katex": "^0.16.45",
     "lucide-react": "^1.8.0",
     "mongoose": "^9.4.1",
     "next": "16.2.3",
@@ -25,6 +28,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.72.1",
+    "react-katex": "^3.1.0",
     "shadcn": "^4.2.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",
@@ -33,15 +37,19 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/katex": "^0.16.8",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-katex": "^3.0.4",
+    "@vitejs/plugin-react": "^6.0.1",
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.5"
   }
 }

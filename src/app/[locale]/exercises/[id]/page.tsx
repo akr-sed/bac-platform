@@ -30,6 +30,7 @@ import { SimilarExercisesSidebar } from '@/components/exercises/similar-exercise
 import { CommentsThread } from '@/components/exercises/comments-thread';
 import { PdfPreview } from '@/components/exercises/pdf-preview';
 import { ImageLightbox } from '@/components/exercises/image-lightbox';
+import { MathText } from '@/components/ui/math-text';
 import { useAuth } from '@/components/providers/AuthProvider';
 import {
   Dialog,
@@ -58,6 +59,8 @@ interface Exercise {
   author?: Author;
   attachments?: string[];
   createdAt?: string;
+  hasMath?: boolean;
+  figureDescriptions?: string[];
 }
 
 interface Solution {
@@ -191,9 +194,25 @@ export default function ExerciseDetailPage() {
                 </div>
               )}
 
-              <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
-                {exercise?.description ?? ''}
-              </p>
+              {exercise?.hasMath ? (
+                <MathText className="text-base leading-relaxed text-foreground/90">
+                  {exercise.description}
+                </MathText>
+              ) : (
+                <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
+                  {exercise?.description ?? ''}
+                </p>
+              )}
+
+              {exercise?.figureDescriptions && exercise.figureDescriptions.length > 0 && (
+                <ul className="space-y-2 border-s-2 border-border ps-4">
+                  {exercise.figureDescriptions.map((d, i) => (
+                    <li key={i} className="text-sm italic leading-relaxed text-muted-foreground">
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {/* Attachments */}
               {exercise?.attachments && exercise.attachments.length > 0 && (

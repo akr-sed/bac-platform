@@ -50,6 +50,13 @@ export async function GET(request: NextRequest, context: RouteContext) {
       author: exercise.authorId,
       attachments: exercise.attachments,
       solutionCount,
+      examId: exercise.examId ? String(exercise.examId) : undefined,
+      examNumber: exercise.examNumber,
+      concepts: exercise.concepts,
+      marks: exercise.marks,
+      sourcePage: exercise.sourcePage,
+      figureDescriptions: exercise.figureDescriptions,
+      hasMath: exercise.hasMath ?? false,
       createdAt: exercise.createdAt,
       updatedAt: exercise.updatedAt,
     });

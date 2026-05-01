@@ -13,6 +13,14 @@ export interface IExercise extends Document {
   solutionCount: number;
   commentsCount: number;
   lastActivityAt: Date;
+  // Exam-import metadata (all optional, backwards compatible with previously seeded docs).
+  examId?: Types.ObjectId;
+  examNumber?: number;
+  concepts?: string[];
+  marks?: number;
+  sourcePage?: number;
+  figureDescriptions?: string[];
+  hasMath?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -35,6 +43,15 @@ const ExerciseSchema = new Schema<IExercise>(
     solutionCount: { type: Number, default: 0, min: 0 },
     commentsCount: { type: Number, default: 0, min: 0 },
     lastActivityAt: { type: Date, default: () => new Date(), index: true },
+    // Optional exam-import fields. Existing exercises (created before this feature)
+    // simply lack these properties — Mongoose will not require them.
+    examId: { type: Schema.Types.ObjectId, ref: 'Exam', index: true },
+    examNumber: { type: Number },
+    concepts: { type: [String], default: undefined },
+    marks: { type: Number },
+    sourcePage: { type: Number },
+    figureDescriptions: { type: [String], default: undefined },
+    hasMath: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
