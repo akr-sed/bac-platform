@@ -285,7 +285,10 @@
     "marks": "{marks} pts",
     "openExercise": "Ouvrir l'exercice",
     "noExercises": "Aucun exercice dans cet examen",
-    "notFound": "Examen introuvable"
+    "notFound": "Examen introuvable",
+    "indexTitle": "Examens du BAC",
+    "indexSubtitle": "Parcours les examens importés et accède à leurs exercices.",
+    "indexEmpty": "Aucun examen importé pour l'instant."
   },
   "subjects": {
     "math": "Mathématiques",

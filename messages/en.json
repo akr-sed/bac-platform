@@ -285,7 +285,10 @@
     "marks": "{marks} pts",
     "openExercise": "Open exercise",
     "noExercises": "No exercises in this exam",
-    "notFound": "Exam not found"
+    "notFound": "Exam not found",
+    "indexTitle": "BAC Exams",
+    "indexSubtitle": "Browse imported exams and jump straight into their exercises.",
+    "indexEmpty": "No exams have been imported yet."
   },
   "subjects": {
     "math": "Math",
