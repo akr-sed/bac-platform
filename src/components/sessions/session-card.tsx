@@ -22,12 +22,18 @@ export function SessionCard({ session, variant = 'full' }: Props) {
       ? Math.max(0, session.capacity - session.enrolledCount)
       : null;
 
+  // Match the detail page (`/sessions/[id]/page.tsx`) by anchoring the
+  // formatter to Africa/Algiers — the platform's primary audience. Without
+  // this the card silently falls back to the runtime TZ (UTC on Vercel),
+  // which mis-states the hour by one or two against the same date on the
+  // detail page.
   const dateLabel = format.dateTime(date, {
     weekday: 'short',
     day: 'numeric',
     month: 'short',
     hour: '2-digit',
     minute: '2-digit',
+    timeZone: 'Africa/Algiers',
   });
 
   const isRail = variant === 'rail';
