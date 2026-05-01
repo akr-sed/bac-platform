@@ -1,0 +1,150 @@
+/**
+ * Auth-gate tests for `POST /api/exams/import`.
+ *
+ * Locks in REVIEW.md → Critical #1: only admin/teacher sessions may reach
+ * the create path. `connectToDatabase`, `getSession`, and the Mongoose
+ * models are mocked — these tests stay pure-unit.
+ */
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { NextRequest } from 'next/server';
+
+vi.mock('@/lib/mongodb', () => ({
+  connectToDatabase: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock('@/lib/auth', () => ({
+  getSession: vi.fn(),
+}));
+
+vi.mock('@/models/Exam', () => ({
+  default: {
+    create: vi.fn(),
+    findByIdAndDelete: vi.fn(),
+  },
+}));
+
+vi.mock('@/models/Exercise', () => ({
+  default: {
+    create: vi.fn(),
+    deleteMany: vi.fn(),
+  },
+}));
+
+import { getSession } from '@/lib/auth';
+import Exam from '@/models/Exam';
+import Exercise from '@/models/Exercise';
+import { POST } from '../route';
+
+const validPayload = {
+  exam_id: 'bac-2099-math',
+  exercises: [
+    {
+      id: 'ex-1',
+      exam_id: 'bac-2099-math',
+      number: 1,
+      title: null,
+      statement: 'بواقي القسمة الإقليدية للعدد 7',
+      topic: 'arithmetique',
+      concepts: [],
+      difficulty: 'medium',
+      marks: 4,
+      has_figure: false,
+      source_page: 1,
+      parts: [],
+      tags: [],
+      metadata: {},
+      solution: null,
+    },
+  ],
+  figures: [],
+  title: 'BAC 2099 — math',
+  year: 2099,
+  subject: 'math',
+  level: '3AS',
+};
+
+function buildRequest(body: unknown): NextRequest {
+  return new NextRequest('http://localhost/api/exams/import', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+}
+
+const examMock = {
+  _id: 'exam-id',
+  title: 'BAC 2099 — math',
+  year: 2099,
+  subject: 'math',
+  level: '3AS',
+  source: { filename: '', parsedExamId: 'bac-2099-math' },
+  exerciseIds: [] as unknown[],
+  importedBy: 'admin-id',
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  save: vi.fn().mockResolvedValue(undefined),
+};
+
+beforeEach(() => {
+  vi.clearAllMocks();
+  examMock.save = vi.fn().mockResolvedValue(undefined);
+});
+
+describe('POST /api/exams/import — auth gate', () => {
+  it('returns 401 when the request has no session', async () => {
+    vi.mocked(getSession).mockResolvedValue(null);
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(401);
+    expect(Exam.create).not.toHaveBeenCalled();
+    expect(Exercise.create).not.toHaveBeenCalled();
+  });
+
+  it('returns 403 when the session role is `student`', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'u1',
+      email: 's@x.com',
+      role: 'student',
+      name: 'Student',
+    });
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(403);
+    expect(Exam.create).not.toHaveBeenCalled();
+    expect(Exercise.create).not.toHaveBeenCalled();
+  });
+
+  it('allows admin sessions through to the create path', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(201);
+    expect(Exam.create).toHaveBeenCalledTimes(1);
+    expect(Exercise.create).toHaveBeenCalledTimes(1);
+  });
+
+  it('allows teacher sessions through to the create path', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'teacher-id',
+      email: 't@x.com',
+      role: 'teacher',
+      name: 'Teacher',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(201);
+  });
+});

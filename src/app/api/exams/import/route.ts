@@ -7,10 +7,6 @@ import Exam, { type IExam } from '@/models/Exam';
 import Exercise from '@/models/Exercise';
 import { topicLabel } from '@/lib/exam-topic-labels';
 
-// TODO: tighten auth — restrict /api/exams/import to admin/teacher roles
-// once the moderation flow is wired. For now any logged-in user may import,
-// matching the rest of the early-stage admin tooling.
-
 const ParsedExerciseSchema = z.object({
   id: z.string(),
   exam_id: z.string(),
@@ -71,6 +67,9 @@ export async function POST(request: NextRequest) {
   const session = await getSession();
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  if (session.role !== 'admin' && session.role !== 'teacher') {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
   let body: unknown;
