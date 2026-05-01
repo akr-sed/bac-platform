@@ -109,7 +109,9 @@
       "noSolutions": "No solutions yet. Be the first to post one!",
       "similarExercises": "Similar Exercises",
       "postedBy": "Posted by",
-      "postedAt": "Posted on"
+      "postedAt": "Posted on",
+      "backToExam": "Back to exam",
+      "backToExercises": "Back to exercises"
     }
   },
   "solutions": {

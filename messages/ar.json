@@ -109,7 +109,9 @@
       "noSolutions": "لا توجد حلول بعد. كن أول من يشارك!",
       "similarExercises": "تمارين مشابهة",
       "postedBy": "نشره",
-      "postedAt": "تاريخ النشر"
+      "postedAt": "تاريخ النشر",
+      "backToExam": "العودة إلى الامتحان",
+      "backToExercises": "العودة إلى التمارين"
     }
   },
   "solutions": {

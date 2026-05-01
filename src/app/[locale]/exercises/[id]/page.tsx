@@ -164,13 +164,23 @@ export default function ExerciseDetailPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Back nav */}
-      <Link
-        href="/exercises"
-        className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
-      >
-        <ArrowLeft className="size-4 rtl:rotate-180" />
-        {t('solutions')}
-      </Link>
+      {exercise?.examId ? (
+        <Link
+          href={`/exams/${exercise.examId}` as `/exams/${string}`}
+          className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+        >
+          <ArrowLeft className="size-4 rtl:rotate-180" />
+          {t('backToExam')}
+        </Link>
+      ) : (
+        <Link
+          href="/exercises"
+          className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+        >
+          <ArrowLeft className="size-4 rtl:rotate-180" />
+          {t('backToExercises')}
+        </Link>
+      )}
 
       <div className="flex flex-col gap-8 lg:flex-row">
         {/* Main content */}

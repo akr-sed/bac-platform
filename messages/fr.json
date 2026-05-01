@@ -109,7 +109,9 @@
       "noSolutions": "Aucune solution pour le moment. Soyez le premier !",
       "similarExercises": "Exercices similaires",
       "postedBy": "Publié par",
-      "postedAt": "Publié le"
+      "postedAt": "Publié le",
+      "backToExam": "Retour à l'examen",
+      "backToExercises": "Retour aux exercices"
     }
   },
   "solutions": {
