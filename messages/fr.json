@@ -216,7 +216,10 @@
       "successRedirect": "Import réussi, redirection…",
       "errorParse": "Impossible d'analyser le JSON — vérifie le contenu.",
       "errorRequired": "Veuillez fournir un fichier ou coller du JSON.",
-      "errorServer": "L'import a échoué, réessaie."
+      "errorServer": "L'import a échoué, réessaie.",
+      "teacherOnly": "Cette page est réservée aux professeurs et administrateurs",
+      "teacherOnlyHint": "Si tu es professeur et tu vois ce message, contacte l'administration pour activer tes droits.",
+      "teacherOnlyAction": "Retour au tableau de bord"
     }
   },
   "categories": {

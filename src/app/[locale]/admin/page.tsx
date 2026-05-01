@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Shield,
   FolderTree,
+  Upload,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -101,6 +102,12 @@ export default function AdminPage() {
       label: 'Categories',
       description: 'Manage subjects, topics, subtopics',
       icon: FolderTree,
+    },
+    {
+      href: '/admin/import-exam' as const,
+      label: t('importExam.title'),
+      description: t('importExam.subtitle'),
+      icon: Upload,
     },
   ];
 

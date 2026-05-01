@@ -216,7 +216,10 @@
       "successRedirect": "Import succeeded, redirecting…",
       "errorParse": "Could not parse JSON — check the contents.",
       "errorRequired": "Please provide a file or paste JSON content.",
-      "errorServer": "Import failed, please try again."
+      "errorServer": "Import failed, please try again.",
+      "teacherOnly": "This page is for teachers and admins only",
+      "teacherOnlyHint": "If you are a teacher and see this message, contact the admin team to enable your access.",
+      "teacherOnlyAction": "Back to dashboard"
     }
   },
   "categories": {
