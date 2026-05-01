@@ -6,7 +6,6 @@ import Navbar from '@/components/layout/Navbar';
 import { Providers } from '@/components/providers/Providers';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
-import 'katex/dist/katex.min.css';
 
 const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],

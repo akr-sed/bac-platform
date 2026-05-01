@@ -1,16 +1,21 @@
+'use client';
+
 /**
  * MathText
  *
  * Renders prose that may contain inline (`$...$`) or block (`$$...$$`) math.
- * Math segments are rendered via KaTeX (already loaded globally), wrapped in
- * `dir="ltr"` so they survive the surrounding RTL prose intact.
+ * Math segments are rendered via KaTeX, wrapped in `dir="ltr"` so they
+ * survive the surrounding RTL prose intact.
  *
- * SSR-safe — `react-katex` and `katex` both run on the server.
- *
- * The KaTeX stylesheet must be imported once globally (see globals.css).
+ * Marked `'use client'` because `react-katex`'s `InlineMath` / `BlockMath`
+ * use client-only React hooks. Importing the KaTeX stylesheet here (rather
+ * than the locale layout) means the ~24 KB of CSS plus 60 font files only
+ * ships when a route actually mounts <MathText>, keeping the feed bundle
+ * under the 80 KB gzipped guardrail in CLAUDE.md.
  */
 import { Fragment } from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
 import { splitMathText } from '@/lib/math-text-splitter';
 import { cn } from '@/lib/utils';
 
@@ -45,9 +50,9 @@ export function MathText({ children, className, as: As = 'div' }: MathTextProps)
 
         // block
         return (
-          <span key={i} dir="ltr" className="my-2 block text-center">
+          <div key={i} dir="ltr" className="my-2 text-center">
             <BlockMath math={seg.value} />
-          </span>
+          </div>
         );
       })}
     </As>
