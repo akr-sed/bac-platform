@@ -1,51 +1,30 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { ChevronLeft } from 'lucide-react';
 import { SessionCard } from './session-card';
-import { Skeleton } from '@/components/ui/skeleton';
 import type { SessionDTO } from '@/types';
 
-export function UpcomingSessionsRail() {
-  const t = useTranslations('sessions');
-  const [items, setItems] = useState<SessionDTO[] | null>(null);
-  const [error, setError] = useState(false);
+interface Props {
+  /**
+   * Pre-fetched sessions, supplied by the parent server page. We deliberately
+   * do not fetch here so the dashboard can de-duplicate this list against the
+   * teacher-sessions section (a single server-side query, not three competing
+   * client-side fetches on first paint).
+   */
+  sessions: SessionDTO[];
+}
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch('/api/sessions?upcoming=true&limit=5', { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error())))
-      .then((data) => {
-        if (!cancelled) setItems(data.data ?? []);
-      })
-      .catch(() => {
-        if (!cancelled) setError(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+/**
+ * Server component. The rail used to be a client island that did its own
+ * `fetch('/api/sessions?upcoming=true...')` on mount, which compounded with
+ * the teacher-section fetch and the page's own fetch into three round trips
+ * on first paint. Now the parent page fetches once via `fetchSessionsList`
+ * and passes the result down — no client JS, no extra latency.
+ */
+export async function UpcomingSessionsRail({ sessions }: Props) {
+  const t = await getTranslations('sessions');
 
-  if (error) return null;
-
-  if (items === null) {
-    return (
-      <section className="mb-6">
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="font-heading text-lg font-semibold">{t('upcoming')}</h2>
-        </div>
-        <div className="flex gap-3 overflow-x-auto pb-2">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <Skeleton key={i} className="h-56 w-72 shrink-0 rounded-2xl" />
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (items.length === 0) return null;
+  if (sessions.length === 0) return null;
 
   return (
     <section className="mb-6" aria-labelledby="upcoming-sessions-heading">
@@ -68,7 +47,7 @@ export function UpcomingSessionsRail() {
         className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:thin]"
         role="list"
       >
-        {items.map((s) => (
+        {sessions.map((s) => (
           <div role="listitem" key={s._id}>
             <SessionCard session={s} variant="rail" />
           </div>

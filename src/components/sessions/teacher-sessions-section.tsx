@@ -1,40 +1,27 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Plus } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { Card } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
 import { SessionCard } from './session-card';
 import { cn } from '@/lib/utils';
 import type { SessionDTO } from '@/types';
 
 interface Props {
-  teacherId: string;
+  /**
+   * Pre-fetched teacher sessions, supplied by the parent server page. See
+   * the rail component for the rationale — we no longer fetch on mount in a
+   * client island; the dashboard does it once server-side and passes it in.
+   */
+  sessions: SessionDTO[];
 }
 
-export function TeacherSessionsSection({ teacherId }: Props) {
-  const t = useTranslations('sessions');
-  const [items, setItems] = useState<SessionDTO[] | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(`/api/sessions?teacherId=${teacherId}&limit=10`, {
-      cache: 'no-store',
-    })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error())))
-      .then((data) => {
-        if (!cancelled) setItems(data.data ?? []);
-      })
-      .catch(() => {
-        if (!cancelled) setItems([]);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [teacherId]);
+/**
+ * Server component variant of the teacher-only "My Sessions" rail on the
+ * dashboard.
+ */
+export async function TeacherSessionsSection({ sessions }: Props) {
+  const t = await getTranslations('sessions');
 
   return (
     <section className="mb-8" aria-labelledby="teacher-sessions-heading">
@@ -56,18 +43,13 @@ export function TeacherSessionsSection({ teacherId }: Props) {
           {t('create')}
         </Link>
       </div>
-      {items === null ? (
-        <div className="grid gap-3 sm:grid-cols-2">
-          <Skeleton className="h-48 rounded-2xl" />
-          <Skeleton className="h-48 rounded-2xl" />
-        </div>
-      ) : items.length === 0 ? (
+      {sessions.length === 0 ? (
         <Card className="p-6 text-center text-sm text-muted-foreground">
           {t('noSessions')}
         </Card>
       ) : (
         <div className="grid gap-3 sm:grid-cols-2">
-          {items.map((s) => (
+          {sessions.map((s) => (
             <SessionCard key={s._id} session={s} />
           ))}
         </div>

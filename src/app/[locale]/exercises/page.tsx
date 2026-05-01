@@ -17,7 +17,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Pagination } from '@/components/ui/pagination';
 import { ExerciseCard } from '@/components/exercises/exercise-card';
-import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-rail';
+import { UpcomingSessionsRailClient } from '@/components/sessions/upcoming-sessions-rail-client';
 import { cn } from '@/lib/utils';
 import type { FeedItemDTO } from '@/types';
 
@@ -148,7 +148,7 @@ export default function ExercisesPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <UpcomingSessionsRail />
+      <UpcomingSessionsRailClient />
 
       {/* Page header */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
