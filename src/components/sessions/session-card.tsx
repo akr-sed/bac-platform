@@ -75,7 +75,7 @@ export function SessionCard({ session, variant = 'full' }: Props) {
           {session.teacher.isVerifiedTeacher && (
             <span
               className="inline-flex size-4 items-center justify-center rounded-full bg-primary/15 text-[10px] font-bold text-primary"
-              aria-label="Verified teacher"
+              aria-label={t('verifiedTeacher')}
             >
               ✓
             </span>

@@ -1,4 +1,3 @@
-import { cookies, headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { getTranslations, getFormatter } from 'next-intl/server';
 import { Calendar, Clock, ExternalLink, Radio, Users } from 'lucide-react';
@@ -6,24 +5,7 @@ import { Card } from '@/components/ui/card';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { EnrollButton } from '@/components/sessions/enroll-button';
 import { getSession } from '@/lib/auth';
-import type { SessionDTO } from '@/types';
-
-async function fetchSession(id: string): Promise<SessionDTO | null> {
-  const h = await headers();
-  const c = await cookies();
-  const host = h.get('host');
-  const protocol = h.get('x-forwarded-proto') ?? 'http';
-  try {
-    const res = await fetch(`${protocol}://${host}/api/sessions/${id}`, {
-      cache: 'no-store',
-      headers: { cookie: c.toString() },
-    });
-    if (!res.ok) return null;
-    return (await res.json()) as SessionDTO;
-  } catch {
-    return null;
-  }
-}
+import { fetchSessionById } from '@/lib/sessions';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -33,12 +15,18 @@ export default async function SessionDetailPage({ params }: Props) {
   const { id } = await params;
   const t = await getTranslations('sessions');
   const format = await getFormatter();
-  const [session, auth] = await Promise.all([fetchSession(id), getSession()]);
+  const auth = await getSession();
+  const session = await fetchSessionById(id, auth?.userId ?? null);
   if (!session) notFound();
 
   const date = new Date(session.scheduledAt);
   const isCancelled = session.status === 'cancelled';
 
+  // Render the time in Africa/Algiers (the platform's primary audience) with
+  // an explicit short time-zone label so cross-locale users aren't left
+  // guessing which clock the session is on. Without `timeZoneName`, the
+  // formatter silently falls back to the runtime default which is wrong on
+  // Vercel (UTC) and ambiguous in the UI.
   const dateLabel = format.dateTime(date, {
     weekday: 'long',
     day: 'numeric',
@@ -46,6 +34,8 @@ export default async function SessionDetailPage({ params }: Props) {
     year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
+    timeZone: 'Africa/Algiers',
+    timeZoneName: 'short',
   });
 
   return (
@@ -89,7 +79,7 @@ export default async function SessionDetailPage({ params }: Props) {
             <div>
               <p className="font-semibold">{session.teacher.name}</p>
               {session.teacher.isVerifiedTeacher && (
-                <p className="text-xs text-primary">✓ {t('liveBadge')}</p>
+                <p className="text-xs text-primary">✓ {t('verifiedTeacher')}</p>
               )}
             </div>
           </div>
@@ -111,7 +101,7 @@ export default async function SessionDetailPage({ params }: Props) {
             <Clock className="mt-0.5 size-4 shrink-0 text-primary" />
             <div>
               <p className="text-xs uppercase text-muted-foreground">
-                {t('duration', { minutes: session.durationMinutes })}
+                {t('durationLabel')}
               </p>
               <span>{t('duration', { minutes: session.durationMinutes })}</span>
             </div>
@@ -120,7 +110,7 @@ export default async function SessionDetailPage({ params }: Props) {
             <Users className="mt-0.5 size-4 shrink-0 text-primary" />
             <div>
               <p className="text-xs uppercase text-muted-foreground">
-                {t('topicsLabel')}
+                {t('capacityLabel')}
               </p>
               <span>
                 {session.capacity != null

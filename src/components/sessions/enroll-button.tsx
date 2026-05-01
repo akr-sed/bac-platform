@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Check, UserPlus, X } from 'lucide-react';
@@ -32,6 +32,11 @@ export function EnrollButton({
   const [count, setCount] = useState(initialEnrolledCount);
   const [pending, setPending] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  // `pending` lives in state, which means React batches multiple synchronous
+  // clicks before the setter takes effect — both clicks sail past the
+  // `if (pending) return` guard and fire two POSTs. A ref is updated
+  // synchronously and short-circuits the second click in the same tick.
+  const inFlightRef = useRef(false);
 
   if (isOwner) {
     return (
@@ -65,14 +70,17 @@ export function EnrollButton({
     !enrolled && capacity != null && count >= capacity;
 
   async function handle() {
-    if (pending) return;
+    if (inFlightRef.current || pending) return;
+    inFlightRef.current = true;
     setErrorMsg(null);
 
     const wasEnrolled = enrolled;
     const wasCount = count;
     const next = !enrolled;
+    // Clamp the optimistic count at >= 0 to avoid flashing -1 on unenroll
+    // when the in-memory `count` is stale at 0.
     setEnrolled(next);
-    setCount(count + (next ? 1 : -1));
+    setCount(Math.max(0, count + (next ? 1 : -1)));
     setPending(true);
 
     try {
@@ -94,6 +102,7 @@ export function EnrollButton({
       setErrorMsg(err instanceof Error ? err.message : 'error');
     } finally {
       setPending(false);
+      inFlightRef.current = false;
     }
   }
 

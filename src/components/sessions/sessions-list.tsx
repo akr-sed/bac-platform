@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Calendar } from 'lucide-react';
 import { SessionCard } from './session-card';
@@ -31,8 +31,16 @@ export function SessionsList({ initialSessions }: Props) {
   const [subject, setSubject] = useState<string>('');
   const [sessions, setSessions] = useState<SessionDTO[]>(initialSessions);
   const [loading, setLoading] = useState(false);
+  // Track whether the user has interacted with the filter at least once.
+  // The first render hydrates from the server-fetched `initialSessions`, so
+  // we skip the network round-trip until the user actually changes the
+  // filter — including switching back to "All subjects". The previous
+  // `if (subject !== '')` guard meant clicking "All" after filtering by
+  // math left the user staring at the math-filtered list.
+  const hasInteractedRef = useRef(false);
 
   useEffect(() => {
+    if (!hasInteractedRef.current) return;
     let cancelled = false;
     async function fetchSessions() {
       setLoading(true);
@@ -53,11 +61,16 @@ export function SessionsList({ initialSessions }: Props) {
         if (!cancelled) setLoading(false);
       }
     }
-    if (subject !== '') fetchSessions();
+    fetchSessions();
     return () => {
       cancelled = true;
     };
   }, [subject]);
+
+  function handleSubjectChange(next: string) {
+    hasInteractedRef.current = true;
+    setSubject(next);
+  }
 
   return (
     <div className="flex flex-col gap-6 lg:flex-row">
@@ -73,7 +86,7 @@ export function SessionsList({ initialSessions }: Props) {
                 name="subject"
                 value=""
                 checked={subject === ''}
-                onChange={() => setSubject('')}
+                onChange={() => handleSubjectChange('')}
                 className="accent-[var(--primary)]"
               />
               <span>{t('filters.all')}</span>
@@ -88,7 +101,7 @@ export function SessionsList({ initialSessions }: Props) {
                   name="subject"
                   value={s}
                   checked={subject === s}
-                  onChange={() => setSubject(s)}
+                  onChange={() => handleSubjectChange(s)}
                   className="accent-[var(--primary)]"
                 />
                 <span>{tSubjects(s)}</span>
