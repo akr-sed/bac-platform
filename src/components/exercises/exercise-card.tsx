@@ -23,9 +23,9 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
   return (
     <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md">
       <header className="flex items-center gap-3 p-4">
-        <UserAvatar src={exercise.author.avatar} name={exercise.author.name} size="sm" />
+        <UserAvatar src={exercise.author?.avatar} name={exercise.author?.name} size="sm" />
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{exercise.author.name}</p>
+          <p className="truncate text-sm font-semibold">{exercise.author?.name ?? '—'}</p>
           <p className="text-xs text-muted-foreground">
             {exercise.subject} · <time dateTime={exercise.lastActivityAt}>{relativeTime(exercise.lastActivityAt)}</time>
           </p>

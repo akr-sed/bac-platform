@@ -105,6 +105,7 @@ export function EnrollButton({
       if (typeof data.enrolledCount === 'number') {
         setCount(data.enrolledCount);
       }
+      router.refresh();
     } catch (err) {
       setEnrolled(wasEnrolled);
       setCount(wasCount);

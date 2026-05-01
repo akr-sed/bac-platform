@@ -49,3 +49,20 @@ next-env.d.ts
 .superpowers/
 design-system/
 docs/superpowers/
+
+# Playwright MCP test artifacts
+.playwright-mcp/
+*.playwright-mcp.png
+
+# UI/code review artifacts
+REVIEW.md
+REVIEW2.md
+UI_REVIEW_*.md
+
+# Local screenshots from manual QA
+/exams-empty-ar.png
+/exercise-*.png
+/exercises-list-ar.png
+/session-*.png
+/sessions-*.png
+/unenroll-dialog.png
