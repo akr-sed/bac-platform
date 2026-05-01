@@ -330,6 +330,8 @@
     "enrolling": "Inscription…",
     "enrolled": "Vous êtes inscrit",
     "unenroll": "Annuler l'inscription",
+    "unenrollConfirmTitle": "Annuler votre inscription ?",
+    "unenrollConfirmDescription": "Vous perdrez votre place dans cette session. Vous pourrez vous réinscrire tant qu'elle n'est pas complète.",
     "full": "Session complète",
     "cancelled": "Cette session a été annulée",
     "ownerCannotEnroll": "Vous êtes le professeur de cette session",

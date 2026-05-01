@@ -330,6 +330,8 @@
     "enrolling": "Enrolling…",
     "enrolled": "You're enrolled",
     "unenroll": "Cancel enrollment",
+    "unenrollConfirmTitle": "Cancel your enrollment?",
+    "unenrollConfirmDescription": "You'll lose your spot in this session. You can re-enroll as long as it's not full.",
     "full": "Session full",
     "cancelled": "This session has been cancelled",
     "ownerCannotEnroll": "You are the teacher of this session",

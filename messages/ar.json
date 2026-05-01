@@ -330,6 +330,8 @@
     "enrolling": "جارٍ التسجيل…",
     "enrolled": "أنت مسجّل",
     "unenroll": "إلغاء التسجيل",
+    "unenrollConfirmTitle": "هل تريد إلغاء التسجيل؟",
+    "unenrollConfirmDescription": "ستفقد مقعدك في هذه الجلسة. يمكنك إعادة التسجيل لاحقاً ما لم تمتلئ.",
     "full": "الجلسة مكتملة",
     "cancelled": "تم إلغاء هذه الجلسة",
     "ownerCannotEnroll": "أنت أستاذ هذه الجلسة",

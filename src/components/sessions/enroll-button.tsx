@@ -3,8 +3,15 @@
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Check, UserPlus, X } from 'lucide-react';
+import { Check, Loader2, UserPlus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
 interface Props {
@@ -27,11 +34,13 @@ export function EnrollButton({
   isCancelled,
 }: Props) {
   const t = useTranslations('sessions');
+  const tCommon = useTranslations('common');
   const router = useRouter();
   const [enrolled, setEnrolled] = useState(initialEnrolled);
   const [count, setCount] = useState(initialEnrolledCount);
   const [pending, setPending] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [confirmUnenroll, setConfirmUnenroll] = useState(false);
   // `pending` lives in state, which means React batches multiple synchronous
   // clicks before the setter takes effect — both clicks sail past the
   // `if (pending) return` guard and fire two POSTs. A ref is updated
@@ -109,44 +118,81 @@ export function EnrollButton({
   return (
     <div className="space-y-2">
       <Button
-        onClick={handle}
+        onClick={enrolled && !pending ? () => setConfirmUnenroll(true) : handle}
         disabled={pending || isFull}
         variant={enrolled ? 'outline' : 'default'}
         className={cn('w-full', enrolled && 'border-primary text-primary')}
         aria-pressed={enrolled}
+        aria-busy={pending || undefined}
       >
         {pending ? (
-          t('enrolling')
+          <>
+            <Loader2 className="size-4 animate-spin" />
+            {t('enrolling')}
+          </>
         ) : enrolled ? (
           <>
-            <Check className="me-1.5 size-4" />
+            <Check className="size-4" />
             {t('enrolled')}
           </>
         ) : isFull ? (
           <>
-            <X className="me-1.5 size-4" />
+            <X className="size-4" />
             {t('full')}
           </>
         ) : (
           <>
-            <UserPlus className="me-1.5 size-4" />
+            <UserPlus className="size-4" />
             {t('enroll')}
           </>
         )}
       </Button>
-      {enrolled && !pending && (
-        <button
-          onClick={handle}
-          className="block w-full text-center text-xs text-muted-foreground underline-offset-2 hover:underline"
-        >
-          {t('unenroll')}
-        </button>
-      )}
       {errorMsg && (
         <p className="text-xs text-destructive" role="alert">
           {errorMsg}
         </p>
       )}
+
+      <Dialog
+        open={confirmUnenroll}
+        onOpenChange={(open) => {
+          if (!pending) setConfirmUnenroll(open);
+        }}
+      >
+        <DialogContent className="max-w-sm rounded-xl">
+          <DialogHeader>
+            <DialogTitle className="font-heading text-xl">
+              {t('unenrollConfirmTitle')}
+            </DialogTitle>
+            <DialogDescription>
+              {t('unenrollConfirmDescription')}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end gap-3 pt-4">
+            <Button
+              variant="outline"
+              className="cursor-pointer rounded-xl"
+              onClick={() => setConfirmUnenroll(false)}
+              disabled={pending}
+            >
+              {tCommon('cancel')}
+            </Button>
+            <Button
+              variant="destructive"
+              className="cursor-pointer rounded-xl"
+              disabled={pending}
+              aria-busy={pending || undefined}
+              onClick={async () => {
+                await handle();
+                setConfirmUnenroll(false);
+              }}
+            >
+              {pending && <Loader2 className="size-4 animate-spin" />}
+              {t('unenroll')}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
