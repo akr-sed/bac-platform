@@ -21,6 +21,27 @@ export interface ExerciseDTO {
   author: UserDTO;
   attachments: string[];
   solutionCount: number;
+  // Optional exam-import metadata.
+  examId?: string;
+  examNumber?: number;
+  concepts?: string[];
+  marks?: number;
+  sourcePage?: number;
+  figureDescriptions?: string[];
+  hasMath?: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ExamDTO {
+  _id: string;
+  title: string;
+  year: number;
+  subject: string;
+  level: string;
+  source: { filename: string; parsedExamId: string };
+  exerciseIds: string[];
+  importedBy: string;
   createdAt: string;
   updatedAt: string;
 }

@@ -191,7 +191,32 @@
     "totalUsers": "Total Users",
     "totalExercises": "Total Exercises",
     "totalSolutions": "Total Solutions",
-    "pendingReports": "Pending Reports"
+    "pendingReports": "Pending Reports",
+    "importExam": {
+      "title": "Import a BAC Exam",
+      "subtitle": "Upload the parser-generated JSON file or paste its contents, then preview the exercise list before importing.",
+      "uploadLabel": "JSON file",
+      "uploadHelp": "Pick a .json file produced by the parsing pipeline",
+      "pasteLabel": "Or paste JSON contents here",
+      "pastePlaceholder": "{\n  \"exam_id\": \"...\",\n  \"exercises\": [...]\n}",
+      "examMetadata": "Exam metadata",
+      "fieldTitle": "Exam title",
+      "fieldYear": "Year",
+      "fieldSubject": "Subject",
+      "fieldLevel": "Level",
+      "preview": "Exercise preview",
+      "previewEmpty": "Nothing to preview yet. Upload a file or paste JSON.",
+      "previewExerciseLabel": "Exercise {number}",
+      "previewMarks": "{marks} pts",
+      "previewHasFigure": "Has figure",
+      "previewPage": "Page {page}",
+      "submit": "Import exam",
+      "submitting": "Importing…",
+      "successRedirect": "Import succeeded, redirecting…",
+      "errorParse": "Could not parse JSON — check the contents.",
+      "errorRequired": "Please provide a file or paste JSON content.",
+      "errorServer": "Import failed, please try again."
+    }
   },
   "categories": {
     "manage": "Manage Categories",
@@ -242,6 +267,19 @@
     "tab": "Saved",
     "empty": "No saved exercises yet",
     "loadError": "Failed to load saved exercises"
+  },
+  "exam": {
+    "headerLabel": "BAC Exam",
+    "year": "Year",
+    "subject": "Subject",
+    "level": "Level",
+    "exerciseCount": "{count, plural, one {# exercise} other {# exercises}}",
+    "pageHeading": "Page {page}",
+    "exerciseLabel": "Exercise {number}",
+    "marks": "{marks} pts",
+    "openExercise": "Open exercise",
+    "noExercises": "No exercises in this exam",
+    "notFound": "Exam not found"
   },
   "subjects": {
     "math": "Math",

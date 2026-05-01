@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {
@@ -30,6 +30,8 @@ import { SimilarExercisesSidebar } from '@/components/exercises/similar-exercise
 import { CommentsThread } from '@/components/exercises/comments-thread';
 import { PdfPreview } from '@/components/exercises/pdf-preview';
 import { ImageLightbox } from '@/components/exercises/image-lightbox';
+import { MathText } from '@/components/ui/math-text';
+import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 import { useAuth } from '@/components/providers/AuthProvider';
 import {
   Dialog,
@@ -58,6 +60,8 @@ interface Exercise {
   author?: Author;
   attachments?: string[];
   createdAt?: string;
+  hasMath?: boolean;
+  figureDescriptions?: string[];
 }
 
 interface Solution {
@@ -76,6 +80,9 @@ export default function ExerciseDetailPage() {
   const tSol = useTranslations('solutions');
   const tAi = useTranslations('ai');
   const tCommon = useTranslations('common');
+  const locale = useLocale();
+  const topicLocale: ExamTopicLocale =
+    locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
   const params = useParams();
   const id = params.id as string;
   const router = useRouter();
@@ -183,7 +190,7 @@ export default function ExerciseDetailPage() {
                     <Badge variant="secondary" className="text-xs">{exercise.subject}</Badge>
                   )}
                   {exercise.topic && (
-                    <Badge variant="outline" className="text-xs">{exercise.topic}</Badge>
+                    <Badge variant="outline" className="text-xs">{topicLabel(exercise.topic, topicLocale)}</Badge>
                   )}
                   {exercise.subtopic && (
                     <Badge variant="outline" className="text-xs">{exercise.subtopic}</Badge>
@@ -191,9 +198,25 @@ export default function ExerciseDetailPage() {
                 </div>
               )}
 
-              <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
-                {exercise?.description ?? ''}
-              </p>
+              {exercise?.hasMath ? (
+                <MathText className="text-base leading-relaxed text-foreground/90">
+                  {exercise.description}
+                </MathText>
+              ) : (
+                <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
+                  {exercise?.description ?? ''}
+                </p>
+              )}
+
+              {exercise?.figureDescriptions && exercise.figureDescriptions.length > 0 && (
+                <ul className="space-y-2 border-s-2 border-border ps-4">
+                  {exercise.figureDescriptions.map((d, i) => (
+                    <li key={i} className="text-sm italic leading-relaxed text-muted-foreground">
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {/* Attachments */}
               {exercise?.attachments && exercise.attachments.length > 0 && (
