@@ -7,6 +7,16 @@ import Session from '@/models/Session';
 import SessionEnrollment from '@/models/SessionEnrollment';
 import { sessionToDTO } from '@/lib/session-dto';
 
+// See note in POST schema: enforce http(s) allowlist on meetingUrl to block
+// `javascript:` / `data:` URI XSS at the API boundary.
+const httpUrlSchema = z
+  .string()
+  .url('meetingUrl must be a valid URL')
+  .refine(
+    (u) => /^https?:\/\//i.test(u),
+    'meetingUrl must use http or https'
+  );
+
 const updateSessionSchema = z
   .object({
     title: z.string().min(1).max(200).optional(),
@@ -19,7 +29,7 @@ const updateSessionSchema = z
       .refine((v) => !Number.isNaN(Date.parse(v)), 'Invalid scheduledAt')
       .optional(),
     durationMinutes: z.number().int().min(15).max(480).optional(),
-    meetingUrl: z.string().url('meetingUrl must be a valid URL').optional(),
+    meetingUrl: httpUrlSchema.optional(),
     capacity: z.number().int().min(1).nullable().optional(),
     priceDA: z.number().min(0).optional(),
     status: z

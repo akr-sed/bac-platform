@@ -7,6 +7,17 @@ import Session from '@/models/Session';
 import SessionEnrollment from '@/models/SessionEnrollment';
 import { sessionToDTO } from '@/lib/session-dto';
 
+// Restrict meetingUrl to http(s). Zod's `.url()` would otherwise accept
+// `javascript:` and `data:` schemes, opening an XSS vector when the URL is
+// rendered into an `<a href>` on the detail page.
+const httpUrlSchema = z
+  .string()
+  .url('meetingUrl must be a valid URL')
+  .refine(
+    (u) => /^https?:\/\//i.test(u),
+    'meetingUrl must use http or https'
+  );
+
 const createSessionSchema = z.object({
   title: z.string().min(1).max(200),
   description: z.string().optional().default(''),
@@ -17,7 +28,7 @@ const createSessionSchema = z.object({
     .string()
     .refine((v) => !Number.isNaN(Date.parse(v)), 'Invalid scheduledAt'),
   durationMinutes: z.number().int().min(15).max(480),
-  meetingUrl: z.string().url('meetingUrl must be a valid URL'),
+  meetingUrl: httpUrlSchema,
   capacity: z.number().int().min(1).nullable().optional().default(null),
   priceDA: z.number().min(0).optional().default(0),
 });
