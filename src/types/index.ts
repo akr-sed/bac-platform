@@ -117,3 +117,42 @@ export interface FeedItemDTO {
   isLiked?: boolean;
   isSaved?: boolean;
 }
+
+export type SessionStatus = 'scheduled' | 'live' | 'completed' | 'cancelled';
+
+export type SessionTeacherDTO = Pick<
+  UserDTO,
+  '_id' | 'name' | 'avatar' | 'role' | 'isVerifiedTeacher'
+>;
+
+export interface SessionDTO {
+  _id: string;
+  title: string;
+  description: string;
+  teacher: SessionTeacherDTO;
+  subject: string;
+  topics: string[];
+  exerciseIds: string[];
+  scheduledAt: string;
+  durationMinutes: number;
+  /**
+   * Only present when the requester is the session's teacher or an enrolled
+   * student. Hidden from anonymous / non-enrolled students.
+   */
+  meetingUrl?: string;
+  capacity: number | null;
+  priceDA: number;
+  status: SessionStatus;
+  enrolledCount: number;
+  isEnrolled?: boolean;
+  isOwner?: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface SessionEnrollmentDTO {
+  _id: string;
+  userId: string;
+  sessionId: string;
+  createdAt: string;
+}
