@@ -193,6 +193,92 @@ describe('POST /api/exams/import — topic-slug storage', () => {
   });
 });
 
+describe('POST /api/exams/import — hasMath detection', () => {
+  it('does not flip hasMath for a lone dollar sign like "$5"', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const payload = {
+      ...validPayload,
+      exam_id: 'bac-2099-math-2',
+      exercises: [
+        {
+          ...validPayload.exercises[0],
+          statement: 'the price was $5 in 2020',
+        },
+      ],
+    };
+
+    await POST(buildRequest(payload));
+    const created = vi.mocked(Exercise.create).mock.calls[0][0] as {
+      hasMath: boolean;
+    };
+    expect(created.hasMath).toBe(false);
+  });
+
+  it('flips hasMath when a real `$x$` math segment is present', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const payload = {
+      ...validPayload,
+      exam_id: 'bac-2099-math-3',
+      exercises: [
+        {
+          ...validPayload.exercises[0],
+          statement: 'compute $x^2 + 1$ for x in N',
+        },
+      ],
+    };
+
+    await POST(buildRequest(payload));
+    const created = vi.mocked(Exercise.create).mock.calls[0][0] as {
+      hasMath: boolean;
+    };
+    expect(created.hasMath).toBe(true);
+  });
+
+  it('flips hasMath when a `$$...$$` block is present', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    vi.mocked(Exam.create).mockResolvedValue(examMock as never);
+    vi.mocked(Exercise.create).mockResolvedValue({ _id: 'exercise-id' } as never);
+
+    const payload = {
+      ...validPayload,
+      exam_id: 'bac-2099-math-4',
+      exercises: [
+        {
+          ...validPayload.exercises[0],
+          statement: 'see formula $$\\sum_i a_i$$ above',
+        },
+      ],
+    };
+
+    await POST(buildRequest(payload));
+    const created = vi.mocked(Exercise.create).mock.calls[0][0] as {
+      hasMath: boolean;
+    };
+    expect(created.hasMath).toBe(true);
+  });
+});
+
 describe('POST /api/exams/import — duplicate-exam handling', () => {
   it('returns 409 when MongoDB raises a duplicate-key error on parsedExamId', async () => {
     vi.mocked(getSession).mockResolvedValue({

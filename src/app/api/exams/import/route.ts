@@ -139,7 +139,12 @@ export async function POST(request: NextRequest) {
         marks: ex.marks ?? undefined,
         sourcePage: ex.source_page ?? undefined,
         figureDescriptions: figureDescriptions.length > 0 ? figureDescriptions : undefined,
-        hasMath: /\$/.test(ex.statement),
+        // Strict math detection: require a matching pair of `$...$` or
+        // `$$...$$`, ignoring escaped `\$`. A lone dollar sign (e.g. "$5")
+        // does not flip the flag. Mirrors the splitter in math-text-splitter.ts.
+        hasMath:
+          /(?<!\\)\$\$[\s\S]+?\$\$/.test(ex.statement) ||
+          /(?<!\\)\$[^$\n]+?\$/.test(ex.statement),
       });
 
       createdExerciseIds.push(exerciseDoc._id as Types.ObjectId);
