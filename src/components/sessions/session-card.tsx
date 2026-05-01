@@ -36,7 +36,11 @@ export function SessionCard({ session, variant = 'full' }: Props) {
     <Link
       href={`/sessions/${session._id}` as `/sessions/${string}`}
       className={cn(
-        'group relative block overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/5 via-card to-secondary/5 shadow-sm ring-1 ring-foreground/5 transition hover:shadow-md',
+        // Drop the ring-1: the existing border + shadow already separates
+        // the card from the page, and stacking gradient + border + ring +
+        // shadow on a 288px rail card reads as visual noise next to the
+        // flat exercise-card in the feed.
+        'group relative block overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/5 via-card to-secondary/5 shadow-sm transition hover:shadow-md',
         isCancelled && 'opacity-60',
         isRail ? 'w-72 shrink-0' : 'w-full'
       )}
