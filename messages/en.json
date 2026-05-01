@@ -29,7 +29,8 @@
     "login": "Login",
     "register": "Register",
     "logout": "Logout",
-    "language": "Language"
+    "language": "Language",
+    "library": "Library"
   },
   "auth": {
     "login": {
@@ -370,5 +371,11 @@
       "success": "Session created successfully",
       "error": "Failed to create session"
     }
+  },
+  "library": {
+    "eyebrow": "BAC Library",
+    "title": "Exercise Bank",
+    "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
+    "empty": "No exercises have been imported yet."
   }
 }

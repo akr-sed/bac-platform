@@ -29,7 +29,8 @@
     "login": "Connexion",
     "register": "Inscription",
     "logout": "Déconnexion",
-    "language": "Langue"
+    "language": "Langue",
+    "library": "Banque"
   },
   "auth": {
     "login": {
@@ -370,5 +371,11 @@
       "success": "Session créée avec succès",
       "error": "Impossible de créer la session"
     }
+  },
+  "library": {
+    "eyebrow": "Bibliothèque BAC",
+    "title": "Banque d'exercices",
+    "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
+    "empty": "Aucun exercice n'a encore été importé."
   }
 }

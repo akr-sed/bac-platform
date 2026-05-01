@@ -127,6 +127,7 @@ export default function ExercisesPage() {
         const params = new URLSearchParams({
           page: String(currentPage),
           limit: '9',
+          source: 'community',
         });
         if (selectedDifficulty) params.set('difficulty', selectedDifficulty);
         if (searchQuery) params.set('search', searchQuery);

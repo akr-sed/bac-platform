@@ -31,6 +31,7 @@ export async function GET(request: NextRequest) {
     const topic = searchParams.get('topic');
     const difficulty = searchParams.get('difficulty');
     const search = searchParams.get('search');
+    const source = searchParams.get('source'); // 'community' | 'library' | null (= both)
 
     const filter: Record<string, unknown> = {};
 
@@ -39,6 +40,8 @@ export async function GET(request: NextRequest) {
     if (difficulty && ['easy', 'medium', 'hard'].includes(difficulty)) {
       filter.difficulty = difficulty;
     }
+    if (source === 'community') filter.examId = { $exists: false };
+    if (source === 'library') filter.examId = { $exists: true };
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: 'i' } },
