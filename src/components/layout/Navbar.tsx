@@ -26,6 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/' as const, label: t('home') },
     { href: '/exercises' as const, label: t('exercises') },
+    { href: '/sessions' as const, label: t('sessions') },
   ];
 
   return (
