@@ -114,7 +114,8 @@ export async function POST(_request: NextRequest, context: RouteContext) {
       },
       { status: 201 }
     );
-  } catch {
+  } catch (err) {
+    console.error('[sessions:enroll:POST]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }
@@ -149,7 +150,8 @@ export async function DELETE(_request: NextRequest, context: RouteContext) {
       enrolledCount: refreshed?.enrolledCount ?? 0,
       isEnrolled: false,
     });
-  } catch {
+  } catch (err) {
+    console.error('[sessions:enroll:DELETE]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }

@@ -91,7 +91,8 @@ export async function GET(_request: NextRequest, context: RouteContext) {
         }
       )
     );
-  } catch {
+  } catch (err) {
+    console.error('[sessions:GET/:id]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }
@@ -129,6 +130,21 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
       );
     }
 
+    // Cancellation is final: once a session is `cancelled`, it cannot be
+    // resurrected via PATCH. The DELETE route soft-deletes by flipping
+    // status, so allowing the same teacher to PATCH back to `scheduled`
+    // would reopen the session and bypass the cancellation cascade.
+    if (
+      sessionDoc.status === 'cancelled' &&
+      result.data.status &&
+      result.data.status !== 'cancelled'
+    ) {
+      return NextResponse.json(
+        { error: 'Cancelled sessions cannot be reopened' },
+        { status: 400 }
+      );
+    }
+
     const update: Record<string, unknown> = { ...result.data };
     if (typeof update.scheduledAt === 'string') {
       update.scheduledAt = new Date(update.scheduledAt);
@@ -158,7 +174,8 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
         includeMeetingUrl: true,
       })
     );
-  } catch {
+  } catch (err) {
+    console.error('[sessions:PATCH]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }
@@ -191,7 +208,8 @@ export async function DELETE(_request: NextRequest, context: RouteContext) {
     sessionDoc.status = 'cancelled';
     await sessionDoc.save();
     return NextResponse.json({ success: true, status: 'cancelled' });
-  } catch {
+  } catch (err) {
+    console.error('[sessions:DELETE]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }

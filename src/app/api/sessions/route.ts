@@ -64,6 +64,16 @@ export async function GET(request: NextRequest) {
     }
     if (upcoming) {
       filter.scheduledAt = { $gte: new Date() };
+      // `upcoming=true` should never include cancelled sessions. If a caller
+      // explicitly asked for `status=cancelled` together with `upcoming`,
+      // reject the combination as nonsensical instead of silently returning
+      // "upcoming cancelled sessions".
+      if (filter.status === 'cancelled' || filter.status === 'completed') {
+        return NextResponse.json(
+          { error: 'upcoming=true is incompatible with status=cancelled or completed' },
+          { status: 400 }
+        );
+      }
       if (!filter.status) filter.status = { $in: ['scheduled', 'live'] };
     }
     if (teacherId) {
@@ -119,7 +129,8 @@ export async function GET(request: NextRequest) {
       page,
       totalPages: Math.ceil(total / limit) || 1,
     });
-  } catch {
+  } catch (err) {
+    console.error('[sessions:GET]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }
@@ -194,7 +205,8 @@ export async function POST(request: NextRequest) {
       }),
       { status: 201 }
     );
-  } catch {
+  } catch (err) {
+    console.error('[sessions:POST]', err);
     return NextResponse.json(
       { error: 'Server error, please try again' },
       { status: 500 }
