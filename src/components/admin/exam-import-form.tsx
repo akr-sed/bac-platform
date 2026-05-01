@@ -187,7 +187,7 @@ export function ExamImportForm() {
           </div>
 
           {parseError && (
-            <p className="flex items-center gap-2 text-sm text-destructive">
+            <p className="flex items-center gap-2 text-sm text-destructive" role="alert">
               <AlertTriangle className="size-4" />
               {parseError}
             </p>
@@ -297,7 +297,7 @@ export function ExamImportForm() {
       </Card>
 
       {submitError && (
-        <p className="flex items-center gap-2 text-sm text-destructive">
+        <p className="flex items-center gap-2 text-sm text-destructive" role="alert">
           <AlertTriangle className="size-4" />
           {submitError}
         </p>

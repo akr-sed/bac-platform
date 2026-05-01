@@ -1,4 +1,4 @@
-import { Calendar, Clock, Radio, Users } from 'lucide-react';
+import { BadgeCheck, Calendar, Clock, Radio, Users } from 'lucide-react';
 import { useTranslations, useLocale, useFormatter } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
@@ -83,12 +83,10 @@ export function SessionCard({ session, variant = 'full' }: Props) {
             {session.teacher.name}
           </span>
           {session.teacher.isVerifiedTeacher && (
-            <span
-              className="inline-flex size-4 items-center justify-center rounded-full bg-primary/15 text-[10px] font-bold text-primary"
+            <BadgeCheck
+              className="size-4 shrink-0 text-primary"
               aria-label={t('verifiedTeacher')}
-            >
-              ✓
-            </span>
+            />
           )}
         </div>
 

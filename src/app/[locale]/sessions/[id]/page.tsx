@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getTranslations, getFormatter } from 'next-intl/server';
-import { Calendar, Clock, ExternalLink, Radio, Users, XCircle } from 'lucide-react';
+import { BadgeCheck, Calendar, Clock, ExternalLink, Radio, Users, XCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { EnrollButton } from '@/components/sessions/enroll-button';
@@ -88,7 +88,10 @@ export default async function SessionDetailPage({ params }: Props) {
             <div>
               <p className="font-semibold">{session.teacher.name}</p>
               {session.teacher.isVerifiedTeacher && (
-                <p className="text-xs text-primary">✓ {t('verifiedTeacher')}</p>
+                <p className="inline-flex items-center gap-1 text-xs text-primary">
+                  <BadgeCheck className="size-3.5" aria-hidden="true" />
+                  {t('verifiedTeacher')}
+                </p>
               )}
             </div>
           </div>
