@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
+import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 
 type RouteParams = { params: Promise<{ id: string; locale: string }> };
 
@@ -124,10 +125,12 @@ export default async function ExamPage({ params }: RouteParams) {
               </h2>
 
               <ol className="space-y-3">
-                {items.map((ex) => {
+                {items.map((ex, idx) => {
                   const localizedTopic = ex.topic
                     ? topicLabel(ex.topic, topicLocale)
                     : '';
+                  const labelNumber =
+                    typeof ex.examNumber === 'number' ? ex.examNumber : idx + 1;
                   return (
                     <li key={ex._id}>
                       <Link
@@ -138,12 +141,10 @@ export default async function ExamPage({ params }: RouteParams) {
                           <CardContent className="flex items-start justify-between gap-4 p-0">
                             <div className="min-w-0 flex-1">
                               <p className="text-xs font-medium text-muted-foreground">
-                                {typeof ex.examNumber === 'number'
-                                  ? t('exerciseLabel', { number: ex.examNumber })
-                                  : null}
+                                {t('exerciseLabel', { number: labelNumber })}
                               </p>
                               <p className="mt-1 truncate font-medium text-foreground">
-                                {ex.title}
+                                <bdi>{resolveExerciseTitle(ex, topicLocale)}</bdi>
                               </p>
                               <div className="mt-2 flex flex-wrap items-center gap-2">
                                 {localizedTopic && (

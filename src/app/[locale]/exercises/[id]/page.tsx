@@ -32,6 +32,7 @@ import { PdfPreview } from '@/components/exercises/pdf-preview';
 import { ImageLightbox } from '@/components/exercises/image-lightbox';
 import { MathText } from '@/components/ui/math-text';
 import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
+import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { useAuth } from '@/components/providers/AuthProvider';
 import {
   Dialog,
@@ -62,6 +63,8 @@ interface Exercise {
   createdAt?: string;
   hasMath?: boolean;
   figureDescriptions?: string[];
+  examId?: string;
+  examNumber?: number;
 }
 
 interface Solution {
@@ -177,7 +180,7 @@ export default function ExerciseDetailPage() {
             <CardContent className="space-y-5 p-0">
               <div className="flex flex-wrap items-start gap-3">
                 <h1 className="flex-1 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  {exercise?.title ?? 'Exercise'}
+                  <bdi>{resolveExerciseTitle(exercise, locale) || 'Exercise'}</bdi>
                 </h1>
                 {exercise?.difficulty && (
                   <DifficultyBadge level={exercise.difficulty} />

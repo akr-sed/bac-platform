@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { MessageCircle, FileText } from 'lucide-react';
 import { firstPreview, imageUrl, blurUrl } from '@/lib/cloudinary-preview';
+import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { LikeButton } from './like-button';
 import { SaveButton } from './save-button';
 import type { FeedItemDTO } from '@/types';
@@ -15,6 +17,8 @@ interface Props {
 
 export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
   const preview = firstPreview(exercise.attachments);
+  const locale = useLocale();
+  const localizedTitle = resolveExerciseTitle(exercise, locale);
 
   return (
     <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md">
@@ -30,7 +34,9 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
       </header>
 
       <Link href={`/exercises/${exercise._id}`} className="block">
-        <h3 className="line-clamp-2 px-4 pb-3 font-heading text-lg font-semibold">{exercise.title}</h3>
+        <h3 className="line-clamp-2 px-4 pb-3 font-heading text-lg font-semibold">
+          <bdi>{localizedTitle}</bdi>
+        </h3>
 
         <div className="relative mx-4 mb-4 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
           {preview.kind === 'image' && preview.url ? (
