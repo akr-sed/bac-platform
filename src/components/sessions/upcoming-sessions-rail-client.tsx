@@ -40,7 +40,9 @@ export function UpcomingSessionsRailClient() {
     return (
       <section className="mb-6">
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="font-heading text-lg font-semibold">{t('upcoming')}</h2>
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('upcoming')}
+          </h2>
         </div>
         {/* Skeleton dims must match the rendered SessionCard rail variant
             (see SESSION_RAIL_CARD_HEIGHT) so first paint → hydration is
@@ -64,7 +66,7 @@ export function UpcomingSessionsRailClient() {
       <div className="mb-3 flex items-center justify-between">
         <h2
           id="upcoming-sessions-heading-client"
-          className="font-heading text-lg font-semibold"
+          className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
         >
           {t('upcoming')}
         </h2>

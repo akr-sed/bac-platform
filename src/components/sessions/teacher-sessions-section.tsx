@@ -28,7 +28,7 @@ export async function TeacherSessionsSection({ sessions }: Props) {
       <div className="mb-3 flex items-center justify-between">
         <h2
           id="teacher-sessions-heading"
-          className="font-heading text-lg font-semibold"
+          className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
         >
           {t('mySessions')}
         </h2>

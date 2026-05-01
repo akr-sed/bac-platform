@@ -60,18 +60,29 @@ export default async function DashboardPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
+      <h1 className="mb-6 font-heading text-2xl font-bold tracking-tight">
+        {t('title')}
+      </h1>
+
       {isTeacher && auth && (
         <TeacherSessionsSection sessions={teacherResult.data} />
       )}
 
       <UpcomingSessionsRail sessions={upcomingResult.data} />
 
-      <h1 className="mb-6 font-heading text-2xl font-bold">{t('feedTitle')}</h1>
-      {items.length === 0 ? (
-        <SubjectPrompt />
-      ) : (
-        <FeedList initialItems={items} endpoint="/api/feed" />
-      )}
+      <section aria-labelledby="dashboard-feed-heading" className="mt-2">
+        <h2
+          id="dashboard-feed-heading"
+          className="mb-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+        >
+          {t('feedTitle')}
+        </h2>
+        {items.length === 0 ? (
+          <SubjectPrompt />
+        ) : (
+          <FeedList initialItems={items} endpoint="/api/feed" />
+        )}
+      </section>
     </main>
   );
 }
