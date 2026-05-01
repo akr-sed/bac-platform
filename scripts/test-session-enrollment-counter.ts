@@ -1,8 +1,15 @@
 /**
- * Integration test for SessionEnrollment counter middleware.
+ * Integration test for the SessionEnrollment counter contract.
  *
- * Verifies the post-save and post-findOneAndDelete hooks correctly
- * maintain Session.enrolledCount.
+ * Counter contract (see src/models/SessionEnrollment.ts JSDoc):
+ *   - INCREMENT: API route does an atomic findOneAndUpdate with $inc on
+ *     Session BEFORE creating the enrollment. There is intentionally NO
+ *     post('save') hook — that would double-count or break capacity
+ *     enforcement under concurrency.
+ *   - DECREMENT: post('findOneAndDelete') hook on SessionEnrollment.
+ *
+ * This test simulates the route-layer increment manually (atomic $inc) and
+ * verifies the post-findOneAndDelete hook decrements correctly.
  *
  * Run: npx tsx scripts/test-session-enrollment-counter.ts
  */
@@ -62,7 +69,12 @@ async function run() {
   console.log('Session created with enrolledCount =', session.enrolledCount);
   assert.equal(session.enrolledCount, 0, 'new session should start at 0');
 
-  // ENROLL → counter goes to 1
+  // ENROLL → simulate the route-layer atomic $inc, then create the record.
+  // (The model no longer increments via post('save'); see contract JSDoc.)
+  await Session.updateOne(
+    { _id: session._id },
+    { $inc: { enrolledCount: 1 } }
+  );
   const enrollment = await SessionEnrollment.create({
     userId: student._id,
     sessionId: session._id,
@@ -76,7 +88,7 @@ async function run() {
     'enrolledCount should be 1 after first enrollment'
   );
 
-  // UNENROLL via findOneAndDelete → counter back to 0
+  // UNENROLL via findOneAndDelete → counter back to 0 via post-delete hook.
   await SessionEnrollment.findOneAndDelete({ _id: enrollment._id });
   refreshed = await Session.findById(session._id);
   console.log('After unenroll, enrolledCount =', refreshed?.enrolledCount);

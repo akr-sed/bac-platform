@@ -22,7 +22,14 @@ export async function POST(_request: NextRequest, context: RouteContext) {
     if (!Types.ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Session not found' }, { status: 404 });
     }
-    const sessionDoc = await Session.findById(id);
+
+    // Pre-check the session for friendly error messages (not-found, cancelled,
+    // teacher-self-enroll). The capacity gate is enforced atomically below to
+    // close the TOCTOU window between read+write that previously allowed two
+    // concurrent enrollers to both pass `enrolledCount < capacity`.
+    const sessionDoc = await Session.findById(id).select(
+      '_id status teacherId capacity enrolledCount'
+    );
     if (!sessionDoc) {
       return NextResponse.json({ error: 'Session not found' }, { status: 404 });
     }
@@ -38,19 +45,57 @@ export async function POST(_request: NextRequest, context: RouteContext) {
         { status: 400 }
       );
     }
-    if (
-      sessionDoc.capacity != null &&
-      sessionDoc.enrolledCount >= sessionDoc.capacity
-    ) {
+
+    // Atomic capacity claim: the filter only matches when the session is still
+    // `scheduled` AND (capacity is null OR enrolledCount < capacity). MongoDB
+    // serializes `findOneAndUpdate` against a single document, so two
+    // concurrent claims at capacity=1 cannot both succeed — one returns null.
+    const claim = await Session.findOneAndUpdate(
+      {
+        _id: sessionDoc._id,
+        status: 'scheduled',
+        $or: [
+          { capacity: null },
+          { $expr: { $lt: ['$enrolledCount', '$capacity'] } },
+        ],
+      },
+      { $inc: { enrolledCount: 1 } },
+      { new: true }
+    );
+
+    if (!claim) {
+      // Re-read to pick the right error: full vs. status changed (cancelled,
+      // live, completed) under us.
+      const fresh = await Session.findById(id).select('status');
+      if (!fresh) {
+        return NextResponse.json(
+          { error: 'Session not found' },
+          { status: 404 }
+        );
+      }
+      if (fresh.status !== 'scheduled') {
+        return NextResponse.json(
+          { error: 'Session is not open for enrollment' },
+          { status: 400 }
+        );
+      }
       return NextResponse.json({ error: 'Session is full' }, { status: 409 });
     }
 
+    // The atomic claim already incremented enrolledCount; create the
+    // enrollment record now. If create fails (duplicate enrollment, or any
+    // other error), compensate by decrementing the counter so it stays
+    // consistent.
     try {
       await SessionEnrollment.create({
         userId: new Types.ObjectId(auth.userId),
         sessionId: sessionDoc._id,
       });
     } catch (err) {
+      await Session.updateOne(
+        { _id: sessionDoc._id },
+        { $inc: { enrolledCount: -1 } }
+      );
       const e = err as MongoDuplicateKeyError;
       if (e?.code === 11000) {
         return NextResponse.json(
@@ -61,11 +106,10 @@ export async function POST(_request: NextRequest, context: RouteContext) {
       throw err;
     }
 
-    const refreshed = await Session.findById(id).select('enrolledCount');
     return NextResponse.json(
       {
         success: true,
-        enrolledCount: refreshed?.enrolledCount ?? sessionDoc.enrolledCount + 1,
+        enrolledCount: claim.enrolledCount,
         isEnrolled: true,
       },
       { status: 201 }
