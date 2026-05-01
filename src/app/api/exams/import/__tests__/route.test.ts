@@ -192,3 +192,24 @@ describe('POST /api/exams/import — topic-slug storage', () => {
     expect(created.title).not.toMatch(/[؀-ۿ]/);
   });
 });
+
+describe('POST /api/exams/import — duplicate-exam handling', () => {
+  it('returns 409 when MongoDB raises a duplicate-key error on parsedExamId', async () => {
+    vi.mocked(getSession).mockResolvedValue({
+      userId: 'admin-id',
+      email: 'a@x.com',
+      role: 'admin',
+      name: 'Admin',
+    });
+    const dupErr = Object.assign(new Error('E11000 duplicate key'), {
+      code: 11000,
+    });
+    vi.mocked(Exam.create).mockRejectedValue(dupErr as never);
+
+    const res = await POST(buildRequest(validPayload));
+
+    expect(res.status).toBe(409);
+    const body = await res.json();
+    expect(body.error).toMatch(/already imported/i);
+  });
+});

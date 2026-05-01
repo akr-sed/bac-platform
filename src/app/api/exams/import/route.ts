@@ -179,6 +179,21 @@ export async function POST(request: NextRequest) {
       console.error('Exam import rollback failed:', rollbackErr);
     }
 
+    // MongoDB duplicate-key error → idempotency on `source.parsedExamId`.
+    // The same parsed exam was already imported; surface as 409 so the
+    // caller can choose to skip or update rather than create a duplicate.
+    if (
+      err &&
+      typeof err === 'object' &&
+      'code' in err &&
+      (err as { code?: number }).code === 11000
+    ) {
+      return NextResponse.json(
+        { error: 'Exam already imported' },
+        { status: 409 }
+      );
+    }
+
     console.error('Exam import failed:', err);
     return NextResponse.json(
       { error: 'Server error while importing exam' },
