@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { SessionCard } from './session-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { SessionDTO } from '@/types';
@@ -42,9 +42,15 @@ export function UpcomingSessionsRailClient() {
         <div className="mb-3 flex items-center justify-between">
           <h2 className="font-heading text-lg font-semibold">{t('upcoming')}</h2>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2">
+        {/* Skeleton dims must match the rendered SessionCard rail variant
+            (see SESSION_RAIL_CARD_HEIGHT) so first paint → hydration is
+            CLS-free. Update both together if the card content changes. */}
+        <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:thin]">
           {Array.from({ length: 3 }).map((_, i) => (
-            <Skeleton key={i} className="h-56 w-72 shrink-0 rounded-2xl" />
+            <Skeleton
+              key={i}
+              className="h-[15.5rem] w-72 shrink-0 rounded-2xl"
+            />
           ))}
         </div>
       </section>
@@ -67,7 +73,7 @@ export function UpcomingSessionsRailClient() {
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
         >
           {t('browse')}
-          <ChevronLeft className="size-4 rtl:rotate-180" />
+          <ChevronRight className="size-4 rtl:rotate-180" />
         </Link>
       </div>
       <div

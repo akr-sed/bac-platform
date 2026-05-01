@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { SessionCard } from './session-card';
 import type { SessionDTO } from '@/types';
 
@@ -40,7 +40,7 @@ export async function UpcomingSessionsRail({ sessions }: Props) {
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
         >
           {t('browse')}
-          <ChevronLeft className="size-4 rtl:rotate-180" />
+          <ChevronRight className="size-4 rtl:rotate-180" />
         </Link>
       </div>
       <div
