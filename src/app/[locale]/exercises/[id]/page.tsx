@@ -222,13 +222,26 @@ export default function ExerciseDetailPage() {
               )}
 
               {exercise?.figureDescriptions && exercise.figureDescriptions.length > 0 && (
-                <ul className="space-y-2 border-s-2 border-border ps-4">
-                  {exercise.figureDescriptions.map((d, i) => (
-                    <li key={i} className="text-sm italic leading-relaxed text-muted-foreground">
-                      {d}
-                    </li>
-                  ))}
-                </ul>
+                // Figure descriptions are inline annotations describing a
+                // missing figure — caption-style (small, muted, italic,
+                // indented). The previous border-s-2 + ps-4 read as a
+                // blockquote, which trains the user to expect external
+                // commentary; that's the wrong cue here.
+                <figure className="ps-4">
+                  <figcaption className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
+                    {t('figureDescription')}
+                  </figcaption>
+                  <ul className="space-y-1.5">
+                    {exercise.figureDescriptions.map((d, i) => (
+                      <li
+                        key={i}
+                        className="text-sm italic leading-relaxed text-muted-foreground"
+                      >
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </figure>
               )}
 
               {/* Attachments */}

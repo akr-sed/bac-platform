@@ -111,7 +111,8 @@
       "postedBy": "نشره",
       "postedAt": "تاريخ النشر",
       "backToExam": "العودة إلى الامتحان",
-      "backToExercises": "العودة إلى التمارين"
+      "backToExercises": "العودة إلى التمارين",
+      "figureDescription": "وصف الشكل"
     }
   },
   "solutions": {

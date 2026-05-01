@@ -111,7 +111,8 @@
       "postedBy": "Publié par",
       "postedAt": "Publié le",
       "backToExam": "Retour à l'examen",
-      "backToExercises": "Retour aux exercices"
+      "backToExercises": "Retour aux exercices",
+      "figureDescription": "Description de la figure"
     }
   },
   "solutions": {

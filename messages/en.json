@@ -111,7 +111,8 @@
       "postedBy": "Posted by",
       "postedAt": "Posted on",
       "backToExam": "Back to exam",
-      "backToExercises": "Back to exercises"
+      "backToExercises": "Back to exercises",
+      "figureDescription": "Figure description"
     }
   },
   "solutions": {
