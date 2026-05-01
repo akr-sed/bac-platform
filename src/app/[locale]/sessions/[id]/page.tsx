@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getTranslations, getFormatter } from 'next-intl/server';
-import { Calendar, Clock, ExternalLink, Radio, Users } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, Radio, Users, XCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { EnrollButton } from '@/components/sessions/enroll-button';
@@ -41,7 +41,16 @@ export default async function SessionDetailPage({ params }: Props) {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       {isCancelled && (
-        <div className="mb-4 rounded-lg border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm font-semibold text-destructive">
+        // Solid red banner: white text on the destructive token gives
+        // ≥4.5:1 in light mode, and the dark-mode destructive is darkened
+        // to keep the same contrast against the lighter foreground.
+        // (Default `bg-destructive/10 text-destructive` was ~3.2:1 in
+        // light mode — below AA.)
+        <div
+          role="alert"
+          className="mb-4 flex items-center gap-2 rounded-lg border border-destructive bg-destructive px-4 py-3 text-sm font-semibold text-white shadow-sm dark:bg-[oklch(0.50_0.22_27)] dark:border-[oklch(0.50_0.22_27)]"
+        >
+          <XCircle className="size-4 shrink-0" aria-hidden="true" />
           {t('cancelled')}
         </div>
       )}
