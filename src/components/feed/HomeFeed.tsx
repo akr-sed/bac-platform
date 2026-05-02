@@ -7,12 +7,16 @@ import SavedExercise from '@/models/SavedExercise';
 import { buildFeedPipeline } from '@/lib/feed-ranking';
 import { Types } from 'mongoose';
 import { ExerciseCard } from '@/components/exercises/exercise-card';
+import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-rail';
+import { TeacherSessionsSection } from '@/components/sessions/teacher-sessions-section';
 import { Logo } from '@/components/brand/Logo';
+import { fetchSessionsList } from '@/lib/sessions';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
   userId: string;
   userName: string;
+  userRole: 'student' | 'teacher' | 'admin';
   locale: string;
 }
 
@@ -63,8 +67,19 @@ async function loadFeed(userId: string): Promise<FeedItemDTO[]> {
   })) as unknown as FeedItemDTO[];
 }
 
-export async function HomeFeed({ userId, userName, locale }: Props) {
-  const items = await loadFeed(userId);
+export async function HomeFeed({ userId, userName, userRole, locale }: Props) {
+  const isTeacher = userRole === 'teacher' || userRole === 'admin';
+  const [items, upcomingResult, teacherResult] = await Promise.all([
+    loadFeed(userId),
+    fetchSessionsList({ upcoming: true, limit: 5, viewerUserId: userId }),
+    isTeacher
+      ? fetchSessionsList({
+          teacherId: userId,
+          limit: 10,
+          viewerUserId: userId,
+        })
+      : Promise.resolve({ data: [], total: 0, page: 1, totalPages: 1 }),
+  ]);
   const isAr = locale === 'ar';
   const days = daysUntilBac();
   const firstName = userName.split(' ')[0];
@@ -100,22 +115,42 @@ export async function HomeFeed({ userId, userName, locale }: Props) {
         </div>
       </header>
 
-      {items.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-border p-12 text-center">
-          <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
-          <p className="text-sm text-muted-foreground">
-            {isAr
-              ? 'لا توجد تمارين بعد. تابعونا قريبًا.'
-              : 'No exercises yet. Check back soon.'}
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-5">
-          {items.map((item) => (
-            <ExerciseCard key={item._id} exercise={item} />
-          ))}
+      {isTeacher && teacherResult.data.length > 0 && (
+        <div className="mb-8">
+          <TeacherSessionsSection sessions={teacherResult.data} />
         </div>
       )}
+
+      {upcomingResult.data.length > 0 && (
+        <div className="mb-8">
+          <UpcomingSessionsRail sessions={upcomingResult.data} />
+        </div>
+      )}
+
+      <section aria-labelledby="feed-h">
+        <h2
+          id="feed-h"
+          className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+        >
+          {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
+        </h2>
+        {items.length === 0 ? (
+          <div className="rounded-3xl border border-dashed border-border p-12 text-center">
+            <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">
+              {isAr
+                ? 'لا توجد تمارين بعد. تابعونا قريبًا.'
+                : 'No exercises yet. Check back soon.'}
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-5">
+            {items.map((item) => (
+              <ExerciseCard key={item._id} exercise={item} />
+            ))}
+          </div>
+        )}
+      </section>
     </main>
   );
 }

@@ -13,6 +13,7 @@ export default async function HomePage({ params }: Params) {
       <HomeFeed
         userId={session.userId}
         userName={session.name}
+        userRole={session.role}
         locale={locale}
       />
     );
