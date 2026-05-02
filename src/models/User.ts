@@ -11,6 +11,9 @@ export interface IUser extends Document {
   resetToken?: string;
   resetTokenExpiry?: Date;
   preferences?: { subjects: string[] };
+  isBlocked?: boolean;
+  blockedAt?: Date;
+  blockedReason?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -39,6 +42,9 @@ const UserSchema = new Schema<IUser>(
     preferences: {
       subjects: { type: [String], default: [] },
     },
+    isBlocked: { type: Boolean, default: false, index: true },
+    blockedAt: { type: Date, default: undefined },
+    blockedReason: { type: String, default: undefined },
   },
   { timestamps: true }
 );

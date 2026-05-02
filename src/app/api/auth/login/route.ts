@@ -42,6 +42,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (user.isBlocked) {
+      return NextResponse.json(
+        { error: 'Account blocked. Contact support.' },
+        { status: 403 }
+      );
+    }
+
     const token = await signToken({
       userId: user._id.toString(),
       email: user.email,

@@ -1,161 +1,242 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
-import { ArrowLeft, Trash2, CheckCircle, Flag } from 'lucide-react';
+import { ArrowLeft, Trash2, Loader2, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { UserAvatar } from '@/components/ui/user-avatar';
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
-import { Skeleton } from '@/components/ui/skeleton';
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 
-interface ReportedContent {
-  _id: string;
-  contentType: 'exercise' | 'solution' | 'comment';
-  contentId: string;
-  contentTitle?: string;
-  author?: { name: string };
-  reporter?: { name: string };
-  reason: string;
-  createdAt: string;
-  status: 'pending' | 'resolved' | 'dismissed';
+type ContentType = 'exercises' | 'solutions' | 'comments';
+
+interface Author {
+  _id?: string;
+  name?: string;
+  email?: string;
+  avatar?: string;
+  role?: string;
 }
 
-export default function ModerationPage() {
-  const t = useTranslations('admin');
-  const tMod = useTranslations('moderation');
+interface Item {
+  _id: string;
+  title?: string;
+  content?: string;
+  description?: string;
+  difficulty?: string;
+  subject?: string;
+  createdAt?: string;
+  author?: Author;
+  exercise?: { _id: string; title: string };
+  solutionId?: string | null;
+  likesCount?: number;
+  commentsCount?: number;
+  solutionCount?: number;
+}
 
-  const [reports, setReports] = useState<ReportedContent[]>([]);
+const TABS: { id: ContentType; label: string }[] = [
+  { id: 'exercises', label: 'Exercises' },
+  { id: 'solutions', label: 'Solutions' },
+  { id: 'comments', label: 'Comments' },
+];
+
+export default function ModerationPage() {
+  const [tab, setTab] = useState<ContentType>('exercises');
+  const [items, setItems] = useState<Item[]>([]);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [confirmDelete, setConfirmDelete] = useState<Item | null>(null);
+  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    fetch('/api/admin/reports?status=pending')
+    setLoading(true);
+    fetch(`/api/admin/content?type=${tab}&page=1&limit=20`)
       .then(async (res) => {
         if (!res.ok) throw new Error();
         const data = await res.json();
-        setReports(data.reports ?? data ?? []);
+        setItems(data.data ?? []);
+        setTotal(data.total ?? 0);
       })
-      .catch(() => setReports([]))
+      .catch(() => {
+        setItems([]);
+        setTotal(0);
+      })
       .finally(() => setLoading(false));
-  }, []);
+  }, [tab]);
 
-  const handleAction = async (reportId: string, action: 'delete' | 'dismiss') => {
+  async function handleDelete() {
+    if (!confirmDelete) return;
+    setBusy(true);
     try {
-      await fetch(`/api/admin/reports/${reportId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action }),
-      });
-      setReports((prev) => prev.filter((r) => r._id !== reportId));
-    } catch {
-      /* handle error */
+      const res = await fetch(
+        `/api/admin/content?type=${tab}&id=${confirmDelete._id}`,
+        { method: 'DELETE' }
+      );
+      if (res.ok) {
+        setItems((p) => p.filter((i) => i._id !== confirmDelete._id));
+        setTotal((t) => Math.max(0, t - 1));
+      }
+    } finally {
+      setBusy(false);
+      setConfirmDelete(null);
     }
-  };
+  }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       <Link
         href="/admin"
         className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
       >
         <ArrowLeft className="size-4 rtl:rotate-180" />
-        {t('title')}
+        Admin
       </Link>
 
-      <div className="mb-8 flex items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-lg bg-destructive/10">
-          <Flag className="size-5 text-destructive" />
+      <header className="mb-6 space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          admin · moderation
+        </p>
+        <div className="flex items-end justify-between gap-4">
+          <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground">
+            Content moderation
+          </h1>
+          <span className="font-mono text-sm tabular-nums text-muted-foreground">
+            {total.toLocaleString()} total
+          </span>
         </div>
-        <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-          Content Moderation
-        </h1>
+      </header>
+
+      <div className="mb-6 flex items-center gap-1 rounded-2xl border border-border bg-card p-1">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setTab(t.id)}
+            className={cn(
+              'flex-1 cursor-pointer rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-150',
+              tab === t.id
+                ? 'bg-primary text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
 
-      <Card className="rounded-xl border border-border shadow-sm">
-        <CardContent className="p-0">
-          {loading ? (
-            <div className="p-6 space-y-3">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Skeleton key={i} className="h-12 w-full" />
-              ))}
-            </div>
-          ) : reports.length === 0 ? (
-            <div className="flex flex-col items-center py-16 text-center">
-              <CheckCircle className="mb-3 size-12 text-ai-accent" />
-              <p className="text-lg font-medium text-foreground">All clear</p>
-              <p className="text-sm text-muted-foreground">No pending reports to review.</p>
-            </div>
-          ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Content</TableHead>
-                  <TableHead>Author</TableHead>
-                  <TableHead>Reason</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead className="text-end">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {reports.map((report) => (
-                  <TableRow key={report._id}>
-                    <TableCell>
-                      <Badge variant="outline" className="capitalize text-xs">
-                        {report.contentType}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="max-w-[200px] truncate font-medium">
-                      {report.contentTitle ?? report.contentId}
-                    </TableCell>
-                    <TableCell className="text-sm text-muted-foreground">
-                      {report.author?.name ?? 'Unknown'}
-                    </TableCell>
-                    <TableCell>
-                      <Badge variant="secondary" className="text-xs">
-                        {report.reason}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-sm text-muted-foreground">
-                      {new Date(report.createdAt).toLocaleDateString()}
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center justify-end gap-2">
-                        <Button
-                          variant="destructive"
-                          size="sm"
-                          className="cursor-pointer gap-1"
-                          onClick={() => handleAction(report._id, 'delete')}
-                        >
-                          <Trash2 className="size-3.5" />
-                          {tMod('delete')}
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="cursor-pointer gap-1"
-                          onClick={() => handleAction(report._id, 'dismiss')}
-                        >
-                          <CheckCircle className="size-3.5" />
-                          Dismiss
-                        </Button>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        </CardContent>
-      </Card>
+      {loading ? (
+        <div className="space-y-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="h-20 animate-pulse rounded-2xl bg-muted/40" />
+          ))}
+        </div>
+      ) : items.length === 0 ? (
+        <div className="rounded-3xl border border-dashed border-border p-12 text-center">
+          <Shield className="mx-auto mb-3 size-8 text-muted-foreground/40" />
+          <p className="text-sm text-muted-foreground">No content to moderate.</p>
+        </div>
+      ) : (
+        <ul className="space-y-2">
+          {items.map((item) => (
+            <li
+              key={item._id}
+              className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-colors duration-150 hover:border-foreground/10"
+            >
+              <UserAvatar src={item.author?.avatar} name={item.author?.name} size="sm" />
+              <div className="min-w-0 flex-1 space-y-1">
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <span className="font-medium text-foreground">{item.author?.name ?? '—'}</span>
+                  {item.author?.role && (
+                    <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">
+                      {item.author.role}
+                    </span>
+                  )}
+                  {item.createdAt && (
+                    <span className="font-mono tabular-nums text-muted-foreground">
+                      {new Date(item.createdAt).toLocaleDateString()}
+                    </span>
+                  )}
+                  {item.exercise && (
+                    <Link
+                      href={`/exercises/${item.exercise._id}` as `/exercises/${string}`}
+                      className="cursor-pointer truncate text-muted-foreground hover:text-foreground"
+                    >
+                      ↳ {item.exercise.title}
+                    </Link>
+                  )}
+                </div>
+                {item.title && (
+                  <p className="font-medium text-foreground">
+                    <Link
+                      href={`/exercises/${item._id}` as `/exercises/${string}`}
+                      className="cursor-pointer hover:text-primary"
+                    >
+                      <bdi>{item.title}</bdi>
+                    </Link>
+                  </p>
+                )}
+                {(item.description || item.content) && (
+                  <p className="line-clamp-2 text-sm text-muted-foreground">
+                    {item.description ?? item.content}
+                  </p>
+                )}
+                {tab === 'exercises' && (
+                  <div className="flex gap-3 pt-1 font-mono text-[11px] tabular-nums text-muted-foreground">
+                    <span>♥ {item.likesCount ?? 0}</span>
+                    <span>💬 {item.commentsCount ?? 0}</span>
+                    <span>✓ {item.solutionCount ?? 0}</span>
+                  </div>
+                )}
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="cursor-pointer gap-1.5 rounded-xl text-destructive hover:bg-destructive/10 hover:text-destructive"
+                onClick={() => setConfirmDelete(item)}
+              >
+                <Trash2 className="size-3.5" />
+                Delete
+              </Button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <Dialog open={confirmDelete !== null} onOpenChange={(o) => { if (!o) setConfirmDelete(null); }}>
+        <DialogContent className="max-w-sm rounded-3xl">
+          <DialogHeader>
+            <DialogTitle className="font-heading text-xl text-destructive">
+              Delete this {tab.slice(0, -1)}?
+            </DialogTitle>
+            <DialogDescription>
+              This action is permanent. The content will be removed for all users.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end gap-2 pt-4">
+            <Button
+              variant="outline"
+              className="cursor-pointer rounded-xl"
+              onClick={() => setConfirmDelete(null)}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              className="cursor-pointer gap-1.5 rounded-xl"
+              disabled={busy}
+              onClick={handleDelete}
+            >
+              {busy ? <Loader2 className="size-3.5 animate-spin" /> : <Trash2 className="size-3.5" />}
+              Delete
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }
