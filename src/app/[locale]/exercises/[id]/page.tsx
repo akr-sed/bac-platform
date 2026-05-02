@@ -182,44 +182,43 @@ export default function ExerciseDetailPage() {
         </Link>
       )}
 
-      <div className="flex flex-col gap-8 lg:flex-row">
+      <div className="flex flex-col gap-10 lg:flex-row">
         {/* Main content */}
-        <div className="flex-1 space-y-8">
-          {/* Exercise card */}
-          <Card className="rounded-xl border border-border p-6 shadow-sm">
-            <CardContent className="space-y-5 p-0">
-              <div className="flex flex-wrap items-start gap-3">
-                <h1 className="flex-1 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  <bdi>{resolveExerciseTitle(exercise, locale) || 'Exercise'}</bdi>
-                </h1>
-                {exercise?.difficulty && (
-                  <DifficultyBadge level={exercise.difficulty} />
+        <div className="flex-1 space-y-10">
+          {/* Exercise — no outer card chrome, breathing room instead */}
+          <article className="space-y-6">
+            <div className="flex flex-wrap items-start gap-4">
+              <h1 className="flex-1 font-heading text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
+                <bdi>{resolveExerciseTitle(exercise, locale) || 'Exercise'}</bdi>
+              </h1>
+              {exercise?.difficulty && (
+                <DifficultyBadge level={exercise.difficulty} />
+              )}
+            </div>
+
+            {(exercise?.subject || exercise?.topic) && (
+              <div className="flex flex-wrap gap-1.5">
+                {exercise.subject && (
+                  <Badge variant="secondary" className="rounded-full px-2.5 text-xs capitalize">{exercise.subject}</Badge>
+                )}
+                {exercise.topic && (
+                  <Badge variant="outline" className="rounded-full px-2.5 text-xs">{topicLabel(exercise.topic, topicLocale)}</Badge>
+                )}
+                {exercise.subtopic && (
+                  <Badge variant="outline" className="rounded-full px-2.5 text-xs">{exercise.subtopic}</Badge>
                 )}
               </div>
+            )}
 
-              {(exercise?.subject || exercise?.topic) && (
-                <div className="flex flex-wrap gap-2">
-                  {exercise.subject && (
-                    <Badge variant="secondary" className="text-xs">{exercise.subject}</Badge>
-                  )}
-                  {exercise.topic && (
-                    <Badge variant="outline" className="text-xs">{topicLabel(exercise.topic, topicLocale)}</Badge>
-                  )}
-                  {exercise.subtopic && (
-                    <Badge variant="outline" className="text-xs">{exercise.subtopic}</Badge>
-                  )}
-                </div>
-              )}
-
-              {exercise?.hasMath ? (
-                <MathText className="text-base leading-relaxed text-foreground/90">
-                  {exercise.description}
-                </MathText>
-              ) : (
-                <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
-                  {exercise?.description ?? ''}
-                </p>
-              )}
+            {exercise?.hasMath ? (
+              <MathText className="text-base leading-relaxed text-foreground/90">
+                {exercise.description}
+              </MathText>
+            ) : (
+              <p className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
+                {exercise?.description ?? ''}
+              </p>
+            )}
 
               {exercise?.figureDescriptions && exercise.figureDescriptions.length > 0 && (
                 // Figure descriptions are inline annotations describing a
@@ -258,22 +257,22 @@ export default function ExerciseDetailPage() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex cursor-pointer items-center gap-2 rounded-lg border border-border bg-muted/50 px-3 py-2 text-sm transition-colors duration-200 hover:bg-muted"
+                        className="flex cursor-pointer items-center gap-2 rounded-2xl border border-border bg-card px-3.5 py-2.5 text-sm transition-colors duration-200 hover:border-foreground/10 hover:bg-muted/50"
                       >
                         <ImageIcon className="size-4 text-primary" />
-                        {url.split('/').pop() || `image-${i + 1}`}
+                        <span className="truncate font-mono text-xs text-muted-foreground">{url.split('/').pop() || `image-${i + 1}`}</span>
                       </a>
                     );
                   })}
                 </div>
               )}
 
-              {/* Meta */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+              {/* Meta — author + date row */}
+              <div className="flex flex-wrap items-center gap-4 border-t border-border pt-5 text-sm text-muted-foreground">
                 {exercise?.author && (
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-2">
                     <UserAvatar src={exercise.author.avatar} name={exercise.author.name} size="sm" />
-                    <span>{exercise.author.name}</span>
+                    <span className="font-medium text-foreground">{exercise.author.name}</span>
                     {exercise.author.role && (
                       <RoleBadge
                         role={exercise.author.role}
@@ -283,17 +282,17 @@ export default function ExerciseDetailPage() {
                   </span>
                 )}
                 {exercise?.createdAt && (
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="size-4" />
+                  <span className="flex items-center gap-1.5 font-mono tabular-nums">
+                    <Calendar className="size-3.5" />
                     {new Date(exercise.createdAt).toLocaleDateString()}
                   </span>
                 )}
               </div>
 
               {/* Actions */}
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 <Button
-                  className="cursor-pointer gap-2 rounded-xl"
+                  className="group h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium active:scale-[0.98]"
                   onClick={() => setSubmitOpen(true)}
                 >
                   <PlusCircle className="size-4" />
@@ -301,7 +300,7 @@ export default function ExerciseDetailPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="cursor-pointer gap-2 rounded-xl"
+                  className="h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium"
                   onClick={() => setHintOpen(true)}
                 >
                   <Lightbulb className="size-4" />
@@ -310,7 +309,7 @@ export default function ExerciseDetailPage() {
                 {isExerciseAuthor && (
                   <Button
                     variant="ghost"
-                    className="cursor-pointer gap-2 rounded-xl text-destructive hover:bg-destructive/10 hover:text-destructive"
+                    className="h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium text-destructive hover:bg-destructive/10 hover:text-destructive"
                     onClick={() => setDeleteExerciseOpen(true)}
                   >
                     <Trash2 className="size-4" />
@@ -318,24 +317,28 @@ export default function ExerciseDetailPage() {
                   </Button>
                 )}
               </div>
-            </CardContent>
-          </Card>
+          </article>
 
           {/* Solutions list */}
           <section>
-            <h2 className="mb-4 font-heading text-xl font-semibold text-foreground">
-              {t('solutions')} ({solutions.length})
-            </h2>
+            <div className="mb-5 flex items-baseline gap-3 border-t border-border pt-8">
+              <h2 className="font-heading text-2xl font-semibold tracking-tight text-foreground">
+                {t('solutions')}
+              </h2>
+              <span className="font-mono text-sm tabular-nums text-muted-foreground">
+                {solutions.length}
+              </span>
+            </div>
 
             {solutions.length === 0 ? (
-              <Card className="flex flex-col items-center rounded-xl border border-border p-8 text-center shadow-sm">
-                <MessageCircle className="mb-3 size-10 text-muted-foreground/40" />
-                <p className="font-medium text-foreground">{t('noSolutions')}</p>
-              </Card>
+              <div className="flex flex-col items-center rounded-3xl border border-dashed border-border p-12 text-center">
+                <MessageCircle className="mb-3 size-8 text-muted-foreground/40" />
+                <p className="text-sm text-muted-foreground">{t('noSolutions')}</p>
+              </div>
             ) : (
               <div className="space-y-4">
                 {solutions.map((sol) => (
-                  <Card key={sol._id} className="rounded-xl border border-border p-6 shadow-sm">
+                  <Card key={sol._id} className="rounded-3xl border border-border p-6 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                     <CardContent className="space-y-4 p-0">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -427,7 +430,7 @@ export default function ExerciseDetailPage() {
                           }}
                         >
                           <Heart className={`size-4 ${sol.likes?.includes(authUser?._id ?? '') ? 'fill-destructive' : ''}`} />
-                          <span className="text-xs">{sol.likesCount ?? sol.likes?.length ?? 0}</span>
+                          <span className="font-mono text-xs tabular-nums">{sol.likesCount ?? sol.likes?.length ?? 0}</span>
                         </Button>
                         <Button
                           variant="ghost"
@@ -440,7 +443,7 @@ export default function ExerciseDetailPage() {
                           }
                         >
                           <MessageCircle className="size-4" />
-                          <span className="text-xs">{sol.commentCount ?? 0}</span>
+                          <span className="font-mono text-xs tabular-nums">{sol.commentCount ?? 0}</span>
                         </Button>
                       </div>
 

@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { ArrowRight, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Card } from '@/components/ui/card';
 
 const SUBJECTS = [
   'math',
@@ -78,9 +78,11 @@ export function SessionForm() {
     }
   }
 
+  const inputCls = 'h-11 rounded-2xl';
+
   return (
-    <Card className="p-6">
-      <form onSubmit={onSubmit} className="space-y-5">
+    <form onSubmit={onSubmit} className="space-y-7">
+      <Section eyebrow="01" title={t('title')}>
         <div className="space-y-2">
           <Label htmlFor="title">{t('title')}</Label>
           <Input
@@ -89,6 +91,7 @@ export function SessionForm() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={t('titlePlaceholder')}
+            className={inputCls}
           />
         </div>
 
@@ -100,9 +103,12 @@ export function SessionForm() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder={t('descriptionPlaceholder')}
             rows={4}
+            className="rounded-2xl"
           />
         </div>
+      </Section>
 
+      <Section eyebrow="02" title={t('subject')}>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="subject">{t('subject')}</Label>
@@ -111,7 +117,7 @@ export function SessionForm() {
               required
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-xs"
+              className="flex h-11 w-full rounded-2xl border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {SUBJECTS.map((s) => (
                 <option key={s} value={s}>
@@ -131,10 +137,24 @@ export function SessionForm() {
               max={480}
               value={durationMinutes}
               onChange={(e) => setDurationMinutes(parseInt(e.target.value, 10))}
+              className={`${inputCls} font-mono tabular-nums`}
             />
           </div>
         </div>
 
+        <div className="space-y-2">
+          <Label htmlFor="topics">{t('topics')}</Label>
+          <Input
+            id="topics"
+            value={topics}
+            onChange={(e) => setTopics(e.target.value)}
+            placeholder={t('topicsPlaceholder')}
+            className={inputCls}
+          />
+        </div>
+      </Section>
+
+      <Section eyebrow="03" title={t('scheduledAt')}>
         <div className="space-y-2">
           <Label htmlFor="scheduledAt">{t('scheduledAt')}</Label>
           <Input
@@ -143,6 +163,7 @@ export function SessionForm() {
             required
             value={scheduledAt}
             onChange={(e) => setScheduledAt(e.target.value)}
+            className={`${inputCls} font-mono tabular-nums`}
           />
         </div>
 
@@ -155,12 +176,15 @@ export function SessionForm() {
             value={meetingUrl}
             onChange={(e) => setMeetingUrl(e.target.value)}
             placeholder={t('meetingUrlPlaceholder')}
+            className={inputCls}
           />
           <p className="text-xs text-muted-foreground">
             {t('meetingUrlHelp')}
           </p>
         </div>
+      </Section>
 
+      <Section eyebrow="04" title={t('priceDA')}>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="capacity">{t('capacity')}</Label>
@@ -171,6 +195,7 @@ export function SessionForm() {
               value={capacity}
               onChange={(e) => setCapacity(e.target.value)}
               placeholder={t('capacityPlaceholder')}
+              className={`${inputCls} font-mono tabular-nums`}
             />
           </div>
 
@@ -182,31 +207,59 @@ export function SessionForm() {
               min={0}
               value={priceDA}
               onChange={(e) => setPriceDA(parseInt(e.target.value, 10) || 0)}
+              className={`${inputCls} font-mono tabular-nums`}
             />
             <p className="text-xs text-muted-foreground">{t('priceHelp')}</p>
           </div>
         </div>
+      </Section>
 
-        <div className="space-y-2">
-          <Label htmlFor="topics">{t('topics')}</Label>
-          <Input
-            id="topics"
-            value={topics}
-            onChange={(e) => setTopics(e.target.value)}
-            placeholder={t('topicsPlaceholder')}
-          />
+      {error && (
+        <div role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+          {error}
         </div>
+      )}
 
-        {error && (
-          <p className="text-sm text-destructive" role="alert">
-            {error}
-          </p>
-        )}
-
-        <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
-          {submitting ? t('submitting') : t('submit')}
+      <div className="flex justify-end pt-2">
+        <Button
+          type="submit"
+          disabled={submitting}
+          className="group h-12 cursor-pointer gap-2 rounded-2xl px-7 text-base font-medium active:scale-[0.98]"
+        >
+          {submitting ? (
+            <Loader2 className="size-4 animate-spin" />
+          ) : (
+            <>
+              {t('submit')}
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+            </>
+          )}
         </Button>
-      </form>
-    </Card>
+      </div>
+    </form>
+  );
+}
+
+function Section({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="space-y-4 border-t border-border pt-6 first:border-t-0 first:pt-0">
+      <div className="flex items-baseline gap-3">
+        <span className="font-mono text-xs font-medium tabular-nums text-muted-foreground">
+          {eyebrow}
+        </span>
+        <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+          {title}
+        </h2>
+      </div>
+      {children}
+    </section>
   );
 }

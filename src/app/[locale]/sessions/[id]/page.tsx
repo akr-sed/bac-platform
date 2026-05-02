@@ -55,30 +55,30 @@ export default async function SessionDetailPage({ params }: Props) {
         </div>
       )}
 
-      <Card className="overflow-hidden">
-        <div className="bg-gradient-to-br from-primary/10 via-card to-secondary/10 px-6 py-8">
-          <div className="mb-4 flex items-center justify-between">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+      <Card className="overflow-hidden rounded-3xl border border-border shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+        <div className="bg-gradient-to-br from-primary/[0.06] via-card to-card px-7 py-9">
+          <div className="mb-5 flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/[0.06] px-2.5 py-1 text-xs font-medium text-primary">
               <Radio className="size-3" />
               {t('liveBadge')}
             </span>
-            <span className="text-lg font-bold text-foreground">
+            <span className="font-mono text-base font-semibold tabular-nums text-foreground">
               {session.priceDA > 0
                 ? t('priceDA', { price: session.priceDA })
                 : t('free')}
             </span>
           </div>
-          <h1 className="font-heading text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+          <h1 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
             {session.title}
           </h1>
           {session.description && (
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               {session.description}
             </p>
           )}
         </div>
 
-        <div className="border-t border-border px-6 py-6">
+        <div className="border-t border-border px-7 py-5">
           <div className="flex items-center gap-3">
             <UserAvatar
               src={session.teacher.avatar}
@@ -86,7 +86,7 @@ export default async function SessionDetailPage({ params }: Props) {
               size="md"
             />
             <div>
-              <p className="font-semibold">{session.teacher.name}</p>
+              <p className="font-medium text-foreground">{session.teacher.name}</p>
               {session.teacher.isVerifiedTeacher && (
                 <p className="inline-flex items-center gap-1 text-xs text-primary">
                   <BadgeCheck className="size-3.5" aria-hidden="true" />
@@ -97,34 +97,34 @@ export default async function SessionDetailPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="grid gap-3 border-t border-border px-6 py-5 text-sm sm:grid-cols-3">
-          <div className="flex items-start gap-2">
+        <div className="grid gap-px bg-border sm:grid-cols-3">
+          <div className="flex items-start gap-3 bg-card px-7 py-5">
             <Calendar className="mt-0.5 size-4 shrink-0 text-primary" />
-            <div>
-              <p className="text-xs uppercase text-muted-foreground">
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 {t('scheduledFor')}
               </p>
-              <time dateTime={session.scheduledAt} suppressHydrationWarning>
+              <time className="mt-1 block text-sm font-medium text-foreground" dateTime={session.scheduledAt} suppressHydrationWarning>
                 {dateLabel}
               </time>
             </div>
           </div>
-          <div className="flex items-start gap-2">
+          <div className="flex items-start gap-3 bg-card px-7 py-5">
             <Clock className="mt-0.5 size-4 shrink-0 text-primary" />
             <div>
-              <p className="text-xs uppercase text-muted-foreground">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 {t('durationLabel')}
               </p>
-              <span>{t('duration', { minutes: session.durationMinutes })}</span>
+              <span className="mt-1 block font-mono text-sm font-medium tabular-nums text-foreground">{t('duration', { minutes: session.durationMinutes })}</span>
             </div>
           </div>
-          <div className="flex items-start gap-2">
+          <div className="flex items-start gap-3 bg-card px-7 py-5">
             <Users className="mt-0.5 size-4 shrink-0 text-primary" />
             <div>
-              <p className="text-xs uppercase text-muted-foreground">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 {t('capacityLabel')}
               </p>
-              <span>
+              <span className="mt-1 block font-mono text-sm font-medium tabular-nums text-foreground">
                 {session.capacity != null
                   ? t('spotsTotal', {
                       enrolled: session.enrolledCount,
@@ -139,15 +139,15 @@ export default async function SessionDetailPage({ params }: Props) {
         </div>
 
         {session.topics.length > 0 && (
-          <div className="border-t border-border px-6 py-5">
-            <p className="mb-2 text-xs uppercase text-muted-foreground">
+          <div className="border-t border-border px-7 py-5">
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
               {t('topicsLabel')}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {session.topics.map((topic) => (
                 <span
                   key={topic}
-                  className="rounded-md bg-muted px-2.5 py-1 text-sm text-foreground"
+                  className="rounded-full border border-border bg-card px-2.5 py-1 text-xs text-foreground"
                 >
                   {topic}
                 </span>
@@ -156,16 +156,18 @@ export default async function SessionDetailPage({ params }: Props) {
           </div>
         )}
 
-        <div className="border-t border-border bg-muted/30 px-6 py-5">
+        <div className="border-t border-border bg-muted/30 px-7 py-5">
           {session.meetingUrl ? (
             <a
               href={session.meetingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-primary"
             >
               <ExternalLink className="size-4" />
-              {t('openMeeting')}
+              <span className="border-b border-transparent group-hover:border-primary">
+                {t('openMeeting')}
+              </span>
             </a>
           ) : (
             <p className="text-sm text-muted-foreground">
@@ -174,7 +176,7 @@ export default async function SessionDetailPage({ params }: Props) {
           )}
         </div>
 
-        <div className="border-t border-border px-6 py-5">
+        <div className="border-t border-border px-7 py-5">
           <EnrollButton
             sessionId={session._id}
             initialEnrolled={Boolean(session.isEnrolled)}
