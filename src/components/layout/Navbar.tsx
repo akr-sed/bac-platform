@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { GraduationCap, Menu, Moon, Sun, LogOut } from 'lucide-react';
+import { Menu, Moon, Sun, LogOut } from 'lucide-react';
+import { Logo } from '@/components/brand/Logo';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { useTheme } from 'next-themes';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -37,10 +38,9 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link
             href={user ? '/exercises' : '/'}
-            className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors duration-200 hover:text-primary"
+            className="text-foreground transition-opacity duration-200 hover:opacity-80"
           >
-            <GraduationCap className="size-6 text-primary" />
-            <span className="font-heading">BAC Platform</span>
+            <Logo />
           </Link>
 
           <div className="hidden items-center gap-1 md:flex">

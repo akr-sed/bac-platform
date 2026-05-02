@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
-import { IBM_Plex_Sans, IBM_Plex_Serif, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google';
 import './globals.css';
 
-const plexSans = IBM_Plex_Sans({
+const geistSans = Geist({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
-const plexSerif = IBM_Plex_Serif({
+const geistMono = Geist_Mono({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-serif',
+  weight: ['400', '500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 });
 const plexArabic = IBM_Plex_Sans_Arabic({
@@ -24,8 +24,8 @@ const plexArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: 'BAC Platform',
-  description: 'Collaborative BAC exercise practice and learning platform',
+  title: 'Najah — منصة البكالوريا',
+  description: 'تمارين بكالوريا، حلول جماعية، وجلسات مع الأساتذة. كلّ ما تحتاجه للتفوّق.',
 };
 
 export default async function RootLayout({
@@ -35,7 +35,7 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-  const fontVars = `${plexSans.variable} ${plexSerif.variable} ${plexArabic.variable}`;
+  const fontVars = `${geistSans.variable} ${geistMono.variable} ${plexArabic.variable}`;
 
   return (
     <html lang={locale} dir={dir} className={fontVars} suppressHydrationWarning>

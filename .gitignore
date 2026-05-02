@@ -66,3 +66,8 @@ UI_REVIEW_*.md
 /session-*.png
 /sessions-*.png
 /unenroll-dialog.png
+
+# More test artifacts
+/preview-*.png
+/final-*.png
+/library-*.png
