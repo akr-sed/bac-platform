@@ -1,6 +1,7 @@
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 import { Providers } from '@/components/providers/Providers';
 import { routing } from '@/i18n/routing';
 
@@ -21,9 +22,10 @@ export default async function LocaleLayout({
 
   return (
     <Providers messages={messages as Record<string, unknown>} locale={locale}>
-      <div className="min-h-screen">
+      <div className="flex min-h-[100dvh] flex-col">
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
+        <Footer />
       </div>
     </Providers>
   );

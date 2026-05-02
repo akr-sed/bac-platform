@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { Link } from '@/i18n/routing';
-import { GraduationCap, Mail, Lock, Loader2 } from 'lucide-react';
+import { Mail, Lock, Loader2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Logo } from '@/components/brand/Logo';
 import { useAuth } from '@/components/providers/AuthProvider';
 
 export default function LoginPage() {
@@ -38,75 +38,82 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md rounded-xl border border-border p-0 shadow-sm">
-        <CardHeader className="flex flex-col items-center gap-3 pb-2 pt-8">
-          <div className="flex size-14 items-center justify-center rounded-xl bg-primary/10">
-            <GraduationCap className="size-7 text-primary" />
-          </div>
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground">
+    <main className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-md place-items-center px-4 py-12 sm:px-6">
+      <div className="w-full space-y-8">
+        <div className="space-y-3 text-center">
+          <Logo className="mx-auto" />
+          <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground">
             {t('title')}
           </h1>
-        </CardHeader>
-        <CardContent className="px-8 pb-8 pt-4">
-          <form className="space-y-5" onSubmit={handleSubmit}>
-            {error && (
-              <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
-                {error}
-              </div>
+        </div>
+
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          {error && (
+            <div role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+              {error}
+            </div>
+          )}
+
+          <div className="space-y-2">
+            <Label htmlFor="email">{t('email')}</Label>
+            <div className="relative">
+              <Mail className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                placeholder="you@example.com"
+                className="h-11 rounded-2xl ps-10"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">{t('password')}</Label>
+              <button type="button" className="cursor-pointer text-xs font-medium text-primary hover:underline">
+                {t('forgotPassword')}
+              </button>
+            </div>
+            <div className="relative">
+              <Lock className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                placeholder="••••••••"
+                className="h-11 rounded-2xl ps-10"
+              />
+            </div>
+          </div>
+
+          <Button
+            type="submit"
+            className="group h-11 w-full cursor-pointer gap-2 rounded-2xl text-base font-medium active:scale-[0.98]"
+            disabled={loading}
+          >
+            {loading ? (
+              <Loader2 className="size-4 animate-spin" />
+            ) : (
+              <>
+                {t('submit')}
+                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+              </>
             )}
+          </Button>
+        </form>
 
-            <div className="space-y-2">
-              <Label htmlFor="email">{t('email')}</Label>
-              <div className="relative">
-                <Mail className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  placeholder={t('email')}
-                  className="ps-10"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">{t('password')}</Label>
-                <button type="button" className="cursor-pointer text-xs font-medium text-primary hover:underline">
-                  {t('forgotPassword')}
-                </button>
-              </div>
-              <div className="relative">
-                <Lock className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  placeholder={t('password')}
-                  className="ps-10"
-                />
-              </div>
-            </div>
-
-            <Button type="submit" className="w-full cursor-pointer rounded-xl" disabled={loading}>
-              {loading && <Loader2 className="me-2 size-4 animate-spin" />}
-              {t('submit')}
-            </Button>
-          </form>
-
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            {t('noAccount')}{' '}
-            <Link href="/register" className="cursor-pointer font-medium text-primary hover:underline">
-              {t('registerLink')}
-            </Link>
-          </p>
-        </CardContent>
-      </Card>
+        <p className="text-center text-sm text-muted-foreground">
+          {t('noAccount')}{' '}
+          <Link href="/register" className="cursor-pointer font-medium text-foreground hover:text-primary">
+            {t('registerLink')}
+          </Link>
+        </p>
+      </div>
     </main>
   );
 }

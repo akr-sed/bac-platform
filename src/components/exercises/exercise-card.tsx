@@ -21,52 +21,54 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
   const localizedTitle = resolveExerciseTitle(exercise, locale);
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md">
-      <header className="flex items-center gap-3 p-4">
+    <article className="group overflow-hidden rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
+      <header className="flex items-center gap-3 px-5 pt-5 pb-3">
         <UserAvatar src={exercise.author?.avatar} name={exercise.author?.name} size="sm" />
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{exercise.author?.name ?? '—'}</p>
+          <p className="truncate text-sm font-medium text-foreground">{exercise.author?.name ?? '—'}</p>
           <p className="text-xs text-muted-foreground">
-            {exercise.subject} · <time dateTime={exercise.lastActivityAt}>{relativeTime(exercise.lastActivityAt)}</time>
+            <span className="capitalize">{exercise.subject}</span>
+            <span className="mx-1.5">·</span>
+            <time className="font-mono tabular-nums" dateTime={exercise.lastActivityAt}>{relativeTime(exercise.lastActivityAt)}</time>
           </p>
         </div>
         <DifficultyBadge level={exercise.difficulty} />
       </header>
 
       <Link href={`/exercises/${exercise._id}`} className="block">
-        <h3 className="line-clamp-2 px-4 pb-3 font-heading text-lg font-semibold">
+        <h3 className="line-clamp-2 px-5 pb-4 font-heading text-lg font-semibold leading-snug tracking-tight text-foreground">
           <bdi>{localizedTitle}</bdi>
         </h3>
 
-        <div className="relative mx-4 mb-4 aspect-[16/10] overflow-hidden rounded-xl bg-muted">
+        <div className="relative mx-5 mb-5 aspect-[16/10] overflow-hidden rounded-2xl bg-muted">
           {preview.kind === 'image' && preview.url ? (
             <Image
               src={imageUrl(preview.url)}
               alt=""
               fill
               sizes="(max-width: 640px) 100vw, 600px"
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               loading="lazy"
               placeholder={blurUrl(preview.url) ? 'blur' : 'empty'}
               blurDataURL={blurUrl(preview.url) ?? undefined}
             />
           ) : preview.kind === 'pdf' ? (
-            <div className="flex h-full flex-col justify-between bg-gradient-to-br from-primary/10 via-muted to-secondary/10 p-4">
+            <div className="flex h-full flex-col justify-between bg-gradient-to-br from-primary/10 via-muted to-primary/5 p-5">
               <div className="flex items-center gap-2">
-                <FileText className="size-5 text-primary" />
-                <span className="text-xs font-semibold uppercase tracking-wide text-primary">PDF</span>
+                <FileText className="size-4 text-primary" />
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">PDF</span>
               </div>
-              <p className="line-clamp-3 text-sm text-muted-foreground">{exercise.description}</p>
+              <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{exercise.description}</p>
             </div>
           ) : (
-            <div className="flex h-full items-end bg-gradient-to-b from-muted to-muted-foreground/10 p-4">
-              <p className="line-clamp-3 text-sm text-muted-foreground">{exercise.description}</p>
+            <div className="flex h-full items-end bg-gradient-to-b from-muted/50 to-muted p-5">
+              <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{exercise.description}</p>
             </div>
           )}
         </div>
       </Link>
 
-      <footer className="flex items-center gap-1 border-t border-border px-2 py-1">
+      <footer className="flex items-center gap-1 border-t border-border px-3 py-1.5">
         <LikeButton
           exerciseId={exercise._id}
           initialLiked={exercise.isLiked ?? false}
@@ -78,10 +80,10 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
         />
         <Link
           href={`/exercises/${exercise._id}#solutions`}
-          className="ms-auto flex items-center gap-1 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted"
+          className="ms-auto flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors duration-150 hover:bg-muted hover:text-foreground"
         >
           <MessageCircle className="size-4" />
-          {exercise.commentsCount}
+          <span className="font-mono tabular-nums">{exercise.commentsCount}</span>
         </Link>
       </footer>
     </article>
