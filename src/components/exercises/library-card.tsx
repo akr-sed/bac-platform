@@ -38,8 +38,8 @@ export function LibraryCard({ exercise, locale }: Props) {
 
   return (
     <Link href={`/exercises/${exercise._id}`} className="group block">
-      <Card className="rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-        <CardContent className="space-y-4 p-5">
+      <Card className="rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
+        <CardContent className="space-y-4 p-6">
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               {exercise.examLabel && (
@@ -57,7 +57,7 @@ export function LibraryCard({ exercise, locale }: Props) {
                 </Badge>
               )}
               {typeof exercise.marks === 'number' && (
-                <Badge variant="outline" className="rounded-full text-xs">
+                <Badge variant="outline" className="rounded-full font-mono tabular-nums text-xs">
                   {exercise.marks} pts
                 </Badge>
               )}

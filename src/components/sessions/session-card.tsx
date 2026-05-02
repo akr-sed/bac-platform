@@ -42,21 +42,17 @@ export function SessionCard({ session, variant = 'full' }: Props) {
     <Link
       href={`/sessions/${session._id}` as `/sessions/${string}`}
       className={cn(
-        // Drop the ring-1: the existing border + shadow already separates
-        // the card from the page, and stacking gradient + border + ring +
-        // shadow on a 288px rail card reads as visual noise next to the
-        // flat exercise-card in the feed.
-        'group relative block overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/5 via-card to-secondary/5 shadow-sm transition hover:shadow-md',
+        'group relative block overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/[0.04] via-card to-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]',
         isCancelled && 'opacity-60',
         isRail ? 'w-72 shrink-0' : 'w-full'
       )}
     >
-      <div className="flex items-center justify-between px-4 pt-4">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+      <div className="flex items-center justify-between px-5 pt-5">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/[0.06] px-2.5 py-1 text-xs font-medium text-primary">
           <Radio className="size-3" />
           {t('liveBadge')}
         </span>
-        <span className="text-sm font-bold text-foreground">
+        <span className="font-mono text-sm font-semibold tabular-nums text-foreground">
           {session.priceDA > 0
             ? t('priceDA', { price: session.priceDA })
             : t('free')}
