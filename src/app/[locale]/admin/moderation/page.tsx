@@ -194,9 +194,9 @@ export default function ModerationPage() {
                 )}
               </div>
               <Button
-                variant="ghost"
-                size="sm"
-                className="cursor-pointer gap-1.5 rounded-xl text-destructive hover:bg-destructive/10 hover:text-destructive"
+                intent="secondary-red"
+                size="mobile"
+                className="cursor-pointer gap-1.5"
                 onClick={() => setConfirmDelete(item)}
               >
                 <Trash2 className="size-3.5" />

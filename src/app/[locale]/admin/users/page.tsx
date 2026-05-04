@@ -130,7 +130,8 @@ export default function AdminUsersPage() {
             placeholder="Search by name or email…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="h-11 rounded-2xl ps-10"
+            inputSize="sm"
+            className="ps-10"
           />
         </div>
       </div>
@@ -183,21 +184,21 @@ export default function AdminUsersPage() {
                 <div className="flex items-center gap-2">
                   {user.role === 'teacher' && !user.isVerifiedTeacher && (
                     <Button
-                      variant="outline"
-                      size="sm"
-                      className="cursor-pointer gap-1.5 rounded-xl"
+                      intent="secondary-blue"
+                      size="mobile"
+                      className="cursor-pointer gap-1.5"
                       onClick={() => handleVerify(user._id)}
                       disabled={busyId === user._id}
                     >
-                      <CheckCircle className="size-3.5 text-primary" />
+                      <CheckCircle className="size-3.5" />
                       {t('verifyTeacher')}
                     </Button>
                   )}
                   {user.isBlocked ? (
                     <Button
-                      variant="outline"
-                      size="sm"
-                      className="cursor-pointer gap-1.5 rounded-xl"
+                      intent="secondary-blue"
+                      size="mobile"
+                      className="cursor-pointer gap-1.5"
                       onClick={() => handleUnblock(user._id)}
                       disabled={busyId === user._id}
                     >
@@ -206,9 +207,9 @@ export default function AdminUsersPage() {
                     </Button>
                   ) : (
                     <Button
-                      variant="ghost"
-                      size="sm"
-                      className="cursor-pointer gap-1.5 rounded-xl text-destructive hover:bg-destructive/10 hover:text-destructive"
+                      intent="secondary-red"
+                      size="mobile"
+                      className="cursor-pointer gap-1.5"
                       onClick={() => setBlockFor(user)}
                       disabled={busyId === user._id || user.role === 'admin'}
                     >

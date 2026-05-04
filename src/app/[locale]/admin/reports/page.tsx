@@ -162,18 +162,18 @@ export default function AdminReportsPage() {
                       {report.status === 'pending' && (
                         <div className="flex items-center justify-end gap-2">
                           <Button
-                            variant="outline"
-                            size="sm"
+                            intent="secondary-blue"
+                            size="mobile"
                             className="cursor-pointer gap-1"
                             onClick={() => handleResolve(report._id)}
                           >
-                            <CheckCircle className="size-3.5 text-ai-accent" />
+                            <CheckCircle className="size-3.5" />
                             Resolve
                           </Button>
                           <Button
-                            variant="outline"
-                            size="sm"
-                            className="cursor-pointer gap-1 text-amber-600"
+                            intent="secondary-blue"
+                            size="mobile"
+                            className="cursor-pointer gap-1"
                             onClick={() => handleEscalate(report._id)}
                           >
                             <ArrowUpRight className="size-3.5" />
