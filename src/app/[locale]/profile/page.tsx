@@ -40,6 +40,8 @@ import { FileUploadZone } from '@/components/ui/file-upload-zone';
 import { useAuth } from '@/components/providers/AuthProvider';
 import { SubjectPicker } from '@/components/profile/subject-picker';
 import { ExerciseCard } from '@/components/exercises/exercise-card';
+import { UserAvatar } from '@/components/ui/user-avatar';
+import { Logo } from '@/components/brand/Logo';
 import type { FeedItemDTO } from '@/types';
 
 interface Profile {
@@ -363,61 +365,55 @@ export default function ProfilePage() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Profile header */}
-      <Card className="mb-8 rounded-xl border border-border shadow-sm">
-        <CardContent className="p-6 sm:p-8">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex items-start gap-5">
-              {/* Avatar */}
-              {profile.avatar ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={profile.avatar}
-                  alt={profile.name}
-                  className="size-16 rounded-full object-cover"
+      {/* Profile header — navy band per spec §5 */}
+      <div className="mb-8 overflow-hidden rounded-2xl bg-[#003449] text-white">
+        <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
+          <div className="flex items-start gap-5">
+            {/* Avatar 96 px */}
+            <UserAvatar
+              src={profile.avatar}
+              name={profile.name}
+              px={96}
+            />
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <Logo variant="mono-white" size="sm" />
+              </div>
+              <h1 className="font-heading text-2xl font-bold text-white">
+                {profile.name}
+              </h1>
+              <div className="flex flex-wrap items-center gap-2">
+                <RoleBadge
+                  role={profile.role}
+                  isVerified={profile.isVerifiedTeacher}
+                  label={roles(profile.role)}
                 />
-              ) : (
-                <div className="flex size-16 items-center justify-center rounded-full bg-primary/10">
-                  <User className="size-8 text-primary" />
-                </div>
-              )}
-              <div className="space-y-2">
-                <h1 className="font-heading text-2xl font-bold text-foreground">
-                  {profile.name}
-                </h1>
-                <div className="flex flex-wrap items-center gap-2">
-                  <RoleBadge
-                    role={profile.role}
-                    isVerified={profile.isVerifiedTeacher}
-                    label={roles(profile.role)}
-                  />
-                  <Badge variant="outline" className="gap-1 text-xs">
-                    <Award className="size-3" />
-                    {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
-                  </Badge>
-                </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="size-3.5" />
-                    {t('joinedAt')} {new Date(profile.createdAt).toLocaleDateString()}
-                  </span>
-                </div>
+                <Badge variant="outline" className="gap-1 border-white/30 text-xs text-white/80">
+                  <Award className="size-3" />
+                  {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
+                </Badge>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-white/70">
+                <span className="flex items-center gap-1">
+                  <Calendar className="size-3.5" />
+                  {t('joinedAt')} {new Date(profile.createdAt).toLocaleDateString()}
+                </span>
               </div>
             </div>
-
-            <div className="flex items-center gap-2">
-              <PointsPill count={profile.points} />
-              <Button variant="outline" className="cursor-pointer gap-2 rounded-xl" onClick={openEdit}>
-                <Edit3 className="size-4" />
-                {t('editProfile')}
-              </Button>
-              <Button variant="ghost" size="icon" className="cursor-pointer" onClick={openSettings} aria-label="Settings">
-                <Settings className="size-4" />
-              </Button>
-            </div>
           </div>
-        </CardContent>
-      </Card>
+
+          <div className="flex items-center gap-2">
+            <PointsPill count={profile.points} />
+            <Button variant="outline" className="cursor-pointer gap-2 rounded-xl border-white/30 text-white hover:bg-white/10" onClick={openEdit}>
+              <Edit3 className="size-4" />
+              {t('editProfile')}
+            </Button>
+            <Button variant="ghost" size="icon" className="cursor-pointer text-white hover:bg-white/10" onClick={openSettings} aria-label="Settings">
+              <Settings className="size-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
 
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>

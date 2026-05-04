@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
 import { User, Calendar, BookOpen, MessageCircle, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { UserAvatar } from '@/components/ui/user-avatar';
+import { Logo } from '@/components/brand/Logo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Skeleton } from '@/components/ui/skeleton';
 import { PointsPill } from '@/components/ui/points-pill';
@@ -74,41 +76,40 @@ export default function PublicProfilePage() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Profile header (read only) */}
-      <Card className="mb-8 rounded-xl border border-border shadow-sm">
-        <CardContent className="p-6 sm:p-8">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex items-start gap-5">
-              <div className="flex size-16 items-center justify-center rounded-full bg-primary/10">
-                <User className="size-8 text-primary" />
+      {/* Profile header — navy band per spec §5 */}
+      <div className="mb-8 overflow-hidden rounded-2xl bg-[#003449] text-white">
+        <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
+          <div className="flex items-start gap-5">
+            <UserAvatar name={profile.name} px={96} />
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <Logo variant="mono-white" size="sm" />
               </div>
-              <div className="space-y-2">
-                <h1 className="font-heading text-2xl font-bold text-foreground">
-                  {profile.name}
-                </h1>
-                <div className="flex flex-wrap items-center gap-2">
-                  <RoleBadge
-                    role={profile.role}
-                    isVerified={profile.isVerifiedTeacher}
-                    label={roles(profile.role)}
-                  />
-                  <Badge variant="outline" className="gap-1 text-xs">
-                    <Award className="size-3" />
-                    {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
-                  </Badge>
-                </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="size-3.5" />
-                    {t('joinedAt')} {new Date(profile.createdAt).toLocaleDateString()}
-                  </span>
-                </div>
+              <h1 className="font-heading text-2xl font-bold text-white">
+                {profile.name}
+              </h1>
+              <div className="flex flex-wrap items-center gap-2">
+                <RoleBadge
+                  role={profile.role}
+                  isVerified={profile.isVerifiedTeacher}
+                  label={roles(profile.role)}
+                />
+                <Badge variant="outline" className="gap-1 border-white/30 text-xs text-white/80">
+                  <Award className="size-3" />
+                  {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
+                </Badge>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-white/70">
+                <span className="flex items-center gap-1">
+                  <Calendar className="size-3.5" />
+                  {t('joinedAt')} {new Date(profile.createdAt).toLocaleDateString()}
+                </span>
               </div>
             </div>
-            <PointsPill count={profile.points} />
           </div>
-        </CardContent>
-      </Card>
+          <PointsPill count={profile.points} />
+        </div>
+      </div>
 
       {/* Tabs */}
       <Tabs defaultValue="exercises">
