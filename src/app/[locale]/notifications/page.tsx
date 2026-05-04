@@ -24,7 +24,7 @@ export default async function NotificationsPage({
 
   return (
     <AppShell>
-    <main className="py-8 lg:py-12">
+    <div className="py-8 lg:py-12">
       {/* Header */}
       <div className="mb-8 flex items-center gap-3">
         <span className="flex size-10 items-center justify-center rounded-[12px] bg-[#E6F4FA]">
@@ -44,7 +44,7 @@ export default async function NotificationsPage({
       >
         <NotificationsList />
       </Suspense>
-    </main>
+    </div>
     </AppShell>
   );
 }

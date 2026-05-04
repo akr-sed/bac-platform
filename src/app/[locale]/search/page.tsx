@@ -44,13 +44,13 @@ export default async function SearchPage({
 
   return (
     <AppShell>
-    <main className="py-8 lg:py-12">
+    <div className="py-8 lg:py-12">
       {/* Client island: auto-focus search input, debounced navigation */}
       <SearchClient initialQ={q} />
 
       {/* Server-rendered results */}
       <SearchResults q={q} results={results} />
-    </main>
+    </div>
     </AppShell>
   );
 }

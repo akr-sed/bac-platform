@@ -150,7 +150,7 @@ export default function ExercisesPage() {
 
   return (
     <AppShell>
-    <main className="py-8">
+    <div className="py-8">
       <UpcomingSessionsRailClient />
 
       {/* Page header */}
@@ -262,7 +262,7 @@ export default function ExercisesPage() {
           )}
         </div>
       </div>
-    </main>
+    </div>
     </AppShell>
   );
 }

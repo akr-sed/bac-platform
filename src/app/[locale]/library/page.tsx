@@ -74,7 +74,7 @@ export default async function LibraryPage({ params }: RouteParams) {
 
   return (
     <AppShell>
-    <main className="py-8">
+    <div className="py-8">
       <header className="mb-8">
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
           {t('eyebrow')}
@@ -100,7 +100,7 @@ export default async function LibraryPage({ params }: RouteParams) {
           ))}
         </div>
       )}
-    </main>
+    </div>
     </AppShell>
   );
 }

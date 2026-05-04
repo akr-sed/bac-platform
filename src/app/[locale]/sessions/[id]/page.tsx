@@ -41,7 +41,7 @@ export default async function SessionDetailPage({ params }: Props) {
 
   return (
     <AppShell>
-    <main className="py-8">
+    <div className="py-8">
       {isCancelled && (
         // Solid red banner: white text on the destructive token gives
         // ≥4.5:1 in light mode, and the dark-mode destructive is darkened
@@ -190,7 +190,7 @@ export default async function SessionDetailPage({ params }: Props) {
           />
         </div>
       </Card>
-    </main>
+    </div>
     </AppShell>
   );
 }

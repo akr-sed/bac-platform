@@ -164,7 +164,7 @@ export default function ExerciseDetailPage() {
 
   return (
     <AppShell>
-    <main className="py-8">
+    <div className="py-8">
       {/* Back nav */}
       {exercise?.examId ? (
         <Link
@@ -526,7 +526,7 @@ export default function ExerciseDetailPage() {
           </div>
         </DialogContent>
       </Dialog>
-    </main>
+    </div>
     </AppShell>
   );
 }
