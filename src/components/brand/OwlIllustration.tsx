@@ -23,9 +23,10 @@ export interface OwlIllustrationProps {
   variant: OwlVariant;
   size?: number; // px height; aspect 1:1
   className?: string;
+  priority?: boolean; // pass true when the owl is above the fold (LCP candidate)
 }
 
-export function OwlIllustration({ variant, size = 128, className }: OwlIllustrationProps) {
+export function OwlIllustration({ variant, size = 128, className, priority = false }: OwlIllustrationProps) {
   const tints = VARIANT_TINT[variant];
   const style = {
     '--owl-body': tints.body,
@@ -48,6 +49,8 @@ export function OwlIllustration({ variant, size = 128, className }: OwlIllustrat
         width={size}
         height={size}
         unoptimized
+        priority={priority}
+        loading={priority ? 'eager' : 'lazy'}
       />
     </span>
   );

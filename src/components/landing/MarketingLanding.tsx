@@ -63,7 +63,7 @@ export async function MarketingLanding({ locale }: Props) {
 
         {/* Right: logo + dashed frame with mock card */}
         <div className="flex flex-col items-center gap-6">
-          <Logo variant="vertical" size={80} />
+          <Logo variant="vertical" size={80} priority />
           <DashedFrame intent="navy" className="w-full max-w-sm">
             <div className="space-y-3 rounded-xl bg-white p-5 shadow-sm">
               <div className="flex items-start gap-3">
@@ -154,7 +154,7 @@ export async function MarketingLanding({ locale }: Props) {
             {STEPS.map(({ key, owl }, idx) => (
               <div key={key} className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
-                  <OwlIllustration variant={owl} size={80} />
+                  <OwlIllustration variant={owl} size={80} priority={idx === 0} />
                   <span className="absolute -end-2 -top-2 flex size-6 items-center justify-center rounded-full bg-[#003449] text-xs font-bold text-white">
                     {idx + 1}
                   </span>
