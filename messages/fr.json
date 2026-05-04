@@ -34,7 +34,8 @@
     "notifications": "Notifications",
     "leaderboard": "Classement",
     "search": "Recherche",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "dashboard": "Tableau de bord"
   },
   "auth": {
     "login": {
@@ -671,6 +672,61 @@
       "title": "Pas encore de classement",
       "description": "Sois le premier à grimper au tableau d'honneur !"
     }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Niveau {level}",
+    "streak": "{days} jours consécutifs",
+    "streakLabel": "jours consécutifs",
+    "rank": "Rang #{rank}",
+    "unranked": "Non classé",
+    "quests": {
+      "title": "Quêtes du jour",
+      "comment-3": {
+        "title": "Commenter 3 fois",
+        "description": "Ajoute 3 commentaires sur des corrections"
+      },
+      "solve-1": {
+        "title": "Résoudre un exercice",
+        "description": "Soumets une correction pour n'importe quel exercice"
+      },
+      "post-1": {
+        "title": "Publier un exercice",
+        "description": "Publie un nouvel exercice pour la communauté"
+      }
+    },
+    "achievements": {
+      "title": "Succès",
+      "locked": "Verrouillé",
+      "unlocked": "Déverrouillé",
+      "first-exercise": {
+        "title": "Premier pas",
+        "description": "Soumets ta toute première correction"
+      },
+      "streak-7": {
+        "title": "Semaine de régularité",
+        "description": "Maintiens une série de 7 jours consécutifs"
+      },
+      "streak-30": {
+        "title": "Mois de persévérance",
+        "description": "Maintiens une série de 30 jours consécutifs"
+      },
+      "level-5": {
+        "title": "Niveau 5 atteint",
+        "description": "Monte au niveau 5"
+      },
+      "comments-50": {
+        "title": "Voix de la communauté",
+        "description": "Poste 50 commentaires sur les corrections"
+      },
+      "top-100": {
+        "title": "Élite nationale",
+        "description": "Atteins le top 100 national"
+      }
+    },
+    "searchPlaceholder": "Rechercher des exercices, séances ou résumés...",
+    "startSolving": "Commencer",
+    "dashboard": "Tableau de bord"
   },
   "search": {
     "title": "Recherche",

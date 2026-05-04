@@ -34,7 +34,8 @@
     "notifications": "Notifications",
     "leaderboard": "Leaderboard",
     "search": "Search",
-    "settings": "Settings"
+    "settings": "Settings",
+    "dashboard": "Dashboard"
   },
   "auth": {
     "login": {
@@ -671,6 +672,61 @@
       "title": "No leaders yet",
       "description": "Be the first to climb the board."
     }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Level {level}",
+    "streak": "{days}-day streak",
+    "streakLabel": "day streak",
+    "rank": "Rank #{rank}",
+    "unranked": "Unranked",
+    "quests": {
+      "title": "Daily Quests",
+      "comment-3": {
+        "title": "Comment 3 times",
+        "description": "Add 3 comments on solutions"
+      },
+      "solve-1": {
+        "title": "Solve an exercise",
+        "description": "Submit a solution to any exercise"
+      },
+      "post-1": {
+        "title": "Post an exercise",
+        "description": "Publish a new exercise for the community"
+      }
+    },
+    "achievements": {
+      "title": "Achievements",
+      "locked": "Locked",
+      "unlocked": "Unlocked",
+      "first-exercise": {
+        "title": "First Step",
+        "description": "Submit your very first solution"
+      },
+      "streak-7": {
+        "title": "Week of Consistency",
+        "description": "Maintain a 7-day streak"
+      },
+      "streak-30": {
+        "title": "Month of Dedication",
+        "description": "Maintain a 30-day streak"
+      },
+      "level-5": {
+        "title": "Reached Level 5",
+        "description": "Level up to level 5"
+      },
+      "comments-50": {
+        "title": "Community Voice",
+        "description": "Post 50 comments on peers' solutions"
+      },
+      "top-100": {
+        "title": "National Elite",
+        "description": "Reach top 100 nationally"
+      }
+    },
+    "searchPlaceholder": "Search for exercises, sessions, or summaries...",
+    "startSolving": "Start solving",
+    "dashboard": "Dashboard"
   },
   "search": {
     "title": "Search",

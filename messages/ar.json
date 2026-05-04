@@ -34,7 +34,8 @@
     "notifications": "الإشعارات",
     "leaderboard": "المتصدرون",
     "search": "بحث",
-    "settings": "الإعدادات"
+    "settings": "الإعدادات",
+    "dashboard": "لوحة التحكم"
   },
   "auth": {
     "login": {
@@ -671,6 +672,61 @@
       "title": "لا يوجد متصدرون بعد",
       "description": "كن أول من يتسلق لوحة الشرف!"
     }
+  },
+  "gamification": {
+    "xp": "نقاط الخبرة",
+    "level": "المستوى {level}",
+    "streak": "{days} يوم متتالي",
+    "streakLabel": "أيام متتالية",
+    "rank": "المرتبة {rank}",
+    "unranked": "غير مصنّف",
+    "quests": {
+      "title": "مهام اليوم",
+      "comment-3": {
+        "title": "علّق 3 مرات",
+        "description": "أضف 3 تعليقات على الحلول"
+      },
+      "solve-1": {
+        "title": "حلّ تمريناً",
+        "description": "أرسل حلاً لأي تمرين"
+      },
+      "post-1": {
+        "title": "انشر تمريناً",
+        "description": "انشر تمريناً جديداً للمجتمع"
+      }
+    },
+    "achievements": {
+      "title": "الإنجازات",
+      "locked": "مقفل",
+      "unlocked": "مفتوح",
+      "first-exercise": {
+        "title": "أول خطوة",
+        "description": "أرسل أول حل لك"
+      },
+      "streak-7": {
+        "title": "أسبوع منتظم",
+        "description": "حافظ على تواصل 7 أيام متتالية"
+      },
+      "streak-30": {
+        "title": "شهر من المثابرة",
+        "description": "حافظ على تواصل 30 يوماً متتالياً"
+      },
+      "level-5": {
+        "title": "بلغت المستوى الخامس",
+        "description": "ارتقِ إلى المستوى الخامس"
+      },
+      "comments-50": {
+        "title": "صوت المجتمع",
+        "description": "علّق 50 مرة على حلول الزملاء"
+      },
+      "top-100": {
+        "title": "النخبة الوطنية",
+        "description": "احتلّ مكانة ضمن أفضل 100 وطنياً"
+      }
+    },
+    "searchPlaceholder": "ابحث عن تمارين، حصص، أو ملخصات...",
+    "startSolving": "ابدأ الحل",
+    "dashboard": "لوحة التحكم"
   },
   "search": {
     "title": "البحث",
