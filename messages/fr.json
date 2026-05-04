@@ -307,7 +307,10 @@
     "notFound": "Introuvable",
     "pageNotFound": "La page que vous cherchez n'existe pas.",
     "backToHome": "Retour à l'accueil",
-    "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "tryAgain": "Réessayer",
+    "offline": "Vous êtes hors ligne",
+    "offlineDescription": "Nous réveillerons dès que la connexion sera rétablie."
   },
   "sessions": {
     "title": "Sessions en direct",
@@ -507,5 +510,107 @@
     "terms": "Conditions d'utilisation",
     "privacy": "Politique de confidentialité",
     "madeFor": "Conçu pour les lycéens algériens"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Plateforme algérienne du bac",
+      "h1": "Tout ce dont tu as besoin en un seul endroit",
+      "subtitle": "Des exercices sélectionnés à partir de vrais sujets, des corrections de tes camarades et de professeurs vérifiés, et des séances live pour les chapitres difficiles.",
+      "ctaPrimary": "Commencer gratuitement",
+      "ctaSecondary": "Parcourir les exercices"
+    },
+    "pillars": {
+      "title": "Tout en un seul endroit",
+      "exercises": {
+        "title": "Exercices du bac",
+        "body": "Exercices issus de vrais sujets de bac, classés par matière, thème et niveau."
+      },
+      "sessions": {
+        "title": "Séances en direct",
+        "body": "Réserve une séance avec un prof vérifié pour réviser les chapitres difficiles avant l'examen."
+      },
+      "hints": {
+        "title": "Indices IA",
+        "body": "Obtiens des indices pédagogiques alimentés par l'IA pour raisonner par toi-même."
+      }
+    },
+    "exercises": {
+      "title": "Exercices de notre plateforme",
+      "cta": "Voir tous les exercices"
+    },
+    "howItWorks": {
+      "title": "Comment fonctionne NAJAH ?",
+      "step1": {
+        "title": "Créer un compte",
+        "body": "Inscris-toi gratuitement en quelques secondes."
+      },
+      "step2": {
+        "title": "Choisir ta filière",
+        "body": "Personnalise ton expérience selon ta filière."
+      },
+      "step3": {
+        "title": "Pratiquer chaque jour",
+        "body": "Résous des exercices et apprends des explications."
+      },
+      "step4": {
+        "title": "Suivre ta progression",
+        "body": "Gagne des points et grimpe dans le classement."
+      }
+    },
+    "trust": {
+      "students": "10K+",
+      "studentsLabel": "élèves",
+      "exercises": "5K+",
+      "exercisesLabel": "exercices",
+      "satisfaction": "96%",
+      "satisfactionLabel": "taux de satisfaction"
+    },
+    "cta": {
+      "h2": "Prêt(e) à réussir ton bac ?",
+      "button": "Commencer gratuitement"
+    }
+  },
+  "help": {
+    "title": "Aide et FAQ",
+    "subtitle": "Réponses aux questions les plus fréquentes",
+    "contactTitle": "Nous contacter",
+    "contactSubtitle": "Vous n'avez pas trouvé de réponse ? Envoyez-nous un message.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "message": "Votre message",
+      "messagePlaceholder": "Décrivez votre problème ou votre question…",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours…",
+      "successTitle": "Message envoyé !",
+      "successBody": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.",
+      "errorBody": "Échec de l'envoi. Veuillez réessayer."
+    },
+    "faq": {
+      "q1": "Qu'est-ce que NAJAH ?",
+      "a1": "NAJAH est une plateforme éducative algérienne destinée aux lycéens. Elle propose des exercices tirés de vrais sujets de bac, des corrections de camarades et de professeurs vérifiés, ainsi que des séances de révision en direct.",
+      "q2": "Comment s'inscrire ?",
+      "a2": "Clique sur « Créer un compte » sur la page d'accueil, saisis ton nom, ton e-mail et un mot de passe, puis suis les étapes de configuration.",
+      "q3": "NAJAH est-il gratuit ?",
+      "a3": "Oui, l'inscription et l'accès à la plupart des contenus sont entièrement gratuits. Certaines séances de professeurs peuvent comporter un petit tarif fixé par le professeur.",
+      "q4": "Comment trouver des exercices pour ma filière ?",
+      "a4": "Après la création de ton compte, choisis ta filière et tes matières favorites lors de la configuration. Ton fil d'actualité affichera automatiquement les exercices les plus pertinents.",
+      "q5": "Comment enregistrer un exercice dans ma bibliothèque ?",
+      "a5": "Clique sur l'icône de signet sur n'importe quelle carte d'exercice. Tu peux accéder à tes exercices enregistrés à tout moment depuis la section Bibliothèque.",
+      "q6": "Comment rejoindre une séance en direct ?",
+      "a6": "Parcours la page Séances, choisis une séance qui te convient et clique sur S'inscrire. Le lien de la réunion apparaîtra juste avant l'heure de la séance.",
+      "q7": "Puis-je partager mes propres corrections ?",
+      "a7": "Absolument ! Ouvre n'importe quel exercice et tu trouveras une option pour ajouter ta correction. Partage-la avec tes camarades pour les aider à comprendre.",
+      "q8": "Les indices IA sont-ils fiables ?",
+      "a8": "Les indices générés par l'IA sont un outil pédagogique expérimental. Ils peuvent contenir des erreurs — vérifie toujours les informations importantes avec ton professeur.",
+      "q9": "Comment changer mon mot de passe ?",
+      "a9": "Va dans Paramètres → section Mot de passe, saisis ton mot de passe actuel et le nouveau, puis clique sur Mettre à jour.",
+      "q10": "Comment changer la langue de l'interface ?",
+      "a10": "Clique sur ton nom ou le menu de langue dans la barre de navigation et choisis ta langue préférée (arabe, français, anglais).",
+      "q11": "Comment supprimer mon compte ?",
+      "a11": "Va dans Paramètres → Zone de danger et clique sur Supprimer le compte. On te demandera de confirmer ton e-mail. Cette action est irréversible.",
+      "q12": "Comment signaler un problème ?",
+      "a12": "Tu peux signaler tout contenu inapproprié via le bouton Signaler présent sur chaque publication. Pour les problèmes techniques, utilise le formulaire de contact ci-dessous."
+    }
   }
 }

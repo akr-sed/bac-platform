@@ -307,7 +307,10 @@
     "notFound": "Not Found",
     "pageNotFound": "The page you are looking for does not exist.",
     "backToHome": "Back to Home",
-    "somethingWentWrong": "Something went wrong. Please try again later."
+    "somethingWentWrong": "Something went wrong. Please try again later.",
+    "tryAgain": "Try again",
+    "offline": "You're offline",
+    "offlineDescription": "We'll wake up when you reconnect."
   },
   "sessions": {
     "title": "Live Sessions",
@@ -507,5 +510,107 @@
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "madeFor": "Made for Algerian baccalaureate students"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Algerian BAC platform",
+      "h1": "All you need in one place",
+      "subtitle": "Curated exercises from real papers, solutions from peers and verified teachers, and live sessions for the hard topics.",
+      "ctaPrimary": "Start for free",
+      "ctaSecondary": "Browse exercises"
+    },
+    "pillars": {
+      "title": "Everything in one place",
+      "exercises": {
+        "title": "BAC Exercises",
+        "body": "Exercises sourced from real BAC papers, organized by subject, topic and difficulty level."
+      },
+      "sessions": {
+        "title": "Live Sessions",
+        "body": "Book a session with a verified teacher to review hard topics before your exam."
+      },
+      "hints": {
+        "title": "AI Hints",
+        "body": "Get AI-powered coaching hints to help you reason through solutions on your own."
+      }
+    },
+    "exercises": {
+      "title": "Exercises from our platform",
+      "cta": "View all exercises"
+    },
+    "howItWorks": {
+      "title": "How NAJAH works",
+      "step1": {
+        "title": "Sign up",
+        "body": "Create a free account in seconds."
+      },
+      "step2": {
+        "title": "Pick your stream",
+        "body": "Tailor your experience to your BAC stream."
+      },
+      "step3": {
+        "title": "Practice daily",
+        "body": "Solve exercises and learn from explanations."
+      },
+      "step4": {
+        "title": "Track progress",
+        "body": "Earn points and climb the rankings."
+      }
+    },
+    "trust": {
+      "students": "10K+",
+      "studentsLabel": "students",
+      "exercises": "5K+",
+      "exercisesLabel": "exercises",
+      "satisfaction": "96%",
+      "satisfactionLabel": "satisfaction rate"
+    },
+    "cta": {
+      "h2": "Ready to ace your bac?",
+      "button": "Start for free now"
+    }
+  },
+  "help": {
+    "title": "Help & FAQ",
+    "subtitle": "Answers to the most common questions",
+    "contactTitle": "Contact us",
+    "contactSubtitle": "Couldn't find an answer? Send us a message.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "message": "Your message",
+      "messagePlaceholder": "Describe your issue or question...",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Message sent!",
+      "successBody": "Thank you for reaching out. We'll get back to you as soon as possible.",
+      "errorBody": "Failed to send message. Please try again."
+    },
+    "faq": {
+      "q1": "What is NAJAH?",
+      "a1": "NAJAH is an Algerian educational platform for BAC students. It offers curated exercises from real exams, solutions from peers and verified teachers, and live study sessions.",
+      "q2": "How do I sign up?",
+      "a2": "Click \"Create account\" on the home page, enter your name, email, and a password, then follow the setup steps.",
+      "q3": "Is NAJAH free?",
+      "a3": "Yes, signing up and accessing most content is completely free. Some teacher sessions may have a small fee set by the teacher.",
+      "q4": "How do I find exercises for my stream?",
+      "a4": "After creating your account, choose your stream and preferred subjects during setup. Your feed will automatically show the most relevant exercises.",
+      "q5": "How do I save an exercise to my library?",
+      "a5": "Click the bookmark icon on any exercise card. You can access your saved exercises anytime from the Library section.",
+      "q6": "How do I join a session?",
+      "a6": "Browse the Sessions page, pick a session that suits you, and click Register. The meeting link will appear just before session time.",
+      "q7": "Can I share my own solutions?",
+      "a7": "Absolutely! Open any exercise and you'll find an option to add your solution. Share it with classmates and help them understand.",
+      "q8": "Are AI hints reliable?",
+      "a8": "AI-generated hints are an experimental learning tool. They may contain errors — always verify important information with your teacher.",
+      "q9": "How do I change my password?",
+      "a9": "Go to Settings → Password section, enter your current and new password, then click Update.",
+      "q10": "How do I switch language?",
+      "a10": "Click your name or the language menu in the navbar and choose your preferred language (Arabic, French, English).",
+      "q11": "How do I delete my account?",
+      "a11": "Go to Settings → Danger Zone and click Delete account. You'll be asked to confirm your email. This action cannot be undone.",
+      "q12": "How do I report a problem?",
+      "a12": "You can report any inappropriate content using the Report button on any post. For technical issues, use the contact form below."
+    }
   }
 }

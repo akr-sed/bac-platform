@@ -1,5 +1,5 @@
 import { getSession } from '@/lib/auth';
-import { Landing } from '@/components/landing/Landing';
+import { MarketingLanding } from '@/components/landing/MarketingLanding';
 import { HomeFeed } from '@/components/feed/HomeFeed';
 
 type Params = { params: Promise<{ locale: string }> };
@@ -19,5 +19,5 @@ export default async function HomePage({ params }: Params) {
     );
   }
 
-  return <Landing />;
+  return <MarketingLanding locale={locale} />;
 }
