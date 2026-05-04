@@ -6,7 +6,7 @@ export default defineConfig({
     environment: 'node',
     include: [
       'src/**/__tests__/**/*.test.{ts,tsx}',
-      'src/components/brand/Logo.test.tsx',
+      'src/**/*.test.{ts,tsx}',
     ],
     globals: false,
   },
