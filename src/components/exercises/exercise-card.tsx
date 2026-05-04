@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
-import { DifficultyBadge } from '@/components/ui/difficulty-badge';
-import { MessageCircle, FileText } from 'lucide-react';
-import { firstPreview, imageUrl, blurUrl } from '@/lib/cloudinary-preview';
+import { MessageCircle, ChevronRight, ThumbsUp } from 'lucide-react';
+import { imageUrl, blurUrl, firstPreview } from '@/lib/cloudinary-preview';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { LikeButton } from './like-button';
 import { SaveButton } from './save-button';
+import { cn } from '@/lib/utils';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
@@ -15,79 +15,22 @@ interface Props {
   variant?: 'feed' | 'compact';
 }
 
-export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
-  const preview = firstPreview(exercise.attachments);
-  const locale = useLocale();
-  const localizedTitle = resolveExerciseTitle(exercise, locale);
+// Subject badge colour map (Wave 6)
+const SUBJECT_COLORS: Record<string, { bg: string; text: string }> = {
+  math:      { bg: 'bg-[#7ECCFE]', text: 'text-[#00709D]' },
+  رياضيات:  { bg: 'bg-[#7ECCFE]', text: 'text-[#00709D]' },
+  physics:   { bg: 'bg-[#FFDCBF]', text: 'text-[#6B3B00]' },
+  فيزياء:   { bg: 'bg-[#FFDCBF]', text: 'text-[#6B3B00]' },
+  chemistry: { bg: 'bg-[#D9EFF8]', text: 'text-[#0095D1]' },
+  كيمياء:   { bg: 'bg-[#D9EFF8]', text: 'text-[#0095D1]' },
+  biology:   { bg: 'bg-[#DCFCE7]', text: 'text-[#166534]' },
+  'علوم طبيعية': { bg: 'bg-[#DCFCE7]', text: 'text-[#166534]' },
+};
 
-  return (
-    <article className="group overflow-hidden rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
-      <header className="flex items-center gap-3 px-5 pt-5 pb-3">
-        <UserAvatar src={exercise.author?.avatar} name={exercise.author?.name} size="sm" />
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium text-foreground">{exercise.author?.name ?? '—'}</p>
-          <p className="text-xs text-muted-foreground">
-            <span className="capitalize">{exercise.subject}</span>
-            <span className="mx-1.5">·</span>
-            <time className="font-mono tabular-nums" dateTime={exercise.lastActivityAt}>{relativeTime(exercise.lastActivityAt)}</time>
-          </p>
-        </div>
-        <DifficultyBadge level={exercise.difficulty} />
-      </header>
-
-      <Link href={`/exercises/${exercise._id}`} className="block">
-        <h3 className="line-clamp-2 px-5 pb-4 font-heading text-lg font-semibold leading-snug tracking-tight text-foreground">
-          <bdi>{localizedTitle}</bdi>
-        </h3>
-
-        <div className="relative mx-5 mb-5 aspect-[16/10] overflow-hidden rounded-2xl bg-muted">
-          {preview.kind === 'image' && preview.url ? (
-            <Image
-              src={imageUrl(preview.url)}
-              alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, 600px"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-              loading="lazy"
-              placeholder={blurUrl(preview.url) ? 'blur' : 'empty'}
-              blurDataURL={blurUrl(preview.url) ?? undefined}
-            />
-          ) : preview.kind === 'pdf' ? (
-            <div className="flex h-full flex-col justify-between bg-gradient-to-br from-primary/10 via-muted to-primary/5 p-5">
-              <div className="flex items-center gap-2">
-                <FileText className="size-4 text-primary" />
-                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">PDF</span>
-              </div>
-              <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{exercise.description}</p>
-            </div>
-          ) : (
-            <div className="flex h-full items-end bg-gradient-to-b from-muted/50 to-muted p-5">
-              <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{exercise.description}</p>
-            </div>
-          )}
-        </div>
-      </Link>
-
-      <footer className="flex items-center gap-1 border-t border-border px-3 py-1.5">
-        <LikeButton
-          exerciseId={exercise._id}
-          initialLiked={exercise.isLiked ?? false}
-          initialCount={exercise.likesCount}
-        />
-        <SaveButton
-          exerciseId={exercise._id}
-          initialSaved={exercise.isSaved ?? false}
-        />
-        <Link
-          href={`/exercises/${exercise._id}#solutions`}
-          className="ms-auto flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors duration-150 hover:bg-muted hover:text-foreground"
-        >
-          <MessageCircle className="size-4" />
-          <span className="font-mono tabular-nums">{exercise.commentsCount}</span>
-        </Link>
-      </footer>
-    </article>
-  );
+function subjectBadgeClass(subject: string) {
+  const key = subject.toLowerCase();
+  const match = SUBJECT_COLORS[key] ?? { bg: 'bg-[#EAEEF3]', text: 'text-[#3E4850]' };
+  return `${match.bg} ${match.text}`;
 }
 
 function relativeTime(iso: string): string {
@@ -98,4 +41,122 @@ function relativeTime(iso: string): string {
   if (h < 24) return `${h}h`;
   const d = Math.floor(h / 24);
   return `${d}d`;
+}
+
+export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
+  const locale = useLocale();
+  const t = useTranslations('gamification');
+  const localizedTitle = resolveExerciseTitle(exercise, locale);
+  const preview = firstPreview(exercise.attachments);
+
+  return (
+    <article className="overflow-hidden rounded-[12px] border border-[#D9EFF8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+
+      {/* ── Header ───────────────────────────────────────────────────── */}
+      <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-5 pt-5 pb-[21px]">
+        {/* Subject badge */}
+        <span
+          className={cn(
+            'rounded-full px-3 py-1 text-xs font-bold capitalize',
+            subjectBadgeClass(exercise.subject)
+          )}
+        >
+          {exercise.subject}
+        </span>
+
+        {/* Author meta + avatar */}
+        <div className="flex items-center gap-2">
+          <div className="text-end">
+            <p className="text-sm font-semibold text-[#171C20]">
+              {exercise.author?.name ?? '—'}
+            </p>
+            <time
+              className="text-xs text-[#3E4850]"
+              dateTime={exercise.lastActivityAt}
+            >
+              {relativeTime(exercise.lastActivityAt)}
+            </time>
+          </div>
+          <UserAvatar
+            src={exercise.author?.avatar}
+            name={exercise.author?.name}
+            size="sm"
+          />
+        </div>
+      </header>
+
+      {/* ── Body ─────────────────────────────────────────────────────── */}
+      <Link href={`/exercises/${exercise._id}`} className="block">
+        <div className="flex flex-col gap-6 p-6">
+          {/* Title */}
+          <h3 className="line-clamp-2 text-end text-base font-bold leading-[26px] text-[#171C20]">
+            <bdi>{localizedTitle}</bdi>
+          </h3>
+
+          {/* Content: math expression box OR image OR plain description */}
+          {exercise.hasMath && !preview.url ? (
+            <div className="rounded-[12px] border border-[rgba(223,227,232,0.5)] bg-[#F0F4F9] p-[25px] text-center">
+              <p className="font-mono text-xl text-[#0095D1]">
+                {exercise.description}
+              </p>
+            </div>
+          ) : preview.kind === 'image' && preview.url ? (
+            <div className="relative aspect-video overflow-hidden rounded-[12px] bg-muted">
+              <Image
+                src={imageUrl(preview.url)}
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, 600px"
+                className="object-cover"
+                loading="lazy"
+                placeholder={blurUrl(preview.url) ? 'blur' : 'empty'}
+                blurDataURL={blurUrl(preview.url) ?? undefined}
+              />
+            </div>
+          ) : preview.kind === 'pdf' ? (
+            <div className="rounded-[12px] border border-[rgba(223,227,232,0.5)] bg-[#F0F4F9] p-[25px] text-center">
+              <p className="line-clamp-3 text-sm text-[#3E4850]">
+                {exercise.description}
+              </p>
+            </div>
+          ) : (
+            <p className="line-clamp-3 text-end text-sm leading-relaxed text-[#3E4850]">
+              {exercise.description}
+            </p>
+          )}
+        </div>
+      </Link>
+
+      {/* ── Footer ───────────────────────────────────────────────────── */}
+      <footer className="flex items-center justify-between border-t border-[#D9EFF8] px-6 py-[16px]">
+        {/* Start solving link */}
+        <Link
+          href={`/exercises/${exercise._id}`}
+          className="flex items-center gap-1 text-sm font-bold text-[#0095D1] transition-colors hover:text-[#00709D]"
+        >
+          <span>{t('startSolving')}</span>
+          <ChevronRight className="size-4 rtl:rotate-180" />
+        </Link>
+
+        {/* Engagement counts */}
+        <div className="flex items-center gap-3">
+          {/* Comment count */}
+          <Link
+            href={`/exercises/${exercise._id}#solutions`}
+            className="flex items-center gap-1 text-xs font-bold text-[#3E4850] transition-colors hover:text-[#171C20]"
+          >
+            <MessageCircle className="size-4" />
+            <span className="font-mono tabular-nums">{exercise.commentsCount}</span>
+          </Link>
+
+          {/* Like button (interactive island) */}
+          <LikeButton
+            exerciseId={exercise._id}
+            initialLiked={exercise.isLiked ?? false}
+            initialCount={exercise.likesCount}
+          />
+        </div>
+      </footer>
+    </article>
+  );
 }
