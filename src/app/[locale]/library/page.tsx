@@ -4,6 +4,7 @@ import { connectToDatabase } from '@/lib/mongodb';
 import Exercise from '@/models/Exercise';
 import Exam from '@/models/Exam';
 import { LibraryCard } from '@/components/exercises/library-card';
+import { EmptyState } from '@/components/ui/EmptyState';
 import type { ExamTopicLocale } from '@/lib/exam-topic-labels';
 
 type RouteParams = { params: Promise<{ locale: string }> };
@@ -85,9 +86,11 @@ export default async function LibraryPage({ params }: RouteParams) {
       </header>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-border p-10 text-center">
-          <p className="text-sm text-muted-foreground">{t('empty')}</p>
-        </div>
+        <EmptyState
+          variant="empty-saved"
+          title={t('empty')}
+          description={t('subtitle')}
+        />
       ) : (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {items.map((ex) => (
