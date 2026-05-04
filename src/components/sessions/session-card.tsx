@@ -42,7 +42,7 @@ export function SessionCard({ session, variant = 'full' }: Props) {
     <Link
       href={`/sessions/${session._id}` as `/sessions/${string}`}
       className={cn(
-        'group relative block overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/[0.04] via-card to-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]',
+        'group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/[0.04] via-card to-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]',
         isCancelled && 'opacity-60',
         isRail ? 'w-72 shrink-0' : 'w-full'
       )}
@@ -59,10 +59,10 @@ export function SessionCard({ session, variant = 'full' }: Props) {
         </span>
       </div>
 
-      <div className="px-4 pb-4 pt-3">
+      <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
         <h3
           className={cn(
-            'line-clamp-2 font-heading font-semibold leading-snug text-foreground',
+            'line-clamp-2 min-h-[2.75rem] font-heading font-semibold leading-snug text-foreground',
             isRail ? 'text-base' : 'text-lg'
           )}
         >
@@ -122,9 +122,12 @@ export function SessionCard({ session, variant = 'full' }: Props) {
           </div>
         </div>
 
+        {/* Spacer pushes topics/cancelled-badge to the bottom so cards align */}
+        <div className="flex-1" />
+
         {!isRail && session.topics.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {session.topics.slice(0, 4).map((topic) => (
+          <div className="mt-3 flex max-h-[2rem] flex-wrap gap-1.5 overflow-hidden">
+            {session.topics.slice(0, 3).map((topic) => (
               <span
                 key={topic}
                 className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
@@ -133,6 +136,11 @@ export function SessionCard({ session, variant = 'full' }: Props) {
                 {topic}
               </span>
             ))}
+            {session.topics.length > 3 && (
+              <span className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                +{session.topics.length - 3}
+              </span>
+            )}
           </div>
         )}
 
