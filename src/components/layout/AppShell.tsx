@@ -17,12 +17,12 @@ interface AppShellProps {
  * AppShell — wraps authenticated page content with the nav rail.
  *
  * RTL layout (Arabic default):
- *   [endPanel (left)] | [main content (center)] | [VerticalNavRail (right)]
+ *   [VerticalNavRail (right)] | [main content (center)] | [endPanel (left)]
  *
  * LTR layout:
  *   [VerticalNavRail (left)] | [main content (center)] | [endPanel (right)]
  *
- * The rail always sits on the logical `end` side (browser handles RTL flip).
+ * The rail always sits on the logical `start` side (browser handles RTL flip).
  *
  * Usage:
  *   <AppShell>
@@ -42,20 +42,20 @@ export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
 
   return (
     <div className="mx-auto flex w-full max-w-[1440px] items-start gap-5 px-4 py-5">
-      {/* End panel (gamification sidebar, etc.) — logical start in DOM for RTL */}
+      {/* Nav rail — first in DOM = logical start (right in RTL, left in LTR) */}
+      <div className={`hidden lg:block ${stickyClasses}`}>
+        <VerticalNavRail />
+      </div>
+
+      {/* Main content — grows to fill available space, capped for readability */}
+      <main className="min-w-0 flex-1">{children}</main>
+
+      {/* End panel (gamification sidebar) — last in DOM = logical end (left in RTL, right in LTR) */}
       {panel && (
         <aside className={`hidden w-[320px] shrink-0 xl:block ${stickyClasses}`}>
           {panel}
         </aside>
       )}
-
-      {/* Main content — grows to fill available space, capped for readability */}
-      <main className="min-w-0 flex-1">{children}</main>
-
-      {/* Nav rail — always on the logical end (right side visually in Arabic) */}
-      <div className={`hidden lg:block ${stickyClasses}`}>
-        <VerticalNavRail />
-      </div>
     </div>
   );
 }
