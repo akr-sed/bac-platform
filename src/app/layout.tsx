@@ -1,24 +1,19 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
-import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Mulish, Rubik } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
+const mulish = Mulish({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
 });
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-mono',
-  display: 'swap',
-});
-const plexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
+
+const rubik = Rubik({
+  subsets: ['arabic', 'latin'],
+  weight: ['400', '500', '700', '800'],
   variable: '--font-arabic',
   display: 'swap',
 });
@@ -35,7 +30,7 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-  const fontVars = `${geistSans.variable} ${geistMono.variable} ${plexArabic.variable}`;
+  const fontVars = `${mulish.variable} ${rubik.variable}`;
 
   return (
     <html lang={locale} dir={dir} className={fontVars} suppressHydrationWarning>
