@@ -34,6 +34,7 @@ import { MathText } from '@/components/ui/math-text';
 import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { AppShell } from '@/components/layout/AppShell';
 import {
   Dialog,
   DialogContent,
@@ -162,7 +163,8 @@ export default function ExerciseDetailPage() {
   }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <main className="py-8">
       {/* Back nav */}
       {exercise?.examId ? (
         <Link
@@ -525,5 +527,6 @@ export default function ExerciseDetailPage() {
         </DialogContent>
       </Dialog>
     </main>
+    </AppShell>
   );
 }

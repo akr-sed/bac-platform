@@ -6,6 +6,7 @@ import { UserAvatar } from '@/components/ui/user-avatar';
 import { EnrollButton } from '@/components/sessions/enroll-button';
 import { getSession } from '@/lib/auth';
 import { fetchSessionById } from '@/lib/sessions';
+import { AppShell } from '@/components/layout/AppShell';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -39,7 +40,8 @@ export default async function SessionDetailPage({ params }: Props) {
   });
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <main className="py-8">
       {isCancelled && (
         // Solid red banner: white text on the destructive token gives
         // ≥4.5:1 in light mode, and the dark-mode destructive is darkened
@@ -189,5 +191,6 @@ export default async function SessionDetailPage({ params }: Props) {
         </div>
       </Card>
     </main>
+    </AppShell>
   );
 }

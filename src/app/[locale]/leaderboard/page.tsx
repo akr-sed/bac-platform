@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Trophy } from 'lucide-react';
 import { LeaderboardClient } from './leaderboard-client';
+import { AppShell } from '@/components/layout/AppShell';
 
 export async function generateMetadata({
   params,
@@ -22,7 +23,8 @@ export default async function LeaderboardPage({
   const t = await getTranslations('leaderboard');
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8 lg:py-12">
+    <AppShell>
+    <main className="py-8 lg:py-12">
       {/* Header */}
       <div className="mb-2 flex items-center gap-3">
         <span className="flex size-10 items-center justify-center rounded-[12px] bg-[#FFF3CD]">
@@ -44,5 +46,6 @@ export default async function LeaderboardPage({
         <LeaderboardClient />
       </Suspense>
     </main>
+    </AppShell>
   );
 }

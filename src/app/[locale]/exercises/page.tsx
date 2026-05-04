@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
+import { AppShell } from '@/components/layout/AppShell';
 import {
   Search,
   SlidersHorizontal,
@@ -148,7 +149,8 @@ export default function ExercisesPage() {
   }, [currentPage, selectedDifficulty, searchQuery]);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <main className="py-8">
       <UpcomingSessionsRailClient />
 
       {/* Page header */}
@@ -261,5 +263,6 @@ export default function ExercisesPage() {
         </div>
       </div>
     </main>
+    </AppShell>
   );
 }

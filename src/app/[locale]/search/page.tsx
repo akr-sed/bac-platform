@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { SearchResultsDTO } from '@/types';
 import { SearchClient } from './search-client';
 import { SearchResults } from './search-results';
+import { AppShell } from '@/components/layout/AppShell';
 
 export async function generateMetadata({
   params,
@@ -42,12 +43,14 @@ export default async function SearchPage({
   const results = await fetchResults(q);
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8 lg:py-12">
+    <AppShell>
+    <main className="py-8 lg:py-12">
       {/* Client island: auto-focus search input, debounced navigation */}
       <SearchClient initialQ={q} />
 
       {/* Server-rendered results */}
       <SearchResults q={q} results={results} />
     </main>
+    </AppShell>
   );
 }

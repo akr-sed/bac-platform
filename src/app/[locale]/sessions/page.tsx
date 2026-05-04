@@ -6,6 +6,7 @@ import { SessionsList } from '@/components/sessions/sessions-list';
 import { getSession } from '@/lib/auth';
 import { fetchSessionsList } from '@/lib/sessions';
 import { cn } from '@/lib/utils';
+import { AppShell } from '@/components/layout/AppShell';
 
 export default async function SessionsPage() {
   const t = await getTranslations('sessions');
@@ -18,7 +19,8 @@ export default async function SessionsPage() {
   const canCreate = auth?.role === 'teacher' || auth?.role === 'admin';
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <main className="py-8">
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="font-heading text-3xl font-bold tracking-tight">
@@ -38,5 +40,6 @@ export default async function SessionsPage() {
       </div>
       <SessionsList initialSessions={sessions} />
     </main>
+    </AppShell>
   );
 }

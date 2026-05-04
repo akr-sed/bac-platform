@@ -6,6 +6,7 @@ import Exam from '@/models/Exam';
 import { LibraryCard } from '@/components/exercises/library-card';
 import { EmptyState } from '@/components/ui/EmptyState';
 import type { ExamTopicLocale } from '@/lib/exam-topic-labels';
+import { AppShell } from '@/components/layout/AppShell';
 
 type RouteParams = { params: Promise<{ locale: string }> };
 
@@ -72,7 +73,8 @@ export default async function LibraryPage({ params }: RouteParams) {
   const items = await loadLibrary();
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <main className="py-8">
       <header className="mb-8">
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
           {t('eyebrow')}
@@ -99,5 +101,6 @@ export default async function LibraryPage({ params }: RouteParams) {
         </div>
       )}
     </main>
+    </AppShell>
   );
 }
