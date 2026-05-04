@@ -33,7 +33,8 @@
     "library": "Banque",
     "notifications": "Notifications",
     "leaderboard": "Classement",
-    "search": "Recherche"
+    "search": "Recherche",
+    "settings": "Paramètres"
   },
   "auth": {
     "login": {

@@ -33,7 +33,8 @@
     "library": "Library",
     "notifications": "Notifications",
     "leaderboard": "Leaderboard",
-    "search": "Search"
+    "search": "Search",
+    "settings": "Settings"
   },
   "auth": {
     "login": {

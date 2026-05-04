@@ -14,7 +14,8 @@ export interface CheckboxProps extends CheckboxPrimitive.Root.Props {
 }
 
 function Checkbox({ className, label, id, ...props }: CheckboxProps) {
-  const checkboxId = id ?? React.useId()
+  const generatedId = React.useId()
+  const checkboxId = id ?? generatedId
 
   return (
     <span className="inline-flex items-center gap-2">

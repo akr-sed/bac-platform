@@ -170,6 +170,12 @@ export default function Navbar() {
                 >
                   {t('leaderboard') || 'Leaderboard'}
                 </DropdownMenuItem>
+                <DropdownMenuItem
+                  render={<Link href="/settings" />}
+                  className="cursor-pointer"
+                >
+                  {t('settings') || 'Settings'}
+                </DropdownMenuItem>
                 {user.role === 'admin' && (
                   <DropdownMenuItem
                     render={<Link href="/admin" />}

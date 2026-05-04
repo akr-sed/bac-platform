@@ -33,7 +33,8 @@
     "library": "بنك التمارين",
     "notifications": "الإشعارات",
     "leaderboard": "المتصدرون",
-    "search": "بحث"
+    "search": "بحث",
+    "settings": "الإعدادات"
   },
   "auth": {
     "login": {
