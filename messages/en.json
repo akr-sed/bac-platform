@@ -433,11 +433,13 @@
   },
   "settings": {
     "title": "Settings",
-    "account": "Account",
-    "password": "Password",
+    "subtitle": "Manage your personal information and account preferences",
+    "account": "Personal Information",
+    "password": "Password & Security",
     "notifications": "Notifications",
     "language": "Language",
     "privacy": "Privacy",
+    "preferences": "Preferences",
     "dangerZone": "Danger Zone",
     "accountSection": {
       "title": "Account Details",

@@ -1,10 +1,12 @@
 'use client';
 
-// §6.6 Settings page — sidebar (desktop) / accordion (mobile)
+// §W6B-T3 Settings page — 4-tab secondary nav (wireframe node 33:828)
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { User, Lock, Bell, Globe, Shield, AlertTriangle, ChevronDown } from 'lucide-react';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { User, Lock, Bell, Globe, Shield } from 'lucide-react';
+import { AppShell } from '@/components/layout/AppShell';
 import { AccountSection } from '@/components/settings/AccountSection';
 import { PasswordSection } from '@/components/settings/PasswordSection';
 import { NotificationsSection } from '@/components/settings/NotificationsSection';
@@ -13,38 +15,59 @@ import { PrivacySection } from '@/components/settings/PrivacySection';
 import { DangerZoneSection } from '@/components/settings/DangerZoneSection';
 import { cn } from '@/lib/utils';
 
-// ─── Section registry ────────────────────────────────────────────────────────
+// ─── Tab registry ─────────────────────────────────────────────────────────────
 
-type SectionKey = 'account' | 'password' | 'notifications' | 'language' | 'privacy' | 'dangerZone';
+type TabKey = 'account' | 'password' | 'preferences' | 'notifications';
 
-interface SectionConfig {
-  key: SectionKey;
+interface TabConfig {
+  key: TabKey;
   icon: React.ComponentType<{ className?: string }>;
-  component: React.ComponentType;
-  danger?: boolean;
 }
 
-const SECTIONS: SectionConfig[] = [
-  { key: 'account', icon: User, component: AccountSection },
-  { key: 'password', icon: Lock, component: PasswordSection },
-  { key: 'notifications', icon: Bell, component: NotificationsSection },
-  { key: 'language', icon: Globe, component: LanguageSection },
-  { key: 'privacy', icon: Shield, component: PrivacySection },
-  { key: 'dangerZone', icon: AlertTriangle, component: DangerZoneSection, danger: true },
+const TABS: TabConfig[] = [
+  { key: 'account', icon: User },
+  { key: 'password', icon: Lock },
+  { key: 'preferences', icon: Globe },
+  { key: 'notifications', icon: Bell },
 ];
 
-// ─── Desktop sidebar nav item ─────────────────────────────────────────────────
+// ─── Tab content ──────────────────────────────────────────────────────────────
 
-function SidebarItem({
+function AccountTabContent() {
+  return (
+    <div className="space-y-8">
+      <AccountSection />
+      {/* Danger zone de-emphasized at bottom */}
+      <div className="border-t border-[#DFE3E8] pt-6">
+        <DangerZoneSection />
+      </div>
+    </div>
+  );
+}
+
+function PreferencesTabContent() {
+  return (
+    <div className="space-y-6">
+      <LanguageSection />
+      <div className="border-t border-[#DFE3E8] pt-6">
+        <PrivacySection />
+      </div>
+    </div>
+  );
+}
+
+// ─── Secondary nav item ───────────────────────────────────────────────────────
+
+function SecondaryNavItem({
   config,
   active,
-  onClick,
   label,
+  onClick,
 }: {
-  config: SectionConfig;
+  config: TabConfig;
   active: boolean;
-  onClick: () => void;
   label: string;
+  onClick: () => void;
 }) {
   const Icon = config.icon;
   return (
@@ -52,60 +75,58 @@ function SidebarItem({
       type="button"
       onClick={onClick}
       className={cn(
-        'flex w-full cursor-pointer items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold transition-colors duration-150 text-start',
+        'flex w-full cursor-pointer items-center gap-3 rounded-[8px] px-4 py-3 text-sm font-semibold transition-colors duration-150 text-start',
         active
-          ? config.danger
-            ? 'bg-[#FEEAEA] text-[#ED2D30]'
-            : 'bg-[#E6F4FA] text-[#0095D1]'
-          : config.danger
-          ? 'text-[#ED2D30] hover:bg-[#FEEAEA]'
-          : 'text-[#25313C] hover:bg-[#E6F4FA] hover:text-[#0095D1]'
+          ? 'bg-[#E6F4FA] text-[#0095D1]'
+          : 'text-[#3E4850] hover:bg-[#E6F4FA] hover:text-[#0095D1]'
       )}
     >
-      <Icon className="size-4 flex-shrink-0" />
+      <Icon className="size-4 shrink-0" />
       {label}
     </button>
   );
 }
 
-// ─── Mobile accordion item ────────────────────────────────────────────────────
+// ─── Mobile accordion ─────────────────────────────────────────────────────────
 
-function AccordionItem({
+function MobileAccordionItem({
   config,
   open,
-  onToggle,
   label,
+  onToggle,
+  content,
 }: {
-  config: SectionConfig;
+  config: TabConfig;
   open: boolean;
-  onToggle: () => void;
   label: string;
+  onToggle: () => void;
+  content: React.ReactNode;
 }) {
   const Icon = config.icon;
-  const Component = config.component;
   return (
-    <div className="rounded-2xl border border-[#BBC8D4] overflow-hidden">
+    <div className="overflow-hidden rounded-[12px] border border-[#DFE3E8]">
       <button
         type="button"
         onClick={onToggle}
-        className={cn(
-          'flex w-full cursor-pointer items-center justify-between gap-3 px-4 py-4 text-sm font-semibold transition-colors',
-          config.danger ? 'text-[#ED2D30]' : 'text-[#25313C]'
-        )}
+        className="flex w-full cursor-pointer items-center justify-between gap-3 px-4 py-4 text-sm font-semibold text-[#25313C] transition-colors"
         aria-expanded={open}
       >
         <span className="flex items-center gap-3">
-          <Icon className="size-4 flex-shrink-0" />
+          <Icon className="size-4 shrink-0" />
           {label}
         </span>
-        <ChevronDown
-          className={cn('size-4 text-[#6D7D8B] transition-transform duration-200', open && 'rotate-180')}
-        />
+        <span
+          className={cn(
+            'text-[#6D7D8B] transition-transform duration-200',
+            open && 'rotate-180'
+          )}
+          aria-hidden
+        >
+          ▾
+        </span>
       </button>
       {open && (
-        <div className="border-t border-[#BBC8D4] px-4 py-5">
-          <Component />
-        </div>
+        <div className="border-t border-[#DFE3E8] px-4 py-5">{content}</div>
       )}
     </div>
   );
@@ -115,52 +136,87 @@ function AccordionItem({
 
 export default function SettingsPage() {
   const t = useTranslations('settings');
-  const [activeSection, setActiveSection] = useState<SectionKey>('account');
-  const [openAccordion, setOpenAccordion] = useState<SectionKey | null>('account');
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const ActiveComponent = SECTIONS.find((s) => s.key === activeSection)?.component ?? AccountSection;
+  // Active tab from URL ?tab=account|password|preferences|notifications
+  const tabParam = searchParams.get('tab') as TabKey | null;
+  const [activeTab, setActiveTab] = useState<TabKey>(
+    TABS.some((tb) => tb.key === tabParam) ? tabParam! : 'account'
+  );
+  const [openAccordion, setOpenAccordion] = useState<TabKey | null>(activeTab);
 
-  function toggleAccordion(key: SectionKey) {
+  function switchTab(key: TabKey) {
+    setActiveTab(key);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', key);
+    router.replace(`?${params.toString()}`, { scroll: false });
+  }
+
+  function toggleAccordion(key: TabKey) {
     setOpenAccordion((prev) => (prev === key ? null : key));
   }
 
-  return (
-    <main className="mx-auto min-h-[calc(100dvh-4rem)] max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-      <h1 className="mb-8 font-heading text-3xl font-semibold text-[#003449]">{t('title')}</h1>
+  function getTabContent(key: TabKey) {
+    switch (key) {
+      case 'account':
+        return <AccountTabContent />;
+      case 'password':
+        return <PasswordSection />;
+      case 'preferences':
+        return <PreferencesTabContent />;
+      case 'notifications':
+        return <NotificationsSection />;
+    }
+  }
 
-      {/* Desktop: sidebar + panel */}
-      <div className="hidden gap-8 lg:flex">
-        {/* Sidebar */}
-        <nav className="w-56 flex-shrink-0 space-y-1" aria-label={t('title')}>
-          {SECTIONS.map((cfg) => (
-            <SidebarItem
+  return (
+    <AppShell>
+      <div className="py-6 sm:py-8">
+        {/* Page header */}
+        <div className="mb-8">
+          <h1 className="text-[32px] font-bold text-[#171C20] font-arabic">{t('title')}</h1>
+          <p className="mt-1 text-[14px] text-[#3E4850] font-arabic">{t('subtitle')}</p>
+        </div>
+
+        {/* Desktop: secondary nav (end side) + content */}
+        <div className="hidden gap-6 lg:flex">
+          {/* Content panel — grows */}
+          <div className="min-w-0 flex-1 rounded-[12px] border border-[#DFE3E8] bg-white p-8">
+            {getTabContent(activeTab)}
+          </div>
+
+          {/* Secondary nav — 240px, end side */}
+          <nav
+            className="w-60 shrink-0 space-y-1"
+            aria-label={t('title')}
+          >
+            {TABS.map((cfg) => (
+              <SecondaryNavItem
+                key={cfg.key}
+                config={cfg}
+                active={activeTab === cfg.key}
+                label={t(cfg.key)}
+                onClick={() => switchTab(cfg.key)}
+              />
+            ))}
+          </nav>
+        </div>
+
+        {/* Mobile: accordion */}
+        <div className="flex flex-col gap-3 lg:hidden">
+          {TABS.map((cfg) => (
+            <MobileAccordionItem
               key={cfg.key}
               config={cfg}
-              active={activeSection === cfg.key}
+              open={openAccordion === cfg.key}
               label={t(cfg.key)}
-              onClick={() => setActiveSection(cfg.key)}
+              onToggle={() => toggleAccordion(cfg.key)}
+              content={getTabContent(cfg.key)}
             />
           ))}
-        </nav>
-
-        {/* Content panel */}
-        <div className="flex-1 rounded-3xl border border-[#BBC8D4] bg-white p-8">
-          <ActiveComponent />
         </div>
       </div>
-
-      {/* Mobile: accordion */}
-      <div className="flex flex-col gap-3 lg:hidden">
-        {SECTIONS.map((cfg) => (
-          <AccordionItem
-            key={cfg.key}
-            config={cfg}
-            open={openAccordion === cfg.key}
-            onToggle={() => toggleAccordion(cfg.key)}
-            label={t(cfg.key)}
-          />
-        ))}
-      </div>
-    </main>
+    </AppShell>
   );
 }

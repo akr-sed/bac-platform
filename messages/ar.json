@@ -433,11 +433,13 @@
   },
   "settings": {
     "title": "الإعدادات",
-    "account": "الحساب",
-    "password": "كلمة المرور",
+    "subtitle": "إدارة معلوماتك الشخصية وتفضيلات الحساب",
+    "account": "المعلومات الشخصية",
+    "password": "كلمة المرور والأمان",
     "notifications": "الإشعارات",
     "language": "اللغة",
     "privacy": "الخصوصية",
+    "preferences": "التفضيلات",
     "dangerZone": "منطقة الخطر",
     "accountSection": {
       "title": "معلومات الحساب",
