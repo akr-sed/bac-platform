@@ -1,17 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/routing';
-import { Link } from '@/i18n/routing';
-import { Mail, Lock, Loader2, ArrowRight } from 'lucide-react';
+import { useRouter, Link } from '@/i18n/routing';
+import { useSearchParams } from 'next/navigation';
+import { Mail, Lock, Loader2, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Logo } from '@/components/brand/Logo';
 import { useAuth } from '@/components/providers/AuthProvider';
 
-export default function LoginPage() {
+function ResetBanner() {
+  const searchParams = useSearchParams();
+  const t = useTranslations('auth.resetPassword');
+  if (searchParams.get('reset') !== 'ok') return null;
+  return (
+    <div role="status" className="flex items-center gap-2 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+      <CheckCircle className="size-4 flex-shrink-0" />
+      {t('success')}
+    </div>
+  );
+}
+
+function LoginForm() {
   const t = useTranslations('auth.login');
   const tFooter = useTranslations('footer');
   const { login } = useAuth();
@@ -63,6 +75,10 @@ export default function LoginPage() {
           </div>
 
           <form className="space-y-5" onSubmit={handleSubmit}>
+            <Suspense>
+              <ResetBanner />
+            </Suspense>
+
             {error && (
               <div role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
                 {error}
@@ -90,9 +106,9 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">{t('password')}</Label>
-                <button type="button" className="cursor-pointer text-xs font-medium text-primary hover:underline">
+                <Link href="/forgot-password" className="cursor-pointer text-xs font-medium text-primary hover:underline">
                   {t('forgotPassword')}
-                </button>
+                </Link>
               </div>
               <div className="relative">
                 <Lock className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -133,5 +149,13 @@ export default function LoginPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
   );
 }
