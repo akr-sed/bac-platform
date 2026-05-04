@@ -35,18 +35,25 @@ interface AppShellProps {
  */
 export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
   const panel = endPanel ?? leftPanel;
+  // TopAppBar is h-[84px] sticky; sidebars stick directly underneath it.
+  // Each sidebar gets its own scroll container so it never pushes the page.
+  const stickyClasses =
+    'sticky top-[84px] max-h-[calc(100vh-84px)] overflow-y-auto self-start';
+
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] gap-5 px-4 py-5">
+    <div className="mx-auto flex w-full max-w-[1440px] items-start gap-5 px-4 py-5">
       {/* End panel (gamification sidebar, etc.) — logical start in DOM for RTL */}
       {panel && (
-        <aside className="hidden w-[320px] shrink-0 xl:block">{panel}</aside>
+        <aside className={`hidden w-[320px] shrink-0 xl:block ${stickyClasses}`}>
+          {panel}
+        </aside>
       )}
 
       {/* Main content — grows to fill available space, capped for readability */}
       <main className="min-w-0 flex-1">{children}</main>
 
       {/* Nav rail — always on the logical end (right side visually in Arabic) */}
-      <div className="hidden lg:block">
+      <div className={`hidden lg:block ${stickyClasses}`}>
         <VerticalNavRail />
       </div>
     </div>
