@@ -49,7 +49,7 @@ export function EnrollButton({
 
   if (isOwner) {
     return (
-      <Button disabled variant="outline" className="w-full">
+      <Button disabled intent="secondary-blue" className="w-full">
         {t('ownerCannotEnroll')}
       </Button>
     );
@@ -57,7 +57,7 @@ export function EnrollButton({
 
   if (isCancelled) {
     return (
-      <Button disabled variant="outline" className="w-full">
+      <Button disabled intent="secondary-blue" className="w-full">
         {t('cancelled')}
       </Button>
     );
@@ -66,7 +66,7 @@ export function EnrollButton({
   if (!isAuthenticated) {
     return (
       <Button
-        variant="default"
+        intent="primary-red"
         className="w-full"
         onClick={() => router.push('/login')}
       >
@@ -121,8 +121,8 @@ export function EnrollButton({
       <Button
         onClick={enrolled && !pending ? () => setConfirmUnenroll(true) : handle}
         disabled={pending || isFull}
-        variant={enrolled ? 'outline' : 'default'}
-        className={cn('w-full', enrolled && 'border-primary text-primary')}
+        intent={enrolled ? 'secondary-red' : 'primary-red'}
+        className={cn('w-full')}
         aria-pressed={enrolled}
         aria-busy={pending || undefined}
       >
