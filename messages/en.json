@@ -751,5 +751,44 @@
       "title": "Start searching",
       "description": "Type a keyword to search exercises, sessions, and people."
     }
+  },
+  "profileDashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your progress overview",
+    "streak": {
+      "title": "Activity Streak",
+      "days": "{count} days"
+    },
+    "badges": {
+      "title": "Badges",
+      "viewAll": "View all"
+    },
+    "xpLevel": {
+      "title": "Reputation & Rank",
+      "totalXp": "Total XP",
+      "nextLevel": "{remaining} XP to level {next}",
+      "nationalRank": "National rank"
+    },
+    "identity": {
+      "editProfile": "Edit profile"
+    },
+    "subjectProgress": {
+      "title": "Progress by subject",
+      "completed": "{completed} of {total} exercises",
+      "empty": "No progress data yet"
+    },
+    "activityTab": "Recent Activity",
+    "savedTab": "Saved Exercises",
+    "activityEmpty": "No activity yet",
+    "savedEmpty": "No saved exercises yet",
+    "weekdays": {
+      "sat": "Sat",
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri"
+    }
   }
 }

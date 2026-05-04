@@ -751,5 +751,44 @@
       "title": "ابدأ البحث",
       "description": "اكتب كلمة مفتاحية للبحث في التمارين والجلسات والأشخاص."
     }
+  },
+  "profileDashboard": {
+    "title": "لوحة التحكم",
+    "subtitle": "نظرة عامة على تقدمك",
+    "streak": {
+      "title": "سلسلة النشاط",
+      "days": "{count} يوم"
+    },
+    "badges": {
+      "title": "الشارات",
+      "viewAll": "عرض الكل"
+    },
+    "xpLevel": {
+      "title": "السمعة والتصنيف",
+      "totalXp": "النقاط الإجمالية",
+      "nextLevel": "تبقى {remaining} نقطة للوصول للمستوى {next}",
+      "nationalRank": "التصنيف الوطني"
+    },
+    "identity": {
+      "editProfile": "تعديل الملف الشخصي"
+    },
+    "subjectProgress": {
+      "title": "التقدم حسب المادة",
+      "completed": "تم إنجاز {completed} من أصل {total} تمرين",
+      "empty": "لا توجد بيانات تقدم بعد"
+    },
+    "activityTab": "النشاط الأخير",
+    "savedTab": "التمارين المحفوظة",
+    "activityEmpty": "لا يوجد نشاط بعد",
+    "savedEmpty": "لم تحفظ أي تمرين بعد",
+    "weekdays": {
+      "sat": "السبت",
+      "sun": "الأحد",
+      "mon": "الإثنين",
+      "tue": "الثلاثاء",
+      "wed": "الأربعاء",
+      "thu": "الخميس",
+      "fri": "الجمعة"
+    }
   }
 }

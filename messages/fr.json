@@ -751,5 +751,44 @@
       "title": "Lance une recherche",
       "description": "Saisis un mot-clé pour rechercher des exercices, séances et personnes."
     }
+  },
+  "profileDashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Vue d'ensemble de ta progression",
+    "streak": {
+      "title": "Série d'activité",
+      "days": "{count} jours"
+    },
+    "badges": {
+      "title": "Badges",
+      "viewAll": "Voir tout"
+    },
+    "xpLevel": {
+      "title": "Réputation et classement",
+      "totalXp": "XP total",
+      "nextLevel": "{remaining} XP pour le niveau {next}",
+      "nationalRank": "Classement national"
+    },
+    "identity": {
+      "editProfile": "Modifier le profil"
+    },
+    "subjectProgress": {
+      "title": "Progression par matière",
+      "completed": "{completed} sur {total} exercices",
+      "empty": "Aucune donnée de progression"
+    },
+    "activityTab": "Activité récente",
+    "savedTab": "Exercices sauvegardés",
+    "activityEmpty": "Aucune activité pour l'instant",
+    "savedEmpty": "Aucun exercice sauvegardé",
+    "weekdays": {
+      "sat": "Sam",
+      "sun": "Dim",
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Jeu",
+      "fri": "Ven"
+    }
   }
 }
