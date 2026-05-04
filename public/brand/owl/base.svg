@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="NAJAH owl">
+  <!-- Body -->
+  <path d="M80 14 C 50 14 30 36 30 70 V 116 C 30 138 48 152 80 152 C 112 152 130 138 130 116 V 70 C 130 36 110 14 80 14 Z" fill="var(--owl-body, #003449)"/>
+  <!-- Ear tufts -->
+  <path d="M36 24 L 50 6 L 54 28 Z" fill="var(--owl-body, #003449)"/>
+  <path d="M124 24 L 110 6 L 106 28 Z" fill="var(--owl-body, #003449)"/>
+  <!-- Eye whites -->
+  <circle cx="56" cy="56" r="18" fill="var(--owl-eye-white, #FFFFFF)"/>
+  <circle cx="104" cy="56" r="18" fill="var(--owl-eye-white, #FFFFFF)"/>
+  <!-- Eye irises -->
+  <circle cx="56" cy="56" r="11" fill="var(--owl-eye-iris, #057A8D)"/>
+  <circle cx="104" cy="56" r="11" fill="var(--owl-eye-iris, #057A8D)"/>
+  <!-- Catch-lights -->
+  <circle cx="60" cy="53" r="3" fill="#FFFFFF"/>
+  <circle cx="108" cy="53" r="3" fill="#FFFFFF"/>
+  <!-- Beak -->
+  <path d="M80 70 L 86 78 L 80 86 L 74 78 Z" fill="var(--owl-beak, #ED2D30)"/>
+  <!-- Book -->
+  <path d="M44 100 L 44 130 L 79 134 L 79 104 Z" fill="var(--owl-book, #FFFFFF)"/>
+  <path d="M116 100 L 116 130 L 81 134 L 81 104 Z" fill="var(--owl-book, #FFFFFF)"/>
+  <line x1="80" y1="104" x2="80" y2="134" stroke="var(--owl-body, #003449)" stroke-width="2"/>
+  <!-- Feet -->
+  <ellipse cx="68" cy="154" rx="8" ry="3" fill="var(--owl-body, #003449)"/>
+  <ellipse cx="92" cy="154" rx="8" ry="3" fill="var(--owl-body, #003449)"/>
+</svg>
