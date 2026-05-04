@@ -12,13 +12,13 @@ Collaborative Baccalaureate exercise practice platform for Algerian students. Ne
 
 ## Typography
 
-- Single source of truth: **IBM Plex family** loaded via `next/font/google`.
-  - `IBM_Plex_Serif` → headings (`--font-serif`)
-  - `IBM_Plex_Sans` → UI / body (`--font-sans`)
-  - `IBM_Plex_Sans_Arabic` → Arabic script (`--font-arabic`)
+- Single source of truth: **Mulish** (Latin) + **Rubik** (Arabic), loaded via `next/font/google`.
+  - `Mulish` (300, 400, 600, 700, 800) → all Latin UI, headings, body, buttons (`--font-sans`)
+  - `Rubik` (400, 500, 700, 800) → all Arabic UI (`--font-arabic`)
+  - In `ar` locale, Rubik is first in the font-stack and handles the entire UI.
 - Do not introduce new fonts without updating this file.
-- Old fonts (Libre Bodoni, Public Sans, Noto Naskh Arabic, Noto Sans Arabic) are deprecated; remove on sight.
-- In Arabic locale, Plex Arabic is first in the font-stack and handles the whole UI.
+- Old fonts (Geist, Geist Mono, IBM Plex Sans Arabic, Libre Bodoni, Public Sans, Noto Naskh Arabic, Noto Sans Arabic) are deprecated; remove on sight.
+- The Figma design system (`fileKey 88pnecpAPehuqOBDkRharB`) is canonical for type scale: see `docs/superpowers/specs/2026-05-04-najah-global-redesign-design.md` §2.5.
 
 ## UX patterns
 
