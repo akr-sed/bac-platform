@@ -377,5 +377,17 @@
     "title": "Banque d'exercices",
     "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
     "empty": "Aucun exercice n'a encore été importé."
+  },
+  "footer": {
+    "slogan": "Tout ce dont tu as besoin en un seul endroit — NAJAH BAC",
+    "productTitle": "Produit",
+    "companyTitle": "Entreprise",
+    "legalTitle": "Légal",
+    "about": "À propos",
+    "help": "Aide",
+    "contact": "Contact",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "madeFor": "Conçu pour les lycéens algériens"
   }
 }

@@ -1,65 +1,90 @@
-import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Logo } from '@/components/brand/Logo';
+import LocaleSwitcher from './LocaleSwitcher';
+
+// Spec §4.9 — Footer: bg-[#003449] text-white, 4-col desktop / 1-col mobile
+// Footer links that don't have pages yet (About, Help, Terms, Privacy) point to
+// their future routes — they'll 404 until Wave 4 creates them. This is per-spec.
+
+type FooterHref =
+  | '/'
+  | '/exercises'
+  | '/library'
+  | '/sessions'
+  | '/login'
+  | '/register'
+  | '/about'
+  | '/help'
+  | '/terms'
+  | '/privacy'
+  | '/contact';
 
 export function Footer() {
-  const t = useTranslations('navigation');
+  const t = useTranslations('footer');
+  const tNav = useTranslations('navigation');
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-border bg-card/40">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-          <div className="col-span-2 space-y-4 sm:col-span-1">
-            <Logo />
-            <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">
-              منصّة الطلّاب الجزائريّين للتفوّق في امتحان البكالوريا.
+    <footer className="bg-[#003449] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        {/* Grid: 4 columns on desktop, stacked on mobile */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* Brand block */}
+          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+            <Logo variant="mono-white" size="sm" />
+            <p className="text-sm leading-relaxed text-white/70 max-w-xs">
+              {t('slogan')}
             </p>
+            {/* Locale switcher inline with brand */}
+            <div className="pt-2">
+              <LocaleSwitcher />
+            </div>
           </div>
 
-          <FooterColumn title={t('home')}>
-            <FooterLink href="/exercises">{t('exercises')}</FooterLink>
-            <FooterLink href="/library">{t('library')}</FooterLink>
-            <FooterLink href="/sessions">{t('sessions')}</FooterLink>
-          </FooterColumn>
+          {/* Product links */}
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+              {t('productTitle')}
+            </p>
+            <ul className="space-y-2 text-sm">
+              <FooterLink href="/exercises">{tNav('exercises')}</FooterLink>
+              <FooterLink href="/sessions">{tNav('sessions')}</FooterLink>
+              <FooterLink href="/library">{tNav('library')}</FooterLink>
+            </ul>
+          </div>
 
-          <FooterColumn title="Compte">
-            <FooterLink href="/login">{t('login')}</FooterLink>
-            <FooterLink href="/register">{t('register')}</FooterLink>
-          </FooterColumn>
+          {/* Company */}
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+              {t('companyTitle')}
+            </p>
+            <ul className="space-y-2 text-sm">
+              <FooterLink href="/about">{t('about')}</FooterLink>
+              <FooterLink href="/help">{t('help')}</FooterLink>
+              <FooterLink href="/contact">{t('contact')}</FooterLink>
+            </ul>
+          </div>
 
-          <FooterColumn title="Légal">
-            <FooterLink href="/">Conditions</FooterLink>
-            <FooterLink href="/">Confidentialité</FooterLink>
-            <FooterLink href="/">Contact</FooterLink>
-          </FooterColumn>
+          {/* Legal */}
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+              {t('legalTitle')}
+            </p>
+            <ul className="space-y-2 text-sm">
+              <FooterLink href="/terms">{t('terms')}</FooterLink>
+              <FooterLink href="/privacy">{t('privacy')}</FooterLink>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <p>
-            © {year} Najah · مصنوع في الجزائر
-          </p>
-          <p className="font-mono tabular-nums">v0.1.0</p>
+        {/* Bottom strip */}
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
+          <p>© {year} NAJAH · {t('madeFor')}</p>
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterColumn({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="space-y-3">
-      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
-        {title}
-      </p>
-      <ul className="space-y-2 text-xs">{children}</ul>
-    </div>
   );
 }
 
@@ -67,14 +92,14 @@ function FooterLink({
   href,
   children,
 }: {
-  href: '/' | '/exercises' | '/library' | '/sessions' | '/login' | '/register';
+  href: FooterHref;
   children: React.ReactNode;
 }) {
   return (
     <li>
       <Link
         href={href}
-        className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
+        className="text-white/70 transition-colors duration-200 hover:text-white"
       >
         {children}
       </Link>

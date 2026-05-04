@@ -377,5 +377,17 @@
     "title": "Exercise Bank",
     "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
     "empty": "No exercises have been imported yet."
+  },
+  "footer": {
+    "slogan": "All you need in one place — NAJAH for Algerian baccalaureate",
+    "productTitle": "Product",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "about": "About",
+    "help": "Help",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "madeFor": "Made for Algerian baccalaureate students"
   }
 }
