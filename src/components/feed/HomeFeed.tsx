@@ -89,7 +89,7 @@ export async function HomeFeed({ userId, userName, userRole, locale }: Props) {
       {/* Greeting band */}
       <header className="mb-8 space-y-3">
         <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          <Logo showWordmark={false} className="text-primary" />
+          <Logo variant="mark" className="text-primary" />
           <span>
             {isAr ? 'تغذيتك اليوم' : 'your feed today'}
           </span>

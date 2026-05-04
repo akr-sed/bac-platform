@@ -4,7 +4,10 @@ import path from 'node:path';
 export default defineConfig({
   test: {
     environment: 'node',
-    include: ['src/**/__tests__/**/*.test.{ts,tsx}'],
+    include: [
+      'src/**/__tests__/**/*.test.{ts,tsx}',
+      'src/components/brand/Logo.test.tsx',
+    ],
     globals: false,
   },
   resolve: {

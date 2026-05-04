@@ -1,61 +1,66 @@
-import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
-interface Props {
+export type LogoVariant =
+  | 'horizontal'
+  | 'horizontal-slogan'
+  | 'vertical'
+  | 'mark'
+  | 'mono-white'
+  | 'mono-navy';
+
+export type LogoSize = 'sm' | 'md' | 'lg' | 'xl' | number;
+
+const SIZE_MAP: Record<Exclude<LogoSize, number>, number> = {
+  sm: 24,
+  md: 32,
+  lg: 40,
+  xl: 64,
+};
+
+const VARIANT_FILE: Record<LogoVariant, string> = {
+  horizontal: '/brand/logo-horizontal.svg',
+  'horizontal-slogan': '/brand/logo-horizontal-slogan.svg',
+  vertical: '/brand/logo-vertical.svg',
+  mark: '/brand/logo-mark.svg',
+  'mono-white': '/brand/logo-mono-white.svg',
+  'mono-navy': '/brand/logo-mono-navy.svg',
+};
+
+const VARIANT_ASPECT: Record<LogoVariant, number> = {
+  horizontal: 240 / 96,
+  'horizontal-slogan': 240 / 120,
+  vertical: 160 / 220,
+  mark: 1,
+  'mono-white': 240 / 96,
+  'mono-navy': 240 / 96,
+};
+
+export interface LogoProps {
+  variant?: LogoVariant;
+  size?: LogoSize;
+  priority?: boolean;
   className?: string;
-  showWordmark?: boolean;
 }
 
-/**
- * Najah brand mark — wordmark with a subtle bracket motif.
- * The two corners (┐└) reference an exam-paper margin and a checkbox simultaneously.
- */
-export function Logo({ className, showWordmark = true }: Props) {
+export function Logo({
+  variant = 'horizontal',
+  size = 'md',
+  priority = false,
+  className,
+}: LogoProps) {
+  const heightPx = typeof size === 'number' ? size : SIZE_MAP[size];
+  const widthPx = Math.round(heightPx * VARIANT_ASPECT[variant]);
+
   return (
-    <span
-      className={cn(
-        'inline-flex items-center gap-2 font-heading text-lg font-semibold tracking-tight',
-        className
-      )}
-    >
-      <svg
-        viewBox="0 0 32 32"
-        aria-hidden="true"
-        className="size-7 shrink-0 text-primary"
-        fill="none"
-      >
-        <path
-          d="M6 6 L6 12"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M6 6 L12 6"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M26 26 L26 20"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M26 26 L20 26"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 22 L15 26 L24 12"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      {showWordmark && <span className="font-heading">Najah</span>}
-    </span>
+    <Image
+      src={VARIANT_FILE[variant]}
+      alt="NAJAH"
+      width={widthPx}
+      height={heightPx}
+      priority={priority}
+      className={className}
+    />
   );
 }
+
+export default Logo;
