@@ -52,15 +52,29 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-md place-items-center px-4 py-12 sm:px-6">
-      <div className="w-full space-y-8">
-        <div className="space-y-3 text-center">
-          <Logo className="mx-auto" />
-          <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground">
-            {t('title')}
-          </h1>
+    <main className="flex min-h-[calc(100dvh-4rem)]">
+      {/* Left panel — brand accent */}
+      <div className="hidden w-2/5 flex-col items-center justify-center gap-6 bg-[#E6F4FA] px-10 lg:flex">
+        <Logo variant="vertical" size={160} priority />
+        <p className="max-w-xs text-center text-sm font-medium text-[#6D7D8B]">
+          {t('title')}
+        </p>
+      </div>
+
+      {/* Right panel — form */}
+      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+        {/* Mobile logo */}
+        <div className="mb-8 lg:hidden">
+          <Logo variant="horizontal" size="lg" />
         </div>
-        <form className="space-y-5" onSubmit={handleSubmit}>
+
+        <div className="w-full max-w-md space-y-8">
+          <div className="space-y-1">
+            <h1 className="font-heading text-3xl font-semibold tracking-tight text-[#003449]">
+              {t('title')}
+            </h1>
+          </div>
+          <form className="space-y-5" onSubmit={handleSubmit}>
             {error && (
               <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
                 {error}
@@ -76,6 +90,8 @@ export default function RegisterPage() {
                   type="text"
                   autoComplete="name"
                   required
+                  // eslint-disable-next-line jsx-a11y/no-autofocus
+                  autoFocus
                   placeholder={t('name')}
                   className="h-11 rounded-2xl ps-10"
                 />
@@ -174,12 +190,13 @@ export default function RegisterPage() {
             </Button>
           </form>
 
-        <p className="text-center text-sm text-muted-foreground">
-          {t('hasAccount')}{' '}
-          <Link href="/login" className="cursor-pointer font-medium text-foreground hover:text-primary">
-            {t('loginLink')}
-          </Link>
-        </p>
+          <p className="text-center text-sm text-muted-foreground">
+            {t('hasAccount')}{' '}
+            <Link href="/login" className="cursor-pointer font-medium text-foreground hover:text-primary">
+              {t('loginLink')}
+            </Link>
+          </p>
+        </div>
       </div>
     </main>
   );
