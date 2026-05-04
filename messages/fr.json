@@ -378,6 +378,124 @@
     "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
     "empty": "Aucun exercice n'a encore été importé."
   },
+  "verifyEmail": {
+    "title": "Vérification de l'e-mail",
+    "successTitle": "E-mail vérifié !",
+    "successDescription": "Votre adresse e-mail a bien été vérifiée. Vous pouvez maintenant vous connecter.",
+    "errorTitle": "Échec de la vérification",
+    "errorDescription": "Ce lien de vérification est invalide ou a expiré. Veuillez en demander un nouveau.",
+    "backToLogin": "Retour à la connexion"
+  },
+  "onboarding": {
+    "title": "Bienvenue sur NAJAH",
+    "subtitle": "Personnalisons votre expérience",
+    "step1Title": "Quelle est votre filière ?",
+    "step2Title": "En quelle année êtes-vous ?",
+    "step3Title": "Quelles matières vous intéressent ?",
+    "step3Help": "Choisissez au moins 3",
+    "streams": {
+      "sciences": "Sciences",
+      "math": "Maths",
+      "lettres": "Lettres",
+      "techmath": "Tech-Math",
+      "languages": "Langues"
+    },
+    "years": {
+      "premiere": "1ère AS",
+      "terminale": "Terminale AS"
+    },
+    "interests": {
+      "math": "Maths",
+      "physics": "Physique",
+      "chemistry": "Chimie",
+      "biology": "Biologie",
+      "philosophy": "Philosophie",
+      "arabic": "Arabe",
+      "french": "Français",
+      "english": "Anglais",
+      "history": "Histoire",
+      "geography": "Géographie"
+    },
+    "next": "Suivant",
+    "finish": "Terminer",
+    "celebrate": "Vous êtes prêt, {name} !",
+    "celebrateDesc": "Votre fil est prêt. Explorez les exercices adaptés à votre profil.",
+    "takeMeToFeed": "Aller au fil",
+    "saving": "Configuration…"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "account": "Compte",
+    "password": "Mot de passe",
+    "notifications": "Notifications",
+    "language": "Langue",
+    "privacy": "Confidentialité",
+    "dangerZone": "Zone de danger",
+    "accountSection": {
+      "title": "Informations du compte",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "bio": "Biographie",
+      "bioPlaceholder": "Une courte description de vous",
+      "avatar": "Photo de profil",
+      "changeAvatar": "Changer la photo",
+      "save": "Enregistrer les modifications",
+      "saving": "Enregistrement…",
+      "savedOk": "Modifications enregistrées",
+      "saveError": "Échec de l'enregistrement"
+    },
+    "passwordSection": {
+      "title": "Modifier le mot de passe",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "confirm": "Confirmer le nouveau mot de passe",
+      "hint": "8+ caractères, mélange de lettres et chiffres",
+      "save": "Mettre à jour",
+      "saving": "Mise à jour…",
+      "savedOk": "Mot de passe mis à jour",
+      "saveError": "Échec de la mise à jour",
+      "mismatch": "Les mots de passe ne correspondent pas",
+      "tooShort": "Le mot de passe doit contenir au moins 8 caractères"
+    },
+    "notificationsSection": {
+      "title": "Préférences de notifications",
+      "likes": "J'aime sur vos publications",
+      "comments": "Commentaires sur vos publications",
+      "mentions": "Mentions",
+      "weeklyDigest": "Digest hebdomadaire",
+      "marketing": "Mises à jour et conseils produit",
+      "save": "Enregistrer",
+      "savedOk": "Préférences enregistrées"
+    },
+    "languageSection": {
+      "title": "Langue et région",
+      "language": "Langue de l'interface",
+      "dateFormat": "Format de date"
+    },
+    "privacySection": {
+      "title": "Confidentialité",
+      "profileVisibility": "Profil public",
+      "profileVisibilityHint": "Autoriser les autres utilisateurs à voir votre profil",
+      "searchIndexing": "Apparaître dans la recherche",
+      "searchIndexingHint": "Autoriser votre profil à apparaître dans les résultats de recherche",
+      "save": "Enregistrer",
+      "savedOk": "Paramètres de confidentialité enregistrés"
+    },
+    "dangerZoneSection": {
+      "title": "Zone de danger",
+      "exportData": "Exporter mes données",
+      "exportDataDesc": "Télécharger toutes vos données",
+      "exportComingSoon": "L'export de données arrive bientôt. Nous vous préviendrons quand ce sera disponible.",
+      "deleteAccount": "Supprimer le compte",
+      "deleteAccountDesc": "Supprimer définitivement votre compte et toutes les données associées. Cette action est irréversible.",
+      "deleteConfirmTitle": "Supprimer votre compte ?",
+      "deleteConfirmDescription": "Cela supprimera définitivement votre compte, vos exercices, solutions et toutes vos autres données. Saisissez votre adresse e-mail pour confirmer.",
+      "deleteConfirmPlaceholder": "Saisissez votre e-mail pour confirmer",
+      "deleteConfirmAction": "Supprimer mon compte",
+      "deleting": "Suppression…",
+      "deleteError": "Échec de la suppression du compte"
+    }
+  },
   "footer": {
     "slogan": "Tout ce dont tu as besoin en un seul endroit — NAJAH BAC",
     "productTitle": "Produit",

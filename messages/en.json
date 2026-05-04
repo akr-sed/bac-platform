@@ -378,6 +378,124 @@
     "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
     "empty": "No exercises have been imported yet."
   },
+  "verifyEmail": {
+    "title": "Email Verification",
+    "successTitle": "Email Verified!",
+    "successDescription": "Your email address has been successfully verified. You can now log in.",
+    "errorTitle": "Verification Failed",
+    "errorDescription": "This verification link is invalid or has expired. Please request a new one.",
+    "backToLogin": "Back to Login"
+  },
+  "onboarding": {
+    "title": "Welcome to NAJAH",
+    "subtitle": "Let's personalize your experience",
+    "step1Title": "What is your stream?",
+    "step2Title": "What year are you in?",
+    "step3Title": "What subjects interest you?",
+    "step3Help": "Pick at least 3",
+    "streams": {
+      "sciences": "Sciences",
+      "math": "Maths",
+      "lettres": "Lettres",
+      "techmath": "Tech Math",
+      "languages": "Languages"
+    },
+    "years": {
+      "premiere": "1ère AS",
+      "terminale": "Terminale AS"
+    },
+    "interests": {
+      "math": "Math",
+      "physics": "Physics",
+      "chemistry": "Chemistry",
+      "biology": "Biology",
+      "philosophy": "Philosophy",
+      "arabic": "Arabic",
+      "french": "French",
+      "english": "English",
+      "history": "History",
+      "geography": "Geography"
+    },
+    "next": "Next",
+    "finish": "Finish",
+    "celebrate": "You're all set, {name}!",
+    "celebrateDesc": "Your feed is ready. Start exploring exercises tailored to you.",
+    "takeMeToFeed": "Take me to the feed",
+    "saving": "Setting up…"
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "password": "Password",
+    "notifications": "Notifications",
+    "language": "Language",
+    "privacy": "Privacy",
+    "dangerZone": "Danger Zone",
+    "accountSection": {
+      "title": "Account Details",
+      "name": "Full Name",
+      "email": "Email Address",
+      "bio": "Bio",
+      "bioPlaceholder": "A short description about yourself",
+      "avatar": "Profile Photo",
+      "changeAvatar": "Change Photo",
+      "save": "Save Changes",
+      "saving": "Saving…",
+      "savedOk": "Changes saved",
+      "saveError": "Failed to save changes"
+    },
+    "passwordSection": {
+      "title": "Change Password",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm New Password",
+      "hint": "8+ characters, mix of letters and digits",
+      "save": "Update Password",
+      "saving": "Updating…",
+      "savedOk": "Password updated",
+      "saveError": "Failed to update password",
+      "mismatch": "Passwords do not match",
+      "tooShort": "Password must be at least 8 characters"
+    },
+    "notificationsSection": {
+      "title": "Notification Preferences",
+      "likes": "Likes on your posts",
+      "comments": "Comments on your posts",
+      "mentions": "Mentions",
+      "weeklyDigest": "Weekly digest",
+      "marketing": "Product updates & tips",
+      "save": "Save",
+      "savedOk": "Preferences saved"
+    },
+    "languageSection": {
+      "title": "Language & Region",
+      "language": "Interface language",
+      "dateFormat": "Date format"
+    },
+    "privacySection": {
+      "title": "Privacy",
+      "profileVisibility": "Public profile",
+      "profileVisibilityHint": "Allow other users to see your profile",
+      "searchIndexing": "Appear in search",
+      "searchIndexingHint": "Allow your profile to appear in search results",
+      "save": "Save",
+      "savedOk": "Privacy settings saved"
+    },
+    "dangerZoneSection": {
+      "title": "Danger Zone",
+      "exportData": "Export My Data",
+      "exportDataDesc": "Download all your data",
+      "exportComingSoon": "Data export is coming soon. We'll notify you when it's available.",
+      "deleteAccount": "Delete Account",
+      "deleteAccountDesc": "Permanently delete your account and all associated data. This cannot be undone.",
+      "deleteConfirmTitle": "Delete your account?",
+      "deleteConfirmDescription": "This will permanently delete your account, exercises, solutions, and all other data. Type your email address to confirm.",
+      "deleteConfirmPlaceholder": "Enter your email to confirm",
+      "deleteConfirmAction": "Delete my account",
+      "deleting": "Deleting…",
+      "deleteError": "Failed to delete account"
+    }
+  },
   "footer": {
     "slogan": "All you need in one place — NAJAH for Algerian baccalaureate",
     "productTitle": "Product",
