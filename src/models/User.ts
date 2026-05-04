@@ -34,6 +34,12 @@ export interface IUser extends Document {
   isBlocked?: boolean;
   blockedAt?: Date;
   blockedReason?: string;
+  // Gamification fields (Wave 6)
+  xp?: number;
+  level?: number;
+  streakDays?: number;
+  streakLastDay?: Date;
+  nationalRank?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -83,6 +89,12 @@ const UserSchema = new Schema<IUser>(
     isBlocked: { type: Boolean, default: false, index: true },
     blockedAt: { type: Date, default: undefined },
     blockedReason: { type: String, default: undefined },
+    // Gamification (Wave 6)
+    xp: { type: Number, default: 0, min: 0, index: true },
+    level: { type: Number, default: 1, min: 1 },
+    streakDays: { type: Number, default: 0, min: 0 },
+    streakLastDay: { type: Date, default: undefined },
+    nationalRank: { type: Number, default: 0, min: 0 },
   },
   { timestamps: true }
 );

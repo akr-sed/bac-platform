@@ -137,6 +137,7 @@ export interface FeedItemDTO {
   author: Pick<UserDTO, '_id' | 'name' | 'avatar' | 'role' | 'isVerifiedTeacher'>;
   isLiked?: boolean;
   isSaved?: boolean;
+  hasMath?: boolean;
 }
 
 export type SessionStatus = 'scheduled' | 'live' | 'completed' | 'cancelled';
@@ -250,4 +251,98 @@ export interface SearchResultsDTO {
   exercises: SearchResultExercise[];
   sessions: SearchResultSession[];
   profiles: SearchResultProfile[];
+}
+
+// ── Gamification (Wave 6) ─────────────────────────────────────────────────────
+
+export type AchievementRarity = 'common' | 'rare' | 'epic' | 'legendary';
+
+export interface AchievementDTO {
+  _id: string;
+  key: string;
+  titleKey: string;
+  descriptionKey: string;
+  icon: string;
+  rarity: AchievementRarity;
+  xpReward: number;
+}
+
+export interface EarnedAchievementDTO {
+  key: string;
+  title: string;
+  description: string;
+  icon: string;
+  rarity: AchievementRarity;
+  xpReward: number;
+  unlockedAt: string;
+}
+
+export interface DailyQuestDTO {
+  _id: string;
+  key: string;
+  title: string;
+  goal: number;
+  rewardXp: number;
+  current: number;
+  completed: boolean;
+}
+
+export interface XPLedgerEntry {
+  _id: string;
+  delta: number;
+  reason: string;
+  meta?: Record<string, unknown>;
+  createdAt: string;
+}
+
+export interface LevelProgress {
+  current: number;       // XP earned in current level
+  nextThreshold: number; // XP needed for next level
+  pct: number;           // 0-100
+}
+
+export interface StreakDay {
+  date: string; // YYYY-MM-DD
+  ok: boolean;
+}
+
+export interface GamificationSummaryDTO {
+  user: {
+    xp: number;
+    level: number;
+    levelProgress: LevelProgress;
+    streakDays: number;
+    streakWeek: StreakDay[];
+    nationalRank: number;
+  };
+  badges: {
+    earned: EarnedAchievementDTO[];
+    lockedCount: number;
+  };
+  quests: {
+    today: DailyQuestDTO[];
+  };
+  upcomingSessions: Array<{
+    id: string;
+    title: string;
+    subject: string;
+    startAt: string;
+    isToday: boolean;
+  }>;
+}
+
+export interface SubjectProgressDTO {
+  subject: string;
+  completed: number;
+  total: number;
+  pct: number;
+}
+
+export type ActivityKind = 'exercise-solved' | 'video-watched' | 'comment' | 'achievement';
+
+export interface ActivityEntryDTO {
+  at: string;
+  kind: ActivityKind;
+  title: string;
+  meta?: Record<string, unknown>;
 }
