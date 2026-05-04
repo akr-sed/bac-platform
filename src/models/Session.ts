@@ -58,6 +58,9 @@ const SessionSchema = new Schema<ISession>(
 
 // Compound index for upcoming-session queries
 SessionSchema.index({ scheduledAt: 1, status: 1 });
+// Text index for full-text search (§6.10). Forces re-indexing on next mongo
+// connection — non-destructive but adds background index build time on first start.
+SessionSchema.index({ title: 'text', description: 'text', subject: 'text' });
 
 // ---------------------------------------------------------------------------
 // Cancellation cascade

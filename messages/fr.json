@@ -30,7 +30,10 @@
     "register": "Inscription",
     "logout": "Déconnexion",
     "language": "Langue",
-    "library": "Banque"
+    "library": "Banque",
+    "notifications": "Notifications",
+    "leaderboard": "Classement",
+    "search": "Recherche"
   },
   "auth": {
     "login": {
@@ -611,6 +614,85 @@
       "a11": "Va dans Paramètres → Zone de danger et clique sur Supprimer le compte. On te demandera de confirmer ton e-mail. Cette action est irréversible.",
       "q12": "Comment signaler un problème ?",
       "a12": "Tu peux signaler tout contenu inapproprié via le bouton Signaler présent sur chaque publication. Pour les problèmes techniques, utilise le formulaire de contact ci-dessous."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Tout marquer comme lu",
+    "tabs": {
+      "all": "Tout",
+      "mentions": "Mentions",
+      "reactions": "Réactions",
+      "replies": "Réponses"
+    },
+    "empty": {
+      "title": "Aucune notification",
+      "description": "Tes notifications apparaîtront ici lorsque d'autres interagiront avec ton contenu."
+    },
+    "verbs": {
+      "like": "a aimé",
+      "comment": "a commenté",
+      "mention": "t'a mentionné dans",
+      "reply": "a répondu à",
+      "follow": "a commencé à te suivre"
+    },
+    "targets": {
+      "exercise": "exercice",
+      "solution": "correction",
+      "comment": "commentaire",
+      "session": "séance"
+    }
+  },
+  "leaderboard": {
+    "title": "Classement",
+    "description": "Les meilleurs élèves et enseignants contributeurs de la plateforme",
+    "tabs": {
+      "week": "Cette semaine",
+      "month": "Ce mois",
+      "all": "Tout le temps"
+    },
+    "streams": {
+      "all": "Toutes les filières",
+      "sciences": "Sciences",
+      "math": "Mathématiques",
+      "lettres": "Lettres",
+      "tech-math": "Tech. Math.",
+      "languages": "Langues étrangères"
+    },
+    "points": "pt",
+    "rank": "Rang",
+    "podium": {
+      "gold": "1ère place",
+      "silver": "2ème place",
+      "bronze": "3ème place"
+    },
+    "empty": {
+      "title": "Pas encore de classement",
+      "description": "Sois le premier à grimper au tableau d'honneur !"
+    }
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Rechercher des exercices, séances, enseignants...",
+    "tabs": {
+      "all": "Tout",
+      "exercises": "Exercices",
+      "sessions": "Séances",
+      "profiles": "Personnes"
+    },
+    "sections": {
+      "exercises": "Exercices",
+      "sessions": "Séances",
+      "profiles": "Personnes"
+    },
+    "seeAll": "Voir tout",
+    "empty": {
+      "title": "Aucun résultat",
+      "description": "Essaie d'autres mots-clés ou vérifie l'orthographe."
+    },
+    "noQuery": {
+      "title": "Lance une recherche",
+      "description": "Saisis un mot-clé pour rechercher des exercices, séances et personnes."
     }
   }
 }

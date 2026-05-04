@@ -177,3 +177,77 @@ export interface SessionEnrollmentDTO {
   sessionId: string;
   createdAt: string;
 }
+
+// ── Notifications ────────────────────────────────────────────────────────────
+
+export type NotificationType = 'like' | 'comment' | 'mention' | 'reply' | 'follow';
+export type NotificationTargetType = 'exercise' | 'solution' | 'comment' | 'session';
+
+export interface NotificationActorDTO {
+  _id: string;
+  name: string;
+  avatar?: string | null;
+}
+
+export interface NotificationDTO {
+  _id: string;
+  user: string;
+  actor: NotificationActorDTO;
+  type: NotificationType;
+  targetType: NotificationTargetType;
+  targetId: string;
+  read: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// ── Leaderboard ───────────────────────────────────────────────────────────────
+
+export interface LeaderboardUserDTO {
+  id: string;
+  name: string;
+  avatarUrl?: string | null;
+  stream?: string;
+}
+
+export interface LeaderboardEntry {
+  user: LeaderboardUserDTO;
+  points: number;
+  rank: number;
+}
+
+// ── Search ────────────────────────────────────────────────────────────────────
+
+export interface SearchResultExercise {
+  _id: string;
+  title: string;
+  description: string;
+  subject: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  author: Pick<UserDTO, '_id' | 'name' | 'avatar'>;
+  createdAt: string;
+}
+
+export interface SearchResultSession {
+  _id: string;
+  title: string;
+  description: string;
+  subject: string;
+  scheduledAt: string;
+  status: SessionStatus;
+  teacher: Pick<UserDTO, '_id' | 'name' | 'avatar'>;
+}
+
+export interface SearchResultProfile {
+  _id: string;
+  name: string;
+  avatar?: string | null;
+  role: 'student' | 'teacher' | 'admin';
+  bio?: string;
+}
+
+export interface SearchResultsDTO {
+  exercises: SearchResultExercise[];
+  sessions: SearchResultSession[];
+  profiles: SearchResultProfile[];
+}

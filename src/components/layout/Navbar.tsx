@@ -1,12 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
-import { Menu, LogOut, Bell, ChevronDown } from 'lucide-react';
+import { Menu, LogOut, Bell, Search, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/brand/Logo';
 import { UserAvatar } from '@/components/ui/user-avatar';
-import { useTheme } from 'next-themes';
 import { Button, buttonVariants } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -28,6 +27,16 @@ export default function Navbar() {
   const t = useTranslations('navigation');
   const { user, loading, logout } = useAuth();
   const pathname = usePathname();
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  // Fetch unread notification count when logged in
+  useEffect(() => {
+    if (!user) return;
+    fetch('/api/notifications?limit=1&unread=1')
+      .then((r) => r.json())
+      .then((d) => setUnreadCount(d.unreadCount ?? 0))
+      .catch(() => {});
+  }, [user]);
 
   const navLinks = [
     { href: '/' as const, label: t('home') },
@@ -81,15 +90,37 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <LocaleSwitcher />
 
-          {/* Notification bell — placeholder; Wave 4 wires up real notifications */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="relative cursor-pointer size-10 rounded-[12px]"
-            aria-label="Notifications"
+          {/* Search icon */}
+          <Link
+            href="/search"
+            aria-label={t('search') || 'Search'}
+            className={cn(
+              buttonVariants({ variant: 'ghost', size: 'icon' }),
+              'relative cursor-pointer size-10 rounded-[12px]'
+            )}
           >
-            <Bell className="size-5 text-[#6D7D8B]" />
-          </Button>
+            <Search className="size-5 text-[#6D7D8B]" />
+          </Link>
+
+          {/* Notification bell — links to /notifications with unread dot */}
+          {user && (
+            <Link
+              href="/notifications"
+              aria-label="Notifications"
+              className={cn(
+                buttonVariants({ variant: 'ghost', size: 'icon' }),
+                'relative cursor-pointer size-10 rounded-[12px]'
+              )}
+            >
+              <Bell className="size-5 text-[#6D7D8B]" />
+              {unreadCount > 0 && (
+                <span
+                  className="absolute end-1.5 top-1.5 size-2 rounded-full bg-[#ED2D30]"
+                  aria-hidden="true"
+                />
+              )}
+            </Link>
+          )}
 
           {/* Auth section */}
           {!loading && user ? (
@@ -121,6 +152,23 @@ export default function Navbar() {
                   className="cursor-pointer"
                 >
                   {t('profile')}
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  render={<Link href="/notifications" />}
+                  className="cursor-pointer"
+                >
+                  {t('notifications') || 'Notifications'}
+                  {unreadCount > 0 && (
+                    <span className="ms-auto flex size-5 items-center justify-center rounded-full bg-[#ED2D30] text-[10px] font-extrabold text-white">
+                      {unreadCount > 9 ? '9+' : unreadCount}
+                    </span>
+                  )}
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  render={<Link href="/leaderboard" />}
+                  className="cursor-pointer"
+                >
+                  {t('leaderboard') || 'Leaderboard'}
                 </DropdownMenuItem>
                 {user.role === 'admin' && (
                   <DropdownMenuItem

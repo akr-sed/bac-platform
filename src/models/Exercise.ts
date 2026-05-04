@@ -57,6 +57,9 @@ const ExerciseSchema = new Schema<IExercise>(
 );
 
 ExerciseSchema.index({ subject: 1, lastActivityAt: -1 });
+// Text index for full-text search (§6.10). Forces re-indexing on next mongo
+// connection — non-destructive but adds background index build time on first start.
+ExerciseSchema.index({ title: 'text', description: 'text', topic: 'text' });
 
 const Exercise: Model<IExercise> =
   (mongoose.models.Exercise as Model<IExercise>) ??

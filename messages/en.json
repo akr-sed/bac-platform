@@ -30,7 +30,10 @@
     "register": "Register",
     "logout": "Logout",
     "language": "Language",
-    "library": "Library"
+    "library": "Library",
+    "notifications": "Notifications",
+    "leaderboard": "Leaderboard",
+    "search": "Search"
   },
   "auth": {
     "login": {
@@ -611,6 +614,85 @@
       "a11": "Go to Settings → Danger Zone and click Delete account. You'll be asked to confirm your email. This action cannot be undone.",
       "q12": "How do I report a problem?",
       "a12": "You can report any inappropriate content using the Report button on any post. For technical issues, use the contact form below."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "tabs": {
+      "all": "All",
+      "mentions": "Mentions",
+      "reactions": "Reactions",
+      "replies": "Replies"
+    },
+    "empty": {
+      "title": "No notifications yet",
+      "description": "Your notifications will appear here when others interact with your content."
+    },
+    "verbs": {
+      "like": "liked",
+      "comment": "commented on",
+      "mention": "mentioned you in",
+      "reply": "replied to",
+      "follow": "started following you"
+    },
+    "targets": {
+      "exercise": "exercise",
+      "solution": "solution",
+      "comment": "comment",
+      "session": "session"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "description": "Top contributing students and teachers on the platform",
+    "tabs": {
+      "week": "This week",
+      "month": "This month",
+      "all": "All time"
+    },
+    "streams": {
+      "all": "All streams",
+      "sciences": "Sciences",
+      "math": "Mathematics",
+      "lettres": "Literature",
+      "tech-math": "Tech. Math.",
+      "languages": "Foreign languages"
+    },
+    "points": "pts",
+    "rank": "Rank",
+    "podium": {
+      "gold": "1st place",
+      "silver": "2nd place",
+      "bronze": "3rd place"
+    },
+    "empty": {
+      "title": "No leaders yet",
+      "description": "Be the first to climb the board."
+    }
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search exercises, sessions, teachers...",
+    "tabs": {
+      "all": "All",
+      "exercises": "Exercises",
+      "sessions": "Sessions",
+      "profiles": "People"
+    },
+    "sections": {
+      "exercises": "Exercises",
+      "sessions": "Sessions",
+      "profiles": "People"
+    },
+    "seeAll": "See all",
+    "empty": {
+      "title": "No results found",
+      "description": "Try different keywords or check your spelling."
+    },
+    "noQuery": {
+      "title": "Start searching",
+      "description": "Type a keyword to search exercises, sessions, and people."
     }
   }
 }
