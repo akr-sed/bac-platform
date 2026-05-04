@@ -11,6 +11,8 @@ import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-ra
 import { TeacherSessionsSection } from '@/components/sessions/teacher-sessions-section';
 import { Logo } from '@/components/brand/Logo';
 import { fetchSessionsList } from '@/lib/sessions';
+import { AppShell } from '@/components/layout/AppShell';
+import { GamificationSidebar } from '@/components/dashboard/GamificationSidebar';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
@@ -85,72 +87,74 @@ export async function HomeFeed({ userId, userName, userRole, locale }: Props) {
   const firstName = userName.split(' ')[0];
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-      {/* Greeting band */}
-      <header className="mb-8 space-y-3">
-        <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          <Logo variant="mark" className="text-primary" />
-          <span>
-            {isAr ? 'تغذيتك اليوم' : 'your feed today'}
-          </span>
-        </div>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            {isAr
-              ? `أهلاً، ${firstName}`
-              : `Welcome back, ${firstName}`}
-          </h1>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs">
-            <Flame className="size-3.5 text-primary" />
-            <span className="text-muted-foreground">
-              {isAr ? 'البكالوريا' : 'BAC'}
-            </span>
-            <span className="font-mono font-semibold tabular-nums text-foreground">
-              {days}
-            </span>
-            <span className="text-muted-foreground">
-              {isAr ? (days === 1 ? 'يوم' : 'يوم') : days === 1 ? 'day' : 'days'}
+    <AppShell endPanel={<GamificationSidebar userId={userId} locale={locale} />}>
+      <div className="py-6 sm:py-8">
+        {/* Greeting band */}
+        <header className="mb-8 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            <Logo variant="mark" className="text-primary" />
+            <span>
+              {isAr ? 'تغذيتك اليوم' : 'your feed today'}
             </span>
           </div>
-        </div>
-      </header>
-
-      {isTeacher && teacherResult.data.length > 0 && (
-        <div className="mb-8">
-          <TeacherSessionsSection sessions={teacherResult.data} />
-        </div>
-      )}
-
-      {upcomingResult.data.length > 0 && (
-        <div className="mb-8">
-          <UpcomingSessionsRail sessions={upcomingResult.data} />
-        </div>
-      )}
-
-      <section aria-labelledby="feed-h">
-        <h2
-          id="feed-h"
-          className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
-        >
-          {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
-        </h2>
-        {items.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-border p-12 text-center">
-            <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {isAr
-                ? 'لا توجد تمارين بعد. تابعونا قريبًا.'
-                : 'No exercises yet. Check back soon.'}
-            </p>
+                ? `أهلاً، ${firstName}`
+                : `Welcome back, ${firstName}`}
+            </h1>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs">
+              <Flame className="size-3.5 text-primary" />
+              <span className="text-muted-foreground">
+                {isAr ? 'البكالوريا' : 'BAC'}
+              </span>
+              <span className="font-mono font-semibold tabular-nums text-foreground">
+                {days}
+              </span>
+              <span className="text-muted-foreground">
+                {isAr ? (days === 1 ? 'يوم' : 'يوم') : days === 1 ? 'day' : 'days'}
+              </span>
+            </div>
           </div>
-        ) : (
-          <div className="space-y-5">
-            {items.map((item) => (
-              <ExerciseCard key={item._id} exercise={item} />
-            ))}
+        </header>
+
+        {isTeacher && teacherResult.data.length > 0 && (
+          <div className="mb-8">
+            <TeacherSessionsSection sessions={teacherResult.data} />
           </div>
         )}
-      </section>
-    </main>
+
+        {upcomingResult.data.length > 0 && (
+          <div className="mb-8">
+            <UpcomingSessionsRail sessions={upcomingResult.data} />
+          </div>
+        )}
+
+        <section aria-labelledby="feed-h">
+          <h2
+            id="feed-h"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+          >
+            {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
+          </h2>
+          {items.length === 0 ? (
+            <div className="rounded-3xl border border-dashed border-border p-12 text-center">
+              <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
+              <p className="text-sm text-muted-foreground">
+                {isAr
+                  ? 'لا توجد تمارين بعد. تابعونا قريبًا.'
+                  : 'No exercises yet. Check back soon.'}
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-5">
+              {items.map((item) => (
+                <ExerciseCard key={item._id} exercise={item} />
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
+    </AppShell>
   );
 }
