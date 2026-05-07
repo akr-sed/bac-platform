@@ -41,7 +41,7 @@ export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
     'sticky top-[84px] max-h-[calc(100vh-84px)] overflow-y-auto self-start';
 
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] items-start gap-5 px-4 py-5">
+    <div className="mx-auto flex w-full max-w-[1440px] items-start gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
       {/* Nav rail — first in DOM = logical start (right in RTL, left in LTR) */}
       <div className={`hidden lg:block ${stickyClasses}`}>
         <VerticalNavRail />
