@@ -23,12 +23,19 @@
   "navigation": {
     "home": "Accueil",
     "exercises": "Exercices",
+    "sessions": "Sessions",
     "profile": "Profil",
     "admin": "Administration",
     "login": "Connexion",
     "register": "Inscription",
     "logout": "Déconnexion",
-    "language": "Langue"
+    "language": "Langue",
+    "library": "Banque",
+    "notifications": "Notifications",
+    "leaderboard": "Classement",
+    "search": "Recherche",
+    "settings": "Paramètres",
+    "dashboard": "Tableau de bord"
   },
   "auth": {
     "login": {
@@ -108,7 +115,10 @@
       "noSolutions": "Aucune solution pour le moment. Soyez le premier !",
       "similarExercises": "Exercices similaires",
       "postedBy": "Publié par",
-      "postedAt": "Publié le"
+      "postedAt": "Publié le",
+      "backToExam": "Retour à l'examen",
+      "backToExercises": "Retour aux exercices",
+      "figureDescription": "Description de la figure"
     }
   },
   "solutions": {
@@ -191,7 +201,35 @@
     "totalUsers": "Total utilisateurs",
     "totalExercises": "Total exercices",
     "totalSolutions": "Total solutions",
-    "pendingReports": "Signalements en attente"
+    "pendingReports": "Signalements en attente",
+    "importExam": {
+      "title": "Importer un examen BAC",
+      "subtitle": "Téléverse le fichier JSON produit par le parseur ou colle son contenu, puis vérifie la liste des exercices avant l'import.",
+      "uploadLabel": "Fichier JSON",
+      "uploadHelp": "Sélectionne un fichier .json issu de l'étape de parsing",
+      "pasteLabel": "Ou colle le contenu JSON ici",
+      "pastePlaceholder": "{\n  \"exam_id\": \"...\",\n  \"exercises\": [...]\n}",
+      "examMetadata": "Métadonnées de l'examen",
+      "fieldTitle": "Titre de l'examen",
+      "fieldYear": "Année",
+      "fieldSubject": "Matière",
+      "fieldLevel": "Niveau",
+      "preview": "Aperçu des exercices",
+      "previewEmpty": "Aucun aperçu pour l'instant. Téléverse un fichier ou colle du JSON.",
+      "previewExerciseLabel": "Exercice {number}",
+      "previewMarks": "{marks} pts",
+      "previewHasFigure": "Contient une figure",
+      "previewPage": "Page {page}",
+      "submit": "Importer l'examen",
+      "submitting": "Import en cours…",
+      "successRedirect": "Import réussi, redirection…",
+      "errorParse": "Impossible d'analyser le JSON — vérifie le contenu.",
+      "errorRequired": "Veuillez fournir un fichier ou coller du JSON.",
+      "errorServer": "L'import a échoué, réessaie.",
+      "teacherOnly": "Cette page est réservée aux professeurs et administrateurs",
+      "teacherOnlyHint": "Si tu es professeur et tu vois ce message, contacte l'administration pour activer tes droits.",
+      "teacherOnlyAction": "Retour au tableau de bord"
+    }
   },
   "categories": {
     "manage": "Gérer les catégories",
@@ -218,12 +256,546 @@
     "postExercise": "Publier un exercice",
     "browseExercises": "Parcourir les exercices",
     "viewProfile": "Voir le profil",
-    "pointsBreakdown": "Répartition des points"
+    "pointsBreakdown": "Répartition des points",
+    "feedTitle": "Fil",
+    "emptyTitle": "Pas encore d'exercices à afficher",
+    "emptyDescription": "Choisis les matières qui t'intéressent pour un fil personnalisé",
+    "pickSubjects": "Choisir les matières"
+  },
+  "feed": {
+    "like": "J'aime",
+    "save": "Enregistrer",
+    "comments": "Commentaires",
+    "loading": "Chargement…"
+  },
+  "preferences": {
+    "title": "Préférences de matières",
+    "help": "Choisis les matières à suivre dans ton fil",
+    "save": "Enregistrer les préférences",
+    "saving": "Enregistrement…",
+    "savedOk": "Préférences enregistrées",
+    "saveError": "Erreur du serveur"
+  },
+  "saved": {
+    "tab": "Enregistrés",
+    "empty": "Aucun exercice enregistré",
+    "loadError": "Échec du chargement des enregistrés"
+  },
+  "exam": {
+    "headerLabel": "Examen du BAC",
+    "year": "Année",
+    "subject": "Matière",
+    "level": "Niveau",
+    "exerciseCount": "{count, plural, one {# exercice} other {# exercices}}",
+    "pageHeading": "Page {page}",
+    "exerciseLabel": "Exercice {number}",
+    "marks": "{marks} pts",
+    "openExercise": "Ouvrir l'exercice",
+    "noExercises": "Aucun exercice dans cet examen",
+    "notFound": "Examen introuvable",
+    "indexTitle": "Examens du BAC",
+    "indexSubtitle": "Parcours les examens importés et accède à leurs exercices.",
+    "indexEmpty": "Aucun examen importé pour l'instant."
+  },
+  "subjects": {
+    "math": "Mathématiques",
+    "physics": "Physique",
+    "chemistry": "Chimie",
+    "biology": "Sciences naturelles",
+    "arabic-lit": "Lettres arabes",
+    "french-lit": "Lettres françaises",
+    "philosophy": "Philosophie",
+    "history": "Histoire",
+    "english": "Anglais"
   },
   "errors": {
     "notFound": "Introuvable",
     "pageNotFound": "La page que vous cherchez n'existe pas.",
     "backToHome": "Retour à l'accueil",
-    "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    "somethingWentWrong": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "tryAgain": "Réessayer",
+    "offline": "Vous êtes hors ligne",
+    "offlineDescription": "Nous réveillerons dès que la connexion sera rétablie."
+  },
+  "sessions": {
+    "title": "Sessions en direct",
+    "browse": "Parcourir les sessions",
+    "upcoming": "Sessions à venir",
+    "myUpcoming": "Mes sessions à venir",
+    "mySessions": "Mes sessions",
+    "create": "Créer une session",
+    "newSession": "Nouvelle session",
+    "noSessions": "Aucune session à venir",
+    "noSessionsHint": "Revenez plus tard, les professeurs publieront bientôt de nouvelles sessions",
+    "liveBadge": "Session en direct",
+    "free": "Gratuit",
+    "priceDA": "{price} DA",
+    "spotsLeft": "{remaining} places restantes sur {total}",
+    "spotsTotal": "{enrolled} / {capacity}",
+    "spotsUnlimited": "{enrolled} inscrits",
+    "duration": "{minutes} min",
+    "durationLabel": "Durée",
+    "capacityLabel": "Places",
+    "verifiedTeacher": "Enseignant vérifié",
+    "scheduledFor": "Programmée le",
+    "topicsLabel": "Thèmes",
+    "openMeeting": "Ouvrir le lien de la réunion",
+    "meetingHidden": "Le lien apparaîtra après votre inscription",
+    "enroll": "S'inscrire à la session",
+    "enrolling": "Inscription…",
+    "enrolled": "Vous êtes inscrit",
+    "unenroll": "Annuler l'inscription",
+    "unenrollConfirmTitle": "Annuler votre inscription ?",
+    "unenrollConfirmDescription": "Vous perdrez votre place dans cette session. Vous pourrez vous réinscrire tant qu'elle n'est pas complète.",
+    "full": "Session complète",
+    "cancelled": "Cette session a été annulée",
+    "ownerCannotEnroll": "Vous êtes le professeur de cette session",
+    "loginToEnroll": "Connectez-vous pour vous inscrire",
+    "teacherOnly": "Cette page est réservée aux professeurs",
+    "backToSessions": "Retour aux sessions",
+    "filters": {
+      "all": "Toutes les matières",
+      "subject": "Matière"
+    },
+    "form": {
+      "title": "Titre de la session",
+      "titlePlaceholder": "Ex: Révision des fonctions exponentielles",
+      "description": "Description",
+      "descriptionPlaceholder": "Que vont apprendre les élèves ?",
+      "subject": "Matière",
+      "scheduledAt": "Date et heure",
+      "duration": "Durée (en minutes)",
+      "meetingUrl": "Lien de la réunion",
+      "meetingUrlPlaceholder": "https://meet.google.com/abc-defg-hij",
+      "meetingUrlHelp": "Collez votre lien Google Meet ou Zoom",
+      "capacity": "Nombre maximum de participants (optionnel)",
+      "capacityPlaceholder": "Laissez vide pour un nombre illimité",
+      "priceDA": "Prix en dinars algériens",
+      "priceHelp": "Indiquez 0 pour une session gratuite",
+      "topics": "Thèmes (séparés par des virgules)",
+      "topicsPlaceholder": "fonctions, limites, dérivation",
+      "submit": "Créer la session",
+      "submitting": "Création…",
+      "success": "Session créée avec succès",
+      "error": "Impossible de créer la session"
+    },
+    "joinNow": "Rejoindre",
+    "reserveSeat": "Réserver",
+    "inLabel": "Dans {time}",
+    "priceLabel": "Prix",
+    "teacher": "Professeur"
+  },
+  "library": {
+    "eyebrow": "Bibliothèque BAC",
+    "title": "Banque d'exercices",
+    "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
+    "empty": "Aucun exercice n'a encore été importé."
+  },
+  "verifyEmail": {
+    "title": "Vérification de l'e-mail",
+    "successTitle": "E-mail vérifié !",
+    "successDescription": "Votre adresse e-mail a bien été vérifiée. Vous pouvez maintenant vous connecter.",
+    "errorTitle": "Échec de la vérification",
+    "errorDescription": "Ce lien de vérification est invalide ou a expiré. Veuillez en demander un nouveau.",
+    "backToLogin": "Retour à la connexion"
+  },
+  "onboarding": {
+    "title": "Bienvenue sur NAJAH",
+    "subtitle": "Personnalisons votre expérience",
+    "step1Title": "Quelle est votre filière ?",
+    "step2Title": "En quelle année êtes-vous ?",
+    "step3Title": "Quelles matières vous intéressent ?",
+    "step3Help": "Choisissez au moins 3",
+    "streams": {
+      "sciences": "Sciences",
+      "math": "Maths",
+      "lettres": "Lettres",
+      "techmath": "Tech-Math",
+      "languages": "Langues"
+    },
+    "years": {
+      "premiere": "1ère AS",
+      "terminale": "Terminale AS"
+    },
+    "interests": {
+      "math": "Maths",
+      "physics": "Physique",
+      "chemistry": "Chimie",
+      "biology": "Biologie",
+      "philosophy": "Philosophie",
+      "arabic": "Arabe",
+      "french": "Français",
+      "english": "Anglais",
+      "history": "Histoire",
+      "geography": "Géographie"
+    },
+    "next": "Suivant",
+    "finish": "Terminer",
+    "celebrate": "Vous êtes prêt, {name} !",
+    "celebrateDesc": "Votre fil est prêt. Explorez les exercices adaptés à votre profil.",
+    "takeMeToFeed": "Aller au fil",
+    "saving": "Configuration…"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérez vos informations personnelles et préférences de compte",
+    "account": "Informations personnelles",
+    "password": "Mot de passe & sécurité",
+    "notifications": "Notifications",
+    "language": "Langue",
+    "privacy": "Confidentialité",
+    "preferences": "Préférences",
+    "dangerZone": "Zone de danger",
+    "accountSection": {
+      "title": "Informations du compte",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "bio": "Biographie",
+      "bioPlaceholder": "Une courte description de vous",
+      "avatar": "Photo de profil",
+      "changeAvatar": "Changer la photo",
+      "save": "Enregistrer les modifications",
+      "saving": "Enregistrement…",
+      "savedOk": "Modifications enregistrées",
+      "saveError": "Échec de l'enregistrement"
+    },
+    "passwordSection": {
+      "title": "Modifier le mot de passe",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "confirm": "Confirmer le nouveau mot de passe",
+      "hint": "8+ caractères, mélange de lettres et chiffres",
+      "save": "Mettre à jour",
+      "saving": "Mise à jour…",
+      "savedOk": "Mot de passe mis à jour",
+      "saveError": "Échec de la mise à jour",
+      "mismatch": "Les mots de passe ne correspondent pas",
+      "tooShort": "Le mot de passe doit contenir au moins 8 caractères"
+    },
+    "notificationsSection": {
+      "title": "Préférences de notifications",
+      "likes": "J'aime sur vos publications",
+      "comments": "Commentaires sur vos publications",
+      "mentions": "Mentions",
+      "weeklyDigest": "Digest hebdomadaire",
+      "marketing": "Mises à jour et conseils produit",
+      "save": "Enregistrer",
+      "savedOk": "Préférences enregistrées"
+    },
+    "languageSection": {
+      "title": "Langue et région",
+      "language": "Langue de l'interface",
+      "dateFormat": "Format de date"
+    },
+    "privacySection": {
+      "title": "Confidentialité",
+      "profileVisibility": "Profil public",
+      "profileVisibilityHint": "Autoriser les autres utilisateurs à voir votre profil",
+      "searchIndexing": "Apparaître dans la recherche",
+      "searchIndexingHint": "Autoriser votre profil à apparaître dans les résultats de recherche",
+      "save": "Enregistrer",
+      "savedOk": "Paramètres de confidentialité enregistrés"
+    },
+    "dangerZoneSection": {
+      "title": "Zone de danger",
+      "exportData": "Exporter mes données",
+      "exportDataDesc": "Télécharger toutes vos données",
+      "exportComingSoon": "L'export de données arrive bientôt. Nous vous préviendrons quand ce sera disponible.",
+      "deleteAccount": "Supprimer le compte",
+      "deleteAccountDesc": "Supprimer définitivement votre compte et toutes les données associées. Cette action est irréversible.",
+      "deleteConfirmTitle": "Supprimer votre compte ?",
+      "deleteConfirmDescription": "Cela supprimera définitivement votre compte, vos exercices, solutions et toutes vos autres données. Saisissez votre adresse e-mail pour confirmer.",
+      "deleteConfirmPlaceholder": "Saisissez votre e-mail pour confirmer",
+      "deleteConfirmAction": "Supprimer mon compte",
+      "deleting": "Suppression…",
+      "deleteError": "Échec de la suppression du compte"
+    }
+  },
+  "footer": {
+    "slogan": "Tout ce dont tu as besoin en un seul endroit — NAJAH BAC",
+    "productTitle": "Produit",
+    "companyTitle": "Entreprise",
+    "legalTitle": "Légal",
+    "about": "À propos",
+    "help": "Aide",
+    "contact": "Contact",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "madeFor": "Conçu pour les lycéens algériens"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Plateforme algérienne du bac",
+      "h1": "Tout ce dont tu as besoin en un seul endroit",
+      "subtitle": "Des exercices sélectionnés à partir de vrais sujets, des corrections de tes camarades et de professeurs vérifiés, et des séances live pour les chapitres difficiles.",
+      "ctaPrimary": "Commencer gratuitement",
+      "ctaSecondary": "Parcourir les exercices"
+    },
+    "pillars": {
+      "title": "Tout en un seul endroit",
+      "exercises": {
+        "title": "Exercices du bac",
+        "body": "Exercices issus de vrais sujets de bac, classés par matière, thème et niveau."
+      },
+      "sessions": {
+        "title": "Séances en direct",
+        "body": "Réserve une séance avec un prof vérifié pour réviser les chapitres difficiles avant l'examen."
+      },
+      "hints": {
+        "title": "Indices IA",
+        "body": "Obtiens des indices pédagogiques alimentés par l'IA pour raisonner par toi-même."
+      }
+    },
+    "exercises": {
+      "title": "Exercices de notre plateforme",
+      "cta": "Voir tous les exercices"
+    },
+    "howItWorks": {
+      "title": "Comment fonctionne NAJAH ?",
+      "step1": {
+        "title": "Créer un compte",
+        "body": "Inscris-toi gratuitement en quelques secondes."
+      },
+      "step2": {
+        "title": "Choisir ta filière",
+        "body": "Personnalise ton expérience selon ta filière."
+      },
+      "step3": {
+        "title": "Pratiquer chaque jour",
+        "body": "Résous des exercices et apprends des explications."
+      },
+      "step4": {
+        "title": "Suivre ta progression",
+        "body": "Gagne des points et grimpe dans le classement."
+      }
+    },
+    "trust": {
+      "students": "10K+",
+      "studentsLabel": "élèves",
+      "exercises": "5K+",
+      "exercisesLabel": "exercices",
+      "satisfaction": "96%",
+      "satisfactionLabel": "taux de satisfaction"
+    },
+    "cta": {
+      "h2": "Prêt(e) à réussir ton bac ?",
+      "button": "Commencer gratuitement"
+    }
+  },
+  "help": {
+    "title": "Aide et FAQ",
+    "subtitle": "Réponses aux questions les plus fréquentes",
+    "contactTitle": "Nous contacter",
+    "contactSubtitle": "Vous n'avez pas trouvé de réponse ? Envoyez-nous un message.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "message": "Votre message",
+      "messagePlaceholder": "Décrivez votre problème ou votre question…",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours…",
+      "successTitle": "Message envoyé !",
+      "successBody": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.",
+      "errorBody": "Échec de l'envoi. Veuillez réessayer."
+    },
+    "faq": {
+      "q1": "Qu'est-ce que NAJAH ?",
+      "a1": "NAJAH est une plateforme éducative algérienne destinée aux lycéens. Elle propose des exercices tirés de vrais sujets de bac, des corrections de camarades et de professeurs vérifiés, ainsi que des séances de révision en direct.",
+      "q2": "Comment s'inscrire ?",
+      "a2": "Clique sur « Créer un compte » sur la page d'accueil, saisis ton nom, ton e-mail et un mot de passe, puis suis les étapes de configuration.",
+      "q3": "NAJAH est-il gratuit ?",
+      "a3": "Oui, l'inscription et l'accès à la plupart des contenus sont entièrement gratuits. Certaines séances de professeurs peuvent comporter un petit tarif fixé par le professeur.",
+      "q4": "Comment trouver des exercices pour ma filière ?",
+      "a4": "Après la création de ton compte, choisis ta filière et tes matières favorites lors de la configuration. Ton fil d'actualité affichera automatiquement les exercices les plus pertinents.",
+      "q5": "Comment enregistrer un exercice dans ma bibliothèque ?",
+      "a5": "Clique sur l'icône de signet sur n'importe quelle carte d'exercice. Tu peux accéder à tes exercices enregistrés à tout moment depuis la section Bibliothèque.",
+      "q6": "Comment rejoindre une séance en direct ?",
+      "a6": "Parcours la page Séances, choisis une séance qui te convient et clique sur S'inscrire. Le lien de la réunion apparaîtra juste avant l'heure de la séance.",
+      "q7": "Puis-je partager mes propres corrections ?",
+      "a7": "Absolument ! Ouvre n'importe quel exercice et tu trouveras une option pour ajouter ta correction. Partage-la avec tes camarades pour les aider à comprendre.",
+      "q8": "Les indices IA sont-ils fiables ?",
+      "a8": "Les indices générés par l'IA sont un outil pédagogique expérimental. Ils peuvent contenir des erreurs — vérifie toujours les informations importantes avec ton professeur.",
+      "q9": "Comment changer mon mot de passe ?",
+      "a9": "Va dans Paramètres → section Mot de passe, saisis ton mot de passe actuel et le nouveau, puis clique sur Mettre à jour.",
+      "q10": "Comment changer la langue de l'interface ?",
+      "a10": "Clique sur ton nom ou le menu de langue dans la barre de navigation et choisis ta langue préférée (arabe, français, anglais).",
+      "q11": "Comment supprimer mon compte ?",
+      "a11": "Va dans Paramètres → Zone de danger et clique sur Supprimer le compte. On te demandera de confirmer ton e-mail. Cette action est irréversible.",
+      "q12": "Comment signaler un problème ?",
+      "a12": "Tu peux signaler tout contenu inapproprié via le bouton Signaler présent sur chaque publication. Pour les problèmes techniques, utilise le formulaire de contact ci-dessous."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Tout marquer comme lu",
+    "tabs": {
+      "all": "Tout",
+      "mentions": "Mentions",
+      "reactions": "Réactions",
+      "replies": "Réponses"
+    },
+    "empty": {
+      "title": "Aucune notification",
+      "description": "Tes notifications apparaîtront ici lorsque d'autres interagiront avec ton contenu."
+    },
+    "verbs": {
+      "like": "a aimé",
+      "comment": "a commenté",
+      "mention": "t'a mentionné dans",
+      "reply": "a répondu à",
+      "follow": "a commencé à te suivre"
+    },
+    "targets": {
+      "exercise": "exercice",
+      "solution": "correction",
+      "comment": "commentaire",
+      "session": "séance"
+    }
+  },
+  "leaderboard": {
+    "title": "Classement",
+    "description": "Les meilleurs élèves et enseignants contributeurs de la plateforme",
+    "tabs": {
+      "week": "Cette semaine",
+      "month": "Ce mois",
+      "all": "Tout le temps"
+    },
+    "streams": {
+      "all": "Toutes les filières",
+      "sciences": "Sciences",
+      "math": "Mathématiques",
+      "lettres": "Lettres",
+      "tech-math": "Tech. Math.",
+      "languages": "Langues étrangères"
+    },
+    "points": "pt",
+    "rank": "Rang",
+    "podium": {
+      "gold": "1ère place",
+      "silver": "2ème place",
+      "bronze": "3ème place"
+    },
+    "empty": {
+      "title": "Pas encore de classement",
+      "description": "Sois le premier à grimper au tableau d'honneur !"
+    }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Niveau {level}",
+    "streak": "{days} jours consécutifs",
+    "streakLabel": "jours consécutifs",
+    "rank": "Rang #{rank}",
+    "unranked": "Non classé",
+    "quests": {
+      "title": "Quêtes du jour",
+      "comment-3": {
+        "title": "Commenter 3 fois",
+        "description": "Ajoute 3 commentaires sur des corrections"
+      },
+      "solve-1": {
+        "title": "Résoudre un exercice",
+        "description": "Soumets une correction pour n'importe quel exercice"
+      },
+      "post-1": {
+        "title": "Publier un exercice",
+        "description": "Publie un nouvel exercice pour la communauté"
+      }
+    },
+    "achievements": {
+      "title": "Succès",
+      "locked": "Verrouillé",
+      "unlocked": "Déverrouillé",
+      "first-exercise": {
+        "title": "Premier pas",
+        "description": "Soumets ta toute première correction"
+      },
+      "streak-7": {
+        "title": "Semaine de régularité",
+        "description": "Maintiens une série de 7 jours consécutifs"
+      },
+      "streak-30": {
+        "title": "Mois de persévérance",
+        "description": "Maintiens une série de 30 jours consécutifs"
+      },
+      "level-5": {
+        "title": "Niveau 5 atteint",
+        "description": "Monte au niveau 5"
+      },
+      "comments-50": {
+        "title": "Voix de la communauté",
+        "description": "Poste 50 commentaires sur les corrections"
+      },
+      "top-100": {
+        "title": "Élite nationale",
+        "description": "Atteins le top 100 national"
+      }
+    },
+    "searchPlaceholder": "Rechercher des exercices, séances ou résumés...",
+    "startSolving": "Commencer",
+    "dashboard": "Tableau de bord"
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Rechercher des exercices, séances, enseignants...",
+    "tabs": {
+      "all": "Tout",
+      "exercises": "Exercices",
+      "sessions": "Séances",
+      "profiles": "Personnes"
+    },
+    "sections": {
+      "exercises": "Exercices",
+      "sessions": "Séances",
+      "profiles": "Personnes"
+    },
+    "seeAll": "Voir tout",
+    "empty": {
+      "title": "Aucun résultat",
+      "description": "Essaie d'autres mots-clés ou vérifie l'orthographe."
+    },
+    "noQuery": {
+      "title": "Lance une recherche",
+      "description": "Saisis un mot-clé pour rechercher des exercices, séances et personnes."
+    }
+  },
+  "profileDashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Vue d'ensemble de ta progression",
+    "streak": {
+      "title": "Série d'activité",
+      "days": "{count} jours"
+    },
+    "badges": {
+      "title": "Badges",
+      "viewAll": "Voir tout"
+    },
+    "xpLevel": {
+      "title": "Réputation et classement",
+      "totalXp": "XP total",
+      "nextLevel": "{remaining} XP pour le niveau {next}",
+      "nationalRank": "Classement national"
+    },
+    "identity": {
+      "editProfile": "Modifier le profil"
+    },
+    "subjectProgress": {
+      "title": "Progression par matière",
+      "completed": "{completed} sur {total} exercices",
+      "empty": "Aucune donnée de progression"
+    },
+    "activityTab": "Activité récente",
+    "savedTab": "Exercices sauvegardés",
+    "activityEmpty": "Aucune activité pour l'instant",
+    "savedEmpty": "Aucun exercice sauvegardé",
+    "weekdays": {
+      "sat": "Sam",
+      "sun": "Dim",
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Jeu",
+      "fri": "Ven"
+    }
   }
 }

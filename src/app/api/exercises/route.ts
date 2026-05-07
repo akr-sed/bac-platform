@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { Types } from 'mongoose';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
+import ExerciseLike from '@/models/ExerciseLike';
+import SavedExercise from '@/models/SavedExercise';
 
 const createExerciseSchema = z.object({
   title: z.string().min(1),
@@ -19,6 +22,8 @@ export async function GET(request: NextRequest) {
   try {
     await connectToDatabase();
 
+    const session = await getSession();
+
     const { searchParams } = request.nextUrl;
     const page = Math.max(1, parseInt(searchParams.get('page') || '1'));
     const limit = Math.min(50, Math.max(1, parseInt(searchParams.get('limit') || '10')));
@@ -26,6 +31,7 @@ export async function GET(request: NextRequest) {
     const topic = searchParams.get('topic');
     const difficulty = searchParams.get('difficulty');
     const search = searchParams.get('search');
+    const source = searchParams.get('source'); // 'community' | 'library' | null (= both)
 
     const filter: Record<string, unknown> = {};
 
@@ -34,6 +40,8 @@ export async function GET(request: NextRequest) {
     if (difficulty && ['easy', 'medium', 'hard'].includes(difficulty)) {
       filter.difficulty = difficulty;
     }
+    if (source === 'community') filter.examId = { $exists: false };
+    if (source === 'library') filter.examId = { $exists: true };
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: 'i' } },
@@ -64,20 +72,46 @@ export async function GET(request: NextRequest) {
       solutionCounts.map((s) => [s._id.toString(), s.count])
     );
 
-    const data = exercises.map((exercise) => ({
-      _id: exercise._id.toString(),
-      title: exercise.title,
-      description: exercise.description,
-      difficulty: exercise.difficulty,
-      subject: exercise.subject,
-      topic: exercise.topic,
-      subtopic: exercise.subtopic,
-      author: exercise.authorId,
-      attachments: exercise.attachments,
-      solutionCount: countMap.get(exercise._id.toString()) || 0,
-      createdAt: exercise.createdAt,
-      updatedAt: exercise.updatedAt,
-    }));
+    let likedSet = new Set<string>();
+    let savedSet = new Set<string>();
+    if (session) {
+      const userObjectId = new Types.ObjectId(session.userId);
+      const [likes, saves] = await Promise.all([
+        ExerciseLike.find({
+          userId: userObjectId,
+          exerciseId: { $in: exerciseIds },
+        }).select('exerciseId'),
+        SavedExercise.find({
+          userId: userObjectId,
+          exerciseId: { $in: exerciseIds },
+        }).select('exerciseId'),
+      ]);
+      likedSet = new Set(likes.map((l) => String(l.exerciseId)));
+      savedSet = new Set(saves.map((s) => String(s.exerciseId)));
+    }
+
+    const data = exercises.map((exercise) => {
+      const id = exercise._id.toString();
+      return {
+        _id: id,
+        title: exercise.title,
+        description: exercise.description,
+        difficulty: exercise.difficulty,
+        subject: exercise.subject,
+        topic: exercise.topic,
+        subtopic: exercise.subtopic,
+        author: exercise.authorId,
+        attachments: exercise.attachments,
+        solutionCount: countMap.get(id) || 0,
+        likesCount: exercise.likesCount ?? 0,
+        commentsCount: exercise.commentsCount ?? 0,
+        lastActivityAt: exercise.lastActivityAt ?? exercise.createdAt,
+        isLiked: likedSet.has(id),
+        isSaved: savedSet.has(id),
+        createdAt: exercise.createdAt,
+        updatedAt: exercise.updatedAt,
+      };
+    });
 
     return NextResponse.json({
       data,

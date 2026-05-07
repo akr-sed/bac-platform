@@ -17,6 +17,28 @@ const CommentSchema = new Schema<IComment>(
   { timestamps: true }
 );
 
+import Solution from './Solution';
+import Exercise from './Exercise';
+
+CommentSchema.post('save', async function (doc) {
+  const sol = await Solution.findById(doc.solutionId).select('exerciseId');
+  if (!sol) return;
+  await Exercise.updateOne(
+    { _id: sol.exerciseId },
+    { $inc: { commentsCount: 1 }, $set: { lastActivityAt: new Date() } }
+  );
+});
+
+CommentSchema.post('findOneAndDelete', async function (doc: any) {
+  if (!doc) return;
+  const sol = await Solution.findById(doc.solutionId).select('exerciseId');
+  if (!sol) return;
+  await Exercise.updateOne(
+    { _id: sol.exerciseId },
+    { $inc: { commentsCount: -1 }, $set: { lastActivityAt: new Date() } }
+  );
+});
+
 const Comment: Model<IComment> =
   (mongoose.models.Comment as Model<IComment>) ??
   mongoose.model<IComment>('Comment', CommentSchema);

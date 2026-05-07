@@ -29,9 +29,11 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    // Cascade: delete all comments on this solution, then the solution
-    await Comment.deleteMany({ solutionId: id });
+    // Cascade: delete the Solution first so the post-delete hook can count
+    // existing comments and decrement Exercise.commentsCount correctly.
+    // Only then do we actually purge the comments.
     await Solution.findByIdAndDelete(id);
+    await Comment.deleteMany({ solutionId: id });
 
     return NextResponse.json({ success: true });
   } catch {

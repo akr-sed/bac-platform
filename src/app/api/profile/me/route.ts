@@ -4,7 +4,7 @@ import { connectToDatabase } from '@/lib/mongodb';
 import User from '@/models/User';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
-import { getSession } from '@/lib/auth';
+import { getSession, clearAuthCookie } from '@/lib/auth';
 
 export async function GET() {
   try {
@@ -43,6 +43,7 @@ export async function GET() {
         points: user.points,
         isVerifiedTeacher: user.isVerifiedTeacher,
         avatar: user.avatar ?? null,
+        preferences: user.preferences ?? { subjects: [] },
         createdAt: user.createdAt,
       },
       exercises: exercises.map((ex) => ({
@@ -76,7 +77,7 @@ export async function PUT(request: NextRequest) {
     await connectToDatabase();
 
     const body = await request.json();
-    const { name, avatar, email, currentPassword, newPassword } = body;
+    const { name, avatar, bio, email, currentPassword, newPassword, preferences, onboardedAt, notificationPrefs, privacyPrefs } = body;
 
     const user = await User.findById(session.userId);
     if (!user) {
@@ -86,6 +87,11 @@ export async function PUT(request: NextRequest) {
     // Update name
     if (name && typeof name === 'string' && name.trim()) {
       user.name = name.trim();
+    }
+
+    // Update bio
+    if (bio !== undefined && typeof bio === 'string') {
+      user.bio = bio.trim() || undefined;
     }
 
     // Update avatar
@@ -120,6 +126,47 @@ export async function PUT(request: NextRequest) {
       user.passwordHash = await bcrypt.hash(newPassword, 10);
     }
 
+    // Update preferences (feed personalization + onboarding)
+    if (preferences && typeof preferences === 'object') {
+      const cleanedSubjects = Array.isArray(preferences.subjects)
+        ? preferences.subjects
+            .filter((s: unknown): s is string => typeof s === 'string')
+            .slice(0, 10)
+        : user.preferences?.subjects ?? [];
+      user.preferences = {
+        subjects: cleanedSubjects,
+        stream: typeof preferences.stream === 'string' ? preferences.stream : user.preferences?.stream,
+        year: typeof preferences.year === 'string' ? preferences.year : user.preferences?.year,
+        interests: Array.isArray(preferences.interests)
+          ? preferences.interests.filter((s: unknown): s is string => typeof s === 'string').slice(0, 20)
+          : user.preferences?.interests ?? [],
+      };
+    }
+
+    // Update onboardedAt
+    if (onboardedAt && !user.onboardedAt) {
+      user.onboardedAt = new Date(onboardedAt);
+    }
+
+    // Update notification preferences
+    if (notificationPrefs && typeof notificationPrefs === 'object') {
+      user.notificationPrefs = {
+        likes: notificationPrefs.likes !== false,
+        comments: notificationPrefs.comments !== false,
+        mentions: notificationPrefs.mentions !== false,
+        weeklyDigest: notificationPrefs.weeklyDigest !== false,
+        marketing: notificationPrefs.marketing === true,
+      };
+    }
+
+    // Update privacy preferences
+    if (privacyPrefs && typeof privacyPrefs === 'object') {
+      user.privacyPrefs = {
+        profilePublic: privacyPrefs.profilePublic !== false,
+        searchIndexing: privacyPrefs.searchIndexing !== false,
+      };
+    }
+
     await user.save();
 
     return NextResponse.json({
@@ -131,9 +178,46 @@ export async function PUT(request: NextRequest) {
         points: user.points,
         isVerifiedTeacher: user.isVerifiedTeacher,
         avatar: user.avatar ?? null,
+        bio: user.bio ?? null,
+        preferences: user.preferences ?? { subjects: [] },
+        notificationPrefs: user.notificationPrefs ?? null,
+        privacyPrefs: user.privacyPrefs ?? null,
+        onboardedAt: user.onboardedAt ?? null,
         createdAt: user.createdAt,
       },
     });
+  } catch {
+    return NextResponse.json({ error: 'Server error, please try again' }, { status: 500 });
+  }
+}
+
+// PATCH is an alias for PUT — same handler
+export { PUT as PATCH };
+
+export async function DELETE() {
+  try {
+    const session = await getSession();
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    await connectToDatabase();
+
+    const user = await User.findById(session.userId);
+    if (!user) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
+
+    // Delete the user.
+    // NOTE: Content (exercises, solutions, comments) is intentionally left in place
+    // with the authorId still referencing the deleted user's ID. A Wave 5 cascade
+    // script should handle orphaned content cleanup.
+    await User.findByIdAndDelete(session.userId);
+
+    const response = NextResponse.json({ ok: true });
+    // Clear auth cookie
+    clearAuthCookie(response);
+    return response;
   } catch {
     return NextResponse.json({ error: 'Server error, please try again' }, { status: 500 });
   }

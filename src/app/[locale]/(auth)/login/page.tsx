@@ -1,18 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/routing';
-import { Link } from '@/i18n/routing';
-import { GraduationCap, Mail, Lock, Loader2 } from 'lucide-react';
+import { useRouter, Link } from '@/i18n/routing';
+import { useSearchParams } from 'next/navigation';
+import { Mail, Lock, Loader2, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Logo } from '@/components/brand/Logo';
 import { useAuth } from '@/components/providers/AuthProvider';
 
-export default function LoginPage() {
+function ResetBanner() {
+  const searchParams = useSearchParams();
+  const t = useTranslations('auth.resetPassword');
+  if (searchParams.get('reset') !== 'ok') return null;
+  return (
+    <div role="status" className="flex items-center gap-2 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+      <CheckCircle className="size-4 flex-shrink-0" />
+      {t('success')}
+    </div>
+  );
+}
+
+function LoginForm() {
   const t = useTranslations('auth.login');
+  const tFooter = useTranslations('footer');
   const { login } = useAuth();
   const router = useRouter();
   const [error, setError] = useState('');
@@ -38,20 +51,36 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md rounded-xl border border-border p-0 shadow-sm">
-        <CardHeader className="flex flex-col items-center gap-3 pb-2 pt-8">
-          <div className="flex size-14 items-center justify-center rounded-xl bg-primary/10">
-            <GraduationCap className="size-7 text-primary" />
+    <main className="flex min-h-[calc(100dvh-4rem)]">
+      {/* Left panel — brand accent */}
+      <div className="hidden w-2/5 flex-col items-center justify-center gap-6 bg-[#E6F4FA] px-10 lg:flex">
+        <Logo variant="vertical" size={160} priority />
+        <p className="max-w-xs text-center text-sm font-medium text-[#6D7D8B]">
+          {tFooter('slogan')}
+        </p>
+      </div>
+
+      {/* Right panel — form */}
+      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+        {/* Mobile logo (hidden on lg) */}
+        <div className="mb-8 lg:hidden">
+          <Logo variant="horizontal" size="lg" />
+        </div>
+
+        <div className="w-full max-w-sm space-y-8">
+          <div className="space-y-1">
+            <h1 className="font-heading text-3xl font-semibold tracking-tight text-[#003449]">
+              {t('title')}
+            </h1>
           </div>
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-            {t('title')}
-          </h1>
-        </CardHeader>
-        <CardContent className="px-8 pb-8 pt-4">
+
           <form className="space-y-5" onSubmit={handleSubmit}>
+            <Suspense>
+              <ResetBanner />
+            </Suspense>
+
             {error && (
-              <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+              <div role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -66,8 +95,10 @@ export default function LoginPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  placeholder={t('email')}
-                  className="ps-10"
+                  // eslint-disable-next-line jsx-a11y/no-autofocus
+                  autoFocus
+                  placeholder="you@example.com"
+                  className="h-11 rounded-2xl ps-10"
                 />
               </div>
             </div>
@@ -75,9 +106,9 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">{t('password')}</Label>
-                <button type="button" className="cursor-pointer text-xs font-medium text-primary hover:underline">
+                <Link href="/forgot-password" className="cursor-pointer text-xs font-medium text-primary hover:underline">
                   {t('forgotPassword')}
-                </button>
+                </Link>
               </div>
               <div className="relative">
                 <Lock className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -87,26 +118,44 @@ export default function LoginPage() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  placeholder={t('password')}
-                  className="ps-10"
+                  placeholder="••••••••"
+                  className="h-11 rounded-2xl ps-10"
                 />
               </div>
             </div>
 
-            <Button type="submit" className="w-full cursor-pointer rounded-xl" disabled={loading}>
-              {loading && <Loader2 className="me-2 size-4 animate-spin" />}
-              {t('submit')}
+            <Button
+              type="submit"
+              className="group h-11 w-full cursor-pointer gap-2 rounded-2xl text-base font-medium active:scale-[0.98]"
+              disabled={loading}
+            >
+              {loading ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <>
+                  {t('submit')}
+                  <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+                </>
+              )}
             </Button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-muted-foreground">
             {t('noAccount')}{' '}
-            <Link href="/register" className="cursor-pointer font-medium text-primary hover:underline">
+            <Link href="/register" className="cursor-pointer font-medium text-foreground hover:text-primary">
               {t('registerLink')}
             </Link>
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
   );
 }

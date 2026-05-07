@@ -3,33 +3,47 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
+import { AppShell } from '@/components/layout/AppShell';
 import {
   Search,
   SlidersHorizontal,
   BookOpen,
-  MessageCircle,
-  User,
   Plus,
 } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
-import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { Pagination } from '@/components/ui/pagination';
+import { ExerciseCard } from '@/components/exercises/exercise-card';
+import { UpcomingSessionsRailClient } from '@/components/sessions/upcoming-sessions-rail-client';
 import { cn } from '@/lib/utils';
+import type { FeedItemDTO } from '@/types';
 
 interface Exercise {
   _id: string;
   title: string;
+  description?: string;
   subject?: string;
   topic?: string;
+  subtopic?: string;
   difficulty?: 'easy' | 'medium' | 'hard';
-  author?: { name: string };
+  author?: {
+    _id?: string;
+    name: string;
+    avatar?: string | null;
+    role?: 'student' | 'teacher' | 'admin';
+    isVerifiedTeacher?: boolean;
+  };
+  attachments?: string[];
   solutionCount?: number;
+  likesCount?: number;
+  commentsCount?: number;
+  lastActivityAt?: string;
+  isLiked?: boolean;
+  isSaved?: boolean;
   createdAt?: string;
 }
 
@@ -114,6 +128,7 @@ export default function ExercisesPage() {
         const params = new URLSearchParams({
           page: String(currentPage),
           limit: '9',
+          source: 'community',
         });
         if (selectedDifficulty) params.set('difficulty', selectedDifficulty);
         if (searchQuery) params.set('search', searchQuery);
@@ -134,7 +149,10 @@ export default function ExercisesPage() {
   }, [currentPage, selectedDifficulty, searchQuery]);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <AppShell>
+    <div className="py-8">
+      <UpcomingSessionsRailClient />
+
       {/* Page header */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -224,43 +242,12 @@ export default function ExercisesPage() {
             </Card>
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="mx-auto max-w-2xl space-y-4">
                 {exercises.map((ex) => (
-                  <Link key={ex._id} href={`/exercises/${ex._id}`}>
-                    <Card className="group cursor-pointer rounded-xl border border-border p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
-                      <CardContent className="flex flex-col gap-3 p-0">
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="line-clamp-2 font-heading text-lg font-semibold text-foreground">
-                            {ex.title}
-                          </h3>
-                          {ex.difficulty && (
-                            <DifficultyBadge level={ex.difficulty} />
-                          )}
-                        </div>
-
-                        {ex.subject && (
-                          <Badge variant="secondary" className="w-fit text-xs">
-                            {ex.subject}
-                          </Badge>
-                        )}
-
-                        <div className="mt-auto flex items-center gap-4 text-xs text-muted-foreground">
-                          {ex.author && (
-                            <span className="flex items-center gap-1">
-                              <User className="size-3.5" />
-                              {ex.author.name}
-                            </span>
-                          )}
-                          {typeof ex.solutionCount === 'number' && (
-                            <span className="flex items-center gap-1">
-                              <MessageCircle className="size-3.5" />
-                              {ex.solutionCount}
-                            </span>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
+                  <ExerciseCard
+                    key={ex._id}
+                    exercise={ex as unknown as FeedItemDTO}
+                  />
                 ))}
               </div>
 
@@ -275,6 +262,7 @@ export default function ExercisesPage() {
           )}
         </div>
       </div>
-    </main>
+    </div>
+    </AppShell>
   );
 }

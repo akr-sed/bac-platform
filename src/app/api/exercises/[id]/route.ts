@@ -5,6 +5,8 @@ import { getSession } from '@/lib/auth';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
 import Comment from '@/models/Comment';
+import SavedExercise from '@/models/SavedExercise';
+import ExerciseLike from '@/models/ExerciseLike';
 
 const updateExerciseSchema = z.object({
   title: z.string().min(1).optional(),
@@ -48,6 +50,13 @@ export async function GET(request: NextRequest, context: RouteContext) {
       author: exercise.authorId,
       attachments: exercise.attachments,
       solutionCount,
+      examId: exercise.examId ? String(exercise.examId) : undefined,
+      examNumber: exercise.examNumber,
+      concepts: exercise.concepts,
+      marks: exercise.marks,
+      sourcePage: exercise.sourcePage,
+      figureDescriptions: exercise.figureDescriptions,
+      hasMath: exercise.hasMath ?? false,
       createdAt: exercise.createdAt,
       updatedAt: exercise.updatedAt,
     });
@@ -157,6 +166,8 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
 
     await Comment.deleteMany({ solutionId: { $in: solutionIds } });
     await Solution.deleteMany({ exerciseId: id });
+    await SavedExercise.deleteMany({ exerciseId: id });
+    await ExerciseLike.deleteMany({ exerciseId: id });
     await Exercise.findByIdAndDelete(id);
 
     return NextResponse.json({ success: true });

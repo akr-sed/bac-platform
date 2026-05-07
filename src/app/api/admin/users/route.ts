@@ -43,6 +43,9 @@ export async function GET(request: NextRequest) {
       role: user.role,
       points: user.points,
       isVerifiedTeacher: user.isVerifiedTeacher,
+      isBlocked: Boolean(user.isBlocked),
+      blockedReason: user.blockedReason,
+      avatar: user.avatar,
       createdAt: user.createdAt,
     }));
 

@@ -1,8 +1,8 @@
 'use client';
 
-import { ThemeProvider } from 'next-themes';
 import { NextIntlClientProvider } from 'next-intl';
 import { AuthProvider } from '@/components/providers/AuthProvider';
+import { HtmlLocaleSync } from '@/components/providers/HtmlLocaleSync';
 import { TooltipProvider } from '@/components/ui/tooltip';
 
 export function Providers({
@@ -15,14 +15,13 @@ export function Providers({
   locale: string;
 }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-      <NextIntlClientProvider messages={messages} locale={locale} timeZone="Africa/Algiers">
-        <AuthProvider>
-          <TooltipProvider>
-            {children}
-          </TooltipProvider>
-        </AuthProvider>
-      </NextIntlClientProvider>
-    </ThemeProvider>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone="Africa/Algiers">
+      <HtmlLocaleSync />
+      <AuthProvider>
+        <TooltipProvider>
+          {children}
+        </TooltipProvider>
+      </AuthProvider>
+    </NextIntlClientProvider>
   );
 }

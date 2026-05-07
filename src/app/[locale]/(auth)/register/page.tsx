@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { Link } from '@/i18n/routing';
-import { GraduationCap, Mail, Lock, UserCircle, Loader2 } from 'lucide-react';
+import { Mail, Lock, UserCircle, Loader2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Logo } from '@/components/brand/Logo';
 import { useAuth } from '@/components/providers/AuthProvider';
 
 export default function RegisterPage() {
@@ -52,17 +52,28 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-lg rounded-xl border border-border p-0 shadow-sm">
-        <CardHeader className="flex flex-col items-center gap-3 pb-2 pt-8">
-          <div className="flex size-14 items-center justify-center rounded-xl bg-primary/10">
-            <GraduationCap className="size-7 text-primary" />
+    <main className="flex min-h-[calc(100dvh-4rem)]">
+      {/* Left panel — brand accent */}
+      <div className="hidden w-2/5 flex-col items-center justify-center gap-6 bg-[#E6F4FA] px-10 lg:flex">
+        <Logo variant="vertical" size={160} priority />
+        <p className="max-w-xs text-center text-sm font-medium text-[#6D7D8B]">
+          {t('title')}
+        </p>
+      </div>
+
+      {/* Right panel — form */}
+      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+        {/* Mobile logo */}
+        <div className="mb-8 lg:hidden">
+          <Logo variant="horizontal" size="lg" />
+        </div>
+
+        <div className="w-full max-w-md space-y-8">
+          <div className="space-y-1">
+            <h1 className="font-heading text-3xl font-semibold tracking-tight text-[#003449]">
+              {t('title')}
+            </h1>
           </div>
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-            {t('title')}
-          </h1>
-        </CardHeader>
-        <CardContent className="px-8 pb-8 pt-4">
           <form className="space-y-5" onSubmit={handleSubmit}>
             {error && (
               <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
@@ -79,8 +90,10 @@ export default function RegisterPage() {
                   type="text"
                   autoComplete="name"
                   required
+                  // eslint-disable-next-line jsx-a11y/no-autofocus
+                  autoFocus
                   placeholder={t('name')}
-                  className="ps-10"
+                  className="h-11 rounded-2xl ps-10"
                 />
               </div>
             </div>
@@ -96,7 +109,7 @@ export default function RegisterPage() {
                   autoComplete="email"
                   required
                   placeholder={t('email')}
-                  className="ps-10"
+                  className="h-11 rounded-2xl ps-10"
                 />
               </div>
             </div>
@@ -113,7 +126,7 @@ export default function RegisterPage() {
                     autoComplete="new-password"
                     required
                     placeholder={t('password')}
-                    className="ps-10"
+                    className="h-11 rounded-2xl ps-10"
                   />
                 </div>
               </div>
@@ -129,7 +142,7 @@ export default function RegisterPage() {
                     autoComplete="new-password"
                     required
                     placeholder={t('confirmPassword')}
-                    className="ps-10"
+                    className="h-11 rounded-2xl ps-10"
                   />
                 </div>
               </div>
@@ -161,20 +174,30 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            <Button type="submit" className="w-full cursor-pointer rounded-xl" disabled={loading}>
-              {loading && <Loader2 className="me-2 size-4 animate-spin" />}
-              {t('submit')}
+            <Button
+              type="submit"
+              className="group h-11 w-full cursor-pointer gap-2 rounded-2xl text-base font-medium active:scale-[0.98]"
+              disabled={loading}
+            >
+              {loading ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <>
+                  {t('submit')}
+                  <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+                </>
+              )}
             </Button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-muted-foreground">
             {t('hasAccount')}{' '}
-            <Link href="/login" className="cursor-pointer font-medium text-primary hover:underline">
+            <Link href="/login" className="cursor-pointer font-medium text-foreground hover:text-primary">
               {t('loginLink')}
             </Link>
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </main>
   );
 }

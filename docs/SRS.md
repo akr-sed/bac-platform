@@ -114,6 +114,9 @@ Users must be able to:
 ### 5.1 Performance
 - System should load pages within 2 seconds
 - Efficient filtering and search
+- Feed first paint < 1.5 s on 4G
+- Lighthouse performance score ≥ 90 on `/dashboard` and `/exercises`
+- CLS < 0.1 on the feed (PDF/image preview areas have fixed aspect ratios)
 
 ### 5.2 Security
 - Secure authentication
@@ -204,7 +207,7 @@ The platform must support the following three languages:
 - The UI must dynamically switch text direction (`dir="ltr"` / `dir="rtl"`) based on the active locale
 - The `lang` attribute on the root HTML element must reflect the active locale
 - Users must be able to switch language from any page without losing context
-- Default language: English (`en`)
+- Default language: **Arabic (`ar`)**
 - French should use standard French as spoken in Algeria
 - Arabic translations should use Modern Standard Arabic (MSA)
 
@@ -220,3 +223,27 @@ All of the following areas must have complete translations in all three language
 - AI features (hint button, experimental disclaimer, similar exercises)
 - Common UI elements (buttons: save, cancel, submit, loading states, success/error toasts)
 - Role names (student, teacher, admin)
+
+---
+
+## 9. Engagement Features
+
+### 9.1 Dashboard Feed
+- Personalized feed ranked by engagement score + recency decay + subject-preference boost
+- Initial 10 items server-rendered; subsequent pages fetched via infinite scroll
+- Same `ExerciseCard` component also used on `/exercises` with chronological sort + filters
+
+### 9.2 Save / Bookmark
+- Users can bookmark exercises via an inline card action
+- Saved items listed on a dedicated `Saved` tab on the profile page
+- Stored in a dedicated `SavedExercise` collection (compound-unique index on `userId + exerciseId`)
+
+### 9.3 Exercise-Level Likes
+- Distinct from solution-level likes
+- Stored in a dedicated `ExerciseLike` collection
+- Feed ranking uses `likesCount` maintained via Mongoose hooks
+
+### 9.4 Subject Preferences
+- Users can pick preferred subjects in profile settings
+- Feed ranking applies a fixed +50 score boost to matching subjects
+- Empty feed triggers a prompt directing the user to pick subjects

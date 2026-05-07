@@ -2,12 +2,25 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// Spec §4.2 — Textarea
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea
       data-slot="textarea"
       className={cn(
-        "flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+        // Spec values
+        "flex w-full min-h-[132px] p-[15px]",
+        "bg-[#F9FBFD] rounded-[7.5px]",
+        "border-2 border-[#BBC8D4]",
+        "font-semibold text-sm text-[#25313C]",
+        "placeholder:text-[#BBC8D4]",
+        // States
+        "transition-colors outline-none",
+        "focus:border-[#0095D1]",
+        "aria-invalid:border-[#ED2D30] aria-invalid:text-[#ED2D30]",
+        "disabled:bg-[#F9FBFD] disabled:opacity-60 disabled:cursor-not-allowed",
+        // Field-sizing for auto-grow where supported
+        "field-sizing-content",
         className
       )}
       {...props}
