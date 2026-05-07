@@ -378,7 +378,11 @@
       "submitting": "جارٍ الإنشاء…",
       "success": "تم إنشاء الجلسة بنجاح",
       "error": "تعذّر إنشاء الجلسة"
-    }
+    },
+    "joinNow": "انضم الآن",
+    "reserveSeat": "احجز مكانك",
+    "inLabel": "بعد {time}",
+    "priceLabel": "السعر"
   },
   "library": {
     "eyebrow": "مكتبة بكالوريا",

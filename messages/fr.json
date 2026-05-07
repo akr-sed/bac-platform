@@ -378,7 +378,11 @@
       "submitting": "Création…",
       "success": "Session créée avec succès",
       "error": "Impossible de créer la session"
-    }
+    },
+    "joinNow": "Rejoindre",
+    "reserveSeat": "Réserver",
+    "inLabel": "Dans {time}",
+    "priceLabel": "Prix"
   },
   "library": {
     "eyebrow": "Bibliothèque BAC",

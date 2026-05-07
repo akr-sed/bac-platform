@@ -71,3 +71,11 @@ UI_REVIEW_*.md
 /preview-*.png
 /final-*.png
 /library-*.png
+
+# Claude artifacts (do not commit)
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.claude/
+.claude-mem/
