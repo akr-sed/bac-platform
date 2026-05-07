@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
-import { ThemeProvider } from 'next-themes';
 import { Mulish, Rubik } from 'next/font/google';
+import { RootThemeProvider } from '@/components/providers/RootThemeProvider';
 import './globals.css';
 
 const mulish = Mulish({
@@ -35,9 +35,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir} className={fontVars} suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground antialiased" suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <RootThemeProvider>{children}</RootThemeProvider>
       </body>
     </html>
   );

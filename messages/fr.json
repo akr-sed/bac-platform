@@ -382,7 +382,8 @@
     "joinNow": "Rejoindre",
     "reserveSeat": "Réserver",
     "inLabel": "Dans {time}",
-    "priceLabel": "Prix"
+    "priceLabel": "Prix",
+    "teacher": "Professeur"
   },
   "library": {
     "eyebrow": "Bibliothèque BAC",

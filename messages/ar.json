@@ -382,7 +382,8 @@
     "joinNow": "انضم الآن",
     "reserveSeat": "احجز مكانك",
     "inLabel": "بعد {time}",
-    "priceLabel": "السعر"
+    "priceLabel": "السعر",
+    "teacher": "أستاذ"
   },
   "library": {
     "eyebrow": "مكتبة بكالوريا",
