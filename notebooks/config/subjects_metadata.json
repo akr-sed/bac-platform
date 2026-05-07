@@ -1,0 +1,398 @@
+{
+  "mathematics": {
+    "label": "Mathématiques",
+    "label_ar": "الرياضيات",
+    "filieres": {
+      "sciences_experimentales": {
+        "label": "Sciences Expérimentales",
+        "label_ar": "علوم تجريبية",
+        "topics": {
+          "analyse": {
+            "label": "Analyse",
+            "label_ar": "التحليل",
+            "concepts": [
+              "limites",
+              "continuite",
+              "derivation",
+              "etude_de_fonction",
+              "branches_infinies",
+              "tableau_de_variation",
+              "representation_graphique",
+              "fonction_exponentielle",
+              "fonction_logarithme",
+              "fonctions_usuelles",
+              "suites_numeriques",
+              "suites_arithmetiques",
+              "suites_geometriques",
+              "suites_recurrentes",
+              "convergence",
+              "calcul_integral",
+              "primitives",
+              "integration_par_parties",
+              "aires",
+              "optimisation"
+            ]
+          },
+          "probabilites": {
+            "label": "Probabilités",
+            "label_ar": "الاحتمالات",
+            "concepts": [
+              "denombrement",
+              "combinaisons",
+              "arrangements",
+              "probabilite_conditionnelle",
+              "theoreme_bayes",
+              "independance",
+              "variable_aleatoire",
+              "loi_binomiale",
+              "esperance",
+              "variance",
+              "schema_bernoulli",
+              "arbre_probabilites",
+              "tirages_successifs",
+              "tirages_simultanees"
+            ]
+          },
+          "geometrie": {
+            "label": "Géométrie dans l'espace",
+            "label_ar": "الهندسة في الفضاء",
+            "concepts": [
+              "vecteurs",
+              "produit_scalaire",
+              "produit_vectoriel",
+              "plans",
+              "droites",
+              "sphere",
+              "positions_relatives",
+              "repere_orthonorme",
+              "distances",
+              "angles",
+              "equations_cartesiennes",
+              "parametriques"
+            ]
+          },
+          "nombres_complexes": {
+            "label": "Nombres complexes",
+            "label_ar": "الأعداد المركبة",
+            "concepts": [
+              "forme_algebrique",
+              "forme_trigonometrique",
+              "forme_exponentielle",
+              "module",
+              "argument",
+              "conjugue",
+              "racines",
+              "equations_complexes",
+              "transformations_plan",
+              "similitudes",
+              "rotation",
+              "translation",
+              "homothetie"
+            ]
+          }
+        }
+      },
+      "mathematiques": {
+        "label": "Mathématiques",
+        "label_ar": "رياضيات",
+        "topics": {
+          "analyse": {
+            "label": "Analyse",
+            "label_ar": "التحليل",
+            "concepts": [
+              "limites",
+              "continuite",
+              "derivation",
+              "etude_de_fonction",
+              "branches_infinies",
+              "tableau_de_variation",
+              "representation_graphique",
+              "fonction_exponentielle",
+              "fonction_logarithme",
+              "fonctions_usuelles",
+              "suites_numeriques",
+              "suites_arithmetiques",
+              "suites_geometriques",
+              "suites_recurrentes",
+              "convergence",
+              "calcul_integral",
+              "primitives",
+              "integration_par_parties",
+              "aires",
+              "optimisation"
+            ]
+          },
+          "probabilites": {
+            "label": "Probabilités",
+            "label_ar": "الاحتمالات",
+            "concepts": [
+              "denombrement",
+              "combinaisons",
+              "arrangements",
+              "probabilite_conditionnelle",
+              "theoreme_bayes",
+              "independance",
+              "variable_aleatoire",
+              "loi_binomiale",
+              "esperance",
+              "variance",
+              "schema_bernoulli",
+              "arbre_probabilites",
+              "tirages_successifs",
+              "tirages_simultanees"
+            ]
+          },
+          "geometrie": {
+            "label": "Géométrie dans l'espace",
+            "label_ar": "الهندسة في الفضاء",
+            "concepts": [
+              "vecteurs",
+              "produit_scalaire",
+              "produit_vectoriel",
+              "plans",
+              "droites",
+              "sphere",
+              "positions_relatives",
+              "repere_orthonorme",
+              "distances",
+              "angles",
+              "equations_cartesiennes",
+              "parametriques"
+            ]
+          },
+          "nombres_complexes": {
+            "label": "Nombres complexes",
+            "label_ar": "الأعداد المركبة",
+            "concepts": [
+              "forme_algebrique",
+              "forme_trigonometrique",
+              "forme_exponentielle",
+              "module",
+              "argument",
+              "conjugue",
+              "racines",
+              "equations_complexes",
+              "transformations_plan",
+              "similitudes",
+              "rotation",
+              "translation",
+              "homothetie"
+            ]
+          },
+          "equations_differentielles": {
+            "label": "Équations différentielles",
+            "label_ar": "المعادلات التفاضلية",
+            "concepts": [
+              "equation_differentielle_premier_ordre",
+              "equation_differentielle_lineaire",
+              "solution_generale",
+              "solution_particuliere",
+              "conditions_initiales",
+              "equation_homogene"
+            ]
+          },
+          "arithmetique": {
+            "label": "Arithmétique",
+            "label_ar": "الحساب",
+            "concepts": [
+              "divisibilite",
+              "pgcd",
+              "ppcm",
+              "congruences",
+              "theoreme_bezout",
+              "nombres_premiers",
+              "decomposition_facteurs_premiers",
+              "theoreme_gauss"
+            ]
+          },
+          "logique": {
+            "label": "Logique et raisonnement",
+            "label_ar": "المنطق والاستدلال",
+            "concepts": [
+              "raisonnement_par_recurrence",
+              "raisonnement_par_absurde",
+              "contraposee",
+              "implications",
+              "equivalences",
+              "quantificateurs"
+            ]
+          }
+        }
+      },
+      "technique_mathematiques": {
+        "label": "Technique-Mathématiques",
+        "label_ar": "تقني رياضي",
+        "topics": {
+          "analyse": {
+            "label": "Analyse",
+            "label_ar": "التحليل",
+            "concepts": [
+              "limites",
+              "continuite",
+              "derivation",
+              "etude_de_fonction",
+              "tableau_de_variation",
+              "representation_graphique",
+              "fonction_exponentielle",
+              "fonction_logarithme",
+              "suites_numeriques",
+              "suites_arithmetiques",
+              "suites_geometriques",
+              "calcul_integral",
+              "primitives",
+              "aires",
+              "optimisation"
+            ]
+          },
+          "probabilites": {
+            "label": "Probabilités",
+            "label_ar": "الاحتمالات",
+            "concepts": [
+              "denombrement",
+              "combinaisons",
+              "probabilite_conditionnelle",
+              "independance",
+              "variable_aleatoire",
+              "loi_binomiale",
+              "esperance",
+              "variance",
+              "schema_bernoulli",
+              "arbre_probabilites"
+            ]
+          },
+          "geometrie": {
+            "label": "Géométrie dans l'espace",
+            "label_ar": "الهندسة في الفضاء",
+            "concepts": [
+              "vecteurs",
+              "produit_scalaire",
+              "plans",
+              "droites",
+              "sphere",
+              "positions_relatives",
+              "repere_orthonorme",
+              "distances"
+            ]
+          },
+          "nombres_complexes": {
+            "label": "Nombres complexes",
+            "label_ar": "الأعداد المركبة",
+            "concepts": [
+              "forme_algebrique",
+              "forme_trigonometrique",
+              "forme_exponentielle",
+              "module",
+              "argument",
+              "racines",
+              "transformations_plan"
+            ]
+          }
+        }
+      },
+      "gestion_economie": {
+        "label": "Gestion et Économie",
+        "label_ar": "تسيير واقتصاد",
+        "topics": {
+          "analyse": {
+            "label": "Analyse",
+            "label_ar": "التحليل",
+            "concepts": [
+              "limites",
+              "derivation",
+              "etude_de_fonction",
+              "tableau_de_variation",
+              "representation_graphique",
+              "fonction_exponentielle",
+              "fonction_logarithme",
+              "optimisation"
+            ]
+          },
+          "suites": {
+            "label": "Suites et applications financières",
+            "label_ar": "المتتاليات والتطبيقات المالية",
+            "concepts": [
+              "suites_arithmetiques",
+              "suites_geometriques",
+              "applications_financieres",
+              "interets_composes",
+              "annuites",
+              "valeur_actuelle"
+            ]
+          },
+          "probabilites": {
+            "label": "Probabilités",
+            "label_ar": "الاحتمالات",
+            "concepts": [
+              "denombrement",
+              "combinaisons",
+              "probabilite_conditionnelle",
+              "independance",
+              "variable_aleatoire",
+              "loi_binomiale",
+              "esperance",
+              "variance",
+              "arbre_probabilites"
+            ]
+          },
+          "statistiques": {
+            "label": "Statistiques",
+            "label_ar": "الإحصاء",
+            "concepts": [
+              "moyenne",
+              "variance_stat",
+              "ecart_type",
+              "mediane",
+              "mode",
+              "regression_lineaire",
+              "correlation",
+              "courbe_regression",
+              "effectifs",
+              "frequences"
+            ]
+          }
+        }
+      },
+      "lettres_philosophie": {
+        "label": "Lettres et Philosophie",
+        "label_ar": "آداب وفلسفة",
+        "topics": {
+          "analyse": {
+            "label": "Analyse (niveau littéraire)",
+            "label_ar": "التحليل",
+            "concepts": [
+              "limites",
+              "derivation",
+              "etude_de_fonction",
+              "tableau_de_variation",
+              "representation_graphique",
+              "optimisation"
+            ]
+          },
+          "probabilites": {
+            "label": "Probabilités",
+            "label_ar": "الاحتمالات",
+            "concepts": [
+              "denombrement",
+              "combinaisons",
+              "probabilite_simple",
+              "arbre_probabilites",
+              "variable_aleatoire",
+              "esperance"
+            ]
+          },
+          "statistiques": {
+            "label": "Statistiques",
+            "label_ar": "الإحصاء",
+            "concepts": [
+              "moyenne",
+              "ecart_type",
+              "mediane",
+              "effectifs",
+              "frequences"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

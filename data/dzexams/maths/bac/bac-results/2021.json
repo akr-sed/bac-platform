@@ -1,0 +1,572 @@
+{
+  "exam_metadata": {
+    "id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+    "subject": "mathematics",
+    "source_file": "2021.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2021,
+    "duration_minutes": 270,
+    "total_marks": null,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "المتتالية العددية $(u_n)$ معرفة بـ: $u_0 = -\\frac{3}{2}$ و من أجل كل عدد طبيعي $n$: $u_{n+1} = \\frac{11u_n + 4}{-4u_n + 1}$.",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "suites_geometriques",
+        "convergence",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "تحقق أنه من أجل كل عدد طبيعي $n$: $u_{n+1} = -\\frac{11}{4} + \\frac{27}{4(-4u_n + 1)}$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "$u_{n+1} = \\frac{11u_n + 4}{-4u_n + 1} = \\frac{-\\frac{11}{4}(-4u_n + 1) + \\frac{11}{4} + 4}{-4u_n + 1} = -\\frac{11}{4} + \\frac{27/4}{-4u_n + 1} = -\\frac{11}{4} + \\frac{27}{4(-4u_n + 1)}$",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $-2 < u_n < -1$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "التحقق من أجل $n=0$: $-2 < -1.5 < -1$ محققة. نفرض صحتها من أجل $n$ ونبرهنها من أجل $n+1$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "1",
+          "sub_label": "جـ",
+          "statement": "بيّن أن المتتالية $(u_n)$ متناقصة تماما ثم استنتج أنها متقاربة.",
+          "marks": 0.5,
+          "depends_on": [
+            "1-b"
+          ],
+          "solution": "$u_{n+1} - u_n = \\frac{4u_n^2 + 10u_n + 4}{-4u_n + 1} = \\frac{2(2u_n+1)(u_n+2)}{-4u_n+1}$. بما أن $-2 < u_n < -1$ فإن الفرق سالب، المتتالية متناقصة ومحدودة من الأسفل فهي متقاربة.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "المتتالية العددية $(v_n)$ معرفة من أجل كل عدد طبيعي $n$ بـ: $v_n = \\frac{2u_n + 1}{u_n + 2}$. بيّن أن المتتالية $(v_n)$ هندسية أساسها 3 ثم احسب حدها الأول.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$v_{n+1} = \\frac{2u_{n+1} + 1}{u_{n+1} + 2} = 3 v_n$. الأساس $q=3$ والحد الأول $v_0 = \\frac{2(-1.5)+1}{-1.5+2} = -4$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "اكتب $v_n$ بدلالة $n$ ثم استنتج أنه من أجل كل عدد طبيعي $n$: $u_n = \\frac{3}{2 + 4 \\times 3^n} - 2$.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": "$v_n = -4 \\times 3^n$. من $v_n = \\frac{2u_n+1}{u_n+2}$ نجد $u_n = \\frac{1-2v_n}{v_n-2} = \\frac{1+8 \\times 3^n}{-4 \\times 3^n - 2} = \\frac{3}{2+4 \\times 3^n} - 2$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "2",
+          "sub_label": "جـ",
+          "statement": "احسب $\\lim_{n \\to +\\infty} u_n$.",
+          "marks": 0.25,
+          "depends_on": [
+            "2-b"
+          ],
+          "solution": "$\\lim_{n \\to +\\infty} u_n = -2$ لأن $\\lim_{n \\to +\\infty} 3^n = +\\infty$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "تحقق أنه من أجل كل عدد طبيعي $n$: $\\frac{3}{u_n + 2} - 2 = -v_n$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "$\\frac{3}{u_n+2} - 2 = \\frac{3-2u_n-4}{u_n+2} = \\frac{-2u_n-1}{u_n+2} = -v_n$.",
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "76894321-a1b2-4c3d-8e9f-0a1b2c3d4e5f",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "نضع من أجل كل عدد طبيعي $n$: $S_n = \\ln(\\frac{3}{u_0 + 2} - 2) + \\ln(\\frac{3}{u_1 + 2} - 2) + \\dots + \\ln(\\frac{3}{u_n + 2} - 2)$. احسب $S_n$ بدلالة $n$.",
+          "marks": 0.5,
+          "depends_on": [
+            "3-a"
+          ],
+          "solution": "$S_n = \\ln(-v_0) + \\ln(-v_1) + \\dots + \\ln(-v_n) = \\ln((-v_0)(-v_1)\\dots(-v_n)) = \\ln(4^{n+1} \\times 3^{\\frac{n(n+1)}{2}}) = (n+1)\\ln 4 + \\frac{n(n+1)}{2}\\ln 3$.",
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "87905432-b2c3-4d4e-9f0a-1b2c3d4e5f6a",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "كيس به 12 كرية متماثلة لا نفرق بينها باللمس. كل من الكريات الاثنتي عشرة تحمل رقما من بين الأعداد التالية: 1، 2، 3، 4. نسحب عشوائيا كرية واحدة من الكيس. نرمز بـ $p_i$ إلى احتمال سحب كرية رقمها $i$، حيث: $p_1 = \\frac{1}{3}$، $p_2 = \\frac{1}{6}$، $p_3 = \\frac{1}{4}$ و $p_4 = \\frac{1}{4}$.",
+      "topic": "probabilites",
+      "concepts": [
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "c3d4e5f6-a7b8-4901-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "87905432-b2c3-4d4e-9f0a-1b2c3d4e5f6a",
+          "label": "1",
+          "sub_label": null,
+          "statement": "وزّع الكريات الاثنتي عشرة حسب الأرقام 1، 2، 3، 4.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "عدد الكريات التي تحمل الرقم 1: $12 \\times \\frac{1}{3} = 4$. الرقم 2: $12 \\times \\frac{1}{6} = 2$. الرقم 3: $12 \\times \\frac{1}{4} = 3$. الرقم 4: $12 \\times \\frac{1}{4} = 3$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "87905432-b2c3-4d4e-9f0a-1b2c3d4e5f6a",
+          "label": "2",
+          "sub_label": null,
+          "statement": "احسب احتمال كل من الحوادث $A$، $B$ و $C$ الآتية:\n- $A$: \"سحب كرية تحمل رقما فرديا\"\n- $B$: \"سحب كرية تحمل رقما من أرقام نظام التعداد ذي الأساس 4\"\n- $C$: \"سحب كرية رقمها حل للمعادلة: $x^2 = 2^x$\"",
+          "marks": 2.25,
+          "depends_on": [],
+          "solution": "$p(A) = p_1 + p_3 = \\frac{1}{3} + \\frac{1}{4} = \\frac{7}{12}$.\n$p(B) = p_1 + p_2 + p_3 = \\frac{1}{3} + \\frac{1}{6} + \\frac{1}{4} = \\frac{3}{4}$.\nالمعادلة $x^2 = 2^x$ حلولها في $\\{1,2,3,4\\}$ هي $x=2$ و $x=4$. إذن $p(C) = p_2 + p_4 = \\frac{1}{6} + \\frac{1}{4} = \\frac{5}{12}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "87905432-b2c3-4d4e-9f0a-1b2c3d4e5f6a",
+          "label": "3",
+          "sub_label": null,
+          "statement": "المتغير العشوائي $X$ يرفق بكل سحب لكرية الرقم الذي تحمله. عيّن مجموعة قيم المتغير العشوائي $X$ ثم احسب $E(X)$ أمله الرياضياتي.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "قيم $X$: $\\{1, 2, 3, 4\\}$.\n$E(X) = 1(\\frac{1}{3}) + 2(\\frac{1}{6}) + 3(\\frac{1}{4}) + 4(\\frac{1}{4}) = \\frac{1}{3} + \\frac{1}{3} + \\frac{3}{4} + 1 = \\frac{29}{12}$.",
+          "ordering": 3,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "1) نعتبر المعادلة ذات المجهول $(x;y) : 42x - y = 38 \\dots (E)$، حيث $x$ و $y$ عددان صحيحان. حل المعادلة $(E)$ علما أن الثنائية $(1;4)$ حل لها.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "congruences"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "f6a7b8c9-d0e1-4234-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل المعادلة $(E)$ علما أن الثنائية $(1;4)$ حل لها.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$(x,y) = (k+1, 42k+4)$ مع $k \\in \\mathbb{Z}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "$a$، $b$ و $c$ أعداد طبيعية حيث $a$ غير معدوم. العدد الطبيعي $N$ يكتب $\\overline{ab0cb}$ في نظام تعداد أساسه 5 و يكتب $\\overline{a7c5}$ في نظام تعداد أساسه 8. بيّن أن الأعداد $a$، $b$ و $c$ تحقق: $113a = 3(c - 42b + 151)$ ثم استنتج أن: $a = 3$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$N = a(5^4) + b(5^3) + 0(5^2) + c(5^1) + b(5^0) = 625a + 126b + 5c$.\n$N = a(8^3) + 7(8^2) + c(8^1) + 5(8^0) = 512a + 448 + 8c + 5 = 512a + 8c + 453$.\nبالمساواة: $113a + 126b - 3c = 453 \\implies 113a = 3(c - 42b + 151)$. بما أن 3 يقسم الطرف الأيمن فهو يقسم $113a$ وبما أن $PGCD(113,3)=1$ فإن 3 يقسم $a$. وبما أن $1 \\le a < 5$ فإن $a=3$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "جد العددين الطبيعيين $b$ و $c$ ثم اكتب العدد $N$ في النظام العشري.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": "بالتعويض $a=3$ نجد $42b - c = 38$. الثنائية $(b,c)$ هي حل للمعادلة $(E)$ مع الشروط $b < 5$ و $c < 8$. نجد $b=1$ و $c=4$. إذن $N = 2021$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "c9d0e1f2-a3b4-4567-6c7d-8e9f0a1b2c3d",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "ادرس تبعا لقيم العدد الطبيعي $n$ بواقي القسمة الإقليدية للعدد $5^n$ على 6.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$5^n \\equiv (-1)^n [6]$. إذا كان $n$ زوجيا الباقي 1، إذا كان $n$ فرديا الباقي 5.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4678-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي $n$: $2021^{2n} + 1441^n + 4$ مضاعف للعدد 6.",
+          "marks": 0.5,
+          "depends_on": [
+            "3-a"
+          ],
+          "solution": "$2021 \\equiv 5 [6] \\implies 2021^{2n} \\equiv 5^{2n} \\equiv 1 [6]$.\n$1441 \\equiv 1 [6] \\implies 1441^n \\equiv 1 [6]$.\nالمجموع $\\equiv 1 + 1 + 4 \\equiv 6 \\equiv 0 [6]$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4789-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "98016543-c3d4-5e5f-0a1b-2c3d4e5f6a7b",
+          "label": "3",
+          "sub_label": "جـ",
+          "statement": "نضع: $A_n = 2021^{2n} + 1441^n + 2 \\times 1442^n$. جد قيم العدد الطبيعي $n$ التي من أجلها يكون: $A_n \\equiv 0 [6]$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "$A_n \\equiv 1 + 1 + 2(2^n) \\equiv 2 + 2^{n+1} [6]$.\nإذا كان $n$ فرديا ($n=2k+1$): $A_n \\equiv 2 + 2^{2k+2} \\equiv 2 + 4 \\equiv 0 [6]$.\nإذا كان $n$ زوجيا ($n=2k$): $A_n \\equiv 2 + 2^{2k+1} \\equiv 2 + 2 \\equiv 4 [6]$.\nإذن $n$ عدد فردي.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I) الدالة العددية $g$ معرفة على $\\mathbb{R}$ بـ: $g(x) = (x^2 - 3)e^x + 3$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "fonction_exponentielle",
+        "limites",
+        "derivation",
+        "tableau_de_variation",
+        "branches_infinies"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "b0238765-e5f6-7a7b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "I-1",
+          "sub_label": null,
+          "statement": "ادرس تغيرات الدالة $g$ ثم شكّل جدول تغيراتها.",
+          "marks": 1.5,
+          "depends_on": [],
+          "solution": "$g'(x) = (x^2 + 2x - 3)e^x$. تنعدم عند $x=1$ و $x=-3$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c1349876-f6a7-8b8c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "I-2",
+          "sub_label": "أ",
+          "statement": "بيّن أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ يحقق: $1.53 < \\alpha < 1.54$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "استعمال مبرهنة القيم المتوسطة على المجال $[1, +\\infty[$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d2450987-a7b8-9c9d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "I-2",
+          "sub_label": "ب",
+          "statement": "احسب $g(0)$ ثم استنتج حسب قيم العدد الحقيقي $x$ إشارة $g(x)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$g(0) = 0$. الإشارة: موجبة على $]-\\infty, 0] \\cup [\\alpha, +\\infty[$ وسالبة على $[0, \\alpha]$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e3561098-b8c9-0d0e-5f6a-7b8c9d0e1f2a",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "II-1",
+          "sub_label": null,
+          "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$. حيث $f(x) = 3x + 1 + (x^2 - 2x - 1)e^x$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -\\infty} f(x) = -\\infty$ و $\\lim_{x \\to +\\infty} f(x) = +\\infty$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f4672109-c9d0-1e1f-6a7b-8c9d0e1f2a3b",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "II-2",
+          "sub_label": "أ",
+          "statement": "بيّن أنه من أجل كل عدد حقيقي $x$: $f'(x) = g(x)$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "$f'(x) = 3 + (2x-2)e^x + (x^2-2x-1)e^x = 3 + (x^2-3)e^x = g(x)$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "a5783210-d0e1-2f2a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "II-2",
+          "sub_label": "ب",
+          "statement": "استنتج أن $f$ متزايدة تماما على كل من $]-\\infty, 0]$ و $[\\alpha, +\\infty[$ ومتناقصة تماما على $[0, \\alpha]$.",
+          "marks": 0.25,
+          "depends_on": [
+            "I-2-b",
+            "II-2-a"
+          ],
+          "solution": "تتبع إشارة $g(x)$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "b6894321-e1f2-3a3b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "II-3",
+          "sub_label": "أ",
+          "statement": "بيّن أن المستقيم $(\\Delta)$ ذو المعادلة $y = 3x + 1$ مقارب مائل لـ $(C)$ عند $-\\infty$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -\\infty} [f(x) - (3x+1)] = \\lim_{x \\to -\\infty} (x^2-2x-1)e^x = 0$.",
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "c7905432-f2a3-4b4c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "a9127654-d4e5-6f6a-1b2c-3d4e5f6a7b8c",
+          "label": "II-3",
+          "sub_label": "ب",
+          "statement": "ادرس وضعية $(C)$ بالنسبة إلى $(\\Delta)$.",
+          "marks": 0.25,
+          "depends_on": [],
+          "solution": "دراسة إشارة $x^2-2x-1$.",
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "b0238765-e5f6-7a7b-2c3d-4e5f6a7b8c9d",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 5,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "المتتالية العددية $(u_n)$ معرفة بـ: $u_0 = 1$ و من أجل كل عدد طبيعي $n$: $u_{n+1} = \\sqrt{2 + \\frac{1}{2}u_n^2}$.",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "suites_recurrentes",
+        "raisonnement_par_recurrence",
+        "convergence"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "c1349876-f6a7-8b8c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "b0238765-e5f6-7a7b-2c3d-4e5f6a7b8c9d",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $0 < u_n < 2$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "محققة لـ $n=0$. نفرض $0 < u_n < 2 \\implies 0 < u_n^2 < 4 \\implies 2 < 2 + \\frac{1}{2}u_n^2 < 4 \\implies \\sqrt{2} < u_{n+1} < 2$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d2450987-a7b8-9c9d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "b0238765-e5f6-7a7b-2c3d-4e5f6a7b8c9d",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "بيّن أن المتتالية $(u_n)$ متزايدة تماما ثم استنتج أنها متقاربة.",
+          "marks": 0.75,
+          "depends_on": [
+            "1-a"
+          ],
+          "solution": "$u_{n+1}^2 - u_n^2 = 2 - \\frac{1}{2}u_n^2 = \\frac{1}{2}(4-u_n^2) > 0$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e3561098-b8c9-0d0e-5f6a-7b8c9d0e1f2a",
+          "exercise_id": "b0238765-e5f6-7a7b-2c3d-4e5f6a7b8c9d",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "المتتالية العددية $(v_n)$ معرفة على $\\mathbb{N}$ بـ: $v_n = u_n^2 - 4$. بيّن أن المتتالية $(v_n)$ هندسية أساسها $\\frac{1}{2}$ يُطلب حساب حدها الأول.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$v_{n+1} = u_{n+1}^2 - 4 = 2 + \\frac{1}{2}u_n^2 - 4 = \\frac{1}{2}u_n^2 - 2 = \\frac{1}{2}(u_n^2 - 4) = \\frac{1}{2}v_n$. $v_0 = 1^2 - 4 = -3$.",
+          "ordering": 3,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "f4672109-c9d0-1e1f-6a7b-8c9d0e1f2a3b",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "number": 6,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "يراد عشوائيا تشكيل لجنة رئيسا ونائبا له من بين ثلاثة رجال $H_1, H_2, H_3$ وأربع نساء $F_1, F_2, F_3, F_4$.",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "a5783210-d0e1-2f2a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "f4672109-c9d0-1e1f-6a7b-8c9d0e1f2a3b",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بيّن أن عدد اللجان التي يمكن تشكيلها هو 42.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$A_7^2 = 7 \\times 6 = 42$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b6894321-e1f2-3a3b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "f4672109-c9d0-1e1f-6a7b-8c9d0e1f2a3b",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "احسب $P(A)$ احتمال الحدث $A$ ثم استنتج $P(B)$ حيث:\n- $A$: \"اللجنة من نفس الجنس\"\n- $B$: \"اللجنة من جنسين مختلفين\"",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$P(A) = \\frac{A_3^2 + A_4^2}{42} = \\frac{6 + 12}{42} = \\frac{18}{42} = \\frac{3}{7}$.\n$P(B) = 1 - P(A) = \\frac{4}{7}$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1a2b3c4-d5e6-4789-8a9b-0c1d2e3f4a5b",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "exercise_ref": 4,
+      "part_ref": "I-1",
+      "figure_type": "graph",
+      "description": "الشكل المقابل يمثل المنحنيين (C) و (Γ) في معلم متعامد متجانس. المنحنى (C) يمثل الدالة f والمنحنى (Γ) يمثل الدالة g. يتقاطعان في نقطة فاصلتها α حيث 0.78 < α < 0.79.",
+      "source_page": 4,
+      "bounding_box": [
+        240,
+        100,
+        440,
+        320
+      ]
+    },
+    {
+      "id": "g2b3c4d5-e6f7-4890-9b0c-1d2e3f4a5b6c",
+      "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9",
+      "exercise_ref": 4,
+      "part_ref": null,
+      "figure_type": "graph",
+      "description": "رسم بياني للدالة f في الموضوع الأول يظهر المقارب المائل y=3x+1 والمنحنى (C) والمماسين (T) و (T').",
+      "source_page": 7,
+      "bounding_box": [
+        200,
+        350,
+        480,
+        730
+      ]
+    }
+  ],
+  "exam_id": "de6a092a-6cc8-4985-b490-a36b858565f9"
+}

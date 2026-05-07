@@ -1,0 +1,617 @@
+{
+  "exam_metadata": {
+    "id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+    "subject": "mathematics",
+    "source_file": "dzexams-3as-mathematiques-164319.pdf",
+    "exam_type": "bac_blanc",
+    "session": null,
+    "trimester": null,
+    "filiere": "sciences_experimentales",
+    "year": 2019,
+    "duration_minutes": 180,
+    "total_marks": 20,
+    "language": "ar_fr",
+    "region": "عين تموشنت و مستغانم",
+    "institution": "ثانوية أبي ذر الغفاري و متقن",
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "1e721021-3957-410c-992d-45620803c004",
+      "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+      "number": 1,
+      "title": null,
+      "statement": "نعتبر في الفضاء المزود بالمعلم المتعامد و المتجانس $(\\vec{i}, \\vec{j}, \\vec{k})$ النقط $A$ ، $B$ ، $C$ و $D$ ذات الإحداثيات $(2;2;-2)$ ، $(1;-2;1)$ ، $(5;3;-1)$ و $(5;8;5)$ على الترتيب.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "produit_scalaire",
+        "plans",
+        "droites",
+        "sphere",
+        "distances",
+        "equations_cartesiennes",
+        "repere_orthonorme"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "2d68102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بين أن $A$ ، $B$ و $C$ ليست في استقامية.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "3a72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "أحسب $\\vec{AB} \\cdot \\vec{AC}$ ، إستنتج طبيعة المثلث $ABC$ .",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "4b72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "ليكن الشعاع $\\vec{n}(5;\\alpha;\\beta)$ .\nعين العددين الحقيقين $\\alpha$ و $\\beta$ حتى يكون $\\vec{n}$ شعاع ناظمي لـ $(ABC)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "5c72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "أكتب معادلة ديكارتية للمستوى $(P)$ الذي يشمل النقط $A$ ، $B$ و $C$ .",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "6d72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "2",
+          "sub_label": "جـ",
+          "statement": "بين أن بعد النقطة $D$ عن المستوى $(P)$ هو $\\sqrt{86}$ ، أحسب حجم رباعي الوجوه $ABCD$ .",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7e72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "3",
+          "sub_label": null,
+          "statement": "لتكن $(S)$ سطح كرة مركزها النقطة $D$ و تمس المستوى $(P)$ .\nأكتب معادلة ديكارتية لـ $(S)$ .",
+          "marks": null,
+          "depends_on": [
+            "2-جـ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8f72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "المستقيم $(\\Delta)$ الذي يشمل النقطة $E(0;2;0)$ و العمودي على المستوى $(P)$ .",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "9g72102d-341e-420a-8120-74523171350a",
+          "exercise_id": "1e721021-3957-410c-992d-45620803c004",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "بين أن $(\\Delta)$ يقطع $(S)$ في نقطتين متناظرتين بالنسبة إلى النقطة $D$ .",
+          "marks": null,
+          "depends_on": [
+            "4-أ",
+            "3"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a0a2102d-341e-420a-8120-74523171350a",
+      "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+      "number": 2,
+      "title": null,
+      "statement": "المستوي المركب المنسوب إلى معلم متعامد ومتجانس $(O;\\vec{u};\\vec{v})$",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_trigonometrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "equations_complexes",
+        "transformations_plan",
+        "rotation"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "b1a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "$a$ و $b$ عددان مركبان ، تحقق من صحة $a^3-b^3 = (a-b)(a^2+b^2+ab)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c2a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة : $z = \\frac{z-9}{z+4}$ حيث $z$ هو المجهول.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d3a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "1",
+          "sub_label": "ج",
+          "statement": "إستنتج في $\\mathbb{C}$ حلول المعادلة ذات المجهول $z$ حيث $z^3-27=0$ .",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e4a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": null,
+          "statement": "لتكن $A$ ، $B$ و $C$ نقط من المستوي التي لاحقاتها على الترتيب $z_A = 3e^{i\\frac{4\\pi}{3}}$ ، $z_B = \\overline{z_A}$ ، $z_C = 3$ .\nأ - أكتب العدد المركب $\\frac{z_B-z_C}{z_A-z_C}$ على الشكل الأسي.\nب - إستنتج طبيعة المثلث $ABC$ يطلب حساب مساحته $S$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f5a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "أكتب العبارة المركبة لدوران $R$ الذي مركزه النقطة $C$ و الذي يحول النقطة $B$ إلى النقطة $A$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "06a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عين النقطة $D$ ذات اللاحقة $z_D$ صورة النقطة $A$ بالدوران $R$ .",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "17a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "عين بدقة طبيعة الرباعي $ABCD$ .",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "28a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "$M$ نقطة من المستوي التي لاحقاتها $z$ .\nعين $(E_1)$ مجموعة النقط $M$ من المستوي حيث : $|z-2+4i| = |z+2-(1+2i)|$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "39a2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "a0a2102d-341e-420a-8120-74523171350a",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "عين $(E_2)$ مجموعة النقط $M$ من المستوي حيث : $\\arg(z-z_A) - \\arg(z-z_B) = \\pi$ (حيث $\\overline{z_A}$ مرافق $z_A$) .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "4aa2102d-341e-420a-8120-74523171350a",
+      "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+      "number": 3,
+      "title": null,
+      "statement": "$(u_n)$ متتالية حسابية متزايدة تماما حدودها أعداد طبيعية غير معدومة تحقق :\n$u_4 = 19$\n$\\ln(u_3) + \\ln(u_5) = \\ln(345)$",
+      "topic": "suites",
+      "concepts": [
+        "suites_numeriques",
+        "suites_arithmetiques",
+        "fonction_logarithme"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "5ba2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "1",
+          "sub_label": null,
+          "statement": "عين الحدين $u_3$ و $u_5$ ثم أحسب $u_0$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "6ca2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بفرض : $u_3 = 15$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "7da2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "أكتب $u_n$ بدلالة $n$ ثم بين أن 2019 حد من حدود $(u_n)$ و عين رتبته .",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8ea2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عين الحد الذي إبتداءا منه يكون مجموع حدين متعاقبين من $(u_n)$ يساوي 1962.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "9fa2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$n$ عدد طبيعي غير معدوم",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "a0b2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "أحسب بدلالة $n$ المجموع $S$ حيث : $S = u_0 + u_1 + u_2 + ... + u_{2n}$ .",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "b1b2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "4aa2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "إستنتج بدلالة $n$ المجموعين $S_1$ و $S_2$ حيث : $S_2 = u_0 + u_2 + u_4 + ... + u_{2n}$ و $S_1 = u_1 + u_3 + u_5 + ... + u_{2n-1}$ .",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "c2b2102d-341e-420a-8120-74523171350a",
+      "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+      "number": 4,
+      "title": null,
+      "statement": "نعتبر الدالة $f$ المعرفة على $D_f = ]-\\infty,-3[ \\cup ]1,+\\infty[$ كما يلي : $f(x) = -x + \\ln\\left(\\frac{x+3}{x-1}\\right)$ نرمز بـ $(C_f)$ إلى تمثيلها البياني في معلم متعامد و متجانس $(O;\\vec{i};\\vec{j})$ (الوحدة $2cm$)",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "representation_graphique",
+        "limites",
+        "branches_infinies",
+        "tableau_de_variation",
+        "derivation",
+        "primitives",
+        "calcul_integral",
+        "aires",
+        "fonction_logarithme",
+        "continuite"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "d3b2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن النقطة $A(1;-1)$ مركز تناظر للمنحنى $(C_f)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e4b2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "أحسب النهايتين التاليتين : $\\lim_{x \\to -3} f(x)$ ، $\\lim_{x \\to 1} f(x)$ ثم فسر النتيجتين بيانيا .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f5b2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بين أن $\\lim_{x \\to +\\infty} f(x) = -\\infty$ ثم إستنتج النهاية $\\lim_{x \\to -\\infty} f(x)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "06c2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بين أن المستقيم $(\\Delta)$ ذو المعادلة $y = -x$ مقارب مائل للمنحنى $(C_f)$ بجوار $+\\infty$ و $-\\infty$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "17c2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "أدرس وضعية المنحنى $(C_f)$ بالنسبة إلى المستقيم $(\\Delta)$ .",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "28c2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "4",
+          "sub_label": null,
+          "statement": "اثبت أنه من اجل كل $x$ من $D_f$ :\n$f'(x) = \\frac{-x^2-2x-1}{(x+3)(x-1)}$ مستنتجا اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "39c2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "5",
+          "sub_label": null,
+          "statement": "الشكل المقابل يمثل المنحنى $(C_f)$ .\nأعد الرسم على ورقة ميليمترية مع رسم المستقيمات المقاربة.",
+          "marks": null,
+          "depends_on": [
+            "2-أ",
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "4ad2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "6",
+          "sub_label": null,
+          "statement": "$m$ وسيط حقيقي ، $(\\Delta_m)$ المستقيمات التي معادلاتها من الشكل : $y = mx+m+1$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "5bd2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "6",
+          "sub_label": "أ",
+          "statement": "بين أن جميع المستقيمات $(\\Delta_m)$ تشمل النقطة $A(-1;1)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "6cd2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "6",
+          "sub_label": "ب",
+          "statement": "عين قيم $m$ حتى لا تقبل المعادلة : $f(x) = mx+m+1$ ذات المجهول الحقيقي $x$ حلولا في $\\mathbb{R}$ .",
+          "marks": null,
+          "depends_on": [
+            "6-أ"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "7dd2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "7",
+          "sub_label": "أ",
+          "statement": "احسب مشتقة الدالة $h$ المعرفة من أجل كل $x > -a$ حيث $a$ عدد حقيقي ، $h(x) = (x+a)\\ln(x+a) - x$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "8ed2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "7",
+          "sub_label": "ب",
+          "statement": "استنتج دالة أصلية للدالة $f$ على المجال $]1;+\\infty[$ .",
+          "marks": null,
+          "depends_on": [
+            "7-أ"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        },
+        {
+          "id": "9fd2102d-341e-420a-8120-74523171350a",
+          "exercise_id": "c2b2102d-341e-420a-8120-74523171350a",
+          "label": "7",
+          "sub_label": "ج",
+          "statement": "احسب بالسنتمتر مربع المساحة $A$ للحيز المحدد بالمنحني $(C_f)$ والمستقيم $(\\Delta)$ و المستقيمين $x = 2$ و $x = 3$ .",
+          "marks": null,
+          "depends_on": [
+            "7-ب",
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 13,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "a0e2102d-341e-420a-8120-74523171350a",
+      "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd",
+      "exercise_ref": 4,
+      "part_ref": "5",
+      "figure_type": "graph",
+      "description": "الشكل المقابل يمثل المنحنى $(C_f)$. A graph showing the curve $(C_f)$ with x-axis from -5 to 1 and y-axis from 0 to 3. The curve has vertical asymptotes at x=-3 and x=1, and an oblique asymptote (y=-x) is implied.",
+      "source_page": 2
+    }
+  ],
+  "exam_id": "c9c2100d-ef7e-4775-a271-b44891889abd"
+}

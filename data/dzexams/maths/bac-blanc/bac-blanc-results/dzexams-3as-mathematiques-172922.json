@@ -1,0 +1,582 @@
+{
+  "exam_metadata": {
+    "id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+    "subject": "mathematics",
+    "source_file": "dzexams-3as-mathematiques-172922.pdf",
+    "exam_type": "bac_blanc",
+    "session": null,
+    "trimester": 3,
+    "filiere": "sciences_experimentales",
+    "year": 2023,
+    "duration_minutes": 210,
+    "total_marks": 20,
+    "language": "ar_fr",
+    "region": "غليزان",
+    "institution": "سيدي سعادة موحد",
+    "academic_year": "2022-2023"
+  },
+  "exercises": [
+    {
+      "id": "1e71211e-2144-4286-904d-17865223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "number": 1,
+      "title": "التمرين الأول: (04 نقاط)",
+      "statement": "",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "equations_complexes",
+        "transformations_plan"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "3156291a-723e-409c-8515-467389803274",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "I",
+          "sub_label": null,
+          "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$ الأتية : $z^2 - 2z + 4 = 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "211a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "II",
+          "sub_label": null,
+          "statement": "المستوي المركب منسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{u}, \\vec{v})$\nنعتبر النقط $A$ ، $B$ و $C$ التي لاحقاتها $z_A = 1 - i\\sqrt{3}$ و $z_B = 1 + i\\sqrt{3}$ و $z_C = z_A e^{i\\frac{\\pi}{6}}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "411a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أكتب $z_C$ على الشكل الجبري ثم أكتب $z_B$ و $z_A$ على الشكل الأسي",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "511a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "2",
+          "sub_label": null,
+          "statement": "إستنتج الشكل الأسي للعدد $\\frac{z_A}{z_B}$ . ثم عين طبيعة المثلث $OAB$",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "611a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "3",
+          "sub_label": null,
+          "statement": "عين لاحقة النقطة $D$ حتى يكون الرباعي $OADB$ متوازي أضلاع",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "711a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "4",
+          "sub_label": null,
+          "statement": "عين قيم عدد طبيعي $n$ حتى يكون $(\\frac{z_A}{z_B})^{3n}$ حقيقي موجب تماما.ثم أكتب على الشكل الجبري العدد $(\\frac{z_A}{z_B})^{2023}$",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "811a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "1e71211e-2144-4286-904d-17865223011c",
+          "label": "5",
+          "sub_label": null,
+          "statement": "عين $(E)$ مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ التي من أجلها يكون : $|z - z_A e^{i\\frac{\\pi}{2}}| = |z - 2|$ حيث $z \\neq 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "9e71211e-2144-4286-904d-17865223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "number": 2,
+      "title": "التمرين الثاني: (05 نقاط)",
+      "statement": "",
+      "topic": "suites",
+      "concepts": [
+        "etude_de_fonction",
+        "representation_graphique",
+        "suites_recurrentes",
+        "convergence",
+        "raisonnement_par_recurrence",
+        "suites_numeriques",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "a11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "I",
+          "sub_label": null,
+          "statement": "$f$ الدالة المعرفة على $[0;2]$ بـ $f(x) = -\\ln(2-x)$ و $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد و المتجانس $(O;\\vec{i}, \\vec{j})$ و $(\\Delta)$ مستقيم ذا المعادلة $y=x$ حيث $f(\\alpha) = \\alpha$ كما هو موضح في الشكل المقابل:",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "تحقق أن الدالة $f$ متزايدة تماما على المجال $[0;2]$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بين أنه من أجل كل $x \\in [-2;0]$ فإن: $f(x) \\in [-2;0]$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "II",
+          "sub_label": null,
+          "statement": "نعتبر المتتاليتين $(u_n)$ و $(v_n)$ المعرفتين على $\\mathbb{N}$ كما يلي:\n$u_0 = -2$\n$u_{n+1} = f(u_n)$\nو\n$v_0 = 0$\n$v_{n+1} = f(v_n)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "برر وجود متتاليتين $(u_n)$ و $(v_n)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f11a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "مثل على محور الفواصل الحدود : $u_0$ ، $u_1$ ، $u_2$ و $v_0$ ، $v_1$ ، $v_2$ دون حسابها مبرزا خطوط الإنشاء",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "012a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "1",
+          "sub_label": "ج",
+          "statement": "خمن إتجاه و تقارب كل من المتتاليتين $(u_n)$ و $(v_n)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "112a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "أثبت أنه من أجل كل عدد طبيعي $n$ غير معدوم: $0 \\le v_n - u_n \\le v_{n-1} - u_{n-1}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "212a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "إستنتج إتجاه تغير و تقارب كل من المتتاليتين $(u_n)$ و $(v_n)$",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "312a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "نقبل أنه من أجل كل عدد طبيعي $n$: $v_{n+1} - u_{n+1} \\le \\frac{1}{2}(v_n - u_n)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "412a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "إستنتج أنه من أجل كل عدد طبيعي $n$: $0 \\le v_n - u_n \\le 2(\\frac{1}{2})^n$",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "512a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "3",
+          "sub_label": "د",
+          "statement": "أثبت أن : $\\lim_{n \\to +\\infty} u_n = \\lim_{n \\to +\\infty} v_n = \\alpha$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        },
+        {
+          "id": "612a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "9e71211e-2144-4286-904d-17865223011c",
+          "label": "4",
+          "sub_label": null,
+          "statement": "ماذا يمكن القول عن المتتاليتين $(u_n)$ و $(v_n)$ ؟",
+          "marks": null,
+          "depends_on": [
+            "3-د"
+          ],
+          "solution": null,
+          "ordering": 13,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "712a761e-189f-4315-996b-02758223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "number": 3,
+      "title": "التمرين الثالث : (04 نقاط)",
+      "statement": "في إطار تعيين فريق لكرة القدم يمثل الثانوية ، تم إختيار أربعة لاعبين من القسم $S_1$ يحملون الأرقام من 1 إلى 4 وستة لاعبين من القسم $S_2$ يحملون الأرقام من 5 إلى 10 وثلاث لاعبين من القسم $S_3$ يحملون الأرقام من 11 إلى 13 نختار الآن لاعبين إثنين من الفريق ليبقيا في الإحتياط علما أن كل الإختيارات متساوية الإحتمال",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "combinaisons",
+        "probabilite_conditionnelle",
+        "independance",
+        "probabilite_simple"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "812a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "712a761e-189f-4315-996b-02758223011c",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أحسب إحتمل الحوادث التالية :\n$A$ \" اللاعبين الإثنين المختارين يحملان رقمين زوجيين\"\n$B$ \" اللاعبين الإثنين المختارين من نفس القسم\"",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "912a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "712a761e-189f-4315-996b-02758223011c",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "هل الحادثتان $A$ و $B$ مستقلتان؟ برر",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a13a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "712a761e-189f-4315-996b-02758223011c",
+          "label": "2",
+          "sub_label": null,
+          "statement": "ما إحتمال أن يكون اللاعبين الإثنين المختارين في الإحتياط من قسمين مختلفين و يحملان رقمين زوجيين",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b13a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "712a761e-189f-4315-996b-02758223011c",
+          "label": "3",
+          "sub_label": null,
+          "statement": "إذا كان اللاعبين الإثنين المختارين في الإحتياط من قسمين مختلفين ما إحتمال أن يكون حاملين رقمين زوجيين؟",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "c13a761e-189f-4315-996b-02758223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "number": 4,
+      "title": "التمرين الرابع (07 نقاط)",
+      "statement": "",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "representation_graphique",
+        "limites",
+        "branches_infinies",
+        "calcul_integral",
+        "primitives",
+        "aires",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "d13a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "I",
+          "sub_label": null,
+          "statement": "$g$ الدالة المعرفة على $[0;1]$ بـ : $g(x) = 2 - x + \\ln x$ و $(C_g)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i}, \\vec{j})$ كما هو مبين في الشكل المقابل :",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e13a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ حيث : $0.15 < \\alpha < 0.16$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f13a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "2",
+          "sub_label": null,
+          "statement": "إستنتج إشارة $g(x)$ على المجال $[0;1]$",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "014a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "II",
+          "sub_label": null,
+          "statement": "$f$ دالة معرفة على $]1;+\\infty[$ بـ: $f(x) = \\frac{1 - 2x + \\ln x}{x - 1}$ وليكن $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد و المتجانس $(O;\\vec{i}, \\vec{j})$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "114a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أحسب $\\lim_{x \\to +\\infty} f(x)$ و $\\lim_{x \\to 1} f(x)$ . ثم فسر النتيجة بيانيا",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "214a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بين أنه من أجل كل عدد حقيقي $x$ من المجال $]1;+\\infty[$ فإن: $f'(x) = \\frac{g(x)}{(x-1)^2}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "314a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بين أن $f$ متزايدة تماما على $]1;\\alpha]$ و متناقصة تماما على $[\\alpha;+\\infty[$ . ثم شكل جدول تغيراتها",
+          "marks": null,
+          "depends_on": [
+            "2-أ",
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "414a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "3",
+          "sub_label": null,
+          "statement": "أدرس الوضع النسبي لـ : $(C_f)$ و المستقيم $(\\Delta)$ ذا المعادلة : $y = -2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "514a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أرسم $(\\Delta)$ ، $(C_f)$ و $(C_g)$ (يعطى $f(1) \\approx -1.8$)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "614a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "5",
+          "sub_label": null,
+          "statement": "عين قيم الوسيط الحقيقي $m$ حتى تقبل المعادلة $|f(x)| = mx + 1$ حلين متمايزين",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "714a761e-189f-4315-996b-02758223011c",
+          "exercise_id": "c13a761e-189f-4315-996b-02758223011c",
+          "label": "6",
+          "sub_label": null,
+          "statement": "$h$ الدالة المعرفة على $]0;+\\infty[$ بـ: $h(x) = f(e^x)$ . إعتمادا على السؤال 2 . إستنتج إتجاه تغير الدالة $h$",
+          "marks": null,
+          "depends_on": [
+            "II-2"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "814a761e-189f-4315-996b-02758223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "exercise_ref": 2,
+      "part_ref": "I",
+      "figure_type": "graph",
+      "description": "Graph showing the curve $(C_f)$ and the line $(\\Delta)$ with equation $y=x$. The curve $(C_f)$ passes through $(0, -1)$ and is increasing. There is a point $\\alpha$ on the x-axis. The graph also shows $u_0=-2$, $v_0=0$, and construction lines for $u_{n+1}=f(u_n)$ and $v_{n+1}=f(v_n)$.",
+      "source_page": 1
+    },
+    {
+      "id": "914a761e-189f-4315-996b-02758223011c",
+      "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89",
+      "exercise_ref": 4,
+      "part_ref": "I",
+      "figure_type": "graph",
+      "description": "Graph showing the curve $(C_g)$ on the interval $[0,1]$. The curve starts at $(0, 0.5)$ and decreases, crossing the x-axis at $\\alpha$ (between 0 and 0.5).",
+      "source_page": 2
+    }
+  ],
+  "exam_id": "7d64480d-7de1-4d64-a7bc-5ea8f93c4b89"
+}

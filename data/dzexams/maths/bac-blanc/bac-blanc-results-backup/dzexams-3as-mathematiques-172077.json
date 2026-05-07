@@ -1,0 +1,1010 @@
+{
+  "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+  "exercises": [
+    {
+      "id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "المتتالية العددية $(U_n)$ معرفة بـ: $U_0 = 2$ ، ومن أجل كل عدد طبيعي $n$: $U_{n+1} = \\frac{1}{2}(U_n - n) - 1$",
+      "topic": "suites",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "limites",
+        "fonction_logarithme"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أحسب كلاً من $U_1$ و $U_2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $U_n + n > 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-ac1d-2e3f4a5b6c7d",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بيّن أن المتتالية $(U_n)$ متناقصة تماماً",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-bd2e-3f4a5b6c7d8e",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "المتتالية العددية $(V_n)$ معرفة على $\\mathbb{N}$ كما يلي: $V_n = U_n + n$. بيّن أن المتتالية $(V_n)$ هندسية يُطلب تعيين أساسها وحدها الأول.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-ce3f-4a5b6c7d8e9f",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "أكتب عبارة $V_n$ بدلالة $n$ ثم استنتج $U_n$ بدلالة $n$",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-df4a-5b6c7d8e9f0a",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "أحسب $\\lim_{n \\to +\\infty} U_n$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-e05b-6c7d8e9f0a1b",
+          "exercise_id": "5f8e4a1b-7c2d-4e3f-8a9b-0c1d2e3f4a5b",
+          "label": "4",
+          "sub_label": null,
+          "statement": "من أجل كل عدد طبيعي $n$ نضع: $S_n = \\ln U_0 + \\ln(U_1 + 1) + \\ln(U_2 + 2) + \\dots + \\ln(U_n + n)$. بيّن أنه من أجل كل عدد طبيعي $n$: $S_n = (n+1)(2-n)\\ln\\sqrt{2}$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2c",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "يحتوي كيس $U_1$ على: ثلاث كريات تحمل الرقم 1 وأربع كريات تحمل الرقم 2، ويحتوي كيس $U_2$ على: ست كريات بيضاء وأربع كريات حمراء، كل الكريات متماثلة ولا نفرق بينها عند اللمس.",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "tirages_successifs",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject": 1
+      },
+      "parts": [
+        {
+          "id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3d",
+          "exercise_id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "نسحب عشوائياً من $U_2$ كريتين على التوالي وبإرجاع، أحسب احتمال كلاً من الحدثين الآتيين:\n- الحدث $A$: \"الحصول على كريتين من نفس اللون\".\n- الحدث $B$: \"الحصول على كرية حمراء على الأكثر\".",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4678-138e-9f0a1b2c3d4e",
+          "exercise_id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2c",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "نسحب عشوائياً كرية من $U_1$ ، إذا كانت تحمل الرقم 1 نسحب عشوائياً من $U_2$ كريتين على التوالي بدون إرجاع، وإذا كانت تحمل الرقم 2 نسحب عشوائياً من $U_2$ ثلاث كريات في آن واحد. نعتبر $X$ المتغير العشوائي الذي يرفق بكل عملية سحب من $U_2$ عدد الكريات البيضاء المسحوبة. عيّن قيم المتغير العشوائي $X$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4789-249f-0a1b2c3d4e5f",
+          "exercise_id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2c",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بيّن أن: $P(X=1) = \\frac{2}{5}$ و $P(X=2) = \\frac{3}{7}$",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4890-35a0-1b2c3d4e5f6a",
+          "exercise_id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2c",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "عرّف قانون احتمال المتغير العشوائي $X$ ثم أحسب أمله الرياضياتي $E(X)$",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "I) حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$: $(z - 2i)(z^2 + 2z + 4) = 0$\nII) في المستوى المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ ، نعتبر النقط $A$ ، $B$ ، $C$ و $D$ التي لاحقاتها $z_A$ ، $z_B$ ، $z_C$ و $z_D$ على الترتيب حيث: $z_A = -1 + i\\sqrt{3}$ ، $z_B = \\bar{z_A}$ ، $z_C = 2i$ و $z_D = 2$",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "transformations_plan",
+        "equations_complexes"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject": 1
+      },
+      "parts": [
+        {
+          "id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8c",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أكتب كلاً من $z_A$ ، $z_B$ و $z_C$ على الشكل الأسي",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4123-d8d3-4e5f6a7b8c9d",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "استنتج أن النقط $A$ ، $B$ ، $C$ تنتمي إلى نفس الدائرة يُطلب تعيين مركزها ونصف قطرها.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d6e7f8a9-b0c1-4234-e9e4-5f6a7b8c9d0e",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "أكتب العدد المركب $\\frac{z_D - z_A}{z_B - z_A}$ على الشكل الجبري ثم على الشكل الأسي.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4345-f0f5-6a7b8c9d0e1f",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "استنتج طبيعة المثلث $ABD$",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4456-0106-7b8c9d0e1f2a",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "عيّن $(\\Gamma_1)$ مجموعة النقط $M$ حيث: $z = 2i + e^{i\\theta}$ و $\\theta$ يمسح $\\mathbb{R}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4567-1217-b8c9d0e1f2a3",
+          "exercise_id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7b",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عيّن $(\\Gamma_2)$ مجموعة النقط $M$ حيث: $|z + 2i| = |iz + \\sqrt{3} + i|$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I) الدالة العددية $g$ معرفة على المجال $]0; +\\infty[$ كما يلي: $g(x) = x^3 - 1 + 2\\ln x$\nII) الدالة العددية $f$ معرفة على المجال $]0; +\\infty[$ كما يلي: $f(x) = x - 1 - \\frac{\\ln x}{x^2}$ و $(C_f)$ تمثيلها البياني في المستوى المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "tableau_de_variation",
+        "branches_infinies",
+        "representation_graphique",
+        "calcul_integral",
+        "integration_par_parties",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject": 1
+      },
+      "parts": [
+        {
+          "id": "c1d2e3f4-a5b6-4789-3439-d0e1f2a3b4c5",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "1",
+          "sub_label": null,
+          "statement": "(الجزء الأول) أدرس اتجاه تغير الدالة $g$ على $]0; +\\infty[$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4890-454a-e1f2a3b4c5d6",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "2",
+          "sub_label": null,
+          "statement": "(الجزء الأول) أحسب $g(1)$ ثم استنتج إشارة $g(x)$ على $]0; +\\infty[$",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c7d8-4901-565b-f2a3b4c5d6e7",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "(الجزء الثاني) أحسب $\\lim_{x \\to 0^+} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ وفسّر النتيجة هندسياً.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f8",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "(الجزء الثاني) بيّن أنه من أجل كل $x$ من $]0; +\\infty[$: $f'(x) = \\frac{g(x)}{x^3}$ ثم شكّل جدول تغيرات الدالة $f$",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "a5b6c7d8-e9f0-4123-787d-14c5d6e7f8a9",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "(الجزء الثاني) بيّن أن المستقيم $(\\Delta)$ ذو المعادلة $y = x - 1$ مقارب مائل للمنحنى $(C_f)$ عند $+\\infty$",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4234-898e-25d6e7f8a9b0",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "(الجزء الثاني) أدرس الوضع النسبي لـ $(C_f)$ و $(\\Delta)$",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4345-9a9f-36e7f8a9b0c1",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "3",
+          "sub_label": null,
+          "statement": "(الجزء الثاني) أنشئ كلاً من $(\\Delta)$ و $(C_f)$",
+          "marks": null,
+          "depends_on": [
+            "1-ب",
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4456-ab00-47f8a9b0c1d2",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "(الجزء الثاني) باستعمال التكامل بالتجزئة أحسب $\\int_1^e \\frac{\\ln x}{x^2} dx$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "e9f0a1b2-c3d4-4567-bc11-58f9a0b1c2d3",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "(الجزء الثاني) أحسب $S$ مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ والمستقيمات ذات المعادلات: $y = x - 1$ ، $x = 1$ و $x = e$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "f0a1b2c3-d4e5-4678-cd22-690a1b2c3d4e",
+          "exercise_id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b4",
+          "label": "5",
+          "sub_label": null,
+          "statement": "الدالة العددية $h$ معرفة على $\\mathbb{R}$ كما يلي: $h(x) = f(e^x)$. أدرس اتجاه تغير الدالة $h$ على $\\mathbb{R}$ ثم شكّل جدول تغيراتها (لا يُطلب حساب $h(x)$).",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 1,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "مسابقة يختار فيها تلميذ عشوائياً 3 أسئلة في آن واحد من علبة غير شفافة تحتوي على 6 أسئلة علمية، 5 أسئلة أدبية و 4 أسئلة في الثقافة العامة حيث في كل نوع من الأنواع الثلاثة يوجد سؤال واحد باللغة الأجنبية.",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "combinaisons",
+        "probabilite_conditionnelle",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject": 2
+      },
+      "parts": [
+        {
+          "id": "b2c3d4e5-f6a7-4890-9b0c-1d2e3f4a5b6d",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أحسب احتمال الحدث $A$: \"الأسئلة الثلاثة متمايزة النوع مثنى مثنى\".",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-ac1d-2e3f4a5b6c7e",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "أحسب احتمال الحدث $B$: \"سؤال واحد على الأكثر باللغة الأجنبية\".",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-bd2e-3f4a5b6c7d8f",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بيّن أن $P(A \\cap B) = \\frac{107}{455}$",
+          "marks": null,
+          "depends_on": [
+            "1-أ",
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-ce3f-4a5b6c7d8e90",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "استنتج احتمال أن تكون كل الأسئلة متمايزة النوع مثنى مثنى علماً أنه من بينها سؤال واحد على الأكثر باللغة الأجنبية.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-df4a-5b6c7d8e9f0b",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "عند الإجابة على سؤال علمي يكسب التلميذ نقطتين، ويكسب نقطة عند الإجابة على سؤال أدبي أو سؤال في الثقافة العامة، نفترض أن التلميذ يجيب على كل الأسئلة ونعتبر $X$ المتغير العشوائي الذي يرفق بكل سحب مجموع النقط المحصل عليها. برّر أن مجموعة قيم المتغير العشوائي $X$ هي $\\{3; 4; 5; 6\\}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-e05b-6c7d8e9f0a1c",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عرّف قانون احتمال المتغير العشوائي $X$ ثم أحسب أمله الرياضياتي $E(X)$",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-f16c-7d8e9f0a1b2d",
+          "exercise_id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5c",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "استنتج قيمة $E(1962X + 2024)$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3e",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 2,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "عيّن الاقتراح الصحيح الوحيد من بين الاقتراحات الثلاثة في كل حالة من الحالات الآتية مع التبرير.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_trigonometrique",
+        "module",
+        "argument",
+        "equations_complexes"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject": 2
+      },
+      "parts": [
+        {
+          "id": "d0e1f2a3-b4c5-4678-138e-9f0a1b2c3d4f",
+          "exercise_id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3e",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل المعادلة $(1 - 2i)\\bar{z} + 2 + i = 0$ ذات المجهول $z$ في $\\mathbb{C}$ هو:\nأ) $i$  ب) $-i$  ج) $2 - i$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4789-249f-0a1b2c3d4e50",
+          "exercise_id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3e",
+          "label": "2",
+          "sub_label": null,
+          "statement": "عمدة للعدد المركب $z$ حيث $z = -2(\\cos \\frac{\\pi}{3} + i \\sin \\frac{\\pi}{3})$ هي:\nأ) $\\frac{\\pi}{3}$  ب) $-\\frac{\\pi}{3}$  ج) $\\frac{4\\pi}{3}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4890-35a0-1b2c3d4e5f6b",
+          "exercise_id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3e",
+          "label": "3",
+          "sub_label": null,
+          "statement": "إذا كان العدد المركب $z$ تخيلياً صرفاً فإن $z^{2024}$ عدد:\nأ) تخيلي صرف  ب) حقيقي موجب  ج) حقيقي سالب",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4901-b6b1-2c3d4e5f6a7c",
+          "exercise_id": "c9d0e1f2-a3b4-4567-027d-8e9f0a1b2c3e",
+          "label": "4",
+          "sub_label": null,
+          "statement": "إذا كانت $\\alpha$ عمدة للعدد المركب $z$ وطويلة $z$ تساوي 1 فإن العدد المركب $\\frac{i}{\\bar{z}}$ يُكتب على الشكل الأسي:\nأ) $e^{2\\alpha}$  ب) $e^{i(\\frac{\\pi}{2} - \\alpha)}$  ج) $e^{i(\\frac{\\pi}{2} + \\alpha)}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 3,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "الدالة العددية $f$ معرفة على المجال $[1; +\\infty[$ كما يلي: $f(x) = \\frac{x^2 + 2}{x + 1}$ ونعتبر المتتالية العددية $(U_n)$ معرفة على $\\mathbb{N}$ بـ: $U_0 = 1$ ومن أجل كل عدد طبيعي $n$: $U_{n+1} = f(U_n)$",
+      "topic": "suites",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject": 2
+      },
+      "parts": [
+        {
+          "id": "c5d6e7f8-a9b0-4123-d8d3-4e5f6a7b8c9e",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بيّن أن الدالة $f$ متزايدة تماماً على المجال $[1; +\\infty[$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d6e7f8a9-b0c1-4234-e9e4-5f6a7b8c9d0f",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $1 \\le U_n < 2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4345-f0f5-6a7b8c9d0e10",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بيّن أن المتتالية $(U_n)$ متزايدة",
+          "marks": null,
+          "depends_on": [
+            "1",
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4456-0106-7b8c9d0e1f2b",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "استنتج أن $(U_n)$ متقاربة ثم عيّن نهايتها $l$",
+          "marks": null,
+          "depends_on": [
+            "2-أ",
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4567-1217-b8c9d0e1f2a4",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي $n$: $0 < 2 - U_{n+1} \\le \\frac{3}{4}(2 - U_n)$",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4678-2328-c9d0e1f2a3b5",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "استنتج أنه من أجل كل عدد طبيعي $n$: $0 < 2 - U_n \\le (\\frac{3}{4})^n$",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4789-3439-d0e1f2a3b4c6",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "أحسب $\\lim_{n \\to +\\infty} U_n$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4890-454a-e1f2a3b4c5d7",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "من أجل كل عدد طبيعي $n$ نضع: $S_n = U_0 + U_1 + \\dots + U_n$. بيّن أنه من أجل كل عدد طبيعي $n$: $S_n \\ge 2n - 2 + 3(\\frac{3}{4})^n$",
+          "marks": null,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c7d8-4901-565b-f2a3b4c5d6e8",
+          "exercise_id": "b4c5d6e7-f8a9-4012-c7c2-3d4e5f6a7b8d",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "استنتج $\\lim_{n \\to +\\infty} S_n$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+      "exam_id": "6dae433e-7999-4f0c-8ae4-4d4dc45d26d7",
+      "number": 4,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "I) الدالة العددية $g$ معرفة على $\\mathbb{R}$ بـ: $g(x) = 1 - x + e^{x-1}$\nII) الدالة العددية $f$ معرفة على $\\mathbb{R}$ كما يلي: $f(x) = x - 1 + \\frac{x}{e^{x-1}}$ و $(C_f)$ تمثيلها البياني في المستوى المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "tableau_de_variation",
+        "branches_infinies",
+        "representation_graphique",
+        "calcul_integral",
+        "integration_par_parties",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject": 2
+      },
+      "parts": [
+        {
+          "id": "a5b6c7d8-e9f0-4123-787d-14c5d6e7f8b0",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "1",
+          "sub_label": null,
+          "statement": "(الجزء الأول) أدرس اتجاه تغير الدالة $g$ على $\\mathbb{R}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4234-898e-25d6e7f8a9b1",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "2",
+          "sub_label": null,
+          "statement": "(الجزء الأول) أحسب $g(1)$ ثم استنتج إشارة $g(x)$ على $\\mathbb{R}$",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4345-9a9f-36e7f8a9b0c2",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "(الجزء الثاني) أحسب كلاً من $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4456-ab00-47f8a9b0c1d3",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "(الجزء الثاني) بيّن أنه من أجل كل $x$ من $\\mathbb{R}$: $f'(x) = \\frac{g(x)}{e^{x-1}}$",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e9f0a1b2-c3d4-4567-bc11-58f9a0b1c2d4",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "1",
+          "sub_label": "ج",
+          "statement": "(الجزء الثاني) استنتج أن الدالة $f$ متزايدة تماماً على $\\mathbb{R}$ ثم شكّل جدول تغيراتها.",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f0a1b2c3-d4e5-4678-cd22-690a1b2c3d4f",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بيّن أن المعادلة $f(x) = 0$ تقبل حلاً وحيداً $\\alpha$ حيث $0.3 < \\alpha < 0.4$",
+          "marks": null,
+          "depends_on": [
+            "1-ج"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4789-8a9b-0c1d2e3f4a5d",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بيّن أن المستقيم $(\\Delta)$ ذو المعادلة $y = x - 1$ مقارب مائل للمنحنى $(C_f)$ عند $+\\infty$",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9b0c-1d2e3f4a5b6e",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "أدرس الوضع النسبي لـ $(C_f)$ و $(\\Delta)$",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-ac1d-2e3f4a5b6c7f",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "بيّن أن $(C_f)$ يقبل مماساً وحيداً $(T)$ موازياً للمستقيم $(\\Delta)$ يُطلب كتابة معادلة له.",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-bd2e-3f4a5b6c7d90",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "أحسب $f(-2)$ ثم أنشئ كلاً من $(\\Delta)$ ، $(T)$ و $(C_f)$",
+          "marks": null,
+          "depends_on": [
+            "1-ج",
+            "3-ب",
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-ce3f-4a5b6c7d8e91",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "5",
+          "sub_label": null,
+          "statement": "ناقش بيانياً حسب قيم الوسيط الحقيقي $m$ عدد حلول المعادلة: $f(x) = x - |m|$",
+          "marks": null,
+          "depends_on": [
+            "4-ب"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-df4a-5b6c7d8e9f0c",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "6",
+          "sub_label": "أ",
+          "statement": "نرمز بـ $A(\\alpha)$ إلى مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ والمستقيمات ذات المعادلات: $y = x - 1$ ، $x = \\alpha$ و $x = 1$. باستعمال التكامل بالتجزئة أحسب $\\int_\\alpha^1 x e^{1-x} dx$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-e05b-6c7d8e9f0a1d",
+          "exercise_id": "f4a5b6c7-d8e9-4012-676c-03b4c5d6e7f9",
+          "label": "6",
+          "sub_label": "ب",
+          "statement": "بيّن أن $A(\\alpha) = \\frac{1}{\\alpha} - \\alpha - 2$ ثم استنتج حصراً للعدد $A(\\alpha)$",
+          "marks": null,
+          "depends_on": [
+            "6-أ",
+            "2"
+          ],
+          "solution": null,
+          "ordering": 13,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": []
+}

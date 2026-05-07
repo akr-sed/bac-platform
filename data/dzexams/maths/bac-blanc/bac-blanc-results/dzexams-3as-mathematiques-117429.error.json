@@ -1,0 +1,11 @@
+{
+  "error": true,
+  "exam_id": "6e6219cf-3be8-43dd-b15b-d6d69870f2cf",
+  "subject": "mathematics",
+  "filiere": null,
+  "source_file": "dzexams-3as-mathematiques-117429.pdf",
+  "error_type": "ServerError",
+  "error_message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "response_text": null,
+  "timestamp": "2026-05-04T10:34:10.702783"
+}

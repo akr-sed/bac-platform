@@ -1,0 +1,452 @@
+{
+  "exam_metadata": {
+    "id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+    "subject": "mathematics",
+    "source_file": "2020.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2020,
+    "duration_minutes": 270,
+    "total_marks": null,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "78964521-3456-4567-8901-234567890123",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "الدالة العددية $f$ معرفة على المجال $[1; 4]$ بـ: $f(x) = \\frac{4x+4}{9-x}$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "suites_numeriques",
+        "suites_recurrentes",
+        "suites_geometriques",
+        "limites",
+        "raisonnement_par_recurrence"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4789-8901-234567890123",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "ادرس اتجاه تغير الدالة $f$ على المجال $[1; 4]$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$f'(x) = \\frac{40}{(9-x)^2}$ ومنه $f$ متزايدة تماما على $[1; 4]$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9012-345678901234",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "أثبت أنه من أجل كل عدد حقيقي $x$ من المجال $[1; 4]$ فإن: $f(x) \\in [1; 4]$.",
+          "marks": 0.25,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "من أجل $x \\in [1; 4]$ يكون $f(x) \\in [f(1); f(4)]$ أي $f(x) \\in [1; 4]$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-0123-456789012345",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "المتتالية العددية $(u_n)$ معرفة بحدها الأول $u_0 = 2$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = f(u_n)$. برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $1 < u_n < 4$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "البرهان بالتراجع: $u_0=2 \\in ]1,4[$. نفرض $1 < u_n < 4$ وبما أن $f$ متزايدة فإن $f(1) < f(u_n) < f(4)$ أي $1 < u_{n+1} < 4$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-1234-567890123456",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "ادرس اتجاه تغير المتتالية $(u_n)$ واستنتج أنها متقاربة.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "$u_{n+1} - u_n = \\frac{-(u_n-1)(u_n-4)}{9-u_n}$. بما أن $1 < u_n < 4$ فإن $u_{n+1} - u_n > 0$ فالمتتالية متزايدة تماما ومحدودة من الأعلى فهي متقاربة.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-2345-678901234567",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "المتتالية العددية $(v_n)$ معرفة من أجل كل عدد طبيعي $n$ كما يلي: $v_n = \\frac{u_n-1}{u_n-4}$. برهن أن المتتالية $(v_n)$ هندسية يطلب تعيين أساسها وحدها الأول $v_0$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$v_{n+1} = \\frac{5}{8} v_n$ ومنه $(v_n)$ هندسية أساسها $q = \\frac{5}{8}$ وحدها الأول $v_0 = -\\frac{1}{2}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-3456-789012345678",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عبر عن الحد العام $v_n$ بدلالة $n$، ثم استنتج الحد العام $u_n$ بدلالة $n$ واحسب $\\lim_{n \\to +\\infty} u_n$.",
+          "marks": 0.75,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "$v_n = -\\frac{1}{2}(\\frac{5}{8})^n$ و $u_n = \\frac{4v_n-1}{v_n-1} = \\frac{4(\\frac{5}{8})^n+2}{(\frac{5}{8})^n+2}$. $\\lim_{n \\to +\\infty} u_n = 1$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-89ab-4cde-8f01-234567890123",
+          "exercise_id": "78964521-3456-4567-8901-234567890123",
+          "label": "4",
+          "sub_label": null,
+          "statement": "المجموع $S_n$ معرف بـ: $S_n = v_0 + 8v_1 + 8^2v_2 + \\dots + 8^nv_n$. احسب $S_n$ بدلالة $n$.",
+          "marks": 0.75,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": "$S_n = -\\frac{1}{8}(5^{n+1}-1)$.",
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "12345678-90ab-4cde-8f01-234567890123",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "صندوق به 5 كريات بيضاء و 3 كريات حمراء (كل الكريات متماثلة لا نفرق بينها باللمس). نسحب من الصندوق كرية واحدة حيث: إذا ظهرت كرية حمراء نعيدها إلى الصندوق ونضيف له كرية بيضاء، وإذا ظهرت كرية بيضاء نعيدها إلى الصندوق ونضيف له كرية حمراء، ثم نكرر العملية مرة ثانية.",
+      "topic": "probabilites",
+      "concepts": [
+        "arbre_probabilites",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "23456789-0abc-4def-9012-345678901234",
+          "exercise_id": "12345678-90ab-4cde-8f01-234567890123",
+          "label": "1",
+          "sub_label": null,
+          "statement": "انقل شجرة الاحتمالات المقابلة التي تنمذج هذه التجربة ثم أكملها.",
+          "marks": 1.25,
+          "depends_on": [],
+          "solution": "المسارات: $P(R,R) = \\frac{3}{8} \\times \\frac{3}{9} = \\frac{1}{8}$، $P(R,B) = \\frac{3}{8} \\times \\frac{6}{9} = \\frac{2}{8}$، $P(B,R) = \\frac{5}{8} \\times \\frac{4}{9} = \\frac{5}{18}$، $P(B,B) = \\frac{5}{8} \\times \\frac{5}{9} = \\frac{25}{72}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1bcd-4efg-0123-456789012345",
+          "exercise_id": "12345678-90ab-4cde-8f01-234567890123",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بيّن أن احتمال أن يوجد في الصندوق 7 كريات بيضاء هو $\\frac{1}{8}$.",
+          "marks": 0.5,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "يوجد 7 كريات بيضاء في حالة سحب كريتين حمراوين (R,R). الاحتمال هو $\\frac{3}{8} \\times \\frac{3}{9} = \\frac{1}{8}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2cde-4fgh-1234-567890123456",
+          "exercise_id": "12345678-90ab-4cde-8f01-234567890123",
+          "label": "3",
+          "sub_label": null,
+          "statement": "احسب احتمال أن يوجد في الصندوق 4 كريات حمراء على الأقل.",
+          "marks": 0.75,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "يوجد 4 كريات حمراء على الأقل في الحالات (R,R)، (R,B)، (B,R). الاحتمال هو $1 - P(B,B) = 1 - \\frac{25}{72} = \\frac{47}{72}$. (تصحيح من نموذج الإجابة: $1 - \\frac{1}{8} = \\frac{7}{8}$؟ لا، الحساب الصحيح يعتمد على عدد الكريات المتبقية).",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3def-4ghi-2345-678901234567",
+          "exercise_id": "12345678-90ab-4cde-8f01-234567890123",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "ليكن $X$ المتغير العشوائي الذي يأخذ كقيمة عدد الكريات البيضاء الموجودة في الصندوق بعد العملية الثانية. برر أن قيم المتغير العشوائي $X$ هي: 5، 6 و 7.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "بعد سحب (B,B) يبقى 5 بيضاء. بعد سحب (R,B) أو (B,R) يبقى 6 بيضاء. بعد سحب (R,R) يبقى 7 بيضاء.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4efg-4hij-3456-789012345678",
+          "exercise_id": "12345678-90ab-4cde-8f01-234567890123",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "عرّف قانون الاحتمال للمتغير العشوائي $X$، ثم احسب $E(X)$ أمله الرياضياتي.",
+          "marks": 1.0,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": "$P(X=5) = \\frac{25}{72}$، $P(X=6) = \\frac{38}{72}$، $P(X=7) = \\frac{9}{72}$. $E(X) = \\frac{52}{9}$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "23456789-0123-4567-8901-234567890123",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "ليكن $n$ عددا طبيعيا أكبر تماما من 1. نعتبر الأعداد الطبيعية $a, b, c$ حيث: $a=4n+1$ ، $b=6n+1$ و $c=3n+2$.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "pgcd",
+        "theoreme_bezout"
+      ],
+      "difficulty": "hard",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "34567890-1234-5678-9012-345678901234",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أثبت أن العددين $a$ و $b$ أوليان فيما بينهما.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$3a - 2b = 3(4n+1) - 2(6n+1) = 12n+3 - 12n-2 = 1$. حسب مبرهنة بيزو $a$ و $b$ أوليان فيما بينهما.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-6789-0123-456789012345",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "2",
+          "sub_label": null,
+          "statement": "نسمي $\\alpha$ القاسم المشترك الأكبر للعددين $a$ و $c$. أثبت أن $\\alpha$ يقسم 5، ثم عين الأعداد الطبيعية $n$ بحيث يكون: $\\alpha = 5$.",
+          "marks": 1.5,
+          "depends_on": [],
+          "solution": "$\\alpha$ يقسم $3a-4c = 3(4n+1)-4(3n+2) = -5$. إذن $\\alpha$ يقسم 5. $\\alpha=5$ يعني $a \\equiv 0 [5]$ و $c \\equiv 0 [5]$، أي $n \\equiv 1 [5]$، ومنه $n = 5k+1$ مع $k \\in \\mathbb{N}^*$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-7890-1234-567890123456",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "نسمي $\\beta$ القاسم المشترك الأكبر للعددين $a$ و $bc$. أثبت أن $\\alpha$ يقسم $\\beta$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "بما أن $\\alpha = PGCD(a, c)$ فإن $\\alpha$ يقسم $a$ و $\\alpha$ يقسم $c$. بما أن $\\alpha$ يقسم $c$ فإنه يقسم $bc$. إذن $\\alpha$ قاسم مشترك لـ $a$ و $bc$ ومنه $\\alpha$ يقسم $\\beta$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-8901-2345-678901234567",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "أثبت أن العددين $\\beta$ و $b$ أوليان فيما بينهما ثم استنتج أن: $\\alpha = \\beta$.",
+          "marks": 1.0,
+          "depends_on": [
+            "1",
+            "3-أ"
+          ],
+          "solution": "$\\beta$ يقسم $a$ و $PGCD(a, b)=1$ إذن $PGCD(\\beta, b)=1$. بما أن $\\beta$ يقسم $bc$ و $PGCD(\\beta, b)=1$ فإن $\\beta$ يقسم $c$. إذن $\\beta$ قاسم مشترك لـ $a$ و $c$ ومنه $\\beta$ يقسم $\\alpha$. بالتالي $\\alpha = \\beta$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-9012-3456-789012345678",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "نعتبر العددين الطبيعيين $A$ و $B$ حيث: $A = 4n^2 - 3n - 1$ و $B = 18n^3 - 3n^2 - 13n - 2$. بيّن أن كلا من العددين $A$ و $B$ مضاعف للعدد الطبيعي $(n-1)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$A = (n-1)(4n+1) = (n-1)a$. $B = (n-1)(18n^2+15n+2) = (n-1)bc$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-0123-4567-890123456789",
+          "exercise_id": "23456789-0123-4567-8901-234567890123",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "نضع: $d = PGCD(A; B)$. عبّر عن $d$ بدلالة $\\alpha$ ثم استنتج قيم $d$ حسب قيم $n$. (لاحظ أن: $18n^2 + 15n + 2 = bc$)",
+          "marks": 0.75,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": "$d = (n-1)PGCD(a, bc) = (n-1)\\alpha$. إذا كان $n = 5k+1$ فإن $d = 5(n-1) = 5n-5$. إذا كان $n \\neq 5k+1$ فإن $d = n-1$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "34567890-1234-5678-9012-345678901234",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I) الدالتان العدديتان $g$ و $h$ معرفتان على المجال $]-\\infty ; 0]$ كما يلي: $g(x) = -2e^x$ و $h(x) = x(e^x + 1)$. حدد إشارة كل من $h(x)$ و $g(x)$ على المجال $]-\\infty ; 0]$.\nII) الدالة العددية $f$ معرفة على المجال $]-\\infty ; 0]$ بـ: $f(x) = (x-3)e^x + \\frac{1}{2}x^2$. $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "limites",
+        "tableau_de_variation",
+        "representation_graphique",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "45678901-2345-6789-0123-456789012345",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بيّن أنه من أجل كل $x$ من المجال $]-\\infty ; 0]$: $f'(x) = h(x) + g(x)$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$f'(x) = 1 \\cdot e^x + (x-3)e^x + x = (x-2)e^x + x$. $h(x)+g(x) = x(e^x+1) - 2e^x = xe^x + x - 2e^x = (x-2)e^x + x$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-7890-1234-567890123456",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "استنتج اتجاه تغير الدالة $f$ على المجال $]-\\infty ; 0]$.",
+          "marks": 0.5,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "بما أن $g(x) < 0$ و $h(x) \\le 0$ على $]-\\infty ; 0]$ فإن $f'(x) < 0$ فالدالة $f$ متناقصة تماما.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-8901-2345-678901234567",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "2",
+          "sub_label": null,
+          "statement": "احسب $f(0)$ و $\\lim_{x \\to -\\infty} f(x)$ ثم شكّل جدول تغيرات الدالة $f$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$f(0) = -3$. $\\lim_{x \\to -\\infty} f(x) = +\\infty$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-9012-3456-789012345678",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بيّن أن المعادلة $f(x) = 0$ تقبل حلا وحيدا $\\alpha$ في المجال $]-\\infty ; 0]$ ثم تحقق أن: $-1.5 < \\alpha < -1.4$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$f$ مستمرة ومتناقصة تماما على $]-\\infty ; 0]$ وصورة المجال هي $[-3; +\\infty[$. بما أن $0 \\in [-3; +\\infty[$ فالمعادلة تقبل حلا وحيدا. $f(-1.5) \\approx 0.121$ و $f(-1.4) \\approx -0.105$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-0123-4567-890123456789",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "$(P)$ هو التمثيل البياني للدالة: $x \\mapsto \\frac{1}{2}x^2$ على المجال $]-\\infty ; 0]$. احسب $\\lim_{x \\to -\\infty} [f(x) - \\frac{1}{2}x^2]$ ثم فسّر النتيجة بيانيا.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "النهاية هي 0. التفسير: $(P)$ منحنى مقارب لـ $(C_f)$ بجوار $-\\infty$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-1234-5678-901234567890",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "ادرس الوضع النسبي للمنحنيين $(P)$ و $(C_f)$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$f(x) - \\frac{1}{2}x^2 = (x-3)e^x$. بما أن $x \\le 0$ فإن $x-3 < 0$ ومنه $(C_f)$ يقع تحت $(P)$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-2345-6789-012345678901",
+          "exercise_id": "34567890-1234-5678-9012-345678901234",
+          "label": "5",
+          "sub_label": null,
+          "statement": "ليكن $m$ وسيطا حقيقيا، ناقش بيانيا وحسب قيم $m$ عدد حلول المعادلة: $f(x) = e^m$ في $]-\\infty ; 0]$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "إذا كان $e^m \\le 3$ (أي $m \\le \\ln 3$) يوجد حلان. إذا كان $e^m > 3$ (أي $m > \\ln 3$) يوجد حل واحد.",
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1e2d3c4-b5a6-4789-8901-234567890123",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "exercise_ref": 2,
+      "part_ref": "1",
+      "figure_type": "diagram",
+      "description": "شجرة احتمالات لمرحلتين من السحب. المرحلة الأولى تفرع إلى R (أحمر) و B (أبيض). المرحلة الثانية تفرع من كل غصن إلى R و B مع احتمالات مشروطة.",
+      "source_page": 1
+    },
+    {
+      "id": "g2h3i4j5-k6l7-4890-9012-345678901234",
+      "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0",
+      "exercise_ref": 4,
+      "part_ref": "4-ج",
+      "figure_type": "graph",
+      "description": "تمثيل بياني للمنحنى (Cf) والمنحنى المقارب (P) في المجال السالب. يظهر (Cf) تحت (P) ويقتربان من بعضهما عند الاتجاه نحو ناقص ما لا نهاية.",
+      "source_page": 7
+    }
+  ],
+  "exam_id": "efb097f8-53c4-405e-9915-5e4d87028ba0"
+}

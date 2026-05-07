@@ -1,0 +1,760 @@
+{
+  "exam_metadata": {
+    "id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+    "subject": "mathematics",
+    "source_file": "2017.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2017,
+    "duration_minutes": 270,
+    "total_marks": 20,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "97666993-3765-4673-9883-938888888881",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$.\\nنعتبر النقطتين $A(-1; 1; 1)$ و $B(1; -3; -4)$ والمستقيم $(\\Delta)$ ذا التمثيل الوسيطي: $\\begin{cases} x = t - 2 \\\\ y = -t + 2 \\\\ z = 2t - 4 \\end{cases} ; t \\in \\mathbb{R}$.\\nوليكن $(\\Delta')$ المستقيم الذي يشمل النقطة $B$ و $\\vec{u}(-1; 2; 1)$ شعاع توجيه له.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "droites",
+        "plans",
+        "positions_relatives",
+        "equations_cartesiennes",
+        "parametriques",
+        "sphere"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": "1) المستقيمان يتقاطعان في النقطة $A(-1; 1; -2)$.\\n2) شعاع توجيه $(\\Delta)$ هو $\\vec{v}(1; -1; 2)$ وشعاع توجيه $(\\Delta')$ هو $\\vec{u}(-1; 2; 1)$. التمثيل الوسيطي للمستوي $(P)$: $\\begin{cases} x = -t' + t - 1 \\\\ y = 2t' - t + 1 \\\\ z = t' + 2t - 2 \\end{cases}$. المعادلة الديكارتية: $5x + 3y - z = 0$.\\n3) $AM^2 + BM^2 = 20$ يكافئ $2NM^2 = 20 - 2AN^2$. $N(0; -1; -3)$ و $AN = \\sqrt{6}$. $NM^2 = 4$ أي $NM = 2$. $(S)$ سطح كرة مركزها $N$ ونصف قطرها 2.\\n4) $d(N; P) = 0$. المستوي والكرة يتقاطعان وفق دائرة مركزها $N$ ونصف قطرها 2.",
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4789-8a9b-c0d1e2f3a4b5",
+          "exercise_id": "97666993-3765-4673-9883-938888888881",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بيّن أن المستقيمين $(\\Delta)$ و $(\\Delta')$ يتقاطعان في نقطة يطلب تعيين إحداثياتها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9b0c-d1e2f3a4b5c6",
+          "exercise_id": "97666993-3765-4673-9883-938888888881",
+          "label": "2",
+          "sub_label": null,
+          "statement": "ليكن $(P)$ المستوي المعين بالمستقيمين $(\\Delta)$ و $(\\Delta')$. اكتب تمثيلا وسيطيا للمستوي $(P)$ ، ثم استنتج معادلة ديكارتية له.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-ac1d-e2f3a4b5c6d7",
+          "exercise_id": "97666993-3765-4673-9883-938888888881",
+          "label": "3",
+          "sub_label": null,
+          "statement": "نسمي $(S)$ مجموعة النقط $M(x; y; z)$ من الفضاء التي تحقق: $AM^2 + BM^2 = 20$. بيّن أن $(S)$ سطح كرة مركزها منتصف القطعة $[AB]$ ونصف قطرها 2.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-bd2e-f3a4b5c6d7e8",
+          "exercise_id": "97666993-3765-4673-9883-938888888881",
+          "label": "4",
+          "sub_label": null,
+          "statement": "حدد الوضع النسبي للمستوي $(P)$ وسطح الكرة $(S)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "87666993-3765-4673-9883-938888888882",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "1) نعتبر المعادلة $(E): 104x - 20y = 272$ ذات المجهول $(x; y)$ حيث $x$ و $y$ عددان صحيحان.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "pgcd",
+        "congruences",
+        "nombres_premiers"
+      ],
+      "difficulty": "hard",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": "1) أ) $PGCD(104; 20) = 4$. بما أن 4 يقسم 272 فإن المعادلة تقبل حلولا.\\nب) $104x \\equiv 272 [5]$ تعني $4x \\equiv 2 [5]$ أي $x \\equiv 3 [5]$. الحلول: $S = \\{(5k+3; 26k+2) ; k \\in \\mathbb{Z}\\}$.\\n2) $\\alpha = 3$ و $\\beta = 2$. $\\lambda = 2017$.\\n3) 2017 و 1009 أوليان. الثنائيات $(a; b)$ هي $(1; 1009)$ ، $(1009; 1)$ و $(2017; 2017)$.",
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "e5f6a7b8-c9d0-4123-ce3f-a4b5c6d7e8f9",
+          "exercise_id": "87666993-3765-4673-9883-938888888882",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "احسب القاسم المشترك الأكبر للعددين 20 و 104 ثم بيّن أن المعادلة $(E)$ تقبل حلولا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-df40-b5c6d7e8f9a0",
+          "exercise_id": "87666993-3765-4673-9883-938888888882",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "بيّن أنه إذا كانت الثنائية $(x; y)$ حلا للمعادلة $(E)$ فإن $x \\equiv 3 [5]$ ، ثم استنتج حلول المعادلة $(E)$.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-e051-c6d7e8f9a0b1",
+          "exercise_id": "87666993-3765-4673-9883-938888888882",
+          "label": "2",
+          "sub_label": null,
+          "statement": "$\\lambda$ عدد طبيعي يكتب $\\overline{1\\alpha\\alpha\\beta01}^4$ في نظام التعداد الذي أساسه 4 ، ويكتب $\\overline{1\\alpha\\beta01}^6$ في نظام التعداد الذي أساسه 6 حيث $\\alpha$ و $\\beta$ عددان طبيعيان. عيّن $\\alpha$ و $\\beta$ ، ثم اكتب $\\lambda$ في النظام العشري.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-f162-d7e8f9a0b1c2",
+          "exercise_id": "87666993-3765-4673-9883-938888888882",
+          "label": "3",
+          "sub_label": null,
+          "statement": "تحقق أن كلا من 2017 و 1009 عدد أولي، ثم عيّن الثنائيات $(a; b)$ من الأعداد الطبيعية التي تحقق: $2m - d = 2017$ حيث $d = PGCD(a; b)$ و $m = PPCM(a; b)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "77666993-3765-4673-9883-938888888883",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "1) حل في مجموعة الأعداد المركبة $\\mathbb{C}$ ، المعادلة ذات المجهول $z$: $(z - 2 + 2i)(z^2 - 2\\sqrt{2}z + 8) = 0$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_trigonometrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "equations_complexes",
+        "transformations_plan",
+        "rotation",
+        "homothetie"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": "1) $z_0 = 2 - 2i$ ، $z_1 = \\sqrt{2} + i\\sqrt{6}$ ، $z_2 = \\sqrt{2} - i\\sqrt{6}$.\\n2) أ) $z_A = 2\\sqrt{2}e^{i\\frac{\\pi}{3}}$ ، $z_B = 2\\sqrt{2}e^{-i\\frac{\\pi}{3}}$ ، $z_C = 2\\sqrt{2}e^{-i\\frac{\\pi}{4}}$. المركز $O$ ونصف القطر $2\\sqrt{2}$.\\nب) $n = 12k + 6$.\\nج) $(\\Gamma)$ نصف مستقيم مبدؤه $C$ (باستثناء $C$) ويصنع زاوية $-\\frac{\\pi}{3}$.\\n3) $h \\circ r$ تشابه غير مباشر نسبته 2 وزاويته $\\frac{2\\pi}{3}$ ومركزه $O$. صورة $(\\Omega)$ هي دائرة مركزها $O$ ونصف قطرها $4\\sqrt{2}$.",
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "c9d0e1f2-a3b4-4567-a273-e8f9a0b1c2d3",
+          "exercise_id": "77666993-3765-4673-9883-938888888883",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "المستوي المركب منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ ، نعتبر النقط $A$ ، $B$ و $C$ التي لاحقاتها $z_A = \\sqrt{2} + i\\sqrt{6}$ ، $z_B = \\bar{z}_A$ و $z_C = 2(1 - i)$. اكتب $z_A$ ، $z_B$ و $z_C$ على الشكل الأسي ثم استنتج أن النقط $A$ ، $B$ و $C$ تنتمي إلى دائرة $(\\Omega)$ يطلب تعيين مركزها ونصف قطرها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4678-b384-f9a0b1c2d3e4",
+          "exercise_id": "77666993-3765-4673-9883-938888888883",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عيّن قيم العدد الطبيعي $n$ التي من أجلها يكون العدد المركب $(\\frac{z_A}{z_C})^n$ تخيليا صرفا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4789-c495-a0b1c2d3e4f5",
+          "exercise_id": "77666993-3765-4673-9883-938888888883",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "نسمي $(\\Gamma)$ مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ حيث: $z = z_C - k(\\frac{z_A}{z_B})$ ، مع $k$ يمسح $\\mathbb{R}_+$. تحقق أن النقطة $C$ تنتمي إلى $(\\Gamma)$ ، ثم عيّن وأنشئ $(\\Gamma)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4890-d506-b1c2d3e4f5a6",
+          "exercise_id": "77666993-3765-4673-9883-938888888883",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$r$ الدوران الذي مركزه النقطة $O$ وزاويته $\\frac{2\\pi}{3}$ ، $h$ التحاكي الذي مركزه النقطة $O$ ونسبته $-2$. عيّن طبيعة التحويل $h \\circ r$ وعناصره المميزة ، ثم استنتج صورة الدائرة $(\\Omega)$ بالتحويل $h \\circ r$.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "67666993-3765-4673-9883-938888888884",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "نعتبر الدالة العددية $f$ المعرفة على $\\mathbb{R}$ بـ: $f(x) = (-x^3 + 2x^2)e^{-x+1}$. $(C_f)$ المنحني الممثل للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "derivation",
+        "etude_de_fonction",
+        "tableau_de_variation",
+        "representation_graphique",
+        "fonction_exponentielle",
+        "calcul_integral"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": "1) أ) $\\lim_{x \\to -\\infty} f(x) = +\\infty$ ، $\\lim_{x \\to +\\infty} f(x) = 0$. $y=0$ مستقيم مقارب.\\nب) $f'(x) = x(x^2 - 5x + 4)e^{-x+1}$.\\n2) $y = -\\frac{4}{e}x + \\frac{8}{e}$.\\n3) $h$ متزايدة على $[2; +\\infty[$ ومتناقصة على $[0; 2]$. $h(x) \\le 0$. $(C_f)$ تحت $(T)$.\\n5) $m \\in ]-\\infty; -\\frac{4}{e}]$ حل وحيد. $m \\in ]-\\frac{4}{e}; 0[$ ثلاثة حلول. $m=0$ حلين. $m \\in ]0; +\\infty[$ حل وحيد.",
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a3b4c5d6-e7f8-4901-e617-c2d3e4f5a6b7",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ ، استنتج وجود مستقيم مقارب للمنحني $(C_f)$ يطلب تعيين معادلة له.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4012-f728-d3e4f5a6b7c8",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "بيّن أن: من أجل كل عدد حقيقي $x$ ، $f'(x) = x(x^2 - 5x + 4)e^{-x+1}$ ثم استنتج اتجاه تغير الدالة $f$ وشكل جدول تغيراتها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4123-0839-e4f5a6b7c8d9",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "2",
+          "sub_label": null,
+          "statement": "اكتب معادلة $(T)$ مماس المنحني $(C_f)$ في النقطة ذات الفاصلة 2.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d6e7f8a9-b0c1-4234-1940-f5a6b7c8d9e0",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$h$ الدالة المعرفة على المجال $[0; +\\infty[$ كما يلي: $h(x) = x^2 e^{-x+2} - 4$. ادرس اتجاه تغير الدالة $h$ ثم استنتج إشارة $h(x)$. حدد عندئذ وضعية المنحنى $(C_f)$ بالنسبة إلى $(T)$ على المجال $[0; +\\infty[$.",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4345-2051-a6b7c8d9e0f1",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "4",
+          "sub_label": null,
+          "statement": "ارسم المماس $(T)$ والمنحني $(C_f)$ على المجال $[0; +\\infty[$.",
+          "marks": null,
+          "depends_on": [
+            "2",
+            "3"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4456-3162-b7c8d9e0f1a2",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "5",
+          "sub_label": null,
+          "statement": "نعتبر $m$ وسيط حقيقي والمعادلة ذات المجهول الحقيقي $x$ الموجب: $f(x) = m(x - 2)$. ناقش بيانيا حسب قيم $m$ عدد حلول المعادلة $(E)$.",
+          "marks": null,
+          "depends_on": [
+            "4"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4567-4273-c8d9e0f1a2b3",
+          "exercise_id": "67666993-3765-4673-9883-938888888884",
+          "label": "6",
+          "sub_label": null,
+          "statement": "$g$ الدالة المعرفة على المجال $]0; +\\infty[$ بـ: $g(x) = f(\\frac{1}{x})$. اعتمادا على السؤال رقم (1)، شكل جدول تغيرات الدالة $g$.",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "57666993-3765-4673-9883-938888888885",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 1,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "نعتبر المتتالية العددية $(u_n)$ المعرفة على $\\mathbb{N}$ بحدها الأول $u_0 = 1$ ومن أجل كل عدد طبيعي $n$ ، $u_{n+1} = 7u_n + 8$.",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "suites_geometriques",
+        "congruences"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": "1) برهان بالتراجع.\\n2) أ) $S_n = \\frac{7^{n+1}-1}{6}$. $3S'_n = 7S_n - 4(n+1)$.\\nب) $18S'_n = 7^{n+2} - 24n - 31$.\\n3) أ) البواقي: 1، 2، 4، 3.\\nب) $n \\in \\{20k+12, 20k+13, 20k+10, 20k+19\\}$.",
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "b0c1d2e3-f4a5-4678-5384-d9e0f1a2b3c4",
+          "exercise_id": "57666993-3765-4673-9883-938888888885",
+          "label": "1",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أن: من أجل كل عدد طبيعي $n$ ، $3u_n = 7^{n+1} - 4$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4789-6495-e0f1a2b3c4d5",
+          "exercise_id": "57666993-3765-4673-9883-938888888885",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "نضع من أجل كل عدد طبيعي $n$: $S_n = 1 + 7 + 7^2 + \\dots + 7^n$ و $S'_n = u_0 + u_1 + \\dots + u_n$. احسب بدلالة $n$ المجموع $S_n$ ثم جد علاقة بين $S_n$ و $S'_n$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4890-7506-f1a2b3c4d5e6",
+          "exercise_id": "57666993-3765-4673-9883-938888888885",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "استنتج أن: من أجل كل عدد طبيعي $n$ ، $18 \\times S'_n = 7^{n+2} - 24n - 31$.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c7d8-4901-8617-a2b3c4d5e6f7",
+          "exercise_id": "57666993-3765-4673-9883-938888888885",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "ادرس حسب قيم العدد الطبيعي $n$ بواقي قسمة العدد $7^n$ على 5.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4012-9728-b3c4d5e6f7a8",
+          "exercise_id": "57666993-3765-4673-9883-938888888885",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عيّن قيم $n$ الطبيعية حتى يكون $S'_n$ قابلا للقسمة على 5.",
+          "marks": null,
+          "depends_on": [
+            "2-ب",
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "47666993-3765-4673-9883-938888888886",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 2,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$ ، $(P)$ مستو تمثيله الوسيطي: $\\begin{cases} x = -t - 2\\lambda + 2 \\\\ y = 3t + 4\\lambda - 3 \\\\ z = 3t + 4\\lambda - 1 \\end{cases}$ حيث $t$ و $\\lambda$ عددان حقيقيان.",
+      "topic": "geometrie",
+      "concepts": [
+        "droites",
+        "plans",
+        "sphere",
+        "positions_relatives",
+        "equations_cartesiennes",
+        "parametriques"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": "1) $y - z + 2 = 0$.\\n2) أ) $\\omega_\\alpha(\\cos\\alpha; \\sin\\alpha; \\frac{1}{2})$ ، $R = \\sqrt{2}$.\\nب) $d(\\omega_\\alpha; P) = \\frac{|\\sin\\alpha + \\frac{3}{2}|}{\\sqrt{2}}$.\\n3) $\\alpha = \\frac{\\pi}{6}$. $I(\\frac{\\sqrt{3}}{2}; -\\frac{1}{2}; \\frac{3}{2})$.",
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "a5b6c7d8-e9f0-4123-0839-c4d5e6f7a8b9",
+          "exercise_id": "47666993-3765-4673-9883-938888888886",
+          "label": "1",
+          "sub_label": null,
+          "statement": "عيّن معادلة ديكارتية للمستوي $(P)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4234-1940-d5e6f7a8b9c0",
+          "exercise_id": "47666993-3765-4673-9883-938888888886",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "ليكن $\\alpha$ عددا حقيقيا من المجال $[-\\frac{\\pi}{2}; \\frac{\\pi}{2}]$ ، ولتكن $(E_\\alpha)$ مجموعة النقط $M(x; y; z)$ من الفضاء حيث $x^2 + y^2 + z^2 - 2x\\cos\\alpha - 2y\\sin\\alpha - z - \\frac{3}{4} = 0$. بيّن أن: من أجل كل $\\alpha$ من المجال السابق ، $(E_\\alpha)$ هي سطح كرة يطلب تعيين إحداثيات مركزها $\\omega_\\alpha$ بدلالة $\\alpha$ ونصف قطرها $R$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4345-2051-e6f7a8b9c0d1",
+          "exercise_id": "47666993-3765-4673-9883-938888888886",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "ادرس حسب قيم العدد الحقيقي $\\alpha$ الوضع النسبي للمستوي $(P)$ وسطح الكرة $(E_\\alpha)$.",
+          "marks": null,
+          "depends_on": [
+            "1",
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4456-3162-f7a8b9c0d1e2",
+          "exercise_id": "47666993-3765-4673-9883-938888888886",
+          "label": "3",
+          "sub_label": null,
+          "statement": "في الحالة التي يكون فيها المستوي $(P)$ مماسا لسطح الكرة $(E_\\alpha)$ ، عيّن تمثيلا وسيطيا للمستقيم $(D)$ الذي يشمل النقطة $\\omega_\\alpha$ والعمودي على المستوي $(P)$ واستنتج إحداثيات $I$ نقطة تماس $(E_\\alpha)$ مع المستوي $(P)$.",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "37666993-3765-4673-9883-938888888887",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 3,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "I) اكتب العدد $(\\frac{5}{2} + i)^2$ على الشكل الجبري ثم استنتج الجذرين التربيعيين للعدد المركب: $\\frac{21}{4} + 5i$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "racines",
+        "forme_exponentielle",
+        "similitudes",
+        "transformations_plan"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": "I) $(\\frac{5}{2}+i)^2 = \\frac{21}{4} + 5i$. الجذران: $\\pm(\\frac{5}{2}+i)$.\\nII) 1) $z_A = \\frac{5}{2} + i$ ، $z_C = -\\frac{5}{2} + i$.\\n2) $\\frac{z_C - z_B}{z_A - z_B} = e^{i\\frac{\\pi}{2}}$. المثلث $ABC$ قائم ومتساوي الساقين في $B$.\\n3) أ) $z' = \\frac{1+i}{2}z - \\frac{3}{4} - \\frac{3}{4}i$. النسبة $\\frac{\\sqrt{2}}{2}$ والزاوية $\\frac{\\pi}{4}$.\\nب) $n = 4k$.",
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "e9f0a1b2-c3d4-4567-4273-f7a8b9c0d1e2",
+          "exercise_id": "37666993-3765-4673-9883-938888888887",
+          "label": "II",
+          "sub_label": "1",
+          "statement": "المستوي المركب منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ ، نعتبر النقط $A, B, C$ و $I$ ذات اللواحق: $z_A = \\frac{3}{2} + \\sqrt{2}e^{i\\frac{\\pi}{4}}$ ، $z_B = -\\frac{3}{2}i$ ، $z_C = -\\bar{z}_A$ و $z_I = i$. اكتب $z_A$ و $z_C$ على الشكل الجبري.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "f0a1b2c3-d4e5-4678-5384-a8b9c0d1e2f3",
+          "exercise_id": "37666993-3765-4673-9883-938888888887",
+          "label": "II",
+          "sub_label": "2",
+          "statement": "اكتب العدد المركب $\\frac{z_C - z_B}{z_A - z_B}$ على الشكل الأسي مستنتجا طبيعة المثلث $ABC$.",
+          "marks": null,
+          "depends_on": [
+            "II-1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4789-6495-b9c0d1e2f3a4",
+          "exercise_id": "37666993-3765-4673-9883-938888888887",
+          "label": "II",
+          "sub_label": "3-أ",
+          "statement": "ليكن $S$ التشابه المباشر الذي مركزه $B$ ويحول $A$ إلى $I$. اكتب العبارة المركبة للتشابه المباشر $S$ ثم عيّن نسبته وزاويته.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-7506-c0d1e2f3a4b5",
+          "exercise_id": "37666993-3765-4673-9883-938888888887",
+          "label": "II",
+          "sub_label": "3-ب",
+          "statement": "نعرف من أجل كل عدد طبيعي $n$ حيث $n \\ge 2$ التحويل النقطي $T_n$ كما يلي: $T_n = S \\circ S \\circ \\dots \\circ S$ ($n$ مرة). عيّن قيم $n$ حتى يكون $T_n$ تحاكيا ، عيّن عندئذ عناصره المميزة.",
+          "marks": null,
+          "depends_on": [
+            "II-3-أ"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "27666993-3765-4673-9883-938888888888",
+      "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159",
+      "number": 4,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "نعتبر الدالة العددية $f$ المعرفة على المجال $[0; +\\infty[$ كما يلي: $\\begin{cases} f(x) = \\frac{x+1}{x - \\ln x} ; x > 0 \\\\ f(0) = 0 \\end{cases}$. $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "fonction_logarithme",
+        "limites",
+        "derivation",
+        "calcul_integral",
+        "primitives"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": "I) 1) $g$ متناقصة تماما. 2) $g(x) > 0$ على $]0; \\alpha[$ و $g(x) < 0$ على $]\\alpha; +\\infty[$.\\nII) 1) $\\lim_{x \\to 0^+} f(x) = 0 = f(0)$. $\\lim_{x \\to 0^+} \\frac{f(x)}{x} = +\\infty$ (مماس عمودي).\\n3) $\\lim_{x \\to +\\infty} f(x) = 1$. $y=1$ مستقيم مقارب.\\n4) أ) $h(x) > 0$. $(C_f)$ فوق $(\\Delta)$ على $]\\frac{1}{e}; +\\infty[$ وتحته على $]0; \\frac{1}{e}[$.\\n5) 2) $e \\le F(e) \\le f(\\alpha)(e-1)$.",
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "c3d4e5f6-a7b8-4901-8617-d1e2f3a4b5c6",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "I",
+          "sub_label": "1",
+          "statement": "نعتبر الدالة العددية $g$ المعرفة على المجال $]0; +\\infty[$ كما يلي: $g(x) = \\frac{1}{x} - \\ln x$. ادرس اتجاه تغير الدالة $g$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-9728-e2f3a4b5c6d7",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "I",
+          "sub_label": "2",
+          "statement": "بيّن أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ من المجال $]1.76; 1.77[$ ثم استنتج إشارة $g(x)$ على $]0; +\\infty[$.",
+          "marks": null,
+          "depends_on": [
+            "I-1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-0839-f3a4b5c6d7e8",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "1",
+          "statement": "أثبت أن الدالة $f$ مستمرة عند العدد 0 على اليمين ، ثم احسب $\\lim_{x \\to 0^+} \\frac{f(x)}{x}$ وفسر النتيجة بيانيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4234-1940-a4b5c6d7e8f9",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "2",
+          "statement": "بيّن أن: من أجل كل عدد حقيقي $x$ من المجال $]0; +\\infty[$ ، $f'(x) = \\frac{g(x)}{(x - \\ln x)^2}$.",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4345-2051-b5c6d7e8f9a0",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "3",
+          "statement": "احسب $\\lim_{x \\to +\\infty} f(x)$ وفسر ذلك بيانيا ثم شكل جدول تغيرات الدالة $f$.",
+          "marks": null,
+          "depends_on": [
+            "II-2"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-3162-c6d7e8f9a0b1",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "4-أ",
+          "statement": "لتكن الدالة $h$ المعرفة على $]0; +\\infty[$ بـ: $h(x) = x - \\ln x$. بيّن أن: من أجل كل عدد حقيقي $x$ موجب تماما ، $h(x) > 0$ ، واستنتج وضعية $(C_f)$ بالنسبة إلى المستقيم $(\\Delta)$ ذي المعادلة $y = 1$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "c9d0e1f2-a3b4-4567-4273-d7e8f9a0b1c2",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "4-ب",
+          "statement": "ارسم $(C_f)$ (نأخذ $f(\\alpha) \\approx 2.31$).",
+          "marks": null,
+          "depends_on": [
+            "II-3",
+            "II-4-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4678-5384-e8f9a0b1c2d3",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "5-1",
+          "statement": "لتكن الدالة $F$ المعرفة على المجال $[0; +\\infty[$ كما يلي $F(x) = \\int_1^x f(t) dt$. بيّن أن: من أجل كل عدد حقيقي $x$ حيث $x \\ge 1$ ، $\\frac{1}{x} + 1 \\le f(x) \\le f(\\alpha)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4789-6495-f9a0b1c2d3e4",
+          "exercise_id": "27666993-3765-4673-9883-938888888888",
+          "label": "II",
+          "sub_label": "5-2",
+          "statement": "اعط تفسيرا هندسيا للعدد $F(e)$ ثم استنتج حصرا له.",
+          "marks": null,
+          "depends_on": [
+            "II-5-1"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [],
+  "exam_id": "4155c1ff-000a-4bda-8e1d-fd3bda828159"
+}

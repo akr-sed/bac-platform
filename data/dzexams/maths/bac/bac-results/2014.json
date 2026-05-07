@@ -1,0 +1,650 @@
+{
+  "exam_metadata": {
+    "id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+    "subject": "mathematics",
+    "source_file": "2014.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2014,
+    "duration_minutes": 270,
+    "total_marks": null,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "78901234-5678-4901-8234-567890123456",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "في الفضاء المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. نعتبر النقط: $A(2;1;-1)$ ، $B(-1;2;4)$ ، $C(0;-2;3)$ و $D(1;1;-2)$ والمستوي $(P)$ المعرف بالمعادلة الديكارتية: $2x - y + 2z + 1 = 0$.\nالمطلوب: أجب بصحيح أو خطأ مع تبرير الإجابة في كل حالة من الحالات التالية:",
+      "topic": "geometrie",
+      "concepts": [
+        "repere_orthonorme",
+        "equations_cartesiennes",
+        "distances",
+        "positions_relatives",
+        "parametriques"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "1",
+          "sub_label": null,
+          "statement": "النقط $A$ ، $B$ و $C$ تعين مستويا.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "صحيح لأن الشعاعين $\\vec{AB}$ و $\\vec{AC}$ غير مرتبطين خطيا.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e9",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "2",
+          "sub_label": null,
+          "statement": "المستقيم $(AC)$ محتوى في المستوي $(P)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "خطأ لأن النقطة $A$ لا تنتمي إلى $(P)$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f0",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$x - 2y - z - 1 = 0$ هي معادلة للمستوي $(ACD)$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "صحيح لأن إحداثيات النقط $A$ ، $D$ و $C$ تحقق المعادلة.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a1",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "4",
+          "sub_label": null,
+          "statement": "$\\begin{cases} x = 2t \\\\ y = -2 + 3t \\\\ z = 3 - 4t \\end{cases} ؛ t \\in \\mathbb{R}$ هو تمثيل وسيطي للمستقيم $(AC)$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "صحيح لأن إحداثيات كل من $A$ و $C$ تحقق التمثيل الوسيطي.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b2",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "5",
+          "sub_label": null,
+          "statement": "المسافة بين النقطة $D$ والمستوي $(P)$ تساوي $\\frac{3}{2}$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "خطأ لأن المسافة بين $D$ و $(P)$ تساوي $\\frac{2}{3}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "6",
+          "sub_label": null,
+          "statement": "النقطة $E(2; -1; 1)$ هي المسقط العمودي للنقطة $C$ على $(P)$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "صحيح لأن $E \\in (P)$ و $\\vec{EC}$ شعاع ناظمي للمستوي $(P)$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d9",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "7",
+          "sub_label": null,
+          "statement": "سطح الكرة ذات المركز $D$ ونصف القطر $\\frac{\\sqrt{6}}{2}$ هو مجموعة النقط $M$ من الفضاء التي تحقق: $\\vec{AM} \\cdot \\vec{CM} = 0$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "خطأ لأن $D$ ليست منتصف القطعة $[AC]$.",
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "12345678-1234-4567-8901-234567890123",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "1) حل في مجموعة الأعداد المركبة المعادلة التالية: $(z - 1 - 2i)(z^2 - 2(1 + \\sqrt{3})z + 5 + 2\\sqrt{3}) = 0$\n2) $A$ ، $B$ ، $C$ و $D$ نقط من المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{u}, \\vec{v})$ لاحقاتها على الترتيب:\n$z_A = 1 + 2i$ ، $z_B = 1 + \\sqrt{3} + i$ ، $z_C = 1 + \\sqrt{3} - i$ و $z_D = 1 - 2i$",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "similitudes",
+        "rotation"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "b1c2d3e4-f5a6-4b1c-8d2e-f3a4b5c6d7e8",
+          "exercise_id": "12345678-1234-4567-8901-234567890123",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بيّن أنّ: $AB = CD$ و $(AD)$ يوازي $(BC)$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$AB = |z_B - z_A| = |\\sqrt{3} - i| = 2$ و $CD = |z_D - z_C| = |-\\sqrt{3} - i| = 2$ إذن $AB = CD$.\n$z_{\\vec{BC}} = z_C - z_B = -2i$ و $z_{\\vec{AD}} = z_D - z_A = -4i$ إذن $\\vec{AD} = 2\\vec{BC}$ ومنه $(AD) // (BC)$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c2d3e4f5-a6b1-4c2d-9e3f-a4b5c6d7e8f9",
+          "exercise_id": "12345678-1234-4567-8901-234567890123",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "تحقق أنّ: $\\frac{z_B + z_D}{2} \\neq \\frac{z_A + z_C}{2}$ ثم استنتج طبيعة الرباعي $ABCD$.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "$\\frac{z_B + z_D}{2} = 1 + \\frac{\\sqrt{3}}{2} - \\frac{1}{2}i$ و $\\frac{z_A + z_C}{2} = 1 + \\frac{\\sqrt{3}}{2} + \\frac{1}{2}i$ إذن هما غير متساويين. الرباعي $ABCD$ هو شبه منحرف متساوي الساقين.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "d3e4f5a6-b1c2-4d3e-0f4a-b5c6d7e8f9a0",
+          "exercise_id": "12345678-1234-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بيّن أنّ: $\\frac{z_D - z_B}{z_A - z_B} = \\sqrt{3} e^{i\\frac{\\pi}{2}}$. استنتج أن $D$ هي صورة $A$ بتشابه مباشر مركزه $B$ يطلب تعيين نسبته وزاويته.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$\\frac{z_D - z_B}{z_A - z_B} = \\frac{-\\sqrt{3} - 3i}{-\\sqrt{3} + i} = \\sqrt{3}i = \\sqrt{3} e^{i\\frac{\\pi}{2}}$. إذن $D$ هي صورة $A$ بتشابه مباشر مركزه $B$ ونسبته $\\sqrt{3}$ وزاويته $\\frac{\\pi}{2}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "e4f5a6b1-c2d3-4e4f-1a5b-c6d7e8f9a0b1",
+          "exercise_id": "12345678-1234-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "بيّن أن المثلث $ADB$ قائم وأن النقط $A$ ، $B$ ، $C$ و $D$ تنتمي إلى دائرة يطلب تحديد مركزها ونصف قطرها.",
+          "marks": 0.75,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "المثلث $ADB$ قائم في $B$ لأن زاوية التشابه هي $\\frac{\\pi}{2}$. النقط تنتمي للدائرة التي قطرها $[AD]$ لأن $\\widehat{ABD} = \\widehat{ACD} = \\frac{\\pi}{2}$. المركز هو منتصف $[AD]$ أي $(1; 0)$ ونصف القطر $r=2$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "f5a6b1c2-d3e4-4f5a-2b6c-d7e8f9a0b1c2",
+          "exercise_id": "12345678-1234-4567-8901-234567890123",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "استنتج إنشاء للرباعي $ABCD$.",
+          "marks": 0.75,
+          "depends_on": [
+            "3-ب"
+          ],
+          "solution": "نعلم $A$ و $D$؛ $B$ هي نقطة تقاطع الدائرة مع المستقيم $y=1$ و $C$ هي تقاطع الدائرة مع المستقيم $y=-1$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "23456789-2345-4678-9012-345678901234",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "1) نعتبر المعادلة $(E): 2013x - 1962y = 54$ حيث $x$ و $y$ عددان صحيحان.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "pgcd",
+        "congruences",
+        "theoreme_bezout",
+        "theoreme_gauss"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "c1d2e3f4-a5b6-4c1d-8e2f-a3b4c5d6e7f8",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "احسب $PGCD(2013, 1962)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$PGCD(2013, 1962) = 3$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c1-4d2e-9f3a-b4c5d6e7f8a9",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "استنتج أن المعادلة $(E)$ تقبل حلولا.",
+          "marks": 0.25,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "بما أن $3$ يقسم $54$ فإن المعادلة تقبل حلولا.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c1d2-4e3f-0a4b-c5d6e7f8a9b0",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "1",
+          "sub_label": "ج",
+          "statement": "بيّن أنه إذا كانت الثنائية $(x, y)$ حلا للمعادلة $(E)$ فإن: $x \\equiv 0 [6]$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "المعادلة تكافئ $671x - 654y = 18$. بما أن $6$ يقسم $654y$ و $18$ فإن $6$ يقسم $671x$. وبما أن $6$ أولي مع $671$ فإن $x \\equiv 0 [6]$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c1-d2e3-4f4a-1b5c-d6e7f8a9b0c1",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "1",
+          "sub_label": "د",
+          "statement": "استنتج حلا خاصا $(x_0, y_0)$ حيث $74 < x_0 < 80$ ثم حل المعادلة $(E)$.",
+          "marks": 1.0,
+          "depends_on": [
+            "1-ج"
+          ],
+          "solution": "$x_0 = 78$ و $y_0 = 80$. الحل العام: $x = 654k + 78$ و $y = 671k + 80$ مع $k \\in \\mathbb{Z}$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "a5b6c1d2-e3f4-4a5b-2c6d-e7f8a9b0c1d2",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "نرمز بالرمز $d$ إلى القاسم المشترك الأكبر للعددين $x$ و $y$ حيث $(x, y)$ حل للمعادلة $(E)$. ما هي القيم الممكنة للعدد $d$؟",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$d$ يقسم $18$ إذن $d \\in \\{1, 2, 3, 6, 9, 18\\}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "b6c1d2e3-f4a5-4b6c-3d7e-f8a9b0c1d2e3",
+          "exercise_id": "23456789-2345-4678-9012-345678901234",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عيّن قيم العددين الطبيعيين $a$ و $b$ حيث: $18a - 654b = 18$ و $PGCD(a, b) = 18$.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "$a = 11772p + 1386$ و $b = 12078p + 1422$ مع $p \\in \\mathbb{N}$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "34567890-3456-4789-0123-456789012345",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I) $g$ الدالة العددية المعرفة على $\\mathbb{R}$ كما يلي: $g(x) = (2-x)e^x - 1$\nII) $f$ الدالة العددية المعرفة على $\\mathbb{R}$ كما يلي: $f(x) = \\frac{e^x - 1}{e^x - x}$",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "derivation",
+        "etude_de_fonction",
+        "tableau_de_variation",
+        "fonction_exponentielle",
+        "calcul_integral"
+      ],
+      "difficulty": "hard",
+      "marks": 6.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "d1e2f3a4-b5c6-4d1e-8f2a-b3c4d5e6f7a8",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "I",
+          "sub_label": "1",
+          "statement": "ادرس تغيرات الدالة $g$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "النهايات: $\\lim_{x \\to -\\infty} g(x) = -1$ و $\\lim_{x \\to +\\infty} g(x) = -\\infty$. المشتقة: $g'(x) = (1-x)e^x$. متزايدة على $]-\\infty; 1]$ ومتناقصة على $[1; +\\infty[$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e2f3a4b5-c6d7-4e2f-9a3b-c4d5e6f7a8b9",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "I",
+          "sub_label": "2",
+          "statement": "بيّن أنّ للمعادلة: $g(x) = 0$ حلان $\\alpha$ و $\\beta$ حيث $1,1 < \\alpha < 1,2$ و $1,8 < \\beta < 1,9$.",
+          "marks": 0.75,
+          "depends_on": [
+            "I-1"
+          ],
+          "solution": "باستخدام مبرهنة القيم المتوسطة على المجالين المعطيين.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f3a4b5c6-d7e8-4f3a-0b4c-d5e6f7a8b9c0",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "II",
+          "sub_label": "1",
+          "statement": "احسب نهاية الدالة $f$ عند $-\\infty$ و عند $+\\infty$ وفسّر النتيجتين هندسيا.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -\\infty} f(x) = 0$ (مقارب أفقي $y=0$) و $\\lim_{x \\to +\\infty} f(x) = 1$ (مقارب أفقي $y=1$).",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "a4b5c6d7-e8f9-4a4b-1c5d-e6f7a8b9c0d1",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "II",
+          "sub_label": "2",
+          "statement": "بيّن أنّه من أجل كل عدد حقيقي $x$: $f'(x) = \\frac{g(x)}{(e^x - x)^2}$ واستنتج اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.",
+          "marks": 0.75,
+          "depends_on": [
+            "I-3"
+          ],
+          "solution": "حساب المشتقة يعطي النتيجة. $f$ متناقصة على $]-\\infty; \\alpha]$ و $[\\beta; +\\infty[$ ومتزايدة على $[\\alpha; \\beta]$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "b5c6d7e8-f9a0-4b5c-2d6e-f7a8b9c0d1e2",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "II",
+          "sub_label": "3",
+          "statement": "بيّن أنّ: $f(\\alpha) = \\frac{1}{\\alpha - 1}$ واستنتج حصرا للعددين $f(\\alpha)$ و $f(\\beta)$.",
+          "marks": 0.75,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": "بما أن $g(\\alpha)=0$ فإن $e^\\alpha = \\frac{1}{2-\\alpha}$. بالتعويض نجد النتيجة. الحصر: $-0.48 < f(\\alpha) < -0.45$ و $1.11 < f(\\beta) < 1.25$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "c6d7e8f9-a0b1-4c6d-3e7f-a8b9c0d1e2f3",
+          "exercise_id": "34567890-3456-4789-0123-456789012345",
+          "label": "II",
+          "sub_label": "5",
+          "statement": "أ) احسب بدلالة $\\lambda$ العدد $a(\\lambda)$ حيث: $a(\\lambda) = \\int_1^{\\lambda} [f(x) - 1] dx$\nب) احسب نهاية $a(\\lambda)$ عندما يؤول $\\lambda$ إلى $+\\infty$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "أ) $a(\\lambda) = \\ln(1 - \\lambda e^{-\\lambda}) - \\ln(e-1) + 1$. ب) النهاية هي $1 - \\ln(e-1)$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "45678901-4567-4890-1234-567890123456",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 5,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "المستوي منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{u}, \\vec{v})$. النقطتان $A$ و $B$ لاحقتاهما على الترتيب: $a = -2 + 6i$ و $b = -1 + 2i$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_exponentielle",
+        "similitudes",
+        "equations_cartesiennes"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "e1f2a3b4-c5d6-4e1f-8a2b-c3d4e5f6a7b8",
+          "exercise_id": "45678901-4567-4890-1234-567890123456",
+          "label": "1",
+          "sub_label": null,
+          "statement": "اكتب العدد المركب $1+i$ على شكل أسي.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$1+i = \\sqrt{2} e^{i\\frac{\\pi}{4}}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4f2a-9b3c-d4e5f6a7b8c9",
+          "exercise_id": "45678901-4567-4890-1234-567890123456",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "$S$ التحويل النقطي الذي يرفق بكل نقطة $M$ لاحقتها $z$ النقطة $M'$ لاحقتها $z'$ حيث: $z' = \\sqrt{2} e^{i\\frac{\\pi}{4}} z + 2$. جد لاحقة النقطة $D'$ صورة $D$ بالتحويل $S$ حيث $d = 2i$. ماذا تستنتج؟",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$d' = 2i$. نستنتج أن $D$ نقطة صامدة (مركز التشابه).",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4a3b-0c4d-e5f6a7b8c9d0",
+          "exercise_id": "45678901-4567-4890-1234-567890123456",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "تحقق أن النقطة $M_0(-3; 4)$ تنتمي إلى المستقيم $(\\Delta)$ ذو المعادلة $3x + 5y = 11$. ثم عين نقط $(\\Delta)$ التي إحداثياتها أعداد صحيحة.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$3(-3) + 5(4) = -9 + 20 = 11$. النقط هي $(5k-3; -3k+4)$ مع $k \\in \\mathbb{Z}$.",
+          "ordering": 3,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "56789012-5678-4901-2345-678901234567",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 6,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "الدالة العددية $f$ معرفة على $[0; +\\infty[$ كما يلي: $f(x) = \\frac{2x^2}{x+4}$. المتتالية $(U_n)$ معرفة بـ: $U_0 = 3$ ومن أجل كل عدد طبيعي $n$؛ $U_{n+1} = f(U_n)$.",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 4.5,
+      "has_figure": true,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "b4c5d6e7-f8a9-4b4c-1d5e-f6a7b8c9d0e1",
+          "exercise_id": "56789012-5678-4901-2345-678901234567",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$؛ $0 \\le U_n \\le 3$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "من أجل $n=0$ محققة. نفرض صحتها لـ $n$ وبما أن $f$ متزايدة فإن $f(0) \\le f(U_n) \\le f(3)$ أي $0 \\le U_{n+1} \\le \\frac{18}{7} < 3$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4c5d-2e6f-a7b8c9d0e1f2",
+          "exercise_id": "56789012-5678-4901-2345-678901234567",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$؛ $0 \\le U_n \\le 3(\\frac{6}{7})^n$.",
+          "marks": 0.75,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": "باستخدام النتيجة $U_{n+1} \\le \\frac{6}{7} U_n$ والبرهان بالتراجع.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "67890123-6789-4012-3456-789012345678",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 7,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. $(\\Delta)$ المستقيم الذي يشمل النقطة $A(1;1;3)$ و $\\vec{u}(1;2;-2)$ شعاع توجيه له. $(\\Delta')$ المستقيم المعرف بجملة المعادلتين: $\\begin{cases} x + z = 0 \\\\ y = 3 \\end{cases}$.",
+      "topic": "geometrie",
+      "concepts": [
+        "droites",
+        "plans",
+        "distances",
+        "equations_cartesiennes",
+        "parametriques"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "d6e7f8a9-b0c1-4d6e-9f7a-b8c9d0e1f2a3",
+          "exercise_id": "67890123-6789-4012-3456-789012345678",
+          "label": "1",
+          "sub_label": null,
+          "statement": "جد تمثيلا وسيطيا لكل من المستقيمين $(\\Delta)$ و $(\\Delta')$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "$(\\Delta): \\begin{cases} x = 1+t \\\\ y = 1+2t \\\\ z = 3-2t \\end{cases}$ و $(\\Delta'): \\begin{cases} x = -t' \\\\ y = 3 \\\\ z = t' \\end{cases}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4e7f-0a8b-c9d0e1f2a3b4",
+          "exercise_id": "67890123-6789-4012-3456-789012345678",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بيّن أن معادلة المستوي $(P)$ الذي يشمل $(\\Delta')$ ويوازي $(\\Delta)$ هي: $2x + y + 2z - 3 = 0$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "الشعاع الناظمي $\\vec{n} = \\vec{u} \\wedge \\vec{v}$ حيث $\\vec{v}(-1; 0; 1)$. نجد $\\vec{n}(2; 1; 2)$. المعادلة من الشكل $2x+y+2z+d=0$. بالتعويض بنقطة من $(\\Delta')$ نجد $d=-3$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "78901234-7890-4123-4567-890123456789",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "number": 4,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "1) $f$ الدالة العددية المعرفة على المجال $]0; +\\infty[$ بـ: $f(x) = (1 + 2\\ln x)(-1 + \\ln x)$.\n2) $g$ الدالة العددية المعرفة على المجال $]0; +\\infty[$ بـ: $g(x) = 1 - \\ln x$.",
+      "topic": "analyse",
+      "concepts": [
+        "fonction_logarithme",
+        "etude_de_fonction",
+        "primitives",
+        "calcul_integral",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 5.5,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": 2
+      },
+      "parts": [
+        {
+          "id": "f8a9b0c1-d2e3-4f8a-1b9c-d0e1f2a3b4c5",
+          "exercise_id": "78901234-7890-4123-4567-890123456789",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "ادرس تغيرات الدالة $f$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "النهايات عند $0$ و $+\\infty$ هي $+\\infty$. المشتقة $f'(x) = \\frac{-1+4\\ln x}{x}$. متناقصة على $]0; e^{1/4}]$ ومتزايدة على $[e^{1/4}; +\\infty[$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4a9b-2c0d-e1f2a3b4c5d6",
+          "exercise_id": "78901234-7890-4123-4567-890123456789",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "احسب العدد: $\\int_{1/e}^e [f(x) - g(x)] dx$.",
+          "marks": 0.5,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "النتيجة هي $-\\frac{8}{e}$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1a2b3c4-d5e6-4f1a-8b2c-d3e4f5a6b7c8",
+      "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc",
+      "exercise_ref": 6,
+      "part_ref": "2-أ",
+      "figure_type": "graph",
+      "description": "تمثيل بياني للدالة $f(x) = \\frac{2x^2}{x+4}$ (المنحنى $C_f$) والمستقيم $(\\Delta)$ ذو المعادلة $y=x$ على المجال $[0; 4]$، يظهر تدرج المحاور والمنحنى المتزايد.",
+      "source_page": 3
+    }
+  ],
+  "exam_id": "d4b7d1b8-5589-4f91-8bfd-2c0df7c0ecbc"
+}

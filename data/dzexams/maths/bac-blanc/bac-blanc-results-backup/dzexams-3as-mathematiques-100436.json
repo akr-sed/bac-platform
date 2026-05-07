@@ -1,0 +1,1022 @@
+{
+  "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+  "exercises": [
+    {
+      "id": "1e72322a-4131-411a-821b-417641041071",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 1,
+      "title": null,
+      "statement": null,
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "equations_complexes",
+        "forme_trigonometrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "transformations_plan",
+        "rotation",
+        "geometrie"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041072",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041071",
+          "label": "1",
+          "sub_label": null,
+          "statement": "$p(z)$ كثير حدود حيث : $p(z) = z^4 + 6z^3 +30z^2 + 48z + 40$\n- بين أنه من أجل كل عدد مركب $z$ لدينا: $p(z) = (z^2+1-i)g(z)$ حيث $g(z)$ كثير حدود يطلب تعيينه.\n- تحقق ان $g(-1-i) = 0$ ثم حل في $\\mathbb{C}$ المعادلة $p(z) = 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041073",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041071",
+          "label": "2",
+          "sub_label": null,
+          "statement": "- نعتبر في المستوي المركب المنسوب الى معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ النقط :\n$A, B, C$ و $D$ صور الاعداد المركبة : $z_A = -2 + 4i$, $z_B = -2 - 4i$, $z_C = 2 + 3i$, $z_D = 3i$ على الترتيب .\n- اكتب العدد المركب $Z$ حيث $Z = z_A + z_B + z_C$ على شكله المثلثي ثم الاسي\n- احسب $(\\frac{Z}{\\sqrt{2}})^{2011}$\n- عين مجموعة الاعداد الطبيعية $n$ حتى يكون العدد $(\\frac{Z}{\\sqrt{2}})^n$ عددا حقيقيا\n- عين مجموعة النقط $M$ صور العدد المركب $z$ حيث: $\\arg(\\frac{z-z_A}{z-z_B}) = \\frac{\\pi}{2} + k\\pi$ مع $k \\in \\mathbb{Z}$\n- عين العدد المركب $z_F$ لاحقة النقطة $F$ حيث : $\\frac{z_F-z_C}{z_F-z_A} = i$ ثم استنتج طبيعة المثلث $AFC$\n- عين مجموعة النقط $M$ من المستوي صور العدد المركب $Z'$ حيث: $Z' = z_A + ke^{i\\frac{\\pi}{3}}$ مع $k \\in \\mathbb{R}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041074",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 2,
+      "title": null,
+      "statement": "في الفضاء المنسوب الى معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j}, \\vec{k})$ نعتبر النقط :\n$A(1,1,0)$, $B(1,2,1)$, $C(3,-1,2)$",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "positions_relatives",
+        "produit_scalaire",
+        "plans",
+        "equations_cartesiennes",
+        "droites",
+        "parametriques",
+        "distances",
+        "points"
+      ],
+      "difficulty": "medium",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041075",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041074",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بين أن النقط $A, B, C$ ليست على استقامية .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041076",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041074",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "بين أن الشعاع $\\vec{n}(2,1,-1)$ عمودي على المستوي $(ABC)$ ثم استنتج معادلة $(ABC)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041077",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041074",
+          "label": "2",
+          "sub_label": null,
+          "statement": "- نعتبر المستويين $(P)$ و $(Q)$ معادلتهما : $x+2y-z-4=0$ و $2x+3y-2z-5=0$ على الترتيب.\n- بين أن $(P)$ ، $(Q)$ يتقاطعان وفق مستقيم $(\\Delta)$ ثم عين تمثيلا وسيطيا للمستقيم $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041078",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041074",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بين ان تقاطع المستويات $(ABC)$ ، $(P)$ ، $(Q)$ هي نقطة يطلب تعيين احداثياتها",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041079",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041074",
+          "label": "4",
+          "sub_label": null,
+          "statement": "عين المسافة بين النقطة $A$ والمستقيم $(\\Delta)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041080",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 3,
+      "title": null,
+      "statement": null,
+      "topic": "arithmetique",
+      "concepts": [
+        "congruences",
+        "raisonnement_par_recurrence",
+        "nombres_premiers",
+        "pgcd",
+        "theoreme_bezout",
+        "equations_diophantiennes"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "concept_not_in_list": "numeration_bases"
+      },
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041081",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "1",
+          "sub_label": null,
+          "statement": "عين الاعداد الصحيحة $x$ التي تحقق: $x^2 - x + 6 \\equiv 0 \\pmod{9}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041082",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "2",
+          "sub_label": null,
+          "statement": "أدرس تبعا لقيم العدد الطبيعي $n$ باقي القسمة الاقليدية للعدد $7^n$ على $9$ ، ثم بين أنه من أجل كل عدد طبيعي $n$ أن : $7^{2n} \\equiv 4 \\pmod{9}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041083",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "3",
+          "sub_label": null,
+          "statement": "استنتج تبعا لقيم $n$ الطبيعية باقي القسمة الاقليدية للعدد $4^n$ على $9$",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041084",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "4",
+          "sub_label": null,
+          "statement": "ماهو باقي قسمة العدد $5^{2010} + 25^{2011}$ على $9$",
+          "marks": null,
+          "depends_on": [
+            "2",
+            "3"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041085",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "5",
+          "sub_label": null,
+          "statement": "عين الاعداد الطبيعية $n$ التي يكون من أجلها العدد $7^{2n} - 7^n + 6$ مضاعف للعدد $9$",
+          "marks": null,
+          "depends_on": [
+            "1",
+            "2"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041086",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041080",
+          "label": "6",
+          "sub_label": null,
+          "statement": "عين الثنائيات الطبيعية $(x,y)$ بحيث : $7^x + 4^y \\equiv 2 \\pmod{9}$",
+          "marks": null,
+          "depends_on": [
+            "2",
+            "3"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041087",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 4,
+      "title": null,
+      "statement": null,
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "fonction_logarithme",
+        "limites",
+        "branches_infinies",
+        "representation_graphique",
+        "theoreme_valeurs_intermediaires",
+        "continuite",
+        "calcul_integral",
+        "aires",
+        "equations",
+        "fonction_exponentielle",
+        "positions_relatives"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "concept_not_in_list": "points_inflexion"
+      },
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041088",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+          "label": "I",
+          "sub_label": null,
+          "statement": "نعتبر الدالة العددية $g$ للمتغير الحقيقي $x$ والمعرفة على $]-1, +\\infty[$ كمايلي:\n$g(x) = (x+1)^2 - 1 + \\ln(x+1)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041089",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "I",
+              "sub_label": "1",
+              "statement": "ادرس تغيرات $g$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041090",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "I",
+              "sub_label": "2",
+              "statement": "احسب $g(0)$ ثم استنتج إشارة $g(x)$ حسب قيم $x$ من $]-1, +\\infty[$ .",
+              "marks": null,
+              "depends_on": [
+                "I-1"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041091",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+          "label": "II",
+          "sub_label": null,
+          "statement": "الدالة العددية $f$ للمتغير الحقيقي $x$ والمعرفة على المجال $]-1, +\\infty[$ بـ :\n$f(x) = x - \\frac{\\ln(x+1)}{x+1}$\nليكن $(C_f)$ تمثيلها البياني في مستوي منسوب الى معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041092",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "1",
+              "statement": "احسب $\\lim_{x \\to -1} f(x)$ ، $\\lim_{x \\to +\\infty} f(x)$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041093",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "2",
+              "statement": "بين أن من أجل كل $x$ من $D_f$ : $f'(x) = \\frac{g(x)}{(x+1)^2}$ ثم استنتج اتجاه تغير الدالة $f$\nشكل جدول تغيرات $f$",
+              "marks": null,
+              "depends_on": [
+                "I-2"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041094",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "3",
+              "statement": "بين أن المنحنى $(C_f)$ يقبل مماسا $(T)$ معامل توجيهه $1$ يطلب كتابة معادلته",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041095",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "4",
+              "statement": "احسب $\\lim_{x \\to +\\infty} (f(x) - x)$ ، ماذا تستنتج بيانيا",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041096",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "5",
+              "statement": "$(\\Delta)$ مستقيم معادلته $y = x$ . ادرس وضعية $(C_f)$ بالنسبة للمستقيم $(\\Delta)$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041097",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "6",
+              "statement": "ارسم $(\\Delta)$ ، $(T)$ و $(C_f)$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041098",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "7",
+              "statement": "$\\lambda$ عدد حقيقي موجب تماما. احسب $S(\\lambda)$ مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ والمستقيمات ذات المعادلات : $y = x$ و $y = 0$ و $x = 0$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041099",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041087",
+              "label": "II",
+              "sub_label": "8",
+              "statement": "$m$ وسيط حقيقي . ناقش بيانيا وحسب قيم الوسيط الحقيقي $m$ عدد حلول المعادلة :\n$m(x+1) + \\ln(x+1) = 0$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041100",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 1,
+      "title": null,
+      "statement": "نعتبر الدالة $f$ المعرفة على $]-\\infty, 6[$ بـ: $f(x) = \\frac{9}{6-x}$\n$(u_n)$ متتالية عددية معرفة على $\\mathbb{N}$ بـ:\n$u_0 = -3$\n$u_{n+1} = f(u_n)$",
+      "topic": "suites",
+      "concepts": [
+        "representation_graphique",
+        "suites_recurrentes",
+        "convergence",
+        "raisonnement_par_recurrence",
+        "suites_arithmetiques",
+        "calcul_somme"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": true,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "missing_sub_label": "د"
+      },
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041101",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "ارسم في معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ المستقيم $(\\Delta)$ ذي المعادلة $y = x$ والمنحنى $(C_f)$ الممثل للدالة $f$ على المجال $]-\\infty, 6[$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041102",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "باستعمال الرسم السابق مثل على حامل محور الفواصل وبدون حساب الحدود : $u_0, u_1, u_2, u_3$",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041103",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "1",
+          "sub_label": "جـ",
+          "statement": "ضع تخمينا حول اتجاه تغير $(u_n)$ وتقاربها.",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041104",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أن من أجل كل عدد طبيعي $n$ : $u_n < 3$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041105",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "استنتج اتجاه تغير $(u_n)$ . هل $(u_n)$ متقاربة ؟ التبرير",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041106",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+          "label": "3",
+          "sub_label": null,
+          "statement": "نعتبر المتتالية $(v_n)$ المعرفة على $\\mathbb{N}$ كمايلي: $v_n = \\frac{1}{u_n-3}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041107",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "برهن أن المتتالية $(v_n)$ حسابية يطلب تحديد أساسها $r$ وحدها الاول $v_0$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041108",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "اكتب عبارة $v_n$ بدلالة $n$ ثم استنتج عبارة $u_n$",
+              "marks": null,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041109",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+              "label": "3",
+              "sub_label": "جـ",
+              "statement": "احسب $\\lim_{n \\to +\\infty} u_n$",
+              "marks": null,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041110",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041100",
+              "label": "3",
+              "sub_label": "هـ",
+              "statement": "احسب المجموعين $S_n = v_0 + v_1 + \\dots + v_n$ و $S'_n = v_0 u_0 + v_1 u_1 + \\dots + v_n u_n$",
+              "marks": null,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041111",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 2,
+      "title": null,
+      "statement": null,
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_algebrique",
+        "rotation",
+        "transformations_plan",
+        "forme_exponentielle",
+        "homothetie",
+        "positions_relatives",
+        "vecteurs"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041112",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+          "label": "1",
+          "sub_label": null,
+          "statement": "نعتبر في مجموعة الاعداد المركبة $\\mathbb{C}$ المعادلة :\n$(E)\\dots z^3 - (4+i)z^2 + (13+4i)z - 13i = 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041113",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "برهن ان العدد $i$ حل للمعادلة",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041114",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "عين الاعداد الحقيقية $a, b$ و $c$ بحيث من أجل كل عدد مركب $z$ لدينا:\n$z^3 - (4+i)z^2 + (13+4i)z - 13i = (z-i)(az^2 + bz + c)$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041115",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+              "label": "1",
+              "sub_label": "جـ",
+              "statement": "حل في $\\mathbb{C}$ المعادلة $(E)$",
+              "marks": null,
+              "depends_on": [
+                "1-أ",
+                "1-ب"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041116",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+          "label": "2",
+          "sub_label": null,
+          "statement": "نعتبر في المستوي المركب المزود بمعلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ النقط $A, B$ و $C$\nلواحقها : $z_A = 2+3i$, $z_B = 2-3i$, $z_C = i$ على الترتيب .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041117",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "ليكن $R$ الدوران الذي مركزه النقطة $B$ وزاويته $\\frac{\\pi}{4}$ . عين لاحقة النقطة $A'$ صورة $A$ بالدوران $R$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041118",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041111",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "برهن ان النقط $A, B, C$ على استقامية ثم عين الكتابة المركبة للتحاكي ذو المركز $B$ والذي يحول $C$ الى $A$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041119",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 3,
+      "title": null,
+      "statement": null,
+      "topic": "arithmetique",
+      "concepts": [
+        "nombres_premiers",
+        "pgcd",
+        "theoreme_bezout",
+        "equations_diophantiennes",
+        "congruences"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "concept_not_in_list": "numeration_bases"
+      },
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041120",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041119",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين ان العدد $409$ أولي ثم استنتج أن $409$ و $1207$ أوليان فيما بينهما",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041121",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041119",
+          "label": "2",
+          "sub_label": null,
+          "statement": "لتكن المعادلة $(1): 409x - 1207y = 20$ ، $x$ و $y$ مجهولان من $\\mathbb{N}$\n- بين أن الثنائية $(1210,410)$ حلا للمعادلة $(1)$\n- استنتج في $\\mathbb{N} \\times \\mathbb{N}$ مجموعة حلول المعادلة $(1)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041122",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041119",
+          "label": "3",
+          "sub_label": null,
+          "statement": "عين العدد الطبيعي $n$ الذي يكتب $\\overline{\\alpha\\beta020}^5$ في نظام التعداد ذي الاساس $5$ ويكتب $\\overline{\\beta\\alpha\\beta50}^6$ في نظام التعداد ذي الاساس $6$ حيث $\\alpha$ و $\\beta$ عددان طبيعيان.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041123",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "number": 4,
+      "title": null,
+      "statement": null,
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "fonction_exponentielle",
+        "limites",
+        "theoreme_valeurs_intermediaires",
+        "continuite",
+        "representation_graphique",
+        "branches_infinies",
+        "positions_relatives",
+        "calcul_integral",
+        "aires",
+        "equations"
+      ],
+      "difficulty": "hard",
+      "marks": null,
+      "has_figure": true,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "concept_not_in_list": "points_inflexion"
+      },
+      "parts": [
+        {
+          "id": "1e72322a-4131-411a-821b-417641041124",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+          "label": "I",
+          "sub_label": null,
+          "statement": "$g$ دالة عددية معرفة على $\\mathbb{R}$ كمايلي: $g(x) = (x-1)e^x + 2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041125",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "I",
+              "sub_label": "1",
+              "statement": "ادرس تغيرات الدالة $g$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041126",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "I",
+              "sub_label": "2",
+              "statement": "بين أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ في المجال $]-0.38, -0.37[$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041127",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "I",
+              "sub_label": "3",
+              "statement": "ادرس إشارة $g(x)$ حسب قيم $x$ من $\\mathbb{R}$ .",
+              "marks": null,
+              "depends_on": [
+                "I-1",
+                "I-2"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041128",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+          "label": "II",
+          "sub_label": null,
+          "statement": "$f$ دالة عددية معرفة على $\\mathbb{R}$ كمايلي: $f(x) = 2x + 1 - xe^{-x}$ و $(C_f)$ تمثيلها البياني في معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ وحدة الطول $2cm$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041129",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "1",
+              "statement": "ادرس تغيرات $f$",
+              "marks": null,
+              "depends_on": [
+                "I-3"
+              ],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041130",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "2",
+              "statement": "بين أن المستقيم $(d)$ ذي المعادلة $y = 2x+1$ مقارب للمنحنى عند $+\\infty$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041131",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "3",
+              "statement": "ادرس وضعية $(C_f)$ بالنسبة للمستقيم $(d)$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041132",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "4",
+              "statement": "بين أن $(C_f)$ يقبل نقطة انعطاف يطلب تعيينها",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041133",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "5",
+              "statement": "بين أن $f(\\alpha) = \\frac{2\\alpha^2 + \\alpha - 1}{\\alpha - 1}$",
+              "marks": null,
+              "depends_on": [
+                "I-2"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041134",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "6",
+              "statement": "ارسم $(d)$ و $(C_f)$ ناخذ $\\alpha = -0.375$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041135",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "II",
+              "sub_label": "7",
+              "statement": "احسب مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ والمستقيمات ذات المعادلات $y = 2x+1$ و $x = 0$ و $x = 2$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "1e72322a-4131-411a-821b-417641041136",
+          "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+          "label": "III",
+          "sub_label": null,
+          "statement": "$(\\Delta_\\beta)$ مستقيم معادلته $y = 2x + \\beta$ حيث $\\beta$ عدد حقيقي .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "1e72322a-4131-411a-821b-417641041137",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "III",
+              "sub_label": "1",
+              "statement": "عين $\\beta$ حتى يكون $(\\Delta_\\beta)$ مماسا للمنحنى $(C_f)$ عند نقطة يطلب تعيين احداثيتها",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "1e72322a-4131-411a-821b-417641041138",
+              "exercise_id": "1e72322a-4131-411a-821b-417641041123",
+              "label": "III",
+              "sub_label": "2",
+              "statement": "ناقش بيانيا حسب قيم الوسيط الحقيقي $\\beta$ عدد حلول المعادلة : $e^x - \\frac{1}{x} + \\beta - 1 = 0$",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "1e72322a-4131-411a-821b-417641041139",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "exercise_ref": 1,
+      "part_ref": "1-أ",
+      "figure_type": "graph",
+      "description": "Graph of the function $f(x) = \\frac{9}{6-x}$ and the line $y=x$ in an orthonormal coordinate system $(O, \\vec{i}, \\vec{j})$ over the interval $]-\\infty, 6[$.",
+      "source_page": 3
+    },
+    {
+      "id": "1e72322a-4131-411a-821b-417641041140",
+      "exam_id": "a212c635-a88b-4341-b0e8-65ef55cd40ed",
+      "exercise_ref": 4,
+      "part_ref": "II-6",
+      "figure_type": "graph",
+      "description": "Graph of the function $f(x) = 2x + 1 - xe^{-x}$ and its asymptote $y=2x+1$ in an orthonormal coordinate system $(O, \\vec{i}, \\vec{j})$ with a unit length of $2cm$. The value $\\alpha = -0.375$ should be used.",
+      "source_page": 4
+    }
+  ]
+}
