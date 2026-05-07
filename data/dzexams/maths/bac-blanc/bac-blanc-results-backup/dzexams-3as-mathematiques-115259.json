@@ -1,0 +1,1165 @@
+{
+  "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+  "exercises": [
+    {
+      "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 1,
+      "title": "التمرين الأول",
+      "statement": "نعتبر المتتالية العددية $(u_n)$ المعرفة على $\\mathbb{N}$ بـ $u_0 = 2$ ومن أجل كل عدد طبيعي $n$ كما يلي: $u_{n+1} = \\frac{2}{3}u_n + \\frac{1}{3}n + 1$.",
+      "topic": "suites",
+      "concepts": [
+        "suites_recurrentes",
+        "suites_arithmetiques",
+        "suites_geometriques",
+        "convergence",
+        "limites",
+        "raisonnement_par_recurrence"
+      ],
+      "difficulty": "medium",
+      "marks": "04 نقاط",
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أحسب $u_1, u_2, u_3$. ما هو تخمينك حول إتجاه تغير المتتالية $(u_n)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "2",
+          "sub_label": null,
+          "statement": "برهن أنه من أجل كل عدد طبيعي $n$: $u_n \\le n+3$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بين أنه من أجل كل عدد طبيعي $n$: $u_{n+1} - u_n = \\frac{1}{3}(n+3-u_n)$ ، ثم استنتج إتجاه تغير المتتالية $(u_n)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "4",
+          "sub_label": "a",
+          "statement": "لتكن $(v_n)$ المتتالية العددية المعرفة من أجل كل عدد طبيعي $n$ بـ: $v_n = u_n - n$. أحسب $v_0$ ثم بين أن المتتالية $(v_n)$ متتالية هندسية أساسها $\\frac{2}{3}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "4",
+          "sub_label": "b",
+          "statement": "عبر عن $v_n$ بدلالة $n$ ثم أكتب $u_n$ بدلالة $n$.",
+          "marks": null,
+          "depends_on": [
+            "4-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "4",
+          "sub_label": "c",
+          "statement": "أحسب $\\lim_{n \\to +\\infty} u_n$ ، ماذا تستنتج؟",
+          "marks": null,
+          "depends_on": [
+            "4-b"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "exercise_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+          "label": "5",
+          "sub_label": "a",
+          "statement": "نضع $S_n = u_0 + u_1 + ... + u_n$ و $T_n = \\frac{S_n}{n+1}$. عبر عن $S_n$ بدلالة $n$ ثم أحسب $\\lim_{n \\to +\\infty} T_n$.",
+          "marks": null,
+          "depends_on": [
+            "4-b"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 2,
+      "title": "التمرين الثاني",
+      "statement": "الفضاء منسوب إلى معلم متعامد و متجانس $(O, \\vec{i}, \\vec{j}, \\vec{k})$. نعتبر النقط $A(0,1,2)$, $B(2,-1,-2)$, $C(0,1,-2)$ والمستوي $(P)$ الذي: $x+y+z-3=0$ معادلة له.",
+      "topic": "geometrie",
+      "concepts": [
+        "repere_orthonorme",
+        "plans",
+        "droites",
+        "sphere",
+        "equations_cartesiennes",
+        "positions_relatives",
+        "distances",
+        "vecteurs"
+      ],
+      "difficulty": "medium",
+      "marks": "04 نقاط",
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن النقط $A, B$ و $C$ تنتمي إلى $(P)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "نعتبر $(S)$ مجموعة النقط $M(x,y,z)$ من الفضاء التي تحقق: $x^2+y^2+z^2-4x-2y+4z+5=0$. بين أن $(S)$ سطح كرة يطلب تعيين مركزها $I$ و نصف قطرها $R$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "بين أن $(S)$ و $(P)$ يتقاطعان وفق دائرة $(C)$ يطة بالمثلث $ABC$.",
+          "marks": null,
+          "depends_on": [
+            "2-a",
+            "1"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "2",
+          "sub_label": "c",
+          "statement": "بين أن المثلث $ABC$ متقايس الأضلاع.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "ليكن $(\\Delta)$ المستقيم الذي يشمل $I$ و العمودي على $(P)$. عين تمثيلا وسيطيا لـ $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "عين احداثيات $G$ نقطة تقاطع $(\\Delta)$ و $(P)$.",
+          "marks": null,
+          "depends_on": [
+            "3-a",
+            "1"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+          "label": "3",
+          "sub_label": "c",
+          "statement": "تحقق أن $G$ مركز ثقل المثلث $ABC$ ثم استنتج مركز الدائرة $(C)$ و نصف قطرها.",
+          "marks": null,
+          "depends_on": [
+            "3-b",
+            "2-c"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 3,
+      "title": "التمرين الثالث",
+      "statement": "",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "equations_complexes",
+        "rotation",
+        "transformations_plan",
+        "conjugue"
+      ],
+      "difficulty": "medium",
+      "marks": "05 نقاط",
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{R}$ المعادلة: $z^2 - 8\\sqrt{3}z + 64 = 0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "نعتبر في المستوي المركب المنسوب إلى معلم متعامد و متجانس $(O, \\vec{u}, \\vec{v})$ ، وحدة الطول $1cm$ ، النقط $A, B, C$ التي لاحقاتها على الترتيب: $z_A = 4\\sqrt{3} - 4i$, $z_B = 4\\sqrt{3} + 4i$, $z_C = \\sqrt{3} + i$. أكتب كل من $z_A$ و $z_B$ على الشكل الأسي.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "عين العدد الطبيعي $n$ : $\\left(\\frac{z_B}{z_A}\\right)^n$ حقيقي.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "2",
+          "sub_label": "c",
+          "statement": "هل $\\left(\\frac{z_B}{z_A}\\right)^{2015}$ حقيقي؟",
+          "marks": null,
+          "depends_on": [
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "2",
+          "sub_label": "d",
+          "statement": "عين طبيعة المثلث $OAB$.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "3",
+          "sub_label": null,
+          "statement": "اكتب العبارة المركبة للدوران $r$ الذي مركزه $O$ و زاويته $-\\frac{\\pi}{3}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "4",
+          "sub_label": "a",
+          "statement": "أحسب لاحقة $D$ صورة $C$ بالدوران $r$.",
+          "marks": null,
+          "depends_on": [
+            "3"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "5d6e7f8a-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "4",
+          "sub_label": "b",
+          "statement": "بين أن لاحقة $G$ مرجح الجملة $\\{(O, -1); (D, 1); (B, 1)\\}$ هي $z_G = 4\\sqrt{3} + 6i$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "6e7f8a9b-0c1d-2e3f-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "4",
+          "sub_label": "c",
+          "statement": "اثبت ان النقط $D, C$ و $G$ على استقامة واحدة.",
+          "marks": null,
+          "depends_on": [
+            "4-a",
+            "4-b"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "7f8a9b0c-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "label": "4",
+          "sub_label": "d",
+          "statement": "عين مجموعة النقط $M$ ذات اللاحقة $z$ حيث: $|z^2 + z_A^2 - z_B^2 + z_C^2 - z_D^2| = 20$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 4,
+      "title": "التمرين الرابع",
+      "statement": "المستوى منسوب إلى المعلم المتعامد $(O, \\vec{i}, \\vec{j})$ (الوحدة $2cm$).",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "limites",
+        "branches_infinies",
+        "theoreme_valeurs_intermediaires",
+        "fonction_exponentielle",
+        "representation_graphique",
+        "primitives",
+        "calcul_integral",
+        "aires"
+      ],
+      "difficulty": "medium",
+      "marks": "07 نقاط",
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "9b0c1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "I",
+          "sub_label": "1",
+          "statement": "الدالة $g$ المعرفة على $\\mathbb{R}$ بـ: $g(x) = 1 - (x^2 - 2x + 2)e^{-x}$. أدرس تغيرات الدالة $g$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "0c1d2e3f-4a5b-6c7d-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "I",
+          "sub_label": "2",
+          "statement": "بين أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ حيث $0.35 < \\alpha < 0.36$ ثم استنتج إشارة $g(x)$.",
+          "marks": null,
+          "depends_on": [
+            "I-1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "1",
+          "statement": "الدالة $f$ المعرفة على $\\mathbb{R}$ بـ: $f(x) = x - 1 + (x^2 - 2x + 2)e^{-x}$ و ليكن $(C_f)$ تمثيلها البياني. أدرس تغيرات الدالة $f$.",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "2-a",
+          "statement": "بين أن $f(\\alpha) = \\alpha(1+2e^{-\\alpha})$.",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "3f4a5b6c-7d8e-9f0a-1b2c-3d4e5f6a7b8c",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "2-b",
+          "statement": "عين حصرا لـ $f(\\alpha)$.",
+          "marks": null,
+          "depends_on": [
+            "II-2-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "3-a",
+          "statement": "بين أن المستقيم $(\\Delta)$ ذو المعادلة $y = x-1$ مستقيم مقارب مائل للمنحنى $(C_f)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "5b6c7d8e-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "3-b",
+          "statement": "أدرس وضعية المنحنى $(C_f)$ بالنسبة إلى المستقيم $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [
+            "II-3-a"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "6c7d8e9f-0a1b-2c3d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "4",
+          "statement": "أكتب معادلة للمماس $(T)$ للمنحنى $(C_f)$ في النقطة ذات الفاصلة $x_0 = 0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "5",
+          "statement": "أنشيء كل من $(T)$, $(\\Delta)$ و $(C_f)$ على المجال $[-1; +\\infty[$.",
+          "marks": null,
+          "depends_on": [
+            "II-3-a",
+            "II-4"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "6-a",
+          "statement": "عين الأعداد الحقيقية $a, b$ و $c$ حتى تكون الدالة $F$ المعرفة بـ: $F(x) = (ax^2+bx+c)e^{-x}$ دالة أصلية للدالة: $x \\mapsto (x^2+2)e^{-x}$ على $\\mathbb{R}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "9f0a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "6-b",
+          "statement": "أحسب بدلالة $\\alpha$ المساحة $A(\\alpha)$ للحيز المستوي المحدد بـ $(C_f)$ و $(\\Delta)$ و المستقيمين اللذين معادلتيهما $x = -\\alpha$ و $x = 0$.",
+          "marks": null,
+          "depends_on": [
+            "II-3-a"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "II",
+          "sub_label": "6-c",
+          "statement": "بين أن $A(\\alpha) = 4e^{2\\alpha} + 8e^{-\\alpha} - 16$.",
+          "marks": null,
+          "depends_on": [
+            "II-6-b"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 1,
+      "title": "التمرين الأول",
+      "statement": "نعتبر المتتالية $(u_n)$ المعرفة على $\\mathbb{N}$ كمايلي: $u_0 = 6$ و $u_{n+1} = \\frac{2}{3}u_n + \\frac{1}{3}n + 1$.",
+      "topic": "suites",
+      "concepts": [
+        "suites_recurrentes",
+        "suites_arithmetiques",
+        "suites_geometriques",
+        "convergence",
+        "limites",
+        "raisonnement_par_recurrence",
+        "fonction_logarithme"
+      ],
+      "difficulty": "medium",
+      "marks": "4,5 نقطة",
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "1",
+          "sub_label": "a",
+          "statement": "أرسم في معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ المستقيمين $(\\Delta): y = x$ و $(D): y = \\frac{2}{3}x + 1$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "1",
+          "sub_label": "b",
+          "statement": "مثل على محور الفواصل الحدود $u_0, u_1, u_2, u_3$. ضع تخمينا حول اتجاه تغير المتتالية $(u_n)$ و تقاربها.",
+          "marks": null,
+          "depends_on": [
+            "1-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "1",
+          "sub_label": "c",
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $u_n > 3$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "1",
+          "sub_label": "d",
+          "statement": "أدرس اتجاه تغير المتتالية $(u_n)$. استنتج تقارب المتتالية $(u_n)$.",
+          "marks": null,
+          "depends_on": [
+            "1-c"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "نعتبر من أجل كل عدد طبيعي $n$ المتتالية $(v_n)$ حيث: $v_n = u_n - n - 3$. بين أن $(v_n)$ متتالية هندسية أساسها $q = \\frac{2}{3}$ يطلب تعيين حدها الأول.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "برهن أنه من أجل كل عدد طبيعي $n$: $u_n = v_n + n + 3$ ، استنتج $\\lim_{n \\to +\\infty} u_n$.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "لتكن $(w_n)$ متتالية معرفة على $\\mathbb{N}$ كمايلي: $w_n = \\ln v_n$. بين أن $(w_n)$ متتالية حسابية يطلب إيجاد أساسها و حدها الأول.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "نعتبر المجموع: $S_n = \\frac{u_0}{v_0} + \\frac{u_1}{v_1} + ... + \\frac{u_n}{v_n}$. بين أن $S_n = 2\\left(\\frac{3}{2}\\right)^{n+1} + n - 1$.",
+          "marks": null,
+          "depends_on": [
+            "2-b",
+            "3-a"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 2,
+      "title": "التمرين الثاني",
+      "statement": "في الفضاء المنسوب إلى المعلم المتعامد و المتجانس $(O; \\vec{i}; \\vec{j}; \\vec{k})$ ، نعتبر النقط: $A(1,2,7)$, $B(2,0,2)$, $C(3,1,3)$, $D(3,-6,1)$ و $E(4,-8,-4)$.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "plans",
+        "droites",
+        "equations_cartesiennes",
+        "parametriques",
+        "positions_relatives"
+      ],
+      "difficulty": "medium",
+      "marks": "4 نقاط",
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن النقط $A, B$ و $C$ ليست في إستقامية.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "ليكن $\\vec{u}$ شعاعا من الفضاء مركباته $(1, b, c)$ حيث $b$ و $c$ عددان حقيقيان. عين $b$ و $c$ بحيث يكون $\\vec{u}$ شعاعا ناظميا للمستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "استنتج أن: $x - 2y + 2z - 4 = 0$ هي معادلة ديكارتية للمستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "2",
+          "sub_label": "c",
+          "statement": "هل النقطة $D$ تنتمي إلى المستوي $(ABC)$؟",
+          "marks": null,
+          "depends_on": [
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "5d6e7f8a-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "نعتبر المستقيم $(\\Delta)$ الذي تمثيله الوسيطي: $\\begin{cases} x = 2t+3 \\\\ y = -4t+5 \\\\ z = 2t-1 \\end{cases}$, $(t \\in \\mathbb{R})$. هل المستقيم $(\\Delta)$ عمودي على المستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "6e7f8a9b-0c1d-2e3f-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "عين إحداثيات النقطة $H$ نقطة تقاطع المستقيم $(\\Delta)$ والمستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [
+            "3-a",
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "7f8a9b0c-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+          "label": "3",
+          "sub_label": "c",
+          "statement": "ادرس وضعية المستقيم $(DE)$ بالنسبة إلى المستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 3,
+      "title": "التمرين الثالث",
+      "statement": "المستوي المركب منسوب إلى معلم متعامد ومتجانس $(O, \\vec{u}, \\vec{v})$. وحدة الطول $2cm$. نعتبر النقط $A, B, C, G$ لواحقها على الترتيب: $z_A = -1$, $z_B = 2+i\\sqrt{3}$, $z_C = 2-i\\sqrt{3}$, $z_G = 3$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_algebrique",
+        "racines",
+        "module",
+        "argument",
+        "transformations_plan",
+        "similitudes",
+        "rotation",
+        "barycentre",
+        "distances",
+        "aires"
+      ],
+      "difficulty": "medium",
+      "marks": "5 نقاط",
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "9b0c1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "1",
+          "sub_label": "a",
+          "statement": "من أجل كل عدد مركب $z$ نضع: $P(z) = z^3 - 3z^2 + 3z + 7$. احسب $P(-1)$ ثم عين العددين الحقيقيين $a$ و $b$ بحيث يكون: $P(z) = (z+1)(z^2+az+b)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "0c1d2e3f-4a5b-6c7d-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "1",
+          "sub_label": "b",
+          "statement": "حل في $\\mathbb{C}$ المعادلة $P(z) = 0$.",
+          "marks": null,
+          "depends_on": [
+            "1-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "مثل النقط $G, C, B, A$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "عين عمدة للعدد المركب $\\frac{z_A - z_C}{z_G - z_C}$ ثم استنتج طبيعة المثلث $ACG$ و احسب مساحته.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "3f4a5b6c-7d8e-9f0a-1b2c-3d4e5f6a7b8c",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "أثبت أن النقطة $G$ مرجح الجملة المثقلة $\\{(A, -1); (B, 2); (C, 2)\\}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "عين مجموعة النقط $M$ من المستوي بحيث: $\\|-\\vec{MA} + 2\\vec{MB} + 2\\vec{MC}\\| = 12$.",
+          "marks": null,
+          "depends_on": [
+            "3-a"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "5b6c7d8e-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "4",
+          "sub_label": "a",
+          "statement": "نعتبر $S$ التحويل النقطي الذي يرفق بالنقطة $M$ ذات اللاحقة $z$ النقطة $M'$ ذات اللاحقة $z'$ حيث: $z' = (1-i\\sqrt{3})z - i\\sqrt{3}$. تعرف على طبيعة التحويل $S$ و اذكر عناصره المميزة.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "6c7d8e9f-0a1b-2c3d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+          "label": "4",
+          "sub_label": "b",
+          "statement": "عين $G', C', A'$ صور النقط $G, C, A$ على الترتيب بالتحويل $S$ ثم استنتج مساحة المثلث $A'C'G'$.",
+          "marks": null,
+          "depends_on": [
+            "4-a",
+            "2-b"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+      "exam_id": "1b45ae18-de79-44a6-ac51-c3be6627198a",
+      "number": 4,
+      "title": "التمرين الرابع",
+      "statement": "في المستوي المنسوب إلى معلم متعامد ومتجانس $(C_f)$ هو التمثيل البياني للدالة $f$ المعرفة على $\\mathbb{R}^*$ حيث: $f(x) = 2x - 2 + \\ln\\left(\\frac{x^2-2x+2}{x^2}\\right)$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "limites",
+        "branches_infinies",
+        "fonction_logarithme",
+        "representation_graphique",
+        "primitives",
+        "calcul_integral",
+        "aires",
+        "theoreme_valeurs_intermediaires"
+      ],
+      "difficulty": "medium",
+      "marks": "6,5 نقطة",
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أحسب $\\lim_{x \\to 0} f(x)$ ، ثم فسر النتيجة بيانيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "9f0a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "2",
+          "sub_label": null,
+          "statement": "أحسب $\\lim_{x \\to +\\infty} [f(x) - (2x-2)]$ ، وفسر النتيجة بيانيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "بين أنه من أجل كل $x$ من $\\mathbb{R}^*$: $f'(x) = \\frac{2(x-1)(x^2-x+2)}{x(x^2-2x+2)}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "استنتج اشارة $f'(x)$ ثم شكل جدول تغيرات الدالة $f$.",
+          "marks": null,
+          "depends_on": [
+            "3-a"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "3",
+          "sub_label": "c",
+          "statement": "عين حسب قيم $x$ اشارة $f(x)$.",
+          "marks": null,
+          "depends_on": [
+            "3-b"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أدرس الوضع النسبي لـ $(C_f)$ والمستقيم $(\\Delta)$ ذو المعادلة $y = 2x-2$.",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "5",
+          "sub_label": null,
+          "statement": "بين أنه يوجد عدد حقيقي وحيد $\\alpha$ من المجال $\\left[-\\frac{1}{2}; -\\frac{1}{3}\\right]$ حيث: $f(\\alpha) = 0$.",
+          "marks": null,
+          "depends_on": [
+            "3-b"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "6",
+          "sub_label": null,
+          "statement": "عين النقطة من $(C_f)$ التي يكون عندها المماس $(T)$ موازيا للمستقيم $(\\Delta)$. ثم أكتب معادلة له.",
+          "marks": null,
+          "depends_on": [
+            "4"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "7",
+          "sub_label": null,
+          "statement": "أرسم $(\\Delta)$, $(T)$ و $(C_f)$.",
+          "marks": null,
+          "depends_on": [
+            "4",
+            "6"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "8",
+          "sub_label": null,
+          "statement": "ناقش بيانيا ، حسب قيم الوسيط الحقيقي $m$ ، عدد واشارة حلول المعادلة ذات المجهول الحقيقي $x$: $f(x) = 2x+m$.",
+          "marks": null,
+          "depends_on": [
+            "7"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "9",
+          "sub_label": "a",
+          "statement": "$F$ دالة أصلية لـ $f$ على المجال $]0; +\\infty[$. عين اتجاه تغير الدالة $F$.",
+          "marks": null,
+          "depends_on": [
+            "3-c"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "label": "9",
+          "sub_label": "b",
+          "statement": "أعط تفسيرا هندسيا للعدد $\\int_{\\alpha}^{-1} f(x) dx$ دون حسابه.",
+          "marks": null,
+          "depends_on": [
+            "5"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": []
+}

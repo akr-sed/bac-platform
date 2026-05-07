@@ -1,0 +1,588 @@
+{
+  "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+  "exercises": [
+    {
+      "id": "76649964-6864-4694-9694-686499646864",
+      "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "$f$ الدالة العددية المعرفة على $]-3 ; +\\infty[$ كما يلي: $f(x) = \\frac{3x+4}{x+3}$\nليكن $(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j})$. و $(\\Delta)$ المستقيم ذو المعادلة $y = x$\n$(u_n)$ المتتالية العددية المعرفة بحدها الأول $u_0 = -1$، ومن أجل كل عدد طبيعي $n$، $u_{n+1} = f(u_n)$ (أنظر الشكل المقابل)",
+      "topic": "suites",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "suites_geometriques"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "أ",
+          "sub_label": null,
+          "statement": "أعد رسم الشكل المقابل على ورقة الإجابة ثم مثل الحدود $u_0$ ، $u_1$ ، $u_2$ و $u_3$ على محور الفواصل دون حسابها مبرزا خطوط التمثيل ثم ضع تخمينا حول اتجاه تغير المتتالية $(u_n)$ وتقاربها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "ج",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ ، $-1 \\le u_n < 2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "3",
+          "sub_label": null,
+          "statement": "أدرس اتجاه تغير المتتالية $(u_n)$ ثم استنتج أنها متقاربة",
+          "marks": null,
+          "depends_on": [
+            "ج"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "4",
+          "sub_label": null,
+          "statement": "لتكن المتتالية $(v_n)$ المعرفة على $\\mathbb{N}$ بـ: $v_n = \\frac{u_n - 2}{u_n + 2}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "بين أن المتتالية $(v_n)$ هندسية أساسها $\\frac{1}{5}$ يطلب تعيين حدها الأول.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "أكتب كلا من $v_n$ و $u_n$ بدلالة $n$ ، ثم أحسب $\\lim_{n \\to +\\infty} u_n$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "4",
+          "sub_label": "ج",
+          "statement": "أحسب بدلالة $n$ المجموع $S_n$ حيث: $S_n = v_0 + v_1 + \\dots + v_n$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "76649964-6864-4694-9694-686499646864",
+          "label": "4",
+          "sub_label": "د",
+          "statement": "واستنتج بدلالة $n$ الجداء $P_n$ حيث: $P_n = e^{v_0} \\times e^{v_1} \\times \\dots \\times e^{v_n}$",
+          "marks": null,
+          "depends_on": [
+            "4-ج"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "87750075-7975-5705-0705-797500757975",
+      "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "1) حل في $\\mathbb{C}$ المعادلة $(z + \\sqrt{3} - i)(z - 2i)(z^2 - 8\\sqrt{3}z + 64) = 0$\nالمستوي المركب منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$، نعتبر النقط $A$ ، $B$ ، $C$ و $D$ التي لواحقها على الترتيب $z_A = 4\\sqrt{3} - 4i$ ، $z_B = 4\\sqrt{3} + 4i$ ، $z_C = -\\sqrt{3} + i$ ، $z_D = 2i$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "transformations_plan"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "أكتب $z_A$ و $z_B$ على الشكل الأسي .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بين أن العدد $z_B^{1962}$ حقيقي.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "أحسب الأطوال $OA$ ، $OB$ و $AB$ ، واستنتج طبيعة المثلث $OAB$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "3",
+          "sub_label": null,
+          "statement": "نسمي $G$ مرجح الجملة المثقلة $\\{(O, -1); (D, 1); (B, 1)\\}$ ",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "تحقق من وجود $G$ وبين أن لاحقتها $z_G = 4\\sqrt{3} + 6i$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "بين أن الرباعي $OBGD$ متوازي أضلاع .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "87750075-7975-5705-0705-797500757975",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "ماهي طبيعة المثلث $AGC$ ؟",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "98861186-8086-6816-1816-808611868086",
+      "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "تتكون جمعية من 10 رجال و 5 نساء من بينهم رجل واحد اسمه زيد ، نريد تشكيل لجنة مكونة من : رئيس ، نائب ، كاتب و أمينا للمال .",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "probabilite_conditionnelle",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "1",
+          "sub_label": null,
+          "statement": "ماهو عدد اللجان التي يمكن تشكيلها ؟",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "2",
+          "sub_label": null,
+          "statement": "احسب احتمال كل من الأحداث التالية :\n$A$ \" اللجنة تضم زيد في منصب الرئيس \"\n$B$ \" اللجنة تضم ثلاث رجال على الأكثر \"\n$C$ \" اللجنة تضم إمرأتان على الأقل \"",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "3",
+          "sub_label": null,
+          "statement": "علما أن اللجنة تضم إمرأتان على الأقل ، ماهو احتمال أن يكون فيها زيد في منصب الرئيس ؟",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "4",
+          "sub_label": null,
+          "statement": "ليكن $X$ المتغير العشوائي الذي يرفق بكل اختيار عدد الرجال في اللجنة المكونة",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "عين القيم الممكنة للمتغير العشوائي $X$ ثم عرف قانون احتماله",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "أحسب $E(X)$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+          "exercise_id": "98861186-8086-6816-1816-808611868086",
+          "label": "4",
+          "sub_label": "د",
+          "statement": "أحسب احتمال الحدث $\\ln X > 0$",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "09972297-9197-7927-2927-919722979197",
+      "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I- نعتبر الدالة $g$ المعرفة على $]0 ; +\\infty[$ بـ: $g(x) = x^2 + 1 - \\ln x$",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "derivation",
+        "etude_de_fonction",
+        "tableau_de_variation",
+        "fonction_logarithme",
+        "calcul_integral",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "I",
+          "sub_label": "1",
+          "statement": "أحسب نهاية الدالة $g$ عند أطراف مجموعة تعريفها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "I",
+          "sub_label": "2",
+          "statement": "أدرس إتجاه تغير الدالة $g$ ثم شكل جدول تغيراتها .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "I",
+          "sub_label": "3",
+          "statement": "استنتج من أجل كل $x$ من $]0 ; +\\infty[$ إشارة $g(x)$ .",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": null,
+          "statement": "نعتبر الدالة $f$ المعرفة على $]0 ; +\\infty[$ بـ: $f(x) = \\frac{1}{2}x + \\frac{\\ln x}{x}$\nوليكن $(C_f)$ تمثيلها البياني في معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j})$ (وحدة الطول $2cm$)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "1",
+          "statement": "أحسب $\\lim_{x \\to 0^>} f(x)$ ، ثم فسر النتيجة بيانيا .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4d4e-5f6a-7b8c9d0e1f2a",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "2",
+          "statement": "أحسب $\\lim_{x \\to +\\infty} f(x)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "3-أ",
+          "statement": "بين ان المستقيم $(\\Delta)$ ذو المعادلة $y = \\frac{1}{2}x$ مقارب مائل للمنحنى $(C_f)$ بجوار $+\\infty$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "f0a1b2c3-d4e5-4f6a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "3-ب",
+          "statement": "ادرس وضعية المنحنى $(C_f)$ بالنسبة الى المستقيم $(\\Delta)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "4-أ",
+          "statement": "بين أنه من أجل كل $x$ من $]0 ; +\\infty[$ لدينا : $f'(x) = \\frac{g(x)}{x^2}$",
+          "marks": null,
+          "depends_on": [
+            "I"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "4-ب",
+          "statement": "إستنتج اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها",
+          "marks": null,
+          "depends_on": [
+            "II-4-أ"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "5",
+          "statement": "أكتب معادلة المماس $(T)$ للمنحني $(C_f)$ عند النقطة ذات الفاصلة 1 .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "6",
+          "statement": "بين أن المعادلة $f(x) = 0$ حلا وحيدا $\\alpha$ حيث $\\alpha \\in ]\\frac{1}{2} ; 1[$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "II",
+          "sub_label": "7",
+          "statement": "أرسم $(T)$ ، $(\\Delta)$ و $(C_f)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 13,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "III",
+          "sub_label": null,
+          "statement": "نعتبر الدالة $h$ المعرفة على $]0 ; +\\infty[$ بـ : $h(x) = \\frac{1}{2}x^2 + \\frac{1}{2}x + \\frac{1}{2}(\\ln x)^2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 14,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "III",
+          "sub_label": "1",
+          "statement": "أحسب $h'(x)$ ، ماذا تستنتج؟",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 15,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "09972297-9197-7927-2927-919722979197",
+          "label": "III",
+          "sub_label": "2",
+          "statement": "أحسب بالسنتيمتر مربع $S$ مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ والمستقيمات التي معادلاتها $y=0$ ، $x=1$ و $x=e$",
+          "marks": null,
+          "depends_on": [
+            "III-1"
+          ],
+          "solution": null,
+          "ordering": 16,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+      "exam_id": "1dc24e2b-a072-40d2-b86c-ea4a9f823727",
+      "exercise_ref": 1,
+      "part_ref": null,
+      "figure_type": "graph",
+      "description": "التمثيل البياني للدالة f والمستقيم y=x في معلم متعامد ومتجانس. يظهر المنحنى متزايداً ويقطع المستقيم y=x عند نقطة فاصلتها تقريباً 2. المحاور مدرجة من -1 إلى 2.",
+      "source_page": 1
+    }
+  ]
+}
