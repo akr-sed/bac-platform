@@ -1,0 +1,836 @@
+{
+  "exam_metadata": {
+    "id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+    "subject": "mathematics",
+    "source_file": "2009.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2009,
+    "duration_minutes": 270,
+    "total_marks": null,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "7699969a-769a-499a-969a-7699969a769a",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين 1",
+      "statement": "$x$ عدد طبيعي أكبر من 1 و $y$ عدد طبيعي.\n$A$ عدد طبيعي يكتب في نظام التعداد ذي الأساس $x$ بالشكل $A = \\overline{5566}$.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "nombres_premiers",
+        "decomposition_facteurs_premiers"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a769b",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769a",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أنشر العبارة $(5x^2+6)(x+1)$ ثم أوجد علاقة تربط بين $x$ و $y$ إذا علمت أن $A = (5x^2+6)(2+2y)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "نشر العبارة: $(5x^2+6)(x+1) = 5x^3+5x^2+6x+6$.\nبما أن $A = \\overline{5566}_x = 5x^3+5x^2+6x+6$ و $A = (5x^2+6)(2+2y)$ فإن $(5x^2+6)(x+1) = (5x^2+6)(2+2y)$ ومنه $x+1 = 2+2y$ أي $x = 2y+1$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a769c",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769a",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "احسب $x$ و $y$ إذا علمت أن $x$ عدد أولي أصغر من 12، ثم اكتب تبعا لذلك العدد $A$ في نظام التعداد العشري.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "بما أن $A = \\overline{5566}_x$ فإن $x > 6$. الأعداد الأولية الأصغر من 12 والأكبر من 6 هي $\\{7, 11\\}$.\n- إذا كان $x=7$ فإن $y=3$ و $A = 2008$.\n- إذا كان $x=11$ فإن $y=5$ و $A = 7332$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a769d",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769a",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "عيّن الأعداد الطبيعية التي مربعاتها تقسم العدد 584.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "تحليل العدد 584 إلى جداء عوامل أولية: $584 = 2^3 \\times 73$. القواسم المربعة هي $1^2=1$ و $2^2=4$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a769e",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769a",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عيّن الأعداد الطبيعية $a$ و $b$ حيث $a > b$ التي تحقق: $\\begin{cases} a+b=32 \\\\ a^2+b^2=584 \\end{cases}$.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "بحل الجملة نجد $a=22$ و $b=10$.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a769f",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين 2",
+      "statement": "كيس به 10 كريات متماثلة لا نميز بينها عند اللمس منها 4 بيضاء و 6 حمراء.",
+      "topic": "probabilites",
+      "concepts": [
+        "tirages_simultanees",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a0",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769f",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "نسحب عشوائيا من الكيس 3 كريات في آن واحد. احسب احتمال الحصول على 3 كريات بيضاء.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$P(A) = \\frac{C_4^3}{C_{10}^3} = \\frac{4}{120} = \\frac{1}{30}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a1",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769f",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "احسب احتمال الحصول على الأقل على كرية حمراء.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "$P(B) = 1 - P(A) = 1 - \\frac{1}{30} = \\frac{29}{30}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a2",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769f",
+          "label": "2",
+          "sub_label": null,
+          "statement": "ليكن $X$ المتغير العشوائي الذي يرفق بكل عملية سحب عدد الكريات البيضاء المسحوبة. عرف قانون الاحتمال للمتغير العشوائي $X$ واحسب أمله الرياضي $E(X)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "قيم $X$ هي $\\{0, 1, 2, 3\\}$.\n$P(X=0) = \\frac{1}{6}, P(X=1) = \\frac{1}{2}, P(X=2) = \\frac{3}{10}, P(X=3) = \\frac{1}{30}$.\n$E(X) = 0(\\frac{1}{6}) + 1(\\frac{1}{2}) + 2(\\frac{3}{10}) + 3(\\frac{1}{30}) = \\frac{6}{5} = 1.2$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a3",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a769f",
+          "label": "3",
+          "sub_label": null,
+          "statement": "نسحب من الكيس في آن واحد 3 كريات خمس مرات على التوالي مع الإعادة (الإرجاع). احسب احتمال الحصول على 3 كريات بيضاء مرتين بالضبط.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "باستخدام قانون برنولي: $P(Y=2) = C_5^2 (\\frac{1}{30})^2 (\\frac{29}{30})^3 \\approx 0.01$.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76a4",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين 3",
+      "statement": "الفضاء مزود بالمعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. نعتبر النقطتين $A(2,1,2)$ و $B(0,2,-1)$ والمستقيم $(D)$ ذو التمثيل الوسيطي: $\\begin{cases} x=2+3t \\\\ y=1-t \\\\ z=2t \\end{cases}$ حيث $t \\in \\mathbb{R}$.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "plans",
+        "droites",
+        "repere_orthonorme",
+        "equations_cartesiennes",
+        "parametriques"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a5",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76a4",
+          "label": "1",
+          "sub_label": null,
+          "statement": "اكتب تمثيلا وسيطيا للمستقيم $(AB)$. أثبت أن $(D)$ و $(AB)$ لا ينتميان إلى نفس المستوى.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "التمثيل الوسيطي لـ $(AB)$: $\\begin{cases} x=2-2\\lambda \\\\ y=1+\\lambda \\\\ z=2-3\\lambda \\end{cases}$.\nإثبات عدم الانتماء لنفس المستوى: الشعاعان $\\vec{u}(3,-1,2)$ و $\\vec{AB}(-2,1,-3)$ غير مرتبطين خطيا والجملة ليس لها حل.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a6",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76a4",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "نعتبر المستوى $(P)$ الذي يشمل المستقيم $(AB)$ ويوازي المستقيم $(D)$. بيّن أن الشعاع $\\vec{n}(1,5,1)$ عمودي على المستوى $(P)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\vec{n} \\cdot \\vec{AB} = 1(-2) + 5(1) + 1(-3) = 0$ و $\\vec{n} \\cdot \\vec{u} = 1(3) + 5(-1) + 1(2) = 0$. إذن $\\vec{n}$ عمودي على المستوى $(P)$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a7",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76a4",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "اكتب معادلة للمستوى $(P)$.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "المعادلة من الشكل $x+5y+z+d=0$. بالتعويض بالنقطة $A(2,1,2)$ نجد $d=-9$. إذن المعادلة هي: $x+5y+z-9=0$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a8",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76a4",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "بيّن أن المسافة بين نقطة $M$ من $(D)$ والمستوى $(P)$ مستقلة عن موضع $M$.",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": "بما أن $(D)$ يوازي $(P)$ فإن المسافة ثابتة وتساوي $d(M, P) = \\frac{|(2+3t)+5(1-t)+(2t)-9|}{\\sqrt{1^2+5^2+1^2}} = \\frac{2}{\\sqrt{27}} = \\frac{2\\sqrt{3}}{9}$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76a9",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76a4",
+          "label": "2",
+          "sub_label": "د",
+          "statement": "عيّن تمثيلا وسيطيا لمستقيم تقاطع المستوى $(P)$ مع المستوى $(yOz)$.",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": "مستوى $(yOz)$ معادلته $x=0$. بالتعويض في معادلة $(P)$ نجد $5y+z-9=0$. التمثيل الوسيطي: $\\begin{cases} x=0 \\\\ y=\\alpha \\\\ z=9-5\\alpha \\end{cases}$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76aa",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين 4",
+      "statement": "1) نعرف الدالة العددية $f$ على المجال $[1,5]$ بالعبارة: $f(x) = \\frac{1}{2}(x + \\frac{5}{x})$. ليكن $(C)$ تمثيلها البياني في المستوى المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$. الوحدة على المحورين $3cm$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "suites_numeriques",
+        "convergence",
+        "raisonnement_par_recurrence"
+      ],
+      "difficulty": "hard",
+      "marks": 6.0,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ab",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "ادرس تغيرات الدالة $f$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$f'(x) = \\frac{1}{2}(1 - \\frac{5}{x^2}) = \\frac{x^2-5}{2x^2}$. الدالة متناقصة على $[1, \\sqrt{5}]$ ومتزايدة على $[\\sqrt{5}, 5]$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ac",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "أنشئ المنحنى البياني $(C)$ والمستقيم $(\\Delta)$ الذي معادلته $y=x$ في نفس المعلم.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "الرسم موجود في الصفحة 16 من ملف الحل.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ad",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "نعتبر المتتالية العددية $(u_n)$ المعرفة على $\\mathbb{N}$ بحدها الأول $u_0=5$ وبالعبارة: $u_{n+1} = \\frac{1}{2}(u_n + \\frac{5}{u_n})$. احسب $u_1$ ، $u_2$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$u_1 = f(5) = 3$. $u_2 = f(3) = \\frac{7}{3}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ae",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "استعمل المنحنى $(C)$ والمستقيم $(\\Delta)$ لتمثيل الحدود $u_0, u_1, u_2$ على محور الفواصل.",
+          "marks": null,
+          "depends_on": [
+            "1-ب",
+            "2-أ"
+          ],
+          "solution": "التمثيل البياني للحدود على محور الفواصل.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76af",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "برهن أنه من أجل كل عدد طبيعي $n$: $u_n \\ge \\sqrt{5}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "البرهان بالتراجع: $u_0=5 \\ge \\sqrt{5}$. نفرض $u_n \\ge \\sqrt{5}$، بما أن $f$ متزايدة على $[\\sqrt{5}, 5]$ فإن $f(u_n) \\ge f(\\sqrt{5})$ أي $u_{n+1} \\ge \\sqrt{5}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b0",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "بيّن أن المتتالية $(u_n)$ متناقصة تماما. ماذا تستنتج بالنسبة إلى تقارب $(u_n)$؟",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "$u_{n+1} - u_n = \\frac{5-u_n^2}{2u_n} \\le 0$ لأن $u_n \\ge \\sqrt{5}$. المتتالية متناقصة ومحدودة من الأسفل فهي متقاربة.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b1",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "برهن أنه مهما يكن العدد الطبيعي $n$ فإن: $u_{n+1} - \\sqrt{5} \\le \\frac{1}{2}(u_n - \\sqrt{5})$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$u_{n+1} - \\sqrt{5} = \\frac{u_n^2+5-2u_n\\sqrt{5}}{2u_n} = \\frac{(u_n-\\sqrt{5})^2}{2u_n} = \\frac{u_n-\\sqrt{5}}{2u_n}(u_n-\\sqrt{5})$. بما أن $\\frac{u_n-\\sqrt{5}}{2u_n} \\le \\frac{1}{2}$ فإن المطلوب محقق.",
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b2",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76aa",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "استنتج أن $u_n - \\sqrt{5} \\le (\\frac{1}{2})^n (u_0 - \\sqrt{5})$. ما هي $\\lim_{n \\to +\\infty} u_n$؟",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": "بالتراجع نجد المتباينة. بما أن $\\lim (1/2)^n = 0$ فإن $\\lim u_n = \\sqrt{5}$.",
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76b3",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 5,
+      "title": "الموضوع الثاني - التمرين 1",
+      "statement": "نرفق بكل عدد مركب $z$ يختلف عن 1 العدد المركب $f(z)$ حيث: $f(z) = \\frac{z-i}{z-1}$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "module",
+        "argument",
+        "transformations_plan"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b4",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b3",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة: $(45+45i)f(z) = 23+45i-2z$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بتبسيط المعادلة نجد: $z^2+10z+34=0$. المميز $\\Delta = -36 = (6i)^2$. الحلول هي $z_1 = -5-3i$ و $z_2 = -5+3i$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b5",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b3",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "لتكن $M$ صورة العدد المركب $z$ في المستوى المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$. عيّن مجموعة النقط $M$ بحيث يكون $f(z)$ عددا حقيقيا سالبا تماما.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "يكون $f(z)$ حقيقيا سالبا إذا كان $\\arg(f(z)) = \\pi + 2k\\pi$. مجموعة النقط هي القطعة المستقيمة $[AB]$ باستثناء النقطتين $A(1)$ و $B(i)$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b6",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b3",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "احسب العدد المركب $z_0$ بحيث يكون $|f(z_0)|=1$ و $\\arg(f(z_0)) = \\frac{3\\pi}{2}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$f(z_0) = e^{i\\frac{3\\pi}{2}} = -i$. بحل المعادلة $\\frac{z_0-i}{z_0-1} = -i$ نجد $z_0 = 1+i$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b7",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b3",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "في المستوى المركب نعتبر النقط $A, B, C$ صور الأعداد المركبة $1, i, z_0$ على الترتيب. ما نوع المثلث $ABC$؟",
+          "marks": null,
+          "depends_on": [
+            "2-ب"
+          ],
+          "solution": "$AC = |z_0-1| = |i| = 1$. $BC = |z_0-i| = |1| = 1$. $AB = |i-1| = \\sqrt{2}$. المثلث $ABC$ قائم ومتساوي الساقين في $C$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76b8",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b3",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عيّن النقطة $D$ نظيرة النقطة $C$ بالنسبة إلى المستقيم $(AB)$ واستنتج طبيعة الرباعي $ACBD$.",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "النقطة $D$ هي مبدأ المعلم $O(0,0)$. الرباعي $ACBD$ مربع.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76b9",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 6,
+      "title": "الموضوع الثاني - التمرين 2",
+      "statement": "$(u_n)$ المتتالية المعرفة بحدها الأول $u_0=0$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = 3u_n + 2n + 1$. $(v_n)$ المتتالية المعرفة من أجل كل عدد طبيعي $n$ كما يلي: $v_n = u_n + \\alpha n + \\beta$ حيث $\\alpha$ و $\\beta$ عددان حقيقيان.",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "suites_geometriques",
+        "arithmetique",
+        "congruences"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ba",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b9",
+          "label": "1",
+          "sub_label": null,
+          "statement": "عيّن $\\alpha$ و $\\beta$ بحيث تكون المتتالية $(v_n)$ متتالية هندسية، يطلب حساب أساسها وحدها الأول.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بالمطابقة نجد $\\alpha=1$ و $\\beta=1$. الأساس $q=3$ والحد الأول $v_0=1$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76bb",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b9",
+          "label": "2",
+          "sub_label": null,
+          "statement": "احسب كلا من $v_n$ و $u_n$ بدلالة $n$.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "$v_n = 3^n$. $u_n = 3^n - n - 1$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76bc",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b9",
+          "label": "3",
+          "sub_label": null,
+          "statement": "احسب المجموعين $S_n$ و $S'_n$ حيث: $S_n = v_0 + v_1 + ... + v_n$ و $S'_n = u_0 + u_1 + ... + u_n$.",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": "$S_n = \\frac{3^{n+1}-1}{2}$. $S'_n = S_n - \\frac{(n+1)(n+2)}{2}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76bd",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b9",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "عيّن حسب قيم العدد الطبيعي $n$ بواقي القسمة الإقليدية للعدد $3^n$ على 5.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "البواقي دورية ودورها 4: $3^{4k} \\equiv 1$, $3^{4k+1} \\equiv 3$, $3^{4k+2} \\equiv 4$, $3^{4k+3} \\equiv 2 \\pmod 5$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76be",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76b9",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "عيّن قيم العدد الطبيعي $n$ التي يكون من أجلها $u_n$ مضاعفا للعدد 5.",
+          "marks": null,
+          "depends_on": [
+            "2",
+            "4-أ"
+          ],
+          "solution": "$u_n \\equiv 0 \\pmod 5 \\Rightarrow 3^n - n - 1 \\equiv 0 \\pmod 5$. بالدراسة نجد الحالات: $n=20k$, $n=20k+11$, $n=20k+17$, $n=20k+18$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76bf",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 7,
+      "title": "الموضوع الثاني - التمرين 3",
+      "statement": "نعتبر في الفضاء المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، المستويين $(P_1)$ و $(P_2)$ حيث: $(P_1)$ معادلته $x+2y-z-2=0$ و $(P_2)$ تمثيل وسيطي للمستوى: $\\begin{cases} x=1+2\\alpha+\\beta \\\\ y=1+\\alpha \\\\ z=5+\\alpha+\\beta \\end{cases}$ حيث $(\\alpha, \\beta) \\in \\mathbb{R}^2$.",
+      "topic": "geometrie",
+      "concepts": [
+        "plans",
+        "droites",
+        "distances",
+        "equations_cartesiennes"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c0",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "1",
+          "sub_label": null,
+          "statement": "اكتب معادلة للمستوى $(P_2)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بإقصاء الوسيطين $\\alpha$ و $\\beta$ نجد: $x-y-z+5=0$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c1",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "2",
+          "sub_label": null,
+          "statement": "عيّن شعاعا ناظميا $\\vec{n}_1$ للمستوى $(P_1)$ وشعاعا ناظميا $\\vec{n}_2$ للمستوى $(P_2)$.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "$\\vec{n}_1(1, 2, -1)$ و $\\vec{n}_2(1, -1, -1)$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c2",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بيّن أن المستويين $(P_1)$ و $(P_2)$ متعامدان.",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": "$\\vec{n}_1 \\cdot \\vec{n}_2 = 1(1) + 2(-1) + (-1)(-1) = 1-2+1 = 0$. إذن المستويان متعامدان.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c3",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "$A(3,1,1)$ نقطة من الفضاء، عين المسافة $d_1$ بين النقطة $A$ والمستوى $(P_1)$ ثم المسافة $d_2$ بين $A$ والمستوى $(P_2)$.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "$d_1 = \\frac{|3+2(1)-1-2|}{\\sqrt{1^2+2^2+(-1)^2}} = \\frac{2}{\\sqrt{6}} = \\frac{\\sqrt{6}}{3}$.\n$d_2 = \\frac{|3-1-1+5|}{\\sqrt{1^2+(-1)^2+(-1)^2}} = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c4",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "استنتج المسافة $d_3$ بين النقطة $A$ والمستقيم $(\\Delta)$ تقاطع المستويين $(P_1)$ و $(P_2)$.",
+          "marks": null,
+          "depends_on": [
+            "3",
+            "4-أ"
+          ],
+          "solution": "بما أن المستويين متعامدان فإن $d_3 = \\sqrt{d_1^2 + d_2^2} = \\sqrt{\\frac{6}{9} + 12} = \\sqrt{\\frac{114}{9}} = \\frac{\\sqrt{114}}{3}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c5",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "5",
+          "sub_label": "أ",
+          "statement": "عيّن تمثيلا وسيطيا بدلالة $\\lambda$ للمستقيم $(\\Delta)$ حيث $\\lambda$ عدد حقيقي.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بحل جملة معادلتي المستويين نجد: $\\begin{cases} x = \\lambda - 8/3 \\\\ y = 7/3 \\\\ z = \\lambda \\end{cases}$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c6",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76bf",
+          "label": "5",
+          "sub_label": "ب",
+          "statement": "$M$ نقطة كيفية من $(\\Delta)$، احسب $AM^2$ بدلالة $\\lambda$ مستنتجا ثانية المسافة بين $A$ و $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [
+            "5-أ"
+          ],
+          "solution": "$AM^2 = 2\\lambda^2 - \\frac{40}{3}\\lambda + \\frac{314}{9}$. أصغر قيمة لـ $AM^2$ هي $\\frac{114}{9}$ عند $\\lambda = 10/3$. ومنه $d_3 = \\frac{\\sqrt{114}}{3}$.",
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7699969a-769a-499a-969a-7699969a76c7",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "number": 8,
+      "title": "الموضوع الثاني - التمرين 4",
+      "statement": "$f$ الدالة العددية المعرفة على المجال $]-1; +\\infty[$ كما يلي: $f(x) = x - \\frac{2}{\\sqrt{x+1}}$. $(C_f)$ منحنى الدالة $f$ في المستوى المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "tableau_de_variation",
+        "primitives",
+        "representation_graphique"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c8",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "1",
+          "sub_label": null,
+          "statement": "ادرس تغيرات الدالة $f$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -1^+} f(x) = -\\infty$, $\\lim_{x \\to +\\infty} f(x) = +\\infty$. $f'(x) = 1 + \\frac{1}{(x+1)\\sqrt{x+1}} > 0$. الدالة متزايدة تماما.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76c9",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بيّن أن المنحنى $(C_f)$ يقبل مستقيمين مقاربين أحدهما $(D)$ معادلته $y=x$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "المستقيم $x=-1$ مقارب عمودي. بما أن $\\lim_{x \\to +\\infty} [f(x)-x] = \\lim_{x \\to +\\infty} \\frac{-2}{\\sqrt{x+1}} = 0$ فإن $y=x$ مقارب مائل.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ca",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "ادرس الوضعية النسبية للمنحنى $(C_f)$ و $(D)$.",
+          "marks": null,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "$f(x)-x = \\frac{-2}{\\sqrt{x+1}} < 0$. المنحنى $(C_f)$ يقع تحت المستقيم $(D)$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76cb",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بيّن أن $(C_f)$ يقطع محور الفواصل في نقطة وحيدة فاصلتها $x_0$ حيث: $1.3 < x_0 < 1.4$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "باستخدام مبرهنة القيم المتوسطة: $f(1.3) \\approx -0.01$ و $f(1.4) \\approx 0.10$. بما أن $f(1.3) \\times f(1.4) < 0$ فالمطلوب محقق.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76cc",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "عيّن معادلة $(\\Delta)$ مماسا للمنحنى $(C_f)$ في نقطة تقاطعه مع محور التراتيب.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "نقطة التقاطع هي $(0, -2)$. $f'(0) = 2$. المعادلة: $y = 2x-2$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76cd",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "ارسم $(\\Delta)$ و $(C_f)$ في نفس المعلم.",
+          "marks": null,
+          "depends_on": [
+            "1",
+            "2",
+            "3-ب"
+          ],
+          "solution": "الرسم موجود في الصفحة 30 من ملف الحل.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76ce",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أوجد الدالة الأصلية للدالة $f$ والتي تنعدم من أجل القيمة 0 للمتغير $x$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$F(x) = \\frac{1}{2}x^2 - 4\\sqrt{x+1} + c$. بما أن $F(0)=0$ فإن $c=4$. إذن $F(x) = \\frac{1}{2}x^2 - 4\\sqrt{x+1} + 4$.",
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76cf",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "5",
+          "sub_label": null,
+          "statement": "$g$ الدالة العددية المعرفة على المجال $]-1; +\\infty[$ بالعبارة: $g(x) = |f(x)|$. $(C_g)$ منحنى الدالة $g$ في المعلم السابق. بيّن كيف يمكن إنشاء $(C_g)$ انطلاقا من $(C_f)$، ثم ارسمه في نفس المعلم السابق.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$g(x)=f(x)$ لما $x \\ge x_0$ و $g(x)=-f(x)$ لما $x \\in ]-1, x_0]$. الإنشاء بالتناظر بالنسبة لمحور الفواصل للجزء الواقع تحت المحور.",
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "8699969a-769a-499a-969a-7699969a76d0",
+          "exercise_id": "7699969a-769a-499a-969a-7699969a76c7",
+          "label": "6",
+          "sub_label": null,
+          "statement": "ناقش بيانيا حسب قيم الوسيط الحقيقي $m$ عدد وإشارة حلول المعادلة ذات المجهول $x$: $g(x) = m^2$.",
+          "marks": null,
+          "depends_on": [
+            "5"
+          ],
+          "solution": "المناقشة الأفقية لتقاطع المنحنى $(C_g)$ مع المستقيم $y=m^2$.",
+          "ordering": 9,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "9699969a-769a-499a-969a-7699969a76d1",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "exercise_ref": 4,
+      "part_ref": "2-ب",
+      "figure_type": "graph",
+      "description": "الشكل يوضح المنحنى البياني للدالة $f(x) = \\frac{1}{2}(x + \\frac{5}{x})$ والمستقيم $y=x$ مع تمثيل حدود المتتالية $u_n$ على محور الفواصل بدءا من $u_0=5$.",
+      "source_page": 16
+    },
+    {
+      "id": "9699969a-769a-499a-969a-7699969a76d2",
+      "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3",
+      "exercise_ref": 8,
+      "part_ref": "3-ج",
+      "figure_type": "graph",
+      "description": "الشكل يوضح المنحنى البياني للدالة $f(x) = x - \\frac{2}{\\sqrt{x+1}}$ والمنحنى البياني للدالة $g(x) = |f(x)|$ والمستقيم المقارب $y=x$ والمماس $(\\Delta)$.",
+      "source_page": 30
+    }
+  ],
+  "exam_id": "a6e088be-0384-4fe5-831c-5fa1632cacb3"
+}

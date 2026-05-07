@@ -1,65 +1,79 @@
-Extract all exercises from the attached exam PDF and return a JSON object.
+Extract the exam metadata and all exercises from the attached exam PDF.
 
-Exam context (use these values exactly in your output):
-- exam_id:    {exam_id}
-- subject:    {subject}
-- filiere:    {filiere}
-- year:       {year}
-- session:    {session}
-- trimester:  {trimester}
-- language:   {language}
+The following fields are already known — copy them exactly into your output, do not read them from the PDF:
+- exam_id:     {exam_id}
+- subject:     {subject}
+- source_file: {source_file}
 
-Expected output structure:
+For all other metadata fields (exam_type, session, trimester, filiere, year,
+duration_minutes, total_marks, language, region, institution, academic_year)
+read them directly from the exam paper and follow the controlled vocabularies
+in the system prompt exactly.
+
+Return a single JSON object with this exact structure:
 
 {
-  "exam_id": "{exam_id}",
+  "exam_metadata": {
+    "id":               "{exam_id}",
+    "subject":          "{subject}",
+    "source_file":      "{source_file}",
+    "exam_type":        "<bac|bac_blanc|trimestre>",
+    "session":          "<principal|rattrapage|null>",
+    "trimester":        <1|2|3|null>,
+    "filiere":          "<controlled value or null>",
+    "year":             <integer or null>,
+    "duration_minutes": <integer or null>,
+    "total_marks":      <number or null>,
+    "language":         "<ar|fr|ar_fr>",
+    "region":           "<string or null>",
+    "institution":      "<string or null>",
+    "academic_year":    "<YYYY-YYYY or null>"
+  },
   "exercises": [
     {
-      "id": "<uuid-v4>",
-      "exam_id": "{exam_id}",
-      "number": 1,
-      "title": null,
-      "statement": "...",
-      "topic": "...",
-      "concepts": [],
-      "difficulty": "medium",
-      "marks": null,
-      "has_figure": false,
+      "id":          "<uuid-v4>",
+      "exam_id":     "{exam_id}",
+      "number":      1,
+      "title":       null,
+      "statement":   "...",
+      "topic":       "...",
+      "concepts":    [],
+      "difficulty":  "medium",
+      "marks":       null,
+      "has_figure":  false,
       "source_page": 1,
-      "solution": null,
-      "tags": [],
-      "metadata": {},
+      "solution":    null,
+      "metadata":    {},
       "parts": [
         {
-          "id": "<uuid-v4>",
-          "exercise_id": "<same as parent exercise id>",
-          "label": "1",
-          "sub_label": "a",
-          "statement": "...",
-          "marks": null,
-          "depends_on": [],
-          "solution": null,
-          "ordering": 1,
-          "metadata": {}
+          "id":          "<uuid-v4>",
+          "exercise_id": "<parent exercise id>",
+          "label":       "1",
+          "sub_label":   "a",
+          "statement":   "...",
+          "marks":       null,
+          "depends_on":  [],
+          "solution":    null,
+          "ordering":    1,
+          "metadata":    {}
         }
       ]
     }
   ],
   "figures": [
     {
-      "id": "<uuid-v4>",
-      "exam_id": "{exam_id}",
+      "id":           "<uuid-v4>",
+      "exam_id":      "{exam_id}",
       "exercise_ref": 1,
-      "part_ref": "1-a",
-      "figure_type": "graph",
-      "description": "...",
-      "source_page": 2
+      "part_ref":     null,
+      "figure_type":  "graph",
+      "description":  "...",
+      "source_page":  2,
+      "bounding_box": [ymin, xmin, ymax, xmax]
     }
   ]
 }
 
 Notes:
-- "figures" is a top-level array, not nested inside exercises.
-- Your ingestion script will resolve exercise_ref and part_ref to the actual
-  exercise_id and part_id UUIDs when writing to the figures table.
-- If there are no figures in this exam, return "figures": [].
+- "figures" is top-level, not nested inside exercises. Return "figures": [] if none.
+- Use null for any metadata field you cannot read from the PDF — never guess.

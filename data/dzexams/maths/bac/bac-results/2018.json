@@ -1,0 +1,421 @@
+{
+  "exam_metadata": {
+    "id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+    "subject": "mathematics",
+    "source_file": "2018.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2018,
+    "duration_minutes": 270,
+    "total_marks": 20,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": "2017-2018"
+  },
+  "exercises": [
+    {
+      "id": "76987452-1234-4567-8901-abcdef123456",
+      "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "$f$ الدالة العددية المعرفة على المجال $]-\\infty; 1[$ بـ: $f(x) = \\frac{x^2+1}{x-1}$.\n$(u_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بحدها الأول $u_0 = -3$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = f(u_n)$.\nليكن $(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$ و $(\\Delta)$ هو المستقيم ذو المعادلة $y=x$ (أنظر الشكل المقابل).",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "raisonnement_par_recurrence",
+        "limites",
+        "convergence",
+        "etude_de_fonction"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4789-8901-23456789abcd",
+          "exercise_id": "76987452-1234-4567-8901-abcdef123456",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أعد رسم الشكل على ورقة الإجابة ثم مثّل الحدود $u_0, u_1, u_2, u_3$ على محور الفواصل دون حسابها مبرزاً خطوط التمثيل، أعط تخميناً حول اتجاه تغير المتتالية $(u_n)$ وتقاربها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "من التمثيل البياني نلاحظ أن المتتالية $(u_n)$ متزايدة ومحدودة من الأعلى بالعدد $-1$ فهي متقاربة.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4890-9012-3456789abcde",
+          "exercise_id": "76987452-1234-4567-8901-abcdef123456",
+          "label": "2",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $-3 \\le u_n < -1$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "لدينا $-3 \\le u_0 < -1$ محققة لأن $u_0 = -3$. نفرض أن $-3 \\le u_n < -1$ ونبرهن أن $-3 \\le u_{n+1} < -1$. بما أن $f$ متزايدة على $[-3; -1]$ فإن $f(-3) \\le f(u_n) < f(-1)$ أي $-2.5 \\le u_{n+1} < -1$. وبما أن $-3 \\le -2.5$ فإن $-3 \\le u_{n+1} < -1$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4901-0123-456789abcdef",
+          "exercise_id": "76987452-1234-4567-8901-abcdef123456",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي $n$: $u_{n+1} + 1 \\ge \\frac{3}{4}(u_n + 1)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$u_{n+1} + 1 = \\frac{u_n^2+1}{u_n-1} + 1 = \\frac{u_n^2+u_n}{u_n-1} = \\frac{u_n}{u_n-1}(u_n+1)$. لدينا $-3 \\le u_n < -1$ ومنه $-4 \\le u_n-1 < -2$ أي $-\\frac{1}{2} \\le \\frac{1}{u_n-1} < -\\frac{1}{4}$. بالضرب في $u_n$ (سالب) نجد $\\frac{u_n}{u_n-1} \\ge \\frac{3}{4}$ لأن $u_n \\le -3$. إذن $u_{n+1} + 1 \\ge \\frac{3}{4}(u_n + 1)$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4012-1234-56789abcdef0",
+          "exercise_id": "76987452-1234-4567-8901-abcdef123456",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "استنتج أنه من أجل كل عدد طبيعي $n$: $u_n + 1 \\ge -2\\left(\\frac{3}{4}\\right)^n$ ثم $\\lim_{n \\to +\\infty} u_n$.",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": "بالتراجع أو بضرب المتباينات نجد $u_n + 1 \\ge (u_0+1)\\left(\\frac{3}{4}\\right)^n = -2\\left(\\frac{3}{4}\\right)^n$. بما أن $-2\\left(\\frac{3}{4}\\right)^n \\le u_n + 1 < 0$ وبما أن $\\lim_{n \\to +\\infty} -2\\left(\\frac{3}{4}\\right)^n = 0$ فإن $\\lim_{n \\to +\\infty} (u_n+1) = 0$ أي $\\lim_{n \\to +\\infty} u_n = -1$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4123-2345-6789abcdef01",
+          "exercise_id": "76987452-1234-4567-8901-abcdef123456",
+          "label": "4",
+          "sub_label": null,
+          "statement": "نضع $S_n = u_0 + u_1 + \\dots + u_n$.\n- بيّن أنه من أجل كل عدد طبيعي $n$: $8\\left[\\left(\\frac{3}{4}\\right)^{n+1} - 1\\right] \\le (u_0+1) + (u_1+1) + \\dots + (u_n+1) < 0$.\n- واستنتج $\\lim_{n \\to +\\infty} S_n$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "لدينا $u_k+1 < 0$ إذن المجموع سالب. ومن جهة أخرى $u_k+1 \\ge -2\\left(\\frac{3}{4}\\right)^k$. بالجمع نجد $\\sum (u_k+1) \\ge -2 \\sum_{k=0}^n \\left(\\frac{3}{4}\\right)^k = -2 \\frac{1-(\\frac{3}{4})^{n+1}}{1-\\frac{3}{4}} = -8(1-(\\frac{3}{4})^{n+1}) = 8((\\frac{3}{4})^{n+1}-1)$. بما أن $\\lim_{n \\to +\\infty} 8((\\frac{3}{4})^{n+1}-1) = -8$ و $\\sum (u_k+1) = S_n + n + 1$ فإن $S_n \\approx -8 - (n+1)$ ومنه $\\lim_{n \\to +\\infty} S_n = -\\infty$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "f6a7b8c9-d0e1-4234-3456-789abcdef012",
+      "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، نعتبر النقطتين $A(1;1;3)$ و $B(1;0;2)$.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "plans",
+        "equations_cartesiennes",
+        "positions_relatives",
+        "repere_orthonorme"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a7b8c9d0-e1f2-4345-4567-89abcdef0123",
+          "exercise_id": "f6a7b8c9-d0e1-4234-3456-789abcdef012",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بيّن أن النقط $O, A$ و $B$ ليست في استقامية.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "لدينا $\\vec{OA}(1;1;3)$ و $\\vec{OB}(1;0;2)$. نلاحظ أن المركبات ليست متناسبة (مثلاً $1/1 \\neq 1/0$) إذن الشعاعان غير مرتبطين خطياً، وبالتالي النقط ليست في استقامية.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4456-5678-9abcdef01234",
+          "exercise_id": "f6a7b8c9-d0e1-4234-3456-789abcdef012",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "تحقق أن $\\vec{n}(2;1;-1)$ شعاع ناظمي للمستوي $(OAB)$ ثم عين معادلة ديكارتية له.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\vec{n} \\cdot \\vec{OA} = 2(1) + 1(1) - 1(3) = 0$ و $\\vec{n} \\cdot \\vec{OB} = 2(1) + 1(0) - 1(2) = 0$. إذن $\\vec{n}$ ناظمي. المعادلة من الشكل $2x+y-z+d=0$. بما أن $O(0,0,0) \\in (OAB)$ فإن $d=0$. المعادلة هي $2x+y-z=0$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c9d0e1f2-a3b4-4567-6789-abcdef012345",
+          "exercise_id": "f6a7b8c9-d0e1-4234-3456-789abcdef012",
+          "label": "2",
+          "sub_label": null,
+          "statement": "لتكن $(\\Delta)$ مجموعة النقط $M$ من الفضاء التي إحداثياتها $(x;y;z)$ وتحقق المعادلة التالية:\n$(2x+2y+6z-11)^2 + (2x+4z-5)^2 = 0$\n- بيّن أن المجموعة $(\\Delta)$ هي تقاطع المستويين المحوريين للقطعتين $[OA]$ و $[OB]$، ثم عين تمثيلاً وسيطياً للمجموعة $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "المعادلة تكافئ الجملة: $2x+2y+6z-11=0$ و $2x+4z-5=0$. المستوي المحوري لـ $[OA]$ هو مجموعة النقط $M$ حيث $OM=AM$ أي $x^2+y^2+z^2 = (x-1)^2+(y-1)^2+(z-3)^2$ مما يعطي $2x+2y+6z-11=0$. وبالمثل لـ $[OB]$ نجد $2x+4z-5=0$. التمثيل الوسيطي: نضع $z=t$، من المعادلة الثانية $x = -2t + 2.5$. بالتعويض في الأولى نجد $y = t - 3$. إذن: $x = -2t + 2.5, y = t - 3, z = t$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4678-7890-bcdef0123456",
+          "exercise_id": "f6a7b8c9-d0e1-4234-3456-789abcdef012",
+          "label": "3",
+          "sub_label": null,
+          "statement": "لتكن $M$ نقطة كيفية من الفضاء.\n- برهن صحة التكافؤ التالي: $(M \\in (\\Delta))$ يكافئ $(OM = AM = BM)$ ثم استنتج إحداثيات النقطة $\\Omega$ مركز الدائرة المحيطة بالمثلث $OAB$.",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": "$M \\in (\\Delta)$ يعني $M$ تنتمي للمستوي المحوري لـ $[OA]$ (أي $OM=AM$) وللمستوي المحوري لـ $[OB]$ (أي $OM=BM$). إذن $OM=AM=BM$. النقطة $\\Omega$ هي تقاطع $(\\Delta)$ مع المستوي $(OAB)$. نعوض التمثيل الوسيطي في معادلة $(OAB)$: $2(-2t+2.5) + (t-3) - t = 0 \\implies -4t+5+t-3-t=0 \\implies -4t+2=0 \\implies t=0.5$. الإحداثيات هي $\\Omega(1.5; -2.5; 0.5)$.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "e1f2a3b4-c5d6-4789-8901-cdef01234567",
+      "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "المستوي المركب منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{u}, \\vec{v})$، $\\theta$ عدد حقيقي من المجال $]-\\pi; \\pi]$.\nI. حل في مجموعة الأعداد المركبة $\\mathbb{C}$، المعادلة ذات المجهول $z$ التالية:\n$(z^2-2z+2)(z^2-2(\\sin\\theta)z+1)=0$\nII. $A, B, C$ و $D$ نقط من المستوي لاحقاتها على الترتيب:\n$z_A = -\\sqrt{2}e^{i\\frac{5\\pi}{4}}$, $z_B = 1-i$, $z_C = \\sin\\theta + i\\cos\\theta$ و $z_D = \\bar{z_C}$ (يرمز $\\bar{z_C}$ إلى مرافق $z_C$)",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_exponentielle",
+        "forme_trigonometrique",
+        "similitudes"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "f2a3b4c5-d6e7-4890-9012-def012345678",
+          "exercise_id": "e1f2a3b4-c5d6-4789-8901-cdef01234567",
+          "label": "1",
+          "sub_label": null,
+          "statement": "اكتب الأعداد $z_A, z_B, z_C$ و $z_D$ على الشكل الأسي.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$z_A = -\\sqrt{2}e^{i\\frac{5\\pi}{4}} = \\sqrt{2}e^{i\\pi}e^{i\\frac{5\\pi}{4}} = \\sqrt{2}e^{i\\frac{9\\pi}{4}} = \\sqrt{2}e^{i\\frac{\\pi}{4}}$.\n$z_B = 1-i = \\sqrt{2}e^{-i\\frac{\\pi}{4}}$.\n$z_C = \\sin\\theta + i\\cos\\theta = \\cos(\\frac{\\pi}{2}-\\theta) + i\\sin(\\frac{\\pi}{2}-\\theta) = e^{i(\\frac{\\pi}{2}-\\theta)}$.\n$z_D = \\bar{z_C} = e^{-i(\\frac{\\pi}{2}-\\theta)}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4901-0123-ef0123456789",
+          "exercise_id": "e1f2a3b4-c5d6-4789-8901-cdef01234567",
+          "label": "2",
+          "sub_label": null,
+          "statement": "$E$ نقطة من المستوي لاحقتها $z_E$ حيث $z_E = \\frac{z_A}{z_B}$.\n- بيّن أن النقط $C, D$ و $E$ تنتمي إلى دائرة يطلب تعيين مركزها ونصف قطرها.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "$z_E = \\frac{\\sqrt{2}e^{i\\pi/4}}{\\sqrt{2}e^{-i\\pi/4}} = e^{i\\pi/2}$.\nلدينا $|z_C| = |e^{i(\\pi/2-\\theta)}| = 1$، $|z_D| = |e^{-i(\\pi/2-\\theta)}| = 1$، $|z_E| = |e^{i\\pi/2}| = 1$. إذن النقط تنتمي للدائرة التي مركزها المبدأ $O$ ونصف قطرها $1$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4012-1234-f0123456789a",
+          "exercise_id": "e1f2a3b4-c5d6-4789-8901-cdef01234567",
+          "label": "3",
+          "sub_label": null,
+          "statement": "ليكن $S$ التشابه المباشر الذي مركزه النقطة $A$ وزاويته $\\frac{\\pi}{4}$ ونسبته $(2\\sqrt{2}-2)$.\n- عين قيمة $\\theta$ حتى تكون النقطة $B$ صورة النقطة $C$ بالتشابه المباشر $S$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$z_B - z_A = (2\\sqrt{2}-2)e^{i\\pi/4}(z_C - z_A)$. بالتعويض والتبسيط نجد $\\theta = -\\frac{3\\pi}{4}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4123-2345-0123456789ab",
+          "exercise_id": "e1f2a3b4-c5d6-4789-8901-cdef01234567",
+          "label": "4",
+          "sub_label": null,
+          "statement": "نضع $\\theta = \\frac{-3\\pi}{4}$. عين قيم العدد الطبيعي $n$ التي من أجلها يكون العدد $(z_D)^n$ تخيلياً صرفاً.",
+          "marks": null,
+          "depends_on": [
+            "1"
+          ],
+          "solution": "من أجل $\\theta = -3\\pi/4$، $z_D = e^{-i(\\pi/2 - (-3\\pi/4))} = e^{-i(5\\pi/4)} = e^{i(3\\pi/4)}$.\n$(z_D)^n = e^{i\\frac{3n\\pi}{4}}$. يكون تخيلياً صرفاً إذا كان $\\frac{3n\\pi}{4} = \\frac{\\pi}{2} + k\\pi$ أي $3n = 2 + 4k$. بالحل في $\\mathbb{N}$ نجد $n = 2 + 4k'$.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+      "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "$f$ الدالة العددية المعرفة على $[0; 1[ \\cup ]1; +\\infty[$ بـ:\n$\\begin{cases} f(x) = x+1 - \\frac{1}{\\ln x} & ; x \\in \\mathbb{R}_+^* \\setminus \\{1\\} \\\\ f(0) = 1 \\end{cases}$\n(يرمز بـ $\\ln$ إلى اللوغاريتم النيبيري)\n$(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "continuite",
+        "derivation",
+        "tableau_de_variation",
+        "branches_infinies",
+        "calcul_integral",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "e7f8a9b0-c1d2-4345-4567-23456789abcd",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بيّن أن $f$ مستمرة عند $0$ بقيم أكبر.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} (x+1 - \\frac{1}{\\ln x}) = 0+1-0 = 1 = f(0)$. إذن $f$ مستمرة عند $0$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4456-5678-3456789abcde",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "احسب $\\lim_{h \\to 0^+} \\frac{f(h)-f(0)}{h}$ ثم فسر النتيجة هندسياً.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{h \\to 0^+} \\frac{h+1-1/\\ln h - 1}{h} = \\lim_{h \\to 0^+} (1 - \\frac{1}{h\\ln h}) = +\\infty$. التفسير: المنحنى يقبل نصف مماس عمودي عند النقطة $(0,1)$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4567-6789-456789abcdef",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "احسب $\\lim_{x \\to +\\infty} f(x)$، $\\lim_{x \\to 1^-} f(x)$ و $\\lim_{x \\to 1^+} f(x)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to +\\infty} f(x) = +\\infty$. $\\lim_{x \\to 1^-} f(x) = +\\infty$. $\\lim_{x \\to 1^+} f(x) = -\\infty$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4678-7890-56789abcdef0",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "ادرس اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$f'(x) = 1 + \\frac{1}{x(\\ln x)^2} > 0$. الدالة متزايدة تماماً على كل من المجالين.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4789-8901-6789abcdef01",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بيّن أن المنحنى $(C_f)$ يقبل مستقيماً مقارباً مائلاً $(\\Delta)$ يطلب تعيين معادلته ثم ادرس وضعية $(C_f)$ بالنسبة إلى $(\\Delta)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بما أن $\\lim_{x \\to +\\infty} [f(x)-(x+1)] = \\lim_{x \\to +\\infty} -\\frac{1}{\\ln x} = 0$، فإن $(\\Delta): y=x+1$ مقارب مائل. الوضعية: $f(x)-(x+1) = -1/\\ln x$. على $]0,1[$ الفرق موجب (فوق)، على $]1, +\\infty[$ الفرق سالب (تحت).",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4890-9012-789abcdef012",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "4",
+          "sub_label": null,
+          "statement": "بيّن أن المنحنى $(C_f)$ يقطع حامل محور الفواصل في نقطة وحيدة $\\omega$ فاصلتها $\\alpha$ حيث $1.49 < \\alpha < 1.5$. ثم بيّن أن معادلة المماس للمنحنى $(C_f)$ في النقطة $\\omega$ تكتب على الشكل $y = \\left(\\alpha+3+\\frac{1}{\\alpha}\\right)(x-\\alpha)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "باستخدام مبرهنة القيم المتوسطة. معادلة المماس: $y = f'(\\alpha)(x-\\alpha) + f(\\alpha)$. بما أن $f(\\alpha)=0$ فإن $\\ln \\alpha = 1/(\\alpha+1)$. بالتعويض في $f'(\\alpha)$ نجد المطلوب.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c7d8-4901-0123-89abcdef0123",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "5",
+          "sub_label": null,
+          "statement": "ارسم المستقيم $(\\Delta)$ والمنحنى $(C_f)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4012-1234-9abcdef01234",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "6",
+          "sub_label": "أ",
+          "statement": "$h$ الدالة العددية المعرفة على المجال $[1; +\\infty[$ بـ: $h(x) = 1-x+x\\ln x$. بيّن أن الدالة $h$ متزايدة تماماً على المجال $[1; +\\infty[$ واستنتج إشارة $h(x)$ على المجال $[1; +\\infty[$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$h'(x) = \\ln x \\ge 0$. $h(1)=0$ إذن $h(x) \\ge 0$.",
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "a5b6c7d8-e9f0-4123-2345-abcdef012345",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "6",
+          "sub_label": "ب",
+          "statement": "بيّن أنه من أجل كل $x > 1$: $f(x)-x+\\frac{1}{x\\ln x} = \\frac{h(x)}{x\\ln x}$ واستنتج أنه من أجل $x > 1$: $x-\\frac{1}{x\\ln x} < f(x) < x+1$.",
+          "marks": null,
+          "depends_on": [
+            "6-أ"
+          ],
+          "solution": "بالتبسيط نجد المساواة. بما أن $h(x) > 0$ فإن $f(x)-x+\\frac{1}{x\\ln x} > 0$.",
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4234-3456-bcdef0123456",
+          "exercise_id": "d6e7f8a9-b0c1-4234-3456-123456789abc",
+          "label": "7",
+          "sub_label": null,
+          "statement": "$A$ مساحة الحيز من المستوي المحدد بالمنحنى $(C_f)$ وحامل محور الفواصل والمستقيمين الذين معادلتاهما: $x=\\alpha$ و $x=e$. بيّن أن: $\\frac{1}{2}(e^2-\\alpha^2) - \\ln(\\alpha+1) < A < \\frac{1}{2}(e-\\alpha)(e+\\alpha+2)$.",
+          "marks": null,
+          "depends_on": [
+            "6-ب"
+          ],
+          "solution": "نكامل المتباينة السابقة من $\\alpha$ إلى $e$.",
+          "ordering": 10,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1e2d3c4-b5a6-4789-8901-23456789abcd",
+      "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a",
+      "exercise_ref": 1,
+      "part_ref": null,
+      "figure_type": "graph",
+      "description": "الشكل يوضح منحنى الدالة f والمستقيم y=x في معلم متعامد متجانس. يظهر المنحنى متناقصاً ثم متزايداً في المجال المعطى، ويتقاطع مع المستقيم y=x.",
+      "source_page": 1
+    }
+  ],
+  "exam_id": "d9699947-4518-46fd-ad4f-127dc5c5444a"
+}
