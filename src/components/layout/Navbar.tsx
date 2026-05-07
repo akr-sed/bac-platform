@@ -145,20 +145,28 @@ export function TopAppBar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Streak chip */}
+            {/* Streak chip — links to profile dashboard where the full streak breakdown lives */}
             {gamification && gamification.streakDays > 0 && (
-              <span className="hidden items-center gap-1 rounded-full border border-[#FFEDD5] bg-[#FFF7ED] px-3 py-1.5 text-xs font-semibold text-[#EA580C] sm:flex">
+              <Link
+                href="/profile"
+                aria-label={tg('streakLabel')}
+                className="hidden items-center gap-1 rounded-full border border-[#FFEDD5] bg-[#FFF7ED] px-3 py-1.5 text-xs font-semibold text-[#EA580C] transition-colors hover:bg-[#FFEDD5] sm:flex"
+              >
                 <Flame className="size-3.5" />
                 {gamification.streakDays} {tg('streakLabel')}
-              </span>
+              </Link>
             )}
 
-            {/* XP chip */}
+            {/* XP chip — links to profile dashboard where XP / level / rank are shown in full */}
             {gamification && (
-              <span className="hidden items-center gap-1 rounded-full bg-[#C7E7FF] px-3 py-1 text-xs font-bold text-[#00709D] sm:flex">
+              <Link
+                href="/profile"
+                aria-label={tg('xp')}
+                className="hidden items-center gap-1 rounded-full bg-[#C7E7FF] px-3 py-1 text-xs font-bold text-[#00709D] transition-colors hover:bg-[#A8DBF5] sm:flex"
+              >
                 <Sparkles className="size-3.5" />
                 {gamification.xp} {tg('xp')}
-              </span>
+              </Link>
             )}
 
             {/* Notification bell */}
