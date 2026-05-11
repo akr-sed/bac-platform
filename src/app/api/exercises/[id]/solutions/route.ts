@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { grantXp } from '@/lib/gamification';
 import Solution from '@/models/Solution';
 import Comment from '@/models/Comment';
-import User from '@/models/User';
 
 const createSolutionSchema = z.object({
   content: z.string().min(1),
@@ -103,11 +103,12 @@ export async function POST(request: NextRequest, context: RouteContext) {
       likes: [],
     });
 
-    // Award 5 points to the author
-    await User.updateOne(
-      { _id: session.userId },
-      { $inc: { points: 5 } }
-    );
+    // Award XP to the author. grantXp also keeps the legacy `points` field
+    // in sync and writes an XPLedger entry for audit.
+    await grantXp(session.userId, 5, 'solution-submitted', {
+      exerciseId: id,
+      solutionId: solution._id.toString(),
+    });
 
     const populated = await Solution.findById(solution._id)
       .populate({

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { destroyManyByUrl } from '@/lib/cloudinary';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
 import Comment from '@/models/Comment';
@@ -161,14 +162,21 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    const solutions = await Solution.find({ exerciseId: id }).select('_id');
+    const solutions = await Solution.find({ exerciseId: id }).select('_id images');
     const solutionIds = solutions.map((s) => s._id);
+    const solutionMediaUrls = solutions.flatMap((s) => s.images ?? []);
+    const exerciseMediaUrls = exercise.attachments ?? [];
 
     await Comment.deleteMany({ solutionId: { $in: solutionIds } });
     await Solution.deleteMany({ exerciseId: id });
     await SavedExercise.deleteMany({ exerciseId: id });
     await ExerciseLike.deleteMany({ exerciseId: id });
     await Exercise.findByIdAndDelete(id);
+
+    // Best-effort Cloudinary cleanup after DB delete succeeds. Failures here
+    // are logged but never roll back the user-visible deletion — orphaned
+    // assets can be reaped by a scheduled sweep if needed.
+    await destroyManyByUrl([...exerciseMediaUrls, ...solutionMediaUrls]);
 
     return NextResponse.json({ success: true });
   } catch {

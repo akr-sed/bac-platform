@@ -50,10 +50,11 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const noStore: RequestInit = { cache: 'no-store' };
     Promise.all([
-      fetch('/api/gamification/summary').then((r) => r.ok ? r.json() : null),
-      fetch('/api/gamification/subject-progress').then((r) => r.ok ? r.json() : null),
-      fetch('/api/gamification/activity').then((r) => r.ok ? r.json() : null),
+      fetch('/api/gamification/summary', noStore).then((r) => r.ok ? r.json() : null),
+      fetch('/api/gamification/subject-progress', noStore).then((r) => r.ok ? r.json() : null),
+      fetch('/api/gamification/activity', noStore).then((r) => r.ok ? r.json() : null),
     ])
       .then(([sum, subj, act]) => {
         setSummary(sum);

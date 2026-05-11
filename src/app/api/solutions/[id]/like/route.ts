@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { grantXp } from '@/lib/gamification';
 import Solution from '@/models/Solution';
-import User from '@/models/User';
 
 type RouteContext = { params: Promise<{ id: string }> };
 
@@ -33,11 +33,13 @@ export async function POST(request: NextRequest, context: RouteContext) {
         $pull: { likes: userId },
       });
 
-      // Remove 1 point from solution author
-      await User.updateOne(
-        { _id: solution.authorId },
-        { $inc: { points: -1 } }
-      );
+      // Clawback XP from solution author (skip self-likes).
+      if (solution.authorId.toString() !== userId) {
+        await grantXp(solution.authorId, -1, 'solution-unliked', {
+          solutionId: id,
+          likerId: userId,
+        });
+      }
 
       const updated = await Solution.findById(id);
 
@@ -51,11 +53,13 @@ export async function POST(request: NextRequest, context: RouteContext) {
         $addToSet: { likes: userId },
       });
 
-      // Award 1 point to solution author
-      await User.updateOne(
-        { _id: solution.authorId },
-        { $inc: { points: 1 } }
-      );
+      // Award XP to solution author (skip self-likes).
+      if (solution.authorId.toString() !== userId) {
+        await grantXp(solution.authorId, 1, 'solution-liked', {
+          solutionId: id,
+          likerId: userId,
+        });
+      }
 
       const updated = await Solution.findById(id);
 

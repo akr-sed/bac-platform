@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { grantXp } from '@/lib/gamification';
 import Comment from '@/models/Comment';
-import User from '@/models/User';
 
 type RouteContext = { params: Promise<{ id: string }> };
 
@@ -31,10 +31,9 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
 
     await Comment.findByIdAndDelete(id);
 
-    await User.updateOne(
-      { _id: comment.authorId },
-      { $inc: { points: -2 } }
-    );
+    await grantXp(comment.authorId, -2, 'comment-deleted', {
+      commentId: id,
+    });
 
     return NextResponse.json({ message: 'Deleted' });
   } catch {

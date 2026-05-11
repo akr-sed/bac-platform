@@ -35,7 +35,7 @@ export function TopAppBar() {
 
   useEffect(() => {
     if (!user) return;
-    fetch('/api/notifications?limit=1&unread=1')
+    fetch('/api/notifications?limit=1&unread=1', { cache: 'no-store' })
       .then((r) => r.json())
       .then((d) => setUnreadCount(d.unreadCount ?? 0))
       .catch(() => {});
@@ -43,7 +43,9 @@ export function TopAppBar() {
 
   useEffect(() => {
     if (!user) return;
-    fetch('/api/gamification/summary')
+    // `cache: 'no-store'` bypasses the browser HTTP cache so freshly-earned
+    // XP and streak progress appear immediately rather than after a refresh.
+    fetch('/api/gamification/summary', { cache: 'no-store' })
       .then((r) => r.json())
       .then((d) => {
         if (d.user) {
