@@ -35,33 +35,59 @@ interface AppShellProps {
  */
 export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
   const panel = endPanel ?? leftPanel;
-  // TopAppBar is h-[84px] sticky. The primary nav rail uses a fixed height
-  // equal to the viewport-below-topbar so its bottom-pinned Settings entry
-  // sits at the bottom of the visible area (per Figma). End panels keep the
-  // max-height behaviour because their content (achievements, quests,
-  // upcoming sessions) is naturally scrollable.
-  const railStickyClasses =
-    'sticky top-[84px] h-[calc(100vh-84px)] overflow-y-auto self-start';
+  // The primary nav rail uses `position: fixed` so it stays pinned in the
+  // viewport regardless of how far the page scrolls. `position: sticky`
+  // would be clipped by the AppShell flex container's natural height
+  // once the user scrolls past it. A sibling spacer reserves the rail's
+  // width inside the flex layout so main content still flows correctly.
+  //
+  // Horizontal positioning: max(16px, calc((100vw - 1440px) / 2 + 16px))
+  // anchors the rail at the inner edge of the centered 1440px container
+  // on wide screens, or flush to the 16px viewport gutter on narrow ones.
+  // `inset-inline-start` flips automatically between RTL/LTR.
+  //
+  // End panels keep sticky+max-h: their content (achievements, quests,
+  // upcoming sessions) is naturally short and looks wrong when fixed.
+  const railWidth = 256;
   const panelStickyClasses =
-    'sticky top-[84px] max-h-[calc(100vh-84px)] overflow-y-auto self-start';
+    'sticky top-[104px] max-h-[calc(100vh-104px)] overflow-y-auto self-start';
 
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] items-start gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
-      {/* Nav rail — first in DOM = logical start (right in RTL, left in LTR) */}
-      <div className={`hidden lg:block ${railStickyClasses}`}>
+    <>
+      {/* Fixed-position rail — anchored at the inner edge of the centered
+          container, full viewport height below the topbar. The <nav> inside
+          VerticalNavRail already carries the "Primary navigation" aria-label,
+          so this wrapper is purely positional and stays role-less. */}
+      <div
+        className="fixed top-[104px] z-30 hidden h-[calc(100vh-104px)] overflow-y-auto lg:block"
+        style={{
+          width: `${railWidth}px`,
+          insetInlineStart: `max(16px, calc((100vw - 1440px) / 2 + 16px))`,
+        }}
+      >
         <VerticalNavRail />
       </div>
 
-      {/* Main content — grows to fill available space, capped for readability */}
-      <main className="min-w-0 flex-1">{children}</main>
+      <div className="mx-auto flex w-full max-w-[1440px] items-start gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
+        {/* Spacer that reserves the rail's width so main content lines up
+            with the fixed rail rather than slipping under it. */}
+        <div
+          className="hidden shrink-0 lg:block"
+          style={{ width: `${railWidth}px` }}
+          aria-hidden="true"
+        />
 
-      {/* End panel (gamification sidebar) — last in DOM = logical end (left in RTL, right in LTR) */}
-      {panel && (
-        <aside className={`hidden w-[320px] shrink-0 xl:block ${panelStickyClasses}`}>
-          {panel}
-        </aside>
-      )}
-    </div>
+        {/* Main content — grows to fill available space */}
+        <main className="min-w-0 flex-1">{children}</main>
+
+        {/* End panel (gamification sidebar) — left in RTL, right in LTR */}
+        {panel && (
+          <aside className={`hidden w-[320px] shrink-0 xl:block ${panelStickyClasses}`}>
+            {panel}
+          </aside>
+        )}
+      </div>
+    </>
   );
 }
 
