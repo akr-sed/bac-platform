@@ -142,7 +142,11 @@ export async function GET() {
       },
       {
         headers: {
-          'Cache-Control': 'private, max-age=300',
+          // Always revalidate — XP / streak / quest progress are user-visible
+          // counters that must update immediately after an action. The 5-min
+          // cache that lived here previously made the navbar feel "broken"
+          // because freshly-earned XP wouldn't appear until reload.
+          'Cache-Control': 'private, no-store',
         },
       }
     );

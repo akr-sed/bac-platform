@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { destroyManyByUrl } from '@/lib/cloudinary';
 import Solution from '@/models/Solution';
 import Comment from '@/models/Comment';
 
@@ -29,11 +30,16 @@ export async function DELETE(request: NextRequest, context: RouteContext) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
+    const mediaUrls = solution.images ?? [];
+
     // Cascade: delete the Solution first so the post-delete hook can count
     // existing comments and decrement Exercise.commentsCount correctly.
     // Only then do we actually purge the comments.
     await Solution.findByIdAndDelete(id);
     await Comment.deleteMany({ solutionId: id });
+
+    // Best-effort Cloudinary cleanup after DB delete succeeds.
+    await destroyManyByUrl(mediaUrls);
 
     return NextResponse.json({ success: true });
   } catch {

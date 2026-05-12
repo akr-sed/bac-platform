@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { connectToDatabase } from '@/lib/mongodb';
 import { getSession } from '@/lib/auth';
+import { grantXp } from '@/lib/gamification';
 import Comment from '@/models/Comment';
-import User from '@/models/User';
 
 const createCommentSchema = z.object({
   content: z.string().min(1).max(1000),
@@ -69,10 +69,10 @@ export async function POST(request: NextRequest, context: RouteContext) {
       content: result.data.content,
     });
 
-    await User.updateOne(
-      { _id: session.userId },
-      { $inc: { points: 2 } }
-    );
+    await grantXp(session.userId, 2, 'comment-posted', {
+      solutionId: id,
+      commentId: comment._id.toString(),
+    });
 
     const populated = await Comment.findById(comment._id)
       .populate({

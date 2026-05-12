@@ -1,11 +1,26 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'dev-secret-change-in-production'
-);
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+
+function resolveSecret(): Uint8Array {
+  const raw = process.env.JWT_SECRET;
+  if (!raw) {
+    if (IS_PRODUCTION) {
+      throw new Error(
+        'JWT_SECRET is required in production. Refusing to start with a default secret.'
+      );
+    }
+    return new TextEncoder().encode('dev-secret-change-in-production');
+  }
+  return new TextEncoder().encode(raw);
+}
+
+const JWT_SECRET = resolveSecret();
+const JWT_ALGORITHM = 'HS256' as const;
 
 const COOKIE_NAME = 'auth-token';
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 
 export interface JWTPayload {
   userId: string;
@@ -16,7 +31,7 @@ export interface JWTPayload {
 
 export async function signToken(payload: JWTPayload): Promise<string> {
   return new SignJWT({ ...payload })
-    .setProtectedHeader({ alg: 'HS256' })
+    .setProtectedHeader({ alg: JWT_ALGORITHM })
     .setIssuedAt()
     .setExpirationTime('7d')
     .sign(JWT_SECRET);
@@ -24,7 +39,9 @@ export async function signToken(payload: JWTPayload): Promise<string> {
 
 export async function verifyToken(token: string): Promise<JWTPayload | null> {
   try {
-    const { payload } = await jwtVerify(token, JWT_SECRET);
+    const { payload } = await jwtVerify(token, JWT_SECRET, {
+      algorithms: [JWT_ALGORITHM],
+    });
     return payload as unknown as JWTPayload;
   } catch {
     return null;
@@ -38,12 +55,22 @@ export async function getSession(): Promise<JWTPayload | null> {
   return verifyToken(token);
 }
 
+function buildCookie(value: string, maxAge: number): string {
+  const parts = [
+    `${COOKIE_NAME}=${value}`,
+    'HttpOnly',
+    'SameSite=Lax',
+    'Path=/',
+    `Max-Age=${maxAge}`,
+  ];
+  if (IS_PRODUCTION) parts.push('Secure');
+  return parts.join('; ');
+}
+
 export function setAuthCookie(response: Response, token: string): void {
-  const cookie = `${COOKIE_NAME}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${60 * 60 * 24 * 7}`;
-  response.headers.append('Set-Cookie', cookie);
+  response.headers.append('Set-Cookie', buildCookie(token, COOKIE_MAX_AGE));
 }
 
 export function clearAuthCookie(response: Response): void {
-  const cookie = `${COOKIE_NAME}=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`;
-  response.headers.append('Set-Cookie', cookie);
+  response.headers.append('Set-Cookie', buildCookie('', 0));
 }

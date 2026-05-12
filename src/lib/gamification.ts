@@ -64,20 +64,29 @@ function startOfDay(d: Date): Date {
 
 /**
  * Grant XP to a user, update their level, and record in XPLedger.
+ *
+ * Also keeps the legacy `User.points` field in sync 1:1 with `User.xp` —
+ * both fields represent the same reputation concept and several UI surfaces
+ * (`ReputationBadge`, `ProfileCard`, admin tables, `/api/profile/me`)
+ * still read `points`. Single award path → both fields stay aligned.
+ *
+ * Accepts a string id (e.g. `session.userId`) or an ObjectId; Mongoose casts
+ * automatically.
  */
 export async function grantXp(
-  userId: Types.ObjectId,
+  userId: string | Types.ObjectId,
   delta: number,
   reason: string,
   meta?: object
 ): Promise<void> {
+  if (!delta) return;
   await connectToDatabase();
   const User = (await import('@/models/User')).default;
   const XPLedger = (await import('@/models/XPLedger')).default;
 
   const user = await User.findByIdAndUpdate(
     userId,
-    { $inc: { xp: delta } },
+    { $inc: { xp: delta, points: delta } },
     { new: true, select: 'xp level' }
   );
   if (!user) return;

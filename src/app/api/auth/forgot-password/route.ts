@@ -45,13 +45,16 @@ export async function POST(request: NextRequest) {
     user.resetTokenExpiry = new Date(Date.now() + 60 * 60 * 1000);
     await user.save();
 
-    // Log the token for development (no email service integrated yet)
-    console.log(
-      `[Password Reset] Token for ${email}: ${resetTokenRaw}`
-    );
-    console.log(
-      `[Password Reset] Reset link: /reset-password?token=${resetTokenRaw}`
-    );
+    // Until an email integration ships, surface the reset link locally only.
+    // Never log secrets in production — silently no-op when NODE_ENV is set.
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(
+        `[Password Reset] Token for ${email}: ${resetTokenRaw}`
+      );
+      console.log(
+        `[Password Reset] Reset link: /reset-password?token=${resetTokenRaw}`
+      );
+    }
 
     return NextResponse.json({ message: successMessage });
   } catch {
