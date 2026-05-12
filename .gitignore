@@ -48,7 +48,7 @@ next-env.d.ts
 .mcp.json
 .superpowers/
 design-system/
-docs/superpowers/
+docs/
 
 # Playwright MCP test artifacts
 .playwright-mcp/
