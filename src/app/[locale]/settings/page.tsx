@@ -179,14 +179,10 @@ export default function SettingsPage() {
           <p className="mt-1 text-[14px] text-[#3E4850] font-arabic">{t('subtitle')}</p>
         </div>
 
-        {/* Desktop: secondary nav (end side) + content */}
+        {/* Desktop: secondary nav (start side, next to primary nav) + content */}
         <div className="hidden gap-6 lg:flex">
-          {/* Content panel — grows */}
-          <div className="min-w-0 flex-1 rounded-[12px] border border-[#DFE3E8] bg-white p-8">
-            {getTabContent(activeTab)}
-          </div>
-
-          {/* Secondary nav — 240px, end side */}
+          {/* Secondary nav — 240px, logical-start side (right in RTL, left in LTR)
+              so it sits adjacent to the primary VerticalNavRail */}
           <nav
             className="w-60 shrink-0 space-y-1"
             aria-label={t('title')}
@@ -201,6 +197,11 @@ export default function SettingsPage() {
               />
             ))}
           </nav>
+
+          {/* Content panel — grows */}
+          <div className="min-w-0 flex-1 rounded-[12px] border border-[#DFE3E8] bg-white p-8">
+            {getTabContent(activeTab)}
+          </div>
         </div>
 
         {/* Mobile: accordion */}

@@ -35,15 +35,20 @@ interface AppShellProps {
  */
 export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
   const panel = endPanel ?? leftPanel;
-  // TopAppBar is h-[84px] sticky; sidebars stick directly underneath it.
-  // Each sidebar gets its own scroll container so it never pushes the page.
-  const stickyClasses =
+  // TopAppBar is h-[84px] sticky. The primary nav rail uses a fixed height
+  // equal to the viewport-below-topbar so its bottom-pinned Settings entry
+  // sits at the bottom of the visible area (per Figma). End panels keep the
+  // max-height behaviour because their content (achievements, quests,
+  // upcoming sessions) is naturally scrollable.
+  const railStickyClasses =
+    'sticky top-[84px] h-[calc(100vh-84px)] overflow-y-auto self-start';
+  const panelStickyClasses =
     'sticky top-[84px] max-h-[calc(100vh-84px)] overflow-y-auto self-start';
 
   return (
     <div className="mx-auto flex w-full max-w-[1440px] items-start gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
       {/* Nav rail — first in DOM = logical start (right in RTL, left in LTR) */}
-      <div className={`hidden lg:block ${stickyClasses}`}>
+      <div className={`hidden lg:block ${railStickyClasses}`}>
         <VerticalNavRail />
       </div>
 
@@ -52,7 +57,7 @@ export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
 
       {/* End panel (gamification sidebar) — last in DOM = logical end (left in RTL, right in LTR) */}
       {panel && (
-        <aside className={`hidden w-[320px] shrink-0 xl:block ${stickyClasses}`}>
+        <aside className={`hidden w-[320px] shrink-0 xl:block ${panelStickyClasses}`}>
           {panel}
         </aside>
       )}
