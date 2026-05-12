@@ -3,7 +3,16 @@
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/routing';
 import { Link } from '@/i18n/routing';
-import { Home, BarChart3, Video, Trophy, BookOpen, Bookmark, Settings } from 'lucide-react';
+import {
+  Home,
+  BarChart3,
+  Video,
+  Trophy,
+  BookOpen,
+  Bookmark,
+  Sparkles,
+  Settings,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -19,6 +28,7 @@ const MAIN_ITEMS: NavItem[] = [
   { href: '/leaderboard', labelKey: 'leaderboard', icon: Trophy },
   { href: '/library', labelKey: 'library', icon: BookOpen },
   { href: '/saves', labelKey: 'saved', icon: Bookmark },
+  { href: '/tutor', labelKey: 'tutor', icon: Sparkles },
 ];
 // All keys come from the 'navigation' namespace
 

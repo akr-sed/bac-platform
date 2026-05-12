@@ -49,7 +49,8 @@
     "settings": "Paramètres",
     "dashboard": "Tableau de bord",
     "liveSessions": "Sessions en direct",
-    "saved": "Enregistrés"
+    "saved": "Enregistrés",
+    "tutor": "Tuteur IA"
   },
   "auth": {
     "login": {
@@ -874,5 +875,38 @@
     "search": "Rechercher des exercices",
     "searchPlaceholder": "Tapez pour chercher par titre ou description",
     "searchEmpty": "Aucun exercice ne correspond"
+  },
+  "tutor": {
+    "title": "Tuteur IA",
+    "subtitle": "Obtenez des indices, des retours et des recommandations de l'IA",
+    "preview": "Le tuteur IA est en aperçu — les réponses sont des espaces réservés pour le moment.",
+    "tabs": {
+      "hint": "Obtenir un indice",
+      "feedback": "Soumettre ma tentative",
+      "similar": "Trouver des similaires"
+    },
+    "selectExercise": "Sélectionner un exercice...",
+    "loadingExercises": "Chargement des exercices…",
+    "exerciseLabel": "Exercice",
+    "hintLevel": "Niveau d'indice",
+    "level1": "Niveau 1 — Subtil",
+    "level2": "Niveau 2 — Guidé",
+    "level3": "Niveau 3 — Explicite",
+    "getHint": "Obtenir l'indice",
+    "thinking": "Réflexion…",
+    "exhaustedHints": "Plus d'indices disponibles — essayez de soumettre votre solution complète.",
+    "attempt": "Votre tentative",
+    "placeholderAttempt": "Collez votre solution ici...",
+    "attachImages": "Joindre des images de votre travail",
+    "submitForFeedback": "Obtenir un retour",
+    "score": "Note",
+    "summary": "Résumé",
+    "lineComments": "Commentaires ligne par ligne",
+    "lineLabel": "Ligne {line}",
+    "noResults": "Aucun exercice similaire trouvé.",
+    "findSimilar": "Trouver des exercices similaires",
+    "selectFirst": "Choisissez un exercice pour continuer.",
+    "errorGeneric": "Une erreur est survenue. Veuillez réessayer.",
+    "placeholderBadge": "Réponse fictive"
   }
 }

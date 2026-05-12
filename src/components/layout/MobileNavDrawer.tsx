@@ -10,6 +10,7 @@ import {
   Trophy,
   BookOpen,
   Bookmark,
+  Sparkles,
   Settings,
   Menu,
   LogOut,
@@ -39,6 +40,7 @@ const MAIN_ITEMS: NavItem[] = [
   { href: '/leaderboard', labelKey: 'leaderboard', icon: Trophy },
   { href: '/library', labelKey: 'library', icon: BookOpen },
   { href: '/saves', labelKey: 'saved', icon: Bookmark },
+  { href: '/tutor', labelKey: 'tutor', icon: Sparkles },
 ];
 
 const BOTTOM_ITEMS: NavItem[] = [
