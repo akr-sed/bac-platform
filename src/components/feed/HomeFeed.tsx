@@ -4,9 +4,9 @@ import Exercise from '@/models/Exercise';
 import User from '@/models/User';
 import ExerciseLike from '@/models/ExerciseLike';
 import SavedExercise from '@/models/SavedExercise';
-import { buildFeedPipeline } from '@/lib/feed-ranking';
+import { buildFeedPipeline, parseFeedSort, type FeedSort } from '@/lib/feed-ranking';
 import { Types } from 'mongoose';
-import { ExerciseCard } from '@/components/exercises/exercise-card';
+import { FeedList } from '@/components/exercises/feed-list';
 import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-rail';
 import { TeacherSessionsSection } from '@/components/sessions/teacher-sessions-section';
 import { Logo } from '@/components/brand/Logo';
@@ -20,25 +20,38 @@ interface Props {
   userName: string;
   userRole: 'student' | 'teacher' | 'admin';
   locale: string;
+  /**
+   * Active feed sort. Defaults to "for-you" when missing. Driven by
+   * `?sort=` on the home page so refresh / share keeps state.
+   */
+  sort?: FeedSort;
 }
 
 const BAC_DATE = new Date('2026-06-01T08:00:00+01:00');
+const INITIAL_FEED_LIMIT = 10;
 
 function daysUntilBac(): number {
   return Math.max(0, Math.ceil((BAC_DATE.getTime() - Date.now()) / 86400000));
 }
 
-async function loadFeed(userId: string): Promise<FeedItemDTO[]> {
+async function loadFeed(
+  userId: string,
+  sort: FeedSort,
+): Promise<FeedItemDTO[]> {
   await connectToDatabase();
-  const user = await User.findById(userId).select('preferences').lean();
-  type UserDoc = { preferences?: { subjects?: string[] } } | null;
-  const preferredSubjects: string[] =
-    (user as UserDoc)?.preferences?.subjects ?? [];
+  // Only "for-you" consumes preferences; skip the user fetch otherwise.
+  let preferredSubjects: string[] = [];
+  if (sort === 'for-you') {
+    const user = await User.findById(userId).select('preferences').lean();
+    type UserDoc = { preferences?: { subjects?: string[] } } | null;
+    preferredSubjects = (user as UserDoc)?.preferences?.subjects ?? [];
+  }
 
   const pipeline = buildFeedPipeline({
     preferredSubjects,
     page: 0,
-    limit: 12,
+    limit: INITIAL_FEED_LIMIT,
+    sort,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -69,10 +82,11 @@ async function loadFeed(userId: string): Promise<FeedItemDTO[]> {
   })) as unknown as FeedItemDTO[];
 }
 
-export async function HomeFeed({ userId, userName, userRole, locale }: Props) {
+export async function HomeFeed({ userId, userName, userRole, locale, sort }: Props) {
   const isTeacher = userRole === 'teacher' || userRole === 'admin';
+  const activeSort: FeedSort = parseFeedSort(sort);
   const [items, upcomingResult, teacherResult] = await Promise.all([
-    loadFeed(userId),
+    loadFeed(userId, activeSort),
     fetchSessionsList({ upcoming: true, limit: 5, viewerUserId: userId }),
     isTeacher
       ? fetchSessionsList({
@@ -147,11 +161,12 @@ export async function HomeFeed({ userId, userName, userRole, locale }: Props) {
               </p>
             </div>
           ) : (
-            <div className="space-y-5">
-              {items.map((item) => (
-                <ExerciseCard key={item._id} exercise={item} />
-              ))}
-            </div>
+            <FeedList
+              initialItems={items}
+              endpoint="/api/feed"
+              initialSort={activeSort}
+              pageSize={INITIAL_FEED_LIMIT}
+            />
           )}
         </section>
       </div>

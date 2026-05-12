@@ -86,6 +86,10 @@ export function ActivityTabs({ activity }: ActivityTabsProps) {
                 avatar: (author.avatar as string | null | undefined) ?? null,
                 role: (author.role as 'student' | 'teacher' | 'admin') ?? 'student',
                 isVerifiedTeacher: Boolean(author.isVerifiedTeacher),
+                points:
+                  typeof author.points === 'number'
+                    ? (author.points as number)
+                    : undefined,
               },
               isLiked: false,
               isSaved: true,

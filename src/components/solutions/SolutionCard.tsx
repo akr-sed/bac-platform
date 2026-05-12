@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import LikeButton from './LikeButton';
 import CommentList from '@/components/comments/CommentList';
+import { ImageLightbox } from '@/components/exercises/image-lightbox';
 import type { SolutionDTO } from '@/types';
 
 interface SolutionCardProps {
@@ -32,6 +33,9 @@ function timeAgo(dateString: string): string {
 export default function SolutionCard({ solution }: SolutionCardProps) {
   const t = useTranslations('solutions');
   const [showComments, setShowComments] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const images = solution.images ?? [];
 
   return (
     <Card>
@@ -58,23 +62,23 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
           {solution.content}
         </div>
 
-        {solution.images.length > 0 && (
-          <div className={`mt-3 grid gap-2 ${solution.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-            {solution.images.map((url, i) => (
-              <a
+        {images.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {images.map((url, i) => (
+              <button
                 key={i}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg border border-slate-200 bg-slate-50"
+                type="button"
+                onClick={() => setLightboxIndex(i)}
+                className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 transition-opacity duration-200 hover:opacity-80"
+                aria-label={`Open image ${i + 1}`}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={url}
                   alt={`Solution image ${i + 1}`}
-                  className="w-full object-contain transition hover:opacity-90"
-                  style={{ maxHeight: '300px' }}
+                  className="h-24 w-auto object-cover"
                 />
-              </a>
+              </button>
             ))}
           </div>
         )}
@@ -115,6 +119,17 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
           </div>
         )}
       </CardContent>
+
+      {images.length > 0 && (
+        <ImageLightbox
+          images={images}
+          initialIndex={lightboxIndex ?? 0}
+          open={lightboxIndex !== null}
+          onOpenChange={(o) => {
+            if (!o) setLightboxIndex(null);
+          }}
+        />
+      )}
     </Card>
   );
 }

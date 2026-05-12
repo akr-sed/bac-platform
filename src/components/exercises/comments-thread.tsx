@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { ReportActionMenu } from '@/components/ui/report-action-menu';
+import ReputationBadge from '@/components/profile/ReputationBadge';
 import {
   Dialog,
   DialogContent,
@@ -19,7 +21,12 @@ import {
 interface Comment {
   _id: string;
   content: string;
-  author?: { _id: string; name: string; avatar?: string | null };
+  author?: {
+    _id: string;
+    name: string;
+    avatar?: string | null;
+    points?: number;
+  };
   createdAt?: string;
 }
 
@@ -95,34 +102,49 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
         <p className="py-2 text-center text-xs text-muted-foreground">No comments yet</p>
       ) : (
         <ul className="space-y-3">
-          {comments.map((c) => (
-            <li key={c._id} className="group flex items-start gap-3">
-              <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-foreground">
-                    {c.author?.name ?? 'Anonymous'}
-                  </span>
-                  {c.createdAt && (
-                    <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
-                      {new Date(c.createdAt).toLocaleDateString()}
+          {comments.map((c) => {
+            const isOwn = authUser && c.author?._id === authUser._id;
+            const canReport =
+              authUser && c.author?._id && c.author._id !== authUser._id;
+            return (
+              <li key={c._id} className="group flex items-start gap-3">
+                <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-medium text-foreground">
+                      {c.author?.name ?? 'Anonymous'}
                     </span>
-                  )}
-                  {authUser && c.author?._id === authUser._id && (
-                    <button
-                      type="button"
-                      className="cursor-pointer text-muted-foreground/50 opacity-0 transition-opacity duration-200 hover:text-destructive group-hover:opacity-100"
-                      onClick={() => setDeleteTarget(c._id)}
-                      aria-label="Delete comment"
-                    >
-                      <Trash2 className="size-3" />
-                    </button>
-                  )}
+                    {typeof c.author?.points === 'number' && (
+                      <ReputationBadge points={c.author.points} />
+                    )}
+                    {c.createdAt && (
+                      <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
+                        {new Date(c.createdAt).toLocaleDateString()}
+                      </span>
+                    )}
+                    {isOwn && (
+                      <button
+                        type="button"
+                        className="cursor-pointer text-muted-foreground/50 opacity-0 transition-opacity duration-200 hover:text-destructive group-hover:opacity-100"
+                        onClick={() => setDeleteTarget(c._id)}
+                        aria-label="Delete comment"
+                      >
+                        <Trash2 className="size-3" />
+                      </button>
+                    )}
+                    {canReport && (
+                      <ReportActionMenu
+                        targetType="comment"
+                        targetId={c._id}
+                        className="ms-auto size-7"
+                      />
+                    )}
+                  </div>
+                  <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">{c.content}</p>
                 </div>
-                <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">{c.content}</p>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       )}
 

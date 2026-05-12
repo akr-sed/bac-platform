@@ -14,7 +14,7 @@ export async function GET() {
     .sort({ createdAt: -1 })
     .populate({
       path: 'exerciseId',
-      populate: { path: 'authorId', select: 'name avatar role isVerifiedTeacher' },
+      populate: { path: 'authorId', select: 'name avatar role isVerifiedTeacher points' },
     });
 
   return NextResponse.json({ data: saves.map((s) => s.exerciseId) });

@@ -7,6 +7,8 @@ import { imageUrl, blurUrl, firstPreview } from '@/lib/cloudinary-preview';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { LikeButton } from './like-button';
 import { SaveButton } from './save-button';
+import { ReportKebab } from './report-kebab';
+import ReputationBadge from '@/components/profile/ReputationBadge';
 import { cn } from '@/lib/utils';
 import type { FeedItemDTO } from '@/types';
 
@@ -64,12 +66,17 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
           {exercise.subject}
         </span>
 
-        {/* Author meta + avatar */}
+        {/* Author meta + avatar + report kebab */}
         <div className="flex items-center gap-2">
-          <div className="text-end">
-            <p className="text-sm font-semibold text-[#171C20]">
-              {exercise.author?.name ?? '—'}
-            </p>
+          <div className="flex flex-col items-end text-end">
+            <div className="flex items-center gap-1.5">
+              <p className="text-sm font-semibold text-[#171C20]">
+                {exercise.author?.name ?? '—'}
+              </p>
+              {typeof exercise.author?.points === 'number' && (
+                <ReputationBadge points={exercise.author.points} />
+              )}
+            </div>
             <time
               className="text-xs text-[#3E4850]"
               dateTime={exercise.lastActivityAt}
@@ -81,6 +88,11 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
             src={exercise.author?.avatar}
             name={exercise.author?.name}
             size="sm"
+          />
+          <ReportKebab
+            targetType="exercise"
+            targetId={exercise._id}
+            authorId={exercise.author?._id}
           />
         </div>
       </header>

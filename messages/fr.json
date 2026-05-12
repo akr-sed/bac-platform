@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "report": "Signaler"
+  },
+  "reportDialog": {
+    "title": "Signaler ce contenu",
+    "reasonLabel": "Raison",
+    "reasonPlaceholder": "Expliquez pourquoi vous signalez ce contenu...",
+    "cancel": "Annuler",
+    "submit": "Envoyer",
+    "success": "Signalement envoyé",
+    "error": "Impossible d'envoyer le signalement"
+  },
   "common": {
     "welcome": "Bienvenue sur la plateforme BAC",
     "save": "Enregistrer",
@@ -132,6 +144,10 @@
     "comment": "Commenter",
     "comments": "{count, plural, one {# commentaire} other {# commentaires}}",
     "addComment": "Ajouter un commentaire",
+    "images": "Images",
+    "imagesLabel": "images",
+    "addImages": "Ajouter des images",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Votre solution",
       "images": "Joindre des images"
@@ -268,7 +284,12 @@
     "like": "J'aime",
     "save": "Enregistrer",
     "comments": "Commentaires",
-    "loading": "Chargement…"
+    "loading": "Chargement…",
+    "tabs": {
+      "forYou": "Pour vous",
+      "trending": "Tendances",
+      "latest": "Récents"
+    }
   },
   "preferences": {
     "title": "Préférences de matières",

@@ -18,6 +18,7 @@ interface PopulatedAuthor {
   avatar?: string;
   role?: 'student' | 'teacher' | 'admin';
   isVerifiedTeacher?: boolean;
+  points?: number;
 }
 
 interface PopulatedExercise {
@@ -45,7 +46,7 @@ async function loadSaved(userId: string): Promise<FeedItemDTO[]> {
     .sort({ createdAt: -1 })
     .populate({
       path: 'exerciseId',
-      populate: { path: 'authorId', select: 'name avatar role isVerifiedTeacher' },
+      populate: { path: 'authorId', select: 'name avatar role isVerifiedTeacher points' },
     })
     .lean<{ exerciseId: PopulatedExercise | null }[]>();
 
@@ -85,6 +86,7 @@ async function loadSaved(userId: string): Promise<FeedItemDTO[]> {
       avatar: ex.authorId?.avatar,
       role: ex.authorId?.role ?? 'student',
       isVerifiedTeacher: ex.authorId?.isVerifiedTeacher ?? false,
+      points: ex.authorId?.points,
     },
     isLiked: likedSet.has(String(ex._id)),
     isSaved: true,

@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "report": "Report"
+  },
+  "reportDialog": {
+    "title": "Report this content",
+    "reasonLabel": "Reason",
+    "reasonPlaceholder": "Explain why you're reporting...",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "success": "Report submitted",
+    "error": "Could not submit report"
+  },
   "common": {
     "welcome": "Welcome to BAC Platform",
     "save": "Save",
@@ -132,6 +144,10 @@
     "comment": "Comment",
     "comments": "{count, plural, one {# comment} other {# comments}}",
     "addComment": "Add a comment",
+    "images": "Images",
+    "imagesLabel": "images",
+    "addImages": "Add images",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Your Solution",
       "images": "Attach Images"
@@ -268,7 +284,12 @@
     "like": "Like",
     "save": "Save",
     "comments": "Comments",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "tabs": {
+      "forYou": "For You",
+      "trending": "Trending",
+      "latest": "Latest"
+    }
   },
   "preferences": {
     "title": "Subject preferences",

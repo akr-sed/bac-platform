@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "report": "إبلاغ"
+  },
+  "reportDialog": {
+    "title": "إبلاغ عن المحتوى",
+    "reasonLabel": "السبب",
+    "reasonPlaceholder": "اشرح لماذا تبلغ عن هذا المحتوى...",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "success": "تم إرسال البلاغ",
+    "error": "تعذر إرسال البلاغ"
+  },
   "common": {
     "welcome": "مرحباً بك في منصة البكالوريا",
     "save": "حفظ",
@@ -132,6 +144,10 @@
     "comment": "تعليق",
     "comments": "{count, plural, zero {لا تعليقات} one {تعليق واحد} two {تعليقان} few {# تعليقات} many {# تعليقاً} other {# تعليق}}",
     "addComment": "أضف تعليقاً",
+    "images": "الصور",
+    "imagesLabel": "صور",
+    "addImages": "أضف صورًا",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "حلّك",
       "images": "إرفاق صور"
@@ -268,7 +284,12 @@
     "like": "إعجاب",
     "save": "حفظ",
     "comments": "تعليقات",
-    "loading": "جارٍ التحميل…"
+    "loading": "جارٍ التحميل…",
+    "tabs": {
+      "forYou": "مخصص لك",
+      "trending": "الرائج",
+      "latest": "الأحدث"
+    }
   },
   "preferences": {
     "title": "تفضيلات المواد",
