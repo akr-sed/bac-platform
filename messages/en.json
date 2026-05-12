@@ -144,6 +144,12 @@
     "comment": "Comment",
     "comments": "{count, plural, one {# comment} other {# comments}}",
     "addComment": "Add a comment",
+    "kindLabel": "Type",
+    "kind": {
+      "comment": "Comment",
+      "tip": "Tip",
+      "mistake": "Mistake"
+    },
     "images": "Images",
     "imagesLabel": "images",
     "addImages": "Add images",
@@ -166,7 +172,13 @@
     "reputation": "Reputation",
     "joinedAt": "Member since",
     "verifiedTeacher": "Verified Teacher",
-    "editProfile": "Edit Profile"
+    "editProfile": "Edit Profile",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "followers": "Followers",
+    "following": "Following",
+    "followError": "Could not follow user. Please try again.",
+    "unfollowError": "Could not unfollow user. Please try again."
   },
   "moderation": {
     "delete": "Delete",
@@ -824,5 +836,43 @@
   "saves": {
     "title": "Saved exercises",
     "empty": "You haven't saved any exercises yet. Browse the library and bookmark anything you want to come back to."
+  },
+  "collections": {
+    "title": "Collections",
+    "myCollections": "My Collections",
+    "create": "Create collection",
+    "empty": "No collections yet",
+    "addExercise": "Add exercise",
+    "removeExercise": "Remove",
+    "manage": "Manage",
+    "delete": "Delete collection",
+    "noDescription": "",
+    "visibility": {
+      "label": "Visibility",
+      "public": "Public",
+      "private": "Private"
+    },
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Bac 2024 — calculus essentials",
+      "description": "Description",
+      "descriptionPlaceholder": "What does this collection cover?",
+      "submit": "Create",
+      "submitting": "Creating…",
+      "cancel": "Cancel",
+      "error": "Failed to create collection"
+    },
+    "exerciseCount": "{count, plural, one {# exercise} other {# exercises}}",
+    "loadError": "Failed to load collections",
+    "addToCollection": "Add to collection",
+    "addedToCollection": "Added to collection",
+    "addToCollectionEmpty": "You don't have any collections yet.",
+    "deleteConfirm": "This will permanently delete this collection. The exercises themselves remain.",
+    "rename": "Rename",
+    "save": "Save",
+    "saving": "Saving…",
+    "search": "Search exercises",
+    "searchPlaceholder": "Type to search by title or description",
+    "searchEmpty": "No matching exercises found"
   }
 }

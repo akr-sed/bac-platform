@@ -14,6 +14,7 @@ import {
   FileText,
   Trash2,
   Loader2,
+  FolderPlus,
 } from 'lucide-react';
 import { Link, useRouter } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
@@ -25,6 +26,7 @@ import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { RoleBadge } from '@/components/ui/role-badge';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { SubmitSolutionDialog } from '@/components/exercises/submit-solution-dialog';
+import { AddToCollectionDialog } from '@/components/collections/add-to-collection-dialog';
 import { HintModal } from '@/components/exercises/hint-modal';
 import { SimilarExercisesSidebar } from '@/components/exercises/similar-exercises-sidebar';
 import { CommentsThread } from '@/components/exercises/comments-thread';
@@ -87,6 +89,7 @@ export default function ExerciseDetailPage() {
   const tSol = useTranslations('solutions');
   const tAi = useTranslations('ai');
   const tCommon = useTranslations('common');
+  const tCollections = useTranslations('collections');
   const locale = useLocale();
   const topicLocale: ExamTopicLocale =
     locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
@@ -100,6 +103,7 @@ export default function ExerciseDetailPage() {
   const [loading, setLoading] = useState(true);
   const [submitOpen, setSubmitOpen] = useState(false);
   const [hintOpen, setHintOpen] = useState(false);
+  const [addToCollectionOpen, setAddToCollectionOpen] = useState(false);
   const [commentsOpenFor, setCommentsOpenFor] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
   const [deleteExerciseOpen, setDeleteExerciseOpen] = useState(false);
@@ -107,6 +111,9 @@ export default function ExerciseDetailPage() {
   const [deleting, setDeleting] = useState(false);
 
   const isExerciseAuthor = authUser && exercise?.author?._id === authUser._id;
+  const canCurate = Boolean(
+    authUser && (authUser.role === 'teacher' || authUser.role === 'admin')
+  );
 
   const handleDeleteExercise = async () => {
     setDeleting(true);
@@ -322,6 +329,16 @@ export default function ExerciseDetailPage() {
                   <Lightbulb className="size-4" />
                   {tAi('hintButton')}
                 </Button>
+                {canCurate && exercise && (
+                  <Button
+                    variant="outline"
+                    className="h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium"
+                    onClick={() => setAddToCollectionOpen(true)}
+                  >
+                    <FolderPlus className="size-4" />
+                    {tCollections('addToCollection')}
+                  </Button>
+                )}
                 {isExerciseAuthor && (
                   <Button
                     variant="ghost"
@@ -498,6 +515,14 @@ export default function ExerciseDetailPage() {
         open={submitOpen}
         onOpenChange={setSubmitOpen}
       />
+      {authUser && canCurate && (
+        <AddToCollectionDialog
+          exerciseId={id}
+          ownerId={authUser._id}
+          open={addToCollectionOpen}
+          onOpenChange={setAddToCollectionOpen}
+        />
+      )}
       <HintModal
         exerciseId={id}
         exerciseTitle={exercise?.title ?? ''}

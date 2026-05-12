@@ -1,9 +1,11 @@
 // src/lib/feed-ranking.ts
-import type { PipelineStage } from 'mongoose';
+import { Types, type PipelineStage } from 'mongoose';
 
 export type FeedSort = 'for-you' | 'trending' | 'latest';
+export type FeedFilter = 'all' | 'following';
 
 export const FEED_SORTS = ['for-you', 'trending', 'latest'] as const;
+export const FEED_FILTERS = ['all', 'following'] as const;
 
 /**
  * Coerce an arbitrary query-string value to a valid FeedSort.
@@ -16,11 +18,29 @@ export function parseFeedSort(value: string | null | undefined): FeedSort {
   return 'for-you';
 }
 
+/**
+ * Coerce an arbitrary query-string value to a valid FeedFilter.
+ * Falls back to "all" when missing or unknown.
+ */
+export function parseFeedFilter(value: string | null | undefined): FeedFilter {
+  if (value === 'following') return 'following';
+  return 'all';
+}
+
 interface BuildFeedPipelineArgs {
   preferredSubjects: string[];
   page: number;
   limit: number;
   sort?: FeedSort;
+  /**
+   * Optional list of author ObjectIds to restrict the feed to. Used by the
+   * `?filter=following` mode — when provided we prepend a `$match` stage
+   * that limits exercises to those authored by these users.
+   *
+   * Pass an empty array to short-circuit to an empty result (e.g. the
+   * viewer follows nobody).
+   */
+  authorIds?: Types.ObjectId[];
 }
 
 const AUTHOR_LOOKUP: PipelineStage[] = [
@@ -162,6 +182,7 @@ export function buildFeedPipeline({
   page,
   limit,
   sort = 'for-you',
+  authorIds,
 }: BuildFeedPipelineArgs): PipelineStage[] {
   let rankingStages: PipelineStage[];
   if (sort === 'trending') {
@@ -172,7 +193,15 @@ export function buildFeedPipeline({
     rankingStages = forYouStages(preferredSubjects);
   }
 
+  // When the caller restricts by authors (`?filter=following`), prepend a
+  // `$match` so the ranking stages only score the eligible documents. Keeping
+  // it as the very first stage lets Mongo use the existing authorId index.
+  const preStages: PipelineStage[] = authorIds
+    ? [{ $match: { authorId: { $in: authorIds } } }]
+    : [];
+
   return [
+    ...preStages,
     ...rankingStages,
     { $skip: page * limit },
     { $limit: limit },

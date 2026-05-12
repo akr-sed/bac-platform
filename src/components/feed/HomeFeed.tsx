@@ -4,7 +4,14 @@ import Exercise from '@/models/Exercise';
 import User from '@/models/User';
 import ExerciseLike from '@/models/ExerciseLike';
 import SavedExercise from '@/models/SavedExercise';
-import { buildFeedPipeline, parseFeedSort, type FeedSort } from '@/lib/feed-ranking';
+import Follow from '@/models/Follow';
+import {
+  buildFeedPipeline,
+  parseFeedFilter,
+  parseFeedSort,
+  type FeedFilter,
+  type FeedSort,
+} from '@/lib/feed-ranking';
 import { Types } from 'mongoose';
 import { FeedList } from '@/components/exercises/feed-list';
 import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-rail';
@@ -25,6 +32,11 @@ interface Props {
    * `?sort=` on the home page so refresh / share keeps state.
    */
   sort?: FeedSort;
+  /**
+   * Active feed filter. Defaults to "all". Driven by `?filter=` on the
+   * home page. Wave C1 introduces "following".
+   */
+  filter?: FeedFilter;
 }
 
 const BAC_DATE = new Date('2026-06-01T08:00:00+01:00');
@@ -37,6 +49,7 @@ function daysUntilBac(): number {
 async function loadFeed(
   userId: string,
   sort: FeedSort,
+  filter: FeedFilter,
 ): Promise<FeedItemDTO[]> {
   await connectToDatabase();
   // Only "for-you" consumes preferences; skip the user fetch otherwise.
@@ -47,11 +60,23 @@ async function loadFeed(
     preferredSubjects = (user as UserDoc)?.preferences?.subjects ?? [];
   }
 
+  // Resolve followee list when the viewer wants the following feed. If they
+  // follow nobody, short-circuit to an empty page.
+  let authorIds: Types.ObjectId[] | undefined;
+  if (filter === 'following') {
+    const followees = await Follow.find({ follower: userId }).distinct(
+      'followee'
+    );
+    if (followees.length === 0) return [];
+    authorIds = followees.map((id) => new Types.ObjectId(String(id)));
+  }
+
   const pipeline = buildFeedPipeline({
     preferredSubjects,
     page: 0,
     limit: INITIAL_FEED_LIMIT,
     sort,
+    authorIds,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -82,11 +107,12 @@ async function loadFeed(
   })) as unknown as FeedItemDTO[];
 }
 
-export async function HomeFeed({ userId, userName, userRole, locale, sort }: Props) {
+export async function HomeFeed({ userId, userName, userRole, locale, sort, filter }: Props) {
   const isTeacher = userRole === 'teacher' || userRole === 'admin';
   const activeSort: FeedSort = parseFeedSort(sort);
+  const activeFilter: FeedFilter = parseFeedFilter(filter);
   const [items, upcomingResult, teacherResult] = await Promise.all([
-    loadFeed(userId, activeSort),
+    loadFeed(userId, activeSort, activeFilter),
     fetchSessionsList({ upcoming: true, limit: 5, viewerUserId: userId }),
     isTeacher
       ? fetchSessionsList({
@@ -151,7 +177,7 @@ export async function HomeFeed({ userId, userName, userRole, locale, sort }: Pro
           >
             {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
           </h2>
-          {items.length === 0 ? (
+          {items.length === 0 && activeFilter === 'all' ? (
             <div className="rounded-3xl border border-dashed border-border p-12 text-center">
               <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">
@@ -165,6 +191,7 @@ export async function HomeFeed({ userId, userName, userRole, locale, sort }: Pro
               initialItems={items}
               endpoint="/api/feed"
               initialSort={activeSort}
+              initialFilter={activeFilter}
               pageSize={INITIAL_FEED_LIMIT}
             />
           )}

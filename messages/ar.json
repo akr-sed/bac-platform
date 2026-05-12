@@ -144,6 +144,12 @@
     "comment": "تعليق",
     "comments": "{count, plural, zero {لا تعليقات} one {تعليق واحد} two {تعليقان} few {# تعليقات} many {# تعليقاً} other {# تعليق}}",
     "addComment": "أضف تعليقاً",
+    "kindLabel": "النوع",
+    "kind": {
+      "comment": "تعليق",
+      "tip": "نصيحة",
+      "mistake": "خطأ شائع"
+    },
     "images": "الصور",
     "imagesLabel": "صور",
     "addImages": "أضف صورًا",
@@ -166,7 +172,13 @@
     "reputation": "السمعة",
     "joinedAt": "عضو منذ",
     "verifiedTeacher": "أستاذ موثّق",
-    "editProfile": "تعديل الملف الشخصي"
+    "editProfile": "تعديل الملف الشخصي",
+    "follow": "متابعة",
+    "unfollow": "إلغاء المتابعة",
+    "followers": "المتابعون",
+    "following": "يتابع",
+    "followError": "تعذّرت متابعة المستخدم. حاول مرة أخرى.",
+    "unfollowError": "تعذّر إلغاء المتابعة. حاول مرة أخرى."
   },
   "moderation": {
     "delete": "حذف",
@@ -824,5 +836,43 @@
   "saves": {
     "title": "التمارين المحفوظة",
     "empty": "لم تحفظ أي تمرين بعد. تصفّح البنك وأضف ما تريد العودة إليه لاحقًا."
+  },
+  "collections": {
+    "title": "المجموعات",
+    "myCollections": "مجموعاتي",
+    "create": "إنشاء مجموعة",
+    "empty": "لا توجد مجموعات",
+    "addExercise": "إضافة تمرين",
+    "removeExercise": "إزالة",
+    "manage": "إدارة",
+    "delete": "حذف المجموعة",
+    "noDescription": "",
+    "visibility": {
+      "label": "الظهور",
+      "public": "عامة",
+      "private": "خاصة"
+    },
+    "form": {
+      "title": "العنوان",
+      "titlePlaceholder": "مثال: باك 2024 — أساسيات التحليل",
+      "description": "الوصف",
+      "descriptionPlaceholder": "ماذا تحتوي هذه المجموعة؟",
+      "submit": "إنشاء",
+      "submitting": "جاري الإنشاء…",
+      "cancel": "إلغاء",
+      "error": "تعذّر إنشاء المجموعة"
+    },
+    "exerciseCount": "{count, plural, zero {# تمرين} one {تمرين واحد} two {تمرينان} few {# تمارين} many {# تمرينًا} other {# تمرين}}",
+    "loadError": "تعذّر تحميل المجموعات",
+    "addToCollection": "إضافة إلى مجموعة",
+    "addedToCollection": "تمت الإضافة إلى المجموعة",
+    "addToCollectionEmpty": "ليس لديك أي مجموعة بعد.",
+    "deleteConfirm": "سيُحذف هذا المجموعة نهائيًا. تبقى التمارين متاحة.",
+    "rename": "إعادة تسمية",
+    "save": "حفظ",
+    "saving": "جاري الحفظ…",
+    "search": "البحث عن تمارين",
+    "searchPlaceholder": "اكتب للبحث بالعنوان أو الوصف",
+    "searchEmpty": "لا توجد تمارين مطابقة"
   }
 }

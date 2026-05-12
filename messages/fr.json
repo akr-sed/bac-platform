@@ -144,6 +144,12 @@
     "comment": "Commenter",
     "comments": "{count, plural, one {# commentaire} other {# commentaires}}",
     "addComment": "Ajouter un commentaire",
+    "kindLabel": "Type",
+    "kind": {
+      "comment": "Commentaire",
+      "tip": "Astuce",
+      "mistake": "Erreur courante"
+    },
     "images": "Images",
     "imagesLabel": "images",
     "addImages": "Ajouter des images",
@@ -166,7 +172,13 @@
     "reputation": "Réputation",
     "joinedAt": "Membre depuis",
     "verifiedTeacher": "Professeur vérifié",
-    "editProfile": "Modifier le profil"
+    "editProfile": "Modifier le profil",
+    "follow": "Suivre",
+    "unfollow": "Ne plus suivre",
+    "followers": "Abonnés",
+    "following": "Abonnements",
+    "followError": "Impossible de suivre cet utilisateur. Réessayez.",
+    "unfollowError": "Impossible d'arrêter de suivre. Réessayez."
   },
   "moderation": {
     "delete": "Supprimer",
@@ -824,5 +836,43 @@
   "saves": {
     "title": "Exercices enregistrés",
     "empty": "Vous n'avez encore enregistré aucun exercice. Parcourez la banque et ajoutez ceux que vous voulez retrouver plus tard."
+  },
+  "collections": {
+    "title": "Collections",
+    "myCollections": "Mes collections",
+    "create": "Créer une collection",
+    "empty": "Aucune collection",
+    "addExercise": "Ajouter un exercice",
+    "removeExercise": "Retirer",
+    "manage": "Gérer",
+    "delete": "Supprimer la collection",
+    "noDescription": "",
+    "visibility": {
+      "label": "Visibilité",
+      "public": "Public",
+      "private": "Privée"
+    },
+    "form": {
+      "title": "Titre",
+      "titlePlaceholder": "ex. Bac 2024 — fondamentaux de l'analyse",
+      "description": "Description",
+      "descriptionPlaceholder": "Que couvre cette collection ?",
+      "submit": "Créer",
+      "submitting": "Création…",
+      "cancel": "Annuler",
+      "error": "Échec de la création"
+    },
+    "exerciseCount": "{count, plural, one {# exercice} other {# exercices}}",
+    "loadError": "Échec du chargement des collections",
+    "addToCollection": "Ajouter à une collection",
+    "addedToCollection": "Ajouté à la collection",
+    "addToCollectionEmpty": "Vous n'avez encore aucune collection.",
+    "deleteConfirm": "Cette action supprimera définitivement la collection. Les exercices restent disponibles.",
+    "rename": "Renommer",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "search": "Rechercher des exercices",
+    "searchPlaceholder": "Tapez pour chercher par titre ou description",
+    "searchEmpty": "Aucun exercice ne correspond"
   }
 }

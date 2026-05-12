@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
 import { User, Calendar, BookOpen, MessageCircle, Award } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { Logo } from '@/components/brand/Logo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -14,6 +14,8 @@ import { PointsPill } from '@/components/ui/points-pill';
 import { RoleBadge } from '@/components/ui/role-badge';
 import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { Badge } from '@/components/ui/badge';
+import { FollowButton } from '@/components/profile/FollowButton';
+import { useAuth } from '@/components/providers/AuthProvider';
 
 interface PublicProfile {
   _id: string;
@@ -36,25 +38,43 @@ interface PublicProfile {
   }>;
 }
 
+interface ProfileResponse {
+  user: PublicProfile;
+  followersCount?: number;
+  followingCount?: number;
+}
+
 export default function PublicProfilePage() {
   const t = useTranslations('profile');
   const roles = useTranslations('roles');
   const reputation = useTranslations('reputation.badges');
   const params = useParams();
   const id = params.id as string;
+  const { user: viewer } = useAuth();
 
   const [profile, setProfile] = useState<PublicProfile | null>(null);
+  const [followersCount, setFollowersCount] = useState<number>(0);
+  const [followingCount, setFollowingCount] = useState<number>(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`/api/profile/${id}`)
       .then(async (res) => {
         if (!res.ok) throw new Error();
-        setProfile(await res.json());
+        const json = (await res.json()) as ProfileResponse & PublicProfile;
+        // The existing API returns `{ user, ...counts }` but historically the
+        // page also reads top-level fields. Support both shapes so we don't
+        // regress whatever the upstream actually serves.
+        const profileData = (json.user ?? json) as PublicProfile;
+        setProfile(profileData);
+        setFollowersCount(json.followersCount ?? 0);
+        setFollowingCount(json.followingCount ?? 0);
       })
       .catch(() => setProfile(null))
       .finally(() => setLoading(false));
   }, [id]);
+
+  const isSelf = Boolean(viewer && profile && viewer._id === profile._id);
 
   if (loading) {
     return (
@@ -99,15 +119,38 @@ export default function PublicProfilePage() {
                   {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
                 </Badge>
               </div>
-              <div className="flex items-center gap-4 text-sm text-white/70">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-white/70">
                 <span className="flex items-center gap-1">
                   <Calendar className="size-3.5" />
                   {t('joinedAt')} {new Date(profile.createdAt).toLocaleDateString()}
                 </span>
+                <span className="flex items-center gap-1">
+                  <strong className="font-semibold tabular-nums text-white">
+                    {followersCount}
+                  </strong>
+                  <span>{t('followers')}</span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <strong className="font-semibold tabular-nums text-white">
+                    {followingCount}
+                  </strong>
+                  <span>{t('following')}</span>
+                </span>
               </div>
             </div>
           </div>
-          <PointsPill count={profile.points} />
+          <div className="flex flex-col items-end gap-3 sm:items-end">
+            <PointsPill count={profile.points} />
+            {!isSelf && (
+              <FollowButton
+                userId={profile._id}
+                onChange={({ followersCount: f, followingCount: fg }) => {
+                  setFollowersCount(f);
+                  setFollowingCount(fg);
+                }}
+              />
+            )}
+          </div>
         </div>
       </div>
 
