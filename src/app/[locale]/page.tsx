@@ -1,6 +1,7 @@
 import { getSession } from '@/lib/auth';
 import { MarketingLanding } from '@/components/landing/MarketingLanding';
 import { HomeFeed } from '@/components/feed/HomeFeed';
+import { TeacherHomeFeed } from '@/components/feed/TeacherHomeFeed';
 import { parseFeedFilter, parseFeedSort } from '@/lib/feed-ranking';
 
 type SearchParams = Promise<{ sort?: string; filter?: string }>;
@@ -16,18 +17,32 @@ export default async function HomePage({ params, searchParams }: Params) {
   const filter = parseFeedFilter(search.filter);
   const session = await getSession();
 
-  if (session) {
+  if (!session) {
+    return <MarketingLanding locale={locale} />;
+  }
+
+  // Teachers (and admins) get the teacher-specific home page: quick actions
+  // at the top, a "Recent Student Questions" feed in the middle, and an
+  // Upcoming Classes panel on the end-side. Students keep the existing
+  // gamified feed.
+  if (session.role === 'teacher' || session.role === 'admin') {
     return (
-      <HomeFeed
+      <TeacherHomeFeed
         userId={session.userId}
         userName={session.name}
-        userRole={session.role}
         locale={locale}
-        sort={sort}
-        filter={filter}
       />
     );
   }
 
-  return <MarketingLanding locale={locale} />;
+  return (
+    <HomeFeed
+      userId={session.userId}
+      userName={session.name}
+      userRole={session.role}
+      locale={locale}
+      sort={sort}
+      filter={filter}
+    />
+  );
 }

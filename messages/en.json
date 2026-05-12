@@ -16,7 +16,7 @@
     "save": "Save",
     "cancel": "Cancel",
     "submit": "Submit",
-    "loading": "Loading...",
+    "loading": "Loading…",
     "error": "An error occurred",
     "success": "Success",
     "delete": "Delete",
@@ -50,7 +50,12 @@
     "dashboard": "Dashboard",
     "liveSessions": "Live Sessions",
     "saved": "Saved",
-    "tutor": "AI Tutor"
+    "tutor": "AI Tutor",
+    "teacherHeader": "Teacher Dashboard",
+    "teacherSubtitle": "Manage educational content",
+    "exerciseBank": "Exercise Bank",
+    "myLiveSessions": "My Live Sessions",
+    "statistics": "Statistics"
   },
   "auth": {
     "login": {
@@ -908,5 +913,32 @@
     "selectFirst": "Pick an exercise to continue.",
     "errorGeneric": "Something went wrong. Please try again.",
     "placeholderBadge": "Placeholder response"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "comingSoon": "Coming soon",
+    "comingSoonHint": "We're preparing a detailed analytics dashboard for your teaching activity and your students' performance."
+  },
+  "teacher": {
+    "feedTitle": "Recent Student Questions",
+    "quickActions": "Quick actions:",
+    "actions": {
+      "uploadExercise": "Upload exercise",
+      "scheduleSession": "Schedule session",
+      "announceToStudents": "Announce to students",
+      "announceComingSoon": "Coming soon"
+    },
+    "cards": {
+      "addDetailedSolution": "Add detailed solution",
+      "viewStudentAnswer": "View student's answer"
+    },
+    "upcomingClasses": {
+      "title": "Your Upcoming Classes",
+      "today": "Today",
+      "enterRoom": "Enter Room",
+      "editTime": "Edit Time",
+      "viewAll": "View more details",
+      "noUpcoming": "No upcoming classes yet. Create one to see it here."
+    }
   }
 }

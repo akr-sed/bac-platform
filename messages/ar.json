@@ -16,7 +16,7 @@
     "save": "حفظ",
     "cancel": "إلغاء",
     "submit": "إرسال",
-    "loading": "جارٍ التحميل...",
+    "loading": "جارٍ التحميل…",
     "error": "حدث خطأ ما",
     "success": "تمّ بنجاح",
     "delete": "حذف",
@@ -50,7 +50,12 @@
     "dashboard": "لوحة التحكم",
     "liveSessions": "حصص مباشرة",
     "saved": "المحفوظات",
-    "tutor": "المعلم الذكي"
+    "tutor": "المعلم الذكي",
+    "teacherHeader": "لوحة المعلم",
+    "teacherSubtitle": "إدارة المحتوى التعليمي",
+    "exerciseBank": "بنك التمارين",
+    "myLiveSessions": "جلساتي المباشرة",
+    "statistics": "الإحصائيات"
   },
   "auth": {
     "login": {
@@ -908,5 +913,32 @@
     "selectFirst": "اختر تمرينًا للمتابعة.",
     "errorGeneric": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     "placeholderBadge": "استجابة مؤقتة"
+  },
+  "statistics": {
+    "title": "الإحصائيات",
+    "comingSoon": "قريبًا",
+    "comingSoonHint": "نحضّر لوحة تحليلات تفصيلية لأنشطتك التعليمية وأداء طلابك."
+  },
+  "teacher": {
+    "feedTitle": "أسئلة الطلاب الحديثة",
+    "quickActions": "إجراءات سريعة:",
+    "actions": {
+      "uploadExercise": "رفع تمرين",
+      "scheduleSession": "جدولة جلسة",
+      "announceToStudents": "إعلان للطلاب",
+      "announceComingSoon": "قريبًا"
+    },
+    "cards": {
+      "addDetailedSolution": "إضافة حل تفصيلي",
+      "viewStudentAnswer": "إجابة الطالب"
+    },
+    "upcomingClasses": {
+      "title": "حصصك القادمة",
+      "today": "اليوم",
+      "enterRoom": "دخول الغرفة",
+      "editTime": "تعديل الموعد",
+      "viewAll": "مزيد من التفاصيل",
+      "noUpcoming": "لا حصص قادمة بعد. أنشئ جلسة جديدة لتظهر هنا."
+    }
   }
 }

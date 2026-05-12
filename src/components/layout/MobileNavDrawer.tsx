@@ -33,7 +33,7 @@ interface NavItem {
 }
 
 // Mirror VerticalNavRail so the drawer is the mobile twin of the rail.
-const MAIN_ITEMS: NavItem[] = [
+const STUDENT_MAIN_ITEMS: NavItem[] = [
   { href: '/', labelKey: 'home', icon: Home },
   { href: '/profile', labelKey: 'dashboard', icon: BarChart3 },
   { href: '/sessions', labelKey: 'liveSessions', icon: Video },
@@ -41,6 +41,13 @@ const MAIN_ITEMS: NavItem[] = [
   { href: '/library', labelKey: 'library', icon: BookOpen },
   { href: '/saves', labelKey: 'saved', icon: Bookmark },
   { href: '/tutor', labelKey: 'tutor', icon: Sparkles },
+];
+
+const TEACHER_MAIN_ITEMS: NavItem[] = [
+  { href: '/', labelKey: 'home', icon: Home },
+  { href: '/library', labelKey: 'exerciseBank', icon: BookOpen },
+  { href: '/sessions', labelKey: 'myLiveSessions', icon: Video },
+  { href: '/statistics', labelKey: 'statistics', icon: BarChart3 },
 ];
 
 const BOTTOM_ITEMS: NavItem[] = [
@@ -62,6 +69,9 @@ export function MobileNavDrawer() {
 
   const isRtl = locale === 'ar';
   const side: 'left' | 'right' = isRtl ? 'right' : 'left';
+
+  const isTeacherView = user?.role === 'teacher' || user?.role === 'admin';
+  const mainItems = isTeacherView ? TEACHER_MAIN_ITEMS : STUDENT_MAIN_ITEMS;
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/';
@@ -91,6 +101,19 @@ export function MobileNavDrawer() {
         className="flex w-72 max-w-[85vw] flex-col gap-0 bg-white p-0"
       >
         <SheetTitle className="sr-only">{t('home')}</SheetTitle>
+
+        {/* Teacher header — sits above the user pill so teachers immediately
+            see the dashboard context. Students keep the original layout. */}
+        {isTeacherView && (
+          <div className="border-b border-[rgba(190,200,209,0.3)] px-4 py-4">
+            <h2 className="text-[20px] font-bold leading-tight text-[#0095D1]">
+              {t('teacherHeader')}
+            </h2>
+            <p className="mt-1 text-[13px] text-[#3E4850]">
+              {t('teacherSubtitle')}
+            </p>
+          </div>
+        )}
 
         {/* User pill / auth actions */}
         <div className="border-b border-[#D9EFF8] px-4 py-4">
@@ -138,7 +161,7 @@ export function MobileNavDrawer() {
         {/* Main nav items */}
         <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Primary navigation">
           <ul className="flex flex-col gap-1" role="list">
-            {MAIN_ITEMS.map((item) => {
+            {mainItems.map((item) => {
               const active = isActive(item.href);
               return (
                 <li key={item.href}>

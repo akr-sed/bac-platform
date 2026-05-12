@@ -16,7 +16,7 @@
     "save": "Enregistrer",
     "cancel": "Annuler",
     "submit": "Soumettre",
-    "loading": "Chargement...",
+    "loading": "Chargement…",
     "error": "Une erreur s'est produite",
     "success": "Succès",
     "delete": "Supprimer",
@@ -50,7 +50,12 @@
     "dashboard": "Tableau de bord",
     "liveSessions": "Sessions en direct",
     "saved": "Enregistrés",
-    "tutor": "Tuteur IA"
+    "tutor": "Tuteur IA",
+    "teacherHeader": "Tableau de bord enseignant",
+    "teacherSubtitle": "Gérer le contenu pédagogique",
+    "exerciseBank": "Banque d'exercices",
+    "myLiveSessions": "Mes sessions en direct",
+    "statistics": "Statistiques"
   },
   "auth": {
     "login": {
@@ -908,5 +913,32 @@
     "selectFirst": "Choisissez un exercice pour continuer.",
     "errorGeneric": "Une erreur est survenue. Veuillez réessayer.",
     "placeholderBadge": "Réponse fictive"
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "comingSoon": "Bientôt disponible",
+    "comingSoonHint": "Nous préparons un tableau de bord détaillé pour suivre votre activité d'enseignement et la performance de vos étudiants."
+  },
+  "teacher": {
+    "feedTitle": "Questions récentes des étudiants",
+    "quickActions": "Actions rapides:",
+    "actions": {
+      "uploadExercise": "Téléverser un exercice",
+      "scheduleSession": "Planifier une session",
+      "announceToStudents": "Annonce aux étudiants",
+      "announceComingSoon": "Bientôt"
+    },
+    "cards": {
+      "addDetailedSolution": "Ajouter une solution détaillée",
+      "viewStudentAnswer": "Réponse de l'étudiant"
+    },
+    "upcomingClasses": {
+      "title": "Vos prochaines sessions",
+      "today": "Aujourd'hui",
+      "enterRoom": "Entrer dans la salle",
+      "editTime": "Modifier l'heure",
+      "viewAll": "Voir plus de détails",
+      "noUpcoming": "Aucune session à venir. Créez-en une pour la voir ici."
+    }
   }
 }

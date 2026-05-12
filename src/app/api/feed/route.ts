@@ -10,6 +10,7 @@ import SavedExercise from '@/models/SavedExercise';
 import Follow from '@/models/Follow';
 import {
   buildFeedPipeline,
+  parseFeedAuthorRole,
   parseFeedFilter,
   parseFeedSort,
 } from '@/lib/feed-ranking';
@@ -23,6 +24,7 @@ export async function GET(request: NextRequest) {
   const limit = Math.min(20, Math.max(1, Number(searchParams.get('limit') ?? '10')));
   const sort = parseFeedSort(searchParams.get('sort'));
   const filter = parseFeedFilter(searchParams.get('filter'));
+  const authorRole = parseFeedAuthorRole(searchParams.get('authorRole'));
 
   await connectToDatabase();
 
@@ -39,6 +41,7 @@ export async function GET(request: NextRequest) {
         page,
         sort,
         filter,
+        authorRole,
         hasMore: false,
         totalCount: 0,
       });
@@ -59,6 +62,7 @@ export async function GET(request: NextRequest) {
     limit,
     sort,
     authorIds,
+    authorRole: authorRole ?? undefined,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -85,6 +89,7 @@ export async function GET(request: NextRequest) {
     page,
     sort,
     filter,
+    authorRole,
     hasMore: items.length === limit,
   });
 }
