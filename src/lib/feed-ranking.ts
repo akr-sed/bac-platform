@@ -86,8 +86,20 @@ const PROJECT_FIELDS: PipelineStage = {
     likesCount: 1, solutionCount: 1, commentsCount: 1,
     createdAt: 1, updatedAt: 1, lastActivityAt: 1,
     author: 1,
+    featured: 1,
+    filiere: 1,
     _score: 1,
   },
+};
+
+/**
+ * Featured exercises always sort first within whatever ranking is active.
+ * Implemented as a stable secondary sort: `{ featured: -1, ...ranking }` —
+ * we project `featured` so the field is always present in the document
+ * stream even when the underlying record predates the field.
+ */
+const ENSURE_FEATURED_FIELD: PipelineStage = {
+  $addFields: { featured: { $ifNull: ['$featured', false] } },
 };
 
 /**
@@ -141,7 +153,7 @@ function forYouStages(preferredSubjects: string[]): PipelineStage[] {
         },
       },
     },
-    { $sort: { _score: -1, lastActivityAt: -1 } },
+    { $sort: { featured: -1, _score: -1, lastActivityAt: -1 } },
   ];
 }
 
@@ -188,7 +200,7 @@ function trendingStages(): PipelineStage[] {
         _score: { $multiply: ['$_engagement', '$_decay'] },
       },
     },
-    { $sort: { _score: -1, createdAt: -1 } },
+    { $sort: { featured: -1, _score: -1, createdAt: -1 } },
   ];
 }
 
@@ -196,7 +208,7 @@ function trendingStages(): PipelineStage[] {
  * "Latest" ranking — strict reverse-chronological by createdAt.
  */
 function latestStages(): PipelineStage[] {
-  return [{ $sort: { createdAt: -1 } }];
+  return [{ $sort: { featured: -1, createdAt: -1 } }];
 }
 
 export function buildFeedPipeline({
@@ -233,6 +245,7 @@ export function buildFeedPipeline({
 
   return [
     ...preStages,
+    ENSURE_FEATURED_FIELD,
     ...rankingStages,
     { $skip: page * limit },
     { $limit: limit },

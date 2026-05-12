@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
-import { ArrowLeft, Trash2, Loader2, Shield } from 'lucide-react';
+import { ArrowLeft, Trash2, Loader2, Shield, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import {
@@ -38,6 +38,7 @@ interface Item {
   likesCount?: number;
   commentsCount?: number;
   solutionCount?: number;
+  featured?: boolean;
 }
 
 const TABS: { id: ContentType; label: string }[] = [
@@ -69,6 +70,31 @@ export default function ModerationPage() {
       })
       .finally(() => setLoading(false));
   }, [tab]);
+
+  async function toggleFeatured(item: Item) {
+    if (tab !== 'exercises') return;
+    const nextFeatured = !item.featured;
+    // Optimistic UI — flip immediately; revert on server failure.
+    setItems((prev) =>
+      prev.map((p) => (p._id === item._id ? { ...p, featured: nextFeatured } : p))
+    );
+    try {
+      const res = await fetch('/api/admin/content', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'exercises', id: item._id, featured: nextFeatured }),
+      });
+      if (!res.ok) {
+        setItems((prev) =>
+          prev.map((p) => (p._id === item._id ? { ...p, featured: item.featured } : p))
+        );
+      }
+    } catch {
+      setItems((prev) =>
+        prev.map((p) => (p._id === item._id ? { ...p, featured: item.featured } : p))
+      );
+    }
+  }
 
   async function handleDelete() {
     if (!confirmDelete) return;
@@ -193,15 +219,35 @@ export default function ModerationPage() {
                   </div>
                 )}
               </div>
-              <Button
-                intent="secondary-red"
-                size="mobile"
-                className="cursor-pointer gap-1.5"
-                onClick={() => setConfirmDelete(item)}
-              >
-                <Trash2 className="size-3.5" />
-                Delete
-              </Button>
+              <div className="flex flex-col items-end gap-2">
+                {tab === 'exercises' && (
+                  <Button
+                    intent={item.featured ? 'primary-blue' : 'secondary-blue'}
+                    size="mobile"
+                    className="cursor-pointer gap-1.5"
+                    onClick={() => toggleFeatured(item)}
+                    aria-pressed={!!item.featured}
+                    title={item.featured ? 'Unfeature' : 'Feature'}
+                  >
+                    <Star
+                      className={cn(
+                        'size-3.5',
+                        item.featured && 'fill-current'
+                      )}
+                    />
+                    {item.featured ? 'Featured' : 'Feature'}
+                  </Button>
+                )}
+                <Button
+                  intent="secondary-red"
+                  size="mobile"
+                  className="cursor-pointer gap-1.5"
+                  onClick={() => setConfirmDelete(item)}
+                >
+                  <Trash2 className="size-3.5" />
+                  Delete
+                </Button>
+              </div>
             </li>
           ))}
         </ul>

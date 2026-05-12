@@ -4,11 +4,16 @@ import { connectToDatabase } from '@/lib/mongodb';
 import Exercise from '@/models/Exercise';
 import Exam from '@/models/Exam';
 import { LibraryCard } from '@/components/exercises/library-card';
+import { LibraryFilterBar } from '@/components/exercises/library-filter-bar';
 import { EmptyState } from '@/components/ui/EmptyState';
 import type { ExamTopicLocale } from '@/lib/exam-topic-labels';
 import { AppShell } from '@/components/layout/AppShell';
+import { FILIERE_KEYS } from '@/lib/filiere';
 
-type RouteParams = { params: Promise<{ locale: string }> };
+type RouteParams = {
+  params: Promise<{ locale: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
 
 interface LibraryItem {
   _id: string;
@@ -23,9 +28,13 @@ interface LibraryItem {
   examLabel?: string;
 }
 
-async function loadLibrary(): Promise<LibraryItem[]> {
+async function loadLibrary(filiere?: string): Promise<LibraryItem[]> {
   await connectToDatabase();
-  const exercises = await Exercise.find({ examId: { $exists: true } })
+  const baseFilter: Record<string, unknown> = { examId: { $exists: true } };
+  if (filiere && (FILIERE_KEYS as readonly string[]).includes(filiere)) {
+    baseFilter.filiere = filiere;
+  }
+  const exercises = await Exercise.find(baseFilter)
     .select(
       'title description difficulty examId examNumber topic marks concepts hasMath sourcePage'
     )
@@ -64,13 +73,15 @@ async function loadLibrary(): Promise<LibraryItem[]> {
   });
 }
 
-export default async function LibraryPage({ params }: RouteParams) {
+export default async function LibraryPage({ params, searchParams }: RouteParams) {
   const { locale } = await params;
+  const sp = (await searchParams) ?? {};
+  const filiere = typeof sp.filiere === 'string' ? sp.filiere : '';
   const t = await getTranslations('library');
   const topicLocale: ExamTopicLocale =
     locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
 
-  const items = await loadLibrary();
+  const items = await loadLibrary(filiere);
 
   return (
     <AppShell>
@@ -86,6 +97,8 @@ export default async function LibraryPage({ params }: RouteParams) {
           {t('subtitle')}
         </p>
       </header>
+
+      <LibraryFilterBar filiere={filiere} />
 
       {items.length === 0 ? (
         <EmptyState

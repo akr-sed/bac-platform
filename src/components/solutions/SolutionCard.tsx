@@ -2,11 +2,19 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { FileText, BadgeCheck, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import LikeButton from './LikeButton';
 import CommentList from '@/components/comments/CommentList';
 import { ImageLightbox } from '@/components/exercises/image-lightbox';
+import { MathText } from '@/components/ui/math-text';
+import { useAuth } from '@/components/providers/AuthProvider';
+import { cn } from '@/lib/utils';
 import type { SolutionDTO } from '@/types';
+
+function isPdfUrl(url: string): boolean {
+  return /\.pdf(\?|#|$)/i.test(url);
+}
 
 interface SolutionCardProps {
   solution: SolutionDTO;
@@ -32,13 +40,40 @@ function timeAgo(dateString: string): string {
 
 export default function SolutionCard({ solution }: SolutionCardProps) {
   const t = useTranslations('solutions');
+  const { user } = useAuth();
   const [showComments, setShowComments] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [isOfficial, setIsOfficial] = useState<boolean>(!!solution.isOfficial);
+  const [togglingOfficial, setTogglingOfficial] = useState(false);
 
-  const images = solution.images ?? [];
+  const attachments = solution.images ?? [];
+  const imageAttachments = attachments.filter((u) => !isPdfUrl(u));
+  const pdfAttachments = attachments.filter(isPdfUrl);
+
+  const isAuthor = user?._id === solution.author?._id;
+  const canMarkOfficial = isAuthor && user?.role === 'teacher';
+
+  async function toggleOfficial() {
+    if (!canMarkOfficial || togglingOfficial) return;
+    const next = !isOfficial;
+    setTogglingOfficial(true);
+    setIsOfficial(next);
+    try {
+      const res = await fetch(`/api/solutions/${solution._id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isOfficial: next }),
+      });
+      if (!res.ok) setIsOfficial(!next);
+    } catch {
+      setIsOfficial(!next);
+    } finally {
+      setTogglingOfficial(false);
+    }
+  }
 
   return (
-    <Card>
+    <Card className={cn(isOfficial && 'border-success/40 ring-1 ring-success/20')}>
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -46,25 +81,59 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
               {solution.author?.name?.charAt(0)?.toUpperCase() || '?'}
             </div>
             <div>
-              <p className="text-sm font-medium text-slate-900">
-                {solution.author?.name || 'Unknown'}
-              </p>
+              <div className="flex items-center gap-1.5">
+                <p className="text-sm font-medium text-slate-900">
+                  {solution.author?.name || 'Unknown'}
+                </p>
+                {isOfficial && (
+                  <span
+                    className="inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-success"
+                    title={t('officialBadge')}
+                  >
+                    <BadgeCheck className="size-3" />
+                    {t('officialBadge')}
+                  </span>
+                )}
+              </div>
               <p className="text-xs text-slate-500">
                 {timeAgo(solution.createdAt)}
               </p>
             </div>
           </div>
+
+          {canMarkOfficial && (
+            <button
+              type="button"
+              onClick={toggleOfficial}
+              disabled={togglingOfficial}
+              aria-pressed={isOfficial}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors',
+                isOfficial
+                  ? 'border-success/40 bg-success/10 text-success hover:bg-success/15'
+                  : 'border-border bg-card text-muted-foreground hover:border-success/40 hover:text-success',
+                togglingOfficial && 'opacity-60'
+              )}
+            >
+              {togglingOfficial ? (
+                <Loader2 className="size-3 animate-spin" />
+              ) : (
+                <BadgeCheck className="size-3" />
+              )}
+              {isOfficial ? t('unmarkOfficial') : t('markOfficial')}
+            </button>
+          )}
         </div>
       </CardHeader>
 
       <CardContent>
-        <div className="whitespace-pre-wrap text-sm text-slate-700">
+        <MathText className="text-sm leading-relaxed text-slate-700">
           {solution.content}
-        </div>
+        </MathText>
 
-        {images.length > 0 && (
+        {imageAttachments.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
-            {images.map((url, i) => (
+            {imageAttachments.map((url, i) => (
               <button
                 key={i}
                 type="button"
@@ -79,6 +148,23 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
                   className="h-24 w-auto object-cover"
                 />
               </button>
+            ))}
+          </div>
+        )}
+
+        {pdfAttachments.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {pdfAttachments.map((url, i) => (
+              <a
+                key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-100"
+              >
+                <FileText className="size-4 text-destructive" />
+                {t('pdfAttachment', { index: i + 1 })}
+              </a>
             ))}
           </div>
         )}
@@ -120,9 +206,9 @@ export default function SolutionCard({ solution }: SolutionCardProps) {
         )}
       </CardContent>
 
-      {images.length > 0 && (
+      {imageAttachments.length > 0 && (
         <ImageLightbox
-          images={images}
+          images={imageAttachments}
           initialIndex={lightboxIndex ?? 0}
           open={lightboxIndex !== null}
           onOpenChange={(o) => {

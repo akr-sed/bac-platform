@@ -3,7 +3,7 @@
 // §6.2 Forgot password page
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Mail, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,6 +15,7 @@ import { EmptyState } from '@/components/ui/EmptyState';
 export default function ForgotPasswordPage() {
   const t = useTranslations('auth.forgotPassword');
   const tFooter = useTranslations('footer');
+  const locale = useLocale();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [sent, setSent] = useState(false);
@@ -31,7 +32,7 @@ export default function ForgotPasswordPage() {
       const res = await fetch('/api/auth/forgot-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, locale }),
       });
 
       if (res.ok) {

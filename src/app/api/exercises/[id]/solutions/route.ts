@@ -30,7 +30,8 @@ export async function GET(request: NextRequest, context: RouteContext) {
           path: 'authorId',
           select: 'name email role points isVerifiedTeacher avatar createdAt',
         })
-        .sort({ createdAt: -1 })
+        // Official solutions always sort first; ties break by createdAt desc.
+        .sort({ isOfficial: -1, createdAt: -1 })
         .skip((page - 1) * limit)
         .limit(limit)
         .lean(),
@@ -56,6 +57,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
       likes: solution.likes.map((l: { toString: () => string }) => l.toString()),
       likesCount: solution.likes.length,
       commentCount: commentCountMap.get(solution._id.toString()) || 0,
+      isOfficial: !!solution.isOfficial,
       createdAt: solution.createdAt,
       updatedAt: solution.updatedAt,
     }));
@@ -134,6 +136,7 @@ export async function POST(request: NextRequest, context: RouteContext) {
         likes: [],
         likesCount: 0,
         commentCount: 0,
+        isOfficial: !!populated.isOfficial,
         createdAt: populated.createdAt,
         updatedAt: populated.updatedAt,
       },

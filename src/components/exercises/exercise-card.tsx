@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
-import { MessageCircle, ChevronRight, ThumbsUp } from 'lucide-react';
+import { MessageCircle, ChevronRight, ThumbsUp, Star } from 'lucide-react';
 import { imageUrl, blurUrl, firstPreview } from '@/lib/cloudinary-preview';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { LikeButton } from './like-button';
@@ -56,15 +56,26 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
 
       {/* ── Header ───────────────────────────────────────────────────── */}
       <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-5 pt-5 pb-[21px]">
-        {/* Subject badge */}
-        <span
-          className={cn(
-            'rounded-full px-3 py-1 text-xs font-bold capitalize',
-            subjectBadgeClass(exercise.subject)
+        {/* Subject badge + (optional) featured badge */}
+        <div className="flex items-center gap-2">
+          <span
+            className={cn(
+              'rounded-full px-3 py-1 text-xs font-bold capitalize',
+              subjectBadgeClass(exercise.subject)
+            )}
+          >
+            {exercise.subject}
+          </span>
+          {exercise.featured && (
+            <span
+              className="inline-flex items-center gap-1 rounded-full bg-[#FFF3CD] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-[#8A6D00]"
+              title={t('featured')}
+            >
+              <Star className="size-3 fill-current" />
+              {t('featured')}
+            </span>
           )}
-        >
-          {exercise.subject}
-        </span>
+        </div>
 
         {/* Author meta + avatar + report kebab */}
         <div className="flex items-center gap-2">

@@ -55,6 +55,7 @@ export interface SolutionDTO {
   likes: string[];
   likesCount: number;
   commentCount: number;
+  isOfficial?: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -146,6 +147,8 @@ export interface FeedItemDTO {
   isLiked?: boolean;
   isSaved?: boolean;
   hasMath?: boolean;
+  featured?: boolean;
+  filiere?: string;
 }
 
 export type SessionStatus = 'scheduled' | 'live' | 'completed' | 'cancelled';

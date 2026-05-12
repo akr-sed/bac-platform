@@ -159,14 +159,29 @@
     "images": "Images",
     "imagesLabel": "images",
     "addImages": "Add images",
+    "attachments": "Attachments",
+    "attachmentsLabel": "attachments",
+    "addAttachments": "Add images or PDFs",
+    "pdfAttachment": "PDF #{index}",
     "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Your Solution",
       "images": "Attach Images"
     },
     "placeholder": "Write your solution here...",
+    "compose": {
+      "modeLabel": "Editor mode",
+      "write": "Write",
+      "preview": "Preview",
+      "placeholderWithMath": "Write your solution. Use $...$ for inline math, $$...$$ for display math.",
+      "previewEmpty": "Nothing to preview yet. Start writing in the Write tab.",
+      "mathHint": "Tip: wrap math in $...$ (inline) or $$...$$ (block)."
+    },
     "submitSuccess": "Solution submitted successfully",
-    "editSuccess": "Solution updated successfully"
+    "editSuccess": "Solution updated successfully",
+    "officialBadge": "Official",
+    "markOfficial": "Mark as official",
+    "unmarkOfficial": "Unmark as official"
   },
   "profile": {
     "title": "My Profile",
@@ -430,7 +445,21 @@
     "eyebrow": "BAC Library",
     "title": "Exercise Bank",
     "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
-    "empty": "No exercises have been imported yet."
+    "empty": "No exercises have been imported yet.",
+    "filter": {
+      "filiere": "Stream",
+      "all": "All streams"
+    },
+    "filiere": {
+      "mathematiques": "Mathematics",
+      "sciences-experimentales": "Experimental Sciences",
+      "lettres-philosophie": "Letters & Philosophy",
+      "langues-etrangeres": "Foreign Languages",
+      "gestion-economie": "Management & Economics",
+      "mathematiques-techniques": "Technical Mathematics"
+    },
+    "featuredBadge": "Featured",
+    "officialBadge": "Official"
   },
   "verifyEmail": {
     "title": "Email Verification",
@@ -774,7 +803,8 @@
     },
     "searchPlaceholder": "Search for exercises, sessions, or summaries...",
     "startSolving": "Start solving",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "featured": "Featured"
   },
   "search": {
     "title": "Search",

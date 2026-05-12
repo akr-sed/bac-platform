@@ -1,4 +1,8 @@
 import mongoose, { Document, Model, Schema, Types } from 'mongoose';
+import { FILIERE_KEYS, type FiliereKey } from '@/lib/filiere';
+
+export { FILIERE_KEYS };
+export type { FiliereKey };
 
 export interface IExercise extends Document {
   title: string;
@@ -21,9 +25,14 @@ export interface IExercise extends Document {
   sourcePage?: number;
   figureDescriptions?: string[];
   hasMath?: boolean;
+  // BAC stream (denormalized from Exam.filiere for fast library filtering).
+  filiere?: FiliereKey;
+  // Admin "Featured" flag — surfaces a Featured badge + opt-in feed sort.
+  featured?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
+
 
 const ExerciseSchema = new Schema<IExercise>(
   {
@@ -52,6 +61,12 @@ const ExerciseSchema = new Schema<IExercise>(
     sourcePage: { type: Number },
     figureDescriptions: { type: [String], default: undefined },
     hasMath: { type: Boolean, default: false },
+    filiere: {
+      type: String,
+      enum: FILIERE_KEYS as unknown as string[],
+      index: true,
+    },
+    featured: { type: Boolean, default: false, index: true },
   },
   { timestamps: true }
 );

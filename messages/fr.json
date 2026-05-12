@@ -159,14 +159,29 @@
     "images": "Images",
     "imagesLabel": "images",
     "addImages": "Ajouter des images",
+    "attachments": "Pièces jointes",
+    "attachmentsLabel": "pièces jointes",
+    "addAttachments": "Ajouter images ou PDF",
+    "pdfAttachment": "PDF #{index}",
     "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Votre solution",
       "images": "Joindre des images"
     },
     "placeholder": "Rédigez votre solution ici...",
+    "compose": {
+      "modeLabel": "Mode éditeur",
+      "write": "Écrire",
+      "preview": "Aperçu",
+      "placeholderWithMath": "Rédigez votre solution. Utilisez $...$ pour le math en ligne, $$...$$ pour le math affiché.",
+      "previewEmpty": "Rien à prévisualiser. Commencez à écrire dans l'onglet Écrire.",
+      "mathHint": "Astuce : entourez les maths de $...$ (en ligne) ou $$...$$ (bloc)."
+    },
     "submitSuccess": "Solution soumise avec succès",
-    "editSuccess": "Solution mise à jour avec succès"
+    "editSuccess": "Solution mise à jour avec succès",
+    "officialBadge": "Officielle",
+    "markOfficial": "Marquer comme officielle",
+    "unmarkOfficial": "Retirer le statut officiel"
   },
   "profile": {
     "title": "Mon profil",
@@ -430,7 +445,21 @@
     "eyebrow": "Bibliothèque BAC",
     "title": "Banque d'exercices",
     "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
-    "empty": "Aucun exercice n'a encore été importé."
+    "empty": "Aucun exercice n'a encore été importé.",
+    "filter": {
+      "filiere": "Filière",
+      "all": "Toutes les filières"
+    },
+    "filiere": {
+      "mathematiques": "Mathématiques",
+      "sciences-experimentales": "Sciences expérimentales",
+      "lettres-philosophie": "Lettres et Philosophie",
+      "langues-etrangeres": "Langues étrangères",
+      "gestion-economie": "Gestion et Économie",
+      "mathematiques-techniques": "Mathématiques techniques"
+    },
+    "featuredBadge": "Mis en avant",
+    "officialBadge": "Officiel"
   },
   "verifyEmail": {
     "title": "Vérification de l'e-mail",
@@ -774,7 +803,8 @@
     },
     "searchPlaceholder": "Rechercher des exercices, séances ou résumés...",
     "startSolving": "Commencer",
-    "dashboard": "Tableau de bord"
+    "dashboard": "Tableau de bord",
+    "featured": "Mis en avant"
   },
   "search": {
     "title": "Recherche",

@@ -159,14 +159,29 @@
     "images": "الصور",
     "imagesLabel": "صور",
     "addImages": "أضف صورًا",
+    "attachments": "المرفقات",
+    "attachmentsLabel": "مرفقات",
+    "addAttachments": "أضف صورًا أو ملفات PDF",
+    "pdfAttachment": "ملف PDF رقم {index}",
     "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "حلّك",
       "images": "إرفاق صور"
     },
     "placeholder": "اكتب حلّك هنا...",
+    "compose": {
+      "modeLabel": "وضع المحرر",
+      "write": "كتابة",
+      "preview": "معاينة",
+      "placeholderWithMath": "اكتب حلّك. استخدم $...$ للمعادلات المضمَّنة و $$...$$ للمعادلات المعروضة.",
+      "previewEmpty": "لا يوجد شيء للمعاينة بعد. ابدأ الكتابة في تبويب «كتابة».",
+      "mathHint": "نصيحة: ضع المعادلات بين $...$ (مضمَّنة) أو $$...$$ (كتلة)."
+    },
     "submitSuccess": "تم إرسال الحل بنجاح",
-    "editSuccess": "تم تحديث الحل بنجاح"
+    "editSuccess": "تم تحديث الحل بنجاح",
+    "officialBadge": "رسمي",
+    "markOfficial": "تعليم كرسمي",
+    "unmarkOfficial": "إلغاء التعليم الرسمي"
   },
   "profile": {
     "title": "ملفي الشخصي",
@@ -430,7 +445,21 @@
     "eyebrow": "مكتبة بكالوريا",
     "title": "بنك التمارين",
     "subtitle": "تمارين منتقاة من امتحانات بكالوريا حقيقية، مصنّفة بحسب السنة والمادة والمحور.",
-    "empty": "لم يُستورد أيّ تمرين بعد."
+    "empty": "لم يُستورد أيّ تمرين بعد.",
+    "filter": {
+      "filiere": "الشعبة",
+      "all": "كل الشعب"
+    },
+    "filiere": {
+      "mathematiques": "الرياضيات",
+      "sciences-experimentales": "العلوم التجريبية",
+      "lettres-philosophie": "الآداب والفلسفة",
+      "langues-etrangeres": "اللغات الأجنبية",
+      "gestion-economie": "التسيير والاقتصاد",
+      "mathematiques-techniques": "الرياضيات التقنية"
+    },
+    "featuredBadge": "مُميَّز",
+    "officialBadge": "رسمي"
   },
   "verifyEmail": {
     "title": "تحقق من البريد الإلكتروني",
@@ -774,7 +803,8 @@
     },
     "searchPlaceholder": "ابحث عن تمارين، حصص، أو ملخصات...",
     "startSolving": "ابدأ الحل",
-    "dashboard": "لوحة التحكم"
+    "dashboard": "لوحة التحكم",
+    "featured": "مُميَّز"
   },
   "search": {
     "title": "البحث",
