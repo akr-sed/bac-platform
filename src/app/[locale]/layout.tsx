@@ -24,7 +24,12 @@ export default async function LocaleLayout({
     <Providers messages={messages as Record<string, unknown>} locale={locale}>
       <div className="flex min-h-[100dvh] flex-col">
         <Navbar />
-        <div className="flex-1">{children}</div>
+        {/* `flex flex-col flex-1` lets the page content (AppShell) stretch
+            vertically between the navbar and the footer. The rail uses this
+            stretched height to pin Settings just above the footer on short
+            pages and to ride up correctly via sticky on long pages.
+            Plain <div> (not <main>) — AppShell renders its own <main>. */}
+        <div className="flex flex-1 flex-col">{children}</div>
         <Footer />
       </div>
     </Providers>
