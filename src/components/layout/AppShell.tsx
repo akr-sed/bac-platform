@@ -6,7 +6,6 @@ interface AppShellProps {
    * Optional panel rendered between the main content and the nav rail
    * on the logical "end" side (left in RTL/Arabic, right in LTR).
    * 320px wide on xl screens, hidden below.
-   * Alias: endPanel (preferred) or leftPanel (back-compat).
    */
   endPanel?: React.ReactNode;
   /** @deprecated Use endPanel */
@@ -14,46 +13,53 @@ interface AppShellProps {
 }
 
 /**
- * AppShell — wraps authenticated page content with the nav rail.
+ * Authenticated page shell.
  *
- * RTL layout (Arabic default):
- *   [VerticalNavRail (right)] | [main content (center)] | [endPanel (left)]
+ * Layout (logical, flips for RTL):
  *
- * LTR layout:
- *   [VerticalNavRail (left)] | [main content (center)] | [endPanel (right)]
+ *   [VerticalNavRail (start) | main content | endPanel (end)]
  *
- * The rail always sits on the logical `start` side (browser handles RTL flip).
+ * The rail uses `position: sticky` and `align-self: stretch`, so it always
+ * fills the vertical space of this flex row. The outer flex container takes
+ * `flex-1` inside the parent (locale layout's `<main>`, which is itself
+ * `flex flex-col flex-1`). As a result:
  *
- * Usage:
- *   <AppShell>
- *     <MyPageContent />
- *   </AppShell>
+ *   - On short content pages, the row stretches to fill the viewport area
+ *     between the navbar and footer — the rail is exactly that tall, with
+ *     Settings sitting just above the footer. No overlap.
  *
- *   <AppShell endPanel={<GamificationSidebar />}>
- *     <FeedContent />
- *   </AppShell>
+ *   - On long content pages, the row grows with the content. The rail's
+ *     height is capped at `calc(100vh - 104px)` via `max-h-...` so it stays
+ *     a clean viewport-sized column with Settings pinned at its bottom.
+ *     Sticky keeps the rail at `top: 104px` while scrolling, and when the
+ *     user scrolls into the footer area the rail rides up with the row's
+ *     bottom — never overlapping the footer.
  */
 export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
   const panel = endPanel ?? leftPanel;
-  // TopAppBar is h-[84px] sticky; sidebars stick directly underneath it.
-  // Each sidebar gets its own scroll container so it never pushes the page.
-  const stickyClasses =
-    'sticky top-[84px] max-h-[calc(100vh-84px)] overflow-y-auto self-start';
 
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] items-start gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
-      {/* Nav rail — first in DOM = logical start (right in RTL, left in LTR) */}
-      <div className={`hidden lg:block ${stickyClasses}`}>
-        <VerticalNavRail />
+    <div className="mx-auto flex w-full max-w-[1440px] flex-1 gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
+      {/* Primary nav rail — first in DOM = logical start (right in RTL, left in LTR).
+          self-stretch fills the row's height; max-h caps it to the viewport-below-topbar
+          so on very tall content pages it doesn't overflow off-screen. */}
+      <div className="hidden shrink-0 self-stretch lg:block">
+        <div className="sticky top-[104px] h-[calc(100vh-104px)] max-h-[calc(100vh-104px)] w-[256px] overflow-y-auto">
+          <VerticalNavRail />
+        </div>
       </div>
 
-      {/* Main content — grows to fill available space, capped for readability */}
+      {/* Main content — grows to fill remaining space */}
       <main className="min-w-0 flex-1">{children}</main>
 
-      {/* End panel (gamification sidebar) — last in DOM = logical end (left in RTL, right in LTR) */}
+      {/* End panel — last in DOM = logical end (left in RTL, right in LTR).
+          Same sticky treatment but with max-h only (gamification cards are short
+          and shouldn't be forced to fill empty space). */}
       {panel && (
-        <aside className={`hidden w-[320px] shrink-0 xl:block ${stickyClasses}`}>
-          {panel}
+        <aside className="hidden w-[320px] shrink-0 self-start xl:block">
+          <div className="sticky top-[104px] max-h-[calc(100vh-104px)] overflow-y-auto">
+            {panel}
+          </div>
         </aside>
       )}
     </div>

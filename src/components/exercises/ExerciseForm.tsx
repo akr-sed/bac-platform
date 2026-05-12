@@ -213,7 +213,7 @@ export default function ExerciseForm({ exercise, onSuccess }: ExerciseFormProps)
                   onClick={() =>
                     setAttachments((prev) => prev.filter((_, j) => j !== i))
                   }
-                  className="ml-1 text-slate-400 hover:text-slate-700"
+                  className="ms-1 text-slate-400 hover:text-slate-700"
                 >
                   x
                 </button>

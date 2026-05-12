@@ -3,6 +3,7 @@ import { connectToDatabase } from '@/lib/mongodb';
 import User from '@/models/User';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
+import Follow from '@/models/Follow';
 
 export async function GET(
   _request: NextRequest,
@@ -21,12 +22,23 @@ export async function GET(
       );
     }
 
-    const [exerciseCount, solutionCount] = await Promise.all([
-      Exercise.countDocuments({ authorId: id }),
-      Solution.countDocuments({ authorId: id }),
-    ]);
+    // Counts are intentionally separate, cheap countDocuments calls
+    // (each index-backed). Wave C1.
+    const [exerciseCount, solutionCount, followersCount, followingCount] =
+      await Promise.all([
+        Exercise.countDocuments({ authorId: id }),
+        Solution.countDocuments({ authorId: id }),
+        Follow.countDocuments({ followee: id }),
+        Follow.countDocuments({ follower: id }),
+      ]);
 
-    return NextResponse.json({ user, exerciseCount, solutionCount });
+    return NextResponse.json({
+      user,
+      exerciseCount,
+      solutionCount,
+      followersCount,
+      followingCount,
+    });
   } catch {
     return NextResponse.json(
       { error: 'Server error, please try again' },

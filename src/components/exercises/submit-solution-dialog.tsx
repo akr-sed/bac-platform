@@ -21,6 +21,8 @@ interface SubmitSolutionDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const MAX_IMAGES = 5;
+
 export function SubmitSolutionDialog({
   exerciseId,
   open,
@@ -28,33 +30,24 @@ export function SubmitSolutionDialog({
 }: SubmitSolutionDialogProps) {
   const t = useTranslations('solutions');
   const [content, setContent] = useState('');
-  const [files, setFiles] = useState<File[]>([]);
+  const [images, setImages] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
 
+  const trimmed = content.trim();
+  const canSubmit = !submitting && (trimmed.length > 0 || images.length > 0);
+
   const handleSubmit = async () => {
-    if (!content.trim()) return;
+    if (!canSubmit) return;
     setSubmitting(true);
     try {
-      // Upload images first if any
-      let images: string[] = [];
-      if (files.length > 0) {
-        const uploadData = new FormData();
-        files.forEach((f) => uploadData.append('files', f));
-        const uploadRes = await fetch('/api/upload', { method: 'POST', body: uploadData });
-        if (uploadRes.ok) {
-          const uploadJson = await uploadRes.json();
-          images = uploadJson.urls ?? [];
-        }
-      }
-
       const res = await fetch(`/api/exercises/${exerciseId}/solutions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content, images }),
+        body: JSON.stringify({ content: trimmed, images }),
       });
       if (res.ok) {
         setContent('');
-        setFiles([]);
+        setImages([]);
         onOpenChange(false);
       }
     } catch {
@@ -86,18 +79,20 @@ export function SubmitSolutionDialog({
           </div>
 
           <div className="space-y-2">
-            <Label>{t('fields.images')}</Label>
+            <Label>{t('images')}</Label>
             <FileUploadZone
               accept="image/*"
-              maxFiles={4}
-              onFilesChange={setFiles}
-              label={t('fields.images')}
+              maxFiles={MAX_IMAGES}
+              value={images}
+              onChange={setImages}
+              label={t('addImages')}
+              counterLabel={t('imagesLabel')}
             />
           </div>
 
           <Button
             className="w-full cursor-pointer gap-2 rounded-xl"
-            disabled={!content.trim() || submitting}
+            disabled={!canSubmit}
             onClick={handleSubmit}
           >
             <Send className="size-4" />

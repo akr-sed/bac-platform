@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "report": "Report"
+  },
+  "reportDialog": {
+    "title": "Report this content",
+    "reasonLabel": "Reason",
+    "reasonPlaceholder": "Explain why you're reporting...",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "success": "Report submitted",
+    "error": "Could not submit report"
+  },
   "common": {
     "welcome": "Welcome to BAC Platform",
     "save": "Save",
@@ -35,7 +47,10 @@
     "leaderboard": "Leaderboard",
     "search": "Search",
     "settings": "Settings",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "liveSessions": "Live Sessions",
+    "saved": "Saved",
+    "tutor": "AI Tutor"
   },
   "auth": {
     "login": {
@@ -130,6 +145,16 @@
     "comment": "Comment",
     "comments": "{count, plural, one {# comment} other {# comments}}",
     "addComment": "Add a comment",
+    "kindLabel": "Type",
+    "kind": {
+      "comment": "Comment",
+      "tip": "Tip",
+      "mistake": "Mistake"
+    },
+    "images": "Images",
+    "imagesLabel": "images",
+    "addImages": "Add images",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Your Solution",
       "images": "Attach Images"
@@ -148,7 +173,13 @@
     "reputation": "Reputation",
     "joinedAt": "Member since",
     "verifiedTeacher": "Verified Teacher",
-    "editProfile": "Edit Profile"
+    "editProfile": "Edit Profile",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "followers": "Followers",
+    "following": "Following",
+    "followError": "Could not follow user. Please try again.",
+    "unfollowError": "Could not unfollow user. Please try again."
   },
   "moderation": {
     "delete": "Delete",
@@ -266,7 +297,12 @@
     "like": "Like",
     "save": "Save",
     "comments": "Comments",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "tabs": {
+      "forYou": "For You",
+      "trending": "Trending",
+      "latest": "Latest"
+    }
   },
   "preferences": {
     "title": "Subject preferences",
@@ -797,5 +833,80 @@
       "thu": "Thu",
       "fri": "Fri"
     }
+  },
+  "saves": {
+    "title": "Saved exercises",
+    "empty": "You haven't saved any exercises yet. Browse the library and bookmark anything you want to come back to."
+  },
+  "collections": {
+    "title": "Collections",
+    "myCollections": "My Collections",
+    "create": "Create collection",
+    "empty": "No collections yet",
+    "addExercise": "Add exercise",
+    "removeExercise": "Remove",
+    "manage": "Manage",
+    "delete": "Delete collection",
+    "noDescription": "",
+    "visibility": {
+      "label": "Visibility",
+      "public": "Public",
+      "private": "Private"
+    },
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Bac 2024 — calculus essentials",
+      "description": "Description",
+      "descriptionPlaceholder": "What does this collection cover?",
+      "submit": "Create",
+      "submitting": "Creating…",
+      "cancel": "Cancel",
+      "error": "Failed to create collection"
+    },
+    "exerciseCount": "{count, plural, one {# exercise} other {# exercises}}",
+    "loadError": "Failed to load collections",
+    "addToCollection": "Add to collection",
+    "addedToCollection": "Added to collection",
+    "addToCollectionEmpty": "You don't have any collections yet.",
+    "deleteConfirm": "This will permanently delete this collection. The exercises themselves remain.",
+    "rename": "Rename",
+    "save": "Save",
+    "saving": "Saving…",
+    "search": "Search exercises",
+    "searchPlaceholder": "Type to search by title or description",
+    "searchEmpty": "No matching exercises found"
+  },
+  "tutor": {
+    "title": "AI Tutor",
+    "subtitle": "Get hints, feedback, and recommendations from AI",
+    "preview": "AI Tutor is in preview — responses are placeholders for now.",
+    "tabs": {
+      "hint": "Get a hint",
+      "feedback": "Submit my attempt",
+      "similar": "Find similar"
+    },
+    "selectExercise": "Select an exercise...",
+    "loadingExercises": "Loading exercises…",
+    "exerciseLabel": "Exercise",
+    "hintLevel": "Hint level",
+    "level1": "Level 1 — Subtle",
+    "level2": "Level 2 — Guided",
+    "level3": "Level 3 — Explicit",
+    "getHint": "Get hint",
+    "thinking": "Thinking…",
+    "exhaustedHints": "No more hints available — try submitting your full attempt.",
+    "attempt": "Your attempt",
+    "placeholderAttempt": "Paste your solution here...",
+    "attachImages": "Attach images of your work",
+    "submitForFeedback": "Get feedback",
+    "score": "Score",
+    "summary": "Summary",
+    "lineComments": "Line-by-line comments",
+    "lineLabel": "Line {line}",
+    "noResults": "No similar exercises found.",
+    "findSimilar": "Find similar exercises",
+    "selectFirst": "Pick an exercise to continue.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "placeholderBadge": "Placeholder response"
   }
 }

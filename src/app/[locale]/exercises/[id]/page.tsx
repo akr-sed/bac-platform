@@ -14,6 +14,7 @@ import {
   FileText,
   Trash2,
   Loader2,
+  FolderPlus,
 } from 'lucide-react';
 import { Link, useRouter } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
@@ -25,11 +26,14 @@ import { DifficultyBadge } from '@/components/ui/difficulty-badge';
 import { RoleBadge } from '@/components/ui/role-badge';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { SubmitSolutionDialog } from '@/components/exercises/submit-solution-dialog';
+import { AddToCollectionDialog } from '@/components/collections/add-to-collection-dialog';
 import { HintModal } from '@/components/exercises/hint-modal';
 import { SimilarExercisesSidebar } from '@/components/exercises/similar-exercises-sidebar';
 import { CommentsThread } from '@/components/exercises/comments-thread';
 import { PdfPreview } from '@/components/exercises/pdf-preview';
 import { ImageLightbox } from '@/components/exercises/image-lightbox';
+import { ReportActionMenu } from '@/components/ui/report-action-menu';
+import ReputationBadge from '@/components/profile/ReputationBadge';
 import { MathText } from '@/components/ui/math-text';
 import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
@@ -49,6 +53,7 @@ interface Author {
   role: 'student' | 'teacher' | 'admin';
   isVerifiedTeacher?: boolean;
   avatar?: string | null;
+  points?: number;
 }
 
 interface Exercise {
@@ -84,6 +89,7 @@ export default function ExerciseDetailPage() {
   const tSol = useTranslations('solutions');
   const tAi = useTranslations('ai');
   const tCommon = useTranslations('common');
+  const tCollections = useTranslations('collections');
   const locale = useLocale();
   const topicLocale: ExamTopicLocale =
     locale === 'fr' || locale === 'en' || locale === 'ar' ? locale : 'ar';
@@ -97,6 +103,7 @@ export default function ExerciseDetailPage() {
   const [loading, setLoading] = useState(true);
   const [submitOpen, setSubmitOpen] = useState(false);
   const [hintOpen, setHintOpen] = useState(false);
+  const [addToCollectionOpen, setAddToCollectionOpen] = useState(false);
   const [commentsOpenFor, setCommentsOpenFor] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
   const [deleteExerciseOpen, setDeleteExerciseOpen] = useState(false);
@@ -104,6 +111,9 @@ export default function ExerciseDetailPage() {
   const [deleting, setDeleting] = useState(false);
 
   const isExerciseAuthor = authUser && exercise?.author?._id === authUser._id;
+  const canCurate = Boolean(
+    authUser && (authUser.role === 'teacher' || authUser.role === 'admin')
+  );
 
   const handleDeleteExercise = async () => {
     setDeleting(true);
@@ -281,12 +291,23 @@ export default function ExerciseDetailPage() {
                         isVerified={exercise.author.isVerifiedTeacher}
                       />
                     )}
+                    {typeof exercise.author.points === 'number' && (
+                      <ReputationBadge points={exercise.author.points} />
+                    )}
                   </span>
                 )}
                 {exercise?.createdAt && (
                   <span className="flex items-center gap-1.5 font-mono tabular-nums">
                     <Calendar className="size-3.5" />
                     {new Date(exercise.createdAt).toLocaleDateString()}
+                  </span>
+                )}
+                {exercise && authUser && exercise.author?._id !== authUser._id && (
+                  <span className="ms-auto">
+                    <ReportActionMenu
+                      targetType="exercise"
+                      targetId={exercise._id}
+                    />
                   </span>
                 )}
               </div>
@@ -308,6 +329,16 @@ export default function ExerciseDetailPage() {
                   <Lightbulb className="size-4" />
                   {tAi('hintButton')}
                 </Button>
+                {canCurate && exercise && (
+                  <Button
+                    variant="outline"
+                    className="h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium"
+                    onClick={() => setAddToCollectionOpen(true)}
+                  >
+                    <FolderPlus className="size-4" />
+                    {tCollections('addToCollection')}
+                  </Button>
+                )}
                 {isExerciseAuthor && (
                   <Button
                     variant="ghost"
@@ -346,9 +377,14 @@ export default function ExerciseDetailPage() {
                         <div className="flex items-center gap-3">
                           <UserAvatar src={sol.author?.avatar} name={sol.author?.name} size="sm" />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">
-                              {sol.author?.name ?? 'Anonymous'}
-                            </p>
+                            <div className="flex items-center gap-1.5">
+                              <p className="text-sm font-semibold text-foreground">
+                                {sol.author?.name ?? 'Anonymous'}
+                              </p>
+                              {typeof sol.author?.points === 'number' && (
+                                <ReputationBadge points={sol.author.points} />
+                              )}
+                            </div>
                             <div className="flex items-center gap-2">
                               {sol.author?.role && (
                                 <RoleBadge
@@ -364,17 +400,24 @@ export default function ExerciseDetailPage() {
                             </div>
                           </div>
                         </div>
-                        {authUser && sol.author?._id === authUser._id && (
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="size-8 cursor-pointer text-muted-foreground hover:text-destructive"
-                            onClick={() => setDeleteSolutionId(sol._id)}
-                            aria-label="Delete solution"
-                          >
-                            <Trash2 className="size-4" />
-                          </Button>
-                        )}
+                        <div className="flex items-center gap-1">
+                          {authUser && sol.author?._id === authUser._id ? (
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="size-8 cursor-pointer text-muted-foreground hover:text-destructive"
+                              onClick={() => setDeleteSolutionId(sol._id)}
+                              aria-label="Delete solution"
+                            >
+                              <Trash2 className="size-4" />
+                            </Button>
+                          ) : authUser ? (
+                            <ReportActionMenu
+                              targetType="solution"
+                              targetId={sol._id}
+                            />
+                          ) : null}
+                        </div>
                       </div>
 
                       <p className="whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">
@@ -472,6 +515,14 @@ export default function ExerciseDetailPage() {
         open={submitOpen}
         onOpenChange={setSubmitOpen}
       />
+      {authUser && canCurate && (
+        <AddToCollectionDialog
+          exerciseId={id}
+          ownerId={authUser._id}
+          open={addToCollectionOpen}
+          onOpenChange={setAddToCollectionOpen}
+        />
+      )}
       <HintModal
         exerciseId={id}
         exerciseTitle={exercise?.title ?? ''}

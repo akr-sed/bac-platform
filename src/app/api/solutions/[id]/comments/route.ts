@@ -7,6 +7,7 @@ import Comment from '@/models/Comment';
 
 const createCommentSchema = z.object({
   content: z.string().min(1).max(1000),
+  kind: z.enum(['comment', 'tip', 'mistake']).optional().default('comment'),
 });
 
 type RouteContext = { params: Promise<{ id: string }> };
@@ -30,6 +31,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
       solutionId: comment.solutionId.toString(),
       author: comment.authorId,
       content: comment.content,
+      kind: comment.kind ?? 'comment',
       createdAt: comment.createdAt,
     }));
 
@@ -67,6 +69,7 @@ export async function POST(request: NextRequest, context: RouteContext) {
       solutionId: id,
       authorId: session.userId,
       content: result.data.content,
+      kind: result.data.kind,
     });
 
     await grantXp(session.userId, 2, 'comment-posted', {
@@ -94,6 +97,7 @@ export async function POST(request: NextRequest, context: RouteContext) {
         solutionId: populated.solutionId.toString(),
         author: populated.authorId,
         content: populated.content,
+        kind: populated.kind ?? 'comment',
         createdAt: populated.createdAt,
       },
       { status: 201 }

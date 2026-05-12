@@ -7,7 +7,12 @@ import Exercise from '@/models/Exercise';
 import User from '@/models/User';
 import ExerciseLike from '@/models/ExerciseLike';
 import SavedExercise from '@/models/SavedExercise';
-import { buildFeedPipeline } from '@/lib/feed-ranking';
+import Follow from '@/models/Follow';
+import {
+  buildFeedPipeline,
+  parseFeedFilter,
+  parseFeedSort,
+} from '@/lib/feed-ranking';
 
 export async function GET(request: NextRequest) {
   const session = await getSession();
@@ -16,12 +21,45 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const page = Math.max(0, Number(searchParams.get('page') ?? '0'));
   const limit = Math.min(20, Math.max(1, Number(searchParams.get('limit') ?? '10')));
+  const sort = parseFeedSort(searchParams.get('sort'));
+  const filter = parseFeedFilter(searchParams.get('filter'));
 
   await connectToDatabase();
-  const user = await User.findById(session.userId).select('preferences');
-  const preferredSubjects: string[] = user?.preferences?.subjects ?? [];
 
-  const pipeline = buildFeedPipeline({ preferredSubjects, page, limit });
+  // ── Following filter: resolve the viewer's followee list first. If they
+  //    follow nobody, return an empty page without hitting the aggregation.
+  let authorIds: Types.ObjectId[] | undefined;
+  if (filter === 'following') {
+    const followees = await Follow.find({ follower: session.userId }).distinct(
+      'followee'
+    );
+    if (followees.length === 0) {
+      return NextResponse.json({
+        data: [],
+        page,
+        sort,
+        filter,
+        hasMore: false,
+        totalCount: 0,
+      });
+    }
+    authorIds = followees.map((id) => new Types.ObjectId(String(id)));
+  }
+
+  // "for-you" is the only mode that consumes subject preferences; skip the
+  // user fetch entirely for the other modes.
+  const preferredSubjects: string[] =
+    sort === 'for-you'
+      ? (await User.findById(session.userId).select('preferences'))?.preferences?.subjects ?? []
+      : [];
+
+  const pipeline = buildFeedPipeline({
+    preferredSubjects,
+    page,
+    limit,
+    sort,
+    authorIds,
+  });
   const items = await Exercise.aggregate(pipeline);
 
   // Attach isLiked / isSaved for the current user
@@ -42,5 +80,11 @@ export async function GET(request: NextRequest) {
     isSaved: savedSet.has(String(i._id)),
   }));
 
-  return NextResponse.json({ data, page, hasMore: items.length === limit });
+  return NextResponse.json({
+    data,
+    page,
+    sort,
+    filter,
+    hasMore: items.length === limit,
+  });
 }

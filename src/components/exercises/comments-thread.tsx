@@ -8,6 +8,16 @@ import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { ReportActionMenu } from '@/components/ui/report-action-menu';
+import ReputationBadge from '@/components/profile/ReputationBadge';
+import { Badge } from '@/components/ui/badge';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import {
   Dialog,
   DialogContent,
@@ -16,10 +26,18 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 
+type CommentKind = 'comment' | 'tip' | 'mistake';
+
 interface Comment {
   _id: string;
   content: string;
-  author?: { _id: string; name: string; avatar?: string | null };
+  kind?: CommentKind;
+  author?: {
+    _id: string;
+    name: string;
+    avatar?: string | null;
+    points?: number;
+  };
   createdAt?: string;
 }
 
@@ -33,6 +51,7 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
   const [newComment, setNewComment] = useState('');
+  const [newKind, setNewKind] = useState<CommentKind>('comment');
   const [sending, setSending] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
@@ -70,12 +89,13 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
       const res = await fetch(`/api/solutions/${solutionId}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: newComment }),
+        body: JSON.stringify({ content: newComment, kind: newKind }),
       });
       if (res.ok) {
         const data = await res.json();
         setComments((prev) => [...prev, data]);
         setNewComment('');
+        setNewKind('comment');
       }
     } catch {
       /* handle error */
@@ -95,38 +115,87 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
         <p className="py-2 text-center text-xs text-muted-foreground">No comments yet</p>
       ) : (
         <ul className="space-y-3">
-          {comments.map((c) => (
-            <li key={c._id} className="group flex items-start gap-3">
-              <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-foreground">
-                    {c.author?.name ?? 'Anonymous'}
-                  </span>
-                  {c.createdAt && (
-                    <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
-                      {new Date(c.createdAt).toLocaleDateString()}
+          {comments.map((c) => {
+            const isOwn = authUser && c.author?._id === authUser._id;
+            const canReport =
+              authUser && c.author?._id && c.author._id !== authUser._id;
+            const kind: CommentKind = c.kind ?? 'comment';
+            return (
+              <li key={c._id} className="group flex items-start gap-3">
+                <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-medium text-foreground">
+                      {c.author?.name ?? 'Anonymous'}
                     </span>
-                  )}
-                  {authUser && c.author?._id === authUser._id && (
-                    <button
-                      type="button"
-                      className="cursor-pointer text-muted-foreground/50 opacity-0 transition-opacity duration-200 hover:text-destructive group-hover:opacity-100"
-                      onClick={() => setDeleteTarget(c._id)}
-                      aria-label="Delete comment"
-                    >
-                      <Trash2 className="size-3" />
-                    </button>
-                  )}
+                    {typeof c.author?.points === 'number' && (
+                      <ReputationBadge points={c.author.points} />
+                    )}
+                    {kind === 'tip' && (
+                      <Badge
+                        variant="secondary"
+                        className="border-transparent bg-emerald-100 text-emerald-700 hover:bg-emerald-100"
+                      >
+                        {t('kind.tip')}
+                      </Badge>
+                    )}
+                    {kind === 'mistake' && (
+                      <Badge
+                        variant="secondary"
+                        className="border-transparent bg-amber-100 text-amber-700 hover:bg-amber-100"
+                      >
+                        {t('kind.mistake')}
+                      </Badge>
+                    )}
+                    {c.createdAt && (
+                      <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
+                        {new Date(c.createdAt).toLocaleDateString()}
+                      </span>
+                    )}
+                    {isOwn && (
+                      <button
+                        type="button"
+                        className="cursor-pointer text-muted-foreground/50 opacity-0 transition-opacity duration-200 hover:text-destructive group-hover:opacity-100"
+                        onClick={() => setDeleteTarget(c._id)}
+                        aria-label="Delete comment"
+                      >
+                        <Trash2 className="size-3" />
+                      </button>
+                    )}
+                    {canReport && (
+                      <ReportActionMenu
+                        targetType="comment"
+                        targetId={c._id}
+                        className="ms-auto size-7"
+                      />
+                    )}
+                  </div>
+                  <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">{c.content}</p>
                 </div>
-                <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">{c.content}</p>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       )}
 
-      <div className="flex gap-2">
+      <div className="flex flex-wrap items-center gap-2">
+        <Select
+          value={newKind}
+          onValueChange={(v) => setNewKind((v ?? 'comment') as CommentKind)}
+        >
+          <SelectTrigger
+            size="sm"
+            aria-label={t('kindLabel')}
+            className="w-auto min-w-32 shrink-0"
+          >
+            <SelectValue placeholder={t('kindLabel')} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="comment">{t('kind.comment')}</SelectItem>
+            <SelectItem value="tip">{t('kind.tip')}</SelectItem>
+            <SelectItem value="mistake">{t('kind.mistake')}</SelectItem>
+          </SelectContent>
+        </Select>
         <Input
           placeholder={t('addComment')}
           value={newComment}
@@ -137,7 +206,7 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
               handleSend();
             }
           }}
-          className="h-11 flex-1 rounded-2xl bg-card"
+          className="h-11 min-w-0 flex-1 rounded-2xl bg-card"
         />
         <Button
           size="icon"

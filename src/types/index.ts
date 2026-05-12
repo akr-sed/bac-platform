@@ -134,7 +134,15 @@ export interface FeedItemDTO {
   solutionCount: number;
   commentsCount: number;
   lastActivityAt: string;
-  author: Pick<UserDTO, '_id' | 'name' | 'avatar' | 'role' | 'isVerifiedTeacher'>;
+  author: Pick<UserDTO, '_id' | 'name' | 'avatar' | 'role' | 'isVerifiedTeacher'> & {
+    /**
+     * Reputation points used to render the inline ReputationBadge next to the
+     * author chip on cards. Optional because some Saved/Activity hydration
+     * paths don't yet project the author's `points` field — the badge
+     * gracefully hides itself when missing.
+     */
+    points?: number;
+  };
   isLiked?: boolean;
   isSaved?: boolean;
   hasMath?: boolean;

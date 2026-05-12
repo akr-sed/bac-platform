@@ -30,7 +30,7 @@ function ImageAttachment({ url }: { url: string }) {
     <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full text-left"
+        className="w-full text-start"
         type="button"
       >
         <img
@@ -47,7 +47,7 @@ function ImageAttachment({ url }: { url: string }) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-2 shrink-0 text-xs text-blue-600 hover:underline"
+          className="ms-2 shrink-0 text-xs text-blue-600 hover:underline"
           onClick={(e) => e.stopPropagation()}
         >
           Open ↗

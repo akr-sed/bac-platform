@@ -1,9 +1,18 @@
 import mongoose, { Document, Model, Schema, Types } from 'mongoose';
 
+export type CommentKind = 'comment' | 'tip' | 'mistake';
+
+export const COMMENT_KINDS: readonly CommentKind[] = [
+  'comment',
+  'tip',
+  'mistake',
+] as const;
+
 export interface IComment extends Document {
   solutionId: Types.ObjectId;
   authorId: Types.ObjectId;
   content: string;
+  kind: CommentKind;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -13,6 +22,11 @@ const CommentSchema = new Schema<IComment>(
     solutionId: { type: Schema.Types.ObjectId, ref: 'Solution', required: true },
     authorId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     content: { type: String, required: true, trim: true },
+    kind: {
+      type: String,
+      enum: ['comment', 'tip', 'mistake'] as const,
+      default: 'comment',
+    },
   },
   { timestamps: true }
 );

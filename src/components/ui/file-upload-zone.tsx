@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState, useRef, useEffect } from 'react';
-import { Upload, X, FileText, Image as ImageIcon } from 'lucide-react';
+import { Upload, X, FileText, Image as ImageIcon, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -9,9 +9,25 @@ interface FileUploadZoneProps {
   accept?: string;
   multiple?: boolean;
   maxFiles?: number;
+  /**
+   * Legacy callback — receives raw File objects.
+   * Used when the caller wants to handle uploads themselves
+   * (e.g. exercise-creation page that uploads as part of submit).
+   */
   onFilesChange?: (files: File[]) => void;
   className?: string;
   label?: string;
+  /**
+   * Controlled list of already-uploaded URLs. Pass this together with
+   * `onChange` to enable the auto-upload mode used by solution submission.
+   * When provided, the component uploads each selected file via
+   * POST /api/upload, appends returned URLs to `value`, and calls
+   * `onChange` with the merged list.
+   */
+  value?: string[];
+  onChange?: (urls: string[]) => void;
+  /** Optional translatable counter suffix label (e.g. "images"). */
+  counterLabel?: string;
 }
 
 export function FileUploadZone({
@@ -21,34 +37,77 @@ export function FileUploadZone({
   onFilesChange,
   className,
   label = 'Drop files here or click to browse',
+  value,
+  onChange,
+  counterLabel,
 }: FileUploadZoneProps) {
+  // When `value`/`onChange` are provided, this is the URL-controlled
+  // (auto-upload) mode. Otherwise we keep the legacy File[] internal mode.
+  const isControlled = value !== undefined && onChange !== undefined;
+
   const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const currentCount = isControlled ? value!.length : files.length;
+  const remaining = Math.max(0, maxFiles - currentCount);
+  const disabled = uploading || remaining === 0;
+
+  const uploadAndAppend = useCallback(
+    async (incoming: File[]) => {
+      if (!isControlled) return;
+      setError(null);
+      setUploading(true);
+      try {
+        const fd = new FormData();
+        incoming.forEach((f) => fd.append('files', f));
+        const res = await fetch('/api/upload', { method: 'POST', body: fd });
+        if (!res.ok) {
+          setError('Upload failed');
+          return;
+        }
+        const data = (await res.json()) as { urls?: string[] };
+        const urls = data.urls ?? [];
+        onChange!([...(value ?? []), ...urls].slice(0, maxFiles));
+      } catch {
+        setError('Upload failed');
+      } finally {
+        setUploading(false);
+      }
+    },
+    [isControlled, onChange, value, maxFiles]
+  );
 
   const addFiles = useCallback(
     (newFiles: FileList | null) => {
-      if (!newFiles) return;
-      const arr = Array.from(newFiles);
-      setFiles((prev) => {
-        const combined = [...prev, ...arr].slice(0, maxFiles);
-        return combined;
-      });
+      if (!newFiles || newFiles.length === 0) return;
+      const arr = Array.from(newFiles).slice(0, remaining);
+      if (arr.length === 0) return;
+
+      if (isControlled) {
+        void uploadAndAppend(arr);
+      } else {
+        setFiles((prev) => [...prev, ...arr].slice(0, maxFiles));
+      }
     },
-    [maxFiles]
+    [isControlled, uploadAndAppend, remaining, maxFiles]
   );
 
   const removeFile = useCallback(
     (index: number) => {
-      setFiles((prev) => {
-        const updated = prev.filter((_, i) => i !== index);
-        return updated;
-      });
+      if (isControlled) {
+        const next = (value ?? []).filter((_, i) => i !== index);
+        onChange!(next);
+      } else {
+        setFiles((prev) => prev.filter((_, i) => i !== index));
+      }
     },
-    []
+    [isControlled, value, onChange]
   );
 
-  // Notify parent after state settles — never during render
+  // Notify parent (legacy File[] mode) after state settles — never during render
   const onFilesChangeRef = useRef(onFilesChange);
   onFilesChangeRef.current = onFilesChange;
   const isFirstRender = useRef(true);
@@ -57,8 +116,10 @@ export function FileUploadZone({
       isFirstRender.current = false;
       return;
     }
-    onFilesChangeRef.current?.(files);
-  }, [files]);
+    if (!isControlled) {
+      onFilesChangeRef.current?.(files);
+    }
+  }, [files, isControlled]);
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -75,50 +136,108 @@ export function FileUploadZone({
       e.preventDefault();
       e.stopPropagation();
       setDragActive(false);
+      if (disabled) return;
       addFiles(e.dataTransfer.files);
     },
-    [addFiles]
+    [addFiles, disabled]
   );
 
   return (
     <div className={cn('space-y-3', className)}>
       <div
         role="button"
-        tabIndex={0}
+        tabIndex={disabled ? -1 : 0}
+        aria-disabled={disabled}
         className={cn(
-          'flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 transition-colors duration-200',
-          dragActive
+          'flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 transition-colors duration-200',
+          disabled
+            ? 'cursor-not-allowed border-border/60 bg-muted/30 opacity-70'
+            : 'cursor-pointer',
+          !disabled && dragActive
             ? 'border-primary bg-primary/5'
-            : 'border-border hover:border-primary/50 hover:bg-muted/50'
+            : !disabled && 'border-border hover:border-primary/50 hover:bg-muted/50'
         )}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
         onDragOver={handleDrag}
         onDrop={handleDrop}
-        onClick={() => inputRef.current?.click()}
+        onClick={() => {
+          if (disabled) return;
+          inputRef.current?.click();
+        }}
         onKeyDown={(e) => {
+          if (disabled) return;
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             inputRef.current?.click();
           }
         }}
       >
-        <Upload className="mb-2 size-8 text-muted-foreground" />
+        {uploading ? (
+          <Loader2 className="mb-2 size-8 animate-spin text-muted-foreground" />
+        ) : (
+          <Upload className="mb-2 size-8 text-muted-foreground" />
+        )}
         <p className="text-sm text-muted-foreground">{label}</p>
         <p className="mt-1 text-xs text-muted-foreground/70">
-          Images & PDF, max {maxFiles} files
+          {currentCount}/{maxFiles}
+          {counterLabel ? ` ${counterLabel}` : ''}
         </p>
         <input
           ref={inputRef}
           type="file"
           accept={accept}
-          multiple={multiple}
+          multiple={multiple && maxFiles > 1}
           className="hidden"
-          onChange={(e) => addFiles(e.target.files)}
+          disabled={disabled}
+          onChange={(e) => {
+            addFiles(e.target.files);
+            // Allow re-selecting the same file later
+            if (inputRef.current) inputRef.current.value = '';
+          }}
         />
       </div>
 
-      {files.length > 0 && (
+      {error && (
+        <p className="text-xs text-destructive" role="alert">
+          {error}
+        </p>
+      )}
+
+      {/* URL preview list — auto-upload (controlled) mode */}
+      {isControlled && (value ?? []).length > 0 && (
+        <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {(value ?? []).map((url, i) => (
+            <li
+              key={`${url}-${i}`}
+              className="relative aspect-square overflow-hidden rounded-lg border border-border bg-muted"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={url}
+                alt={`Attachment ${i + 1}`}
+                className="h-full w-full object-cover"
+              />
+              <Button
+                variant="ghost"
+                size="icon-xs"
+                type="button"
+                aria-label="Remove image"
+                className="absolute end-1 top-1 cursor-pointer rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeFile(i);
+                }}
+              >
+                <X className="size-3.5" />
+              </Button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* File preview list — legacy File[] mode */}
+      {!isControlled && files.length > 0 && (
         <ul className="space-y-2">
           {files.map((file, i) => (
             <li
@@ -137,6 +256,7 @@ export function FileUploadZone({
               <Button
                 variant="ghost"
                 size="icon-xs"
+                type="button"
                 className="cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();

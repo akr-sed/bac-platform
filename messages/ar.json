@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "report": "إبلاغ"
+  },
+  "reportDialog": {
+    "title": "إبلاغ عن المحتوى",
+    "reasonLabel": "السبب",
+    "reasonPlaceholder": "اشرح لماذا تبلغ عن هذا المحتوى...",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "success": "تم إرسال البلاغ",
+    "error": "تعذر إرسال البلاغ"
+  },
   "common": {
     "welcome": "مرحباً بك في منصة البكالوريا",
     "save": "حفظ",
@@ -35,7 +47,10 @@
     "leaderboard": "المتصدرون",
     "search": "بحث",
     "settings": "الإعدادات",
-    "dashboard": "لوحة التحكم"
+    "dashboard": "لوحة التحكم",
+    "liveSessions": "حصص مباشرة",
+    "saved": "المحفوظات",
+    "tutor": "المعلم الذكي"
   },
   "auth": {
     "login": {
@@ -130,6 +145,16 @@
     "comment": "تعليق",
     "comments": "{count, plural, zero {لا تعليقات} one {تعليق واحد} two {تعليقان} few {# تعليقات} many {# تعليقاً} other {# تعليق}}",
     "addComment": "أضف تعليقاً",
+    "kindLabel": "النوع",
+    "kind": {
+      "comment": "تعليق",
+      "tip": "نصيحة",
+      "mistake": "خطأ شائع"
+    },
+    "images": "الصور",
+    "imagesLabel": "صور",
+    "addImages": "أضف صورًا",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "حلّك",
       "images": "إرفاق صور"
@@ -148,7 +173,13 @@
     "reputation": "السمعة",
     "joinedAt": "عضو منذ",
     "verifiedTeacher": "أستاذ موثّق",
-    "editProfile": "تعديل الملف الشخصي"
+    "editProfile": "تعديل الملف الشخصي",
+    "follow": "متابعة",
+    "unfollow": "إلغاء المتابعة",
+    "followers": "المتابعون",
+    "following": "يتابع",
+    "followError": "تعذّرت متابعة المستخدم. حاول مرة أخرى.",
+    "unfollowError": "تعذّر إلغاء المتابعة. حاول مرة أخرى."
   },
   "moderation": {
     "delete": "حذف",
@@ -266,7 +297,12 @@
     "like": "إعجاب",
     "save": "حفظ",
     "comments": "تعليقات",
-    "loading": "جارٍ التحميل…"
+    "loading": "جارٍ التحميل…",
+    "tabs": {
+      "forYou": "مخصص لك",
+      "trending": "الرائج",
+      "latest": "الأحدث"
+    }
   },
   "preferences": {
     "title": "تفضيلات المواد",
@@ -797,5 +833,80 @@
       "thu": "الخميس",
       "fri": "الجمعة"
     }
+  },
+  "saves": {
+    "title": "التمارين المحفوظة",
+    "empty": "لم تحفظ أي تمرين بعد. تصفّح البنك وأضف ما تريد العودة إليه لاحقًا."
+  },
+  "collections": {
+    "title": "المجموعات",
+    "myCollections": "مجموعاتي",
+    "create": "إنشاء مجموعة",
+    "empty": "لا توجد مجموعات",
+    "addExercise": "إضافة تمرين",
+    "removeExercise": "إزالة",
+    "manage": "إدارة",
+    "delete": "حذف المجموعة",
+    "noDescription": "",
+    "visibility": {
+      "label": "الظهور",
+      "public": "عامة",
+      "private": "خاصة"
+    },
+    "form": {
+      "title": "العنوان",
+      "titlePlaceholder": "مثال: باك 2024 — أساسيات التحليل",
+      "description": "الوصف",
+      "descriptionPlaceholder": "ماذا تحتوي هذه المجموعة؟",
+      "submit": "إنشاء",
+      "submitting": "جاري الإنشاء…",
+      "cancel": "إلغاء",
+      "error": "تعذّر إنشاء المجموعة"
+    },
+    "exerciseCount": "{count, plural, zero {# تمرين} one {تمرين واحد} two {تمرينان} few {# تمارين} many {# تمرينًا} other {# تمرين}}",
+    "loadError": "تعذّر تحميل المجموعات",
+    "addToCollection": "إضافة إلى مجموعة",
+    "addedToCollection": "تمت الإضافة إلى المجموعة",
+    "addToCollectionEmpty": "ليس لديك أي مجموعة بعد.",
+    "deleteConfirm": "سيُحذف هذا المجموعة نهائيًا. تبقى التمارين متاحة.",
+    "rename": "إعادة تسمية",
+    "save": "حفظ",
+    "saving": "جاري الحفظ…",
+    "search": "البحث عن تمارين",
+    "searchPlaceholder": "اكتب للبحث بالعنوان أو الوصف",
+    "searchEmpty": "لا توجد تمارين مطابقة"
+  },
+  "tutor": {
+    "title": "المعلم الذكي",
+    "subtitle": "احصل على تلميحات وملاحظات وتوصيات من الذكاء الاصطناعي",
+    "preview": "المعلم الذكي قيد المعاينة — الردود مؤقتة في الوقت الحالي.",
+    "tabs": {
+      "hint": "احصل على تلميح",
+      "feedback": "أرسل محاولتي",
+      "similar": "ابحث عن المشابه"
+    },
+    "selectExercise": "اختر تمرينًا...",
+    "loadingExercises": "جاري تحميل التمارين…",
+    "exerciseLabel": "التمرين",
+    "hintLevel": "مستوى التلميح",
+    "level1": "المستوى 1 — خفيف",
+    "level2": "المستوى 2 — موجَّه",
+    "level3": "المستوى 3 — صريح",
+    "getHint": "احصل على التلميح",
+    "thinking": "جاري التفكير…",
+    "exhaustedHints": "لا تتوفر تلميحات إضافية — جرّب إرسال محاولتك الكاملة.",
+    "attempt": "محاولتك",
+    "placeholderAttempt": "الصق حلّك هنا...",
+    "attachImages": "أرفق صورًا من عملك",
+    "submitForFeedback": "احصل على ملاحظات",
+    "score": "النتيجة",
+    "summary": "الملخص",
+    "lineComments": "تعليقات سطرًا بسطر",
+    "lineLabel": "السطر {line}",
+    "noResults": "لم يتم العثور على تمارين مشابهة.",
+    "findSimilar": "ابحث عن تمارين مشابهة",
+    "selectFirst": "اختر تمرينًا للمتابعة.",
+    "errorGeneric": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "placeholderBadge": "استجابة مؤقتة"
   }
 }

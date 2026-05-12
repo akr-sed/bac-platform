@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/components/providers/AuthProvider';
-import LocaleSwitcher from './LocaleSwitcher';
+import { MobileNavDrawer } from './MobileNavDrawer';
 
 // Wave 6-A — TopAppBar
 // h-[84px] bg-white border-b border-[#D9EFF8]
@@ -65,6 +65,9 @@ export function TopAppBar() {
   return (
     <header className="sticky top-0 z-50 h-[84px] border-b border-[#D9EFF8] bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
       <div className="mx-auto flex h-full max-w-7xl items-center gap-4 px-6 py-3">
+
+        {/* ── Mobile burger (lg:hidden) — drives the MobileNavDrawer ── */}
+        <MobileNavDrawer />
 
         {/* ── Start: User pill (auth) or Login/Register (unauth) ─── */}
         {!loading && user ? (
@@ -214,9 +217,8 @@ export function TopAppBar() {
           </Link>
         </div>
 
-        {/* ── End: Brand wordmark + locale ─────────────────────────── */}
+        {/* ── End: Brand wordmark ──────────────────────────────────── */}
         <div className="flex shrink-0 items-center gap-3">
-          <LocaleSwitcher />
           <Link
             href={user ? '/' : '/'}
             aria-label="NAJAH — Home"
