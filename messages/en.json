@@ -35,7 +35,9 @@
     "leaderboard": "Leaderboard",
     "search": "Search",
     "settings": "Settings",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "liveSessions": "Live Sessions",
+    "saved": "Saved"
   },
   "auth": {
     "login": {
@@ -797,5 +799,9 @@
       "thu": "Thu",
       "fri": "Fri"
     }
+  },
+  "saves": {
+    "title": "Saved exercises",
+    "empty": "You haven't saved any exercises yet. Browse the library and bookmark anything you want to come back to."
   }
 }

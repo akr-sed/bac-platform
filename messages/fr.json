@@ -35,7 +35,9 @@
     "leaderboard": "Classement",
     "search": "Recherche",
     "settings": "Paramètres",
-    "dashboard": "Tableau de bord"
+    "dashboard": "Tableau de bord",
+    "liveSessions": "Sessions en direct",
+    "saved": "Enregistrés"
   },
   "auth": {
     "login": {
@@ -797,5 +799,9 @@
       "thu": "Jeu",
       "fri": "Ven"
     }
+  },
+  "saves": {
+    "title": "Exercices enregistrés",
+    "empty": "Vous n'avez encore enregistré aucun exercice. Parcourez la banque et ajoutez ceux que vous voulez retrouver plus tard."
   }
 }

@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/routing';
 import { Link } from '@/i18n/routing';
-import { Home, BarChart3, Video, Trophy, Bookmark, Settings } from 'lucide-react';
+import { Home, BarChart3, Video, Trophy, BookOpen, Bookmark, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -15,9 +15,10 @@ interface NavItem {
 const MAIN_ITEMS: NavItem[] = [
   { href: '/', labelKey: 'home', icon: Home },
   { href: '/profile', labelKey: 'dashboard', icon: BarChart3 },
-  { href: '/sessions', labelKey: 'sessions', icon: Video },
+  { href: '/sessions', labelKey: 'liveSessions', icon: Video },
   { href: '/leaderboard', labelKey: 'leaderboard', icon: Trophy },
-  { href: '/library', labelKey: 'library', icon: Bookmark },
+  { href: '/library', labelKey: 'library', icon: BookOpen },
+  { href: '/saves', labelKey: 'saved', icon: Bookmark },
 ];
 // All keys come from the 'navigation' namespace
 
@@ -36,7 +37,7 @@ export function VerticalNavRail() {
 
   return (
     <nav
-      className="flex h-full w-[256px] shrink-0 flex-col rounded-[12px] border-s border-[#D9EFF8] bg-white py-5 px-4"
+      className="flex h-full w-[256px] shrink-0 flex-col rounded-[12px] border-e border-[#D9EFF8] bg-white py-5 px-4"
       aria-label="Primary navigation"
     >
       {/* Main nav items */}
