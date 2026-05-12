@@ -200,6 +200,13 @@ html, body {
   font-feature-settings: "ss01", "cv01";
 }
 
+/* Always reserve scrollbar space so opening a base-ui dropdown (which
+   applies overflow:hidden to body) doesn't visually shift the centered
+   layout sideways underneath the fixed nav rail. */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
