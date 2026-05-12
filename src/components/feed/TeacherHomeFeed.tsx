@@ -1,41 +1,68 @@
 import { Types } from 'mongoose';
-import { getTranslations } from 'next-intl/server';
+import { Sparkle } from 'lucide-react';
 import { connectToDatabase } from '@/lib/mongodb';
 import Exercise from '@/models/Exercise';
+import User from '@/models/User';
 import ExerciseLike from '@/models/ExerciseLike';
 import SavedExercise from '@/models/SavedExercise';
-import { buildFeedPipeline } from '@/lib/feed-ranking';
+import Follow from '@/models/Follow';
+import {
+  buildFeedPipeline,
+  type FeedFilter,
+  type FeedSort,
+} from '@/lib/feed-ranking';
 import { AppShell } from '@/components/layout/AppShell';
+import { FeedList } from '@/components/exercises/feed-list';
 import { QuickActionBar } from '@/components/teacher/QuickActionBar';
 import { UpcomingClassesPanel } from '@/components/teacher/UpcomingClassesPanel';
-import { TeacherFeedList } from '@/components/feed/teacher-feed-list';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
   userId: string;
   userName: string;
   locale: string;
+  sort: FeedSort;
+  filter: FeedFilter;
 }
 
 const INITIAL_FEED_LIMIT = 10;
 
 /**
- * Server-side teacher feed loader — mirrors `HomeFeed.loadFeed` but always
- * pins `sort='latest'` and `authorRole='student'` because the teacher home
- * page only surfaces fresh student questions awaiting an answer.
- *
- * We call `buildFeedPipeline` directly rather than HTTP-looping back to
- * `/api/feed` — same rationale as `fetchSessionsList` in `src/lib/sessions.ts`.
+ * Mirrors `HomeFeed.loadFeed` so the teacher sees the SAME feed content a
+ * student would for any given sort + filter combination. No authorRole
+ * filter, no special "student questions only" carve-out — the only
+ * teacher-specific surfaces are the QuickActionBar above the feed and the
+ * UpcomingClassesPanel on the end-side.
  */
-async function loadStudentFeed(userId: string): Promise<FeedItemDTO[]> {
+async function loadFeed(
+  userId: string,
+  sort: FeedSort,
+  filter: FeedFilter
+): Promise<FeedItemDTO[]> {
   await connectToDatabase();
 
+  let preferredSubjects: string[] = [];
+  if (sort === 'for-you') {
+    const user = await User.findById(userId).select('preferences').lean();
+    type UserDoc = { preferences?: { subjects?: string[] } } | null;
+    preferredSubjects = (user as UserDoc)?.preferences?.subjects ?? [];
+  }
+
+  let authorIds: Types.ObjectId[] | undefined;
+  if (filter === 'following') {
+    const followees = await Follow.find({ follower: userId }).distinct(
+      'followee'
+    );
+    if (followees.length === 0) return [];
+    authorIds = followees.map((id) => new Types.ObjectId(String(id)));
+  }
+
   const pipeline = buildFeedPipeline({
-    preferredSubjects: [],
+    preferredSubjects,
     page: 0,
     limit: INITIAL_FEED_LIMIT,
-    sort: 'latest',
-    authorRole: 'student',
+    sort,
+    authorIds,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -77,18 +104,17 @@ async function loadStudentFeed(userId: string): Promise<FeedItemDTO[]> {
  *
  * Layout (logical, flips for RTL):
  *
- *   [VerticalNavRail | main:  header + QuickActionBar + TeacherFeedList | UpcomingClassesPanel ]
+ *   [VerticalNavRail | QuickActionBar + standard feed | UpcomingClassesPanel]
  *
- * The student `HomeFeed` shows greeting + sort tabs + "for-you" exercises.
- * Teachers don't want their own questions re-surfaced; they want a tight
- * stream of recent STUDENT questions to triage, with quick CTAs to act on
- * each one.
+ * The feed itself is identical to the student feed — same For You /
+ * Trending / Latest tabs, same Following filter, same cards, same actions.
+ * Teachers see the regular content; what differs is the surrounding
+ * scaffolding (sidebar items per role, quick actions row, and the
+ * upcoming-classes end panel).
  */
-export async function TeacherHomeFeed({ userId, userName, locale }: Props) {
-  const [items, t] = await Promise.all([
-    loadStudentFeed(userId),
-    getTranslations('teacher'),
-  ]);
+export async function TeacherHomeFeed({ userId, userName, locale, sort, filter }: Props) {
+  const items = await loadFeed(userId, sort, filter);
+  const isAr = locale === 'ar';
   const firstName = userName.split(' ')[0];
 
   return (
@@ -99,16 +125,38 @@ export async function TeacherHomeFeed({ userId, userName, locale }: Props) {
             {firstName}
           </p>
           <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            {t('feedTitle')}
+            {isAr ? `أهلاً، ${firstName}` : `Welcome back, ${firstName}`}
           </h1>
         </header>
 
         <QuickActionBar />
 
-        <TeacherFeedList
-          initialItems={items}
-          pageSize={INITIAL_FEED_LIMIT}
-        />
+        <section aria-labelledby="feed-h" className="mt-6">
+          <h2
+            id="feed-h"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+          >
+            {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
+          </h2>
+          {items.length === 0 && filter === 'all' ? (
+            <div className="rounded-3xl border border-dashed border-border p-12 text-center">
+              <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
+              <p className="text-sm text-muted-foreground">
+                {isAr
+                  ? 'لا توجد تمارين بعد. تابعونا قريبًا.'
+                  : 'No exercises yet. Check back soon.'}
+              </p>
+            </div>
+          ) : (
+            <FeedList
+              initialItems={items}
+              endpoint="/api/feed"
+              initialSort={sort}
+              initialFilter={filter}
+              pageSize={INITIAL_FEED_LIMIT}
+            />
+          )}
+        </section>
       </div>
     </AppShell>
   );

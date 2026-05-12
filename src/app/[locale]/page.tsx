@@ -21,16 +21,18 @@ export default async function HomePage({ params, searchParams }: Params) {
     return <MarketingLanding locale={locale} />;
   }
 
-  // Teachers (and admins) get the teacher-specific home page: quick actions
-  // at the top, a "Recent Student Questions" feed in the middle, and an
-  // Upcoming Classes panel on the end-side. Students keep the existing
-  // gamified feed.
+  // Teachers (and admins) get a slightly different shell: QuickActionBar
+  // above the feed and UpcomingClassesPanel on the end-side. The feed
+  // content itself is identical to the student feed (same sort/filter
+  // tabs, same cards).
   if (session.role === 'teacher' || session.role === 'admin') {
     return (
       <TeacherHomeFeed
         userId={session.userId}
         userName={session.name}
         locale={locale}
+        sort={sort}
+        filter={filter}
       />
     );
   }
