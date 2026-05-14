@@ -77,29 +77,51 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
           )}
         </div>
 
-        {/* Author meta + avatar + report kebab */}
+        {/* Author meta + avatar + report kebab.
+            Author chip routes to the profile page; date and report kebab are
+            siblings (outside the Link) so they don't compete for the tap. */}
         <div className="flex items-center gap-2">
-          <div className="flex flex-col items-end text-end">
-            <div className="flex items-center gap-1.5">
-              <p className="text-sm font-semibold text-[#171C20]">
-                {exercise.author?.name ?? '—'}
-              </p>
-              {typeof exercise.author?.points === 'number' && (
-                <ReputationBadge points={exercise.author.points} />
-              )}
-            </div>
-            <time
-              className="text-xs text-[#3E4850]"
-              dateTime={exercise.lastActivityAt}
+          {exercise.author?._id ? (
+            <Link
+              href={`/profile/${exercise.author._id}` as `/profile/${string}`}
+              className="group/author flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1]"
             >
-              {relativeTime(exercise.lastActivityAt)}
-            </time>
-          </div>
-          <UserAvatar
-            src={exercise.author?.avatar}
-            name={exercise.author?.name}
-            size="sm"
-          />
+              <div className="flex flex-col items-end text-end">
+                <div className="flex items-center gap-1.5">
+                  <p className="text-sm font-semibold text-[#171C20] group-hover/author:underline">
+                    {exercise.author?.name ?? '—'}
+                  </p>
+                  {typeof exercise.author?.points === 'number' && (
+                    <ReputationBadge points={exercise.author.points} />
+                  )}
+                </div>
+              </div>
+              <UserAvatar
+                src={exercise.author?.avatar}
+                name={exercise.author?.name}
+                size="sm"
+              />
+            </Link>
+          ) : (
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col items-end text-end">
+                <p className="text-sm font-semibold text-[#171C20]">
+                  {exercise.author?.name ?? '—'}
+                </p>
+              </div>
+              <UserAvatar
+                src={exercise.author?.avatar}
+                name={exercise.author?.name}
+                size="sm"
+              />
+            </div>
+          )}
+          <time
+            className="text-xs text-[#3E4850]"
+            dateTime={exercise.lastActivityAt}
+          >
+            {relativeTime(exercise.lastActivityAt)}
+          </time>
           <ReportKebab
             targetType="exercise"
             targetId={exercise._id}

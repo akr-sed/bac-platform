@@ -28,6 +28,8 @@ interface Props {
    * "following"). Wave C1.
    */
   initialFilter?: FeedFilter;
+  /** Topic slug the initial render was generated for, mirrored to `?topic=`. */
+  initialTopic?: string;
   pageSize?: number;
 }
 
@@ -45,6 +47,7 @@ export function FeedList({
   endpoint,
   initialSort = 'for-you',
   initialFilter = 'all',
+  initialTopic,
   pageSize = 10,
 }: Props) {
   const t = useTranslations('feed');
@@ -66,6 +69,9 @@ export function FeedList({
   const activeFilter: FeedFilter = rawFilterParam
     ? parseFeedFilter(rawFilterParam)
     : initialFilter;
+  const rawTopicParam = searchParams.get('topic');
+  const activeTopic: string = (rawTopicParam ?? initialTopic) ?? '';
+  const topicQuery = activeTopic ? `&topic=${encodeURIComponent(activeTopic)}` : '';
 
   const [items, setItems] = useState<FeedItemDTO[]>(initialItems);
   // Page index for cursor-style pagination matches the existing API which
@@ -88,13 +94,14 @@ export function FeedList({
     if (
       activeSort === initialSort &&
       activeFilter === initialFilter &&
+      activeTopic === (initialTopic ?? '') &&
       page === 1 &&
       items === initialItems
     ) {
       return;
     }
     setRefetching(true);
-    const url = `${endpoint}?page=0&limit=${pageSize}&sort=${activeSort}&filter=${activeFilter}`;
+    const url = `${endpoint}?page=0&limit=${pageSize}&sort=${activeSort}&filter=${activeFilter}${topicQuery}`;
     fetch(url)
       .then((res) => res.json() as Promise<FeedResponse>)
       .then((data) => {
@@ -117,7 +124,7 @@ export function FeedList({
     // We intentionally exclude `initialItems`/`initialSort`/`initialFilter`/`items` from the
     // dependency list — those only seed the first paint.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeSort, activeFilter, endpoint, pageSize]);
+  }, [activeSort, activeFilter, activeTopic, endpoint, pageSize]);
 
   // Infinite scroll for the active sort mode.
   useEffect(() => {
@@ -129,7 +136,7 @@ export function FeedList({
         setLoading(true);
         try {
           const res = await fetch(
-            `${endpoint}?page=${page}&limit=${pageSize}&sort=${activeSort}&filter=${activeFilter}`
+            `${endpoint}?page=${page}&limit=${pageSize}&sort=${activeSort}&filter=${activeFilter}${topicQuery}`
           );
           const data = (await res.json()) as FeedResponse;
           setItems((prev) => [...prev, ...(data.data ?? [])]);
@@ -143,7 +150,7 @@ export function FeedList({
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [page, loading, refetching, hasMore, endpoint, pageSize, activeSort, activeFilter]);
+  }, [page, loading, refetching, hasMore, endpoint, pageSize, activeSort, activeFilter, activeTopic, topicQuery]);
 
   const handleSortChange = (next: FeedSort) => {
     // Persist the selection in the URL so refresh / share preserves it.

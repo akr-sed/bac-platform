@@ -29,8 +29,46 @@ export interface ExerciseDTO {
   sourcePage?: number;
   figureDescriptions?: string[];
   hasMath?: boolean;
+  // Structured corpus fields (present only on bac-results-new imports).
+  statement?: string;
+  parts?: PartDTO[];
+  figures?: FigureDTO[];
+  sujet?: number | null;
+  language?: 'ar' | 'fr' | 'ar_fr' | null;
+  // List-endpoint convenience: server picks the first question figure and
+  // emits a Cloudinary thumbnail URL. Detail endpoint omits this.
+  previewFigure?: { url: string; alt: string } | null;
   createdAt: string;
   updatedAt: string;
+}
+
+export type FigureContextDTO = 'question' | 'solution';
+export type FigureTypeDTO =
+  | 'graph' | 'geometric' | 'table' | 'probability_tree'
+  | 'number_line' | 'statistical_chart' | 'circuit' | 'diagram' | 'other';
+
+export interface FigureDTO {
+  figureId: string;
+  cloudinaryUrl: string;
+  context: FigureContextDTO;
+  figureType?: FigureTypeDTO;
+  description: string;
+  exerciseRef?: number;
+  partRef?: string | null;
+  sourcePage?: number;
+  boundingBox?: [number, number, number, number];
+}
+
+export interface PartDTO {
+  partId: string;
+  label: string;
+  subLabel?: string | null;
+  statement: string;
+  solution?: string | null;
+  dependsOn: string[];
+  marks?: number | null;
+  hasFigure: boolean;
+  ordering: number;
 }
 
 export interface ExamDTO {

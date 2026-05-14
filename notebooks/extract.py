@@ -21,6 +21,16 @@ import time
 import uuid
 from pathlib import Path
 
+# Load .env.local so GOOGLE_API_KEY is available without an explicit `export`.
+# Best-effort: if python-dotenv isn't installed we just skip — the existing
+# `GOOGLE_API_KEY is not set` error in extract() still surfaces a clear message.
+try:
+    from dotenv import load_dotenv
+    _repo_root = Path(__file__).resolve().parents[1]
+    load_dotenv(_repo_root / ".env.local", override=False)
+except ImportError:
+    pass
+
 from google import genai
 from google.genai import types
 
@@ -242,33 +252,50 @@ def parse_response(raw: str) -> dict:
 
 def validate_output(data: dict) -> None:
     """Basic sanity checks on the extracted JSON."""
-    # ── exam_metadata
-    if "exam_metadata" not in data:
-        raise ValueError("Response missing 'exam_metadata' key.")
-    meta = data["exam_metadata"]
-    for required in ("id", "subject", "exam_type", "language"):
-        if required not in meta:
-            raise ValueError(f"exam_metadata missing required field: '{required}'")
-    if meta.get("exam_type") not in {"bac", "bac_blanc", "trimestre", None}:
-        raise ValueError(f"Invalid exam_type: '{meta.get('exam_type')}'")
-    if meta.get("session") not in {"principal", "rattrapage", None}:
-        raise ValueError(f"Invalid session: '{meta.get('session')}'")
-    if meta.get("language") not in {"ar", "fr", "ar_fr", None}:
-        raise ValueError(f"Invalid language: '{meta.get('language')}'")
+    if "exams" not in data or not isinstance(data["exams"], list):
+        raise ValueError("Response missing 'exams' array.")
+    
+    for exam_obj in data["exams"]:
+        # ── exam_metadata
+        if "exam_metadata" not in exam_obj:
+            raise ValueError("Exam object missing 'exam_metadata' key.")
+        meta = exam_obj["exam_metadata"]
+        for required in ("id", "subject", "exam_type", "language"):
+            if required not in meta:
+                raise ValueError(f"exam_metadata missing required field: '{required}'")
+        if meta.get("exam_type") not in {"bac", "bac_blanc", "trimestre", None}:
+            raise ValueError(f"Invalid exam_type: '{meta.get('exam_type')}'")
+        if meta.get("session") not in {"principal", "rattrapage", None}:
+            raise ValueError(f"Invalid session: '{meta.get('session')}'")
+        if meta.get("language") not in {"ar", "fr", "ar_fr", None}:
+            raise ValueError(f"Invalid language: '{meta.get('language')}'")
 
-    # ── exercises
-    if "exercises" not in data:
-        raise ValueError("Response missing 'exercises' key.")
-    if not isinstance(data["exercises"], list):
-        raise ValueError("'exercises' must be a list.")
-    for ex in data["exercises"]:
-        for required in ("id", "number", "statement", "parts"):
-            if required not in ex:
-                raise ValueError(
-                    f"Exercise missing required field '{required}'. Got: {list(ex.keys())}"
-                )
-    if "figures" not in data:
-        data["figures"] = []
+        # ── exercises
+        if "exercises" not in exam_obj:
+            raise ValueError("Exam object missing 'exercises' key.")
+        if not isinstance(exam_obj["exercises"], list):
+            raise ValueError("'exercises' must be a list.")
+        for ex in exam_obj["exercises"]:
+            for required in ("id", "number", "statement", "parts"):
+                if required not in ex:
+                    raise ValueError(
+                        f"Exercise missing required field '{required}'. Got: {list(ex.keys())}"
+                    )
+        
+        # ── figures
+        if "figures" not in exam_obj:
+            exam_obj["figures"] = []
+        elif not isinstance(exam_obj["figures"], list):
+            raise ValueError("'figures' must be a list.")
+            
+        for fig in exam_obj["figures"]:
+            for required in ("id", "figure_type", "description", "context"):
+                if required not in fig:
+                    raise ValueError(
+                        f"Figure missing required field '{required}'. Got: {list(fig.keys())}"
+                    )
+            if fig.get("context") not in {"question", "solution", None}:
+                raise ValueError(f"Invalid figure context: '{fig.get('context')}'")
 
 
 # ── Core extraction ────────────────────────────────────────────────────────────
@@ -352,7 +379,7 @@ def extract(pdf_path: Path, exam_metadata: dict, output_path: Path | None = None
             config=types.GenerateContentConfig(
                 system_instruction=system_prompt,
                 temperature=0.1,
-                max_output_tokens=64_000,
+                max_output_tokens=200_000,
             ),
         )
         raw_text = response.text
@@ -376,31 +403,33 @@ def extract(pdf_path: Path, exam_metadata: dict, output_path: Path | None = None
             save_error_result(output_path, exam_metadata, e, raw_text)
         raise
 
-    exam_id = exam_metadata["exam_id"]
-    data["exam_id"] = exam_id
+    # Patch IDs and any CLI-known fields the LLM may have missed
+    for i, exam_obj in enumerate(data.get("exams", [])):
+        # Provide a distinct exam_id if there are multiple subjects, linking back to the parent file
+        # We can append the index or subject number to make it unique per extracted exam
+        sujet = exam_obj.get("exam_metadata", {}).get("sujet")
+        current_exam_id = f"{exam_metadata['exam_id']}-{sujet}" if sujet else f"{exam_metadata['exam_id']}-{i+1}"
+        
+        if "exam_metadata" in exam_obj:
+            exam_obj["exam_metadata"]["id"]      = current_exam_id
+            exam_obj["exam_metadata"]["subject"] = exam_metadata["subject"]
+            exam_obj["exam_metadata"]["source_file"] = exam_metadata.get("source_file")
+            if exam_metadata.get("filiere"):
+                exam_obj["exam_metadata"]["filiere"] = exam_metadata["filiere"]
 
-    # Patch exam_metadata id and any CLI-known fields the LLM may have missed
-    if "exam_metadata" in data:
-        data["exam_metadata"]["id"]      = exam_id
-        data["exam_metadata"]["subject"] = exam_metadata["subject"]
-        data["exam_metadata"]["source_file"] = exam_metadata.get("source_file")
-        # If filiere was passed via CLI, it overrides what the LLM read
-        if exam_metadata.get("filiere"):
-            data["exam_metadata"]["filiere"] = exam_metadata["filiere"]
+        for exercise in exam_obj.get("exercises", []):
+            exercise["exam_id"] = current_exam_id
+            if not exercise.get("id"):
+                exercise["id"] = str(uuid.uuid4())
+            for part in exercise.get("parts", []):
+                part["exercise_id"] = exercise["id"]
+                if not part.get("id"):
+                    part["id"] = str(uuid.uuid4())
 
-    for exercise in data.get("exercises", []):
-        exercise["exam_id"] = exam_id
-        if not exercise.get("id"):
-            exercise["id"] = str(uuid.uuid4())
-        for part in exercise.get("parts", []):
-            part["exercise_id"] = exercise["id"]
-            if not part.get("id"):
-                part["id"] = str(uuid.uuid4())
-
-    for figure in data.get("figures", []):
-        figure["exam_id"] = exam_id
-        if not figure.get("id"):
-            figure["id"] = str(uuid.uuid4())
+        for figure in exam_obj.get("figures", []):
+            figure["exam_id"] = current_exam_id
+            if not figure.get("id"):
+                figure["id"] = str(uuid.uuid4())
 
     # ── 6. Validate + save
     try:
@@ -731,22 +760,28 @@ def main() -> None:
         print(f"\nUnexpected error: {e}", file=sys.stderr)
         raise
 
-    meta      = result.get("exam_metadata", {})
-    exercises = result.get("exercises", [])
-    figures   = result.get("figures", [])
-    parts     = sum(len(ex.get("parts", [])) for ex in exercises)
+    exams = result.get("exams", [])
+    
+    print(f"\nDone. Extracted {len(exams)} exam(s).")
+    for i, exam_obj in enumerate(exams):
+        meta      = exam_obj.get("exam_metadata", {})
+        exercises = exam_obj.get("exercises", [])
+        figures   = exam_obj.get("figures", [])
+        parts     = sum(len(ex.get("parts", [])) for ex in exercises)
 
-    print(f"\nDone.")
-    print(f"  exam_type  : {meta.get('exam_type')}")
-    print(f"  filiere    : {meta.get('filiere')}")
-    print(f"  year       : {meta.get('year')}")
-    print(f"  session    : {meta.get('session')}")
-    print(f"  trimester  : {meta.get('trimester')}")
-    print(f"  language   : {meta.get('language')}")
-    print(f"  duration   : {meta.get('duration_minutes')} min")
-    print(f"  total marks: {meta.get('total_marks')}")
-    print(f"  {len(exercises)} exercise(s), {parts} part(s), {len(figures)} figure(s)")
-    print(f"  Output: {output_path}\n")
+        sujet_label = f"Sujet {meta.get('sujet')}" if meta.get('sujet') else f"Exam {i+1}"
+        print(f"\n  --- {sujet_label} ---")
+        print(f"  exam_type  : {meta.get('exam_type')}")
+        print(f"  filiere    : {meta.get('filiere')}")
+        print(f"  year       : {meta.get('year')}")
+        print(f"  session    : {meta.get('session')}")
+        print(f"  trimester  : {meta.get('trimester')}")
+        print(f"  language   : {meta.get('language')}")
+        print(f"  duration   : {meta.get('duration_minutes')} min")
+        print(f"  total marks: {meta.get('total_marks')}")
+        print(f"  {len(exercises)} exercise(s), {parts} part(s), {len(figures)} figure(s)")
+        
+    print(f"\n  Output: {output_path}\n")
 
 
 if __name__ == "__main__":

@@ -13,8 +13,10 @@ import {
 } from '@/lib/feed-ranking';
 import { AppShell } from '@/components/layout/AppShell';
 import { FeedList } from '@/components/exercises/feed-list';
+import { FeedTopicChips } from '@/components/feed/feed-topic-chips';
 import { QuickActionBar } from '@/components/teacher/QuickActionBar';
 import { UpcomingClassesPanel } from '@/components/teacher/UpcomingClassesPanel';
+import type { ExamTopicLocale } from '@/lib/exam-topic-labels';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
@@ -23,6 +25,7 @@ interface Props {
   locale: string;
   sort: FeedSort;
   filter: FeedFilter;
+  topic?: string;
 }
 
 const INITIAL_FEED_LIMIT = 10;
@@ -37,7 +40,8 @@ const INITIAL_FEED_LIMIT = 10;
 async function loadFeed(
   userId: string,
   sort: FeedSort,
-  filter: FeedFilter
+  filter: FeedFilter,
+  topic?: string,
 ): Promise<FeedItemDTO[]> {
   await connectToDatabase();
 
@@ -63,6 +67,7 @@ async function loadFeed(
     limit: INITIAL_FEED_LIMIT,
     sort,
     authorIds,
+    topic,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -112,10 +117,15 @@ async function loadFeed(
  * scaffolding (sidebar items per role, quick actions row, and the
  * upcoming-classes end panel).
  */
-export async function TeacherHomeFeed({ userId, userName, locale, sort, filter }: Props) {
-  const items = await loadFeed(userId, sort, filter);
+export async function TeacherHomeFeed({ userId, userName, locale, sort, filter, topic }: Props) {
+  const items = await loadFeed(userId, sort, filter, topic);
   const isAr = locale === 'ar';
-  const firstName = userName.split(' ')[0];
+  const firstName = (userName ?? '').split(' ')[0] || (isAr ? 'أستاذي' : 'teacher');
+
+  await connectToDatabase();
+  const availableTopics = (await Exercise.distinct('topic')).filter(
+    (t): t is string => typeof t === 'string' && t.length > 0
+  );
 
   return (
     <AppShell endPanel={<UpcomingClassesPanel userId={userId} locale={locale} />}>
@@ -131,14 +141,23 @@ export async function TeacherHomeFeed({ userId, userName, locale, sort, filter }
 
         <QuickActionBar />
 
-        <section aria-labelledby="feed-h" className="mt-6">
+        <section aria-labelledby="feed-h" className="mt-6 space-y-4">
           <h2
             id="feed-h"
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+            className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
           >
             {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
           </h2>
-          {items.length === 0 && filter === 'all' ? (
+
+          <FeedTopicChips
+            topics={availableTopics}
+            selected={topic ?? null}
+            locale={(locale === 'fr' || locale === 'en' ? locale : 'ar') as ExamTopicLocale}
+            sort={sort}
+            filter={filter}
+          />
+
+          {items.length === 0 && filter === 'all' && !topic ? (
             <div className="rounded-3xl border border-dashed border-border p-12 text-center">
               <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">
@@ -151,6 +170,7 @@ export async function TeacherHomeFeed({ userId, userName, locale, sort, filter }
             <FeedList
               initialItems={items}
               endpoint="/api/feed"
+              initialTopic={topic}
               initialSort={sort}
               initialFilter={filter}
               pageSize={INITIAL_FEED_LIMIT}

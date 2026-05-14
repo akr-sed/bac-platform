@@ -1,0 +1,1241 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+        "subject": "mathematics",
+        "source_file": "2012.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2012,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": null,
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+          "number": 1,
+          "title": null,
+          "statement": "التمرين الأول: (04 نقاط)",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "forme_exponentielle",
+            "rotation",
+            "transformations_plan"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$: $z^2 - \\sqrt{2}z + 1 = 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "لدينا $\\Delta = (-\\sqrt{2})^2 - 4 \\times 1 \\times 1 = 2 - 4 = -2 = (i\\sqrt{2})^2$\nومنه $z_1 = \\frac{\\sqrt{2} + i\\sqrt{2}}{2} = \\frac{1+i}{\\sqrt{2}}$ ، $z_2 = \\frac{\\sqrt{2} - i\\sqrt{2}}{2} = \\frac{1-i}{\\sqrt{2}}$",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "2",
+              "sub_label": null,
+              "statement": "المستوي المركب منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$. $A$ ، $B$ و $C$ نقط المستوي التي لاحقاتها على الترتيب: $z_A = \\frac{1+i}{\\sqrt{2}}$ ، $z_B = \\bar{z}_A$ و $z_C = z_A + z_B$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "لدينا $z_A = \\frac{1+i}{\\sqrt{2}}$ ، $z_B = \\frac{1-i}{\\sqrt{2}}$ و $z_C = z_A + z_B = \\frac{1+i}{\\sqrt{2}} + \\frac{1-i}{\\sqrt{2}} = \\frac{2}{\\sqrt{2}} = \\sqrt{2}$",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "اكتب على الشكل الأسي الأعداد المركبة: $z_A$ ، $z_B$ و $\\frac{z_A}{z_B}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": "$z_A = e^{i\\frac{\\pi}{4}}$ ، $z_B = e^{-i\\frac{\\pi}{4}}$ و $\\frac{z_A}{z_B} = \\frac{e^{i\\frac{\\pi}{4}}}{e^{-i\\frac{\\pi}{4}}} = e^{i\\frac{\\pi}{2}}$",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "عيّن لاحقة كل من $A'$ ، $B'$ و $C'$ صور النقط $A$ ، $B$ و $C$ على الترتيب بالدوران الذي مركزه $O$ وزاويته $\\frac{\\pi}{4}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": "العبارة المركبة للدوران هي $z' = e^{i\\frac{\\pi}{4}}z$\n$z_{A'} = e^{i\\frac{\\pi}{4}} z_A = e^{i\\frac{\\pi}{4}} e^{i\\frac{\\pi}{4}} = e^{i\\frac{\\pi}{2}} = i$\n$z_{B'} = e^{i\\frac{\\pi}{4}} z_B = e^{i\\frac{\\pi}{4}} e^{-i\\frac{\\pi}{4}} = e^0 = 1$\n$z_{C'} = e^{i\\frac{\\pi}{4}} z_C = e^{i\\frac{\\pi}{4}} \\sqrt{2} = \\frac{1+i}{\\sqrt{2}} \\times \\sqrt{2} = 1+i$",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "2",
+              "sub_label": "جـ",
+              "statement": "بيّن أن الرباعي $OA'C'B'$ مربع.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-ب"
+              ],
+              "solution": "لدينا $z_{C'} - z_{B'} = 1+i - 1 = i = z_{A'} - z_O$ ومنه $OA'C'B'$ متوازي أضلاع.\nكما أن $\\frac{z_{A'} - z_O}{z_{B'} - z_O} = \\frac{i}{1} = i$ وعليه $\\frac{OA'}{OB'} = |i| = 1$ أي $OA' = OB'$ و $(\\vec{OB'}, \\vec{OA'}) = \\arg(i) = \\frac{\\pi}{2} [2\\pi]$.\nمتوازي أضلاع فيه ضلعان متتاليان متقايسان وزاوية قائمة فهو مربع.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نسمي $(\\Delta)$ مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ حيث: $|z - z_A| = |z - z_B|$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بيّن أن $(\\Delta)$ هو محور الفواصل.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": "$|z - z_A| = |z - z_B|$ تعني $MA = MB$ أي $M$ تنتمي لمحور القطعة $[AB]$.\nبما أن $z_B = \\bar{z}_A$ فإن $A$ و $B$ متناظرتان بالنسبة لمحور الفواصل، وعليه محور $[AB]$ هو محور الفواصل.",
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+              "exercise_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "بيّن أن حلي المعادلة: $(\\frac{z-z_A}{z-z_B})^2 = i$ عددان حقيقيان. (لا يطلب حساب الحلين)",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "إذا كان $z$ حلاً للمعادلة فإن $|\\frac{z-z_A}{z-z_B}|^2 = |i| = 1$ ومنه $|\\frac{z-z_A}{z-z_B}| = 1$ أي $|z-z_A| = |z-z_B|$.\nحسب السؤال 3-أ، النقطة $M(z)$ تنتمي لمحور الفواصل، وعليه $z$ عدد حقيقي.",
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+          "number": 2,
+          "title": null,
+          "statement": "التمرين الثاني: (04 نقاط)",
+          "topic": "arithmetique",
+          "concepts": [
+            "nombres_premiers",
+            "congruences",
+            "theoreme_bezout",
+            "suites_arithmetiques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+              "exercise_id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+              "label": "1",
+              "sub_label": null,
+              "statement": "نعتبر في $\\mathbb{Z}^2$ المعادلة ذات المجهول $(x; y)$ التالية: $2011x - 1432y = 31 \\dots (1)$.\nأ- أثبت أن العدد 2011 أولي.\nب- باستعمال خوارزمية إقليدس، عيّن حلا خاصا $(x_0; y_0)$ للمعادلة (1)، ثم حل المعادلة (1).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "أ- $\\sqrt{2011} \\approx 44.84$. الأعداد الأولية الأصغر من 44.84 هي: 2، 3، 5، 7، 11، 13، 17، 19، 23، 29، 31، 37، 41، 43. 2011 لا يقبل القسمة على أي منها، فهو أولي.\nب- الحل الخاص: $(5; 7)$ لأن $2011(5) - 1432(7) = 10055 - 10024 = 31$.\nحلول المعادلة: $x = 1432k + 5$ و $y = 2011k + 7$ مع $k \\in \\mathbb{Z}$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+              "exercise_id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "عيّن، حسب قيم العدد الطبيعي $n$، باقي القسمة الإقليدية للعدد $2^n$ على 7، ثم جد باقي القسمة الإقليدية للعدد $2011^{1432^{2012}}$ على 7.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "بواقي $2^n$ على 7 هي دورية دورها 3: $2^0 \\equiv 1 [7]$، $2^1 \\equiv 2 [7]$، $2^2 \\equiv 4 [7]$، $2^3 \\equiv 1 [7]$.\n$2011 \\equiv 2 [7]$، إذن $2011^{1432^{2012}} \\equiv 2^{1432^{2012}} [7]$.\n$1432 \\equiv 1 [3]$، إذن $1432^{2012} \\equiv 1^{2012} \\equiv 1 [3]$.\nوعليه $2^{1432^{2012}} \\equiv 2^1 \\equiv 2 [7]$. الباقي هو 2.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+              "exercise_id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "عيّن قيم العدد الطبيعي $n$ التي من أجلها يكون: $1432^n + 2011^n + 2010^n \\equiv 0 [7]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "$1432 \\equiv 4 [7]$، $2011 \\equiv 2 [7]$، $2010 \\equiv 1 [7]$.\nالمعادلة تصبح: $4^n + 2^n + 1 \\equiv 0 [7]$.\nإذا $n=3k$: $1+1+1=3 \\not\\equiv 0 [7]$.\nإذا $n=3k+1$: $4+2+1=7 \\equiv 0 [7]$.\nإذا $n=3k+2$: $16+4+1=21 \\equiv 0 [7]$.\nالقيم هي $n = 3k+1$ أو $n = 3k+2$ مع $k \\in \\mathbb{N}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+              "exercise_id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$N$ عدد طبيعي يكتب $\\overline{2\\gamma\\alpha\\beta}^9$ في نظام التعداد الذي أساسه 9 حيث: $\\alpha, \\beta, \\gamma$ بهذا الترتيب تشكل حدودا متتابعة من متتالية حسابية متزايدة تماما و $(\\beta; \\gamma)$ حل للمعادلة (1).\nعيّن $\\alpha, \\beta, \\gamma$ ثم اكتب $N$ في النظام العشري.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "بما أن $(\\beta; \\gamma)$ حل لـ (1) و $0 \\le \\alpha, \\beta, \\gamma < 9$، فإن $\\beta = 5$ و $\\gamma = 7$ (من الحل العام $x=1432k+5, y=2011k+7$ بوضع $k=0$).\nبما أن $\\alpha, \\beta, \\gamma$ متتالية حسابية: $2\\beta = \\alpha + \\gamma \\Rightarrow 10 = \\alpha + 7 \\Rightarrow \\alpha = 3$.\n$N = 2 \\times 9^3 + 7 \\times 9^2 + 3 \\times 9^1 + 5 \\times 9^0 = 1458 + 567 + 27 + 5 = 2057$.",
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+          "number": 3,
+          "title": null,
+          "statement": "التمرين الثالث: (04 نقاط)\nنعتبر في الفضاء المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، النقط $A(3;0;0)$، $B(0;4;0)$ و $C(2;2;2)$.",
+          "topic": "geometrie",
+          "concepts": [
+            "vecteurs",
+            "plans",
+            "droites",
+            "distances",
+            "equations_cartesiennes"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أن النقط $A, B, C$ ليست في استقامية وأن الشعاع $\\vec{n}(4;3;-1)$ عمودي على كل من الشعاعين: $\\vec{AB}$ و $\\vec{AC}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\vec{AB}(-3;4;0)$ ، $\\vec{AC}(-1;2;2)$. المركبات ليست متناسبة، فالنقط ليست في استقامية.\n$\\vec{n} \\cdot \\vec{AB} = 4(-3) + 3(4) + (-1)(0) = -12 + 12 = 0$.\n$\\vec{n} \\cdot \\vec{AC} = 4(-1) + 3(2) + (-1)(2) = -4 + 6 - 2 = 0$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "2",
+              "sub_label": null,
+              "statement": "اكتب معادلة ديكارتية للمستوي $(P)$ الذي يشمل النقط $A, B, C$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "بما أن $\\vec{n}$ عمودي على $\\vec{AB}$ و $\\vec{AC}$ فهو ناظمي لـ $(P)$.\nالمعادلة: $4(x-3) + 3(y-0) - 1(z-0) = 0 \\Rightarrow 4x + 3y - z - 12 = 0$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بيّن أن: $6x - 8y + 7 = 0$ معادلة ديكارتية للمستوي $(P')$ مجموعة النقط $M(x;y;z)$ من الفضاء حيث: $AM = BM$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$AM^2 = BM^2 \\Rightarrow (x-3)^2 + y^2 + z^2 = x^2 + (y-4)^2 + z^2$\n$x^2 - 6x + 9 + y^2 + z^2 = x^2 + y^2 - 8y + 16 + z^2 \\Rightarrow -6x + 8y - 7 = 0 \\Rightarrow 6x - 8y + 7 = 0$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "بيّن أن: $2x - 4y - 4z + 3 = 0$ معادلة ديكارتية للمستوي $(P'')$ مجموعة النقط $M(x;y;z)$ من الفضاء حيث: $AM = CM$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$AM^2 = CM^2 \\Rightarrow (x-3)^2 + y^2 + z^2 = (x-2)^2 + (y-2)^2 + (z-2)^2$\n$x^2 - 6x + 9 + y^2 + z^2 = x^2 - 4x + 4 + y^2 - 4y + 4 + z^2 - 4z + 4$\n$-6x + 9 = -4x - 4y - 4z + 12 \\Rightarrow -2x + 4y + 4z - 3 = 0 \\Rightarrow 2x - 4y - 4z + 3 = 0$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "3",
+              "sub_label": "جـ",
+              "statement": "بيّن أن $(P')$ و $(P'')$ يتقاطعان وفق مستقيم $(\\Delta)$ يطلب تعيين تمثيل وسيطي له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ",
+                "3-ب"
+              ],
+              "solution": "المستويان غير متوازيين لأن شعاعيهما الناظميين غير مرتبطين خطيا.\nبوضع $z=t$: $\\begin{cases} 6x - 8y = -7 \\\\ 2x - 4y = 4t - 3 \\end{cases} \\Rightarrow \\begin{cases} x = 4t - \\frac{1}{2} \\\\ y = 3t + \\frac{1}{2} \\\\ z = t \\end{cases}$ مع $t \\in \\mathbb{R}$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f",
+              "exercise_id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+              "label": "4",
+              "statement": "احسب إحداثيات النقطة $\\omega$ مركز الدائرة المحيطة بالمثلث $ABC$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "3-جـ"
+              ],
+              "solution": "$\\omega$ هي نقطة تقاطع $(P)$ و $(\\Delta)$.\nنعوض التمثيل الوسيطي في معادلة $(P)$: $4(4t - \\frac{1}{2}) + 3(3t + \\frac{1}{2}) - t - 12 = 0$\n$16t - 2 + 9t + 1.5 - t - 12 = 0 \\Rightarrow 24t = 12.5 \\Rightarrow t = \\frac{25}{48}$.\n$\\omega(\\frac{37}{24}; \\frac{101}{48}; \\frac{25}{48})$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+          "number": 4,
+          "title": null,
+          "statement": "التمرين الرابع: (08 نقاط)",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "suites_recurrentes",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "representation_graphique",
+            "raisonnement_par_recurrence"
+          ],
+          "difficulty": "hard",
+          "marks": 8,
+          "has_figure": true,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "I",
+              "sub_label": null,
+              "statement": "$g$ هي الدالة المعرفة على $\\mathbb{R}$ كما يلي: $g(x) = 2 - xe^x$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "I",
+              "sub_label": "1",
+              "statement": "ادرس تغيرات الدالة $g$، ثم شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I"
+              ],
+              "solution": "$g'(x) = -(1+x)e^x$. $g'(x)=0 \\Rightarrow x=-1$.\n$g$ متزايدة على $]-\\infty; -1]$ ومتناقصة على $[-1; +\\infty[$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "I",
+              "sub_label": "2",
+              "statement": "بيّن أن المعادلة $g(x) = 0$ تقبل حلا وحيدا $\\alpha$ على $\\mathbb{R}$، ثم تحقق أن: $0.8 < \\alpha < 0.9$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-1"
+              ],
+              "solution": "على $]-\\infty; -1]$، $g(x) \\ge g(-1) = 2 + 1/e > 0$. لا يوجد حل.\nعلى $[-1; +\\infty[$، $g$ مستمرة ومتناقصة تماما، $g(-1) > 0$ و $\\lim_{x \\to +\\infty} g(x) = -\\infty$. يوجد حل وحيد $\\alpha$.\n$g(0.8) \\approx 0.22 > 0$ و $g(0.9) \\approx -0.21 < 0$. إذن $0.8 < \\alpha < 0.9$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "I",
+              "sub_label": "3",
+              "statement": "عيّن، حسب قيم $x$، إشارة $g(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-2"
+              ],
+              "solution": "$g(x) > 0$ على $]-\\infty; \\alpha[$ و $g(x) < 0$ على $]\\alpha; +\\infty[$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": null,
+              "statement": "$f$ هي الدالة المعرفة على $\\mathbb{R}$ كما يلي: $f(x) = \\frac{2x+2}{e^x+2}$.\n$(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$، (وحدة الطول $2cm$).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "d8e9f0a1-b2c3-4d4e-5f6a-7b8c9d0e1f2a",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "1",
+              "statement": "بيّن أن: $\\lim_{x \\to +\\infty} f(x) = 0$، ثم فسر النتيجة هندسيا.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II"
+              ],
+              "solution": "$\\lim_{x \\to +\\infty} f(x) = \\lim_{x \\to +\\infty} \\frac{2x}{e^x} = 0$. المستقيم $y=0$ مقارب أفقي لـ $(C_f)$ عند $+\\infty$.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "2",
+              "statement": "أ- احسب $\\lim_{x \\to -\\infty} f(x)$.\nب- بيّن أن المستقيم $(\\Delta')$ ذا المعادلة $y = x+1$ مستقيم مقارب لـ $(C_f)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II"
+              ],
+              "solution": "أ- $\\lim_{x \\to -\\infty} f(x) = -\\infty$.\nب- $\\lim_{x \\to -\\infty} [f(x) - (x+1)] = \\lim_{x \\to -\\infty} [\\frac{2x+2}{e^x+2} - \\frac{(x+1)(e^x+2)}{e^x+2}] = \\lim_{x \\to -\\infty} \\frac{-(x+1)e^x}{e^x+2} = 0$.",
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "f0a1b2c3-d4e5-4f6a-7b8c-9d0e1f2a3b4c",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "3",
+              "statement": "ادرس وضعية $(C_f)$ بالنسبة إلى كل من $(\\Delta')$ و $(\\Delta)$، حيث $(\\Delta)$ هو المستقيم ذو المعادلة $y=x$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-ب"
+              ],
+              "solution": "بالنسبة لـ $(\\Delta')$: إشارة $f(x)-(x+1) = \\frac{-(x+1)e^x}{e^x+2}$ هي عكس إشارة $x+1$. فوق على $]-\\infty; -1[$ وتحت على $]-1; +\\infty[$.\nبالنسبة لـ $(\\Delta)$: $f(x)-x = \\frac{2x+2-xe^x-2x}{e^x+2} = \\frac{g(x)}{e^x+2}$. فوق على $]-\\infty; \\alpha[$ وتحت على $]\\alpha; +\\infty[$.",
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "4",
+              "statement": "أ- بيّن أنه من أجل كل عدد حقيقي $x$، $f'(x) = \\frac{2g(x)}{(e^x+2)^2}$، ثم استنتج اتجاه تغير الدالة $f$.\nب- بيّن أن: $f(\\alpha) = \\alpha$، ثم شكل جدول تغيرات الدالة $f$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-3",
+                "II"
+              ],
+              "solution": "أ- $f'(x) = \\frac{2(e^x+2) - e^x(2x+2)}{(e^x+2)^2} = \\frac{2e^x+4-2xe^x-2e^x}{(e^x+2)^2} = \\frac{2(2-xe^x)}{(e^x+2)^2} = \\frac{2g(x)}{(e^x+2)^2}$.\nب- $g(\\alpha)=0 \\Rightarrow e^\\alpha = 2/\\alpha$. $f(\\alpha) = \\frac{2\\alpha+2}{2/\\alpha+2} = \\frac{2(\\alpha+1)}{2(1+\\alpha)/\\alpha} = \\alpha$.",
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "5",
+              "statement": "ارسم $(\\Delta)$ ، $(\\Delta')$ و $(C_f)$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "II-3",
+                "II-4"
+              ],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "II",
+              "sub_label": "6",
+              "statement": "ناقش، بيانيا، حسب قيم الوسيط الحقيقي $m$، عدد حلول المعادلة $f(x) = f(m)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-5"
+              ],
+              "solution": "الحلول هي فواصل نقط تقاطع $(C_f)$ مع المستقيم الأفقي $y=f(m)$.\nإذا $m \\in ]-\\infty; -1]$، حل وحيد.\nإذا $m \\in ]-1; \\alpha[$، حلان متمايزان.\nإذا $m = \\alpha$، حل مضاعف.\nإذا $m \\in ]\\alpha; +\\infty[$، حلان متمايزان.",
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "III",
+              "sub_label": null,
+              "statement": "$(U_n)$ هي المتتالية العددية المعرفة على $\\mathbb{N}$ كما يلي: $U_0 = 0$ ومن أجل كل عدد طبيعي $n$: $U_{n+1} = f(U_n)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II"
+              ],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "III",
+              "sub_label": "1",
+              "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$، $0 \\le U_n < \\alpha$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "III"
+              ],
+              "solution": "من أجل $n=0$: $0 \\le 0 < \\alpha$ محققة.\nنفرض $0 \\le U_n < \\alpha$. بما أن $f$ متزايدة على $[0; \\alpha]$، فإن $f(0) \\le f(U_n) < f(\\alpha)$ أي $1 \\le U_{n+1} < \\alpha$.",
+              "ordering": 13,
+              "metadata": {}
+            },
+            {
+              "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "III",
+              "sub_label": "2",
+              "statement": "باستعمال $(\\Delta)$ و $(C_f)$ مثّل على محور الفواصل الحدود: $U_0, U_1, U_2$ ثم خمّن اتجاه تغير $(U_n)$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "II-5",
+                "III"
+              ],
+              "solution": null,
+              "ordering": 14,
+              "metadata": {}
+            },
+            {
+              "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+              "exercise_id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+              "label": "III",
+              "sub_label": "3",
+              "statement": "برهن أن المتتالية $(U_n)$ متقاربة، ثم احسب نهايتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "III-1",
+                "III-2"
+              ],
+              "solution": "بما أن $U_{n+1}-U_n = f(U_n)-U_n = \\frac{g(U_n)}{e^{U_n}+2} > 0$ لأن $U_n < \\alpha$، فالمتتالية متزايدة ومحدودة من الأعلى فهي متقاربة.\nنهايتها $l$ تحقق $f(l)=l$ أي $l=\\alpha$.",
+              "ordering": 15,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f1a2b3c4-d5e6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-1",
+          "exercise_ref": 4,
+          "part_ref": "III-2",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "تمثيل حدود المتتالية Un على محور الفواصل باستخدام المنحنى Cf والمستقيم y=x. يظهر الحدود U0=0، U1، U2 متزايدة نحو نقطة التقاطع ذات الفاصلة alpha.",
+          "source_page": 11,
+          "bounding_box": [
+            660,
+            100,
+            900,
+            900
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+        "subject": "mathematics",
+        "source_file": "2012.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2012,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": null,
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "number": 1,
+          "title": null,
+          "statement": "التمرين الأول: (04 نقاط)",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "rotation",
+            "homothetie",
+            "similitudes"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": true,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$ التالية: $(z^2 + 4)(z^2 - 2\\sqrt{3}z + 4) = 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z^2+4=0 \\Rightarrow z = \\pm 2i$.\n$z^2 - 2\\sqrt{3}z + 4 = 0 \\Rightarrow \\Delta = 12 - 16 = -4 = (2i)^2$. $z = \\frac{2\\sqrt{3} \\pm 2i}{2} = \\sqrt{3} \\pm i$.\nالحلول: $2i, -2i, \\sqrt{3}+i, \\sqrt{3}-i$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نعتبر في المستوي المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$، النقط $A, B, C$ و $D$ التي لواحقها على الترتيب: $z_A = \\sqrt{3} + i$ ، $z_B = \\bar{z}_A$ ، $z_C = -2i$ و $z_D = \\bar{z}_C$.\n- بيّن أن النقط $A, B, C$ و $D$ تنتمي إلى دائرة $(\\gamma)$ يطلب تعيين مركزها ونصف قطرها، ثم أنشئ النقط $A, B, C$ و $D$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "$|z_A| = |z_B| = |z_C| = |z_D| = 2$. النقط تنتمي للدائرة التي مركزها $O$ ونصف قطرها 2.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نرمز بـ $z_E$ إلى لاحقة النقطة $E$ نظيرة النقطة $B$ بالنسبة إلى المبدأ $O$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z_E = -z_B = -(\\sqrt{3}-i) = -\\sqrt{3}+i$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "f5a6b7c8-d9e0-4f1a-2b3c-4d5e6f7a8b9c",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بيّن أن: $\\frac{z_A - z_C}{z_E - z_C} = e^{i(-\\frac{\\pi}{3})}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "3"
+              ],
+              "solution": "$\\frac{z_A - z_C}{z_E - z_C} = \\frac{\\sqrt{3}+i+2i}{-\\sqrt{3}+i+2i} = \\frac{\\sqrt{3}+3i}{-\\sqrt{3}+3i} = \\frac{1+i\\sqrt{3}}{-1+i\\sqrt{3}} = \\frac{2e^{i\\pi/3}}{2e^{i2\\pi/3}} = e^{-i\\pi/3}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a6b7c8d9-e0f1-4a2b-3c4d-5e6f7a8b9c0d",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "بيّن أن النقطة $A$ هي صورة النقطة $E$ بدوران $R$ مركزه $C$ يطلب تعيين زاويته.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "بما أن $\\frac{z_A - z_C}{z_E - z_C} = e^{-i\\pi/3}$، فإن $CA = CE$ و $(\\vec{CE}, \\vec{CA}) = -\\pi/3$. إذن $A$ صورة $E$ بالدوران الذي مركزه $C$ وزاويته $-\\pi/3$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "b7c8d9e0-f1a2-4b3c-4d5e-6f7a8b9c0d1e",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "3",
+              "sub_label": "جـ",
+              "statement": "استنتج طبيعة المثلث $AEC$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "المثلث $AEC$ متساوي الساقين وفيه زاوية $60^\\circ$ فهو متقايس الأضلاع.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "c8d9e0f1-a2b3-4c4d-5e6f-7a8b9c0d1e2f",
+              "exercise_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "label": "3",
+              "sub_label": "د",
+              "statement": "$H$ هو التحاكي الذي مركزه $O$ ونسبته 2.\n- عيّن طبيعة التحويل $R \\circ H$ وعناصره المميزة، ثم استنتج صورة الدائرة $(\\gamma)$ بالتحويل $R \\circ H$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "$R \\circ H$ هو تشابه مباشر نسبته 2 وزاويته $-\\pi/3$. مركزه $\\Omega$ يحقق $z_\\Omega = \\frac{z_C(1-k e^{i\\theta})}{1-k e^{i\\theta}}$ (أو بالتعويض المباشر).\nصورة الدائرة $(\\gamma)$ هي دائرة $(\\gamma')$ مركزها صورة $O$ ونصف قطرها $2 \\times 2 = 4$.",
+              "ordering": 7,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "number": 2,
+          "title": null,
+          "statement": "التمرين الثاني: (04 نقاط)\nنعتبر في الفضاء المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، النقط $A(1;1;1)$، $B(1;-1;0)$ و $C(2;0;1)$.",
+          "topic": "geometrie",
+          "concepts": [
+            "plans",
+            "droites",
+            "barycentre",
+            "sphere",
+            "distances"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "e0f1a2b3-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "1",
+              "statement": "بيّن أن النقط $A, B$ و $C$ تعين مستويا $(P_1)$ يطلب تعيين تمثيل وسيطي له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\vec{AB}(0;-2;-1)$ ، $\\vec{AC}(1;-1;0)$. غير مرتبطين خطيا، فالنقط تعين مستويا.\nالتمثيل الوسيطي: $\\begin{cases} x = 1 + \\delta \\\\ y = 1 - 2\\lambda - \\delta \\\\ z = 1 - \\lambda \\end{cases}$ مع $\\lambda, \\delta \\in \\mathbb{R}$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "2",
+              "statement": "$(P_2)$ المستوي الذي: $x - 2y - 2z + 6 = 0$ معادلة ديكارتية له.\n- بيّن أن $(P_1)$ و $(P_2)$ يتقاطعان وفق مستقيم $(\\Delta)$ يطلب تعيين تمثيل وسيطي له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "نعوض تمثيل $(P_1)$ في معادلة $(P_2)$: $(1+\\delta) - 2(1-2\\lambda-\\delta) - 2(1-\\lambda) + 6 = 0$\n$1+\\delta-2+4\\lambda+2\\delta-2+2\\lambda+6 = 0 \\Rightarrow 3\\delta + 6\\lambda + 3 = 0 \\Rightarrow \\delta = -2\\lambda - 1$.\nبالتعويض في تمثيل $(P_1)$: $\\begin{cases} x = -2\\lambda \\\\ y = 2 \\\\ z = 1 - \\lambda \\end{cases}$ مع $\\lambda \\in \\mathbb{R}$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "3",
+              "statement": "بيّن أن النقطة $O$ هي مرجح الجملة: $\\{(A;1), (B;1), (C;-1)\\}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\vec{OA} + \\vec{OB} - \\vec{OC} = (1;1;1) + (1;-1;0) - (2;0;1) = (0;0;0) = \\vec{0}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "عيّن $(S)$ مجموعة النقط $M(x;y;z)$ من الفضاء التي تحقق: $\\|\\vec{MA} + \\vec{MB} - \\vec{MC}\\| = 2\\sqrt{3}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": "بما أن $O$ مرجح الجملة، فإن $\\vec{MA} + \\vec{MB} - \\vec{MC} = \\vec{MO}$.\nالمعادلة تصبح: $\\|\\vec{MO}\\| = 2\\sqrt{3}$ أي $OM = 2\\sqrt{3}$.\n$(S)$ هي سطح كرة مركزها $O$ ونصف قطرها $2\\sqrt{3}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "احسب إحداثيات $D$ و $E$ نقطتي تقاطع $(S)$ و $(\\Delta)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "4-أ"
+              ],
+              "solution": "نعوض تمثيل $(\\Delta)$ في معادلة $(S)$: $(-2\\lambda)^2 + 2^2 + (1-\\lambda)^2 = (2\\sqrt{3})^2$\n$4\\lambda^2 + 4 + 1 - 2\\lambda + \\lambda^2 = 12 \\Rightarrow 5\\lambda^2 - 2\\lambda - 7 = 0$.\nالحلول: $\\lambda = -1$ أو $\\lambda = 1.4$.\nالنقطتان: $D(2;2;2)$ و $E(-2.8; 2; -0.4)$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
+              "exercise_id": "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a",
+              "label": "4",
+              "sub_label": "جـ",
+              "statement": "ما هي طبيعة المثلث $ODE$؟ ثم استنتج المسافة بين $O$ و $(\\Delta)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-ب"
+              ],
+              "solution": "بما أن $D$ و $E$ من سطح الكرة، فإن $OD = OE = 2\\sqrt{3}$. المثلث متساوي الساقين.\nالمسافة هي طول الارتفاع المتعلق بالقاعدة $[DE]$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "number": 3,
+          "title": null,
+          "statement": "التمرين الثالث: (04 نقاط)",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_geometriques",
+            "congruences",
+            "raisonnement_par_recurrence"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "$(u_n)$ هي المتتالية العددية المعرفة على $\\mathbb{N}$ كما يلي: $u_0 = 16$ ومن أجل كل عدد طبيعي $n$، $u_{n+1} = 6u_n - 9$.\n- احسب بواقي قسمة كل من الحدود $u_0, u_1, u_2, u_3, u_4$ على 7.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_0 = 16 \\equiv 2 [7]$.\n$u_1 = 6(16)-9 = 87 \\equiv 3 [7]$.\n$u_2 = 6(87)-9 = 513 \\equiv 2 [7]$.\n$u_3 = 6(513)-9 = 3069 \\equiv 3 [7]$.\n$u_4 = 6(3069)-9 = 18405 \\equiv 2 [7]$.\nالبواقي هي: 2، 3، 2، 3، 2.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "خمّن قيمة للعدد $a$ وقيمة للعدد $b$ بحيث: $u_{2k} \\equiv a [7]$ و $u_{2k+1} \\equiv b [7]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-أ"
+              ],
+              "solution": "$a = 2$ و $b = 3$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "برهن أنه، من أجل كل عدد طبيعي $n$، $u_{n+2} \\equiv u_n [7]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_{n+2} = 6u_{n+1}-9 = 6(6u_n-9)-9 = 36u_n - 63$.\nبما أن $36 \\equiv 1 [7]$ و $63 \\equiv 0 [7]$، فإن $u_{n+2} \\equiv 1 \\cdot u_n - 0 \\equiv u_n [7]$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $k$، $u_{2k} \\equiv 2 [7]$ و $u_{2k+1} \\equiv 3 [7]$، ثم استنتج أن: $u_{2k+1} \\equiv 3 [7]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "من أجل $k=0$: $u_0 \\equiv 2 [7]$ و $u_1 \\equiv 3 [7]$ محققة.\nنفرض $u_{2k} \\equiv 2 [7]$ و $u_{2k+1} \\equiv 3 [7]$.\nحسب 2-أ: $u_{2(k+1)} = u_{2k+2} \\equiv u_{2k} \\equiv 2 [7]$.\nو $u_{2(k+1)+1} = u_{2k+3} \\equiv u_{2k+1} \\equiv 3 [7]$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نضع من أجل كل عدد طبيعي $n$، $v_n = u_n - \\frac{9}{5}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بيّن أن المتتالية $(v_n)$ هندسية، يطلب تعيين أساسها وحدها الأول.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": "$v_{n+1} = u_{n+1} - 9/5 = 6u_n - 9 - 9/5 = 6u_n - 54/5 = 6(u_n - 9/5) = 6v_n$.\nالمتتالية هندسية أساسها $q=6$ وحدها الأول $v_0 = 16 - 9/5 = 71/5$.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c",
+              "exercise_id": "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "احسب، بدلالة $n$، كلا من $u_n$ و $S_n$ حيث: $S_n = u_0 + u_1 + \\dots + u_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "$v_n = \\frac{71}{5} \\cdot 6^n \\Rightarrow u_n = \\frac{71}{5} \\cdot 6^n + \\frac{9}{5}$.\n$S_n = \\sum_{i=0}^n (v_i + 9/5) = \\frac{71}{5} \\frac{6^{n+1}-1}{6-1} + \\frac{9}{5}(n+1) = \\frac{71}{25}(6^{n+1}-1) + \\frac{9}{5}(n+1)$.",
+              "ordering": 7,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "number": 4,
+          "title": null,
+          "statement": "التمرين الرابع: (08 نقاط)",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "representation_graphique",
+            "logique"
+          ],
+          "difficulty": "hard",
+          "marks": 8,
+          "has_figure": true,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "b5c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "I",
+              "statement": "$g$ هي الدالة المعرفة على المجال $]-1; 3]$ كما يلي: $g(x) = 2\\ln(x+1) - \\frac{x}{x+1}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "c6d7e8f9-a0b1-4c2d-3e4f-5a6b7c8d9e0f",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "I",
+              "sub_label": "1",
+              "statement": "ادرس تغيرات الدالة $g$، ثم شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I"
+              ],
+              "solution": "$g'(x) = \\frac{2}{x+1} - \\frac{1}{(x+1)^2} = \\frac{2x+1}{(x+1)^2}$.\n$g$ متناقصة على $]-1; -0.5]$ ومتزايدة على $[-0.5; 3]$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "d7e8f9a0-b1c2-4d3e-4f5a-6b7c8d9e0f1a",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "I",
+              "sub_label": "2",
+              "statement": "بيّن أن المعادلة $g(x) = 0$ تقبل حلين أحدهما معدوم والآخر $\\alpha$ يحقق: $-0.8 < \\alpha < -0.7$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-1"
+              ],
+              "solution": "$g(0) = 2\\ln(1) - 0 = 0$. إذن 0 حل.\nعلى $]-1; -0.5]$، $g$ مستمرة ومتناقصة تماما، $\\lim_{x \\to -1^+} g(x) = +\\infty$ و $g(-0.5) \\approx -0.38 < 0$. يوجد حل وحيد $\\alpha$.\n$g(-0.8) \\approx 0.78 > 0$ و $g(-0.7) \\approx -0.07 < 0$. إذن $-0.8 < \\alpha < -0.7$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "e8f9a0b1-c2d3-4e4f-5a6b-7c8d9e0f1a2b",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "I",
+              "sub_label": "3",
+              "statement": "عيّن، حسب قيم $x$، إشارة $g(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-2"
+              ],
+              "solution": "$g(x) > 0$ على $]-1; \\alpha[ \\cup ]0; 3]$ و $g(x) < 0$ على $]\\alpha; 0[$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "f9a0b1c2-d3e4-4f5a-6b7c-8d9e0f1a2b3c",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "I",
+              "sub_label": "4",
+              "statement": "$h$ هي الدالة المعرفة على المجال $]-1; 3]$ بـ: $h(x) = [g(x)]^2$.\nأ- احسب $h'(x)$ بدلالة كل من $g(x)$ و $g'(x)$.\nب- عيّن إشارة $h'(x)$، ثم شكل جدول تغيرات الدالة $h$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I"
+              ],
+              "solution": "أ- $h'(x) = 2g(x)g'(x)$.\nب- إشارة $h'(x)$ من إشارة الجداء $g(x)g'(x)$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "a0b1c2d3-e4f5-4a6b-7c8d-9e0f1a2b3c4d",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "statement": "$f$ هي الدالة المعرفة على المجال $]-1; 3]$ كما يلي: $\\begin{cases} f(x) = \\frac{x^2}{\\ln(x+1)} ; x \\neq 0 \\\\ f(0) = 0 \\end{cases}$.\n$(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "1",
+              "statement": "بيّن أن الدالة $f$ تقبل الاشتقاق عند الصفر، ثم اكتب معادلة لـ $(T)$ مماس $(C_f)$ في النقطة ذات الفاصلة 0.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II"
+              ],
+              "solution": "$\\lim_{x \\to 0} \\frac{f(x)-f(0)}{x-0} = \\lim_{x \\to 0} \\frac{x}{\\ln(x+1)} = 1$. إذن $f'(0)=1$.\nالمعادلة: $y = 1(x-0) + 0 \\Rightarrow y = x$.",
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "2",
+              "statement": "أ- بيّن أنه من أجل كل $x$ من $]-1; 0[ \\cup ]0; 3]$، $f'(x) = \\frac{xg(x)}{[\\ln(x+1)]^2}$، ثم استنتج اتجاه تغير الدالة $f$.\nب- بيّن أن: $f(\\alpha) = 2\\alpha(\\alpha+1)$، ثم عيّن حصرا لـ $f(\\alpha)$.\nجـ- احسب $f(3)$ و $\\lim_{x \\to -1^+} f(x)$، ثم شكل جدول تغيرات الدالة $f$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-3",
+                "II"
+              ],
+              "solution": "أ- $f'(x) = \\frac{2x\\ln(x+1) - x^2/(x+1)}{[\\ln(x+1)]^2} = \\frac{x[2\\ln(x+1) - x/(x+1)]}{[\\ln(x+1)]^2} = \\frac{xg(x)}{[\\ln(x+1)]^2}$.\nب- $g(\\alpha)=0 \\Rightarrow \\ln(\\alpha+1) = \\frac{\\alpha}{2(\\alpha+1)}$. $f(\\alpha) = \\frac{\\alpha^2}{\\alpha/2(\\alpha+1)} = 2\\alpha(\\alpha+1)$.\nجـ- $\\lim_{x \\to -1^+} f(x) = 0$. $f(3) = 9/\\ln(4)$.",
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "3",
+              "statement": "أ- بيّن أنه من أجل كل $x$ من المجال $]-1; 3]$ فإن: $x - \\ln(x+1) \\ge 0$.\nب- ادرس وضعية $(C_f)$ بالنسبة إلى المماس $(T)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-1"
+              ],
+              "solution": "أ- بوضع $k(x) = x - \\ln(x+1)$، $k'(x) = 1 - 1/(x+1) = x/(x+1)$. $k$ متناقصة ثم متزايدة، قيمتها الصغرى $k(0)=0$.\nب- $f(x)-x = \\frac{x^2-x\\ln(x+1)}{\\ln(x+1)} = \\frac{x(x-\\ln(x+1))}{\\ln(x+1)}$.",
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "4",
+              "statement": "عيّن معادلة للمستقيم $(T')$ الموازي للمماس $(T)$ والذي يتقاطع مع $(C_f)$ في النقطة ذات الفاصلة 3.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-1"
+              ],
+              "solution": "الميل هو $f'(0)=1$. النقطة هي $(3; f(3))$.\nالمعادلة: $y = 1(x-3) + 9/\\ln(4)$.",
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "f5a6b7c8-d9e0-4f1a-2b3c-4d5e6f7a8b9c",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "5",
+              "statement": "ارسم $(T)$ ، $(T')$ و $(C_f)$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "II-2",
+                "II-3",
+                "II-4"
+              ],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "a6b7c8d9-e0f1-4a2b-3c4d-5e6f7a8b9c0d",
+              "exercise_id": "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d",
+              "label": "II",
+              "sub_label": "6",
+              "statement": "ناقش بيانيا، حسب قيم الوسيط الحقيقي $m$، عدد حلول المعادلة: $f(x) = x + m$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-5"
+              ],
+              "solution": "الحلول هي فواصل نقط تقاطع $(C_f)$ مع المستقيمات الموازية لـ $(T)$.\nإذا $m < 0$، لا يوجد حل.\nإذا $m = 0$، حل مضاعف (0).\nإذا $0 < m < f(3)-3$، حلان متمايزان.\nإذا $m \\ge f(3)-3$، حل وحيد.",
+              "ordering": 12,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "exercise_ref": 1,
+          "part_ref": "2",
+          "context": "solution",
+          "figure_type": "geometric",
+          "description": "دائرة مركزها المبدأ O ونصف قطرها 2، عليها النقط A، B، C، D. النقطتان A و B متناظرتان بالنسبة لمحور الفواصل، وكذلك C و D.",
+          "source_page": 13,
+          "bounding_box": [
+            400,
+            100,
+            680,
+            500
+          ]
+        },
+        {
+          "id": "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c",
+          "exam_id": "fe84a833-e218-46dd-8b57-586794738eb4-2",
+          "exercise_ref": 4,
+          "part_ref": "5",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "المنحنى Cf للدالة f على المجال ]-1; 3]. يظهر المماس T عند المبدأ (y=x) والمماس T' الموازي له عند النقطة ذات الفاصلة 3. المنحنى يمر بالمبدأ وله قيمة صغرى عند alpha.",
+          "source_page": 19,
+          "bounding_box": [
+            50,
+            500,
+            450,
+            950
+          ]
+        }
+      ]
+    }
+  ]
+}

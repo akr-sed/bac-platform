@@ -13,67 +13,79 @@ in the system prompt exactly.
 Return a single JSON object with this exact structure:
 
 {
-  "exam_metadata": {
-    "id":               "{exam_id}",
-    "subject":          "{subject}",
-    "source_file":      "{source_file}",
-    "exam_type":        "<bac|bac_blanc|trimestre>",
-    "session":          "<principal|rattrapage|null>",
-    "trimester":        <1|2|3|null>,
-    "filiere":          "<controlled value or null>",
-    "year":             <integer or null>,
-    "duration_minutes": <integer or null>,
-    "total_marks":      <number or null>,
-    "language":         "<ar|fr|ar_fr>",
-    "region":           "<string or null>",
-    "institution":      "<string or null>",
-    "academic_year":    "<YYYY-YYYY or null>"
-  },
-  "exercises": [
+  "exams": [
     {
-      "id":          "<uuid-v4>",
-      "exam_id":     "{exam_id}",
-      "number":      1,
-      "title":       null,
-      "statement":   "...",
-      "topic":       "...",
-      "concepts":    [],
-      "difficulty":  "medium",
-      "marks":       null,
-      "has_figure":  false,
-      "source_page": 1,
-      "solution":    null,
-      "metadata":    {},
-      "parts": [
+      "exam_metadata": {
+        "id":               "<uuid-v4>",
+        "subject":          "{subject}",
+        "source_file":      "{source_file}",
+        "exam_type":        "<bac|bac_blanc|trimestre>",
+        "session":          "<principal|rattrapage|null>",
+        "trimester":        <1|2|3|null>,
+        "filiere":          "<controlled value or null>",
+        "year":             <integer or null>,
+        "duration_minutes": <integer or null>,
+        "total_marks":      <number or null>,
+        "language":         "<ar|fr|ar_fr>",
+        "region":           "<string or null>",
+        "institution":      "<string or null>",
+        "academic_year":    "<YYYY-YYYY or null>",
+        "sujet":            <1|2|3|null>
+      },
+      "exercises": [
         {
           "id":          "<uuid-v4>",
-          "exercise_id": "<parent exercise id>",
-          "label":       "1",
-          "sub_label":   "a",
+          "exam_id":     "<parent exam_metadata id>",
+          "number":      1,
+          "title":       null,
           "statement":   "...",
+          "topic":       "...",
+          "concepts":    [],
+          "difficulty":  "medium",
           "marks":       null,
-          "depends_on":  [],
+          "has_figure":  false,
+          "source_page": [1, 2],
           "solution":    null,
-          "ordering":    1,
-          "metadata":    {}
+          "metadata":    {},
+          "parts": [
+            {
+              "id":          "<uuid-v4>",
+              "exercise_id": "<parent exercise id>",
+              "label":       "1",
+              "sub_label":   "a",
+              "statement":   "...",
+              "marks":       null,
+              "has_figure":  false,
+              "depends_on":  [],
+              "solution":    null,
+              "ordering":    1,
+              "metadata":    {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id":           "<uuid-v4>",
+          "exam_id":      "<parent exam_metadata id>",
+          "exercise_ref": 1,
+          "part_ref":     null,
+          "context":      "question",
+          "figure_type":  "graph",
+          "description":  "...",
+          "source_page":  2,
+          "bounding_box": [ymin, xmin, ymax, xmax]
         }
       ]
-    }
-  ],
-  "figures": [
-    {
-      "id":           "<uuid-v4>",
-      "exam_id":      "{exam_id}",
-      "exercise_ref": 1,
-      "part_ref":     null,
-      "figure_type":  "graph",
-      "description":  "...",
-      "source_page":  2,
-      "bounding_box": [ymin, xmin, ymax, xmax]
     }
   ]
 }
 
 Notes:
-- "figures" is top-level, not nested inside exercises. Return "figures": [] if none.
+- "figures" is relative to each exam, not nested inside exercises. Return "figures": [] if none.
+- Simple tables that can be represented cleanly in Markdown must be written
+  inline in the "statement" or "solution" field — do NOT add them to "figures".
+- Only add a figure to "figures" when Markdown cannot faithfully represent it.
+- Set "has_figure": true on an exercise or part whenever ANY figure
+  (question or solution context) is associated with it.
 - Use null for any metadata field you cannot read from the PDF — never guess.

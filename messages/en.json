@@ -138,7 +138,12 @@
       "postedAt": "Posted on",
       "backToExam": "Back to exam",
       "backToExercises": "Back to exercises",
-      "figureDescription": "Figure description"
+      "figureDescription": "Figure description",
+      "part": "Question {label}",
+      "parts": "Questions",
+      "dependsOn": "Uses result from {refs}",
+      "questionFigure": "Figure for question",
+      "solutionFigure": "Figure for solution"
     }
   },
   "solutions": {
@@ -446,9 +451,31 @@
     "title": "Exercise Bank",
     "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
     "empty": "No exercises have been imported yet.",
+    "hub": {
+      "heading": "Choose where to start",
+      "subheading": "Pick a source. You can refine by year and stream once you're inside.",
+      "exerciseCount": "{count, plural, =0 {no exercises yet} one {# exercise} other {# exercises}}",
+      "explore": "Explore",
+      "backToHub": "Back to library"
+    },
+    "types": {
+      "bac": "BAC official",
+      "bacDesc": "Real Baccalaureate exams, by year and stream.",
+      "bac_blanc": "BAC blanc",
+      "bacBlancDesc": "Mock exams and trial papers used by schools.",
+      "external": "Community",
+      "externalDesc": "Exercises shared by teachers and students outside the official corpus."
+    },
+    "years": {
+      "all": "All years",
+      "label": "Year",
+      "year": "Year {year}"
+    },
     "filter": {
       "filiere": "Stream",
-      "all": "All streams"
+      "topic": "Topic",
+      "difficulty": "Difficulty",
+      "all": "All"
     },
     "filiere": {
       "mathematiques": "Mathematics",

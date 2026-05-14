@@ -23,7 +23,8 @@ interface PublicProfile {
   role: 'student' | 'teacher' | 'admin';
   isVerifiedTeacher?: boolean;
   points: number;
-  badge: string;
+  /** Optional — falls back to a points-derived tier when the API omits it. */
+  badge?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   createdAt: string;
   exercises?: Array<{
     _id: string;
@@ -76,6 +77,17 @@ export default function PublicProfilePage() {
 
   const isSelf = Boolean(viewer && profile && viewer._id === profile._id);
 
+  // The User model has no `badge` field — derive it from `points` the same
+  // way <ReputationBadge> does. Without this fallback, the API returns
+  // `badge: undefined` and `reputation(undefined)` crashes next-intl with
+  // "Cannot read properties of undefined (reading 'split')".
+  function deriveBadge(points: number): 'beginner' | 'intermediate' | 'advanced' | 'expert' {
+    if (points >= 500) return 'expert';
+    if (points >= 200) return 'advanced';
+    if (points >= 50) return 'intermediate';
+    return 'beginner';
+  }
+
   if (loading) {
     return (
       <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
@@ -116,7 +128,7 @@ export default function PublicProfilePage() {
                 />
                 <Badge variant="outline" className="gap-1 border-white/30 text-xs text-white/80">
                   <Award className="size-3" />
-                  {reputation(profile.badge as 'beginner' | 'intermediate' | 'advanced' | 'expert')}
+                  {reputation(profile.badge ?? deriveBadge(profile.points ?? 0))}
                 </Badge>
               </div>
               <div className="flex flex-wrap items-center gap-4 text-sm text-white/70">

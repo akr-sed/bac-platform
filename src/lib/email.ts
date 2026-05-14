@@ -145,15 +145,30 @@ export async function sendPasswordResetEmail(
   try {
     const resend = new Resend(apiKey);
     const from = process.env.EMAIL_FROM ?? FROM_DEFAULT;
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from,
       to,
       subject: copy.subject,
       html: renderResetHtml({ copy, resetUrl, isAr: locale === 'ar' }),
       text: `${copy.intro}\n\n${copy.cta}: ${resetUrl}\n\n${copy.expires}\n\n${copy.signature}`,
     });
+    // Resend's SDK returns { data, error } rather than throwing on API errors
+    // (bad key, unverified domain, etc). Surface the error to dev logs so a
+    // misconfigured deploy is debuggable without changing the API contract.
+    if (result.error) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[email] Resend rejected the send:', result.error);
+      }
+      return { sent: false, error: result.error.message ?? 'resend error' };
+    }
+    if (process.env.NODE_ENV !== 'production') {
+      console.info(`[email] reset link sent to ${to} (id=${result.data?.id})`);
+    }
     return { sent: true };
   } catch (err) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('[email] exception while sending:', err);
+    }
     return {
       sent: false,
       error: err instanceof Error ? err.message : 'unknown error',

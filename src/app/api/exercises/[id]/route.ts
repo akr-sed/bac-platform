@@ -58,6 +58,12 @@ export async function GET(request: NextRequest, context: RouteContext) {
       sourcePage: exercise.sourcePage,
       figureDescriptions: exercise.figureDescriptions,
       hasMath: exercise.hasMath ?? false,
+      // Structured corpus fields (undefined for community-posted exercises).
+      statement: exercise.statement,
+      parts: exercise.parts,
+      figures: exercise.figures,
+      sujet: exercise.sujet ?? null,
+      language: exercise.language ?? null,
       createdAt: exercise.createdAt,
       updatedAt: exercise.updatedAt,
     });

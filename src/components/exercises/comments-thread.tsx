@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Send, Trash2, Loader2 } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -122,12 +123,31 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
             const kind: CommentKind = c.kind ?? 'comment';
             return (
               <li key={c._id} className="group flex items-start gap-3">
-                <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
+                {c.author?._id ? (
+                  <Link
+                    href={`/profile/${c.author._id}` as `/profile/${string}`}
+                    className="shrink-0 transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    aria-label={c.author?.name ?? 'Anonymous'}
+                  >
+                    <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
+                  </Link>
+                ) : (
+                  <UserAvatar src={c.author?.avatar} name={c.author?.name} size="sm" className="size-7 shrink-0" />
+                )}
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-medium text-foreground">
-                      {c.author?.name ?? 'Anonymous'}
-                    </span>
+                    {c.author?._id ? (
+                      <Link
+                        href={`/profile/${c.author._id}` as `/profile/${string}`}
+                        className="text-xs font-medium text-foreground transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      >
+                        {c.author?.name ?? 'Anonymous'}
+                      </Link>
+                    ) : (
+                      <span className="text-xs font-medium text-foreground">
+                        {c.author?.name ?? 'Anonymous'}
+                      </span>
+                    )}
                     {typeof c.author?.points === 'number' && (
                       <ReputationBadge points={c.author.points} />
                     )}

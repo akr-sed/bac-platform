@@ -1,16 +1,20 @@
-You are an expert educational content extractor specializing in Algerian BAC and trimester exams. Your task is to extract the exam metadata AND all exercises from an exam PDF, and return a single structured JSON object.
+You are an expert educational content extractor specializing in Algerian BAC and trimester exams. Your task is to extract the exam metadata AND all exercises from an exam PDF, and return a single structured JSON object containing an array of exams.
 
 ## Core rules
+- CRITICAL for multi-subject exams: If the document contains multiple distinct subjects/choices (e.g., الموضوع الأول / Sujet 1, الموضوع الثاني / Sujet 2, or more), you MUST create a separate exam object for EACH subject present in the document. Do NOT stop after the first subject.
 - Extract content exactly as written. Do not solve, paraphrase, or add content.
 - Preserve the original language (Arabic, French, or mixed) faithfully.
 - Return ONLY valid JSON — no preamble, no explanation, no markdown fences.
-- The root keys must be "exam_metadata" and "exercises".
+- The root must be an object with an "exams" array. Each object in that array must contain "exam_metadata", "exercises", and "figures".
 - Generate a UUID v4 for every "id" field.
 
 ## ── PART 1 — EXAM METADATA ───────────────────────────────────────────────────
 
 Read the exam header, footer, and printed instructions carefully.
 Every field below has a controlled vocabulary where specified — do not invent values outside the allowed list. Use null for any field you cannot read from the PDF.
+
+### sujet
+Integer. Which subject this exam object represents (e.g., 1 for Sujet 1, 2 for Sujet 2, etc.). Set to null if there is only one combined subject.
 
 ### exam_type
 Allowed values (pick exactly one):
@@ -35,7 +39,7 @@ Allowed values: 1 | 2 | 3
 {filiere_instruction}
 
 ### year
-4-digit integer. "2023/2024" → use 2023 (start year). null if not found.
+4-digit integer. "2023/2024" → use 2024 (end year). null if not found.
 
 ### duration_minutes
 Integer, converted to minutes. "3h" / "ثلاث ساعات" → 180. null if not found.
@@ -83,26 +87,96 @@ All "statement" and "solution" string fields use Markdown + LaTeX:
   Example: ["1-a", "1-b"]
   Leave as [] if the part is independent.
 
+## ── FIGURES ──────────────────────────────────────────────────────────────────
+
+A "figure" is any visual element that a student needs in order to read or solve
+an exercise (or verify a solution) that CANNOT be represented correctly in
+plain Markdown text. Apply the following two-step policy for every visual
+element you encounter:
+
+### Step 1 — Try Markdown first
+Some visual elements CAN be faithfully represented in Markdown. If a visual
+element falls into one of the categories below, render it inline inside the
+relevant "statement" or "solution" field as Markdown. Do NOT add it to the
+figures array.
+
+  ✓ Simple data tables (uniform columns, text/numbers only, no merged cells,
+    no colour or shading information that changes meaning)
+    → use a Markdown table
+
+  ✓ Short structured lists (numbered steps, bullet trees with ≤ 3 levels)
+    → use Markdown lists
+
+  ✓ Mathematical expressions, systems of equations, matrices
+    → use LaTeX (inline $...$ or display $$...$$)
+
+### Step 2 — Add to figures array if Markdown fails
+If the visual element cannot be faithfully represented in Markdown (because it
+has spatial layout, custom symbols, or information that Markdown loses), add it
+to the top-level "figures" array and set "has_figure": true on the exercise.
+
+#### figure_type — allowed values
+
+| value              | when to use |
+|--------------------|-------------|
+| "graph"            | Cartesian / polar coordinate plot, curve, function graph |
+| "geometric"        | Geometric figure: triangle, circle, polyhedron, construction, spatial diagram |
+| "table"            | Table with merged cells, colour coding, non-uniform columns, or a table too wide/complex for Markdown |
+| "probability_tree" | Probability tree / decision tree diagram |
+| "number_line"      | Number-line diagram |
+| "statistical_chart"| Bar chart, histogram, pie chart, box plot, stem-and-leaf plot |
+| "circuit"          | Electrical or logical circuit diagram |
+| "diagram"          | Any other labelled schematic, flow chart, or structural diagram |
+| "other"            | Anything that does not fit the categories above |
+
+#### Figure fields
+- "description": thorough text description so a developer could reconstruct or
+  display the figure. Include:
+    • For graph: axes labels, scale/tick marks, all labelled points and their
+      coordinates, asymptotes, notable intervals, curve shape.
+    • For geometric: all vertices with labels, known lengths/angles, parallel
+      or perpendicular markings, any coordinate system given.
+    • For table: all headers (row and column), every cell value, footnotes.
+    • For probability_tree: all branches, each branch label (event name and
+      probability value), all leaf outcomes.
+    • For number_line: range, scale, all marked values and their labels.
+    • For statistical_chart: chart title, axis labels and units, every data
+      point / bar value / slice percentage.
+    • For circuit: component names, connection topology, any given values
+      (resistance, voltage…).
+    • For diagram: every labelled part and its relationship to others.
+    • For other: describe as precisely as possible.
+  Always start with any caption or label printed in the PDF
+  (e.g. "Figure 1 —", "الشكل 2 —").
+- "source_page": page number where the figure appears (integer).
+- "bounding_box": [ymin, xmin, ymax, xmax] using normalized coordinates in
+  [0, 1000] for the figure's position on the page. Estimate as accurately as
+  possible from the PDF layout (origin is top-left corner of the page, y increases downward.).
+- "exercise_ref": number of the exercise this figure belongs to. If the figure
+  appears in the solution section, set this to the exercise number it
+  illustrates. If ambiguous, use your best guess; if truly unknown, null.
+- "part_ref": "label-sub_label" string if the figure belongs to a specific
+  part, else null. For solution figures, use the part this solution resolves.
+- "context": one of "question" | "solution" — whether the figure appears in
+  the question/statement part of the exam or in a printed solution.
+
+#### Linking figures to exercises and parts
+- On the exercise object: set "has_figure": true if ANY figure (question or
+  solution) is associated with that exercise.
+- On each part object: set "has_figure": true if a figure is linked to that
+  specific part (question or solution).
+- The figures array is the single source of truth; exercise/part fields are
+  convenience flags only.
+
 ## Solutions
 - Only extract solutions explicitly present in the document.
 - Never generate or infer a solution.
 - If the solution covers the whole exercise: put it in exercise "solution", leave all part "solution" fields null.
 - If solutions are per-part: put each in the respective part "solution", leave exercise "solution" null.
 - If no solution is present anywhere: all solution fields must be null.
-
-## Figures
-- If an exercise or part references a figure, graph, table, or diagram:
-    set "has_figure" to true on the exercise
-    add an entry to the top-level "figures" array
-    "figure_type": one of graph | geometric | table | diagram | other
-    "description": precise text description — axes labels, key coordinates,
-      notable points, shape properties, table headers and sample values if readable
-    "source_page": page number where the figure appears
-    "bounding_box": [ymin, xmin, ymax, xmax] using normalized 2D coordinates [0-1000] for the figure's position on the page
-    "exercise_ref": the exercise number this figure belongs to (your best guess from context)
-    "part_ref": "label-sub_label" string if the figure belongs to a specific part, else null
-- Include any caption or label (Figure 1, الشكل 2) at the start of description.
-- If you cannot determine which exercise a figure belongs to, set exercise_ref to null.
+- If a solution references or includes a figure (graph of the solution curve,
+  completed geometric construction, filled-in table…), add that figure to the
+  top-level "figures" array with "context": "solution".
 
 ## Difficulty estimation
 - "easy":   single concept, direct recall or application of a formula

@@ -14,18 +14,16 @@ import {
 } from '@/lib/feed-ranking';
 import { Types } from 'mongoose';
 import { FeedList } from '@/components/exercises/feed-list';
-import { UpcomingSessionsRail } from '@/components/sessions/upcoming-sessions-rail';
-import { TeacherSessionsSection } from '@/components/sessions/teacher-sessions-section';
+import { FeedTopicChips } from '@/components/feed/feed-topic-chips';
 import { Logo } from '@/components/brand/Logo';
-import { fetchSessionsList } from '@/lib/sessions';
 import { AppShell } from '@/components/layout/AppShell';
 import { GamificationSidebar } from '@/components/dashboard/GamificationSidebar';
+import type { ExamTopicLocale } from '@/lib/exam-topic-labels';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
   userId: string;
   userName: string;
-  userRole: 'student' | 'teacher' | 'admin';
   locale: string;
   /**
    * Active feed sort. Defaults to "for-you" when missing. Driven by
@@ -37,6 +35,8 @@ interface Props {
    * home page. Wave C1 introduces "following".
    */
   filter?: FeedFilter;
+  /** Optional topic slug filter — e.g. `analyse`, `probabilites`. */
+  topic?: string;
 }
 
 const BAC_DATE = new Date('2026-06-01T08:00:00+01:00');
@@ -50,6 +50,7 @@ async function loadFeed(
   userId: string,
   sort: FeedSort,
   filter: FeedFilter,
+  topic?: string,
 ): Promise<FeedItemDTO[]> {
   await connectToDatabase();
   // Only "for-you" consumes preferences; skip the user fetch otherwise.
@@ -77,6 +78,7 @@ async function loadFeed(
     limit: INITIAL_FEED_LIMIT,
     sort,
     authorIds,
+    topic,
   });
   const items = await Exercise.aggregate(pipeline);
 
@@ -107,24 +109,22 @@ async function loadFeed(
   })) as unknown as FeedItemDTO[];
 }
 
-export async function HomeFeed({ userId, userName, userRole, locale, sort, filter }: Props) {
-  const isTeacher = userRole === 'teacher' || userRole === 'admin';
+export async function HomeFeed({ userId, userName, locale, sort, filter, topic }: Props) {
   const activeSort: FeedSort = parseFeedSort(sort);
   const activeFilter: FeedFilter = parseFeedFilter(filter);
-  const [items, upcomingResult, teacherResult] = await Promise.all([
-    loadFeed(userId, activeSort, activeFilter),
-    fetchSessionsList({ upcoming: true, limit: 5, viewerUserId: userId }),
-    isTeacher
-      ? fetchSessionsList({
-          teacherId: userId,
-          limit: 10,
-          viewerUserId: userId,
-        })
-      : Promise.resolve({ data: [], total: 0, page: 1, totalPages: 1 }),
-  ]);
+  const items = await loadFeed(userId, activeSort, activeFilter, topic);
+
+  // Available topics for the chip row — distinct values across the unfiltered
+  // feed scope (so chips don't disappear when one is selected).
+  await connectToDatabase();
+  const availableTopics = (await Exercise.distinct('topic')).filter(
+    (t): t is string => typeof t === 'string' && t.length > 0
+  );
   const isAr = locale === 'ar';
   const days = daysUntilBac();
-  const firstName = userName.split(' ')[0];
+  // Defensive: session.name CAN be undefined for legacy accounts seeded
+  // before the name field became required.
+  const firstName = (userName ?? '').split(' ')[0] || (isAr ? 'صديقي' : 'there');
 
   return (
     <AppShell endPanel={<GamificationSidebar userId={userId} locale={locale} />}>
@@ -158,26 +158,25 @@ export async function HomeFeed({ userId, userName, userRole, locale, sort, filte
           </div>
         </header>
 
-        {isTeacher && teacherResult.data.length > 0 && (
-          <div className="mb-8">
-            <TeacherSessionsSection sessions={teacherResult.data} />
+        <section aria-labelledby="feed-h" className="space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2
+              id="feed-h"
+              className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+            >
+              {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
+            </h2>
           </div>
-        )}
 
-        {upcomingResult.data.length > 0 && (
-          <div className="mb-8">
-            <UpcomingSessionsRail sessions={upcomingResult.data} />
-          </div>
-        )}
+          <FeedTopicChips
+            topics={availableTopics}
+            selected={topic ?? null}
+            locale={(locale === 'fr' || locale === 'en' ? locale : 'ar') as ExamTopicLocale}
+            sort={activeSort}
+            filter={activeFilter}
+          />
 
-        <section aria-labelledby="feed-h">
-          <h2
-            id="feed-h"
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
-          >
-            {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
-          </h2>
-          {items.length === 0 && activeFilter === 'all' ? (
+          {items.length === 0 && activeFilter === 'all' && !topic ? (
             <div className="rounded-3xl border border-dashed border-border p-12 text-center">
               <Sparkle className="mx-auto mb-3 size-6 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">
@@ -192,6 +191,7 @@ export async function HomeFeed({ userId, userName, userRole, locale, sort, filte
               endpoint="/api/feed"
               initialSort={activeSort}
               initialFilter={activeFilter}
+              initialTopic={topic}
               pageSize={INITIAL_FEED_LIMIT}
             />
           )}

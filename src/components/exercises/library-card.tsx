@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { MathText } from '@/components/ui/math-text';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, ListOrdered } from 'lucide-react';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { topicLabel, type ExamTopicLocale } from '@/lib/exam-topic-labels';
 
@@ -18,6 +19,8 @@ interface Props {
     concepts?: string[];
     hasMath?: boolean;
     examLabel?: string;
+    partsCount?: number;
+    previewFigure?: { url: string; alt: string } | null;
   };
   locale: ExamTopicLocale;
 }
@@ -34,11 +37,23 @@ export function LibraryCard({ exercise, locale }: Props) {
   const localizedTopic = exercise.topic
     ? topicLabel(exercise.topic, locale)
     : null;
+  const hasThumbnail = Boolean(exercise.previewFigure?.url);
   const preview = truncate(exercise.description ?? '', PREVIEW_CHARS);
 
   return (
     <Link href={`/exercises/${exercise._id}`} className="group flex h-full">
-      <Card className="flex w-full flex-col rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
+      <Card className="flex w-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
+        {hasThumbnail && exercise.previewFigure && (
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+            <Image
+              src={exercise.previewFigure.url}
+              alt={exercise.previewFigure.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        )}
         <CardContent className="flex flex-1 flex-col gap-4 p-6">
           <div className="flex items-start justify-between gap-3">
             <div className="flex max-h-[1.75rem] flex-wrap items-center gap-2 overflow-hidden">
@@ -61,6 +76,12 @@ export function LibraryCard({ exercise, locale }: Props) {
                   {exercise.marks} pts
                 </Badge>
               )}
+              {typeof exercise.partsCount === 'number' && exercise.partsCount > 0 && (
+                <Badge variant="outline" className="gap-1 rounded-full font-mono tabular-nums text-xs">
+                  <ListOrdered className="size-3" />
+                  {exercise.partsCount}
+                </Badge>
+              )}
             </div>
             <ArrowRight className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
           </div>
@@ -69,15 +90,12 @@ export function LibraryCard({ exercise, locale }: Props) {
             <bdi>{title}</bdi>
           </h3>
 
-          <div className="min-h-[5rem] text-sm leading-relaxed text-muted-foreground">
-            {exercise.hasMath ? (
+          {!hasThumbnail && (
+            <div className="min-h-[5rem] text-sm leading-relaxed text-muted-foreground">
               <MathText className="line-clamp-4">{preview}</MathText>
-            ) : (
-              <p className="line-clamp-4">{preview}</p>
-            )}
-          </div>
+            </div>
+          )}
 
-          {/* Spacer pushes the concepts row to the bottom so all cards align */}
           <div className="flex-1" />
 
           {exercise.concepts && exercise.concepts.length > 0 && (

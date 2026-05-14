@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Types } from 'mongoose';
 import { connectToDatabase } from '@/lib/mongodb';
+import { cloudinaryTransform } from '@/lib/cloudinary';
 import { getSession } from '@/lib/auth';
 import Exercise from '@/models/Exercise';
 import Solution from '@/models/Solution';
@@ -96,6 +97,18 @@ export async function GET(request: NextRequest) {
 
     const data = exercises.map((exercise) => {
       const id = exercise._id.toString();
+      const firstQuestionFigure = exercise.figures?.find(
+        (f) => f.context === 'question'
+      );
+      const previewFigure = firstQuestionFigure
+        ? {
+            url: cloudinaryTransform(
+              firstQuestionFigure.cloudinaryUrl,
+              'c_fill,w_640,h_400,q_auto,f_auto'
+            ),
+            alt: firstQuestionFigure.description || exercise.title,
+          }
+        : null;
       return {
         _id: id,
         title: exercise.title,
@@ -112,6 +125,7 @@ export async function GET(request: NextRequest) {
         lastActivityAt: exercise.lastActivityAt ?? exercise.createdAt,
         isLiked: likedSet.has(id),
         isSaved: savedSet.has(id),
+        previewFigure,
         createdAt: exercise.createdAt,
         updatedAt: exercise.updatedAt,
       };

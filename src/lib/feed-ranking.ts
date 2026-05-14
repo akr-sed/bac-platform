@@ -63,6 +63,11 @@ interface BuildFeedPipelineArgs {
    * page (`authorRole: 'student'`) to surface only student questions.
    */
   authorRole?: FeedAuthorRole;
+  /**
+   * Optional topic slug filter (e.g. `analyse`, `probabilites`). Prepended
+   * as a `$match` so the ranking stages only score eligible documents.
+   */
+  topic?: string;
 }
 
 const AUTHOR_LOOKUP: PipelineStage[] = [
@@ -218,6 +223,7 @@ export function buildFeedPipeline({
   sort = 'for-you',
   authorIds,
   authorRole,
+  topic,
 }: BuildFeedPipelineArgs): PipelineStage[] {
   let rankingStages: PipelineStage[];
   if (sort === 'trending') {
@@ -228,12 +234,15 @@ export function buildFeedPipeline({
     rankingStages = forYouStages(preferredSubjects);
   }
 
-  // When the caller restricts by authors (`?filter=following`), prepend a
-  // `$match` so the ranking stages only score the eligible documents. Keeping
-  // it as the very first stage lets Mongo use the existing authorId index.
-  const preStages: PipelineStage[] = authorIds
-    ? [{ $match: { authorId: { $in: authorIds } } }]
-    : [];
+  // Pre-stage matches: keep them as the very first stages so Mongo can use
+  // existing indexes (authorId, topic) before any expensive ranking work.
+  const preStages: PipelineStage[] = [];
+  if (authorIds) {
+    preStages.push({ $match: { authorId: { $in: authorIds } } });
+  }
+  if (topic) {
+    preStages.push({ $match: { topic } });
+  }
 
   // Author-role match runs AFTER the lookup so we can match on the joined
   // `author.role` field that AUTHOR_LOOKUP already projects. This keeps the

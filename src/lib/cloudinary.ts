@@ -105,4 +105,43 @@ export async function destroyManyByUrl(
   return results.filter(Boolean).length;
 }
 
+// Re-export the pure URL helper so existing import sites keep working,
+// while client components can import directly from `cloudinary-url.ts`
+// without pulling in the Node SDK.
+export { cloudinaryTransform } from './cloudinary-url';
+
+/**
+ * Server-side upload of an in-memory Buffer to a known public_id. Used by
+ * migration scripts that don't have a browser `File` object on hand.
+ *
+ *  publicId should NOT include the file extension; Cloudinary infers it.
+ *  Returns the secure URL on success; throws on Cloudinary error.
+ */
+export async function uploadBuffer(
+  buffer: Buffer,
+  publicId: string,
+  mimeType: string = 'image/png'
+): Promise<string> {
+  const isPdf = mimeType === 'application/pdf';
+  const resourceType = isPdf ? 'raw' : 'image';
+  return new Promise((resolve, reject) => {
+    cloudinary.uploader
+      .upload_stream(
+        {
+          public_id: publicId,
+          resource_type: resourceType,
+          overwrite: false,
+          allowed_formats: isPdf ? ['pdf'] : ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+          max_bytes: 5 * 1024 * 1024,
+        },
+        (error, result) => {
+          if (error) reject(error);
+          else if (!result) reject(new Error('cloudinary returned no result'));
+          else resolve(result.secure_url);
+        }
+      )
+      .end(buffer);
+  });
+}
+
 export default cloudinary;

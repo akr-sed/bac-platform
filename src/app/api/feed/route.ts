@@ -25,6 +25,8 @@ export async function GET(request: NextRequest) {
   const sort = parseFeedSort(searchParams.get('sort'));
   const filter = parseFeedFilter(searchParams.get('filter'));
   const authorRole = parseFeedAuthorRole(searchParams.get('authorRole'));
+  const rawTopic = searchParams.get('topic');
+  const topic = rawTopic && rawTopic.length > 0 ? rawTopic : undefined;
 
   await connectToDatabase();
 
@@ -63,6 +65,7 @@ export async function GET(request: NextRequest) {
     sort,
     authorIds,
     authorRole: authorRole ?? undefined,
+    topic,
   });
   const items = await Exercise.aggregate(pipeline);
 

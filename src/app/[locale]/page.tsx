@@ -4,7 +4,7 @@ import { HomeFeed } from '@/components/feed/HomeFeed';
 import { TeacherHomeFeed } from '@/components/feed/TeacherHomeFeed';
 import { parseFeedFilter, parseFeedSort } from '@/lib/feed-ranking';
 
-type SearchParams = Promise<{ sort?: string; filter?: string }>;
+type SearchParams = Promise<{ sort?: string; filter?: string; topic?: string }>;
 type Params = {
   params: Promise<{ locale: string }>;
   searchParams?: SearchParams;
@@ -15,6 +15,8 @@ export default async function HomePage({ params, searchParams }: Params) {
   const search = (await searchParams) ?? {};
   const sort = parseFeedSort(search.sort);
   const filter = parseFeedFilter(search.filter);
+  const topic =
+    typeof search.topic === 'string' && search.topic.length > 0 ? search.topic : undefined;
   const session = await getSession();
 
   if (!session) {
@@ -33,6 +35,7 @@ export default async function HomePage({ params, searchParams }: Params) {
         locale={locale}
         sort={sort}
         filter={filter}
+        topic={topic}
       />
     );
   }
@@ -41,10 +44,10 @@ export default async function HomePage({ params, searchParams }: Params) {
     <HomeFeed
       userId={session.userId}
       userName={session.name}
-      userRole={session.role}
       locale={locale}
       sort={sort}
       filter={filter}
+      topic={topic}
     />
   );
 }

@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import { cloudinaryTransform } from '@/lib/cloudinary-url';
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {
@@ -56,6 +58,28 @@ interface Author {
   points?: number;
 }
 
+interface FigureDTOLite {
+  figureId: string;
+  cloudinaryUrl: string;
+  context: 'question' | 'solution';
+  figureType?: string;
+  description: string;
+  partRef?: string | null;
+  exerciseRef?: number;
+}
+
+interface PartDTOLite {
+  partId: string;
+  label: string;
+  subLabel?: string | null;
+  statement: string;
+  solution?: string | null;
+  dependsOn: string[];
+  marks?: number | null;
+  hasFigure: boolean;
+  ordering: number;
+}
+
 interface Exercise {
   _id: string;
   title: string;
@@ -71,6 +95,16 @@ interface Exercise {
   figureDescriptions?: string[];
   examId?: string;
   examNumber?: number;
+  // Structured corpus fields.
+  statement?: string;
+  parts?: PartDTOLite[];
+  figures?: FigureDTOLite[];
+  sujet?: number | null;
+  language?: 'ar' | 'fr' | 'ar_fr' | null;
+}
+
+function partKey(p: { label: string; subLabel?: string | null }): string {
+  return p.subLabel ? `${p.label}-${p.subLabel}` : p.label;
 }
 
 interface Solution {
@@ -175,24 +209,16 @@ export default function ExerciseDetailPage() {
   return (
     <AppShell>
     <div className="py-8">
-      {/* Back nav */}
-      {exercise?.examId ? (
-        <Link
-          href={`/exams/${exercise.examId}` as `/exams/${string}`}
-          className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
-        >
-          <ArrowLeft className="size-4 rtl:rotate-180" />
-          {t('backToExam')}
-        </Link>
-      ) : (
-        <Link
-          href="/exercises"
-          className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
-        >
-          <ArrowLeft className="size-4 rtl:rotate-180" />
-          {t('backToExercises')}
-        </Link>
-      )}
+      {/* Back nav — corpus exercises route back to the library hub
+           (the legacy /exams/[id] page still uses the old flat shape and
+           would look broken with parts/figures-based data). */}
+      <Link
+        href={exercise?.examId ? '/library?type=bac' : '/exercises'}
+        className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+      >
+        <ArrowLeft className="size-4 rtl:rotate-180" />
+        {exercise?.examId ? t('backToExam') : t('backToExercises')}
+      </Link>
 
       <div className="flex flex-col gap-10 lg:flex-row">
         {/* Main content */}
@@ -222,7 +248,12 @@ export default function ExerciseDetailPage() {
               </div>
             )}
 
-            {exercise?.hasMath ? (
+            {/* Statement preamble (corpus exercises) or description (community/legacy) */}
+            {exercise?.statement && exercise.statement.length > 0 ? (
+              <MathText className="text-base leading-relaxed text-foreground/90">
+                {exercise.statement}
+              </MathText>
+            ) : exercise?.hasMath ? (
               <MathText className="text-base leading-relaxed text-foreground/90">
                 {exercise.description}
               </MathText>
@@ -232,27 +263,94 @@ export default function ExerciseDetailPage() {
               </p>
             )}
 
-              {exercise?.figureDescriptions && exercise.figureDescriptions.length > 0 && (
-                // Figure descriptions are inline annotations describing a
-                // missing figure — caption-style (small, muted, italic,
-                // indented). The previous border-s-2 + ps-4 read as a
-                // blockquote, which trains the user to expect external
-                // commentary; that's the wrong cue here.
-                <figure className="ps-4">
-                  <figcaption className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
-                    {t('figureDescription')}
-                  </figcaption>
-                  <ul className="space-y-1.5">
-                    {exercise.figureDescriptions.map((d, i) => (
-                      <li
-                        key={i}
-                        className="text-sm italic leading-relaxed text-muted-foreground"
-                      >
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                </figure>
+              {/* "Loose" question figures (no partRef) appear right after the preamble */}
+              {exercise?.figures
+                ?.filter((f) => f.context === 'question' && !f.partRef)
+                .map((f, idx) => (
+                  <button
+                    key={`loose-${f.figureId}-${idx}`}
+                    type="button"
+                    className="block w-full max-w-2xl overflow-hidden rounded-2xl border border-border bg-muted/30"
+                    onClick={() => setLightbox({ images: [f.cloudinaryUrl], index: 0 })}
+                  >
+                    <div className="relative aspect-[16/10] w-full">
+                      <Image
+                        src={cloudinaryTransform(f.cloudinaryUrl, 'w_900,q_auto,f_auto')}
+                        alt={f.description || t('questionFigure')}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 720px"
+                        className="object-contain"
+                      />
+                    </div>
+                    {f.description && (
+                      <figcaption className="border-t border-border px-3 py-2 text-xs italic text-muted-foreground">
+                        {f.description}
+                      </figcaption>
+                    )}
+                  </button>
+                ))}
+
+              {/* Parts list (one section per question / sub-question) */}
+              {exercise?.parts && exercise.parts.length > 0 && (
+                <section className="space-y-6 border-t border-border pt-6">
+                  <h2 className="font-heading text-xl font-semibold text-foreground">
+                    {t('parts')}
+                  </h2>
+                  {[...exercise.parts]
+                    .sort((a, b) => (a.ordering ?? 0) - (b.ordering ?? 0))
+                    .map((p, idx) => {
+                      const key = partKey(p);
+                      const partFigures =
+                        exercise.figures?.filter(
+                          (f) => f.context === 'question' && f.partRef === key
+                        ) ?? [];
+                      return (
+                        <article key={`${p.partId}-${idx}`} className="space-y-3">
+                          <div className="flex flex-wrap items-baseline gap-3">
+                            <span className="rounded-full bg-muted px-2.5 py-0.5 font-mono text-sm tabular-nums text-foreground">
+                              {key}
+                            </span>
+                            {typeof p.marks === 'number' && (
+                              <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                                {p.marks} pts
+                              </span>
+                            )}
+                            {p.dependsOn.length > 0 && (
+                              <span className="text-xs text-muted-foreground">
+                                {t('dependsOn', { refs: p.dependsOn.join(', ') })}
+                              </span>
+                            )}
+                          </div>
+                          <MathText className="text-base leading-relaxed text-foreground/90">
+                            {p.statement}
+                          </MathText>
+                          {partFigures.map((f, fi) => (
+                            <button
+                              key={`${p.partId}-fig-${f.figureId}-${fi}`}
+                              type="button"
+                              className="block w-full max-w-2xl overflow-hidden rounded-2xl border border-border bg-muted/30"
+                              onClick={() => setLightbox({ images: [f.cloudinaryUrl], index: 0 })}
+                            >
+                              <div className="relative aspect-[16/10] w-full">
+                                <Image
+                                  src={cloudinaryTransform(f.cloudinaryUrl, 'w_900,q_auto,f_auto')}
+                                  alt={f.description || t('questionFigure')}
+                                  fill
+                                  sizes="(max-width: 768px) 100vw, 720px"
+                                  className="object-contain"
+                                />
+                              </div>
+                              {f.description && (
+                                <figcaption className="border-t border-border px-3 py-2 text-xs italic text-muted-foreground">
+                                  {f.description}
+                                </figcaption>
+                              )}
+                            </button>
+                          ))}
+                        </article>
+                      );
+                    })}
+                </section>
               )}
 
               {/* Attachments */}
@@ -282,19 +380,31 @@ export default function ExerciseDetailPage() {
               {/* Meta — author + date row */}
               <div className="flex flex-wrap items-center gap-4 border-t border-border pt-5 text-sm text-muted-foreground">
                 {exercise?.author && (
-                  <span className="flex items-center gap-2">
-                    <UserAvatar src={exercise.author.avatar} name={exercise.author.name} size="sm" />
-                    <span className="font-medium text-foreground">{exercise.author.name}</span>
-                    {exercise.author.role && (
-                      <RoleBadge
-                        role={exercise.author.role}
-                        isVerified={exercise.author.isVerifiedTeacher}
-                      />
-                    )}
-                    {typeof exercise.author.points === 'number' && (
-                      <ReputationBadge points={exercise.author.points} />
-                    )}
-                  </span>
+                  exercise.author._id ? (
+                    <Link
+                      href={`/profile/${exercise.author._id}` as `/profile/${string}`}
+                      className="group/author flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      <UserAvatar src={exercise.author.avatar} name={exercise.author.name} size="sm" />
+                      <span className="font-medium text-foreground group-hover/author:underline">
+                        {exercise.author.name}
+                      </span>
+                      {exercise.author.role && (
+                        <RoleBadge
+                          role={exercise.author.role}
+                          isVerified={exercise.author.isVerifiedTeacher}
+                        />
+                      )}
+                      {typeof exercise.author.points === 'number' && (
+                        <ReputationBadge points={exercise.author.points} />
+                      )}
+                    </Link>
+                  ) : (
+                    <span className="flex items-center gap-2">
+                      <UserAvatar src={exercise.author.avatar} name={exercise.author.name} size="sm" />
+                      <span className="font-medium text-foreground">{exercise.author.name}</span>
+                    </span>
+                  )
                 )}
                 {exercise?.createdAt && (
                   <span className="flex items-center gap-1.5 font-mono tabular-nums">
@@ -375,6 +485,38 @@ export default function ExerciseDetailPage() {
                     <CardContent className="space-y-4 p-0">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
+                          {sol.author?._id ? (
+                            <Link
+                              href={`/profile/${sol.author._id}` as `/profile/${string}`}
+                              className="group/author flex items-center gap-3 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                            >
+                              <UserAvatar src={sol.author?.avatar} name={sol.author?.name} size="sm" />
+                              <div>
+                                <div className="flex items-center gap-1.5">
+                                  <p className="text-sm font-semibold text-foreground group-hover/author:underline">
+                                    {sol.author?.name ?? 'Anonymous'}
+                                  </p>
+                                  {typeof sol.author?.points === 'number' && (
+                                    <ReputationBadge points={sol.author.points} />
+                                  )}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  {sol.author?.role && (
+                                    <RoleBadge
+                                      role={sol.author.role}
+                                      isVerified={sol.author.isVerifiedTeacher}
+                                    />
+                                  )}
+                                  {sol.createdAt && (
+                                    <span className="text-xs text-muted-foreground">
+                                      {new Date(sol.createdAt).toLocaleDateString()}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            </Link>
+                          ) : (
+                          <>
                           <UserAvatar src={sol.author?.avatar} name={sol.author?.name} size="sm" />
                           <div>
                             <div className="flex items-center gap-1.5">
@@ -399,6 +541,8 @@ export default function ExerciseDetailPage() {
                               )}
                             </div>
                           </div>
+                          </>
+                          )}
                         </div>
                         <div className="flex items-center gap-1">
                           {authUser && sol.author?._id === authUser._id ? (

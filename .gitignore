@@ -79,3 +79,15 @@ AGENTS.md
 GEMINI.md
 .claude/
 .claude-mem/
+
+# AI-hinting generated artifacts
+runs/
+data/dzexams/**/bac-figures/
+data/dzexams/**/bac-figures-manifest.json
+data/dzexams/**/*.error.json
+
+# Python cache
+**/__pycache__/
+
+# CodeGraph local index (per-machine knowledge graph DB)
+.codegraph/

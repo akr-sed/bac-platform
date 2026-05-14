@@ -1,10 +1,13 @@
 import mongoose, { Document, Model, Schema, Types } from 'mongoose';
 
+export type ExamType = 'bac' | 'bac_blanc' | 'trimestre';
+
 export interface IExam extends Document {
   title: string;
   year: number;
   subject: string;
   level: string;
+  examType?: ExamType;
   source: {
     filename: string;
     parsedExamId: string;
@@ -21,6 +24,11 @@ const ExamSchema = new Schema<IExam>(
     year: { type: Number, required: true, index: true },
     subject: { type: String, required: true, trim: true, index: true },
     level: { type: String, default: '3AS', trim: true },
+    examType: {
+      type: String,
+      enum: ['bac', 'bac_blanc', 'trimestre'] as const,
+      index: true,
+    },
     source: {
       filename: { type: String, default: '', trim: true },
       parsedExamId: { type: String, trim: true },

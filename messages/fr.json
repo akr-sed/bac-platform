@@ -138,7 +138,12 @@
       "postedAt": "Publié le",
       "backToExam": "Retour à l'examen",
       "backToExercises": "Retour aux exercices",
-      "figureDescription": "Description de la figure"
+      "figureDescription": "Description de la figure",
+      "part": "Question {label}",
+      "parts": "Questions",
+      "dependsOn": "S'appuie sur {refs}",
+      "questionFigure": "Figure de l'énoncé",
+      "solutionFigure": "Figure de la solution"
     }
   },
   "solutions": {
@@ -446,9 +451,31 @@
     "title": "Banque d'exercices",
     "subtitle": "Exercices issus d'épreuves réelles du baccalauréat, classés par année, matière et thème.",
     "empty": "Aucun exercice n'a encore été importé.",
+    "hub": {
+      "heading": "Choisissez votre point de départ",
+      "subheading": "Sélectionnez une source. Vous pourrez filtrer par année et par filière à l'intérieur.",
+      "exerciseCount": "{count, plural, =0 {aucun exercice} one {# exercice} other {# exercices}}",
+      "explore": "Explorer",
+      "backToHub": "Retour à la bibliothèque"
+    },
+    "types": {
+      "bac": "BAC officiel",
+      "bacDesc": "Sujets de Baccalauréat réels, classés par année et filière.",
+      "bac_blanc": "BAC blanc",
+      "bacBlancDesc": "Examens blancs et épreuves d'entraînement utilisés par les lycées.",
+      "external": "Communauté",
+      "externalDesc": "Exercices partagés par les enseignants et les élèves hors du corpus officiel."
+    },
+    "years": {
+      "all": "Toutes les années",
+      "label": "Année",
+      "year": "Année {year}"
+    },
     "filter": {
       "filiere": "Filière",
-      "all": "Toutes les filières"
+      "topic": "Thème",
+      "difficulty": "Difficulté",
+      "all": "Tout"
     },
     "filiere": {
       "mathematiques": "Mathématiques",
