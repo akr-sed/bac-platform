@@ -23,6 +23,7 @@ interface PublicProfile {
   role: 'student' | 'teacher' | 'admin';
   isVerifiedTeacher?: boolean;
   points: number;
+  avatar?: string | null;
   /** Optional — falls back to a points-derived tier when the API omits it. */
   badge?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   createdAt: string;
@@ -112,7 +113,7 @@ export default function PublicProfilePage() {
       <div className="mb-8 overflow-hidden rounded-2xl bg-[#003449] text-white">
         <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
           <div className="flex items-start gap-5">
-            <UserAvatar name={profile.name} px={96} />
+            <UserAvatar src={profile.avatar} name={profile.name} px={96} />
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <Logo variant="mono-white" size="sm" />
