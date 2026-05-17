@@ -29,7 +29,7 @@ const VARIANT_FILE: Record<LogoVariant, string> = {
 const VARIANT_ASPECT: Record<LogoVariant, number> = {
   horizontal: 360 / 96,
   'horizontal-slogan': 360 / 120,
-  vertical: 240 / 220,
+  vertical: 240 / 240,
   mark: 1,
   'mono-white': 360 / 96,
   'mono-navy': 360 / 96,
