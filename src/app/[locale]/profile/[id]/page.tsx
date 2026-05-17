@@ -112,8 +112,9 @@ export default function PublicProfilePage() {
       {/* Profile header — navy band per spec §5 */}
       <div className="mb-8 overflow-hidden rounded-2xl bg-[#003449] text-white">
         <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
-          <div className="flex items-start gap-5">
-            <UserAvatar src={profile.avatar} name={profile.name} px={96} />
+          <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:items-start sm:text-start sm:gap-5">
+            <UserAvatar src={profile.avatar} name={profile.name} px={64} className="sm:hidden" />
+            <UserAvatar src={profile.avatar} name={profile.name} px={96} className="hidden sm:inline-flex" />
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <Logo variant="mono-white" size="sm" />
@@ -152,7 +153,7 @@ export default function PublicProfilePage() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-end gap-3 sm:items-end">
+          <div className="flex flex-col items-start gap-3 sm:items-end">
             <PointsPill count={profile.points} />
             {!isSelf && (
               <FollowButton

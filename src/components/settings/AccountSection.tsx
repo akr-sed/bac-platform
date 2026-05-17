@@ -71,7 +71,7 @@ export function AccountSection() {
 
       <form className="space-y-5" onSubmit={handleSave}>
         {/* Avatar */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
           <UserAvatar src={avatarUrl} name={name} size="lg" />
           <div>
             <input

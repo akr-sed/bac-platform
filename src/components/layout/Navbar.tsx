@@ -21,12 +21,15 @@ import { MobileNavDrawer } from './MobileNavDrawer';
 // Wave 6-A — TopAppBar
 // h-[84px] bg-white border-b border-[#D9EFF8]
 // Brand (start) | Search (center) | User pill (end)
+// On mobile (< sm): search collapses to a single icon button so the row stays
+// breathable; on sm+ the full pill is rendered.
 // In RTL (ar) the layout mirrors automatically so the brand sits on the
 // right and the user info on the left.
 
 export function TopAppBar() {
   const t = useTranslations('navigation');
   const tg = useTranslations('gamification');
+  const searchPlaceholder = tg('searchPlaceholder');
   const { user, loading, logout } = useAuth();
   const pathname = usePathname();
   const [unreadCount, setUnreadCount] = useState(0);
@@ -57,16 +60,14 @@ export function TopAppBar() {
       .catch(() => {});
   }, [user]);
 
-  const searchPlaceholder = tg('searchPlaceholder');
-
   function isActive(href: string) {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
   }
 
   return (
-    <header className="sticky top-0 z-50 h-[84px] border-b border-[#D9EFF8] bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
-      <div className="mx-auto flex h-full max-w-7xl items-center gap-4 px-6 py-3">
+    <header className="sticky top-0 z-50 h-16 border-b border-[#D9EFF8] bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] lg:h-[84px]">
+      <div className="mx-auto flex h-full max-w-7xl items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 lg:gap-4 lg:px-6">
 
         {/* ── Mobile burger (lg:hidden) — drives the MobileNavDrawer ── */}
         <MobileNavDrawer />
@@ -82,16 +83,33 @@ export function TopAppBar() {
           </Link>
         </div>
 
-        {/* ── Center: Search bar ────────────────────────────────────── */}
-        <div className="flex min-w-0 flex-1 justify-center">
-          <Link
-            href="/search"
-            className="flex w-full max-w-[614px] items-center gap-3 rounded-full border border-[#B0DEF1] bg-white px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-colors hover:border-[#0095D1]"
-          >
-            <Search className="size-4 shrink-0 text-[#6B7280]" />
-            <span className="text-sm font-semibold text-[#6B7280]">{searchPlaceholder}</span>
-          </Link>
-        </div>
+        {/* ── Center: Search (auth-gated) ────────────────────────────
+            Only rendered when a user is logged in. Mobile (<sm): icon-only
+            button. sm+: full pill with placeholder. When unauthed, a flex
+            spacer takes its place so the brand still pushes the login/register
+            buttons to the end of the row. */}
+        {!loading && user ? (
+          <div className="flex min-w-0 flex-1 justify-center">
+            <Link
+              href="/search"
+              aria-label={searchPlaceholder}
+              className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#B0DEF1] bg-white text-[#6B7280] transition-colors hover:border-[#0095D1] hover:text-[#0095D1] sm:hidden"
+            >
+              <Search className="size-4" />
+            </Link>
+            <Link
+              href="/search"
+              className="hidden w-full max-w-[614px] items-center gap-3 rounded-full border border-[#B0DEF1] bg-white px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-colors hover:border-[#0095D1] sm:flex"
+            >
+              <Search className="size-4 shrink-0 text-[#6B7280]" />
+              <span className="truncate text-sm font-semibold text-[#6B7280]">
+                {searchPlaceholder}
+              </span>
+            </Link>
+          </div>
+        ) : (
+          <div className="flex-1" />
+        )}
 
         {/* ── End: User pill (auth) or Login/Register (unauth) ─── */}
         {!loading && user ? (
@@ -204,7 +222,7 @@ export function TopAppBar() {
               aria-label={t('notifications')}
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),
-                'relative size-9 cursor-pointer rounded-full'
+                'relative size-10 cursor-pointer rounded-full lg:size-9'
               )}
             >
               <Bell className="size-4 text-[#6B7280]" />

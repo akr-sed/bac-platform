@@ -97,7 +97,7 @@ export function SelectedExerciseCard({ exercise, onChange }: Props) {
         <button
           type="button"
           onClick={onChange}
-          className="shrink-0 text-xs font-semibold text-[#0095D1] underline-offset-2 transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1] focus-visible:ring-offset-2"
+          className="shrink-0 min-h-11 px-2 py-1 text-xs font-semibold text-[#0095D1] underline-offset-2 transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1] focus-visible:ring-offset-2"
         >
           {t('change')}
         </button>

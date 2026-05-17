@@ -46,7 +46,7 @@ export function LikeButton({ exerciseId, initialLiked, initialCount }: Props) {
       disabled={pending}
       aria-pressed={liked}
       className={cn(
-        'flex items-center gap-1 rounded-md px-3 py-2 text-sm transition',
+        'flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md px-3 py-2 text-sm transition',
         liked ? 'text-red-500' : 'text-muted-foreground hover:bg-muted'
       )}
     >

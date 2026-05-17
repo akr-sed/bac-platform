@@ -33,11 +33,15 @@ export function ReportKebab({
   if (!user) return null;
   if (authorId && user._id === authorId) return null;
 
+  // Bump the kebab trigger to a 44×44 touch target on phones; collapses back
+  // to the design-system default on `sm+`. Forwards any caller-supplied
+  // className unchanged.
+  const sizingClass = 'min-h-11 min-w-11 sm:min-h-0 sm:min-w-0';
   return (
     <ReportActionMenu
       targetType={targetType}
       targetId={targetId}
-      className={className}
+      className={className ? `${sizingClass} ${className}` : sizingClass}
     />
   );
 }

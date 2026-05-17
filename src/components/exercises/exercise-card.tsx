@@ -39,17 +39,70 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
     <article className="overflow-hidden rounded-[12px] border border-[#D9EFF8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
 
       {/* ── Header ───────────────────────────────────────────────────── */}
-      {/* Kebab sits opposite the author chip: start-edge in LTR, end-edge in
-          RTL (flex auto-mirrors). Subject badge + featured chip group with it
-          on the same side; author chip + time group on the opposite side. */}
-      <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-5 pt-5 pb-[21px]">
-        {/* Subject badge + (optional) featured badge + report kebab */}
+      {/* Standard social-feed layout: author chip + timestamp sit at the
+          start-edge (left in LTR, right in RTL — adjacent to the avatar);
+          subject badge + featured chip + report kebab sit at the end-edge
+          (right in LTR, left in RTL). Flex auto-mirrors under dir="rtl". */}
+      <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-[#D9EFF8] px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-[21px]">
+        {/* Author meta + avatar — start-edge of the row.
+            Internal order (document order, auto-mirrored by flex in RTL):
+              [Avatar] [Name · Reputation] [time since posted]
+            LTR: Avatar on the left, then name + rep, then time.
+            RTL: time on the left, then name + rep, then Avatar (rightmost). */}
         <div className="flex items-center gap-2">
-          <ReportKebab
-            targetType="exercise"
-            targetId={exercise._id}
-            authorId={exercise.author?._id}
-          />
+          {exercise.author?._id ? (
+            <>
+              <Link
+                href={`/profile/${exercise.author._id}` as `/profile/${string}`}
+                aria-label={exercise.author?.name ?? 'Profile'}
+                className="rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1]"
+              >
+                <UserAvatar
+                  src={exercise.author?.avatar}
+                  name={exercise.author?.name}
+                  size="sm"
+                />
+              </Link>
+              <Link
+                href={`/profile/${exercise.author._id}` as `/profile/${string}`}
+                className="group/author flex items-center gap-1.5 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1]"
+              >
+                <p className="text-sm font-semibold text-[#171C20] group-hover/author:underline">
+                  {exercise.author?.name ?? '—'}
+                </p>
+                {typeof exercise.author?.points === 'number' && (
+                  <ReputationBadge points={exercise.author.points} />
+                )}
+              </Link>
+              <time
+                className="text-xs text-[#3E4850]"
+                dateTime={exercise.lastActivityAt}
+              >
+                {relativeTime(exercise.lastActivityAt)}
+              </time>
+            </>
+          ) : (
+            <>
+              <UserAvatar
+                src={exercise.author?.avatar}
+                name={exercise.author?.name}
+                size="sm"
+              />
+              <p className="text-sm font-semibold text-[#171C20]">
+                {exercise.author?.name ?? '—'}
+              </p>
+              <time
+                className="text-xs text-[#3E4850]"
+                dateTime={exercise.lastActivityAt}
+              >
+                {relativeTime(exercise.lastActivityAt)}
+              </time>
+            </>
+          )}
+        </div>
+
+        {/* Subject badge + (optional) featured badge + report kebab — end-edge. */}
+          <div className="flex items-center gap-2">
           <span
             className={cn(
               'rounded-full px-3 py-1 text-xs font-bold capitalize',
@@ -64,60 +117,20 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
               title={t('featured')}
             >
               <Star className="size-3 fill-current" />
-              {t('featured')}
+              <span className="hidden sm:inline">{t('featured')}</span>
             </span>
           )}
-        </div>
-
-        {/* Author meta + avatar — opposite side of the row. */}
-        <div className="flex items-center gap-2">
-          {exercise.author?._id ? (
-            <Link
-              href={`/profile/${exercise.author._id}` as `/profile/${string}`}
-              className="group/author flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0095D1]"
-            >
-              <div className="flex flex-col items-end text-end">
-                <div className="flex items-center gap-1.5">
-                  <p className="text-sm font-semibold text-[#171C20] group-hover/author:underline">
-                    {exercise.author?.name ?? '—'}
-                  </p>
-                  {typeof exercise.author?.points === 'number' && (
-                    <ReputationBadge points={exercise.author.points} />
-                  )}
-                </div>
-              </div>
-              <UserAvatar
-                src={exercise.author?.avatar}
-                name={exercise.author?.name}
-                size="sm"
-              />
-            </Link>
-          ) : (
-            <div className="flex items-center gap-2">
-              <div className="flex flex-col items-end text-end">
-                <p className="text-sm font-semibold text-[#171C20]">
-                  {exercise.author?.name ?? '—'}
-                </p>
-              </div>
-              <UserAvatar
-                src={exercise.author?.avatar}
-                name={exercise.author?.name}
-                size="sm"
-              />
-            </div>
-          )}
-          <time
-            className="text-xs text-[#3E4850]"
-            dateTime={exercise.lastActivityAt}
-          >
-            {relativeTime(exercise.lastActivityAt)}
-          </time>
+          <ReportKebab
+            targetType="exercise"
+            targetId={exercise._id}
+            authorId={exercise.author?._id}
+          />
         </div>
       </header>
 
       {/* ── Body ─────────────────────────────────────────────────────── */}
       <Link href={`/exercises/${exercise._id}`} className="block">
-        <div className="flex flex-col gap-6 p-6">
+        <div className="flex flex-col gap-4 p-4 sm:gap-6 sm:p-6">
           {/* Title */}
           <h3 className="line-clamp-2 text-start text-base font-bold leading-[26px] text-[#171C20]">
             <bdi>{localizedTitle}</bdi>
@@ -161,7 +174,7 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
       </Link>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
-      <footer className="flex items-center justify-between border-t border-[#D9EFF8] px-6 py-[16px]">
+      <footer className="flex items-center justify-between border-t border-[#D9EFF8] px-4 py-3 sm:px-6 sm:py-[16px]">
         {/* Start solving link */}
         <Link
           href={`/exercises/${exercise._id}`}

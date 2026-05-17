@@ -14,6 +14,7 @@ import {
   Settings,
   Menu,
   LogOut,
+  X,
 } from 'lucide-react';
 import {
   Sheet,
@@ -25,6 +26,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { useAuth } from '@/components/providers/AuthProvider';
 import { cn } from '@/lib/utils';
+import LocaleSwitcher from './LocaleSwitcher';
 
 interface NavItem {
   href: string;
@@ -63,6 +65,7 @@ const BOTTOM_ITEMS: NavItem[] = [
 export function MobileNavDrawer() {
   const [open, setOpen] = useState(false);
   const t = useTranslations('navigation');
+  const tCommon = useTranslations('common');
   const pathname = usePathname();
   const locale = useLocale();
   const { user, logout } = useAuth();
@@ -89,7 +92,7 @@ export function MobileNavDrawer() {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden cursor-pointer"
+            className="lg:hidden cursor-pointer h-10 w-10 lg:h-9 lg:w-9"
             aria-label={t('home')}
           />
         }
@@ -98,9 +101,24 @@ export function MobileNavDrawer() {
       </SheetTrigger>
       <SheetContent
         side={side}
-        className="flex w-72 max-w-[85vw] flex-col gap-0 bg-white p-0"
+        className="flex w-[18rem] max-w-[88vw] flex-col gap-0 bg-white p-0"
       >
         <SheetTitle className="sr-only">{t('home')}</SheetTitle>
+
+        {/* Visible close affordance — positioned at the logical end of the
+            drawer header so RTL/LTR both put it opposite the sheet edge. */}
+        <div className="flex items-center justify-end px-2 pt-2">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={close}
+            aria-label={tCommon('close')}
+            className="h-9 w-9 cursor-pointer"
+          >
+            <X className="size-5" />
+          </Button>
+        </div>
 
         {/* Teacher header — sits above the user pill so teachers immediately
             see the dashboard context. Students keep the original layout. */}
@@ -189,6 +207,15 @@ export function MobileNavDrawer() {
               );
             })}
           </ul>
+
+          {/* Locale switcher — mobile users have no access to the footer's
+              switcher without scrolling the whole page, so surface it here. */}
+          <div className="mt-4 px-1">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6B7280]">
+              {t('language')}
+            </p>
+            <LocaleSwitcher />
+          </div>
 
           {/* Divider between main and footer items */}
           <div className="my-4 border-t border-[#D9EFF8]" />

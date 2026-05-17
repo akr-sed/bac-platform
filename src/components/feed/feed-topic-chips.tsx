@@ -50,7 +50,7 @@ export async function FeedTopicChips({
   );
 
   return (
-    <nav aria-label={tFilter('topic')} className="flex flex-wrap items-center gap-2">
+    <nav aria-label={tFilter('topic')} className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
       <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
         <BookOpen className="size-3.5" />
         {tFilter('topic')}

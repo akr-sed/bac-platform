@@ -86,7 +86,7 @@ export default async function SessionDetailPage({ params }: Props) {
 
         <article className="overflow-hidden rounded-[12px] border border-[#D9EFF8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
           {/* Header — mirrors SessionCard / ExerciseCard */}
-          <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-7 pt-6 pb-[21px]">
+          <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-4 pt-6 pb-[21px] sm:px-7">
             <span
               className={cn(
                 'rounded-full px-3 py-1 text-xs font-bold capitalize',
@@ -122,7 +122,7 @@ export default async function SessionDetailPage({ params }: Props) {
           </header>
 
           {/* Title + description */}
-          <div className="px-7 py-7">
+          <div className="px-4 py-7 sm:px-7">
             <h1 className="text-end text-3xl font-extrabold leading-tight text-[#171C20] sm:text-4xl">
               {session.title}
             </h1>
@@ -134,7 +134,7 @@ export default async function SessionDetailPage({ params }: Props) {
           </div>
 
           {/* Hero time block */}
-          <div className="px-7 pb-7">
+          <div className="px-4 pb-7 sm:px-7">
             <div
               className={cn(
                 'flex flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[rgba(223,227,232,0.5)] px-6 py-5',
@@ -167,7 +167,7 @@ export default async function SessionDetailPage({ params }: Props) {
 
           {/* Three-up info row */}
           <div className="grid gap-px border-t border-[#D9EFF8] bg-[#D9EFF8] sm:grid-cols-3">
-            <div className="flex items-start gap-3 bg-white px-7 py-5">
+            <div className="flex items-start gap-3 bg-white px-5 py-5 sm:px-7">
               <Clock className="mt-0.5 size-4 shrink-0 text-[#0095D1]" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#3E4850]">
@@ -178,7 +178,7 @@ export default async function SessionDetailPage({ params }: Props) {
                 </span>
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-white px-7 py-5">
+            <div className="flex items-start gap-3 bg-white px-5 py-5 sm:px-7">
               <Users className="mt-0.5 size-4 shrink-0 text-[#0095D1]" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#3E4850]">
@@ -206,7 +206,7 @@ export default async function SessionDetailPage({ params }: Props) {
                 )}
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-white px-7 py-5">
+            <div className="flex items-start gap-3 bg-white px-5 py-5 sm:px-7">
               <Calendar className="mt-0.5 size-4 shrink-0 text-[#0095D1]" />
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#3E4850]">
@@ -223,7 +223,7 @@ export default async function SessionDetailPage({ params }: Props) {
 
           {/* Topics */}
           {session.topics.length > 0 && (
-            <div className="border-t border-[#D9EFF8] px-7 py-5">
+            <div className="border-t border-[#D9EFF8] px-4 py-5 sm:px-7">
               <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#3E4850]">
                 {t('topicsLabel')}
               </p>
@@ -241,7 +241,7 @@ export default async function SessionDetailPage({ params }: Props) {
           )}
 
           {/* Meeting URL (only visible to enrolled / owner) */}
-          <div className="border-t border-[#D9EFF8] bg-[#F9FBFD] px-7 py-5">
+          <div className="border-t border-[#D9EFF8] bg-[#F9FBFD] px-4 py-5 sm:px-7">
             {session.meetingUrl ? (
               <a
                 href={session.meetingUrl}
@@ -260,7 +260,7 @@ export default async function SessionDetailPage({ params }: Props) {
           </div>
 
           {/* Enroll CTA */}
-          <div className="border-t border-[#D9EFF8] px-7 py-6">
+          <div className="border-t border-[#D9EFF8] px-4 py-6 sm:px-7">
             <EnrollButton
               sessionId={session._id}
               initialEnrolled={Boolean(session.isEnrolled)}

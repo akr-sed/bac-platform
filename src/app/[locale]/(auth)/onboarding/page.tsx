@@ -68,7 +68,7 @@ function Step1({
             type="button"
             onClick={() => onChange(key)}
             className={cn(
-              'cursor-pointer rounded-2xl border-2 px-4 py-5 text-sm font-semibold transition-all duration-150',
+              'min-h-[64px] cursor-pointer break-words rounded-2xl border-2 px-4 py-5 text-xs font-semibold leading-tight transition-all duration-150 sm:text-sm',
               value === key
                 ? 'border-[#0095D1] bg-[#E6F4FA] text-[#0095D1]'
                 : 'border-[#BBC8D4] bg-white text-[#25313C] hover:border-[#0095D1] hover:bg-[#E6F4FA]'
@@ -104,7 +104,7 @@ function Step2({
             type="button"
             onClick={() => onChange(yr)}
             className={cn(
-              'cursor-pointer rounded-2xl border-2 px-6 py-6 text-base font-semibold transition-all duration-150',
+              'cursor-pointer rounded-2xl border-2 px-4 py-5 text-base font-semibold transition-all duration-150 sm:px-6 sm:py-6',
               value === yr
                 ? 'border-[#0095D1] bg-[#E6F4FA] text-[#0095D1]'
                 : 'border-[#BBC8D4] bg-white text-[#25313C] hover:border-[#0095D1] hover:bg-[#E6F4FA]'
@@ -185,7 +185,7 @@ function CelebrateScreen({ firstName }: { firstName: string }) {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center gap-6 text-center">
+    <div className="flex flex-col items-center gap-4 text-center sm:gap-6">
       <OwlIllustration variant="celebrate" size={160} />
       <div>
         <h2 className="text-2xl font-extrabold text-[#003449]">
@@ -264,9 +264,9 @@ export default function OnboardingPage() {
       </div>
 
       {/* Right panel */}
-      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+      <div className="flex flex-1 flex-col items-center justify-start bg-white px-4 py-8 sm:px-10 sm:py-12 lg:justify-center">
         <div className="mb-8 lg:hidden">
-          <Logo variant="horizontal" size="lg" />
+          <Logo variant="horizontal" size={56} />
         </div>
 
         <div className="w-full max-w-md space-y-8">
@@ -281,7 +281,7 @@ export default function OnboardingPage() {
                 <StepDots step={step} />
               </div>
 
-              <div className="min-h-[220px]">
+              <div>
                 {step === 1 && (
                   <Step1
                     value={data.stream}

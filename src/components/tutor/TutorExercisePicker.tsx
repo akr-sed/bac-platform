@@ -154,7 +154,7 @@ export function TutorExercisePicker({
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
-          className="grid max-h-[80vh] w-full max-w-[calc(100%-1.5rem)] grid-rows-[auto_auto_auto_1fr] gap-3 rounded-2xl p-0 sm:max-w-xl"
+          className="grid max-h-[85vh] w-full max-w-[calc(100%-1.5rem)] grid-rows-[auto_auto_auto_1fr] gap-3 rounded-2xl p-0 sm:max-h-[80vh] sm:max-w-xl"
           showCloseButton={false}
         >
           <DialogHeader className="px-5 pt-5">
@@ -183,7 +183,7 @@ export function TutorExercisePicker({
           </div>
 
           {/* Source filter chips */}
-          <div className="flex flex-wrap gap-2 px-5">
+          <div className="flex gap-2 overflow-x-auto px-5 pb-1 sm:flex-wrap sm:overflow-visible">
             {sourceChips.map((chip) => (
               <button
                 key={chip.key}
@@ -191,7 +191,7 @@ export function TutorExercisePicker({
                 onClick={() => setSource(chip.key)}
                 aria-pressed={source === chip.key}
                 className={cn(
-                  'rounded-full px-3 py-1.5 text-xs font-semibold transition-colors',
+                  'shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors',
                   source === chip.key
                     ? 'bg-[#0095D1] text-white shadow-[0_1px_2px_rgba(0,0,0,0.1)]'
                     : 'bg-[#F0F4F9] text-[#3E4850] hover:bg-[#E6F4FA]'

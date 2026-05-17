@@ -112,7 +112,7 @@ export function FollowButton({
       disabled={pending}
       aria-pressed={following}
       aria-label={label}
-      className={cn('min-w-[120px] gap-1.5', className)}
+      className={cn('min-w-0 sm:min-w-[120px] gap-1.5', className)}
     >
       <Icon className={cn('size-4', pending && 'animate-spin')} />
       <span>{label}</span>
