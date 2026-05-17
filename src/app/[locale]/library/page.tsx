@@ -85,6 +85,11 @@ async function loadHubCounts(filiere?: string): Promise<{
   return { bac: bacCount, bac_blanc: bacBlancCount, external: externalCount };
 }
 
+// Number of exercises per page in the filtered library view. Keep it modest
+// (5–6 rows of two cards each) so paging stays useful — the full corpus has
+// 250+ exercises and BAC blanc alone breaks 100.
+const LIBRARY_PAGE_SIZE = 24;
+
 // ── Filtered (typed) list ──────────────────────────────────────────────────
 async function loadFilteredLibrary(opts: {
   type: SourceType;
@@ -92,13 +97,19 @@ async function loadFilteredLibrary(opts: {
   filiere?: string;
   topic?: string;
   difficulty?: Difficulty;
+  page?: number;
 }): Promise<{
   items: LibraryItem[];
   availableYears: number[];
   availableTopics: string[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
 }> {
   await connectToDatabase();
   const { type, year, filiere, topic, difficulty } = opts;
+  const page = Math.max(1, Math.floor(opts.page ?? 1));
 
   // Filters that apply to BOTH the listed items AND the chip-availability
   // queries (so the topic chips show every topic that's reachable from the
@@ -124,7 +135,15 @@ async function loadFilteredLibrary(opts: {
       : allTypeExams.map((e) => e._id as Types.ObjectId);
     scopeExerciseFilter.examId = { $in: yearFilteredExamIds };
     if (yearFilteredExamIds.length === 0) {
-      return { items: [], availableYears, availableTopics: [] };
+      return {
+        items: [],
+        availableYears,
+        availableTopics: [],
+        total: 0,
+        page: 1,
+        pageSize: LIBRARY_PAGE_SIZE,
+        totalPages: 0,
+      };
     }
   }
 
@@ -140,12 +159,18 @@ async function loadFilteredLibrary(opts: {
   if (topic) itemsFilter.topic = topic;
   if (difficulty) itemsFilter.difficulty = difficulty;
 
+  const total = await Exercise.countDocuments(itemsFilter);
+  const totalPages = Math.max(1, Math.ceil(total / LIBRARY_PAGE_SIZE));
+  // Clamp page to [1..totalPages] so a stale ?page=99 doesn't show an empty grid.
+  const safePage = Math.min(page, totalPages);
+
   const exercises = await Exercise.find(itemsFilter)
     .select(
       'title description difficulty examId examNumber topic marks concepts hasMath sourcePage parts figures'
     )
     .sort({ createdAt: -1, examNumber: 1 })
-    .limit(60)
+    .skip((safePage - 1) * LIBRARY_PAGE_SIZE)
+    .limit(LIBRARY_PAGE_SIZE)
     .lean();
 
   const examIds = Array.from(
@@ -190,7 +215,15 @@ async function loadFilteredLibrary(opts: {
     };
   });
 
-  return { items, availableYears, availableTopics };
+  return {
+    items,
+    availableYears,
+    availableTopics,
+    total,
+    page: safePage,
+    pageSize: LIBRARY_PAGE_SIZE,
+    totalPages,
+  };
 }
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -202,7 +235,10 @@ export default async function LibraryPage({ params, searchParams }: RouteParams)
   const yearParam = getString(sp, 'year');
   const topicParam = getString(sp, 'topic');
   const difficultyParam = getString(sp, 'difficulty');
+  const pageParam = getString(sp, 'page');
   const year = yearParam && /^\d{4}$/.test(yearParam) ? Number(yearParam) : undefined;
+  const page =
+    pageParam && /^\d{1,4}$/.test(pageParam) ? Math.max(1, Number(pageParam)) : 1;
   const difficulty: Difficulty | undefined =
     difficultyParam === 'easy' || difficultyParam === 'medium' || difficultyParam === 'hard'
       ? difficultyParam
@@ -245,12 +281,20 @@ export default async function LibraryPage({ params, searchParams }: RouteParams)
   }
 
   // ── Filtered view ────────────────────────────────────────────────────────
-  const { items, availableYears, availableTopics } = await loadFilteredLibrary({
+  const {
+    items,
+    availableYears,
+    availableTopics,
+    total,
+    page: currentPage,
+    totalPages,
+  } = await loadFilteredLibrary({
     type,
     year,
     filiere,
     topic: topicParam,
     difficulty,
+    page,
   });
 
   const tTypes = await getTranslations('library.types');
@@ -315,7 +359,7 @@ export default async function LibraryPage({ params, searchParams }: RouteParams)
             />
           </div>
 
-          <div>
+          <div className="space-y-4">
             {items.length === 0 ? (
               <EmptyState
                 variant="empty-saved"
@@ -323,15 +367,138 @@ export default async function LibraryPage({ params, searchParams }: RouteParams)
                 description={t('subtitle')}
               />
             ) : (
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {items.map((ex) => (
-                  <LibraryCard key={ex._id} exercise={ex} locale={topicLocale} />
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {items.map((ex) => (
+                    <LibraryCard key={ex._id} exercise={ex} locale={topicLocale} />
+                  ))}
+                </div>
+                <LibraryPagination
+                  total={total}
+                  page={currentPage}
+                  totalPages={totalPages}
+                  type={type}
+                  year={year}
+                  filiere={filiere}
+                  topic={topicParam}
+                  difficulty={difficulty}
+                />
+              </>
             )}
           </div>
         </div>
       </div>
     </AppShell>
+  );
+}
+
+// ── Pagination ────────────────────────────────────────────────────────────
+function buildPageHref(opts: {
+  page: number;
+  type: SourceType;
+  year?: number;
+  filiere?: string;
+  topic?: string;
+  difficulty?: Difficulty;
+}): string {
+  const params = new URLSearchParams();
+  params.set('type', opts.type);
+  if (opts.filiere) params.set('filiere', opts.filiere);
+  if (opts.year) params.set('year', String(opts.year));
+  if (opts.topic) params.set('topic', opts.topic);
+  if (opts.difficulty) params.set('difficulty', opts.difficulty);
+  // Page 1 is implicit — omit to keep the URL clean.
+  if (opts.page > 1) params.set('page', String(opts.page));
+  return `/library?${params.toString()}`;
+}
+
+interface LibraryPaginationProps {
+  total: number;
+  page: number;
+  totalPages: number;
+  type: SourceType;
+  year?: number;
+  filiere?: string;
+  topic?: string;
+  difficulty?: Difficulty;
+}
+
+function LibraryPagination({
+  total,
+  page,
+  totalPages,
+  type,
+  year,
+  filiere,
+  topic,
+  difficulty,
+}: LibraryPaginationProps) {
+  if (totalPages <= 1) return null;
+
+  const linkBase = (p: number) =>
+    buildPageHref({ page: p, type, year, filiere, topic, difficulty });
+
+  // Compact page list: 1, …, page-1, page, page+1, …, totalPages
+  // (always show first + last + window of 1 on each side of current).
+  const visible = new Set<number>([1, totalPages, page, page - 1, page + 1]);
+  const pages = Array.from(visible)
+    .filter((p) => p >= 1 && p <= totalPages)
+    .sort((a, b) => a - b);
+
+  return (
+    <nav
+      aria-label="Library pagination"
+      className="flex flex-wrap items-center justify-between gap-3 pt-2 text-sm"
+    >
+      <p className="text-xs text-muted-foreground">
+        {`${total.toLocaleString()} · page ${page} / ${totalPages}`}
+      </p>
+      <div className="flex flex-wrap items-center gap-1">
+        {page > 1 && (
+          <Link
+            href={linkBase(page - 1) as never}
+            className="rounded-md border border-border bg-card px-3 py-1.5 font-medium transition-colors hover:bg-muted"
+          >
+            ‹ Prev
+          </Link>
+        )}
+        {pages.map((p, i) => {
+          const prev = pages[i - 1];
+          const gap = prev !== undefined && p - prev > 1;
+          return (
+            <span key={p} className="contents">
+              {gap && (
+                <span className="px-2 text-muted-foreground" aria-hidden="true">
+                  …
+                </span>
+              )}
+              {p === page ? (
+                <span
+                  aria-current="page"
+                  className="rounded-md bg-primary px-3 py-1.5 font-semibold text-primary-foreground"
+                >
+                  {p}
+                </span>
+              ) : (
+                <Link
+                  href={linkBase(p) as never}
+                  className="rounded-md border border-border bg-card px-3 py-1.5 font-medium transition-colors hover:bg-muted"
+                >
+                  {p}
+                </Link>
+              )}
+            </span>
+          );
+        })}
+        {page < totalPages && (
+          <Link
+            href={linkBase(page + 1) as never}
+            className="rounded-md border border-border bg-card px-3 py-1.5 font-medium transition-colors hover:bg-muted"
+          >
+            Next ›
+          </Link>
+        )}
+      </div>
+    </nav>
   );
 }

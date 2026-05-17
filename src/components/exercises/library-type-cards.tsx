@@ -66,7 +66,7 @@ export async function LibraryTypeCards({ counts, currentFiliere }: Props) {
                     : 'hover:-translate-y-0.5 hover:border-foreground/10 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]'
                 }`}
               >
-                <CardContent className="flex flex-1 flex-col gap-5 p-7">
+                <CardContent className="flex flex-1 flex-col gap-5 p-5 sm:p-7">
                   <div className="flex size-12 items-center justify-center rounded-2xl bg-card text-foreground shadow-sm">
                     <Icon className="size-6" />
                   </div>

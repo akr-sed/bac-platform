@@ -49,7 +49,7 @@ export async function LibraryDifficultyChips({
   const isAll = !selected;
 
   return (
-    <nav aria-label={tFilter('difficulty')} className="flex flex-wrap items-center gap-2">
+    <nav aria-label={tFilter('difficulty')} className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
       <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
         <Gauge className="size-3.5" />
         {tFilter('difficulty')}
