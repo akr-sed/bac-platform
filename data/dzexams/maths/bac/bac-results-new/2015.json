@@ -1,0 +1,1480 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+        "subject": "mathematics",
+        "source_file": "2015.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2015,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2014-2015",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "11111111-1111-4111-8111-111111111111",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "number": 1,
+          "title": "التمرين الأول: (04) نقاط)",
+          "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i},\\vec{j},\\vec{k})$. نعتبر النقط $A(1;5;4)$، $B(10;4;3)$، $C(4;3;5)$ و $D(0;4;5)$.",
+          "topic": "geometrie",
+          "concepts": [
+            "vecteurs",
+            "plans",
+            "droites",
+            "repere_orthonorme",
+            "distances",
+            "equations_cartesiennes",
+            "parametriques",
+            "produit_scalaire"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": true,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "22222222-2222-4222-8222-222222222222",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "1",
+              "sub_label": "a",
+              "statement": "بيّن أنّ النقط $A$ ، $B$ و $C$ ليست في استقامية.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "33333333-3333-4333-8333-333333333333",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "1",
+              "sub_label": "b",
+              "statement": "بيّن أن النقط $A$ ، $B$ ، $C$ و $D$ من نفس المستوي.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "44444444-4444-4444-8444-444444444444",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "1",
+              "sub_label": "c",
+              "statement": "استنتج أنّ النقطة $D$ هي مرجّح النقط $A$ ، $B$ و $C$ المرفقة بمعاملات يُطلب تعيينها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-b"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "55555555-5555-4555-8555-555555555555",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "1",
+              "sub_label": "d",
+              "statement": "عيّن إحداثيات النقطة $E$ نظيرة النقطة $A$ بالنسبة إلى النقطة $D$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "66666666-6666-4666-8666-666666666666",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "1",
+              "sub_label": "e",
+              "statement": "اكتب معادلة ديكارتية للمستوي $(P)$ المحوري للقطعة $[AE]$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "77777777-7777-4777-8777-777777777777",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "2",
+              "sub_label": null,
+              "statement": "عيّن $(\\Gamma)$ مجموعة النقط $M$ من الفضاء حيث: $||2\\vec{MA}-\\vec{MB} + 2\\vec{MC}|| = ||3\\vec{MD} - 3\\vec{MA}||$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "88888888-8888-4888-8888-888888888888",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "تحقق أن النقطة $F(1;8;10)$ تنتمي إلى المستوي $(P)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "99999999-9999-4999-8999-999999999999",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "المستقيم $(FD)$ يقطع $(\\Gamma)$ في النقطتين $G$ و $H$. حدد طبيعة الرباعي $AGEH$ ، ثم احسب مساحته.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "4",
+              "sub_label": "a",
+              "statement": "بيّن أنّ الشعاع $\\vec{AC}$ ناظمي للمستوي $(AEH)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "4",
+              "sub_label": "b",
+              "statement": "تحقق أنّه من أجل كل عدد حقيقي $t$ ، النقطة $N(3t; 4-2t; 5+t)$ تنتمي إلى المستقيم $(A)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "4",
+              "sub_label": "c",
+              "statement": "بيّن أنّه من أجل كل عدد حقيقي $t$ ، حجم المجسم $NAGEH$ هو $V(t)$ حيث $V(t) = 2|t|\\sqrt{14}$ ($uv$ وحدة الحجوم).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+              "exercise_id": "11111111-1111-4111-8111-111111111111",
+              "label": "4",
+              "sub_label": "d",
+              "statement": "عيّن إحداثيات كل من النقطتين $N_1$ و $N_2$ من $(A)$ اللتين يكون من أجليهما $V(t) = 2\\sqrt{3}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "number": 2,
+          "title": "التمرين الثاني: (05) نقاط)",
+          "statement": "ينسب المستوي إلى المعلم المتعامد والمتجانس $(O;\\vec{u},\\vec{v})$. نعتبر النقط $A$ ، $B$ ، $C$ ، $H$ و $I$ لاحقاتها على الترتيب : $z_A = 2i$ ، $z_B = -2+i$ ، $z_C = -3$ ، $z_H = -3+4i$ و $z_I = -1-i$ .",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "forme_algebrique",
+            "forme_trigonometrique",
+            "module",
+            "argument",
+            "transformations_plan",
+            "similitudes",
+            "rotation",
+            "translation",
+            "homothetie",
+            "repere_orthonorme",
+            "vecteurs",
+            "produit_scalaire",
+            "plans",
+            "droites",
+            "positions_relatives"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": true,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "ffffffff-ffff-4fff-8fff-ffffffffffff",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "1",
+              "sub_label": "a",
+              "statement": "مثل النقط $A$ ، $B$ ، $C$ ، $H$ و $I$ في المعلم $(O;\\vec{u},\\vec{v})$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "10101010-1010-4010-8010-101010101010",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "1",
+              "sub_label": "b",
+              "statement": "عيّن النسبة وزاوية للتشابه المباشر الذي مركزه $B$ ويحوّل النقطة $A$ إلى النقطة $C$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11111111-1111-4111-8111-111111111111",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "2",
+              "sub_label": null,
+              "statement": "عيّن لاحقة النقطة $G$ مركز ثقل المثلث $ABC$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "12121212-1212-4212-8212-121212121212",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "اكتب على الشكل الجبري العدد المركب $\\frac{z_B - z_C}{z_H - z_A}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "13131313-1313-4313-8313-131313131313",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "استنتج أن المستقيمين $(AH)$ و $(BC)$ متعامدان.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-a"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "14141414-1414-4414-8414-141414141414",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "3",
+              "sub_label": "c",
+              "statement": "بيّن أن $H$ هي نقطة تلاقي ارتفاعات المثلث $ABC$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-b"
+              ],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "15151515-1515-4515-8515-151515151515",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "4",
+              "sub_label": null,
+              "statement": "بيّن أنّ النقط $H$ ، $G$ و $I$ في استقامية.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "16161616-1616-4616-8616-161616161616",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "5",
+              "sub_label": "a",
+              "statement": "بيّن أنّ النقطة $A$ تنتمي إلى المجموعة $(\\Gamma)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "17171717-1717-4717-8717-171717171717",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "5",
+              "sub_label": "b",
+              "statement": "عيّن طبيعة المجموعة $(\\Gamma)$ مع تحديد عناصرها المميزة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "18181818-1818-4818-8818-181818181818",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "5",
+              "sub_label": "c",
+              "statement": "أنشئ المجموعة $(\\Gamma)$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "19191919-1919-4919-8919-191919191919",
+              "exercise_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+              "label": "5",
+              "sub_label": "d",
+              "statement": "تحقق أن النقطتين $B$ و $C$ تنتميان إلى المجموعة $(\\Gamma)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "20202020-2020-4020-8020-202020202020",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "number": 3,
+          "title": "التمرين الثالث : (04) نقاط)",
+          "statement": null,
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "congruences",
+            "theoreme_bezout",
+            "nombres_premiers",
+            "pgcd",
+            "raisonnement_par_recurrence"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "21212121-2121-4121-8121-212121212121",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "1",
+              "sub_label": "a",
+              "statement": "عيّن حسب قيم العدد الطبيعي $n$ ، باقي القسمة الإقليدية للعدد $2^n$ على $7$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "22222222-2222-4222-8222-222222222222",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "1",
+              "sub_label": "b",
+              "statement": "استنتج باقي القسمة الإقليدية للعدد $2015^{53} + 1954^{1962} - 1962^{1954}$ على $7$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-a"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "23232323-2323-4323-8323-232323232323",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "2",
+              "sub_label": "a",
+              "statement": "بيّن أن $89$ عدد أوّلي.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "24242424-2424-4424-8424-242424242424",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "2",
+              "sub_label": "b",
+              "statement": "عيّن كل القواسم الطبيعية للعدد $7832$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "25252525-2525-4525-8525-252525252525",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "2",
+              "sub_label": "c",
+              "statement": "بيّن أنّ العددين $981$ و $977$ أوّليان فيما بينهما.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "26262626-2626-4626-8626-262626262626",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$x$ و $y$ عددان طبيعيان غير معدومين قاسماهما المشترك الأكبر هو $2$ . عيّن $x$ و $y$ علماً أن : $$\\begin{cases} x^2 - y^2 = 31328 \\\\ (x-y) \\equiv 8 \\pmod{22} \\end{cases}$$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "27272727-2727-4727-8727-272727272727",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "4",
+              "sub_label": "a",
+              "statement": "باستعمال مبرهنة بيزو ، برهن أنّ $a$ أوّلي مع $b \\times c$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "28282828-2828-4828-8828-282828282828",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "4",
+              "sub_label": "b",
+              "statement": "باستعمال الاستدلال بالتراجع، أثبت أنّه من أجل كل عدد طبيعي غير معدوم $n$ ، $PGCD(a;b^n) = 1$ . (يُرمز $PGCD$ إلى القاسم المشترك الأكبر.)",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "29292929-2929-4929-8929-292929292929",
+              "exercise_id": "20202020-2020-4020-8020-202020202020",
+              "label": "4",
+              "sub_label": "c",
+              "statement": "استنتج القاسم المشترك الأكبر للعددين $1962^{1954}$ و $1954^{1962}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-b"
+              ],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "30303030-3030-4030-8030-303030303030",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "number": 4,
+          "title": "التمرين الرابع (07) نقاط)",
+          "statement": "الدالة $f$ المعرفة بـ : $f(0) = 1$ ، ومن أجل كل عدد حقيقي $x$ من المجال $]0;+\\infty[$ ، $f(x) = 1 - x^2 \\ln x$ . $(C_f)$ منحنى الدالة $f$ الممثل في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i},\\vec{j})$ .",
+          "topic": "analyse",
+          "concepts": [
+            "limites",
+            "continuite",
+            "derivation",
+            "etude_de_fonction",
+            "branches_infinies",
+            "tableau_de_variation",
+            "representation_graphique",
+            "fonction_logarithme",
+            "calcul_integral",
+            "primitives",
+            "integration_par_parties",
+            "aires",
+            "optimisation",
+            "suites_numeriques",
+            "convergence"
+          ],
+          "difficulty": "medium",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "31313131-3131-4131-8131-313131313131",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "1",
+              "sub_label": "a",
+              "statement": "ادرس استمرارية الدالة $f$ عند $0$ من اليمين.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "32323232-3232-4232-8232-323232323232",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "1",
+              "sub_label": "b",
+              "statement": "احسب $\\lim_{x \\to 0} \\frac{f(x)-1}{x}$ ، ثم فسر النتيجة هندسيا.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "33333333-3333-4333-8333-333333333333",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "2",
+              "sub_label": "a",
+              "statement": "احسب $\\lim_{x \\to +\\infty} f(x)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "34343434-3434-4434-8434-343434343434",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "2",
+              "sub_label": "b",
+              "statement": "ادرس اتجاه تغيّر الدالة $f$ ، ثمّ شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "35353535-3535-4535-8535-353535353535",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "بيّن أن المعادلة $f(x) = 0$ تقبل حلاً وحيدا $\\alpha$ في المجال $]0;+\\infty[$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "36363636-3636-4636-8636-363636363636",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "تحقق أنّ $1,532 < \\alpha < 1,531$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "37373737-3737-4737-8737-373737373737",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "4",
+              "sub_label": "a",
+              "statement": "ادرس شفعية الدالة $g$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "38383838-3838-4838-8838-383838383838",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "4",
+              "sub_label": "b",
+              "statement": "أنشئ المنحنى $(C_g)$ على المجال $[-2;2]$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "39393939-3939-4939-8939-393939393939",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "5",
+              "sub_label": null,
+              "statement": "باستعمال المكاملة بالتجزئة ، عيّن الدالة الأصلية للدالة $x \\mapsto x^2 \\ln x$ المعرفة على المجال $]0;+\\infty[$ ، والتي تنعدم من أجل القيمة $1$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "40404040-4040-4040-8040-404040404040",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "6",
+              "sub_label": "a",
+              "statement": "اكتب العبارة $F(t)$ بدلالة $t$ و $\\alpha$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "41414141-4141-4141-8141-414141414141",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "6",
+              "sub_label": "b",
+              "statement": "بيّن أنّه من أجل كل عدد حقيقي $t$ من المجال $]0;\\alpha[$ ، $F(t) = \\frac{-3t f(t)-t^3 -6t+\\alpha^3+6\\alpha}{9}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "42424242-4242-4242-8242-424242424242",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "6",
+              "sub_label": "c",
+              "statement": "احسب $\\lim_{t \\to 0} F(t)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            },
+            {
+              "id": "43434343-4343-4343-8343-434343434343",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "7",
+              "sub_label": "a",
+              "statement": "عيّن القيمة المضبوطة للعدد $m$ حتى يكون $\\delta(m) = 2A$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 13,
+              "metadata": {}
+            },
+            {
+              "id": "44444444-4444-4444-8444-444444444444",
+              "exercise_id": "30303030-3030-4030-8030-303030303030",
+              "label": "7",
+              "sub_label": "b",
+              "statement": "علماً أن $3,140 < \\pi < 3,142$ أعط حصرًا للعدد $m$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 14,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "45454545-4545-4545-8545-454545454545",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "exercise_ref": 1,
+          "part_ref": "3-b",
+          "context": "solution",
+          "figure_type": "geometric",
+          "description": "A geometric figure showing a quadrilateral AGEH inscribed in a circle, with points D, E, A, G, H labeled. Point D is at the center of the circle. Point E is on the circle. Point A is on the circle. G and H are intersection points of line FD with circle Gamma. The figure also shows vectors and lines related to the problem.",
+          "source_page": 7,
+          "bounding_box": [
+            500,
+            35,
+            680,
+            220
+          ]
+        },
+        {
+          "id": "46464646-4646-4646-8646-464646464646",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "exercise_ref": 2,
+          "part_ref": "1-a",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A Cartesian coordinate system with origin O. Points A, B, C, H, I are plotted. A is at (0,2), B at (-2,1), C at (-3,0), H at (-3,4), I at (-1,-1).",
+          "source_page": 8,
+          "bounding_box": [
+            140,
+            470,
+            340,
+            790
+          ]
+        },
+        {
+          "id": "47474747-4747-4747-8747-474747474747",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "exercise_ref": 2,
+          "part_ref": "5-c",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A Cartesian coordinate system with origin O. A circle (Gamma) is drawn with center I(-1,-1) and radius sqrt(5). Points A, B, C are shown on the circle. Point A is at (0,2), B at (-2,1), C at (-3,0).",
+          "source_page": 8,
+          "bounding_box": [
+            780,
+            35,
+            970,
+            340
+          ]
+        },
+        {
+          "id": "48484848-4848-4848-8848-484848484848",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-1",
+          "exercise_ref": 4,
+          "part_ref": "4-b",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A Cartesian coordinate system with x and y axes. A curve (C_g) is plotted, which is symmetric with respect to the y-axis. The curve passes through (0,1) and has a minimum around x=1.5 and x=-1.5. The graph shows the function f(x) for x>0 and g(x)=f(|x|) for all x.",
+          "source_page": 10,
+          "bounding_box": [
+            730,
+            400,
+            930,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+        "subject": "mathematics",
+        "source_file": "2015.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2015,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2014-2015",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "49494949-4949-4949-8949-494949494949",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+          "number": 1,
+          "title": "التمرين الأول: (04) نقاط)",
+          "statement": "عيّن الاقتراح الصحيح الوحيد من بين الاقتراحات الثلاثة ، في كل حالة من الحالات الأربع الآتية ، مع التعليل.",
+          "topic": "suites_numeriques",
+          "concepts": [
+            "suites_geometriques",
+            "forme_algebrique",
+            "module",
+            "divisibilite",
+            "congruences",
+            "plans",
+            "droites",
+            "vecteurs",
+            "equations_cartesiennes",
+            "parametriques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "50505050-5050-4050-8050-505050505050",
+              "exercise_id": "49494949-4949-4949-8949-494949494949",
+              "label": "1",
+              "sub_label": null,
+              "statement": "الحد العام للمتتالية العددية $(u_n)$ المعرفة بـ : $u_0 = 3$ ومن أجل كل عدد طبيعي $n$ هو $u_{n+1} = \\frac{1}{2}u_n + 3$ :\nأ) $u_n = -3(\\frac{1}{2})^n + 6$\nب) $u_n = 3(\\frac{1}{2})^{n+1} + 3$\nج) $u_n = 3(\\frac{1}{2})^n + 2$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "51515151-5151-4151-8151-515151515151",
+              "exercise_id": "49494949-4949-4949-8949-494949494949",
+              "label": "2",
+              "sub_label": null,
+              "statement": "المستوي منسوب إلى معلم متعامد ومتجانس. مجموعة النقط $M$ من المستوي، ذات اللاحقة $z$ ، حيث $|iz - 1 - i| = 3$ هي:\nأ) دائرة نصف قطرها $3$ ولاحقة مركزها $1+i$ .\nب) دائرة نصف قطرها $3$ ولاحقة مركزها $1-i$ .\nج) دائرة نصف قطرها $3$ ولاحقة مركزها $i+1-$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "52525252-5252-4252-8252-525252525252",
+              "exercise_id": "49494949-4949-4949-8949-494949494949",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$a$ ، $b$ ، $c$ و $d$ أعداد طبيعية غير معدومة وأصغر من أو تساوي $9$ . $abcd$ عدد طبيعي مكتوب في النظام العشري. من أجل كل الأعداد $a$ ، $b$ ، $c$ و $d$ : يكون العدد $abcd$ يقبل القسمة على $11$ إذا وفقط إذا كان:\nأ) العدد $(a - b + c - d)$ يقبل القسمة على $11$ .\nب) العدد $(a + b + c + d)$ يقبل القسمة على $11$ .\nج) العدد $cd$ المكتوب في النظام العشري، يقبل القسمة على $11$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "53535353-5353-4353-8353-535353535353",
+              "exercise_id": "49494949-4949-4949-8949-494949494949",
+              "label": "4",
+              "sub_label": null,
+              "statement": "الفضاء منسوب إلى معلم متعامد ومتجانس. مجموعة النقط $M$ من الفضاء ذات الإحداثيات $(x,y,z)$ حيث $$\\begin{cases} x = 1 + \\frac{2}{3}t - k \\\\ y = 2 - t + \\frac{3}{2}k \\\\ z = -3 + 4t - 6k \\end{cases}$$ $(t \\in \\mathbb{R});(k \\in \\mathbb{R})$\nأ) المجموعة $A = \\{(1;2;-3)\\}$ هي:\nب) المستقيم الذي يشمل النقطة $(1;2;-3)$ و $\\vec{u}(\\frac{1}{3}; -\\frac{1}{2}; -\\frac{2}{3})$ شعاع توجيه له.\nج) المستوي الذي يشمل النقطة $(1;2;-3)$ و $\\vec{n}(1;-2;-3)$ شعاع ناظمي له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "54545454-5454-4454-8454-545454545454",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+          "number": 2,
+          "title": "التمرين الثاني (05) نقاط)",
+          "statement": null,
+          "topic": "nombres_complexes",
+          "concepts": [
+            "forme_algebrique",
+            "forme_trigonometrique",
+            "module",
+            "argument",
+            "racines",
+            "equations_complexes"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            4,
+            5
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "55555555-5555-4555-8555-555555555555",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$ التالية: $z^2 - 2(1-\\sqrt{3})z + 8 = 0$ (لاحظ أن: $(1+\\sqrt{3})^2 = 4+2\\sqrt{3}$ ).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "56565656-5656-4656-8656-565656565656",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "2",
+              "sub_label": "a",
+              "statement": "بيّن أنّ : $\\frac{z_B}{z_A} = e^{-i\\frac{7\\pi}{6}}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "57575757-5757-4757-8757-575757575757",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "2",
+              "sub_label": "b",
+              "statement": "استنتج عمدة للعدد المركب $\\frac{z_B}{z_A}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-a"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "58585858-5858-4858-8858-585858585858",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "2",
+              "sub_label": "c",
+              "statement": "استنتج القيمة المضبوطة لكل من العددين $\\cos \\frac{7\\pi}{12}$ و $\\sin \\frac{7\\pi}{12}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-b"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "59595959-5959-4959-8959-595959595959",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "حل ، في مجموعة الأعداد الصحيحة ، المعادلة ذات المجهول $(x;y)$ التالية: $7x - 2y = 1$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "60606060-6060-4060-8060-606060606060",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "بيّن أنّه إذا كانت الثنائية $(x;y)$ من الأعداد الصحيحة ، حلا للمعادلة $7x - 24y = 12$ فإن $x$ يكون مضاعفا للعدد $12$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "61616161-6161-4161-8161-616161616161",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "3",
+              "sub_label": "c",
+              "statement": "استنتج كل الثنائيات $(x;y)$ من الأعداد الصحيحة ، حلولا للمعادلة $7x - 24y = 12$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-b"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "62626262-6262-4262-8262-626262626262",
+              "exercise_id": "54545454-5454-4454-8454-545454545454",
+              "label": "3",
+              "sub_label": "d",
+              "statement": "عيّن مجموعة قيم العدد الطبيعي $n$ التي يكون من أجلها العدد $(\\frac{z_A}{z_B})^n$ عددا حقيقيا سالبا تماماً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "63636363-6363-4363-8363-636363636363",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+          "number": 3,
+          "title": "التمرين الثالث : (04) نقاط)",
+          "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i},\\vec{j},\\vec{k})$. نعتبر النقطتين $A(2;0;0)$ و $B(-1;-5;-1)$ .",
+          "topic": "geometrie",
+          "concepts": [
+            "vecteurs",
+            "plans",
+            "droites",
+            "repere_orthonorme",
+            "distances",
+            "angles",
+            "equations_cartesiennes",
+            "parametriques",
+            "produit_scalaire",
+            "positions_relatives"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            5
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "64646464-6464-4464-8464-646464646464",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أنّ المستقيمين $(\\Delta_1)$ و $(\\Delta_2)$ يتقاطعان في النقطة $C$ يُطلب تعيين إحداثياتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "65656565-6565-4565-8565-656565656565",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "2",
+              "sub_label": null,
+              "statement": "بيّن أن المستقيمين $(\\Delta_1)$ و $(d)$ ليسا من نفس المستوي.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "66666666-6666-4666-8666-666666666666",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "اكتب تمثيلا وسيطيا للمستوي $(P)$ الذي يشمل المستقيمين $(\\Delta_1)$ و $(\\Delta_2)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "67676767-6767-4767-8767-676767676767",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "استنتج أنّ $4x+3y+2z-8=0$ هي معادلة ديكارتية للمستوي $(P)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-a"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "68686868-6868-4868-8868-686868686868",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "3",
+              "sub_label": "c",
+              "statement": "تحقق من أنّ النقطة $C$ هي المسقط العمودي للنقطة $B$ على المستوي $(P)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "69696969-6969-4969-8969-696969696969",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "4",
+              "sub_label": "a",
+              "statement": "بيّن أنه توجد نقطة وحيدة $I$ من المستقيم $(d)$ وتوجد نقطة وحيدة $D$ من المستقيم $(\\Delta_2)$ حيث تكون النقط $A$ ، $I$ و $D$ في استقامية؛ يُطلب تعيين إحداثيات النقطتين $I$ و $D$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "70707070-7070-4070-8070-707070707070",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "4",
+              "sub_label": "b",
+              "statement": "بيّن أنّ النقطة $I$ هي منتصف القطعة $[AD]$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-a"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "71717171-7171-4171-8171-717171717171",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "5",
+              "sub_label": "a",
+              "statement": "بيّن أنّ النقطة $G$ هي مرجح النقط $A$ ، $C$ و $D$ المرفقة بمعاملات يُطلب تعيينها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "72727272-7272-4272-8272-727272727272",
+              "exercise_id": "63636363-6363-4363-8363-636363636363",
+              "label": "5",
+              "sub_label": "b",
+              "statement": "استنتج إحداثيات النقطة $G$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "5-a"
+              ],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "73737373-7373-4373-8373-737373737373",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+          "number": 4,
+          "title": "التمرين الرابع (17) نقاط)",
+          "statement": "الدالة $f$ المعرفة بـ : $f(0) = 0$ ومن أجل كل عدد حقيقي $x$ من المجال $]-\\infty;0[$ ، $f(x) = (x-1)e^{\\frac{1}{x}}$ . $(C_f)$ المنحنى الممثل للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i},\\vec{j})$ .",
+          "topic": "analyse",
+          "concepts": [
+            "limites",
+            "continuite",
+            "derivation",
+            "etude_de_fonction",
+            "branches_infinies",
+            "tableau_de_variation",
+            "representation_graphique",
+            "fonction_exponentielle",
+            "suites_numeriques",
+            "suites_recurrentes",
+            "convergence",
+            "optimisation"
+          ],
+          "difficulty": "medium",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            6
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "74747474-7474-4474-8474-747474747474",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "1",
+              "sub_label": null,
+              "statement": "ادرس استمرارية الدالة $f$ عند $0$ من اليسار.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "75757575-7575-4575-8575-757575757575",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "2",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{x \\to 0} \\frac{f(x)}{x}$ ، ثم فسر النتيجة هندسيا.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "76767676-7676-4676-8676-767676767676",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "3",
+              "sub_label": "a",
+              "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "77777777-7777-4777-8777-777777777777",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "3",
+              "sub_label": "b",
+              "statement": "ادرس اتجاه تغيّر الدالة $f$ ، ثمّ شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "78787878-7878-4878-8878-787878787878",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "4",
+              "sub_label": "a",
+              "statement": "بيّن أنّ $\\lim_{x \\to -\\infty} [f(x)-x] = 0$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "79797979-7979-4979-8979-797979797979",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "4",
+              "sub_label": "b",
+              "statement": "استنتج أنّ المنحنى $(C_f)$ يقبل مستقيما مقاربا مائلا $(\\Delta)$ بجوار $-\\infty$ ، يُطلب تعيين معادلة له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-a"
+              ],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "80808080-8080-4080-8080-808080808080",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "5",
+              "sub_label": "a",
+              "statement": "احسب $\\lim_{x \\to -\\infty} g(x)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "81818181-8181-4181-8181-818181818181",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "5",
+              "sub_label": "b",
+              "statement": "ادرس اتجاه تغيّر الدالة $g$ ثم شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "82828282-8282-4282-8282-828282828282",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "6",
+              "sub_label": "a",
+              "statement": "بيّن أنّه من أجل كل عدد حقيقي $x$ من المجال $]-\\infty;0[$ ، $f(x) > x$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "83838383-8383-4383-8383-838383838383",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "6",
+              "sub_label": "b",
+              "statement": "استنتج وضعية المنحنى $(C_f)$ بالنسبة إلى المستقيم $(\\Delta)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "6-a"
+              ],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "84848484-8484-4484-8484-848484848484",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "6",
+              "sub_label": "c",
+              "statement": "أنشئ المنحنى $(C_f)$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "85858585-8585-4585-8585-858585858585",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "7",
+              "sub_label": "a",
+              "statement": "بيّن أنّه من أجل كل عدد طبيعي $n$ ، $u_n < 0$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            },
+            {
+              "id": "86868686-8686-4686-8686-868686868686",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "7",
+              "sub_label": "b",
+              "statement": "حدّد اتجاه تغيّر المتتالية $(u_n)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 13,
+              "metadata": {}
+            },
+            {
+              "id": "87878787-8787-4787-8787-878787878787",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "7",
+              "sub_label": "c",
+              "statement": "بيّن أنّ المتتالية $(u_n)$ متقاربة ، ثم عين $\\lim_{n \\to +\\infty} u_n$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 14,
+              "metadata": {}
+            },
+            {
+              "id": "88888888-8888-4888-8888-888888888888",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "8",
+              "sub_label": "a",
+              "statement": "احسب $h'_m(x)$ حيث $h'_m$ هي الدالة المشتقة للدالة $h_m$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 15,
+              "metadata": {}
+            },
+            {
+              "id": "89898989-8989-4989-8989-898989898989",
+              "exercise_id": "73737373-7373-4373-8373-737373737373",
+              "label": "8",
+              "sub_label": "b",
+              "statement": "باستعمال المنحنى $(C_f)$ ، ناقش بيانيا وحسب قيم الوسيط الحقيقي $m$ ، عدد حلول المعادلة $h'_m(x) = 0$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "8-a"
+              ],
+              "solution": null,
+              "ordering": 16,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "90909090-9090-4090-8090-909090909090",
+          "exam_id": "bda0e9a9-fde6-4969-8b5f-8b85b47d672a-2",
+          "exercise_ref": 4,
+          "part_ref": "6-c",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A Cartesian coordinate system with x and y axes. The curve (C_f) is plotted for x in ]-infinity, 0]. It starts from y=0 at x=0 (left tangent is horizontal), increases to a local maximum, and then decreases towards y=x (asymptote) as x approaches -infinity. The line y=x is also drawn.",
+          "source_page": 15,
+          "bounding_box": [
+            550,
+            60,
+            770,
+            470
+          ]
+        }
+      ]
+    }
+  ]
+}

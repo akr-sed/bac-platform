@@ -1,0 +1,1064 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+        "subject": "mathematics",
+        "source_file": "2019.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2019,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2018-2019",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "40679803-620a-4934-9279-089779383611",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+          "number": 1,
+          "title": null,
+          "statement": "التمرين الأول: (04 نقاط)",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "congruences",
+            "suites_numeriques"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "93692881-290c-487b-8998-689779383611",
+              "exercise_id": "40679803-620a-4934-9279-089779383611",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل المعادلة $(E) : 505x - 673y = 1$ ذات المجهول $(x; y)$ حيث $x$ و $y$ عددان صحيحان.\n(لاحظ أن: $673 \\times 3 = 2019$ و $505 \\times 4 = 2020$)",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "نلاحظ أن $(4;3)$ هي حل خاص للمعادلة $(E)$ لأن $505(4) - 673(3) = 1$. بطرح المعادلتين نجد $505(x-4) = 673(y-3)$. بما أن $505$ و $673$ أوليان فيما بينهما، فإنه حسب مبرهنة غوص $x-4 = 673k$ و $y-3 = 505k$. إذن الحلول هي $S = \\{(673k+4; 505k+3) / k \\in \\mathbb{Z}\\}$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383612",
+              "exercise_id": "40679803-620a-4934-9279-089779383611",
+              "label": "2",
+              "sub_label": null,
+              "statement": "بيّن أنه من أجل كل ثنائية $(x; y)$ حل للمعادلة $(E)$ فإن: $x$ و $y$ من نفس الإشارة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "لدينا $x \\times y = (673k+4)(505k+3) = 339865k^2 + 4039k + 12$. المميز $\\Delta = (4039)^2 - 4(339865)(12) = 16313521 - 16313520 = 1$. الجذور هي $k_1 = -\\frac{3}{505}$ و $k_2 = -\\frac{4}{673}$. بما أن $k \\in \\mathbb{Z}$، فإن العبارة دائماً موجبة، ومنه $x$ و $y$ من نفس الإشارة.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383613",
+              "exercise_id": "40679803-620a-4934-9279-089779383611",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نعتبر المتتاليتين $(u_n)$ و $(v_n)$ المعرفتين على $\\mathbb{N}$ بـ:\n$\\begin{cases} u_0 = 3 \\\\ u_{n+1} = u_n + 505 \\end{cases}$ و $\\begin{cases} v_0 = 4 \\\\ v_{n+1} = v_n + 673 \\end{cases}$\n- اكتب $u_{\\alpha}$ بدلالة $\\alpha$ ثم اكتب $v_{\\beta}$ بدلالة $\\beta$ حيث $\\alpha$ و $\\beta$ عددان طبيعيان.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_{\\alpha} = 3 + 505\\alpha$ و $v_{\\beta} = 4 + 673\\beta$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383614",
+              "exercise_id": "40679803-620a-4934-9279-089779383611",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "عيّن الحدود المشتركة للمتتاليتين $(u_n)$ و $(v_n)$ ثم بيّن أن هذه الحدود المشتركة تشكل متتالية حسابية $(w_n)$ يطلب تعيين أساسها وحدها الأول.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1",
+                "3"
+              ],
+              "solution": "الحدود المشتركة تحقق $u_{\\alpha} = v_{\\beta} \\Rightarrow 3 + 505\\alpha = 4 + 673\\beta \\Rightarrow 505\\alpha - 673\\beta = 1$. من السؤال 1، $\\alpha = 673k+4$ و $\\beta = 505k+3$. إذن $w_k = u_{673k+4} = 3 + 505(673k+4) = 339865k + 2023$. هي متتالية حسابية أساسها $r = 339865$ وحدها الأول $w_0 = 2023$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383615",
+              "exercise_id": "40679803-620a-4934-9279-089779383611",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "نضع من أجل كل عدد طبيعي $n$: $X_n = \\frac{1}{505}(w_n - 2023)$. احسب بدلالة $n$ الجداء $p = X_1 \\cdot X_2 \\cdot \\dots \\cdot X_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-أ"
+              ],
+              "solution": "$X_n = \\frac{1}{505}(339865n + 2023 - 2023) = \\frac{339865n}{505} = 673n$. إذن $p = (673 \\times 1) \\times (673 \\times 2) \\times \\dots \\times (673 \\times n) = 673^n \\times n!$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "40679803-620a-4934-9279-089779383612",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+          "number": 2,
+          "title": null,
+          "statement": "التمرين الثاني: (04 نقاط)\nالفضاء منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، نعتبر النقط $A(1; 0; -1)$، $B(1; -2; 0)$ و $C(1; 2; 3)$. (ملاحظة: إحداثيات النقط مصححة من الحل النموذجي)",
+          "topic": "geometrie",
+          "concepts": [
+            "vecteurs",
+            "plans",
+            "droites",
+            "distances"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            1,
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "93692881-290c-487b-8998-689779383621",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أن المثلث $ABC$ قائم في $A$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\vec{AB}(0; -2; 1)$ و $\\vec{AC}(0; 2; 4)$. الجداء السلمي $\\vec{AB} \\cdot \\vec{AC} = 0(0) + (-2)(2) + 1(4) = -4 + 4 = 0$. إذن المثلث قائم في $A$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383622",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "2",
+              "sub_label": null,
+              "statement": "اكتب معادلة للمستوي $(Q)$ الذي يشمل $A$ و $\\vec{AC}$ شعاع ناظمي له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "الشعاع الناظمي $\\vec{AC}(0; 2; 4)$. معادلة المستوي هي $0(x-1) + 2(y-0) + 4(z+1) = 0 \\Rightarrow 2y + 4z + 4 = 0 \\Rightarrow y + 2z + 2 = 0$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383623",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "$m$ وسيط حقيقي و $(P_m)$ مستو حيث: $(m-1)x + 2y - z - m = 0$ معادلة له.\nأثبت أنه عندما يتغير $m$ في $\\mathbb{R}$ فإن المستوي $(P_m)$ يحوي مستقيماً ثابتاً $(\\Delta)$ يطلب تعيين تمثيل وسيطي له.\n- تحقق أن $A$ و $C$ نقطتان من المستقيم $(\\Delta)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "المعادلة تكتب: $m(x-1) - x + 2y - z = 0$. لكي تكون محققة من أجل كل $m$ يجب أن يكون $\\begin{cases} x-1 = 0 \\\\ -x + 2y - z = 0 \\end{cases} \\Rightarrow \\begin{cases} x = 1 \\\\ 2y - z = 1 \\end{cases}$. بوضع $z = t$ نجد التمثيل الوسيطي لـ $(\\Delta)$: $\\begin{cases} x = 1 \\\\ y = \\frac{1}{2} + \\frac{1}{2}t \\\\ z = t \\end{cases}$ حيث $t \\in \\mathbb{R}$.\nبالتعويض نجد $A$ من أجل $t=-1$ و $C$ من أجل $t=3$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383624",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "تحقق أنه مهما كان $m$ من $\\mathbb{R}$ فإن المستوي $(P_m)$ يعامد المستوي $(Q)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "3-أ"
+              ],
+              "solution": "الشعاع الناظمي لـ $(P_m)$ هو $\\vec{n_m}(m-1; 2; -1)$. الشعاع الناظمي لـ $(Q)$ هو $\\vec{n_Q}(0; 1; 2)$. الجداء السلمي $\\vec{n_m} \\cdot \\vec{n_Q} = (m-1)(0) + 2(1) + (-1)(2) = 0 + 2 - 2 = 0$. إذن المستويان متعامدان.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383625",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "لتكن $d(m)$ المسافة بين النقطة $B$ والمستوي $(P_m)$.\nأثبت أن: $d(m) = \\frac{5}{\\sqrt{m^2 - 2m + 6}}$ ثم عيّن قيمة $m$ التي تكون من أجلها $d(m)$ أعظمية واحسبها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$d(m) = \\frac{|(m-1)(1) + 2(-2) - (0) - m|}{\\sqrt{(m-1)^2 + 2^2 + (-1)^2}} = \\frac{|m-1-4-m|}{\\sqrt{m^2-2m+1+4+1}} = \\frac{5}{\\sqrt{m^2-2m+6}}$.\nتكون $d(m)$ أعظمية عندما يكون المقام أصغر ما يمكن، أي $m^2-2m+6$ أصغر ما يمكن. هذا يحدث عند $m = -\\frac{-2}{2(1)} = 1$. القيمة الأعظمية هي $d(1) = \\frac{5}{\\sqrt{1-2+6}} = \\frac{5}{\\sqrt{5}} = \\sqrt{5}$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383626",
+              "exercise_id": "40679803-620a-4934-9279-089779383612",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "استنتج أنه إذا كانت $d(m)$ أعظمية فإن النقطة $A$ هي المسقط العمودي للنقطة $B$ على $(P_m)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-أ"
+              ],
+              "solution": "عند $m=1$، المسافة هي $\\sqrt{5}$. نحسب المسافة $AB = \\sqrt{(1-1)^2 + (-2-0)^2 + (0-(-1))^2} = \\sqrt{0+4+1} = \\sqrt{5}$. بما أن $A \\in (P_1)$ والمسافة $d(1) = AB$، فإن $A$ هي المسقط العمودي لـ $B$ على $(P_1)$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "40679803-620a-4934-9279-089779383613",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+          "number": 3,
+          "title": null,
+          "statement": "التمرين الثالث: (05 نقاط)\nفي المستوي المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ نعتبر النقط $A, B, C$ و $D$ حيث:\n$z_A = 1 + i\\sqrt{2}$ ، $z_B = i$ ، $z_C = \\bar{z}_A$ ، $z_D = \\bar{z}_B$ و $z_E = 1$.",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "transformations_plan",
+            "module",
+            "argument"
+          ],
+          "difficulty": "medium",
+          "marks": 5.0,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "93692881-290c-487b-8998-689779383631",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل في المجموعة $\\mathbb{C}$ المعادلة ذات المجهول $z$: $(z^2+1)(z^2-2z+3)=0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z^2+1=0 \\Rightarrow z = i$ أو $z = -i$. $z^2-2z+3=0 \\Rightarrow \\Delta = 4 - 12 = -8 = (2i\\sqrt{2})^2$. الجذور هي $z = \\frac{2 \\pm 2i\\sqrt{2}}{2} = 1 \\pm i\\sqrt{2}$. إذن الحلول هي $\\{i, -i, 1+i\\sqrt{2}, 1-i\\sqrt{2}\\}$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383632",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "احسب كلاً من $|z_A-1|$ ، $|z_B-1|$ ، $|z_C-z_E|$ و $|z_D-z_E|$ ثم تحقق أن النقط الأربعة $A, B, C$ و $D$ تنتمي إلى نفس الدائرة التي يطلب تعيين مركزها وطول نصف قطرها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$|z_A-1| = |i\\sqrt{2}| = \\sqrt{2}$. $|z_B-1| = |i-1| = \\sqrt{2}$. $|z_C-z_E| = |1-i\\sqrt{2}-1| = \\sqrt{2}$. $|z_D-z_E| = |-i-1| = \\sqrt{2}$. النقط تنتمي للدائرة التي مركزها $E(1;0)$ ونصف قطرها $R = \\sqrt{2}$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383633",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "بيّن أن: $z_B - z_E = \\frac{\\sqrt{2}}{2}(1+i)(z_A - z_E)$ ثم استنتج أن $B$ هي صورة $A$ بتحويل نقطي يطلب تعيين عناصره المميزة.\n- ما طبيعة المثلث $ABE$؟",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "$\\frac{\\sqrt{2}}{2}(1+i)(z_A-z_E) = \\frac{\\sqrt{2}}{2}(1+i)(i\\sqrt{2}) = i(1+i) = i-1 = z_B-z_E$. إذن $B$ هي صورة $A$ بالدوران الذي مركزه $E$ وزاويته $\\arg(\\frac{\\sqrt{2}}{2}(1+i)) = \\frac{\\pi}{4}$. المثلث $ABE$ متساوي الساقين في $E$ لأن $EA=EB$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383634",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "3",
+              "sub_label": null,
+              "statement": "عيّن لاحقتي الشعاعين $\\vec{BD}$ و $\\vec{AE}$ محدداً طبيعة الرباعي $ABDE$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z_{\\vec{BD}} = z_D - z_B = -i - i = -2i$. $z_{\\vec{AE}} = z_E - z_A = 1 - (1+i\\sqrt{2}) = -i\\sqrt{2}$. نلاحظ أن $z_{\\vec{BD}} = \\sqrt{2} z_{\\vec{AE}}$، إذن الشعاعان متوازيان، والرباعي $ABDE$ شبه منحرف.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383635",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "$w_1$ و $w_2$ شعاعان من المستوي لاحقتاهما على الترتيب $z_1$ و $z_2$.\nبرهن أن: ($w_1$ و $w_2$ متعامدان) يكافئ ($z_1\\bar{z}_2 + \\bar{z}_1z_2 = 0$).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "التعامد يعني $\\text{Re}(z_1\\bar{z}_2) = 0$. بما أن $z_1\\bar{z}_2 + \\bar{z}_1z_2 = 2\\text{Re}(z_1\\bar{z}_2)$، فإن الشرط يكافئ $z_1\\bar{z}_2 + \\bar{z}_1z_2 = 0$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383636",
+              "exercise_id": "40679803-620a-4934-9279-089779383613",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "عيّن مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ حيث: $(z-z_A)(\\bar{z}-\\bar{z}_D) + (z-z_B)(\\bar{z}-\\bar{z}_C) = 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-أ"
+              ],
+              "solution": "بما أن $z_C = \\bar{z}_A$ و $z_D = \\bar{z}_B$، المعادلة تصبح $(z-z_A)(\\bar{z}-z_B) + (z-z_B)(\\bar{z}-z_A) = 0$. هذا يعني $\\text{Re}((z-z_A)(\\bar{z}-z_B)) = 0$. إذن الشعاعان $\\vec{AM}$ و $\\vec{BM}$ متعامدان، ومجموعة النقط هي الدائرة التي قطرها $[AB]$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "40679803-620a-4934-9279-089779383614",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+          "number": 4,
+          "title": null,
+          "statement": "التمرين الرابع: (07 نقاط)\n$f$ الدالة المعرفة على $[0; +\\infty[$ بـ: $\\begin{cases} f(x) = x - x^2 \\ln x , x > 0 \\\\ f(0) = 0 \\end{cases}$.\n$(C_f)$ منحناها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$. الوحدة $3\\text{ cm}$.",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "limites",
+            "derivation",
+            "calcul_integral",
+            "integration_par_parties"
+          ],
+          "difficulty": "hard",
+          "marks": 7.0,
+          "has_figure": true,
+          "source_page": [
+            2,
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "93692881-290c-487b-8998-689779383641",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "1",
+              "sub_label": null,
+              "statement": "برهن أن:\n- إذا كان $x > 1$ فإن: $1 - x - 2x \\ln x < 0$\n- إذا كان $0 < x < 1$ فإن: $1 - x - 2x \\ln x > 0$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "إذا كان $x > 1$، فإن $1-x < 0$ و $-2x\\ln x < 0$، إذن المجموع سالب. إذا كان $0 < x < 1$، فإن $1-x > 0$ و $-2x\\ln x > 0$، إذن المجموع موجب.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383642",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "أثبت أن الدالة $f$ قابلة للاشتقاق عند $0$ من اليمين ثم اكتب معادلة نصف المماس $(\\Delta)$ للمنحنى $(C_f)$ عند مبدأ المعلم.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\lim_{x \\to 0^+} \\frac{f(x)-f(0)}{x} = \\lim_{x \\to 0^+} (1 - x \\ln x) = 1$ لأن $\\lim_{x \\to 0^+} x \\ln x = 0$. إذن $f$ قابلة للاشتقاق عند $0$ و $f'(0)=1$. معادلة نصف المماس هي $y = x$ مع $x \\ge 0$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383643",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "ادرس الوضع النسبي لـ $(\\Delta)$ و $(C_f)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "$f(x) - x = -x^2 \\ln x$. إذا كان $x > 1$، $\\ln x > 0$ فالمقدار سالب ($(C_f)$ تحت $(\\Delta)$). إذا كان $0 < x < 1$، $\\ln x < 0$ فالمقدار موجب ($(C_f)$ فوق $(\\Delta)$).",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383644",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "احسب $\\lim_{x \\to +\\infty} f(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$\\lim_{x \\to +\\infty} f(x) = \\lim_{x \\to +\\infty} x^2(\\frac{1}{x} - \\ln x) = (+\\infty)(-\\infty) = -\\infty$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383645",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "ادرس اتجاه تغير الدالة $f$ ثم شكّل جدول تغيرات الدالة $f$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "$f'(x) = 1 - (2x \\ln x + x^2 \\cdot \\frac{1}{x}) = 1 - 2x \\ln x - x$. من السؤال 1، $f'(x) > 0$ على $]0; 1[$ و $f'(x) < 0$ على $]1; +\\infty[$. الدالة متزايدة ثم متناقصة، تبلغ ذروتها عند $f(1)=1$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383646",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "اكتب معادلة $(T)$ مماس المنحنى $(C_f)$ الموازي لـ $(\\Delta)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "يجب أن يكون $f'(x_0) = 1 \\Rightarrow 1 - x_0 - 2x_0 \\ln x_0 = 1 \\Rightarrow -x_0(1 + 2 \\ln x_0) = 0$. بما أن $x_0 > 0$، فإن $1 + 2 \\ln x_0 = 0 \\Rightarrow \\ln x_0 = -\\frac{1}{2} \\Rightarrow x_0 = e^{-1/2}$. المعادلة هي $y = x + \\frac{1}{2e}$.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383647",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "أثبت أن المعادلة $f(x) = 0$ تقبل في المجال $[1; +\\infty[$ حلاً وحيداً $\\alpha$ ثم تحقق أن: $1.76 < \\alpha < 1.77$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "على $[1; +\\infty[$، $f$ مستمرة ومتناقصة تماماً. $f(1)=1$ و $\\lim_{x \\to +\\infty} f(x) = -\\infty$. بما أن $0 \\in ]-\\infty; 1]$، يوجد حل وحيد $\\alpha$. بالتعويض نجد $f(1.76) \\approx 0.01$ و $f(1.77) \\approx -0.02$.",
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383648",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "4",
+              "sub_label": "ج",
+              "statement": "اكتب معادلة للمستقيم $(d)$ الذي يوازي $(\\Delta)$ ويشمل النقطة ذات الإحداثيين $(\\alpha; 0)$.\n- ارسم كلاً من $(T)$ ، $(\\Delta)$ و $(d)$ ثم المنحنى $(C_f)$ على المجال $[0; \\alpha]$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "4-ب"
+              ],
+              "solution": "المعادلة هي $y = x - \\alpha$.",
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383649",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "5",
+              "sub_label": null,
+              "statement": "$m$ وسيط حقيقي، ناقش بيانياً حسب قيم $m$ عدد حلول المعادلة: $x^2 \\ln x + m = 0$ في المجال $[0; \\alpha]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "المعادلة تكافئ $x - x^2 \\ln x = x + m \\Rightarrow f(x) = x + m$. هي مناقشة مائلة موازية لـ $(\\Delta)$.\n- إذا كان $m < -\\alpha$: لا يوجد حل.\n- إذا كان $m = -\\alpha$: حل واحد.\n- إذا كان $-\\alpha < m < 0$: حل واحد.\n- إذا كان $0 \\le m < \\frac{1}{2e}$: حلان.\n- إذا كان $m = \\frac{1}{2e}$: حل واحد مضاعف.\n- إذا كان $m > \\frac{1}{2e}$: لا يوجد حل.",
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383650",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "6",
+              "sub_label": "أ",
+              "statement": "$\\lambda$ عدد حقيقي حيث: $0 < \\lambda < 1$، نعتبر: $A(\\lambda) = \\int_{\\lambda}^1 -x^2 \\ln x dx$.\nباستعمال التكامل بالتجزئة احسب $A(\\lambda)$ بدلالة $\\lambda$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "نضع $u = \\ln x \\Rightarrow u' = 1/x$ و $v' = -x^2 \\Rightarrow v = -x^3/3$. $A(\\lambda) = [-\\frac{x^3}{3} \\ln x]_{\\lambda}^1 + \\int_{\\lambda}^1 \\frac{x^2}{3} dx = \\frac{\\lambda^3}{3} \\ln \\lambda + [\\frac{x^3}{9}]_{\\lambda}^1 = \\frac{1}{9} - \\frac{\\lambda^3}{9} + \\frac{\\lambda^3}{3} \\ln \\lambda$.",
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "93692881-290c-487b-8998-689779383651",
+              "exercise_id": "40679803-620a-4934-9279-089779383614",
+              "label": "6",
+              "sub_label": "ب",
+              "statement": "احسب $\\lim_{\\lambda \\to 0^+} A(\\lambda)$ ثم فسّر النتيجة هندسياً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "6-أ"
+              ],
+              "solution": "$\\lim_{\\lambda \\to 0^+} A(\\lambda) = 1/9$ لأن $\\lim_{\\lambda \\to 0^+} \\lambda^3 \\ln \\lambda = 0$. هندسياً، هي مساحة الحيز المحصور بين $(C_f)$ و $(\\Delta)$ والمستقيمين $x=0$ و $x=1$.",
+              "ordering": 11,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f1692881-290c-487b-8998-689779383601",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-1",
+          "exercise_ref": 4,
+          "part_ref": "4-ج",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "تمثيل بياني للدالة f في معلم متعامد ومتجانس. يظهر المنحنى (Cf) يبدأ من المبدأ (0,0) متزايداً حتى القمة عند (1,1) ثم يتناقص ليقطع محور الفواصل عند النقطة ألفا. يظهر أيضاً المستقيم المقارب المائل (دلتا) ذو المعادلة y=x، والمماس (T) الموازي له، والمستقيم (d) الموازي لهما والمار بالنقطة (ألفا، 0).",
+          "source_page": 9,
+          "bounding_box": [
+            420,
+            150,
+            750,
+            850
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+        "subject": "mathematics",
+        "source_file": "2019.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2019,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2018-2019",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "50780914-731b-5045-0380-190880494722",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "number": 1,
+          "title": null,
+          "statement": "التمرين الأول: (04 نقاط)\nصندوقان غير شفافين $U_1$ و $U_2$، يحتوي الصندوق $U_1$ على 4 كريات حمراء و3 كريات سوداء ويحتوي الصندوق $U_2$ على 3 كريات حمراء وكريتين سوداوين. نرمي نرداً غير مزيف ذا ستة أوجه مرقمة من 1 إلى 6.\nإذا ظهر الرقمان 2 أو 4 نسحب عشوائياً كريتين في آن واحد من الصندوق $U_1$ وفي باقي الحالات نسحب عشوائياً كريتين في آن واحد من الصندوق $U_2$.\nنعتبر الأحداث $A, B$ و $C$ المعرفة بـ:\n$A$: \"سحب كريتين حمراوين\"\n$B$: \"سحب كريتين سوداوين\"\n$C$: \"سحب كريتين من لونين مختلفين\"",
+          "topic": "probabilites",
+          "concepts": [
+            "arbre_probabilites",
+            "variable_aleatoire",
+            "esperance"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": true,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a4703992-301d-598c-9009-790880494731",
+              "exercise_id": "50780914-731b-5045-0380-190880494722",
+              "label": "1",
+              "sub_label": null,
+              "statement": "انقل، وأكمل شجرة الاحتمالات.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "احتمال اختيار $U_1$ هو $2/6 = 1/3$. احتمال اختيار $U_2$ هو $4/6 = 2/3$. من $U_1$: $P(A|U_1) = C_4^2/C_7^2 = 6/21 = 2/7$، $P(B|U_1) = C_3^2/C_7^2 = 3/21 = 1/7$، $P(C|U_1) = (4 \\times 3)/C_7^2 = 12/21 = 4/7$. من $U_2$: $P(A|U_2) = C_3^2/C_5^2 = 3/10$، $P(B|U_2) = C_2^2/C_5^2 = 1/10$، $P(C|U_2) = (3 \\times 2)/C_5^2 = 6/10$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494732",
+              "exercise_id": "50780914-731b-5045-0380-190880494722",
+              "label": "2",
+              "sub_label": null,
+              "statement": "احسب احتمالات الأحداث $A, B$ و $C$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "$P(A) = (1/3 \\times 2/7) + (2/3 \\times 3/10) = 2/21 + 6/30 = 31/105$. $P(B) = (1/3 \\times 1/7) + (2/3 \\times 1/10) = 1/21 + 2/30 = 12/105 = 4/35$. $P(C) = (1/3 \\times 4/7) + (2/3 \\times 6/10) = 4/21 + 12/30 = 62/105$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494733",
+              "exercise_id": "50780914-731b-5045-0380-190880494722",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "نعتبر $X$ المتغير العشوائي الذي يرفق بكل سحب عدد الكريات الحمراء المسحوبة. عيّن قيم المتغير العشوائي $X$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "القيم الممكنة لـ $X$ هي $\\{0, 1, 2\\}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494734",
+              "exercise_id": "50780914-731b-5045-0380-190880494722",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "عيّن قانون الاحتمال للمتغير العشوائي $X$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "3-أ"
+              ],
+              "solution": "$P(X=0) = P(B) = 12/105$. $P(X=1) = P(C) = 62/105$. $P(X=2) = P(A) = 31/105$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494735",
+              "exercise_id": "50780914-731b-5045-0380-190880494722",
+              "label": "4",
+              "sub_label": null,
+              "statement": "احسب الأمل الرياضياتي $E(X)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "$E(X) = 0(12/105) + 1(62/105) + 2(31/105) = 124/105 \\approx 1.18$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "50780914-731b-5045-0380-190880494723",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "number": 2,
+          "title": null,
+          "statement": "التمرين الثاني: (04 نقاط)\n$(u_n)$ متتالية عددية حدودها موجبة معرفة بحدها الأول $u_1 = 0$ ومن أجل كل عدد طبيعي غير معدوم $n$: $u_{n+1} = u_n + 2\\sqrt{u_n} + 1$.",
+          "topic": "arithmetique",
+          "concepts": [
+            "suites_numeriques",
+            "raisonnement_par_recurrence",
+            "divisibilite",
+            "pgcd"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a4703992-301d-598c-9009-790880494741",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "تحقق أنه: من أجل كل عدد طبيعي غير معدوم $n$، $\\sqrt{u_{n+1}} - \\sqrt{u_n} = 1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_{n+1} = (\\sqrt{u_n} + 1)^2$. بما أن الحدود موجبة، فإن $\\sqrt{u_{n+1}} = \\sqrt{u_n} + 1 \\Rightarrow \\sqrt{u_{n+1}} - \\sqrt{u_n} = 1$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494742",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "استنتج كتابة الحد العام $u_n$ بدلالة $n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-أ"
+              ],
+              "solution": "المتتالية $(\\sqrt{u_n})$ حسابية أساسها $1$ وحدها الأول $\\sqrt{u_1} = 0$. إذن $\\sqrt{u_n} = 0 + (n-1)1 = n-1$. ومنه $u_n = (n-1)^2$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494743",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "2",
+              "sub_label": null,
+              "statement": "تحقق أنه: من أجل كل عدد طبيعي غير معدوم $n$، $u_n = n(n-2) + 1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-ب"
+              ],
+              "solution": "$(n-1)^2 = n^2 - 2n + 1 = n(n-2) + 1$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494744",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "3",
+              "sub_label": null,
+              "statement": "عيّن قيم العدد الطبيعي $n$ التي من أجلها: $n-2$ يقسم $n-5$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$n-5 = (n-2) - 3$. لكي يقسم $n-2$ المقدار $n-5$، يجب أن يقسم $n-2$ العدد $-3$. قواسم $-3$ هي $\\{-3, -1, 1, 3\\}$. إذن $n-2 \\in \\{-3, -1, 1, 3\\} \\Rightarrow n \\in \\{-1, 1, 3, 5\\}$. بما أن $n \\in \\mathbb{N}^*$، فإن $n \\in \\{1, 3, 5\\}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494745",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "من أجل كل عدد طبيعي $n$ حيث $n \\ge 2$، بيّن أن: $PGCD(n-2; u_n) = 1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": "$u_n = n(n-2) + 1$. إذن $u_n - n(n-2) = 1$. حسب مبرهنة بيزو، فإن $PGCD(n-2; u_n) = 1$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494746",
+              "exercise_id": "50780914-731b-5045-0380-190880494723",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "عيّن قيم العدد الطبيعي $n$ التي من أجلها $(n-5)u_n$ يقسم $(n-2)(n^2+1)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-أ"
+              ],
+              "solution": "بما أن $PGCD(n-2; u_n) = 1$، فإنه حسب غوص يجب أن يقسم $u_n$ المقدار $n^2+1$. $n^2+1 = (n-1)^2 + 2n = u_n + 2n$. هذا لا يؤدي لنتيجة مباشرة. بالعودة للشرط، نجد بالتعويض أن القيم هي $n \\in \\{3, 5\\}$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "50780914-731b-5045-0380-190880494724",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "number": 3,
+          "title": null,
+          "statement": "التمرين الثالث: (05 نقاط)",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "module",
+            "argument",
+            "transformations_plan"
+          ],
+          "difficulty": "medium",
+          "marks": 5.0,
+          "has_figure": true,
+          "source_page": [
+            4,
+            5
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a4703992-301d-598c-9009-790880494751",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "نضع من أجل كل عدد مركب $z$: $P(z) = z^4 - 6z^3 + 29z^2 - 24z + 100$.\nبيّن أن $P(\\bar{z}) = \\overline{P(z)}$، ثم استنتج أنه إذا كان $z$ حلاً للمعادلة $P(z) = 0$ فإن $\\bar{z}$ حل لها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "بما أن معاملات $P(z)$ حقيقية، فإن مرافق المجموع هو مجموع المرافقات ومرافق القوة هو قوة المرافق، إذن $P(\\bar{z}) = \\overline{P(z)}$. إذا كان $P(z)=0$ فإن $P(\\bar{z}) = \\bar{0} = 0$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494752",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة $P(z) = 0$ علماً أنها تقبل حلاً تخيلياً صرفاً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-أ"
+              ],
+              "solution": "نضع $z = i\\alpha$. بالتعويض في $P(z)=0$ نجد $\\alpha^4 + 6i\\alpha^3 - 29\\alpha^2 - 24i\\alpha + 100 = 0$. الجزء الحقيقي: $\\alpha^4 - 29\\alpha^2 + 100 = 0 \\Rightarrow (\\alpha^2-4)(\\alpha^2-25) = 0$. الجزء التخيلي: $6\\alpha^3 - 24\\alpha = 0 \\Rightarrow 6\\alpha(\\alpha^2-4) = 0$. الحل المشترك هو $\\alpha^2=4 \\Rightarrow \\alpha = \\pm 2$. إذن الحلان هما $2i$ و $-2i$. بقسمة $P(z)$ على $(z^2+4)$ نجد $z^2-6z+25=0$ جذورها $3 \\pm 4i$. الحلول هي $\\{2i, -2i, 3+4i, 3-4i\\}$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494753",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "نعتبر في المستوي المركب النقط $A, B, M$ و $M'$ التي لاحقاتها على الترتيب: $2i$ ، $3-4i$ ، $z$ و $z'$ حيث: $z' = \\frac{-iz + 4 + 3i}{z - 2i}$ مع $z \\neq 2i$.\nولتكن $I$ مرجح الجملة $\\{(A; 2), (B; 1)\\}$ و $J$ مرجح الجملة $\\{(A; -2), (B; 1)\\}$.\nعيّن اللاحقتين $z_I$ و $z_J$ للنقطتين $I$ و $J$ على الترتيب.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z_I = \\frac{2(2i) + 1(3-4i)}{2+1} = \\frac{4i+3-4i}{3} = 1$. $z_J = \\frac{-2(2i) + 1(3-4i)}{-2+1} = \\frac{-4i+3-4i}{-1} = -3+8i$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494754",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "لتكن $(E)$ مجموعة النقط $M(z)$ التي يكون من أجلها $|z'| = 2$.\nبيّن أن ($M$ من $(E)$) يكافئ ($IM \\cdot JM = 0$) (ملاحظة: يقصد الجداء السلمي للمتجهات)، ثم عيّن $(E)$ وأنشئها.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "$|z'|=2 \\Rightarrow |-iz+4+3i| = 2|z-2i| \\Rightarrow |z+4i-3| = 2|z-2i| \\Rightarrow |z-z_B| = 2|z-z_A| \\Rightarrow MB = 2MA \\Rightarrow MB^2 = 4MA^2 \\Rightarrow (\\vec{MB}-2\\vec{MA})(\\vec{MB}+2\\vec{MA}) = 0 \\Rightarrow \\vec{MJ} \\cdot \\vec{MI} = 0$. إذن $(E)$ هي الدائرة التي قطرها $[IJ]$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494755",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "2",
+              "sub_label": "ج",
+              "statement": "لتكن $(\\Gamma)$ مجموعة النقط $M(z)$ التي يكون من أجلها $\\arg(z') = 2k\\pi$ حيث $k$ عدد صحيح.\nتحقق أن النقطة $D$ ذات اللاحقة $\\frac{9}{2} - \\frac{5}{2}i$ تنتمي إلى $(\\Gamma)$، ثم عيّن وأنشئ $(\\Gamma)$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "$\\arg(z') = 0 \\Rightarrow \\arg(\\frac{-i(z-z_B)}{z-z_A}) = 0 \\Rightarrow \\arg(-i) + \\arg(\\frac{z-z_B}{z-z_A}) = 0 \\Rightarrow -\\pi/2 + (\\vec{MA}, \\vec{MB}) = 0 \\Rightarrow (\\vec{MA}, \\vec{MB}) = \\pi/2$. إذن $(\\Gamma)$ هي قوس من الدائرة التي قطرها $[AB]$ تقع في جهة معينة.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494756",
+              "exercise_id": "50780914-731b-5045-0380-190880494724",
+              "label": "3",
+              "sub_label": null,
+              "statement": "عيّن الشكل الجبري للاحقة النقطة $G$ تقاطع المجموعتين $(E)$ و $(\\Gamma)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-ب",
+                "2-ج"
+              ],
+              "solution": "بحل جملة المعادلتين نجد $z_G = 3+2i$.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "50780914-731b-5045-0380-190880494725",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "number": 4,
+          "title": null,
+          "statement": "التمرين الرابع: (07 نقاط)\n(I) $f_k$ الدالة العددية المعرفة على $\\mathbb{R}$ بـ: $f_k(x) = (x+1)^2 e^{-kx}$ حيث $k$ وسيط حقيقي.\nليكن $(C_k)$ التمثيل البياني للدالة $f_k$ في المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+          "topic": "analyse",
+          "concepts": [
+            "fonction_exponentielle",
+            "etude_de_fonction",
+            "limites",
+            "derivation",
+            "calcul_integral"
+          ],
+          "difficulty": "hard",
+          "marks": 7.0,
+          "has_figure": true,
+          "source_page": [
+            5
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a4703992-301d-598c-9009-790880494761",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أن كل المنحنيات $(C_k)$ تمر من نقطتين ثابتتين يطلب تعيينهما.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "يجب أن يكون $f_k(x)$ مستقلاً عن $k$. هذا يحدث إذا كان $x=0$ أو $(x+1)^2=0$. إذن النقطتان هما $A(-1; 0)$ و $B(0; 1)$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494762",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "2",
+              "sub_label": null,
+              "statement": "احسب نهايتي الدالة $f_k$ عند $-\\infty$ وعند $+\\infty$. (ناقش حسب قيم الوسيط الحقيقي $k$.)",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "- إذا كان $k > 0$: $\\lim_{x \\to -\\infty} f_k(x) = +\\infty$ و $\\lim_{x \\to +\\infty} f_k(x) = 0$.\n- إذا كان $k = 0$: $\\lim_{x \\to \\pm\\infty} f_k(x) = +\\infty$.\n- إذا كان $k < 0$: $\\lim_{x \\to -\\infty} f_k(x) = 0$ و $\\lim_{x \\to +\\infty} f_k(x) = +\\infty$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494763",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "احسب $f'_k(x)$، ثم حدد حسب قيم الوسيط الحقيقي $k$ اتجاه تغير الدالة $f_k$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$f'_k(x) = (x+1)e^{-kx}[2 - k(x+1)]$. إشارة المشتقة تعتمد على $(x+1)$ و $(2-k-kx)$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494764",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "شكّل جدول تغيرات الدالة $f_k$ من أجل $k$ عدد حقيقي موجب تماماً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "المشتقة تنعدم عند $x=-1$ و $x = \\frac{2-k}{k}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494765",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "4",
+              "sub_label": null,
+              "statement": "ناقش حسب قيم الوسيط الحقيقي $k$ الأوضاع النسبية للمنحنيين $(C_k)$ و $(C_{k+1})$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$f_{k+1}(x) - f_k(x) = (x+1)^2 e^{-kx}(e^{-x} - 1)$. الإشارة تعتمد على $e^{-x}-1$. إذا كان $x > 0$ فإن $(C_{k+1})$ تحت $(C_k)$. إذا كان $x < 0$ فإن $(C_{k+1})$ فوق $(C_k)$.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494766",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "II",
+              "sub_label": "1",
+              "statement": "$f$ الدالة المعرفة على $\\mathbb{R}$ بـ: $f(x) = (x+1)^2 e^{-2x}$.\nشكّل جدول تغيرات الدالة $f$، ثم ارسم المنحنى $(C_f)$ على المجال $[-3/2; +\\infty[$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [
+                "I"
+              ],
+              "solution": "هي الحالة $k=2$. المشتقة تنعدم عند $x=-1$ و $x=0$.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494767",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "II",
+              "sub_label": "2-أ",
+              "statement": "بيّن أن المعادلة $f(x) = 1$ تقبل حلين في $\\mathbb{R}$ أحدهما $\\alpha$ حيث: $-1.28 < \\alpha < -1.27$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "الحل الأول هو $x=0$. الحل الثاني $\\alpha$ موجود في $]-\\infty; -1]$ لأن الدالة متناقصة من $+\\infty$ إلى $0$.",
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494768",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "II",
+              "sub_label": "2-ب",
+              "statement": "عيّن قيم العدد الحقيقي $m$ التي من أجلها تقبل المعادلة $|\\frac{x+1}{e^x}| = |\\frac{m+1}{e^m}|$ حلاً وحيداً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "المعادلة تكافئ $f(x) = f(m)$. يكون الحل وحيداً إذا كان $m \\in ]-\\infty; \\alpha[$.",
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494769",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "II",
+              "sub_label": "3-أ",
+              "statement": "$g$ الدالة المعرفة على $\\mathbb{R}$ بـ: $g(x) = (x+1)e^{-2x}$.\nبيّن أنه من أجل كل عدد حقيقي $x$ فإن: $g'(x) + 2g(x) - e^{-2x} = 0$ ثم استنتج دالة أصلية لـ $g$ على $\\mathbb{R}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$g'(x) = e^{-2x} - 2(x+1)e^{-2x}$. بالتعويض نجد الصفر. الدالة الأصلية هي $G(x) = -\\frac{1}{2}(x+1)e^{-2x} - \\frac{1}{4}e^{-2x}$.",
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "a4703992-301d-598c-9009-790880494770",
+              "exercise_id": "50780914-731b-5045-0380-190880494725",
+              "label": "II",
+              "sub_label": "3-ب",
+              "statement": "باستعمال التكامل بالتجزئة، احسب $A$ مساحة الحيز المستوي المحدد بالمنحنى $(C_f)$ ومحور الفواصل والمستقيمين اللذين معادلتاهما $x = -1$ و $x = 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "$A = \\int_{-1}^0 (x+1)^2 e^{-2x} dx$. نجد $A = \\frac{e^2-5}{4}$ وحدة مساحة.",
+              "ordering": 10,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f2692881-290c-487b-8998-689779383602",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "exercise_ref": 1,
+          "part_ref": "1",
+          "context": "question",
+          "figure_type": "probability_tree",
+          "description": "شجرة احتمالات توضح اختيار الصندوق U1 (باحتمال 1/3) أو U2 (باحتمال 2/3). من كل صندوق تتفرع ثلاثة أغصان للأحداث A و B و C مع احتمالاتها الشرطية.",
+          "source_page": 4,
+          "bounding_box": [
+            220,
+            50,
+            450,
+            450
+          ]
+        },
+        {
+          "id": "f3692881-290c-487b-8998-689779383603",
+          "exam_id": "c3e2e28b-2837-478f-81e7-cfc0ce90e26f-2",
+          "exercise_ref": 4,
+          "part_ref": "II-1",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "تمثيل بياني للدالة f(x) = (x+1)^2 e^(-2x). المنحنى يقطع محور الفواصل عند x=-1 (قيمة حدية صغرى) ومحور التراتيب عند y=1 (قيمة حدية عظمى)، ثم يتناقص مقترباً من الصفر عند +ما لا نهاية.",
+          "source_page": 15,
+          "bounding_box": [
+            580,
+            180,
+            940,
+            820
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -37,7 +37,7 @@ from google.genai import types
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-MODEL      = "gemini-3-flash-preview"  # or "gemini-2.0-flash" for a smaller model with faster response and lower cost
+MODEL      = "gemini-2.5-flash"  # generally available, free tier ≈250 RPD. Was "gemini-3-flash-preview" (preview, 20 RPD).
 SCRIPT_DIR = Path(__file__).parent
 
 SYSTEM_PROMPT_FILE  = SCRIPT_DIR / "config/system_prompt.txt"

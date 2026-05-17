@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs';
 import { Types } from 'mongoose';
 import User from '../../src/models/User';
 import { FIRST_NAMES, LAST_NAMES } from './data/algerian-names';
+import { buildAvatarUrl } from './data/avatars';
 import { type SeedContext, type SeededUser, pick, weightedPick, recentDate } from './context';
 
 const DEV_PASSWORD = 'bac-platform-dev-2026!';
@@ -74,6 +75,7 @@ export async function seedFakeUsers(
       role,
       isVerifiedTeacher,
       points,
+      avatar: buildAvatarUrl(email, role),
       emailVerifiedAt: recentDate(180, ctx.rng),
       preferences: {
         subjects: ['mathematics'],

@@ -175,21 +175,26 @@ export async function seedLibrary(ctx: SeedContext): Promise<LibraryReport> {
         report.examCount += 1;
 
         for (const ex of exam.exercises) {
-          const parts: IPartSubdoc[] = (ex.parts ?? []).map((p, idx) => {
-            const ordering = p.ordering ?? idx + 1;
-            const shortId = (p.id || '').slice(0, 8) || 'noid';
-            return {
-              partId: `${shortId}-${ordering}`,
-              label: String(p.label ?? ''),
-              subLabel: p.sub_label ?? null,
-              statement: p.statement,
-              solution: p.solution ?? null,
-              dependsOn: p.depends_on ?? [],
-              marks: p.marks ?? null,
-              hasFigure: Boolean(p.has_figure),
-              ordering,
-            };
-          });
+          // Drop parts with null/empty statements (some legacy / partial
+          // extractions emit placeholder parts that violate the required
+          // `statement` field on PartSubdocSchema).
+          const parts: IPartSubdoc[] = (ex.parts ?? [])
+            .filter((p) => typeof p.statement === 'string' && p.statement.trim().length > 0)
+            .map((p, idx) => {
+              const ordering = p.ordering ?? idx + 1;
+              const shortId = (p.id || '').slice(0, 8) || 'noid';
+              return {
+                partId: `${shortId}-${ordering}`,
+                label: String(p.label ?? ''),
+                subLabel: p.sub_label ?? null,
+                statement: p.statement,
+                solution: p.solution ?? null,
+                dependsOn: p.depends_on ?? [],
+                marks: p.marks ?? null,
+                hasFigure: Boolean(p.has_figure),
+                ordering,
+              };
+            });
 
           const figs: IFigureSubdoc[] = [];
           for (const fig of exam.figures) {
@@ -216,8 +221,21 @@ export async function seedLibrary(ctx: SeedContext): Promise<LibraryReport> {
             });
           }
 
-          const fallbackTitle = ex.title ?? `${ex.topic} — ${ex.number}`;
-          const description = ex.statement.slice(0, 280);
+          // Some legacy / partially-extracted JSONs have null OR empty
+          // string `statement` at the exercise level. `??` doesn't catch
+          // empty strings, so we coerce-empty-to-undefined and fall through
+          // to: first non-empty part statement → title → synthetic label.
+          const nonEmpty = (s?: string | null): string | undefined => {
+            const t = (s ?? '').trim();
+            return t.length > 0 ? t : undefined;
+          };
+          const safeStatement: string =
+            nonEmpty(ex.statement) ??
+            nonEmpty(ex.parts?.find((p) => nonEmpty(p.statement))?.statement) ??
+            nonEmpty(ex.title) ??
+            `${ex.topic ?? 'BAC'} — exercise ${ex.number}`;
+          const fallbackTitle = nonEmpty(ex.title) ?? `${ex.topic ?? 'BAC'} — ${ex.number}`;
+          const description = safeStatement.slice(0, 280);
           const filiere = (meta.filiere ?? undefined) as FiliereKey | undefined;
 
           const created = await Exercise.create({
@@ -236,7 +254,7 @@ export async function seedLibrary(ctx: SeedContext): Promise<LibraryReport> {
             sourcePage: Array.isArray(ex.source_page) ? ex.source_page[0] : ex.source_page,
             hasMath: true,
             filiere,
-            statement: ex.statement,
+            statement: safeStatement,
             parts: parts.length ? parts : undefined,
             figures: figs.length ? figs : undefined,
             sujet: meta.sujet ?? null,
