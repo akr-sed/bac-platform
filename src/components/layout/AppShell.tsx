@@ -39,10 +39,14 @@ export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
   const panel = endPanel ?? leftPanel;
 
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] flex-1 gap-6 px-4 py-5 lg:gap-10 xl:gap-12">
+    <div className="mx-auto flex w-full max-w-7xl flex-1 gap-6 px-4 py-5 sm:px-6 lg:gap-10 lg:px-8 xl:gap-12">
       {/* Primary nav rail — first in DOM = logical start (right in RTL, left in LTR).
           self-stretch fills the row's height; max-h caps it to the viewport-below-topbar
-          so on very tall content pages it doesn't overflow off-screen. */}
+          so on very tall content pages it doesn't overflow off-screen.
+          NOTE: `top-[104px]` and `calc(100vh-104px)` are coupled to Navbar's `lg`
+          height (84px topbar + 20px breathing room). This rail is `lg:block` only,
+          and at `lg+` the navbar stays 84px, so the offset is correct there. If
+          Navbar's `lg` height changes, update these references in lock-step. */}
       <div className="hidden shrink-0 self-stretch lg:block">
         <div className="sticky top-[104px] h-[calc(100vh-104px)] max-h-[calc(100vh-104px)] w-[256px] overflow-y-auto">
           <VerticalNavRail />
@@ -54,7 +58,8 @@ export function AppShell({ children, endPanel, leftPanel }: AppShellProps) {
 
       {/* End panel — last in DOM = logical end (left in RTL, right in LTR).
           Same sticky treatment but with max-h only (gamification cards are short
-          and shouldn't be forced to fill empty space). */}
+          and shouldn't be forced to fill empty space). Same 104px coupling to
+          Navbar's `lg` height applies — keep these in sync. */}
       {panel && (
         <aside className="hidden w-[320px] shrink-0 self-start xl:block">
           <div className="sticky top-[104px] max-h-[calc(100vh-104px)] overflow-y-auto">

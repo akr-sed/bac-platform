@@ -12,6 +12,22 @@ const createCommentSchema = z.object({
 
 type RouteContext = { params: Promise<{ id: string }> };
 
+// Normalise a populated author subdocument so it matches the client `Comment`
+// interface exactly: `_id` as string, only the fields the UI renders.
+function serializeAuthor(author: unknown) {
+  if (!author || typeof author !== 'object') return null;
+  const a = author as Record<string, unknown> & { _id?: { toString(): string } };
+  if (!a._id) return null;
+  return {
+    _id: a._id.toString(),
+    name: typeof a.name === 'string' ? a.name : '',
+    avatar: typeof a.avatar === 'string' ? a.avatar : null,
+    points: typeof a.points === 'number' ? a.points : 0,
+    role: typeof a.role === 'string' ? a.role : 'student',
+    isVerifiedTeacher: Boolean(a.isVerifiedTeacher),
+  };
+}
+
 export async function GET(request: NextRequest, context: RouteContext) {
   try {
     await connectToDatabase();
@@ -29,7 +45,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     const data = comments.map((comment) => ({
       _id: comment._id.toString(),
       solutionId: comment.solutionId.toString(),
-      author: comment.authorId,
+      author: serializeAuthor(comment.authorId),
       content: comment.content,
       kind: comment.kind ?? 'comment',
       createdAt: comment.createdAt,
@@ -95,7 +111,7 @@ export async function POST(request: NextRequest, context: RouteContext) {
       {
         _id: populated._id.toString(),
         solutionId: populated.solutionId.toString(),
-        author: populated.authorId,
+        author: serializeAuthor(populated.authorId),
         content: populated.content,
         kind: populated.kind ?? 'comment',
         createdAt: populated.createdAt,

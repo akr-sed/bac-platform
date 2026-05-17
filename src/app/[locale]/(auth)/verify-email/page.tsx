@@ -58,8 +58,8 @@ function VerifyEmailContent() {
           description={t('successDescription')}
         />
         <div className="flex justify-center">
-          <Link href="/login">
-            <Button intent="primary-blue" size="desktop">
+          <Link href="/login" className="w-full sm:w-auto">
+            <Button intent="primary-blue" size="desktop" className="w-full sm:w-auto">
               {t('backToLogin')}
             </Button>
           </Link>
@@ -76,8 +76,8 @@ function VerifyEmailContent() {
         description={t('errorDescription')}
       />
       <div className="flex justify-center">
-        <Link href="/login">
-          <Button intent="primary-blue" size="desktop">
+        <Link href="/login" className="w-full sm:w-auto">
+          <Button intent="primary-blue" size="desktop" className="w-full sm:w-auto">
             {t('backToLogin')}
           </Button>
         </Link>
@@ -100,9 +100,9 @@ export default function VerifyEmailPage() {
       </div>
 
       {/* Right panel */}
-      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+      <div className="flex flex-1 flex-col items-center justify-start bg-white px-4 py-8 sm:px-10 sm:py-12 lg:justify-center">
         <div className="mb-8 lg:hidden">
-          <Logo variant="horizontal" size="lg" />
+          <Logo variant="horizontal" size={56} />
         </div>
         <div className="w-full max-w-sm">
           <Suspense

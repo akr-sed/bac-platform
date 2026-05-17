@@ -51,7 +51,7 @@ export async function LibraryFilterBar({ filiere = '', type, year, topic, diffic
   const allowed = FILIERE_KEYS as readonly FiliereKey[];
 
   return (
-    <nav aria-label={t('filiere')} className="flex flex-wrap items-center gap-2">
+    <nav aria-label={t('filiere')} className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
       <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
         <Layers className="size-3.5" />
         {t('filiere')}

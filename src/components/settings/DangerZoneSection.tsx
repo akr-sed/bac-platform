@@ -46,7 +46,7 @@ export function DangerZoneSection() {
 
       {/* Export data */}
       <div className="rounded-2xl border border-[#BBC8D4] p-4">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div>
             <p className="font-medium text-[#25313C]">{t('exportData')}</p>
             <p className="text-sm text-[#6D7D8B]">{t('exportDataDesc')}</p>
@@ -64,7 +64,7 @@ export function DangerZoneSection() {
 
       {/* Delete account */}
       <div className="rounded-2xl border border-[#ED2D30]/40 bg-[#FEEAEA] p-4">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div>
             <p className="font-medium text-[#ED2D30]">{t('deleteAccount')}</p>
             <p className="text-sm text-[#6D7D8B]">{t('deleteAccountDesc')}</p>
@@ -143,7 +143,7 @@ export function DangerZoneSection() {
               <p className="mt-2 text-sm text-[#ED2D30]">{deleteError}</p>
             )}
 
-            <div className="mt-6 flex items-center justify-end gap-3">
+            <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
               <Button
                 variant="ghost"
                 size="sm"

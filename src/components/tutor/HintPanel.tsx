@@ -82,7 +82,7 @@ export function HintPanel({ exerciseId }: Props) {
               aria-checked={level === lvl.value}
               onClick={() => setLevel(lvl.value)}
               className={cn(
-                'flex-1 rounded-full px-4 py-1.5 text-sm font-semibold transition-all sm:flex-none',
+                'flex-1 min-h-11 rounded-full px-4 py-1.5 text-sm font-semibold transition-all sm:flex-none',
                 level === lvl.value
                   ? 'bg-white text-[#003449] shadow-[0_1px_2px_rgba(0,0,0,0.08)]'
                   : 'text-[#3E4850] hover:text-[#003449]'

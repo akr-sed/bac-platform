@@ -7,6 +7,7 @@ import { SessionCard } from './session-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
 import type { SessionDTO } from '@/types';
 
 const SUBJECTS = [
@@ -72,9 +73,15 @@ export function SessionsList({ initialSessions }: Props) {
     setSubject(next);
   }
 
+  const chipBase =
+    'shrink-0 cursor-pointer rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors';
+  const chipActive = 'border-primary bg-primary/10 text-primary';
+  const chipInactive = 'border-border bg-background text-muted-foreground hover:bg-muted';
+
   return (
     <div className="flex flex-col gap-6 lg:flex-row">
-      <aside className="lg:w-64 lg:shrink-0">
+      {/* Desktop: vertical filter sidebar */}
+      <aside className="hidden lg:block lg:w-64 lg:shrink-0">
         <Card className="p-4">
           <Label className="mb-3 block text-sm font-semibold">
             {t('filters.subject')}
@@ -111,7 +118,35 @@ export function SessionsList({ initialSessions }: Props) {
         </Card>
       </aside>
 
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
+        {/* Mobile: horizontal scroll chip row */}
+        <div
+          role="radiogroup"
+          aria-label={t('filters.subject')}
+          className="-mx-4 mb-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:hidden"
+        >
+          <button
+            type="button"
+            role="radio"
+            aria-checked={subject === ''}
+            onClick={() => handleSubjectChange('')}
+            className={cn(chipBase, subject === '' ? chipActive : chipInactive)}
+          >
+            {t('filters.all')}
+          </button>
+          {SUBJECTS.map((s) => (
+            <button
+              key={s}
+              type="button"
+              role="radio"
+              aria-checked={subject === s}
+              onClick={() => handleSubjectChange(s)}
+              className={cn(chipBase, subject === s ? chipActive : chipInactive)}
+            >
+              {tSubjects(s)}
+            </button>
+          ))}
+        </div>
         {loading ? (
           <div className="grid gap-4 sm:grid-cols-2">
             {Array.from({ length: 4 }).map((_, i) => (

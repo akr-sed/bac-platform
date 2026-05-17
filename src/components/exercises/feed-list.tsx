@@ -215,7 +215,7 @@ export function FeedList({
           aria-label={tProfile('following')}
           onClick={handleFilterToggle}
           className={cn(
-            'inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-full border px-3 text-sm font-medium transition-colors',
+            'inline-flex h-9 w-full cursor-pointer items-center justify-center gap-1.5 rounded-full border px-3 text-sm font-medium transition-colors sm:w-auto sm:justify-start',
             activeFilter === 'following'
               ? 'border-[#0095D1] bg-[#D9EFF8] text-[#0095D1]'
               : 'border-border bg-card text-muted-foreground hover:bg-accent'

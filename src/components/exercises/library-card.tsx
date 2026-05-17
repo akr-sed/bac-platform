@@ -56,7 +56,7 @@ export function LibraryCard({ exercise, locale }: Props) {
         )}
         <CardContent className="flex flex-1 flex-col gap-4 p-6">
           <div className="flex items-start justify-between gap-3">
-            <div className="flex max-h-[1.75rem] flex-wrap items-center gap-2 overflow-hidden">
+            <div className="flex max-h-[1.75rem] flex-wrap items-center gap-2 overflow-hidden sm:max-h-none sm:overflow-visible">
               {exercise.examLabel && (
                 <Badge
                   variant="secondary"

@@ -28,15 +28,15 @@ export function BadgesCard({ badges }: BadgesCardProps) {
   const displayBadges = badges.slice(0, 6);
 
   return (
-    <div className="flex flex-col gap-4 rounded-[12px] border border-[#DFE3E8] bg-white p-5 shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+    <div className="flex h-full min-w-0 flex-col gap-4 overflow-hidden rounded-[12px] border border-[#DFE3E8] bg-white p-4 shadow-[0_1px_1px_rgba(0,0,0,0.05)] sm:p-5">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <Link href="/leaderboard" className="text-[14px] font-medium text-[#0095D1] hover:underline font-arabic">
           {t('viewAll')}
         </Link>
-        <div className="flex items-center gap-2">
-          <span className="text-[14px] font-semibold text-[#171C20] font-arabic">{t('title')}</span>
-          <Bookmark className="size-4 text-[#0095D1]" />
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="truncate text-[14px] font-semibold text-[#171C20] font-arabic">{t('title')}</span>
+          <Bookmark className="size-4 shrink-0 text-[#0095D1]" />
         </div>
       </div>
 
@@ -46,7 +46,7 @@ export function BadgesCard({ badges }: BadgesCardProps) {
           —
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
           {displayBadges.map((badge) => (
             <div key={badge.key} className="flex flex-col items-center gap-2">
               <div

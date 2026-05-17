@@ -62,21 +62,21 @@ export default function RegisterPage() {
       </div>
 
       {/* Right panel — form */}
-      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+      <div className="flex flex-1 flex-col items-center justify-start bg-white px-4 py-8 sm:px-10 sm:py-12 lg:justify-center">
         {/* Mobile logo */}
         <div className="mb-8 lg:hidden">
-          <Logo variant="horizontal" size="lg" />
+          <Logo variant="horizontal" size={56} />
         </div>
 
         <div className="w-full max-w-md space-y-8">
           <div className="space-y-1">
-            <h1 className="font-heading text-3xl font-semibold tracking-tight text-[#003449]">
+            <h1 className="font-heading text-2xl font-semibold tracking-tight text-[#003449] sm:text-3xl">
               {t('title')}
             </h1>
           </div>
           <form className="space-y-5" onSubmit={handleSubmit}>
             {error && (
-              <div role="alert" className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+              <div role="alert" className="rounded-2xl bg-destructive/10 px-4 py-3 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -114,7 +114,7 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="password">{t('password')}</Label>
                 <div className="relative">
@@ -151,8 +151,8 @@ export default function RegisterPage() {
             {/* Role selection */}
             <div className="space-y-2">
               <Label>{t('role')}</Label>
-              <div className="grid grid-cols-2 gap-3">
-                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border p-4 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border p-3 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 sm:p-4">
                   <input
                     type="radio"
                     name="role"
@@ -162,7 +162,7 @@ export default function RegisterPage() {
                   />
                   <span className="text-sm font-medium">{t('student')}</span>
                 </label>
-                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border p-4 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border p-3 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 sm:p-4">
                   <input
                     type="radio"
                     name="role"

@@ -15,7 +15,7 @@ export function ProfileIdentityCard({ name, stream, avatar }: ProfileIdentityCar
   const t = useTranslations('profileDashboard.identity');
 
   return (
-    <div className="flex flex-col items-center rounded-[12px] border border-[#DFE3E8] bg-[#F9FBFD] p-5 shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+    <div className="flex h-full min-w-0 flex-col items-center overflow-hidden rounded-[12px] border border-[#DFE3E8] bg-[#F9FBFD] p-4 shadow-[0_1px_1px_rgba(0,0,0,0.05)] sm:p-5">
       {/* Avatar with edit overlay */}
       <div className="relative mb-4">
         <UserAvatar src={avatar} name={name} px={96} />
@@ -29,7 +29,7 @@ export function ProfileIdentityCard({ name, stream, avatar }: ProfileIdentityCar
       </div>
 
       {/* Name */}
-      <h2 className="mb-1 text-[18px] font-bold text-[#171C20] font-arabic text-center">
+      <h2 className="mb-1 line-clamp-2 max-w-full text-[18px] font-bold text-[#171C20] font-arabic text-center break-words">
         {name}
       </h2>
 
@@ -41,7 +41,7 @@ export function ProfileIdentityCard({ name, stream, avatar }: ProfileIdentityCar
       {/* Edit button */}
       <Link
         href="/settings?tab=account"
-        className="w-full rounded-[8px] bg-[#0095D1] px-4 py-2 text-center text-[16px] font-medium text-white transition-colors hover:bg-[#007BB3] font-arabic"
+        className="w-full min-h-[44px] inline-flex items-center justify-center rounded-[8px] bg-[#0095D1] px-4 py-2 text-center text-[16px] font-medium text-white transition-colors hover:bg-[#007BB3] font-arabic"
       >
         {t('editProfile')}
       </Link>

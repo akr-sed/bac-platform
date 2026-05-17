@@ -26,14 +26,14 @@ export function Footer() {
 
   return (
     <footer className="bg-[#003449] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        {/* Grid: 4 columns on desktop, stacked on mobile */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+        {/* Grid: 4 columns on desktop, stacked + centered on mobile */}
+        <div className="grid grid-cols-1 gap-10 text-center sm:grid-cols-2 sm:text-start lg:grid-cols-4">
 
           {/* Brand block */}
-          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col items-center space-y-4 sm:col-span-2 sm:items-start lg:col-span-1">
             <Logo variant="mono-white" size="sm" />
-            <p className="text-sm leading-relaxed text-white/70 max-w-xs">
+            <p className="max-w-xs text-sm leading-relaxed text-white/70">
               {t('slogan')}
             </p>
             {/* Locale switcher inline with brand */}
@@ -78,7 +78,7 @@ export function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center text-xs text-white/40 sm:flex-row sm:items-center sm:text-start">
           <p>© {year} NAJAH · {t('madeFor')}</p>
         </div>
       </div>
@@ -97,7 +97,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-white/70 transition-colors duration-200 hover:text-white"
+        className="inline-block py-1 text-white/70 transition-colors duration-200 hover:text-white"
       >
         {children}
       </Link>

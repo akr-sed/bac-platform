@@ -59,13 +59,13 @@ export default function ForgotPasswordPage() {
       </div>
 
       {/* Right panel */}
-      <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-12 sm:px-10">
+      <div className="flex flex-1 flex-col items-center justify-start bg-white px-4 py-8 sm:px-10 sm:py-12 lg:justify-center">
         {/* Mobile logo */}
         <div className="mb-8 lg:hidden">
-          <Logo variant="horizontal" size="lg" />
+          <Logo variant="horizontal" size={56} />
         </div>
 
-        <div className="w-full max-w-sm space-y-8">
+        <div className="w-full max-w-sm space-y-6 sm:space-y-8">
           {sent ? (
             <div className="space-y-6">
               <EmptyState
@@ -85,7 +85,7 @@ export default function ForgotPasswordPage() {
           ) : (
             <>
               <div className="space-y-1">
-                <h1 className="font-heading text-3xl font-semibold tracking-tight text-[#003449]">
+                <h1 className="font-heading text-2xl font-semibold tracking-tight text-[#003449] sm:text-3xl">
                   {t('title')}
                 </h1>
                 <p className="text-sm text-[#6D7D8B]">

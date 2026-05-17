@@ -97,7 +97,7 @@ export default function ProfilePage() {
       <div className="py-6 sm:py-8">
         {/* Page header */}
         <div className="mb-8">
-          <h1 className="text-[32px] font-bold text-[#171C20] font-arabic">{t('title')}</h1>
+          <h1 className="text-[24px] sm:text-[32px] font-bold text-[#171C20] font-arabic">{t('title')}</h1>
           <p className="mt-1 text-[14px] text-[#3E4850] font-arabic">{t('subtitle')}</p>
         </div>
 
@@ -111,10 +111,12 @@ export default function ProfilePage() {
             levelProgress={levelProgress}
             nationalRank={nationalRank}
           />
-          <ProfileIdentityCard
-            name={userName}
-            avatar={userAvatar}
-          />
+          <div className="order-first sm:order-none">
+            <ProfileIdentityCard
+              name={userName}
+              avatar={userAvatar}
+            />
+          </div>
         </div>
 
         {/* Subject progress */}

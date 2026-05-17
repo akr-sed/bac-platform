@@ -34,11 +34,11 @@ export function SubjectProgressSection({ subjects }: SubjectProgressSectionProps
   const t = useTranslations('profileDashboard.subjectProgress');
 
   return (
-    <div className="rounded-[12px] border border-[#DFE3E8] bg-white p-6 shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+    <div className="min-w-0 overflow-hidden rounded-[12px] border border-[#DFE3E8] bg-white p-4 shadow-[0_1px_1px_rgba(0,0,0,0.05)] sm:p-6">
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between border-b border-[#DFE3E8] pb-4">
-        <RefreshCw className="size-5 text-[#3E4850]" />
-        <h2 className="text-[24px] font-semibold text-[#171C20] font-arabic">{t('title')}</h2>
+      <div className="mb-6 flex items-center justify-between gap-2 border-b border-[#DFE3E8] pb-4">
+        <RefreshCw className="size-5 shrink-0 text-[#3E4850]" />
+        <h2 className="min-w-0 truncate text-[20px] font-semibold text-[#171C20] font-arabic sm:text-[24px]">{t('title')}</h2>
       </div>
 
       {subjects.length === 0 ? (
@@ -51,17 +51,17 @@ export function SubjectProgressSection({ subjects }: SubjectProgressSectionProps
             const Icon = meta?.icon ?? Calculator;
 
             return (
-              <div key={sub.subject} className="flex flex-col gap-2">
+              <div key={sub.subject} className="flex min-w-0 flex-col gap-2">
                 {/* Subject name + icon + percentage */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[14px] font-semibold text-[#0095D1] font-arabic">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="shrink-0 text-[14px] font-semibold text-[#0095D1] font-arabic tabular-nums">
                     {sub.pct}%
                   </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[14px] font-semibold text-[#171C20] font-arabic">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <span className="truncate text-[14px] font-semibold text-[#171C20] font-arabic">
                       {sub.subject}
                     </span>
-                    <div className="flex size-8 items-center justify-center rounded-[4px] bg-[#C7E7FF]">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-[4px] bg-[#C7E7FF]">
                       <Icon className="size-[10.5px] text-[#0095D1]" />
                     </div>
                   </div>

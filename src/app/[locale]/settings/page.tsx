@@ -175,7 +175,7 @@ export default function SettingsPage() {
       <div className="py-6 sm:py-8">
         {/* Page header */}
         <div className="mb-8">
-          <h1 className="text-[32px] font-bold text-[#171C20] font-arabic">{t('title')}</h1>
+          <h1 className="text-[24px] sm:text-[32px] font-bold text-[#171C20] font-arabic">{t('title')}</h1>
           <p className="mt-1 text-[14px] text-[#3E4850] font-arabic">{t('subtitle')}</p>
         </div>
 

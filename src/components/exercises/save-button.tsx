@@ -44,7 +44,7 @@ export function SaveButton({ exerciseId, initialSaved }: Props) {
       disabled={pending}
       aria-pressed={saved}
       className={cn(
-        'flex items-center rounded-md px-3 py-2 text-sm transition',
+        'flex min-h-11 min-w-11 items-center justify-center rounded-md px-3 py-2 text-sm transition',
         saved ? 'text-primary' : 'text-muted-foreground hover:bg-muted'
       )}
     >

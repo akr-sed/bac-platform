@@ -13,9 +13,9 @@ const VARIANT_TINT: Record<OwlVariant, { body?: string; beak?: string; iris?: st
   'empty-search': { iris: '#0095D1' },
   'empty-saved': { beak: '#1853F3' },
   'empty-notifications': { iris: '#6D7D8B', body: '#6D7D8B' },
-  'empty-error': { beak: '#ED2D30', body: '#6D7D8B' },
-  success: { beak: '#00B22A', body: '#003449' },
-  celebrate: { beak: '#ED2D30', iris: '#0095D1', book: '#FFFFFF' },
+  'empty-error': { beak: '#d14b5c', body: '#6D7D8B' },
+  success: { beak: '#00B22A', body: '#013e5b' },
+  celebrate: { beak: '#d14b5c', iris: '#0095D1', book: '#FFFFFF' },
   loading: { iris: '#0095D1', beak: '#0095D1' },
 };
 
@@ -73,11 +73,11 @@ export function OwlIllustration({
           {/* Body */}
           <path
             d="M80 14 C 50 14 30 36 30 70 V 116 C 30 138 48 152 80 152 C 112 152 130 138 130 116 V 70 C 130 36 110 14 80 14 Z"
-            style={{ fill: 'var(--owl-body, #003449)' }}
+            style={{ fill: 'var(--owl-body, #013e5b)' }}
           />
           {/* Ear tufts */}
-          <path d="M36 24 L 50 6 L 54 28 Z" style={{ fill: 'var(--owl-body, #003449)' }} />
-          <path d="M124 24 L 110 6 L 106 28 Z" style={{ fill: 'var(--owl-body, #003449)' }} />
+          <path d="M36 24 L 50 6 L 54 28 Z" style={{ fill: 'var(--owl-body, #013e5b)' }} />
+          <path d="M124 24 L 110 6 L 106 28 Z" style={{ fill: 'var(--owl-body, #013e5b)' }} />
           {/* Eye whites */}
           <circle cx="56" cy="56" r="18" style={{ fill: 'var(--owl-eye-white, #FFFFFF)' }} />
           <circle cx="104" cy="56" r="18" style={{ fill: 'var(--owl-eye-white, #FFFFFF)' }} />
@@ -88,21 +88,21 @@ export function OwlIllustration({
               cx="56"
               cy="56"
               r="11"
-              style={{ fill: 'var(--owl-eye-iris, #057A8D)', transformOrigin: '56px 56px' }}
+              style={{ fill: 'var(--owl-eye-iris, #057a8d)', transformOrigin: '56px 56px' }}
             />
             <circle
               className="owl-eye owl-eye-right"
               cx="104"
               cy="56"
               r="11"
-              style={{ fill: 'var(--owl-eye-iris, #057A8D)', transformOrigin: '104px 56px' }}
+              style={{ fill: 'var(--owl-eye-iris, #057a8d)', transformOrigin: '104px 56px' }}
             />
           </g>
           {/* Catch-lights */}
           <circle cx="60" cy="53" r="3" style={{ fill: '#FFFFFF' }} />
           <circle cx="108" cy="53" r="3" style={{ fill: '#FFFFFF' }} />
           {/* Beak */}
-          <path d="M80 70 L 86 78 L 80 86 L 74 78 Z" style={{ fill: 'var(--owl-beak, #ED2D30)' }} />
+          <path d="M80 70 L 86 78 L 80 86 L 74 78 Z" style={{ fill: 'var(--owl-beak, #d14b5c)' }} />
           {/* Book — left + right pages with spine */}
           <path
             d="M44 100 L 44 130 L 79 134 L 79 104 Z"
@@ -117,11 +117,11 @@ export function OwlIllustration({
             y1="104"
             x2="80"
             y2="134"
-            style={{ stroke: 'var(--owl-body, #003449)', strokeWidth: 2 }}
+            style={{ stroke: 'var(--owl-body, #013e5b)', strokeWidth: 2 }}
           />
           {/* Feet */}
-          <ellipse cx="68" cy="154" rx="8" ry="3" style={{ fill: 'var(--owl-body, #003449)' }} />
-          <ellipse cx="92" cy="154" rx="8" ry="3" style={{ fill: 'var(--owl-body, #003449)' }} />
+          <ellipse cx="68" cy="154" rx="8" ry="3" style={{ fill: 'var(--owl-body, #013e5b)' }} />
+          <ellipse cx="92" cy="154" rx="8" ry="3" style={{ fill: 'var(--owl-body, #013e5b)' }} />
         </g>
       </svg>
     </span>

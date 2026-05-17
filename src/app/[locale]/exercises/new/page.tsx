@@ -146,11 +146,11 @@ export default function NewExercisePage() {
 
             <div className="space-y-2">
               <Label>{t('filter.difficulty')}</Label>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {DIFFICULTIES.map((d) => (
                   <label
                     key={d}
-                    className="flex cursor-pointer items-center gap-2 rounded-xl border border-border px-4 py-3 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5"
+                    className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-border px-4 py-3 transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 sm:flex-none"
                   >
                     <input
                       type="radio"
@@ -173,10 +173,10 @@ export default function NewExercisePage() {
               />
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <Button
                 type="submit"
-                className="cursor-pointer gap-2 rounded-xl"
+                className="w-full cursor-pointer gap-2 rounded-xl sm:w-auto"
                 disabled={submitting}
               >
                 <Send className="size-4" />
@@ -184,7 +184,7 @@ export default function NewExercisePage() {
               </Button>
               <Link
                 href="/dashboard"
-                className={cn(buttonVariants({ variant: 'outline' }), 'cursor-pointer rounded-xl')}
+                className={cn(buttonVariants({ variant: 'outline' }), 'w-full cursor-pointer rounded-xl sm:w-auto')}
               >
                 {tCommon('cancel')}
               </Link>

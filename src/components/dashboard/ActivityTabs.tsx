@@ -184,7 +184,7 @@ export function ActivityTabs({ activity }: ActivityTabsProps) {
                         )}
                       />
                       <div className="rounded-[8px] border border-[#DFE3E8] bg-[#EAEEF3] p-4">
-                        <div className="mb-1 flex items-start justify-between gap-4">
+                        <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                           <span className="text-[12px] text-[#3E4850] font-arabic">
                             {timeAgo(entry.at, locale)}
                           </span>

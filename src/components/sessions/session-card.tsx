@@ -106,7 +106,7 @@ export function SessionCard({ session, variant = 'full' }: Props) {
           </span>
         </div>
         <div className="flex flex-1 flex-col px-4 pb-4 pt-2">
-          <h3 className="line-clamp-2 min-h-[2.5rem] text-end text-sm font-extrabold leading-tight text-[#171C20]">
+          <h3 className="line-clamp-2 min-h-[2.5rem] text-start text-sm font-extrabold leading-tight text-[#171C20]">
             {session.title}
           </h3>
           <div className="mt-2 flex items-center gap-1.5 text-[11px]">
@@ -192,15 +192,15 @@ export function SessionCard({ session, variant = 'full' }: Props) {
         </div>
       </header>
 
-      <Link href={href} className="flex flex-1 flex-col p-6">
-        <h3 className="line-clamp-2 min-h-[3.25rem] text-end text-[17px] font-extrabold leading-tight text-[#171C20]">
+      <Link href={href} className="flex flex-1 flex-col p-4 sm:p-6">
+        <h3 className="line-clamp-2 min-h-[3.25rem] text-start text-[17px] font-extrabold leading-tight text-[#171C20]">
           {session.title}
         </h3>
 
         {/* Hero time block — replaces math expression / image block in ExerciseCard */}
         <div
           className={cn(
-            'mt-4 flex items-center justify-between rounded-[12px] border border-[rgba(223,227,232,0.5)] px-5 py-4',
+            'mt-4 flex flex-wrap items-center justify-between gap-2 rounded-[12px] border border-[rgba(223,227,232,0.5)] px-5 py-4',
             subj.tint
           )}
         >
@@ -250,7 +250,7 @@ export function SessionCard({ session, variant = 'full' }: Props) {
       </Link>
 
       {/* Footer */}
-      <footer className="flex items-center justify-between border-t border-[#D9EFF8] px-6 py-4">
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-[#D9EFF8] px-4 py-4 sm:px-6">
         <Link
           href={href}
           className="inline-flex items-center gap-2 rounded-[10px] bg-[#0095D1] px-4 py-2 text-xs font-extrabold text-white transition-colors hover:bg-[#00709D]"

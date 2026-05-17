@@ -425,7 +425,7 @@ export default function ExerciseDetailPage() {
               {/* Actions */}
               <div className="flex flex-wrap gap-2 pt-1">
                 <Button
-                  className="group h-11 cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium active:scale-[0.98]"
+                  className="group h-11 w-full cursor-pointer gap-2 rounded-2xl px-5 text-sm font-medium active:scale-[0.98] sm:w-auto"
                   onClick={() => setSubmitOpen(true)}
                 >
                   <PlusCircle className="size-4" />
@@ -481,7 +481,7 @@ export default function ExerciseDetailPage() {
             ) : (
               <div className="space-y-4">
                 {solutions.map((sol) => (
-                  <Card key={sol._id} className="rounded-3xl border border-border p-6 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                  <Card key={sol._id} className="rounded-3xl border border-border p-4 shadow-[0_1px_2px_rgba(0,0,0,0.02)] sm:p-6">
                     <CardContent className="space-y-4 p-0">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -577,11 +577,12 @@ export default function ExerciseDetailPage() {
                               className="cursor-pointer overflow-hidden rounded-lg border border-border transition-opacity duration-200 hover:opacity-80"
                               onClick={() => setLightbox({ images: sol.images!, index: i })}
                             >
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
+                              <Image
                                 src={url}
                                 alt={`Attachment ${i + 1}`}
-                                className="h-24 w-auto object-cover"
+                                width={128}
+                                height={96}
+                                className="h-24 w-auto max-w-[8rem] object-cover"
                               />
                             </button>
                           ))}
@@ -594,7 +595,7 @@ export default function ExerciseDetailPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className={`cursor-pointer gap-1.5 ${sol.likes?.includes(authUser?._id ?? '') ? 'text-destructive' : 'text-muted-foreground'}`}
+                          className={`min-h-11 cursor-pointer gap-1.5 ${sol.likes?.includes(authUser?._id ?? '') ? 'text-destructive' : 'text-muted-foreground'}`}
                           onClick={async () => {
                             if (!authUser) return;
                             try {
@@ -624,7 +625,7 @@ export default function ExerciseDetailPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="cursor-pointer gap-1.5 text-muted-foreground"
+                          className="min-h-11 cursor-pointer gap-1.5 text-muted-foreground"
                           onClick={() =>
                             setCommentsOpenFor(
                               commentsOpenFor === sol._id ? null : sol._id

@@ -48,7 +48,7 @@ export async function LibraryYearChips({
   const sortedYears = [...years].sort((a, b) => b - a);
 
   return (
-    <nav aria-label={t('label')} className="flex flex-wrap items-center gap-2">
+    <nav aria-label={t('label')} className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
       <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
         <Calendar className="size-3.5" />
         {t('label')}
