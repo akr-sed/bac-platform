@@ -53,7 +53,7 @@ export async function MarketingLanding({ locale }: Props) {
                 {t('hero.ctaPrimary')}
               </Button>
             </Link>
-            <Link href="/exercises">
+            <Link href="/library">
               <Button intent="secondary-blue" size="lg">
                 {t('hero.ctaSecondary')}
               </Button>
@@ -137,7 +137,7 @@ export async function MarketingLanding({ locale }: Props) {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <Link href="/exercises">
+            <Link href="/library">
               <Button intent="secondary-blue">{t('exercises.cta')}</Button>
             </Link>
           </div>

@@ -45,7 +45,7 @@ export async function SearchResults({ q, results }: Props) {
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-extrabold text-[#003449]">{t('sections.exercises')}</h2>
             <Link
-              href={`/exercises?search=${encodeURIComponent(q)}` as any}
+              href={`/library` as any}
               className="text-sm font-semibold text-[#0095D1] hover:underline"
             >
               {t('seeAll')}

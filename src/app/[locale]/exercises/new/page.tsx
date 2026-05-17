@@ -75,7 +75,7 @@ export default function NewExercisePage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       <Link
-        href="/exercises"
+        href="/dashboard"
         className="mb-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
       >
         <ArrowLeft className="size-4 rtl:rotate-180" />
@@ -183,7 +183,7 @@ export default function NewExercisePage() {
                 {submitting ? tCommon('loading') : tCommon('submit')}
               </Button>
               <Link
-                href="/exercises"
+                href="/dashboard"
                 className={cn(buttonVariants({ variant: 'outline' }), 'cursor-pointer rounded-xl')}
               >
                 {tCommon('cancel')}

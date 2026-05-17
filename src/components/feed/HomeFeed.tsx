@@ -1,4 +1,5 @@
-import { Sparkle, Flame } from 'lucide-react';
+import { Sparkle, Flame, Plus } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { connectToDatabase } from '@/lib/mongodb';
 import Exercise from '@/models/Exercise';
 import User from '@/models/User';
@@ -167,6 +168,36 @@ export async function HomeFeed({ userId, userName, locale, sort, filter, topic }
               {isAr ? 'التمارين الأخيرة' : 'Latest exercises'}
             </h2>
           </div>
+
+          {/* Compose CTA — primary entry point for posting an exercise. Lives at
+              the top of the feed so it replaces the "Compose" button that used
+              to live on the (now-removed) /exercises listing page. */}
+          <Link
+            href="/exercises/new"
+            className="group flex items-center justify-between gap-4 rounded-[12px] border border-dashed border-[#B0DEF1] bg-[#F0F9FE] px-5 py-4 text-sm transition-colors hover:border-[#0095D1] hover:bg-[#E6F4FA]"
+          >
+            <span className="flex items-center gap-3">
+              <span
+                className="inline-flex size-9 items-center justify-center rounded-full bg-[#0095D1] text-white transition-transform group-hover:scale-105"
+                aria-hidden="true"
+              >
+                <Plus className="size-4" />
+              </span>
+              <span className="flex flex-col text-start">
+                <span className="font-semibold text-[#171C20]">
+                  {isAr ? 'انشر تمرينك' : 'Post an exercise'}
+                </span>
+                <span className="text-xs text-[#3E4850]">
+                  {isAr
+                    ? 'شارك سؤالاً مع المجتمع واحصل على حلول.'
+                    : 'Share a question with the community and get solutions.'}
+                </span>
+              </span>
+            </span>
+            <span className="hidden text-xs font-semibold text-[#0095D1] sm:inline">
+              {isAr ? 'ابدأ ←' : '→ Compose'}
+            </span>
+          </Link>
 
           <FeedTopicChips
             topics={availableTopics}

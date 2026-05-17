@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { UserAvatar } from '@/components/ui/user-avatar';
+import { MathTextInline } from '@/components/ui/math-text';
 import { useAuth } from '@/components/providers/AuthProvider';
 import { ReportActionMenu } from '@/components/ui/report-action-menu';
 import ReputationBadge from '@/components/profile/ReputationBadge';
@@ -190,7 +191,9 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
                       />
                     )}
                   </div>
-                  <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">{c.content}</p>
+                  <MathTextInline className="mt-0.5 block text-sm leading-relaxed text-foreground/90">
+                    {c.content}
+                  </MathTextInline>
                 </div>
               </li>
             );

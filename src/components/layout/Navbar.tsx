@@ -20,7 +20,9 @@ import { MobileNavDrawer } from './MobileNavDrawer';
 
 // Wave 6-A — TopAppBar
 // h-[84px] bg-white border-b border-[#D9EFF8]
-// User pill (start) | Search (center) | Brand (end)
+// Brand (start) | Search (center) | User pill (end)
+// In RTL (ar) the layout mirrors automatically so the brand sits on the
+// right and the user info on the left.
 
 export function TopAppBar() {
   const t = useTranslations('navigation');
@@ -69,7 +71,29 @@ export function TopAppBar() {
         {/* ── Mobile burger (lg:hidden) — drives the MobileNavDrawer ── */}
         <MobileNavDrawer />
 
-        {/* ── Start: User pill (auth) or Login/Register (unauth) ─── */}
+        {/* ── Start: Brand wordmark ─────────────────────────────────── */}
+        <div className="flex shrink-0 items-center gap-3">
+          <Link
+            href={user ? '/' : '/'}
+            aria-label="NAJAH — Home"
+            className="transition-opacity hover:opacity-80"
+          >
+            <Logo variant="horizontal" size="sm" />
+          </Link>
+        </div>
+
+        {/* ── Center: Search bar ────────────────────────────────────── */}
+        <div className="flex min-w-0 flex-1 justify-center">
+          <Link
+            href="/search"
+            className="flex w-full max-w-[614px] items-center gap-3 rounded-full border border-[#B0DEF1] bg-white px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-colors hover:border-[#0095D1]"
+          >
+            <Search className="size-4 shrink-0 text-[#6B7280]" />
+            <span className="text-sm font-semibold text-[#6B7280]">{searchPlaceholder}</span>
+          </Link>
+        </div>
+
+        {/* ── End: User pill (auth) or Login/Register (unauth) ─── */}
         {!loading && user ? (
           <div className="flex shrink-0 items-center gap-2">
             <DropdownMenu>
@@ -205,28 +229,6 @@ export function TopAppBar() {
             </Link>
           </div>
         ) : null}
-
-        {/* ── Center: Search bar ────────────────────────────────────── */}
-        <div className="flex min-w-0 flex-1 justify-center">
-          <Link
-            href="/search"
-            className="flex w-full max-w-[614px] items-center gap-3 rounded-full border border-[#B0DEF1] bg-white px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-colors hover:border-[#0095D1]"
-          >
-            <Search className="size-4 shrink-0 text-[#6B7280]" />
-            <span className="text-sm font-semibold text-[#6B7280]">{searchPlaceholder}</span>
-          </Link>
-        </div>
-
-        {/* ── End: Brand wordmark ──────────────────────────────────── */}
-        <div className="flex shrink-0 items-center gap-3">
-          <Link
-            href={user ? '/' : '/'}
-            aria-label="NAJAH — Home"
-            className="transition-opacity hover:opacity-80"
-          >
-            <Logo variant="horizontal" size="sm" />
-          </Link>
-        </div>
       </div>
     </header>
   );

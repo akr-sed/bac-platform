@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { UserAvatar } from '@/components/ui/user-avatar';
-import { MessageCircle, ChevronRight, ThumbsUp, Star } from 'lucide-react';
+import { MathTextInline } from '@/components/ui/math-text';
+import { MessageCircle, ChevronRight, Star } from 'lucide-react';
 import { imageUrl, blurUrl, firstPreview } from '@/lib/cloudinary-preview';
 import { resolveExerciseTitle } from '@/lib/resolve-exercise-title';
 import { LikeButton } from './like-button';
@@ -10,29 +11,12 @@ import { SaveButton } from './save-button';
 import { ReportKebab } from './report-kebab';
 import ReputationBadge from '@/components/profile/ReputationBadge';
 import { cn } from '@/lib/utils';
+import { subjectBadgeClass } from '@/lib/exercise-badges';
 import type { FeedItemDTO } from '@/types';
 
 interface Props {
   exercise: FeedItemDTO;
   variant?: 'feed' | 'compact';
-}
-
-// Subject badge colour map (Wave 6)
-const SUBJECT_COLORS: Record<string, { bg: string; text: string }> = {
-  math:      { bg: 'bg-[#7ECCFE]', text: 'text-[#00709D]' },
-  رياضيات:  { bg: 'bg-[#7ECCFE]', text: 'text-[#00709D]' },
-  physics:   { bg: 'bg-[#FFDCBF]', text: 'text-[#6B3B00]' },
-  فيزياء:   { bg: 'bg-[#FFDCBF]', text: 'text-[#6B3B00]' },
-  chemistry: { bg: 'bg-[#D9EFF8]', text: 'text-[#0095D1]' },
-  كيمياء:   { bg: 'bg-[#D9EFF8]', text: 'text-[#0095D1]' },
-  biology:   { bg: 'bg-[#DCFCE7]', text: 'text-[#166534]' },
-  'علوم طبيعية': { bg: 'bg-[#DCFCE7]', text: 'text-[#166534]' },
-};
-
-function subjectBadgeClass(subject: string) {
-  const key = subject.toLowerCase();
-  const match = SUBJECT_COLORS[key] ?? { bg: 'bg-[#EAEEF3]', text: 'text-[#3E4850]' };
-  return `${match.bg} ${match.text}`;
 }
 
 function relativeTime(iso: string): string {
@@ -55,9 +39,17 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
     <article className="overflow-hidden rounded-[12px] border border-[#D9EFF8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
 
       {/* ── Header ───────────────────────────────────────────────────── */}
+      {/* Kebab sits opposite the author chip: start-edge in LTR, end-edge in
+          RTL (flex auto-mirrors). Subject badge + featured chip group with it
+          on the same side; author chip + time group on the opposite side. */}
       <header className="flex items-center justify-between gap-3 border-b border-[#D9EFF8] px-5 pt-5 pb-[21px]">
-        {/* Subject badge + (optional) featured badge */}
+        {/* Subject badge + (optional) featured badge + report kebab */}
         <div className="flex items-center gap-2">
+          <ReportKebab
+            targetType="exercise"
+            targetId={exercise._id}
+            authorId={exercise.author?._id}
+          />
           <span
             className={cn(
               'rounded-full px-3 py-1 text-xs font-bold capitalize',
@@ -77,9 +69,7 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
           )}
         </div>
 
-        {/* Author meta + avatar + report kebab.
-            Author chip routes to the profile page; date and report kebab are
-            siblings (outside the Link) so they don't compete for the tap. */}
+        {/* Author meta + avatar — opposite side of the row. */}
         <div className="flex items-center gap-2">
           {exercise.author?._id ? (
             <Link
@@ -122,11 +112,6 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
           >
             {relativeTime(exercise.lastActivityAt)}
           </time>
-          <ReportKebab
-            targetType="exercise"
-            targetId={exercise._id}
-            authorId={exercise.author?._id}
-          />
         </div>
       </header>
 
@@ -134,18 +119,15 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
       <Link href={`/exercises/${exercise._id}`} className="block">
         <div className="flex flex-col gap-6 p-6">
           {/* Title */}
-          <h3 className="line-clamp-2 text-end text-base font-bold leading-[26px] text-[#171C20]">
+          <h3 className="line-clamp-2 text-start text-base font-bold leading-[26px] text-[#171C20]">
             <bdi>{localizedTitle}</bdi>
           </h3>
 
-          {/* Content: math expression box OR image OR plain description */}
-          {exercise.hasMath && !preview.url ? (
-            <div className="rounded-[12px] border border-[rgba(223,227,232,0.5)] bg-[#F0F4F9] p-[25px] text-center">
-              <p className="font-mono text-xl text-[#0095D1]">
-                {exercise.description}
-              </p>
-            </div>
-          ) : preview.kind === 'image' && preview.url ? (
+          {/* Content: image preview if present; otherwise math-aware description.
+              MathTextInline (rather than MathText) keeps the card height
+              bounded by promoting block math to inline-displaystyle — block
+              math expanding into a `<div>` would blow up our line-clamp. */}
+          {preview.kind === 'image' && preview.url ? (
             <div className="relative aspect-video overflow-hidden rounded-[12px] bg-muted">
               <Image
                 src={imageUrl(preview.url)}
@@ -160,14 +142,20 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
             </div>
           ) : preview.kind === 'pdf' ? (
             <div className="rounded-[12px] border border-[rgba(223,227,232,0.5)] bg-[#F0F4F9] p-[25px] text-center">
-              <p className="line-clamp-3 text-sm text-[#3E4850]">
+              <MathTextInline className="line-clamp-3 text-sm text-[#3E4850]">
                 {exercise.description}
-              </p>
+              </MathTextInline>
+            </div>
+          ) : exercise.hasMath ? (
+            <div className="rounded-[12px] border border-[rgba(223,227,232,0.5)] bg-[#F0F4F9] p-[25px] text-start">
+              <MathTextInline className="line-clamp-4 text-sm leading-relaxed text-[#171C20]">
+                {exercise.description}
+              </MathTextInline>
             </div>
           ) : (
-            <p className="line-clamp-3 text-end text-sm leading-relaxed text-[#3E4850]">
+            <MathTextInline className="line-clamp-3 text-start text-sm leading-relaxed text-[#3E4850]">
               {exercise.description}
-            </p>
+            </MathTextInline>
           )}
         </div>
       </Link>
@@ -199,6 +187,12 @@ export function ExerciseCard({ exercise, variant: _variant = 'feed' }: Props) {
             exerciseId={exercise._id}
             initialLiked={exercise.isLiked ?? false}
             initialCount={exercise.likesCount}
+          />
+
+          {/* Save button (interactive island) */}
+          <SaveButton
+            exerciseId={exercise._id}
+            initialSaved={exercise.isSaved ?? false}
           />
         </div>
       </footer>

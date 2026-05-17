@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Bookmark, Loader2 } from 'lucide-react';
+import { Bookmark, FilePlus, Loader2, Plus } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { ExerciseCard } from '@/components/exercises/exercise-card';
 import { cn } from '@/lib/utils';
 import type { FeedItemDTO, ActivityEntryDTO } from '@/types';
@@ -43,12 +44,54 @@ function kindLabel(kind: string, locale: string): string {
   return map[kind]?.[locale] ?? map[kind]?.['en'] ?? kind;
 }
 
+type TabKey = 'activity' | 'saved' | 'mine';
+
+function adaptApiExercise(raw: Record<string, unknown>, saved: boolean): FeedItemDTO {
+  // Both /api/saves and /api/exercises return the same shape with `authorId`
+  // either populated or as an id. We normalize to FeedItemDTO here.
+  const authorRaw = raw.authorId ?? raw.author ?? {};
+  const author = (typeof authorRaw === 'object' && authorRaw !== null
+    ? (authorRaw as Record<string, unknown>)
+    : {}) as Record<string, unknown>;
+  return {
+    _id: String(raw._id ?? ''),
+    title: String(raw.title ?? ''),
+    description: String(raw.description ?? ''),
+    difficulty: (raw.difficulty as 'easy' | 'medium' | 'hard') ?? 'medium',
+    subject: String(raw.subject ?? ''),
+    topic: String(raw.topic ?? ''),
+    attachments: Array.isArray(raw.attachments) ? (raw.attachments as string[]) : [],
+    likesCount: Number(raw.likesCount ?? 0),
+    solutionCount: Number(raw.solutionCount ?? 0),
+    commentsCount: Number(raw.commentsCount ?? 0),
+    lastActivityAt: raw.lastActivityAt
+      ? new Date(raw.lastActivityAt as string).toISOString()
+      : new Date().toISOString(),
+    author: {
+      _id: String(author._id ?? ''),
+      name: String(author.name ?? ''),
+      avatar: (author.avatar as string | null | undefined) ?? null,
+      role: (author.role as 'student' | 'teacher' | 'admin') ?? 'student',
+      isVerifiedTeacher: Boolean(author.isVerifiedTeacher),
+      points:
+        typeof author.points === 'number'
+          ? (author.points as number)
+          : undefined,
+    },
+    isLiked: Boolean(raw.isLiked),
+    isSaved: saved || Boolean(raw.isSaved),
+  };
+}
+
 export function ActivityTabs({ activity }: ActivityTabsProps) {
   const t = useTranslations('profileDashboard');
-  const [activeTab, setActiveTab] = useState<'activity' | 'saved'>('activity');
+  const [activeTab, setActiveTab] = useState<TabKey>('activity');
   const [savedItems, setSavedItems] = useState<FeedItemDTO[] | null>(null);
   const [savedLoading, setSavedLoading] = useState(false);
   const [savedError, setSavedError] = useState('');
+  const [mineItems, setMineItems] = useState<FeedItemDTO[] | null>(null);
+  const [mineLoading, setMineLoading] = useState(false);
+  const [mineError, setMineError] = useState('');
 
   // Detect locale from html dir attribute as a simple proxy
   const locale = typeof document !== 'undefined' && document.documentElement.dir === 'rtl' ? 'ar' : 'en';
@@ -64,46 +107,41 @@ export function ActivityTabs({ activity }: ActivityTabsProps) {
         const raw: Record<string, unknown>[] = Array.isArray(json.data) ? json.data : [];
         const adapted: FeedItemDTO[] = raw
           .filter((ex) => ex !== null && ex !== undefined)
-          .map((ex) => {
-            const author = (ex.authorId as Record<string, unknown>) ?? {};
-            return {
-              _id: String(ex._id ?? ''),
-              title: String(ex.title ?? ''),
-              description: String(ex.description ?? ''),
-              difficulty: (ex.difficulty as 'easy' | 'medium' | 'hard') ?? 'medium',
-              subject: String(ex.subject ?? ''),
-              topic: String(ex.topic ?? ''),
-              attachments: Array.isArray(ex.attachments) ? (ex.attachments as string[]) : [],
-              likesCount: Number(ex.likesCount ?? 0),
-              solutionCount: Number(ex.solutionCount ?? 0),
-              commentsCount: Number(ex.commentsCount ?? 0),
-              lastActivityAt: ex.lastActivityAt
-                ? new Date(ex.lastActivityAt as string).toISOString()
-                : new Date().toISOString(),
-              author: {
-                _id: String(author._id ?? ''),
-                name: String(author.name ?? ''),
-                avatar: (author.avatar as string | null | undefined) ?? null,
-                role: (author.role as 'student' | 'teacher' | 'admin') ?? 'student',
-                isVerifiedTeacher: Boolean(author.isVerifiedTeacher),
-                points:
-                  typeof author.points === 'number'
-                    ? (author.points as number)
-                    : undefined,
-              },
-              isLiked: false,
-              isSaved: true,
-            };
-          });
+          .map((ex) => adaptApiExercise(ex, true));
         setSavedItems(adapted);
       })
       .catch(() => setSavedError(locale === 'ar' ? 'تعذّر تحميل المحفوظات' : 'Failed to load saved exercises'))
       .finally(() => setSavedLoading(false));
   }
 
+  function switchToMine() {
+    setActiveTab('mine');
+    if (mineItems !== null || mineLoading) return;
+    setMineLoading(true);
+    fetch('/api/exercises?authorId=me&limit=50')
+      .then(async (res) => {
+        if (!res.ok) throw new Error();
+        const json = await res.json();
+        const raw: Record<string, unknown>[] = Array.isArray(json.data) ? json.data : [];
+        const adapted: FeedItemDTO[] = raw
+          .filter((ex) => ex !== null && ex !== undefined)
+          .map((ex) => adaptApiExercise(ex, false));
+        setMineItems(adapted);
+      })
+      .catch(() => setMineError(locale === 'ar' ? 'تعذّر تحميل منشوراتك' : 'Failed to load your posts'))
+      .finally(() => setMineLoading(false));
+  }
+
+  function handleTabClick(key: TabKey) {
+    if (key === 'saved') switchToSaved();
+    else if (key === 'mine') switchToMine();
+    else setActiveTab('activity');
+  }
+
   const tabs = [
     { key: 'activity' as const, label: t('activityTab') },
     { key: 'saved' as const, label: t('savedTab') },
+    { key: 'mine' as const, label: t('mineTab') },
   ];
 
   return (
@@ -114,7 +152,7 @@ export function ActivityTabs({ activity }: ActivityTabsProps) {
           <button
             key={tab.key}
             type="button"
-            onClick={() => (tab.key === 'saved' ? switchToSaved() : setActiveTab('activity'))}
+            onClick={() => handleTabClick(tab.key)}
             className={cn(
               'flex-1 cursor-pointer py-4 text-center text-[14px] font-semibold font-arabic transition-colors',
               activeTab === tab.key
@@ -188,6 +226,47 @@ export function ActivityTabs({ activity }: ActivityTabsProps) {
               <div className="flex flex-col items-center py-10 text-[#3E4850]">
                 <Bookmark className="mb-3 size-10 opacity-40" />
                 <p className="text-[14px] font-arabic">{t('savedEmpty')}</p>
+              </div>
+            )}
+          </>
+        )}
+
+        {activeTab === 'mine' && (
+          <>
+            {mineLoading ? (
+              <div className="flex justify-center py-10">
+                <Loader2 className="size-6 animate-spin text-[#0095D1]" />
+              </div>
+            ) : mineError ? (
+              <p className="py-8 text-center text-[14px] text-destructive font-arabic">{mineError}</p>
+            ) : mineItems && mineItems.length > 0 ? (
+              <div className="space-y-4">
+                <div className="flex justify-end">
+                  <Link
+                    href="/exercises/new"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#0095D1] px-3 py-1.5 text-xs font-semibold text-[#0095D1] transition-colors hover:bg-[#0095D1] hover:text-white"
+                  >
+                    <Plus className="size-3.5" />
+                    <span>{t('mineCompose')}</span>
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {mineItems.map((ex) => (
+                    <ExerciseCard key={ex._id} variant="compact" exercise={ex} />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center py-10 text-[#3E4850]">
+                <FilePlus className="mb-3 size-10 opacity-40" />
+                <p className="mb-4 text-[14px] font-arabic">{t('mineEmpty')}</p>
+                <Link
+                  href="/exercises/new"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#0095D1] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00709D]"
+                >
+                  <Plus className="size-3.5" />
+                  <span>{t('mineCompose')}</span>
+                </Link>
               </div>
             )}
           </>

@@ -9,7 +9,6 @@ import LocaleSwitcher from './LocaleSwitcher';
 
 type FooterHref =
   | '/'
-  | '/exercises'
   | '/library'
   | '/sessions'
   | '/login'
@@ -49,7 +48,6 @@ export function Footer() {
               {t('productTitle')}
             </p>
             <ul className="space-y-2 text-sm">
-              <FooterLink href="/exercises">{tNav('exercises')}</FooterLink>
               <FooterLink href="/sessions">{tNav('sessions')}</FooterLink>
               <FooterLink href="/library">{tNav('library')}</FooterLink>
             </ul>

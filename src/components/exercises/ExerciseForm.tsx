@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { MathTextarea } from '@/components/ui/math-textarea';
 import {
   Select,
   SelectContent,
@@ -40,6 +40,7 @@ export default function ExerciseForm({ exercise, onSuccess }: ExerciseFormProps)
   const tDiff = useTranslations('exercises.difficulty');
   const tFilter = useTranslations('exercises.filter');
   const tCommon = useTranslations('common');
+  const tCompose = useTranslations('exercises.compose');
   const [serverError, setServerError] = useState('');
   const [attachments, setAttachments] = useState<string[]>(
     exercise?.attachments || []
@@ -135,7 +136,25 @@ export default function ExerciseForm({ exercise, onSuccess }: ExerciseFormProps)
 
       <div className="space-y-2">
         <Label htmlFor="description">{t('description')}</Label>
-        <Textarea id="description" rows={6} {...register('description')} />
+        <Controller
+          control={control}
+          name="description"
+          render={({ field }) => (
+            <MathTextarea
+              id="description"
+              rows={8}
+              value={field.value ?? ''}
+              onChange={field.onChange}
+              placeholder={tCompose('placeholderWithMath')}
+              labels={{
+                write: tCompose('write'),
+                preview: tCompose('preview'),
+                previewEmpty: tCompose('previewEmpty'),
+                mathHint: tCompose('mathHint'),
+              }}
+            />
+          )}
+        />
         {errors.description && (
           <p className="text-sm text-red-600">
             {t('description')} is required

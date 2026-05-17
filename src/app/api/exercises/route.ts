@@ -35,6 +35,7 @@ export async function GET(request: NextRequest) {
     const source = searchParams.get('source'); // 'community' | 'library' | null (= both)
     const filiere = searchParams.get('filiere');
     const featured = searchParams.get('featured');
+    const authorIdParam = searchParams.get('authorId'); // ObjectId hex OR 'me'
 
     const filter: Record<string, unknown> = {};
 
@@ -47,6 +48,21 @@ export async function GET(request: NextRequest) {
     if (source === 'library') filter.examId = { $exists: true };
     if (filiere) filter.filiere = filiere;
     if (featured === '1' || featured === 'true') filter.featured = true;
+
+    // `authorId=me` resolves to the current session user (401 if unauthed).
+    // Otherwise it must be a valid 24-char ObjectId hex — anything else
+    // becomes an empty result rather than a 500.
+    if (authorIdParam === 'me') {
+      if (!session) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+      filter.authorId = new Types.ObjectId(session.userId);
+    } else if (authorIdParam) {
+      if (!Types.ObjectId.isValid(authorIdParam)) {
+        return NextResponse.json({ data: [], total: 0, page, limit });
+      }
+      filter.authorId = new Types.ObjectId(authorIdParam);
+    }
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: 'i' } },
