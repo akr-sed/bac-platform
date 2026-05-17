@@ -1,0 +1,325 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+        "subject": "mathematics",
+        "source_file": "2018.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2018,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2017-2018",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "87654321-abcd-4321-fedc-ba9876543210",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+          "number": 1,
+          "title": null,
+          "statement": "$f$ الدالة العددية المعرفة على المجال $]-\\infty; 1[$ بـ: $$f(x) = \\frac{x^2+1}{x-1}$$\n$(u_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بحدها الأول $u_0 = -3$ ومن أجل كل عدد طبيعي $n$، $u_{n+1} = f(u_n)$.\nليكن $(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$ و $(\\Delta)$ هو المستقيم ذو المعادلة $y=x$ (أنظر الشكل المقابل).",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "etude_de_fonction",
+            "raisonnement_par_recurrence",
+            "limites",
+            "convergence"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": true,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11111111-2222-3333-4444-555555555555",
+              "exercise_id": "87654321-abcd-4321-fedc-ba9876543210",
+              "label": "1",
+              "sub_label": null,
+              "statement": "أعد رسم الشكل على ورقة الإجابة ثم مثّل الحدود $u_0$، $u_1$، $u_2$ و $u_3$ على محور الفواصل دون حسابها مبرزاً خطوط التمثيل، أعط تخميناً حول اتجاه تغير المتتالية $(u_n)$ وتقاربها.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "من التمثيل البياني نلاحظ أن المتتالية $(u_n)$ متزايدة ومحدودة من الأعلى بالعدد $-1$ فهي متقاربة.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "22222222-3333-4444-5555-666666666666",
+              "exercise_id": "87654321-abcd-4321-fedc-ba9876543210",
+              "label": "2",
+              "sub_label": null,
+              "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $-3 \\le u_n < -1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "الخاصية $P(n): -3 \\le u_n < -1$. \n- من أجل $n=0$: $u_0 = -3$ محققة.\n- نفرض صحة $P(n)$ ونبرهن صحة $P(n+1)$.\nبما أن $f$ متزايدة على $[-3; -1]$، فإن $f(-3) \\le f(u_n) < f(-1)$.\nأي $-2.5 \\le u_{n+1} < -1$. وبما أن $-3 \\le -2.5$ فإن $-3 \\le u_{n+1} < -1$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "33333333-4444-5555-6666-777777777777",
+              "exercise_id": "87654321-abcd-4321-fedc-ba9876543210",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بيّن أنه من أجل كل عدد طبيعي $n$: $u_{n+1} + 1 \\ge \\frac{3}{4}(u_n + 1)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": "$u_{n+1} + 1 = \\frac{u_n^2+1}{u_n-1} + 1 = \\frac{u_n^2+u_n}{u_n-1} = \\frac{u_n}{u_n-1}(u_n+1)$.\nبما أن $-3 \\le u_n < -1$ فإن $\\frac{3}{4} \\le \\frac{u_n}{u_n-1} < 1$. \nوبما أن $u_n+1 < 0$ فإن $\\frac{u_n}{u_n-1}(u_n+1) \\ge \\frac{3}{4}(u_n+1)$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "44444444-5555-6666-7777-888888888888",
+              "exercise_id": "87654321-abcd-4321-fedc-ba9876543210",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "استنتج أنه من أجل كل عدد طبيعي $n$: $u_n + 1 \\ge -2\\left(\\frac{3}{4}\\right)^n$ ثم $\\lim_{n \\to +\\infty} u_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "بالتراجع نجد $u_n+1 \\ge (u_0+1)\\left(\\frac{3}{4}\\right)^n = -2\\left(\\frac{3}{4}\\right)^n$.\nبما أن $u_n+1 < 0$ فإن $-2\\left(\\frac{3}{4}\\right)^n \\le u_n+1 < 0$.\nبالحصر نجد $\\lim_{n \\to +\\infty} (u_n+1) = 0$ أي $\\lim_{n \\to +\\infty} u_n = -1$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "55555555-6666-7777-8888-999999999999",
+              "exercise_id": "87654321-abcd-4321-fedc-ba9876543210",
+              "label": "4",
+              "sub_label": null,
+              "statement": "نضع $S_n = u_0 + u_1 + \\dots + u_n$.\n- بيّن أنه من أجل كل عدد طبيعي $n$: $8\\left[\\left(\\frac{3}{4}\\right)^{n+1} - 1\\right] \\le (u_0+1) + (u_1+1) + \\dots + (u_n+1) < 0$ واستنتج $\\lim_{n \\to +\\infty} S_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "لدينا $u_k+1 \\ge -2\\left(\\frac{3}{4}\\right)^k$. بالجمع نجد $\\sum_{k=0}^n (u_k+1) \\ge -2 \\sum_{k=0}^n \\left(\\frac{3}{4}\\right)^k = -2 \\frac{1-(\\frac{3}{4})^{n+1}}{1-\\frac{3}{4}} = -8(1-(\\frac{3}{4})^{n+1})$.\nإذن $8[(\\frac{3}{4})^{n+1}-1] \\le S_n + n + 1 < 0$.\nبما أن $\\lim_{n \\to +\\infty} 8[(\\frac{3}{4})^{n+1}-1] = -8$ و $\\lim_{n \\to +\\infty} -(n+1) = -\\infty$ فإن $\\lim_{n \\to +\\infty} S_n = -\\infty$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+          "number": 2,
+          "title": null,
+          "statement": "الفضاء منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$، نعتبر النقطتين $A(1;1;3)$ و $B(1;0;2)$.\n1) أ) بيّن أن النقط $O$، $A$ و $B$ ليست في استقامية.\nب) تحقق أن $\\vec{n}(2;1;-1)$ شعاع ناظمي للمستوي $(OAB)$ ثم عين معادلة ديكارتية له.\n2) لتكن $(\\Delta)$ مجموعة النقط $M$ من الفضاء التي إحداثياتها $(x;y;z)$ وتحقق المعادلة:\n$(2x+2y+6z-11)^2 + (2x+4z-5)^2 = 0$\n- بيّن أن المجموعة $(\\Delta)$ هي تقاطع المستويين المحوريين للقطعتين $[OA]$ و $[OB]$، ثم عين تمثيلاً وسيطياً للمجموعة $(\\Delta)$.\n3) لتكن $M$ نقطة كيفية من الفضاء\n- برهن صحة التكافؤ التالي: $(M \\in (\\Delta))$ يكافئ $(OM = AM = BM)$ ثم استنتج إحداثيات النقطة $\\Omega$ مركز الدائرة المحيطة بالمثلث $OAB$.",
+          "topic": "geometrie",
+          "concepts": [
+            "vecteurs",
+            "plans",
+            "droites",
+            "distances",
+            "equations_cartesiennes",
+            "parametriques"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "parts": []
+        },
+        {
+          "id": "f1e2d3c4-b5a6-9870-1234-567890abcdef",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+          "number": 3,
+          "title": null,
+          "statement": "المستوي المركب منسوب إلى المعلم المتعامد المتجانس $(O; \\vec{u}, \\vec{v})$، $\\theta$ عدد حقيقي من المجال $]-\\pi; \\pi]$.\nI. حل في مجموعة الأعداد المركبة $\\mathbb{C}$، المعادلة ذات المجهول $z$ التالية:\n$(z^2-2z+2)(z^2-2(\\sin\\theta)z+1)=0$\nII. $A$، $B$، $C$ و $D$ نقط من المستوي لاحقاتها على الترتيب $z_A = -\\sqrt{2}e^{i\\frac{5\\pi}{4}}$، $z_B = 1-i$، $z_C = \\sin\\theta + i\\cos\\theta$ و $z_D = \\bar{z_C}$ (يرمز $\\bar{z_C}$ إلى مرافق $z_C$).\n1) اكتب الأعداد $z_A$، $z_B$، $z_C$ و $z_D$ على الشكل الأسي.\n2) $E$ نقطة من المستوي لاحقتها $z_E$ حيث $z_E = \\frac{z_A}{z_B}$.\n- بيّن أن النقط $C$، $D$ و $E$ تنتمي إلى دائرة يطلب تعيين مركزها ونصف قطرها.\n3) ليكن $S$ التشابه المباشر الذي مركزه النقطة $A$ وزاويته $\\frac{\\pi}{4}$ ونسبته $(2\\sqrt{2}-2)$.\n- عين قيمة $\\theta$ حتى تكون النقطة $B$ صورة النقطة $C$ بالتشابه المباشر $S$.\n4) نضع $\\theta = \\frac{-3\\pi}{4}$. عين قيم العدد الطبيعي $n$ التي من أجلها يكون العدد $(z_D)^n$ تخيليا صرفا.",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "forme_exponentielle",
+            "forme_trigonometrique",
+            "transformations_plan",
+            "similitudes"
+          ],
+          "difficulty": "hard",
+          "marks": 5.0,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "parts": []
+        },
+        {
+          "id": "98765432-10fe-dcba-4321-0987654321ba",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+          "number": 4,
+          "title": null,
+          "statement": "$f$ الدالة العددية المعرفة على $[0;1[ \\cup ]1;+\\infty[$ بـ:\n$$\\begin{cases} f(x) = x+1-\\frac{1}{\\ln x}; & x \\in \\mathbb{R}_+^* - \\{1\\} \\\\ f(0) = 1 \\end{cases}$$\n(يرمز بـ $\\ln$ إلى اللوغاريتم النيبيري)\n$(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$.\n1) أ/ بيّن أن $f$ مستمرة عند $0$ بقيم أكبر.\nب/ احسب $\\lim_{h \\to 0^+} \\frac{f(h)-f(0)}{h}$ ثم فسر النتيجة هندسيا.\n2) أ/ احسب $\\lim_{x \\to +\\infty} f(x)$، $\\lim_{x \\to 1^-} f(x)$ و $\\lim_{x \\to 1^+} f(x)$.\nب/ ادرس اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.\n3) بيّن أن المنحنى $(C_f)$ يقبل مستقيماً مقارباً مائلاً $(\\Delta)$ يطلب تعيين معادلته ثم ادرس وضعية $(C_f)$ بالنسبة إلى $(\\Delta)$.\n4) بيّن أن المنحنى $(C_f)$ يقطع حامل محور الفواصل في نقطة وحيدة $\\omega$ فاصلتها $\\alpha$ حيث $1.49 < \\alpha < 1.5$.\nثم بيّن أن معادلة المماس للمنحنى $(C_f)$ في النقطة $\\omega$ تكتب على الشكل $y = \\left(\\alpha+3+\\frac{1}{\\alpha}\\right)(x-\\alpha)$.\n5) ارسم المستقيم $(\\Delta)$ والمنحنى $(C_f)$.\n6) $h$ الدالة العددية المعرفة على المجال $[1;+\\infty[$ بـ: $h(x) = 1-x+x\\ln x$.\nأ/ بيّن أن الدالة $h$ متزايدة تماما على المجال $]1;+\\infty[$ واستنتج إشارة $h(x)$ على المجال $]1;+\\infty[$.\nب/ بيّن أنه من أجل كل $x > 1$: $f(x)-x+\\frac{1}{x\\ln x} = \\frac{h(x)}{x\\ln x}$ واستنتج أنه من أجل $x > 1$: $x-\\frac{1}{x\\ln x} < f(x) < x+1$.\n7) $A$ مساحة الحيز من المستوي المحدد بالمنحنى $(C_f)$ وحامل محور الفواصل والمستقيمين اللذين معادلتاهما: $x=\\alpha$ و $x=e$. ($e$ هو أساس اللوغاريتم النيبيري).\n- بيّن أن $\\frac{1}{2}(e^2-\\alpha^2)-\\ln(\\alpha+1) < A < \\frac{1}{2}(e-\\alpha)(e+\\alpha+2)$.",
+          "topic": "analyse",
+          "concepts": [
+            "fonction_logarithme",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "branches_infinies",
+            "calcul_integral",
+            "aires"
+          ],
+          "difficulty": "hard",
+          "marks": 7.0,
+          "has_figure": true,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "parts": []
+        }
+      ],
+      "figures": [
+        {
+          "id": "f0000001-1111-2222-3333-444444444444",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-1",
+          "exercise_ref": 1,
+          "part_ref": null,
+          "context": "question",
+          "figure_type": "graph",
+          "description": "الشكل يمثل منحنى الدالة f والمستقيم y=x. المنحنى يمر بالنقطة (-3, -2.5) ويقترب من المستقيم y=x عند x=-1. المحاور مدرجة من -3 إلى 1.",
+          "source_page": 1,
+          "bounding_box": [
+            350,
+            50,
+            600,
+            400
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "363b4027-26ec-41c5-9449-165c7eb89a78-2",
+        "subject": "mathematics",
+        "source_file": "2018.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2018,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2017-2018",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "e1e1e1e1-2222-3333-4444-555555555555",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-2",
+          "number": 1,
+          "title": null,
+          "statement": "1) $\\alpha$ و $\\beta$ عددان طبيعيان بحيث: $\\begin{cases} \\alpha+\\beta=4035 \\\\ \\alpha-\\beta=1 \\end{cases}$\n- عين العددين $\\alpha$ و $\\beta$، ثم بيّن أن العددين $\\frac{\\alpha}{2}$ و $\\beta$ أوليان فيما بينهما.\n2) عيّن كل الثنائيات الصحيحة $(x,y)$ التي تحقق المعادلة: $1009x - 2017y = 1$.\n3) عيّن الأعداد الصحيحة $a$ التي تحقق الجملة: $\\begin{cases} a \\equiv 2019 [2017] \\\\ a \\equiv 2019 [1009] \\end{cases}$.\n4) أ) $n$ عدد طبيعي، ادرس تبعا لقيم $n$ بواقي القسمة الإقليدية للعدد $7^n$ على $9$.\nب) $L$ عدد طبيعي يكتب في النظام ذي الأساس $7$ كما يلي: $L = \\underbrace{111\\dots1}_{2018 \\text{ مرة}}$.\n- عيّن باقي القسمة الإقليدية للعدد $42L$ على $9$.",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "congruences",
+            "theoreme_bezout",
+            "theoreme_gauss"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "parts": []
+        },
+        {
+          "id": "p2p2p2p2-3333-4444-5555-666666666666",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-2",
+          "number": 2,
+          "title": null,
+          "statement": "كيس يحوي 9 كريات لا نفرق بينها باللمس موزعة كما يلي:\nخمس كريات حمراء مرقمة بـ: 1، 1، 2، 2، 2 وثلاث كريات خضراء مرقمة بـ: -3، 2، 3 وكرية بيضاء مرقمة بـ: -1.\nنسحب عشوائيا 4 كريات في آن واحد.\n1) احسب احتمال الحوادث التالية:\n$A$: \"الحصول على أربع كريات من نفس اللون\".\n$B$: \"الحصول على كرية بيضاء على الأكثر\".\n$C$: \"الحصول على أربع كريات مجموع أرقامها معدوم\".\n2) ليكن $X$ المتغير العشوائي الذي يرفق بكل نتيجة سحب عدد الكريات الخضراء المتبقية في الكيس.\nأ) عيّن قيم المتغير العشوائي $X$ ثم عرّف قانون احتماله.\nب) احسب الأمل الرياضياتي $E(X)$ للمتغير العشوائي $X$.\nج) احسب احتمال الحادثة: \"$X^2 - X > 0$\".",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "combinaisons",
+            "variable_aleatoire",
+            "esperance"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "parts": []
+        },
+        {
+          "id": "c3c3c3c3-4444-5555-6666-777777777777",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-2",
+          "number": 3,
+          "title": null,
+          "statement": "1) $m$ عدد حقيقي، نعتبر في مجموعة الأعداد المركبة المعادلة ذات المجهول $z$ التالية:\n$z^2 + (m+1)z + (2m-1) = 0 \\dots (E)$\n- عيّن قيم العدد الحقيقي $m$ التي من أجلها تقبل المعادلة $(E)$ حلين مركبين غير حقيقيين.\n2) نضع $m=3$، حل المعادلة $(E)$.\n3) نعتبر في المستوي المركب المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{u}, \\vec{v})$ النقط $A$، $B$، $C$ و $E$ التي لاحقاتها $z_A = -2+i$، $z_B = -2-i$، $z_C = \\alpha$ و $z_E = \\sqrt{3}$، حيث $\\alpha$ عدد حقيقي و $\\alpha > -2$.\n- بيّن أن قيمة $\\alpha$ التي يكون من أجلها المثلث $ABC$ متقايس الأضلاع هي $(-2+\\sqrt{3})$.\n- نضع في كل ما يأتي $z_C = -2+\\sqrt{3}$.\n4) اكتب العدد المركب: $\\frac{z_C-z_E}{z_A-z_B}$ على الشكل الأسي ثم استنتج أن:\nأ) المستقيمان $(AB)$ و $(EC)$ متعامدان.\nب) النقط $A$، $B$ و $E$ تنتمي إلى نفس الدائرة $(\\gamma)$ التي يطلب تعيين مركزها ونصف قطرها.\n5) ليكن $r$ الدوران الذي يحول النقطة $B$ إلى $C$ ويحول $C$ إلى $A$، عبارته المركبة هي:\n$z' = az + \\left(\\frac{\\sqrt{3}-6}{2}\\right) + i\\left(\\frac{2\\sqrt{3}-1}{2}\\right)$ حيث $a$ عدد مركب.\nأ) احسب العدد المركب $a$ ثم استنتج زاوية الدوران $r$.\nب) تحقق أن النقطة $G$ مركز ثقل المثلث $ABC$ هي مركز الدوران $r$.",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "forme_exponentielle",
+            "rotation",
+            "similitudes"
+          ],
+          "difficulty": "hard",
+          "marks": 5.0,
+          "has_figure": false,
+          "source_page": [
+            4,
+            5
+          ],
+          "solution": null,
+          "parts": []
+        },
+        {
+          "id": "a4a4a4a4-5555-6666-7777-888888888888",
+          "exam_id": "363b4027-26ec-41c5-9449-165c7eb89a78-2",
+          "number": 4,
+          "title": null,
+          "statement": "I. $g$ الدالة العددية المعرفة على المجال $]0;+\\infty[$ بـ: $g(x) = (1+x+x^2)e^{-1/x}-1$.\n1) بيّن أنه من أجل كل $x$ من المجال $]0;+\\infty[$: $g'(x) = \\frac{(x+1)(2x^2+1)}{x^2}e^{-1/x}$ واستنتج اتجاه تغير الدالة $g$ على المجال $]0;+\\infty[$.\n2) بيّن أن المعادلة $g(x)=0$ تقبل حلا وحيدا $\\alpha$ حيث $0.9 < \\alpha < 1$، واستنتج إشارة $g(x)$ على المجال $]0;+\\infty[$.\nII. $f$ الدالة العددية المعرفة على المجال $]0;+\\infty[$ بـ: $f(x) = \\frac{1}{x} + (1+x)e^{-1/x}$.\n$(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$.\n1) أ) احسب $\\lim_{x \\to +\\infty} f(x)$ و $\\lim_{x \\to 0^+} f(x)$.\nب) بيّن أنه من أجل كل $x$ من المجال $]0;+\\infty[$: $f'(x) = \\frac{g(x)}{x^2}$ واستنتج اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.\n2) بيّن أن $\\lim_{x \\to +\\infty} (xe^{-1/x}-x) = -1$ (يمكن وضع $t = -1/x$) ثم استنتج أن المستقيم $(\\Delta)$ ذو المعادلة $y=x$ مقارب للمنحنى $(C_f)$ بجوار $+\\infty$.\n3) $h$ الدالة العددية المعرفة على المجال $]0;+\\infty[$ بـ: $h(x) = \\frac{1}{x}-1+e^{-1/x}$.\nأ) احسب $\\lim_{x \\to +\\infty} h(x)$ وادرس اتجاه تغير الدالة $h$ واستنتج إشارة $h(x)$ على $]0;+\\infty[$.\nب) تحقق أن $f(x)-x = (1+x)h(x)$ ثم استنتج الوضعية النسبية لـ $(C_f)$ بالنسبة إلى المستقيم $(\\Delta)$.\n4) ارسم المستقيم $(\\Delta)$ والمنحنى $(C_f)$. (نأخذ $f(\\alpha) \\approx 1.73$).\n5) $(u_n)$ متتالية عددية معرفة على $\\mathbb{N}^*$ بحدها العام $u_n$ حيث: $u_n = \\frac{n}{n+1}f\\left(\\frac{1}{n}\\right) - \\frac{n^2}{n+1}$.\nأ) اكتب $u_n$ بدلالة $n$ ثم بيّن أن المتتالية $(u_n)$ هندسية يطلب تعيين أساسها وحدها الأول $u_1$.\nب) احسب بدلالة $n$ المجموع $S_n$ حيث: $S_n = \\left(\\frac{1}{2}f(1)-\\frac{1}{2}\\right) + \\left(\\frac{2}{3}f\\left(\\frac{1}{2}\\right)-\\frac{1}{3}\\right) + \\dots + \\left(\\frac{n}{n+1}f\\left(\\frac{1}{n}\\right)-\\frac{1}{n+1}\\right)$.",
+          "topic": "analyse",
+          "concepts": [
+            "fonction_exponentielle",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "suites_numeriques",
+            "suites_geometriques"
+          ],
+          "difficulty": "hard",
+          "marks": 7.0,
+          "has_figure": true,
+          "source_page": [
+            5,
+            6
+          ],
+          "solution": null,
+          "parts": []
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

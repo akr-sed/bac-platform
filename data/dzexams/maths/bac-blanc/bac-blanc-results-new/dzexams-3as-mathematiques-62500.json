@@ -1,0 +1,693 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-62500.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": 3,
+        "filiere": "mathematiques",
+        "year": 2022,
+        "duration_minutes": 270,
+        "total_marks": 19,
+        "language": "ar",
+        "region": "Adrar et Timimoun",
+        "institution": "Thanaouiyat Al-Moqataa Al-Oula",
+        "academic_year": "2021-2022",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "11984252-1678-4335-8664-16739194248a",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+          "number": 1,
+          "title": null,
+          "statement": "نعتبر المعادلة التفاضلية:\n$y' - 2y = (x - 3)e^x...........(E)$",
+          "topic": "equations_differentielles",
+          "concepts": [
+            "equation_differentielle_lineaire",
+            "solution_generale",
+            "solution_particuliere",
+            "conditions_initiales"
+          ],
+          "difficulty": "medium",
+          "marks": 3.5,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "84318721-201a-4710-850f-23671236113b",
+              "exercise_id": "11984252-1678-4335-8664-16739194248a",
+              "label": "1",
+              "sub_label": null,
+              "statement": "عين قيمتي العددين الحقيقيين $a$ و $b$ حتى تكون الدالة $g : x \\mapsto (ax + b)e^x$ حلا لـ $(E)$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "19409618-9366-419b-8712-41151608688c",
+              "exercise_id": "11984252-1678-4335-8664-16739194248a",
+              "label": "2",
+              "sub_label": null,
+              "statement": "عين حلول المعادلة التفاضلية:\n$y' - 2y = 0...........(E')$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "0194879c-0359-4217-9105-09252327768d",
+              "exercise_id": "11984252-1678-4335-8664-16739194248a",
+              "label": "3",
+              "sub_label": null,
+              "statement": "أثبت أن $f$ حل للمعادلة التفاضلية $(E)$ إذا وفقط إذا كان $f - g$ حلا للمعادلة التفاضلية $(E')$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "10028721-1678-4335-8664-16739194248e",
+              "exercise_id": "11984252-1678-4335-8664-16739194248a",
+              "label": "4",
+              "sub_label": null,
+              "statement": "استنتج حلول المعادلة التفاضلية $(E)$ ، ثم استنتج الحل الذي يحقق $y(0) = 4$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1",
+                "2",
+                "3"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-16739194248f",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+          "number": 2,
+          "title": null,
+          "statement": "لتكن $X_n$ و $Y_n$ المتتاليتين المعرفتين على مجموعة الأعداد الطبيعية $\\mathbb{N}$ كمايلي:\n$$ \\begin{cases} X_0 = 5 \\\\ X_{n+1} = 3X_n - 2 \\end{cases} \\quad \\text{و} \\quad \\begin{cases} Y_0 = 1 \\\\ Y_{n+1} = 3Y_n + 8 \\end{cases} $$",
+          "topic": "arithmetique",
+          "concepts": [
+            "suites_recurrentes",
+            "suites_geometriques",
+            "divisibilite",
+            "pgcd",
+            "theoreme_bezout",
+            "congruences"
+          ],
+          "difficulty": "medium",
+          "marks": 4.5,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942490",
+              "exercise_id": "11984252-1678-4335-8664-16739194248f",
+              "label": "1",
+              "sub_label": null,
+              "statement": "نعرف من أجل كل عدد طبيعي $n$ المتتالية $(U_n)$ بالعبارة : $U_n = X_n - 1$ .\na) بين أن المتتالية $(U_n)$ هندسية، يطلب تعيين أساسها وحدها الأول.\nb) استنتج أنه من أجل كل عدد طبيعي $n$ : $X_n = 4 \\times 3^n + 1$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942491",
+              "exercise_id": "11984252-1678-4335-8664-16739194248f",
+              "label": "2",
+              "sub_label": null,
+              "statement": "بين أن $PGCD(X_{n+1};X_n)$ يقسم 2 ، ثم استنتج أن : $PGCD(X_{n+1};X_n) = 1$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942492",
+              "exercise_id": "11984252-1678-4335-8664-16739194248f",
+              "label": "3",
+              "sub_label": null,
+              "statement": "a) برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $5X_n - 4Y_n = 21$ .\nb) استنتج عبارة $Y_n$ بدلالة $n$ ، ثم جد القيم الممكنة لـ : $PGCD(X_n;Y_n)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942493",
+              "exercise_id": "11984252-1678-4335-8664-16739194248f",
+              "label": "4",
+              "sub_label": null,
+              "statement": "a) ادرس حسب قيم العدد الطبيعي $n$ بواقي القسمة الإقليدية للعدد $3^n$ على 7 .\nb) بين أنه إذا كان $n \\equiv 5 \\pmod{6}$ ، فإن : $PGCD(X_n;Y_n) = 7$ .\nc) استنتج قيمة $PGCD(X_{2021};Y_{2021})$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-167391942494",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+          "number": 3,
+          "title": null,
+          "statement": "يحتوي وعاء على $n$ كرية بيضاء ($n \\ge 2$) ، 5 كريات حمر و 3 كريات خضراء . نسحب عشوائيا كرتين في آن واحد.",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "combinaisons",
+            "probabilite_conditionnelle",
+            "variable_aleatoire",
+            "esperance"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1,
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942495",
+              "exercise_id": "11984252-1678-4335-8664-167391942494",
+              "label": "1",
+              "sub_label": null,
+              "statement": "ماهو احتمال الحصول على كريتين بيضاوين.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942496",
+              "exercise_id": "11984252-1678-4335-8664-167391942494",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نرمز بـ $P(n)$ إلى احتمال الحصول على كريتين من نفس اللون.\na) أثبت أن : $P(n) = \\frac{n^2-n+26}{(n+7)(n+8)}$\nb) احسب $\\lim_{n \\to +\\infty} P(n)$ ، ثم فسر النتيجة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942497",
+              "exercise_id": "11984252-1678-4335-8664-167391942494",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نضع $n = 4$ ، يقوم لاعب بسحب كريتين من الوعاء في آن واحد ثم يرجعهما ويسحب كريتين أخريين، لإجراء هذين السحبين يدفع اللاعب مبلغا قدره 30 دينارا، وبعد كل سحب يتحصل على 40 دينارا إذا كانت الكريتان من نفس اللون، وإلا تحصل على 5 دنانير فقط.\nليكن $X$ المتغير العشوائي الذي يرفق بكل سحبين مقدار ربح هذا اللاعب.\na) عين قيم المتغير $X$ .\nb) عرف قانون احتمال المتغير العشوائي $X$ ، ثم احسب أمله الرياضياتي.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-167391942498",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+          "number": 4,
+          "title": null,
+          "statement": "$n$ عدد طبيعي غير معدوم، $f_n$ الدالة المعرفة على المجال $]0;+\\infty[$ كمايلي: $f_n(x) = \\frac{(\\ln x)^n}{x^2}$ وليكن $(C_n)$ المنحنى الممثل للدالة $f_n$ في المستوي المنسوب إلى معلم متعامد ومتجانس $(O;\\vec{i},\\vec{j})$ .",
+          "topic": "analyse",
+          "concepts": [
+            "limites",
+            "etude_de_fonction",
+            "derivation",
+            "tableau_de_variation",
+            "representation_graphique",
+            "calcul_integral",
+            "integration_par_parties",
+            "aires",
+            "suites_numeriques",
+            "raisonnement_par_recurrence",
+            "convergence",
+            "primitives"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942499",
+              "exercise_id": "11984252-1678-4335-8664-167391942498",
+              "label": "1",
+              "sub_label": null,
+              "statement": "نضع $n = 1$\na) احسب $\\lim_{x \\to 0} f_1(x)$ و $\\lim_{x \\to +\\infty} f_1(x)$ ثم فسر النتيجتين بيانيا.\nb) ادرس اتجاه تغير الدالة $f_1$ ، ثم شكل جدول تغيراتها.\nc) اكتب معادلة المماس للمنحنى $(C_1)$ في النقطة ذات الفاصلة 1 .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942500",
+              "exercise_id": "11984252-1678-4335-8664-167391942498",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نضع $n = 2$\na) احسب $\\lim_{x \\to 0} f_2(x)$ و $\\lim_{x \\to +\\infty} f_2(x)$ ثم فسر النتيجتين بيانيا.\nb) ادرس اتجاه تغير الدالة $f_2$ ، ثم شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942501",
+              "exercise_id": "11984252-1678-4335-8664-167391942498",
+              "label": "3",
+              "sub_label": null,
+              "statement": "a) ادرس إشارة الفرق $f_2(x) - f_1(x)$ ثم استنتج الوضع النسبي للمنحنيين $(C_1)$ و $(C_2)$ .\nb) أنشئ كلا من المنحنيين $(C_1)$ و $(C_2)$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942502",
+              "exercise_id": "11984252-1678-4335-8664-167391942498",
+              "label": "4",
+              "sub_label": null,
+              "statement": "نضع من أجل كل عدد طبيعي $n$ غير معدوم، $I_n = \\int_1^e f_n(x)dx$ .\na) نضع $F(x) = \\frac{1+\\ln x}{x}$ ، احسب $F'(x)$ ثم استنتج $I_1$ .\nb) باستعمال المكاملة بالتجزئة، بين أن : $I_{n+1} = -\\frac{1}{e} + (n+1)I_n$ .\nc) احسب $I_2$ ، ثم استنتج مساحة الحيز المستوي المحدد بالمنحنيين $(C_1)$ و $(C_2)$ والمستقيمين اللذين معادلتاهما : $x = 1$ و $x = e$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942503",
+              "exercise_id": "11984252-1678-4335-8664-167391942498",
+              "label": "5",
+              "sub_label": null,
+              "statement": "a) اعتمادا على السؤال (4-ب ) ، برهن بالتراجع أنه من أجل كل عدد طبيعي غير معدوم $n$ : $I_n = 1 - \\frac{1}{e} \\left( 1 + \\frac{1}{1!} + \\frac{1}{2!} + ... + \\frac{1}{n!} \\right)$ .\nb) باستعمال حصر للعدد $\\ln x$ على المجال $[1;e]$ ، بين أنه من أجل كل عدد طبيعي غير معدوم $n$ : $0 \\le I_n \\le 1$ .\nc) استنتج النهاية : $\\lim_{n \\to +\\infty} \\left( 1 + \\frac{1}{1!} + \\frac{1}{2!} + ... + \\frac{1}{n!} \\right)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "11984252-1678-4335-8664-167391942504",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-1",
+          "exercise_ref": 4,
+          "part_ref": "3-b",
+          "context": "question",
+          "figure_type": "graph",
+          "description": "A graph showing the curves (C1) and (C2) of functions f1(x) and f2(x) respectively, as requested to be drawn in the exercise.",
+          "source_page": 2,
+          "bounding_box": null
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-62500.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": 3,
+        "filiere": "mathematiques",
+        "year": 2022,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "Adrar et Timimoun",
+        "institution": "Thanaouiyat Al-Moqataa Al-Oula",
+        "academic_year": "2021-2022",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "11984252-1678-4335-8664-167391942505",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+          "number": 1,
+          "title": null,
+          "statement": "من أجل كل عدد طبيعي غير معدوم $n$ نفرض الأعداد : $a_n = 2 \\times 10^n - 1$ ، $b_n = 4 \\times 10^n - 1$ و $c_n = 2 \\times 10^n + 1$ .",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "nombres_premiers",
+            "pgcd",
+            "theoreme_bezout",
+            "decomposition_facteurs_premiers"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942506",
+              "exercise_id": "11984252-1678-4335-8664-167391942505",
+              "label": "I",
+              "sub_label": null,
+              "statement": "1) احسب $a_n$ ، $b_n$ و $c_n$ من أجل قيم $n$ تساوي : 1 ، 2 و 3 .\n2) ما هو عدد أرقام العددين $a_n$ و $c_n$ ؟\n3) بين أن العددين $a_n$ و $c_n$ يقبلان القسمة على 3 و بين أن العدد $b_3$ أولي.\n4) بين أنه من أجل كل عدد طبيعي غير معدوم $n$ : $b_n \\times c_n = a_{2n}$ .\n5) استنتج تحليلا إلى جداء عوامل أولية للعدد $a_6$ .\n6) باستعمال الخاصية : $PGCD(a;b) = PGCD(a;a-b)$ . بين أن : $PGCD(b_n;c_n) = PGCD(c_n;2)$ ، ثم استنتج أن $b_n$ و $c_n$ أوليان فيما بينهما.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942507",
+              "exercise_id": "11984252-1678-4335-8664-167391942505",
+              "label": "II",
+              "sub_label": null,
+              "statement": "نعتبر في $\\mathbb{Z}^2$ المعادلة ذات المجهولين $(x;y)$ : $b_3x + c_3y = 1...........(*)$\n1) برر أن المعادلة $(*)$ تقبل على الأقل حلا.\n2) طبق خوارزمية إقليدس على $b_3$ و $c_3$ لإيجاد حل خاص للمعادلة $(*)$ .\n3) حل في $\\mathbb{Z}^2$ المعادلة $(*)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-167391942508",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+          "number": 2,
+          "title": null,
+          "statement": "$U_1$ صندوق يحتوي على 3 كريات حمراء وكريتين خضراء ، و $U_2$ صندوق آخر يحتوي على كريتين حمراوين و 3 كريات خضراء ، الكريات متجانسة لا نفرق بينها باللمس، نقوم عشوائيا بسحب كرية من الصندوق $U_1$ ونضعها في الصندوق $U_2$ ، ثم نسحب عشوائيا من الصندوق $U_2$ كريتين في آن واحد.\nنرمز بـ $R_1$ للحادثة: \"سحب كرية حمراء من الصندوق $U_1$ \" وبالرمز $A$ للحادثة: \"سحب كريتين حمراوين من الصندوق $U_2$ \".",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "combinaisons",
+            "probabilite_conditionnelle",
+            "independance",
+            "variable_aleatoire",
+            "esperance",
+            "theoreme_bayes"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942509",
+              "exercise_id": "11984252-1678-4335-8664-167391942508",
+              "label": "1",
+              "sub_label": null,
+              "statement": "احسب الاحتمالين $P(R_1)$ و $P(R_1 \\cap A)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942510",
+              "exercise_id": "11984252-1678-4335-8664-167391942508",
+              "label": "2",
+              "sub_label": null,
+              "statement": "تحقق أن : $P(A) = \\frac{11}{75}$ ، هل الحادثتان $R_1$ و $A$ مستقلتان؟ برر",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942511",
+              "exercise_id": "11984252-1678-4335-8664-167391942508",
+              "label": "3",
+              "sub_label": null,
+              "statement": "علما أن الكريتين المسحوبتين من $U_2$ حمراوان، ما احتمال أن الكرية المسحوبة من $U_1$ كانت حمراء ؟",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942512",
+              "exercise_id": "11984252-1678-4335-8664-167391942508",
+              "label": "4",
+              "sub_label": null,
+              "statement": "ليكن $n$ عددا طبيعيا غير معدوم. نضيف $n$ كرية حمراء إلى الصندوق $U_1$ ، ونعيد التجربة العشوائية السابقة؛ حيث يربح اللاعب 5 دنانير عند كل سحب لكرية خضراء من $U_2$ ، ويخسر 10 دنانير عند كل سحب لكرية حمراء من الصندوق $U_2$ .\nنسمي $X$ المتغير العشوائي الذي يساوي مقدار أرباح اللاعب في هذه اللعبة.\na) بين أن: $P(X = -5) = \\frac{9n+43}{15(n+5)}$ .\nb) أعط، بدلالة $n$ ، قانون احتمال المتغير العشوائي $X$ ، ثم احسب أمله الرياضيتي.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-167391942513",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+          "number": 3,
+          "title": null,
+          "statement": "لتكن $(u_n)$ المتتالية المعرفة على $\\mathbb{N}^*$ كمايلي: $u_n = \\frac{n^{10}}{2^n}$ .",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_recurrentes",
+            "raisonnement_par_recurrence",
+            "convergence",
+            "etude_de_fonction",
+            "derivation",
+            "limites",
+            "continuite"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3,
+            4
+          ],
+          "solution": null,
+          "metadata": {
+            "theoreme_valeurs_intermediaires": true
+          },
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942514",
+              "exercise_id": "11984252-1678-4335-8664-167391942513",
+              "label": "1",
+              "sub_label": null,
+              "statement": "برهن أنه من أجل كل عدد طبيعي غير معدوم $n$ يكون: $u_{n+1} \\le 0,95u_n$ إذا وفقط إذا كان: $(1 + \\frac{1}{n})^{10} \\le 1,9$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942515",
+              "exercise_id": "11984252-1678-4335-8664-167391942513",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نعتبر الدالة $f$ المعرفة على $[1;+\\infty[$ بـ: $f(x) = (1 + \\frac{1}{x})^{10}$ .\na) ادرس تغيرات الدالة $f$ على مجال تعريفها ، ثم احسب $\\lim_{x \\to +\\infty} f(x)$ .\nb) بين أنه يوجد عدد حقيقي وحيد $\\alpha$ من المجال $]0;1]$ حيث: $f(\\alpha) = 1,9$ .\nc) عين العدد الطبيعي $n_0$ ، بحيث : $n_0 - 1 < \\alpha < n_0$ .\nd) برهن أنه من أجل كل عدد طبيعي $n$ حيث $n \\ge 16$ يكون : $(1 + \\frac{1}{n})^{10} \\le 1,9$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-b",
+                "2-c"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942516",
+              "exercise_id": "11984252-1678-4335-8664-167391942513",
+              "label": "3",
+              "sub_label": null,
+              "statement": "a) عين اتجاه تغير المتتالية $(u_n)$ ابتداء من الرتبة 16 .\nb) ماذا تستنج بالنسبة للمتتالية $(u_n)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1",
+                "2-d"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942517",
+              "exercise_id": "11984252-1678-4335-8664-167391942513",
+              "label": "4",
+              "sub_label": null,
+              "statement": "برهن بالتراجع، أنه من أجل كل عدد طبيعي $n$ يحقق $n \\ge 16$ يكون : $0 \\le u_n \\le (0,95)^{n-16} \\times u_{16}$ ، ثم استنتج $\\lim_{n \\to +\\infty} u_n$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "11984252-1678-4335-8664-167391942518",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+          "number": 4,
+          "title": null,
+          "statement": null,
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "derivation",
+            "limites",
+            "tableau_de_variation",
+            "representation_graphique",
+            "calcul_integral",
+            "integration_par_parties",
+            "continuite"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "11984252-1678-4335-8664-167391942519",
+              "exercise_id": "11984252-1678-4335-8664-167391942518",
+              "label": "I",
+              "sub_label": null,
+              "statement": "لتكن $g$ الدالة المعرفة على $\\mathbb{R}$ بالعبارة : $g(x) = e^x(x - 1) + 1$ .\n1) ادرس اتجاه تغير الدالة $g$ ، ثم شكل جدول تغيراتها.\n2) استنتج أنه من أجل كل عدد حقيقي $x$ : $g(x) \\ge 0$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-1"
+              ],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942520",
+              "exercise_id": "11984252-1678-4335-8664-167391942518",
+              "label": "II",
+              "sub_label": null,
+              "statement": "لتكن الدالة العددية $I$ المعرفة على $\\mathbb{R}$ كمايلي: $I(x) = \\int_0^x (x - t)e^t dt$ .\n1) باستعمال المكاملة بالتجزئة، أثبت أن : $I(x) = e^x(x - 1) + 1$ .\n2) ليكن $x$ عددا حقيقيا موجبا، أثبت أنه من أجل كل عدد حقيقي $t$ من المجال $[0;x]$ يكون : $1 \\le e^t \\le e^x$ . ثم استنتج أن : $\\frac{x^2}{2} \\le I(x) \\le \\frac{x^2e^x}{2}$ .\n3) ليكن $x$ عددا حقيقيا سالبا ، أثبت أنه من أجل كل عدد حقيقي $t$ من المجال $[x;0]$ يكون: $e^x \\le e^t \\le 1$ . ثم استنتج أن : $\\frac{x^2e^x}{2} \\le I(x) \\le \\frac{x^2}{2}$ .\n4) استنتج أن: $\\lim_{x \\to 0} \\frac{e^x - (1+x)}{x^2} = \\frac{1}{2}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2",
+                "II-3"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "11984252-1678-4335-8664-167391942521",
+              "exercise_id": "11984252-1678-4335-8664-167391942518",
+              "label": "III",
+              "sub_label": null,
+              "statement": "لتكن $f$ الدالة المعرفة على $\\mathbb{R}$ بـ : $$ f(x) = \\begin{cases} \\frac{e^x-1}{x} & ;x \\ne 0 \\\\ 1 & ;x = 0 \\end{cases} $$ وليكن $(C_f)$ المنحنى الممثل للدالة $f$ في المستوي المنسوب إلى معلم متعامد ومتجانس $(O;\\vec{i},\\vec{j})$ .\n1) احسب كلا من $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ .\n2) ادرس قابلية اشتقاق الدالة $f$ عند 0 .\n3) احسب $f'(x)$ ، ثم استنتج تغيرات الدالة $f$ .\n4) عين معادلة المماس $(T)$ للمنحنى عند النقطة ذات الفاصلة 0 .\n5) ارسم المماس $(T)$ والمنحنى $(C_f)$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "11984252-1678-4335-8664-167391942522",
+          "exam_id": "65869191-4010-46d6-a285-a7511b28d7ec-2",
+          "exercise_ref": 4,
+          "part_ref": "III-5",
+          "context": "question",
+          "figure_type": "graph",
+          "description": "A graph showing the tangent (T) and the curve (Cf) of the function f, as requested to be drawn in the exercise.",
+          "source_page": 4,
+          "bounding_box": null
+        }
+      ]
+    }
+  ]
+}

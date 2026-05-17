@@ -1,0 +1,876 @@
+{
+  "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+  "exercises": [
+    {
+      "id": "77899692-7933-4993-8984-766778996921",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "نعتبر في $\\mathbb{Z} \\times \\mathbb{Z}$ المعادلة $(E)$ المعرفة كما يلي:\n$$(E) : 650x - 732y = 486$$",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "pgcd",
+        "congruences",
+        "theoreme_bezout"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "77899692-7933-4993-8984-766778996921",
+          "label": "1",
+          "sub_label": "a",
+          "statement": "أحسب $PGCD(650; 732)$ ثم استنتج أن المعادلة $(E)$ تقبل حلولا في $\\mathbb{Z} \\times \\mathbb{Z}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "77899692-7933-4993-8984-766778996921",
+          "label": "1",
+          "sub_label": "b",
+          "statement": "تحقق أن الثنائية $(3; 2)$ حل للمعادلة $(E)$ ثم استنتج مجموعة حلولها.",
+          "marks": null,
+          "depends_on": [
+            "1-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "77899692-7933-4993-8984-766778996921",
+          "label": "2",
+          "sub_label": null,
+          "statement": "نعتبر $L$ عددا طبيعيا يكتب $\\overline{\\alpha 0 \\alpha \\beta \\beta}$ في نظام التعداد الذي أساسه 5 ويكتب $\\overline{\\beta 6 \\beta 0}$ في نظام التعداد الذي أساسه 9 حيث $\\alpha$ و $\\beta$ عددان طبيعيان.\n* عيّن كلاً من $\\alpha$ و $\\beta$ ثم أكتب $L$ في النظام العشري.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "77899692-7933-4993-8984-766778996921",
+          "label": "3",
+          "sub_label": null,
+          "statement": "حلّل العدد 1962 إلى جداء عوامل أولية ثم استنتج قيم العدد الطبيعي $n$ التي تحقق $[n^2] \\equiv 0 \\pmod{1962}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "77899692-7933-4993-8984-766778996921",
+          "label": "4",
+          "sub_label": null,
+          "statement": "نضع : $d = PGCD(a; b)$ و $m = PPCM(a; b)$ حيث $(a; b) \\in \\mathbb{N} \\times \\mathbb{N}$.\n* عيّن كل الثنائيات $(a; b)$ التي تحقق:\n$$\\begin{cases} m - 91d = 0 \\\\ a^2 + b^2 = 1962 \\end{cases}$$",
+          "marks": null,
+          "depends_on": [
+            "3"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "88900703-8044-5004-9095-877889007032",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "المتتالية العددية $(U_n)$ معرفة بـ $U_0 = 0$ ، ومن أجل كل عدد طبيعي $n$ :\n$$U_{n+1} = \\frac{3}{\\sqrt{6 - U_n^2}}$$",
+      "topic": "suites",
+      "concepts": [
+        "suites_recurrentes",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "suites_arithmetiques",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "I-1",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $0 \\le U_n < \\sqrt{3}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "I-2",
+          "sub_label": "a",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي $n$ : $U_{n+1}^2 - U_n^2 = \\frac{(U_n^2 - 3)^2}{6 - U_n^2}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "I-2",
+          "sub_label": "b",
+          "statement": "بيّن أن المتتالية $(U_n)$ متزايدة على $\\mathbb{N}$ ثم استنتج أنها متقاربة.",
+          "marks": null,
+          "depends_on": [
+            "I-2-a"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "II-1",
+          "sub_label": null,
+          "statement": "المتتالية العددية $(V_n)$ معرفة على $\\mathbb{N}$ كما يلي: $V_n = \\frac{U_n^2}{3 - U_n^2}$.\n* بيّن أن المتتالية $(V_n)$ حسابية أساسها 1 ويطلب تعيين حدها الأول $V_0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "II-2",
+          "sub_label": "a",
+          "statement": "بيّن أنه من أجل كل $n$ من $\\mathbb{N}$ : $U_n = \\sqrt{\\frac{3n}{n+1}}$ ثم أحسب $\\lim_{n \\to +\\infty} U_n$.",
+          "marks": null,
+          "depends_on": [
+            "II-1"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "88900703-8044-5004-9095-877889007032",
+          "label": "II-2",
+          "sub_label": "b",
+          "statement": "من أجل كل $n$ من $\\mathbb{N}^*$ نضع : $S_n = \\frac{2024}{n + \\sqrt{V_1}} + \\frac{2024}{n + \\sqrt{V_2}} + \\dots + \\frac{2024}{n + \\sqrt{V_n}}$.\n* بيّن أنه من أجل كل $n$ من $\\mathbb{N}^*$ : $\\frac{2024n}{n + \\sqrt{n}} \\le S_n \\le \\frac{2024n}{n + 1}$.\n* استنتج $\\lim_{n \\to +\\infty} S_n$.",
+          "marks": null,
+          "depends_on": [
+            "II-1"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "99011814-9155-6115-0106-988990118143",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "عيّن الاقتراح الصحيح الوحيد من بين الاقتراحات الثلاثة في كل حالة من الحالات الآتية مع التبرير:",
+      "topic": "analyse",
+      "concepts": [
+        "equation_differentielle_premier_ordre",
+        "denombrement",
+        "calcul_integral",
+        "nombres_complexes",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "99011814-9155-6115-0106-988990118143",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل المعادلة التفاضلية $y'' = \\pi^2 e^{\\pi x + \\pi}$ الذي يحقق $y(0) = e^\\pi$ و $y'(-1) = \\pi$ هو الدالة $h$ المعرفة على $\\mathbb{R}$ كما يلي:\nأ) $h(x) = e^{\\pi x + \\pi}$\nب) $h(x) = \\pi x + e^\\pi$\nج) $h(x) = e^{\\pi x + \\pi} + \\pi x$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "99011814-9155-6115-0106-988990118143",
+          "label": "2",
+          "sub_label": null,
+          "statement": "عدد الإمكانيات لتشكيل عدد مضاعف للعدد 5 ومكوّن من ثلاثة أرقام متمايزة مثنى مثنى باستخدام مجموعة الأرقام $\\{0; 1; 9; 5; 4\\}$ هو:\nأ) 5\nب) 24\nج) 21",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "99011814-9155-6115-0106-988990118143",
+          "label": "3",
+          "sub_label": null,
+          "statement": "إذا كان $n$ عددا من $\\mathbb{N}^*$ فإن المجموع : $\\int_1^2 \\frac{\\log x}{x} dx + \\int_2^3 \\frac{\\log x}{x} dx + \\dots + \\int_n^{n+1} \\frac{\\log x}{x} dx$ يساوي:\nأ) $\\frac{[\\log(n+1)]^2}{2 \\ln 10}$\nب) $\\frac{\\log(n+1)}{\\ln 100}$\nج) $\\frac{\\ln(n+1) \\times \\log(n+1)}{2}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "99011814-9155-6115-0106-988990118143",
+          "label": "4",
+          "sub_label": null,
+          "statement": "إذا كان $z$ عددا مركبا حيث $z = \\sin \\frac{\\pi}{8} + i \\cos \\frac{\\pi}{8}$ فإن:\nأ) $\\arg(z) \\equiv \\frac{3\\pi}{8} [2\\pi]$\nب) $\\arg(z) \\equiv \\frac{3\\pi}{4} [2\\pi]$\nج) $\\arg(z) \\equiv \\frac{5\\pi}{8} [2\\pi]$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "99011814-9155-6115-0106-988990118143",
+          "label": "5",
+          "sub_label": null,
+          "statement": "مجموعة حلول المتراجحة $4^x + 2^{x+1} \\le 3$ ذات المجهول الحقيقي $x$ هي المجال:\nأ) $[0; +\\infty[$\nب) $]-\\infty; 0]$\nج) $[-3; 1]$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "00122925-0266-7226-1217-099001229254",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I) الدالة العددية $g$ معرفة على المجال $]0; +\\infty[$ كما يلي : $g(x) = x e^{x-1} - 1$.\n1. بيّن أن الدالة $g$ متزايدة تماماً على المجال $]0; +\\infty[$.\n2. أ. بيّن أن المعادلة $g(x) = 1$ تقبل حلاً وحيداً $\\alpha$ حيث $1.3 < \\alpha < 1.4$.\nب. استنتج حسب قيم $x$ من المجال $]0; +\\infty[$ إشارة العبارة : $g(x) - 1$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "representation_graphique",
+        "calcul_integral",
+        "fonction_logarithme",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-1",
+          "sub_label": "a",
+          "statement": "أحسب $\\lim_{x \\to 0^+} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ وفسّر النتيجة هندسيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {
+            "context": "الدالة العددية $f$ معرفة على المجال $]0; +\\infty[$ بـ : $f(x) = e^{x-1} - 2 \\ln x - 1$"
+          }
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-1",
+          "sub_label": "b",
+          "statement": "بيّن أنه من أجل كل عدد حقيقي $x$ من $]0; +\\infty[$ : $f'(x) = \\frac{g(x) - 1}{x}$.",
+          "marks": null,
+          "depends_on": [
+            "I-2-b"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-1",
+          "sub_label": "c",
+          "statement": "أدرس اتجاه تغيّر الدالة $f$ ثم شكّل جدول تغيّراتها.",
+          "marks": null,
+          "depends_on": [
+            "II-1-b"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-2",
+          "sub_label": "a",
+          "statement": "أكتب معادلة للمماس $(T)$ للمنحنى $(C_f)$ في النقطة التي فاصلتها 1.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-2",
+          "sub_label": "b",
+          "statement": "أنشئ كلاً من $(T)$ و $(C_f)$. (تعطى: $f(\\alpha) \\approx -0.2$).",
+          "marks": null,
+          "depends_on": [
+            "II-1-c",
+            "II-2-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "II-2",
+          "sub_label": "c",
+          "statement": "ناقش بيانياً حسب قيم الوسيط الحقيقي $m$ عدد حلول المعادلة $e^x + e^{m+1}(x-1) = e(\\ln x^2 + 1)$.",
+          "marks": null,
+          "depends_on": [
+            "II-2-b"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "III-3",
+          "sub_label": "a",
+          "statement": "نعتبر $\\lambda$ عددا حقيقيا حيث $0 < \\lambda < 1$.\nأكتب بدلالة $\\lambda$ العدد $A(\\lambda)$ المعرف بـ : $A(\\lambda) = \\int_{\\lambda}^1 f(t) dt$ ، ثم فسّر النتيجة هندسيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c",
+          "exercise_id": "00122925-0266-7226-1217-099001229254",
+          "label": "III-3",
+          "sub_label": "b",
+          "statement": "بيّن أنّ $\\lim_{\\lambda \\to 0^+} A(\\lambda) = (2 - e^{-1}) \\text{ cm}^2$.",
+          "marks": null,
+          "depends_on": [
+            "III-3-a"
+          ],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "11233036-1377-8337-2328-100112330365",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 1,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "صندوق به 6 بطاقات متماثلة لا نفرق بينها عند اللمس، منها ثلاث بطاقات حمراء، بطاقتين خضراوين وبطاقة بيضاء. البطاقات الحمراء تحمل الحروف: $E, N, N$ ، البطاقتين الخضراوين تحملان الحرفين: $S, N$ ، أما البيضاء تحمل الحرف $S$. نسحب عشوائيا من الصندوق ثلاث بطاقات في آن واحد.\nI) 1. أحسب احتمال كلاً من الحدثين الآتيين:\nأ. $A$: \"الحصول على بطاقتين من نفس اللون بالضبط\".\nب. $B$: \"الحصول على ثلاث بطاقات يمكن أن تشكل كلمة $ENS$\".",
+      "topic": "probabilites",
+      "concepts": [
+        "probabilite_conditionnelle",
+        "variable_aleatoire",
+        "tirages_simultanees",
+        "probabilite_simple"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d",
+          "exercise_id": "11233036-1377-8337-2328-100112330365",
+          "label": "I-2",
+          "sub_label": "a",
+          "statement": "بيّن أنّ $P(A \\cap B) = \\frac{1}{4}$ ، ثم استنتج أن الحدثين $A$ و $B$ ليسا مستقلين.",
+          "marks": null,
+          "depends_on": [
+            "I-1-a",
+            "I-1-b"
+          ],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e",
+          "exercise_id": "11233036-1377-8337-2328-100112330365",
+          "label": "I-2",
+          "sub_label": "b",
+          "statement": "أحسب $P_A(\\overline{B})$ (احتمال الحدث $\\overline{B}$ علما أن الحدث $A$ محقق).",
+          "marks": null,
+          "depends_on": [
+            "I-2-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f",
+          "exercise_id": "11233036-1377-8337-2328-100112330365",
+          "label": "II-1",
+          "sub_label": "a",
+          "statement": "نضيف إلى الصندوق $n$ بطاقة تحمل الحرف $E$ حيث $n \\in \\mathbb{N}^*$ ، ونسحب عشوائيا من الصندوق بطاقتين على التوالي وبإرجاع، وليكن $X$ المتغير العشوائي الذي يرفق بكل سحب لبطاقتين عدد مرات ظهور الحرف $S$.\nأ. برّر أن مجموعة قيم المتغير العشوائي $X$ هي $\\{0; 1; 2\\}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4d4e-5f6a-7b8c9d0e1f2a",
+          "exercise_id": "11233036-1377-8337-2328-100112330365",
+          "label": "II-1",
+          "sub_label": "b",
+          "statement": "عرّف قانون احتمال المتغير العشوائي $X$.",
+          "marks": null,
+          "depends_on": [
+            "II-1-a"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b",
+          "exercise_id": "11233036-1377-8337-2328-100112330365",
+          "label": "II-2",
+          "sub_label": null,
+          "statement": "عيّن قيمة العدد الطبيعي $n$ التي يكون من أجلها $P(\\int_0^X t e^t dt = 1) = \\frac{3}{8}$.",
+          "marks": null,
+          "depends_on": [
+            "II-1-b"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "22344147-2488-9448-3439-211223441476",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 2,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "I) حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول $z$ :\n$$(2iz + \\sqrt{3} + i)(z^2 + 2z + 2) = 0$$",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_trigonometrique",
+        "module",
+        "argument",
+        "transformations_plan"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "f0a1b2c3-d4e5-4f6a-7b8c-9d0e1f2a3b4c",
+          "exercise_id": "22344147-2488-9448-3439-211223441476",
+          "label": "II-1",
+          "sub_label": "a",
+          "statement": "في المستوى المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ ، نعتبر النقط $A, B, C$ و $D$ التي لاحقاتها $z_A, z_B, z_C$ و $z_D$ على الترتيب حيث: $z_A = -1 + i$ ، $z_B = \\overline{z_A}$ ، $2z_C = z_A \\times (1 + i\\sqrt{3})$ و $z_A + z_D = 0$.\nأ. أكتب $z_A$ على الشكل المثلثي ثم استنتج كتابة $z_C$ على الشكل المثلثي.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "exercise_id": "22344147-2488-9448-3439-211223441476",
+          "label": "II-1",
+          "sub_label": "b",
+          "statement": "أكتب $z_C$ على الشكل الجبري ثم استنتج القيمة المضبوطة لكل من $\\cos \\frac{13\\pi}{12}$ و $\\sin \\frac{13\\pi}{12}$.",
+          "marks": null,
+          "depends_on": [
+            "II-1-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "exercise_id": "22344147-2488-9448-3439-211223441476",
+          "label": "II-2",
+          "sub_label": null,
+          "statement": "بيّن أنّ العدد المركب $\\frac{z_B - z_D}{z_B - z_A}$ تخيلي صرف ثم استنتج طبيعة المثلث $ADB$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "exercise_id": "22344147-2488-9448-3439-211223441476",
+          "label": "II-3",
+          "sub_label": null,
+          "statement": "عيّن $(\\Gamma)$ مجموعة النقط $M$ من المستوى ذات اللاحقة $z$ حيث: $\\frac{\\overline{z} - z_B}{\\overline{z} - z_A} \\times \\frac{z - z_A}{z - z_B} = 1$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "33455258-3599-0559-4540-322334552587",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 3,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "المتتالية العددية $(U_n)$ معرفة على $\\mathbb{N}$ كما يلي:\n$$\\begin{cases} U_0 = 0 \\ ; \\ U_1 = 1 \\\\ U_{n+2} = 3U_{n+1} - 2U_n \\end{cases}$$",
+      "topic": "suites",
+      "concepts": [
+        "suites_recurrentes",
+        "suites_geometriques",
+        "pgcd",
+        "divisibilite"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "1",
+          "sub_label": "a",
+          "statement": "من أجل كل $n$ من $\\mathbb{N}$ نضع : $V_n = U_{n+1} - U_n$.\nأ. بيّن أنّ المتتالية $(V_n)$ هندسية يطلب تعيين أساسها وحدها الأول $V_0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "1",
+          "sub_label": "b",
+          "statement": "برهن أنه من أجل كل عدد طبيعي $n$ : $U_n = 2^n - 1$.",
+          "marks": null,
+          "depends_on": [
+            "1-a"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "1",
+          "sub_label": "c",
+          "statement": "استنتج أنه من أجل كل عدد طبيعي $n$ : $PGCD(U_n; U_{n+1}) = 1$.",
+          "marks": null,
+          "depends_on": [
+            "1-b"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "2",
+          "sub_label": "a",
+          "statement": "من أجل كل عدد طبيعي $n$ نضع : $L_n = 3^n + (U_n + 1)^{2024} + U_n$.\nأ. أدرس حسب قيم العدد الطبيعي $n$ بواقي القسمة الإقليدية لكل من العددين $2^n$ و $3^n$ على 5.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "2",
+          "sub_label": "b",
+          "statement": "بيّن أنّ العدد $L_n$ يقبل القسمة على 5 إذا وفقط إذا كان العدد الطبيعي $n$ فرديا.",
+          "marks": null,
+          "depends_on": [
+            "2-a"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "3",
+          "sub_label": "a",
+          "statement": "أ. بيّن أنه من أجل كل $n$ و $p$ من $\\mathbb{N}$ حيث $n \\ge p$ : $U_n = 2^p \\times U_{n-p} + U_p$.",
+          "marks": null,
+          "depends_on": [
+            "1-b"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+          "exercise_id": "33455258-3599-0559-4540-322334552587",
+          "label": "3",
+          "sub_label": "b",
+          "statement": "ب. استنتج أنّ $PGCD(U_{1962}; U_{1954}) = 3$.",
+          "marks": null,
+          "depends_on": [
+            "3-a"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "44566369-4600-1660-5651-433445663698",
+      "exam_id": "89179c62-a502-4774-aeee-3b1247f3d25c",
+      "number": 4,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "I) الدالة العددية $g$ معرفة على المجال $]-1; +\\infty[$ كما يلي : $g(x) = \\frac{x}{x+1} - \\ln(x+1)$.\n1. أدرس اتجاه تغيّر الدالة $g$ على المجال $]-1; +\\infty[$.\n2. أحسب $g(0)$ ثم استنتج إشارة $g(x)$ على المجال $]-1; +\\infty[$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "derivation",
+        "tableau_de_variation",
+        "representation_graphique",
+        "calcul_integral",
+        "suites_numeriques"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": false,
+      "source_page": 5,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-1",
+          "sub_label": "a",
+          "statement": "أحسب كلاً من $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ مفسّراً النتيجتين هندسياً.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {
+            "context": "الدالة العددية $f$ معرفة على $\\mathbb{R}$ بـ : $f(x) = \\frac{2 \\ln(e^x + 1)}{e^x} - 1$"
+          }
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-1",
+          "sub_label": "b",
+          "statement": "بيّن أنه من أجل كل عدد حقيقي $x$ من $\\mathbb{R}$ : $f'(x) = 2e^{-x} \\times g(e^x)$.",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-1",
+          "sub_label": "c",
+          "statement": "استنتج أن الدالة $f$ متناقصة تماماً على $\\mathbb{R}$ ثم شكّل جدول تغيّراتها.",
+          "marks": null,
+          "depends_on": [
+            "II-1-b"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-2",
+          "sub_label": "a",
+          "statement": "بيّن أنّ المنحنى $(C_f)$ يقطع حامل محور الفواصل في نقطة وحيدة فاصلتها $\\alpha$ حيث $0 < \\alpha < 1$.",
+          "marks": null,
+          "depends_on": [
+            "II-1-c"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-3",
+          "sub_label": "a",
+          "statement": "بيّن أنه من أجل كل $x$ من $\\mathbb{R}$ : $f(x) + f'(x) = 1 - \\frac{2e^x}{e^x + 1}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "II-3",
+          "sub_label": "b",
+          "statement": "استنتج دالة أصلية $F$ للدالة $f$ على $\\mathbb{R}$.",
+          "marks": null,
+          "depends_on": [
+            "II-3-a"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "III-1",
+          "sub_label": "a",
+          "statement": "المتتالية العددية $(\\beta_n)$ معرفة على $\\mathbb{N}^*$ كما يلي : $\\beta_n = 2 \\int_0^1 e^{-\\frac{x}{n}} \\ln(1 + e^x) dx$.\nأ. أحسب $\\beta_1$ ثم فسّر النتيجة هندسياً.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "III-1",
+          "sub_label": "b",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي غير معدوم $n$ : $\\beta_n \\le 2 \\ln(1 + e)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "III-1",
+          "sub_label": "c",
+          "statement": "بيّن أنّ المتتالية $(\\beta_n)$ متزايدة تماماً على $\\mathbb{N}^*$ ثم استنتج أنها متقاربة نحو عدد حقيقي $l$.",
+          "marks": null,
+          "depends_on": [
+            "III-1-b"
+          ],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "III-2",
+          "sub_label": "a",
+          "statement": "بيّن أنه من أجل كل عدد طبيعي غير معدوم $n$ : $(1 - e^{-\\frac{1}{n}}) \\ln 4^n \\le \\beta_n \\le (1 - e^{-\\frac{1}{n}}) \\ln(1 + e)^{2n}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f",
+          "exercise_id": "44566369-4600-1660-5651-433445663698",
+          "label": "III-2",
+          "sub_label": "b",
+          "statement": "استنتج حصراً للعدد $l$.",
+          "marks": null,
+          "depends_on": [
+            "III-2-a"
+          ],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": []
+}

@@ -1,0 +1,505 @@
+{
+  "exam_metadata": {
+    "id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+    "subject": "mathematics",
+    "source_file": "2022.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2022,
+    "duration_minutes": 270,
+    "total_marks": null,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": null
+  },
+  "exercises": [
+    {
+      "id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "التمرين الأول: (04 نقاط)",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "congruences"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "a1b2c3d4-e5f6-4g7h-8i9j-k0l1m2n3o4p5",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "عيّن، حسب قيم العدد الطبيعي $n$، بواقي القسمة الإقليدية للعدد $2^n$ على 7.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "بواقي القسمة الإقليدية للعدد $2^n$ على 7 هي:\n- إذا كان $n = 3k$ فإن $2^n \\equiv 1 [7]$\n- إذا كان $n = 3k+1$ فإن $2^n \\equiv 2 [7]$\n- إذا كان $n = 3k+2$ فإن $2^n \\equiv 4 [7]$ ",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "b2c3d4e5-f6g7-4h8i-9j0k-l1m2n3o4p5q6",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "بيّن أنّه، من أجل كل عدد طبيعي $n$، $6^{2n} \\equiv 1 [7]$ ثم استنتج بواقي القسمة الإقليدية للعدد $6^n$ على 7.",
+          "marks": 0.5,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "$6^2 = 36 \\equiv 1 [7]$، ومنه $6^{2n} \\equiv 1^n \\equiv 1 [7]$.\nبواقي قسمة $6^n$ على 7:\n- إذا كان $n = 2k$ فإن $6^n \\equiv 1 [7]$\n- إذا كان $n = 2k+1$ فإن $6^n \\equiv 6 [7]$ ",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "c3d4e5f6-g7h8-4i9j-0k1l-m2n3o4p5q6r7",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بيّن أنّ العدد $(1962^{1443} + 2021^{2022})^{1954} - 2$ يقبل القسمة على 7.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "لدينا $2021 \\equiv -1 [7]$ ومنه $2021^{2022} \\equiv (-1)^{2022} \\equiv 1 [7]$.\nولدينا $1962 \\equiv 2 [7]$ ومنه $1962^{1443} \\equiv 2^{3(481)} \\equiv (2^3)^{481} \\equiv 1^{481} \\equiv 1 [7]$.\nإذن $(1962^{1443} + 2021^{2022})^{1954} - 2 \\equiv (1+1)^{1954} - 2 \\equiv 2^{1954} - 2 [7]$.\nبما أن $1954 = 3(651) + 1$ فإن $2^{1954} \\equiv 2^1 \\equiv 2 [7]$.\nومنه $2^{1954} - 2 \\equiv 2 - 2 \\equiv 0 [7]$. إذن العدد يقبل القسمة على 7.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "d4e5f6g7-h8i9-4j0k-1l2m-n3o4p5q6r7s8",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "نضع من أجل كل عدد طبيعي $n$: $a_n = 2^n + 6^n$ و $S_n = a_0 + a_1 + \\dots + a_n$. استنتج، حسب قيم العدد الطبيعي $n$، بواقي القسمة الإقليدية للعدد $a_n$ على 7.",
+          "marks": 1.0,
+          "depends_on": [
+            "1-أ",
+            "1-ب"
+          ],
+          "solution": "نستخدم دورية بواقي $2^n$ (الدور 3) وبواقي $6^n$ (الدور 2). الدور المشترك هو 6.\nالجدول:\n$n \\equiv 0 [6] \\implies a_n \\equiv 1+1 \\equiv 2 [7]$\n$n \\equiv 1 [6] \\implies a_n \\equiv 2+6 \\equiv 1 [7]$\n$n \\equiv 2 [6] \\implies a_n \\equiv 4+1 \\equiv 5 [7]$\n$n \\equiv 3 [6] \\implies a_n \\equiv 1+6 \\equiv 0 [7]$\n$n \\equiv 4 [6] \\implies a_n \\equiv 2+1 \\equiv 3 [7]$\n$n \\equiv 5 [6] \\implies a_n \\equiv 4+6 \\equiv 3 [7]$ ",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "e5f6g7h8-i9j0-4k1l-2m3n-o4p5q6r7s8t9",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "بيّن أنّه، من أجل كل عدد طبيعي $n$، $S_{n+6} \\equiv S_n [7]$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "لدينا $a_{n+6} = 2^{n+6} + 6^{n+6} = 2^6 \\times 2^n + 6^6 \\times 6^n$.\nبما أن $2^6 \\equiv 1 [7]$ و $6^6 \\equiv 1 [7]$ فإن $a_{n+6} \\equiv a_n [7]$.\nومنه $S_{n+6} - S_n = a_{n+1} + a_{n+2} + a_{n+3} + a_{n+4} + a_{n+5} + a_{n+6} \\equiv a_1 + a_2 + a_3 + a_4 + a_5 + a_0 \\equiv 1+5+0+3+3+2 \\equiv 14 \\equiv 0 [7]$.\nإذن $S_{n+6} \\equiv S_n [7]$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "f6g7h8i9-j0k1-4l2m-3n4o-p5q6r7s8t9u0",
+          "exercise_id": "7f8e9d0a-1b2c-4d3e-8f9g-0h1i2j3k4l5m",
+          "label": "3",
+          "sub_label": "جـ",
+          "statement": "أثبت أنّه من أجل كل عدد طبيعي $n$، $5S_n \\equiv 2^{n+1} + 3 \\times 6^{n+1} + 3 [7]$ ثم استنتج قيم $n$ بحيث $S_n \\equiv 0 [7]$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$S_n = \\sum_{k=0}^n 2^k + \\sum_{k=0}^n 6^k = (2^{n+1}-1) + \\frac{6^{n+1}-1}{5}$.\nإذن $5S_n = 5(2^{n+1}-1) + 6^{n+1}-1 = 5 \\times 2^{n+1} + 6^{n+1} - 6$.\nبالانتقال للموافقات بترديد 7: $5 \\equiv -2 [7]$ و $-6 \\equiv 1 [7]$.\n$5S_n \\equiv -2 \\times 2^{n+1} + 6^{n+1} + 1 \\equiv -2^{n+2} + 6^{n+1} + 1 [7]$.\nبضرب الطرفين في 3 (مقلوب 5 بترديد 7 هو 3 لأن $5 \\times 3 = 15 \\equiv 1 [7]$):\n$S_n \\equiv 3(-2^{n+2} + 6^{n+1} + 1) \\equiv -3 \\times 2^{n+2} + 3 \\times 6^{n+1} + 3 \\equiv 2^{n+1} + 3 \\times 6^{n+1} + 3 [7]$.\nقيم $n$ بحيث $S_n \\equiv 0 [7]$ هي $n = 6k + 5$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "أجب بصحيح أو خاطئ مع التعليل في كل حالة من الحالات التالية:",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "logique",
+        "fonction_logarithme",
+        "arithmetique"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "9b0c1d2e-3f4g-5h6i-7j8k-9l0m1n2o3p4q",
+          "exercise_id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
+          "label": "1",
+          "sub_label": null,
+          "statement": "$\\alpha$ و $\\beta$ عددان حقيقيان غير معدومين. $(u_n)$ و $(v_n)$ المتتاليتان العدديتان المعرفتان بـ: $u_0 = 1$ ومن أجل كل عدد طبيعي $n$، $5u_{n+1} = u_n + \\alpha$ و $v_n = u_n + \\beta$. المتتالية $(v_n)$ هندسية إذا وفقط إذا كان $\\alpha \\beta = -4$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "صحيح. $v_{n+1} = u_{n+1} + \\beta = \\frac{1}{5}u_n + \\frac{\\alpha}{5} + \\beta = \\frac{1}{5}(v_n - \\beta) + \\frac{\\alpha}{5} + \\beta = \\frac{1}{5}v_n + \\frac{\\alpha + 4\\beta}{5}$.\nتكون $(v_n)$ هندسية إذا كان $\\alpha + 4\\beta = 0$ أي $\\alpha = -4\\beta$. بضرب الطرفين في $\\beta$ نجد $\\alpha\\beta = -4\\beta^2$. (ملاحظة: هناك خطأ طفيف في نص التمرين أو الحل النموذجي بخصوص العلاقة $\\alpha\\beta = -4$).",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "0c1d2e3f-4g5h-6i7j-8k9l-0m1n2o3p4q5r",
+          "exercise_id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
+          "label": "2",
+          "sub_label": null,
+          "statement": "المتتالية $(u_n)$ المعرفة على $\\mathbb{N}$ بـ: $u_n = \\ln \\sqrt{e^{n \\ln 2}}$ هي متتالية حسابية أساسها $\\ln \\sqrt{2}$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "صحيح. $u_n = \\ln(e^{n \\ln 2})^{1/2} = \\frac{1}{2} \\ln(e^{n \\ln 2}) = \\frac{1}{2} n \\ln 2 = n \\ln(2^{1/2}) = n \\ln \\sqrt{2}$.\nوهي عبارة متتالية حسابية حدها الأول $u_0 = 0$ وأساسها $r = \\ln \\sqrt{2}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "1d2e3f4g-5h6i-7j8k-9l0m-1n2o3p4q5r6s",
+          "exercise_id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$x$ عدد صحيح. إذا كان $x \\equiv 3 [7]$ و $x \\equiv 1 [3]$ فإن $x \\equiv 3 [21]$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "خاطئ. من $x \\equiv 3 [7]$ نجد $x = 7k + 3$. بالتعويض في الثانية: $7k + 3 \\equiv 1 [3] \\implies k \\equiv 1 [3] \\implies k = 3k' + 1$.\nإذن $x = 7(3k' + 1) + 3 = 21k' + 10$. أي $x \\equiv 10 [21]$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "2e3f4g5h-6i7j-8k9l-0m1n-2o3p4q5r6s7t",
+          "exercise_id": "8a9b0c1d-2e3f-4g5h-6i7j-8k9l0m1n2o3p",
+          "label": "4",
+          "sub_label": null,
+          "statement": "الدالة $f$ المعرفة على $\\mathbb{R}$ بـ: $f(x) = \\ln(\\sqrt{x^2+1} - x)$ دالة فردية.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "صحيح. $f(-x) = \\ln(\\sqrt{(-x)^2+1} - (-x)) = \\ln(\\sqrt{x^2+1} + x)$.\n$f(x) + f(-x) = \\ln(\\sqrt{x^2+1} - x) + \\ln(\\sqrt{x^2+1} + x) = \\ln((\\sqrt{x^2+1} - x)(\\sqrt{x^2+1} + x)) = \\ln(x^2+1 - x^2) = \\ln(1) = 0$.\nإذن $f(-x) = -f(x)$، فالدالة فردية.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "$f$ الدالة العددية المعرفة على $[0; +\\infty[$ كما يلي: $f(x) = \\frac{2x^2+5}{2x+1}$ و $(C)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$ كما هو مبين في الشكل المرفق. $(u_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ كما يلي: $u_0 = 2$ و $u_{n+1} = f(u_n)$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "suites_recurrentes",
+        "limites",
+        "convergence",
+        "raisonnement_par_recurrence"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "4g5h6i7j-8k9l-0m1n-2o3p-4q5r6s7t8u9v",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أدرس وضعية $(C)$ بالنسبة إلى المستقيم $(\\Delta)$ ذي المعادلة $y = x$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$f(x) - x = \\frac{2x^2+5}{2x+1} - x = \\frac{2x^2+5-2x^2-x}{2x+1} = \\frac{5-x}{2x+1}$.\n- إذا كان $x \\in [0, 5[$ فإن $f(x)-x > 0$، المنحنى $(C)$ فوق $(\\Delta)$.\n- إذا كان $x = 5$ فإن $f(x)-x = 0$، المنحنى $(C)$ يقطع $(\\Delta)$.\n- إذا كان $x \\in ]5, +\\infty[$ فإن $f(x)-x < 0$، المنحنى $(C)$ تحت $(\\Delta)$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "5h6i7j8k-9l0m-1n2o-3p4q-5r6s7t8u9v0w",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "انقل الشكل ومثّل على حامل محور الفواصل الحدود $u_0, u_1, u_2$ وضع تخميناً حول اتجاه تغير $(u_n)$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": "التمثيل البياني للحدود يتم باستخدام المنحنى والمستقيم $y=x$. التخمين: المتتالية $(u_n)$ متزايدة تماماً وتتقارب نحو 5.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "6i7j8k9l-0m1n-2o3p-4q5r-6s7t8u9v0w1x",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "برهن بالتراجع أنّه من أجل كل عدد طبيعي $n$، $2 \\le u_n < 5$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "- من أجل $n=0$: $u_0 = 2$ محققة.\n- نفرض $2 \\le u_n < 5$ ونبرهن $2 \\le u_{n+1} < 5$.\nبما أن $f$ متزايدة على $[0, +\\infty[$ فإن $f(2) \\le f(u_n) < f(5)$.\n$f(2) = 13/5 = 2.6$ و $f(5) = 55/11 = 5$.\nإذن $2.6 \\le u_{n+1} < 5$ ومنه $2 \\le u_{n+1} < 5$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "7j8k9l0m-1n2o-3p4q-5r6s-7t8u9v0w1x2y",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "أدرس اتجاه تغير المتتالية $(u_n)$ ثم استنتج أنها متقاربة.",
+          "marks": 0.75,
+          "depends_on": [
+            "1-أ",
+            "2-أ"
+          ],
+          "solution": "$u_{n+1} - u_n = f(u_n) - u_n = \\frac{5-u_n}{2u_n+1}$.\nبما أن $2 \\le u_n < 5$ فإن $5-u_n > 0$ و $2u_n+1 > 0$. إذن $u_{n+1} - u_n > 0$ فالمتتالية متزايدة تماماً.\nبما أنها متزايدة ومحدودة من الأعلى بـ 5 فهي متقاربة.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "8k9l0m1n-2o3p-4q5r-6s7t-8u9v0w1x2y3z",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "3",
+          "sub_label": null,
+          "statement": "أثبت أنّه من أجل كل عدد طبيعي $n$، $5 - u_{n+1} = \\frac{2u_n}{2u_n+1}(5-u_n)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$5 - u_{n+1} = 5 - \\frac{2u_n^2+5}{2u_n+1} = \\frac{10u_n+5-2u_n^2-5}{2u_n+1} = \\frac{10u_n-2u_n^2}{2u_n+1} = \\frac{2u_n(5-u_n)}{2u_n+1}$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "9l0m1n2o-3p4q-5r6s-7t8u-9v0w1x2y3z4a",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "بيّن أنّه من أجل كل عدد طبيعي $n$، $\\frac{2u_n}{2u_n+1} \\le \\frac{10}{11}$.",
+          "marks": 0.5,
+          "depends_on": [
+            "2-أ"
+          ],
+          "solution": "نعتبر الدالة $g(x) = \\frac{2x}{2x+1} = 1 - \\frac{1}{2x+1}$. هي متزايدة على $[2, 5]$.\nأكبر قيمة لها هي $g(5) = 10/11$. إذن $\\frac{2u_n}{2u_n+1} \\le \\frac{10}{11}$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "0m1n2o3p-4q5r-6s7t-8u9v-0w1x2y3z4a5b",
+          "exercise_id": "3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "استنتج أن $0 < 5 - u_n \\le 3 \\left(\\frac{10}{11}\\right)^n$ ثم احسب $\\lim_{n \\to +\\infty} u_n$.",
+          "marks": 0.75,
+          "depends_on": [
+            "3",
+            "4-أ"
+          ],
+          "solution": "بالتراجع: $5-u_{n+1} \\le \\frac{10}{11}(5-u_n)$.\nإذن $5-u_n \\le (5-u_0) \\left(\\frac{10}{11}\\right)^n = 3 \\left(\\frac{10}{11}\\right)^n$.\nبما أن $\\lim_{n \\to +\\infty} 3 \\left(\\frac{10}{11}\\right)^n = 0$ فإن $\\lim_{n \\to +\\infty} (5-u_n) = 0$ أي $\\lim_{n \\to +\\infty} u_n = 5$.",
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "$f$ الدالة العددية المعرفة على $]-\\infty; 1[$ كما يلي: $f(x) = \\frac{e^x - x^2}{x-1}$ و $(C)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد المتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "tableau_de_variation",
+        "fonction_exponentielle",
+        "branches_infinies",
+        "representation_graphique"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": 1
+      },
+      "parts": [
+        {
+          "id": "2o3p4q5r-6s7t-8u9v-0w1x-2y3z4a5b6c7d",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "1",
+          "sub_label": null,
+          "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to 1^<} f(x)$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -\\infty} f(x) = \\lim_{x \\to -\\infty} \\frac{-x^2}{x} = +\\infty$.\n$\\lim_{x \\to 1^<} f(x) = \\frac{e-1}{0^-} = -\\infty$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "3p4q5r6s-7t8u-9v0w-1x2y-3z4a5b6c7d8e",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بيّن أنّه من أجل كل عدد حقيقي $x$، $e^x - x > 0$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "نعتبر $h(x) = e^x - x$. $h'(x) = e^x - 1$. تنعدم عند 0. القيمة الدنيا هي $h(0) = 1 > 0$. إذن $e^x - x > 0$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "4q5r6s7t-8u9v-0w1x-2y3z-4a5b6c7d8e9f",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "بيّن أنّه من أجل كل عدد حقيقي $x$ من $]-\\infty; 1[$، $f'(x) = \\frac{(x-2)(e^x-x)}{(x-1)^2}$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$f'(x) = \\frac{(e^x-2x)(x-1) - (e^x-x^2)}{(x-1)^2} = \\frac{xe^x-e^x-2x^2+2x-e^x+x^2}{(x-1)^2} = \\frac{xe^x-2e^x-x^2+2x}{(x-1)^2} = \\frac{e^x(x-2)-x(x-2)}{(x-1)^2} = \\frac{(x-2)(e^x-x)}{(x-1)^2}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "5r6s7t8u-9v0w-1x2y-3z4a-5b6c7d8e9f0g",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "2",
+          "sub_label": "جـ",
+          "statement": "استنتج اتجاه تغير الدالة $f$ ثم شكّل جدول تغيراتها.",
+          "marks": 0.75,
+          "depends_on": [
+            "2-أ",
+            "2-ب"
+          ],
+          "solution": "بما أن $x < 1$ فإن $x-2 < 0$ و $(x-1)^2 > 0$ و $e^x-x > 0$. إذن $f'(x) < 0$. الدالة متناقصة تماماً على $]-\\infty, 1[$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "6s7t8u9v-0w1x-2y3z-4a5b-6c7d8e9f0g1h",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "احسب $\\lim_{x \\to -\\infty} (f(x) + x)$ ثم فسّر النتيجة بيانياً.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to -\\infty} (f(x) + x) = \\lim_{x \\to -\\infty} \\frac{e^x-x^2+x^2-x}{x-1} = \\lim_{x \\to -\\infty} \\frac{e^x-x}{x-1} = \\lim_{x \\to -\\infty} \\frac{-x}{x} = -1$.\nالتفسير: المستقيم $(\\Delta)$ ذو المعادلة $y = -x-1$ مقارب مائل للمنحنى عند $-\\infty$.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7t8u9v0w-1x2y-3z4a-5b6c-7d8e9f0g1h2i",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "أدرس وضعية $(C)$ بالنسبة إلى المستقيم $(\\Delta)$ ذي المعادلة $y = -x-1$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$f(x) - (-x-1) = \\frac{e^x-x^2+x^2-1}{x-1} = \\frac{e^x-1}{x-1}$.\n- إذا كان $x < 0$ فإن $e^x-1 < 0$ و $x-1 < 0$ إذن الفرق موجب، $(C)$ فوق $(\\Delta)$.\n- إذا كان $x = 0$ فإن الفرق معدوم، $(C)$ يقطع $(\\Delta)$.\n- إذا كان $0 < x < 1$ فإن $e^x-1 > 0$ و $x-1 < 0$ إذن الفرق سالب، $(C)$ تحت $(\\Delta)$.",
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "8u9v0w1x-2y3z-4a5b-6c7d-8e9f0g1h2i3j",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أكتب معادلة للمستقيم $(T)$ مماس المنحنى $(C)$ في النقطة ذات الفاصلة 0.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$y = f'(0)(x-0) + f(0)$.\n$f(0) = \\frac{1-0}{-1} = -1$. $f'(0) = \\frac{(-2)(1-0)}{(-1)^2} = -2$.\nإذن $(T): y = -2x - 1$.",
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "9v0w1x2y-3z4a-5b6c-7d8e-9f0g1h2i3j4k",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "5",
+          "sub_label": "أ",
+          "statement": "بيّن أنّ المعادلة $f(x) = 0$ تقبل حلاً وحيداً $\\alpha$ حيث $-0.8 < \\alpha < -0.7$.",
+          "marks": 0.5,
+          "depends_on": [],
+          "solution": "$f$ مستمرة ومتناقصة تماماً على $]-0.8, -0.7[$.\n$f(-0.8) \\approx 0.11$ و $f(-0.7) \\approx -0.01$.\nبما أن $f(-0.8) \\times f(-0.7) < 0$ فحسب مبرهنة القيم المتوسطة يوجد حل وحيد.",
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "0w1x2y3z-4a5b-6c7d-8e9f-0g1h2i3j4k5l",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "5",
+          "sub_label": "ب",
+          "statement": "أنشئ $(T)$، $(\\Delta)$ و $(C)$.",
+          "marks": 1.0,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "1x2y3z4a-5b6c-7d8e-9f0g-1h2i3j4k5l6m",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "6",
+          "sub_label": null,
+          "statement": "ناقش بيانياً، حسب قيم الوسيط الحقيقي $m$، عدد وإشارة حلول المعادلة: $\\frac{e^x - x^2 + x - 1}{x-1} = mx$.",
+          "marks": 0.75,
+          "depends_on": [],
+          "solution": "المعادلة تكافئ $f(x) + 1 = mx$ أي $f(x) = mx - 1$.\nوهي مناقشة دورانية حول النقطة $(0, -1)$.\n- $m \\in ]-\\infty, -2[$: حل موجب تماماً وحل معدوم.\n- $m = -2$: حل معدوم مضاعف.\n- $m \\in ]-2, -1[$: حل سالب تماماً وحل معدوم.\n- $m = -1$: حل معدوم.\n- $m \\in ]-1, +\\infty[$: حل موجب تماماً وحل معدوم.",
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "2y3z4a5b-6c7d-8e9f-0g1h-2i3j4k5l6m7n",
+          "exercise_id": "1n2o3p4q-5r6s-7t8u-9v0w-1x2y3z4a5b6c",
+          "label": "7",
+          "sub_label": null,
+          "statement": "$g$ الدالة المعرفة على $]-\\infty; 1[$ بـ: $g(x) = \\frac{|e^x - x^2|}{x-1}$. أكتب $g(x)$ دون رمز القيمة المطلقة ثم أنشئ $(C_g)$.",
+          "marks": 0.75,
+          "depends_on": [
+            "5-أ"
+          ],
+          "solution": "- إذا كان $x \\le \\alpha$: $g(x) = -f(x)$ (لأن $e^x-x^2 \\le 0$).\n- إذا كان $\\alpha < x < 1$: $g(x) = f(x)$ (لأن $e^x-x^2 > 0$).",
+          "ordering": 11,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "f1a2b3c4-d5e6-4f7g-8h9i-j0k1l2m3n4o5",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "exercise_ref": 3,
+      "part_ref": "1-ب",
+      "figure_type": "graph",
+      "description": "الشكل المرفق يمثل المنحنى البياني للدالة f والمستقيم y=x، مع تمثيل الحدود الأولى للمتتالية u_n على محور الفواصل.",
+      "source_page": 2,
+      "bounding_box": [
+        170,
+        80,
+        380,
+        410
+      ]
+    },
+    {
+      "id": "g2h3i4j5-k6l7-4m8n-9o0p-q1r2s3t4u5v6",
+      "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de",
+      "exercise_ref": 4,
+      "part_ref": "5-ب",
+      "figure_type": "graph",
+      "description": "التمثيل البياني للدالة f مع المقارب المائل والمماس عند النقطة (0, -1).",
+      "source_page": 7,
+      "bounding_box": [
+        600,
+        350,
+        900,
+        650
+      ]
+    }
+  ],
+  "exam_id": "b9bc7fed-ab30-465e-9af8-63664a5901de"
+}

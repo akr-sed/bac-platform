@@ -6,6 +6,10 @@ export interface ISolution extends Document {
   content: string;
   images: string[];
   likes: Types.ObjectId[];
+  // Teacher-marked "official correction" — sorts first on the exercise detail
+  // page and shows an Official badge. Settable only by the author when their
+  // current role is teacher (enforced server-side).
+  isOfficial: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -17,9 +21,32 @@ const SolutionSchema = new Schema<ISolution>(
     content: { type: String, required: true },
     images: [{ type: String }],
     likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    isOfficial: { type: Boolean, default: false, index: true },
   },
   { timestamps: true }
 );
+
+import Exercise from './Exercise';
+import Comment from './Comment';
+
+SolutionSchema.post('save', async function (doc) {
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    { $inc: { solutionCount: 1 }, $set: { lastActivityAt: new Date() } }
+  );
+});
+
+SolutionSchema.post('findOneAndDelete', async function (doc: any) {
+  if (!doc) return;
+  const commentsDeleted = await Comment.countDocuments({ solutionId: doc._id });
+  await Exercise.updateOne(
+    { _id: doc.exerciseId },
+    {
+      $inc: { solutionCount: -1, commentsCount: -commentsDeleted },
+      $set: { lastActivityAt: new Date() },
+    }
+  );
+});
 
 const Solution: Model<ISolution> =
   (mongoose.models.Solution as Model<ISolution>) ??

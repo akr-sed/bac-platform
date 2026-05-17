@@ -1,0 +1,1204 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-1",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-64284.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": 3,
+        "filiere": "mathematiques",
+        "year": 2022,
+        "duration_minutes": 270,
+        "total_marks": null,
+        "language": "ar",
+        "region": "أدرار و تيميمون",
+        "institution": "ثانويات المقاطعة الأولى",
+        "academic_year": "2021-2022",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-1",
+          "number": 1,
+          "title": null,
+          "statement": "أجب بصح أو خطأ مع التبرير في كل حالة من الحالات التالية:",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "calcul_integral",
+            "congruences",
+            "arithmetique"
+          ],
+          "difficulty": "medium",
+          "marks": 3.0,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e9",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "label": "1",
+              "sub_label": null,
+              "statement": "$(u_n)$ متتالية عددية معرفة من أجل كل عدد طبيعي $n$ بـ: $u_n = \\int_n^{n+1} e^{1-x} dx$\nالمجموع $S_n = u_0 + u_1 + \\dots + u_n$ يساوي $e - \\left(\\frac{1}{e}\\right)^n$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f0",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "label": "2",
+              "sub_label": null,
+              "statement": "من أجل كل عدد طبيعي $n$: $4^{2n} + (-1)^{n+1} \\equiv 0 [17]$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a1",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "label": "3",
+              "sub_label": null,
+              "statement": "باستعمال التكامل بالتجزئة نجد أن: $\\int_1^e x \\ln x dx = \\frac{1}{4} e^2 + \\frac{1}{2}$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b2",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "label": "4",
+              "sub_label": null,
+              "statement": "$N$ عدد طبيعي يكتب في نظام التعداد ذو الأساس 7 على الشكل $\\overline{5616}^7$.\nكتابة العدد الطبيعي $N$ في نظام التعداد ذو الأساس 5 هي: $\\overline{31042}^5$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-1",
+          "number": 2,
+          "title": null,
+          "statement": "نعتبر المتتالية العددية $(u_n)$ المعرفة على $\\mathbb{N}$ بـ:\n$$\\begin{cases} u_0 = 11 \\\\ u_{n+1} = 2 + \\sqrt{u_n - 2} \\end{cases}$$",
+          "topic": "analyse",
+          "concepts": [
+            "suites_recurrentes",
+            "raisonnement_par_recurrence",
+            "limites",
+            "suites_geometriques",
+            "fonction_logarithme"
+          ],
+          "difficulty": "medium",
+          "marks": 5.0,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "1",
+              "sub_label": null,
+              "statement": "برهن أنه من أجل كل عدد طبيعي $n$: $3 \\le u_n \\le 11$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e9",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "تحقق أنه من أجل كل عدد طبيعي $n$: $u_{n+1} - u_n = \\sqrt{u_n - 2}(1 - \\sqrt{u_n - 2})$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f0",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "بين أن المتتالية $(u_n)$ متناقصة تماماً، ثم استنتج تقاربها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a1",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "بين أنه من أجل كل عدد طبيعي $n$: $0 \\le u_{n+1} - 3 \\le \\frac{1}{2}(u_n - 3)$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b2",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "استنتج أنه من أجل كل عدد طبيعي $n$: $0 \\le u_n - 3 \\le 8 \\left(\\frac{1}{2}\\right)^n$ ثم استنتج $\\lim_{n \\to +\\infty} u_n$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c4",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "4",
+              "sub_label": "أ",
+              "statement": "لتكن $(v_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بـ: $v_n = \\ln(u_n - 2)$. بين أن المتتالية $(v_n)$ هندسية أساسها $\\frac{1}{2}$ يطلب تعيين حدها الأول $v_0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d9",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "4",
+              "sub_label": "ب",
+              "statement": "اكتب كلاً من $v_n$ و $u_n$ بدلالة $n$ ثم استنتج $\\lim_{n \\to +\\infty} u_n$ مرة ثانية.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-أ"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e0",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c3",
+              "label": "5",
+              "sub_label": null,
+              "statement": "احسب المجموع $S$ حيث $S = v_{1443} + v_{1444} + \\dots + v_{2022}$ ثم استنتج الجداء $P$ حيث $P = (u_{1443} - 2) \\times (u_{1444} - 2) \\times \\dots \\times (u_{2022} - 2)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "4-ب"
+              ],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-1",
+          "number": 3,
+          "title": null,
+          "statement": "نعتبر المعادلة ذات المجهولين الصحيحين $x$ و $y$ حيث: $11x - 5y = 2 \\dots (E)$",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "pgcd",
+            "congruences",
+            "theoreme_gauss"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            1,
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a2",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "أثبت أنه إذا كانت الثنائية $(x; y)$ من $\\mathbb{Z}^2$ حلاً للمعادلة $(E)$ فإن: $y \\equiv 4 [11]$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b3",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "استنتج حلول المعادلة $(E)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-أ"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c5",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "ليكن $n$ عدداً طبيعياً غير معدوم. نضع: $a = 5n + 2$ و $b = 11n + 4$. عين القيم الممكنة للقاسم المشترك الأكبر للعددين $a$ و $b$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d0",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "عين قيم $n$ بحيث يكون $PGCD(a; b) = 2$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e1",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "2",
+              "sub_label": "ج",
+              "statement": "استنتج قيم $n$ بحيث يكون العددان $a$ و $b$ أوليين فيما بينهما.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f2",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "أدرس حسب قيم العدد الطبيعي غير المعدوم $n$ بواقي القسمة الإقليدية للعدد $2^n$ على 10.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a3",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "استنتج رقم آحاد العدد $2^{2016}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b4",
+              "exercise_id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "label": "3",
+              "sub_label": "ج",
+              "statement": "عين كل الثنائيات $(x; y)$ من $\\mathbb{Z}^* \\times \\mathbb{Z}^*$ التي هي حلول للمعادلة $(E)$ وتحقق: $2^{y-2x} \\equiv 8 [10]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-ب",
+                "3-أ"
+              ],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-1",
+          "number": 4,
+          "title": null,
+          "statement": "I) نعتبر الدالة العددية $g$ المعرفة على المجال $[0; +\\infty[$ كما يلي: $g(x) = x + 2 - e^x$.",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "fonction_exponentielle",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "theoreme_valeurs_intermediaires",
+            "tangente",
+            "calcul_integral",
+            "aires"
+          ],
+          "difficulty": "hard",
+          "marks": 8.0,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d1",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "I-1",
+              "sub_label": null,
+              "statement": "ادرس اتجاه تغير الدالة $g$ على المجال $[0; +\\infty[$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e2",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "I-2",
+              "sub_label": "أ",
+              "statement": "بين أن المعادلة $g(x) = 0$ تقبل حلاً وحيداً $\\alpha$ على المجال $[0; +\\infty[$، وتحقق أن: $1.14 < \\alpha < 1.15$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-1"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f3",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "I-2",
+              "sub_label": "ب",
+              "statement": "استنتج إشارة $g(x)$ حسب قيم العدد الحقيقي $x$ من المجال $[0; +\\infty[$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-2-أ"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a4",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II",
+              "sub_label": null,
+              "statement": "نعرف على المجال $[0; +\\infty[$ الدالة العددية $f$ كما يلي: $f(x) = \\frac{e^x - 1}{xe^x + 1}$.\n$(C_f)$ المنحنى الممثل للدالة $f$ في المستوي المنسوب إلى معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j})$ الوحدة $4cm$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b5",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-1",
+              "sub_label": "أ",
+              "statement": "بين أنه من أجل كل عدد حقيقي $x$ من المجال $[0; +\\infty[$: $f(x) = \\frac{1 - e^{-x}}{x + e^{-x}}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c7",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-1",
+              "sub_label": "ب",
+              "statement": "استنتج النهاية $\\lim_{x \\to +\\infty} f(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-1-أ"
+              ],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d2",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-2",
+              "sub_label": "أ",
+              "statement": "بين أنه من أجل كل عدد حقيقي $x$ من المجال $[0; +\\infty[$: $f'(x) = \\frac{e^x \\times g(x)}{(xe^x + 1)^2}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e3",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-2",
+              "sub_label": "ب",
+              "statement": "استنتج اتجاه تغير الدالة $f$ على $[0; +\\infty[$، ثم شكل جدول تغيراتها على نفس المجال.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-أ",
+                "I-2-ب"
+              ],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f4",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-2",
+              "sub_label": "ج",
+              "statement": "بين أن: $f(\\alpha) = \\frac{1}{\\alpha + 1}$، ثم استنتج حصراً للعدد $f(\\alpha)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I-2-أ"
+              ],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a5",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-3",
+              "sub_label": null,
+              "statement": "اكتب معادلة المماس $(T)$ للمنحنى $(C_f)$ عند النقطة ذات الفاصلة 0.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b6",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-4",
+              "sub_label": "أ",
+              "statement": "تحقق أنه من أجل كل $x$ من $[0; +\\infty[$: $f(x) - x = \\frac{(x+1) \\times u(x)}{xe^x + 1}$، حيث $u(x) = e^x - xe^x - 1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c8",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-4",
+              "sub_label": "ب",
+              "statement": "ادرس اتجاه تغير الدالة $u$ على المجال $[0; +\\infty[$ ثم احسب $u(0)$ واستنتج إشارة $u(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-4-أ"
+              ],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d3",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-4",
+              "sub_label": "ج",
+              "statement": "استنتج وضعية المنحنى $(C_f)$ بالنسبة إلى المستقيم $(T)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-4-ب"
+              ],
+              "solution": null,
+              "ordering": 13,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e4",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-5",
+              "sub_label": null,
+              "statement": "أنشئ كلاً من المستقيم $(T)$ والمنحنى $(C_f)$ (الوحدة $4cm$).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-ب",
+                "II-3",
+                "II-4-ج"
+              ],
+              "solution": null,
+              "ordering": 14,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f5",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-6",
+              "sub_label": "أ",
+              "statement": "عين دالة أصلية $F$ للدالة $f$ على المجال $[0; +\\infty[$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-1-أ"
+              ],
+              "solution": null,
+              "ordering": 15,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a6",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c6",
+              "label": "II-6",
+              "sub_label": "ب",
+              "statement": "احسب مساحة الحيز المحدد بالمنحنى $(C_f)$ والمماس $(T)$ ومحور التراتيب والمستقيم ذا المعادلة $x = 1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-6-أ"
+              ],
+              "solution": null,
+              "ordering": 16,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "exam_metadata": {
+        "id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-2",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-64284.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": 3,
+        "filiere": "mathematiques",
+        "year": 2022,
+        "duration_minutes": 270,
+        "total_marks": null,
+        "language": "ar",
+        "region": "أدرار و تيميمون",
+        "institution": "ثانويات المقاطعة الأولى",
+        "academic_year": "2021-2022",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b7",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-2",
+          "number": 1,
+          "title": null,
+          "statement": "$f$ و $g$ دالتان معرفتان على $\\mathbb{R}$ بـ: $f(x) = \\frac{x}{1+x^2}$ و $g(x) = \\frac{x^3}{1+x^2}$، و $F$ و $G$ دالتاهما الأصليتان على $\\mathbb{R}$.\nونعتبر $I_1 = \\int_0^1 f(x)dx$ و $I_2 = \\int_0^1 g(x)dx$.\nفي كل حالة من الحالات التالية عين الاقتراح الصحيح الوحيد من بين الإجابات (أ)، (ب) و (ج) مع التعليل:",
+          "topic": "analyse",
+          "concepts": [
+            "calcul_integral",
+            "primitives",
+            "fonction_logarithme"
+          ],
+          "difficulty": "medium",
+          "marks": 3.0,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2c9",
+              "exercise_id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b7",
+              "label": "1",
+              "sub_label": null,
+              "statement": "(أ) $F(x) = \\ln(1+x^2)$ ، (ب) $F(x) = \\frac{1}{2} \\ln(1+x^2)$ ، (ج) $F(x) = 2 \\ln(1+x^2)$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d4",
+              "exercise_id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b7",
+              "label": "2",
+              "sub_label": null,
+              "statement": "(أ) $I_1 = \\ln(2)$ ، (ب) $I_1 = \\frac{1}{2} \\ln(2)$ ، (ج) $I_1 = 2 \\ln(2)$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e5",
+              "exercise_id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b7",
+              "label": "3",
+              "sub_label": null,
+              "statement": "(أ) $I_1 + I_2 = \\int_0^1 xdx$ ، (ب) $I_1 + I_2 = \\frac{1}{2} \\int_0^1 xdx$ ، (ج) $I_1 + I_2 = 2 \\int_0^1 xdx$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f6",
+              "exercise_id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b7",
+              "label": "4",
+              "sub_label": null,
+              "statement": "(أ) $I_2 = 1 - \\ln(2)$ ، (ب) $I_2 = 1 - \\frac{1}{2} \\ln(2)$ ، (ج) $I_2 = \\frac{1}{2}(1 - \\ln(2))$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2",
+                "3"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-2",
+          "number": 2,
+          "title": null,
+          "statement": "I) $(u_n)$ المتتالية العددية المعرفة بحدها الأول $u_0$ حيث $\\alpha = u_0$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = \\frac{u_n - 1}{u_n + 3}$.\n• عين قيمة العدد الحقيقي $\\alpha$ بحيث تكون المتتالية $(u_n)$ ثابتة على $\\mathbb{N}$.",
+          "topic": "analyse",
+          "concepts": [
+            "suites_recurrentes",
+            "raisonnement_par_recurrence",
+            "suites_arithmetiques",
+            "limites"
+          ],
+          "difficulty": "medium",
+          "marks": 5.0,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b8",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II",
+              "sub_label": null,
+              "statement": "في ما يلي نضع $u_0 = 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d0",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-1",
+              "sub_label": null,
+              "statement": "عين العدد الحقيقي $b$ بحيث يكون من أجل كل عدد طبيعي $n$: $u_{n+1} = 1 + \\frac{b}{u_n + 3}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d5",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-2",
+              "sub_label": null,
+              "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$: $-1 < u_n \\le 0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-1"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e6",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-3",
+              "sub_label": "أ",
+              "statement": "بين أنه من أجل كل عدد طبيعي $n$: $u_{n+1} - u_n = \\frac{-(u_n + 1)^2}{u_n + 3}$ ثم استنتج اتجاه تغير المتتالية $(u_n)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f7",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-3",
+              "sub_label": "ب",
+              "statement": "استنتج أن المتتالية $(u_n)$ متقاربة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-3-أ"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a8",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-4",
+              "sub_label": "أ",
+              "statement": "نعتبر المتتالية $(v_n)$ المعرفة على مجموعة الأعداد الطبيعية $\\mathbb{N}$ بـ: $v_n = \\frac{1}{u_n + 1}$. بين أن المتتالية $(v_n)$ حسابية أساسها $\\frac{1}{2}$ و احسب حدها الأول $v_0$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1b9",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-4",
+              "sub_label": "ب",
+              "statement": "اكتب عبارة $v_n$ بدلالة $n$ ، ثم استنتج عبارة $u_n$ بدلالة $n$ واحسب $\\lim_{n \\to +\\infty} u_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-4-أ"
+              ],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d1",
+              "exercise_id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a7",
+              "label": "II-5",
+              "sub_label": null,
+              "statement": "احسب المجموع $S$ حيث $S = \\frac{8}{u_0 + 1} + \\frac{8}{u_1 + 1} + \\dots + \\frac{8}{u_{2022} + 1}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-4-ب"
+              ],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d6",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-2",
+          "number": 3,
+          "title": null,
+          "statement": null,
+          "topic": "arithmetique",
+          "concepts": [
+            "congruences",
+            "divisibilite",
+            "arithmetique"
+          ],
+          "difficulty": "medium",
+          "marks": 4.0,
+          "has_figure": false,
+          "source_page": [
+            3,
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e7",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d6",
+              "label": "1",
+              "sub_label": null,
+              "statement": "ادرس حسب قيم العدد الطبيعي $n$ بواقي القسمة الإقليدية للعدد $3^n$ على 10.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f8",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d6",
+              "label": "2",
+              "sub_label": null,
+              "statement": "بين أنه من أجل كل عدد طبيعي $n$: $1443^{4n+2} - 2 \\times 109^{2n+1} - 11 \\equiv 0 [10]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0a9",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d6",
+              "label": "3",
+              "sub_label": null,
+              "statement": "عين قيم العدد الطبيعي $n$ حيث $10 < n \\le 25$ و $3^{n+1} - 1 \\equiv 0 [10]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1c0",
+              "exercise_id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d6",
+              "label": "4",
+              "sub_label": null,
+              "statement": "ليكن $A$ كتابته $\\overline{xx02102}^3$ في النظام ذي الأساس 3 و كتابته $\\overline{y67y}^9$ في النظام ذي الأساس 9.\n(أ) عين $x$ و $y$ (ب) اكتب $A$ في النظام العشري (ج) اكتب $A$ في النظام ذي الأساس 7.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+          "exam_id": "40cd1b3b-bd1e-43f5-8154-6cbcb989245b-2",
+          "number": 4,
+          "title": null,
+          "statement": "I) $h$ دالة عددية ذات المتغير الحقيقي $x$ و المعرفة على $\\mathbb{R}^*$ بـ: $h(x) = x^2 - \\ln x^2$.\n• ادرس اتجاه تغير الدالة $h$ ، ثم استنتج أنه من أجل كل عدد حقيقي $x$ من $\\mathbb{R}^*$: $h(x) > 0$.",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "fonction_logarithme",
+            "limites",
+            "derivation",
+            "tableau_de_variation",
+            "aires"
+          ],
+          "difficulty": "hard",
+          "marks": 8.0,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d7",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II",
+              "sub_label": null,
+              "statement": "نعرف على $\\mathbb{R}^*$ الدالة العددية $f$ كما يلي: $f(x) = \\frac{1}{2} \\left( \\frac{\\ln(x^2)}{x} - x - \\frac{2}{x} \\right)$.\nوليكن $(C_f)$ المنحنى الممثل للدالة $f$ في المستوي المنسوب إلى معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j})$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e8",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-1",
+              "sub_label": "أ",
+              "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f9",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-1",
+              "sub_label": "ب",
+              "statement": "احسب $\\lim_{x \\to 0^>} f(x)$ و $\\lim_{x \\to 0^<} f(x)$ ثم فسر النتيجتين بيانياً.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0b0",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-2",
+              "sub_label": "أ",
+              "statement": "بين أنه من أجل كل عدد حقيقي $x$ غير معدوم: $f'(x) = -\\frac{h(x)}{2x^2}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "I"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1c1",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-2",
+              "sub_label": "ب",
+              "statement": "ادرس اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-أ",
+                "I"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d3",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-2",
+              "sub_label": "ج",
+              "statement": "بين أن المستقيم $(\\Delta)$ ذا المعادلة $y = -\\frac{1}{2}x$ مستقيم مقارب مائل للمنحنى $(C_f)$ ثم ادرس وضعية $(C_f)$ بالنسبة لـ $(\\Delta)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d8",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-3",
+              "sub_label": "أ",
+              "statement": "تحقق أنه من أجل كل $x$ من $\\mathbb{R}^*$: $f(x) + f(-x) = 0$ و تستنتج شفعية الدالة $f$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8e9",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-3",
+              "sub_label": "ب",
+              "statement": "بين أن المعادلة $f(x) = 0$ تقبل حلاً وحيداً $\\alpha$ في المجال $[0.3; 0.4]$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-ب"
+              ],
+              "solution": null,
+              "ordering": 8,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f0",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-3",
+              "sub_label": "ج",
+              "statement": "استنتج أن المعادلة $f(x) = 0$ تقبل حلاً آخر $\\beta$ يطلب تعيين حصراً له.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-3-أ",
+                "II-3-ب"
+              ],
+              "solution": null,
+              "ordering": 9,
+              "metadata": {}
+            },
+            {
+              "id": "d4e5f6a1-b2c3-4d4e-1f5a-b6c7d8e9f0b1",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-4",
+              "sub_label": "أ",
+              "statement": "بين أن المنحنى $(C_f)$ يقبل مماسين $(T_1)$ و $(T_2)$ يوازيان المستقيم $(\\Delta)$ يطلب كتابة معادلتيهما.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-ج"
+              ],
+              "solution": null,
+              "ordering": 10,
+              "metadata": {}
+            },
+            {
+              "id": "e5f6a1b2-c3d4-4e5f-2a6b-c7d8e9f0a1c2",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-4",
+              "sub_label": "ب",
+              "statement": "أنشئ $(\\Delta)$ ، $(T_1)$ ، $(T_2)$ و $(C_f)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-2-ب",
+                "II-2-ج",
+                "II-4-أ"
+              ],
+              "solution": null,
+              "ordering": 11,
+              "metadata": {}
+            },
+            {
+              "id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d4",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-4",
+              "sub_label": "ج",
+              "statement": "ناقش بيانياً و حسب قيم الوسيط الحقيقي $m$ عدد و إشارة حلول المعادلة: $f(x) = -\\frac{1}{2}x + m$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-4-ب"
+              ],
+              "solution": null,
+              "ordering": 12,
+              "metadata": {}
+            },
+            {
+              "id": "a1b2c3d4-e5f6-4a1b-8c2d-e3f4a5b6c7d9",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-5",
+              "sub_label": null,
+              "statement": "لتكن $k$ دالة عددية معرفة على $\\mathbb{R} \\setminus \\{-1\\}$ بـ: $k(x) = \\frac{1}{2} \\left( \\frac{\\ln(x+1)^2}{x+1} - (x+1) - \\frac{2}{x+1} \\right) + 2$ ، $(C_k)$ تمثيلها البياني.\n• بين أنه يوجد تحويل بسيط يحول المنحنى $(C_f)$ إلى المنحنى $(C_k)$ (الإنشاء غير مطلوب).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II"
+              ],
+              "solution": null,
+              "ordering": 13,
+              "metadata": {}
+            },
+            {
+              "id": "b2c3d4e5-f6a1-4b2c-9d3e-f4a5b6c7d8f0",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-6",
+              "sub_label": "أ",
+              "statement": "بين أن الدالة $F$ المعرفة على $\\mathbb{R}^*$ بـ: $F(x) = \\frac{1}{2} \\left( -\\frac{1}{2}x^2 - \\frac{1}{4}[\\ln(x^2)]^2 - 2 \\ln|x| \\right)$ هي دالة أصلية لـ $f$ على $\\mathbb{R}^*$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 14,
+              "metadata": {}
+            },
+            {
+              "id": "c3d4e5f6-a1b2-4c3d-0e4f-a5b6c7d8e9f1",
+              "exercise_id": "f6a1b2c3-d4e5-4f6a-3b7c-d8e9f0a1b2d2",
+              "label": "II-6",
+              "sub_label": "ب",
+              "statement": "$\\lambda$ عدد حقيقي حيث $\\lambda > 1$. احسب التكامل التالي $A(\\lambda) = -\\int_1^\\lambda f(x)dx$ و احسب $\\lim_{\\lambda \\to +\\infty} A(\\lambda)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "II-6-أ"
+              ],
+              "solution": null,
+              "ordering": 15,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

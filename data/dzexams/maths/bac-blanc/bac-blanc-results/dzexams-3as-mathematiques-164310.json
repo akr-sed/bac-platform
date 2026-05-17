@@ -1,0 +1,1310 @@
+{
+  "exam_metadata": {
+    "id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+    "subject": "mathematics",
+    "source_file": "dzexams-3as-mathematiques-164310.pdf",
+    "exam_type": "bac_blanc",
+    "session": null,
+    "trimester": null,
+    "filiere": "sciences_experimentales",
+    "year": 2023,
+    "duration_minutes": 210,
+    "total_marks": 20,
+    "language": "ar",
+    "region": null,
+    "institution": "ثانوية الشهيد عروة سليمان - امدوكال",
+    "academic_year": "2023-2024"
+  },
+  "exercises": [
+    {
+      "id": "2129031c-246d-4721-812e-131713511732",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 1,
+      "title": null,
+      "statement": "على المترشح أن يختار أحد الموضوعين التاليين\nالموضوع الأول\nعين الاقتراح الصحيح الوحيد من بين الاقتراحات الثلاثة في كل حالة من الحالات التالية ، مع التبرير :",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "suites_recurrentes",
+        "calcul_integral",
+        "suites_geometriques",
+        "probabilite_simple",
+        "denombrement",
+        "fonctions_usuelles"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "97025816-118e-436d-886c-132766327318",
+          "exercise_id": "2129031c-246d-4721-812e-131713511732",
+          "label": "1",
+          "sub_label": null,
+          "statement": "$(U_n)$ متتالية معرفة بحدها الاول $U_0$ و من أجل كل عدد طبيعي $n$ ، $U_{n+1} = 4 + \\sqrt{U_n +2}$ و $4 \\le U_n \\le 7$ .\nقيمة $U_0$ حتى تكون المتتالية ثابتة هي :\nأ ) $7$\nب ) $4$\nج ) $2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "31969613-2646-444a-939f-26214227970d",
+          "exercise_id": "2129031c-246d-4721-812e-131713511732",
+          "label": "2",
+          "sub_label": null,
+          "statement": "المتتالية $(V_n)$ المعرفة على $\\mathbb{N}$ بـ : $V_n = \\int_{e-1}^{e^n} \\frac{1}{x} dx$ هي متتالية هندسية أساسها $q$ يساوي :\nأ ) $q=e-1$\nب ) $q=\\frac{1}{e}$\nج ) $q=e$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "76214341-2679-444a-939f-26214227970d",
+          "exercise_id": "2129031c-246d-4721-812e-131713511732",
+          "label": "3",
+          "sub_label": null,
+          "statement": "كيس به 7 كريات متماثلة لا نفرق بينها باللمس ، منها 4 كريات بيضاء و 3 كريات سوداء\nنسحب من الكيس ثلاث كريات على التوالي دون إرجاع\nاحتمال سحب الكرية الثانية بيضاء و لأول مرة هو :\nأ ) $\\frac{2}{7}$\nب ) $\\frac{6}{7}$\nج ) $\\frac{9}{35}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-26214227970d",
+          "exercise_id": "2129031c-246d-4721-812e-131713511732",
+          "label": "4",
+          "sub_label": null,
+          "statement": "حلول المعادلة $3^{2x} - 3^x + 2 = 0$ في $\\mathbb{R}$ هي :\nأ ) $S = \\{1;2\\}$\nب ) $S = \\{\\frac{\\ln 2}{\\ln 3}; \\frac{\\ln 1}{\\ln 3}\\}$\nج ) $S = \\{0; \\frac{\\ln 2}{\\ln 3}\\}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-26214227970e",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 2,
+      "title": null,
+      "statement": "المتتالية العددية $(U_n)$ معرفة بـ : $U_0 = 4$ و من أجل كل عدد طبيعي $n$ : $U_{n+1} = 5 + \\frac{1}{2} U_n$ .",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "suites_recurrentes",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "limites",
+        "suites_geometriques"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-26214227970f",
+          "exercise_id": "81969613-2646-444a-939f-26214227970e",
+          "label": "1",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $U_n > 10$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279710",
+          "exercise_id": "81969613-2646-444a-939f-26214227970e",
+          "label": "2",
+          "sub_label": null,
+          "statement": "بين أن المتتالية $(U_n)$ متناقصة تماما ثم استنتج أنها متقاربة .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279711",
+          "exercise_id": "81969613-2646-444a-939f-26214227970e",
+          "label": "3",
+          "sub_label": null,
+          "statement": "المتتالية العددية $(V_n)$ معرفة على $\\mathbb{N}$ بـ : $V_n = a - U_n$ حيث $a$ عدد حقيقي .\nعين قيمة $\\alpha$ التي من أجلها تكون المتتالية $(V_n)$ هندسية أساسها $\\frac{1}{2}$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279712",
+          "exercise_id": "81969613-2646-444a-939f-26214227970e",
+          "label": "4",
+          "sub_label": null,
+          "statement": "نضع فيما يلي : $\\alpha = 10$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279713",
+              "exercise_id": "81969613-2646-444a-939f-26214227970e",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "أكتب $V_n$ بدلالة $n$ ، ثم استنتج عبارة $U_n$ بدلالة $n$ ، ثم احسب $\\lim_{n \\to +\\infty} U_n$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279714",
+              "exercise_id": "81969613-2646-444a-939f-26214227970e",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "احسب بدلالة $n$ المجموع $S_n$ حيث : $S_n = U_0^2 + U_1^2 + U_2^2 + \\dots + U_n^2$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279715",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 3,
+      "title": null,
+      "statement": "يحتوي صندوق على 10 كريات متماثلة لا نفرق بينها باللمس ، منها كريتان تحملان الرقم 1 و ثلاث كريات تحمل الرقم 0 و خمس كريات تحمل الرقم 2 .\nنسحب عشوائيا و في آن واحد 3 كريات من الصندوق و نعتبر الحدثين $A$ و $B$ حيث :\n$A$ \" الكريات المسحوبة تحمل أرقاما مختلفة \"\n$B$ \" الكريات المسحوبة تحمل أرقاما جداؤها معدوما \"",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "combinaisons",
+        "probabilite_simple",
+        "probabilite_conditionnelle",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279716",
+          "exercise_id": "81969613-2646-444a-939f-262142279715",
+          "label": "1",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279717",
+              "exercise_id": "81969613-2646-444a-939f-262142279715",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "احسب $P(A)$ و $P(B)$ احتمال الحدثين $A$ و $B$ على الترتيب .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279718",
+              "exercise_id": "81969613-2646-444a-939f-262142279715",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "بين أن $P(A \\cap B) = \\frac{7}{10}$ ، هل الحدثان $A$ و $B$ مستقلان ؟ علل .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279719",
+              "exercise_id": "81969613-2646-444a-939f-262142279715",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "علما أن جداء أرقام الكريات معدوما ، ما احتمال أن تكون مختلفة .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279720",
+          "exercise_id": "81969613-2646-444a-939f-262142279715",
+          "label": "2",
+          "sub_label": null,
+          "statement": "ليكن $X$ المتغير العشوائي الذي يرفق بكل سحبة عدد الارقام المتساوية المحصل عليها .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279721",
+              "exercise_id": "81969613-2646-444a-939f-262142279715",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "برر أن مجموعة قيم المتغير العشوائي $X$ هي : $\\{0;2;3\\}$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279722",
+              "exercise_id": "81969613-2646-444a-939f-262142279715",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "عين قانون الاحتمال للمتغير العشوائي $X$ ثم احسب أمله الرياضياتي $E(X)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279723",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 4,
+      "title": null,
+      "statement": "I) لتكن $f$ الدالة المعرفة على المجال $]0;+\\infty[$ بـ : $f(x) = \\frac{1 + \\ln x}{x^2}$ .\n$(C_f)$ التمثيل البياني للدالة $f$ في المستوي المنسوب إلى المعلم المتعامد و المتجانس $(O;\\vec{i}, \\vec{j})$ .\nII) لتكن الدالة $f$ المعرفة على $\\mathbb{R}$ بـ : $f(x) = x^3 + (3x + 3)e^{-x}$ .\nو $(C_f)$ هو تمثيلها البياني .",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "representation_graphique",
+        "tableau_de_variation",
+        "calcul_integral",
+        "primitives",
+        "integration_par_parties",
+        "aires",
+        "fonction_logarithme",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279724",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "1",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279725",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{x \\to 0} f(x)$ ، ثم فسر النتيجة بيانيا .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279726",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{x \\to +\\infty} f(x)$ ، ثم فسر النتيجة بيانيا .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279727",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "2",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279728",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "بين أنه من أجل كل عدد حقيقي $x$ من المجال $]0;+\\infty[$ : $f'(x) = \\frac{-1-2\\ln x}{x^3}$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279729",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "استنتج إتجاه تغير الدالة $f$ على المجال $]0;+\\infty[$ ، ثم شكل جدول تغيراتها .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279730",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "3",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279731",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "بين أن المنحنى $(C_f)$ يقطع حامل محور الفواصل في نقطة وحيدة يطلب تعيين احداثياها .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279732",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "استنتج اشارة $f(x)$ على المجال $]0;+\\infty[$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279733",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أنشىء $(C_f)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279734",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "5",
+          "sub_label": null,
+          "statement": "من أجل كل عدد طبيعي $n$ غير معدوم نرمز بالعدد $I_n$ لمساحة الحيز المحصور بين $(C_f)$ و حامل محور الفواصل و المستقيمين اللذين معادلتهما : $x = \\frac{1}{e}$ و $x = n$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279735",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "بين أن $x \\mapsto -\\frac{1+2\\ln x}{x}$ دالة أصلية للدالة $f$ على المجال $]0;+\\infty[$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279736",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "احسب $I_n$ بدلالة $n$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279737",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{n \\to +\\infty} I_n$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279738",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "I",
+          "sub_label": null,
+          "statement": "ليكن $(\\gamma)$ التمثيل البياني للدالة $x \\mapsto xe^{-x}$ و $(\\Delta)$ المستقيم ذو المعادلة $y = x$ هي فاصلة نقطة تقاطع $(\\gamma)$ و $(\\Delta)$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279739",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بقراءة بيانية حدد وضعية $(\\gamma)$ بالنسبة لـ $(\\Delta)$ على $\\mathbb{R}$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279740",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "2",
+              "sub_label": null,
+              "statement": "الدالة المعرفة على $\\mathbb{R}$ بـ : $g(x) = e^x - x$ .\nاستنتج حسب قيم العدد الحقيقي $x$ إشارة $g(x)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279741",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "3",
+              "sub_label": null,
+              "statement": "تحقق أن : $0.56 < \\alpha < 0.57$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279742",
+          "exercise_id": "81969613-2646-444a-939f-262142279723",
+          "label": "II",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279743",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "1",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279744",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279745",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "ب",
+                  "sub_label": null,
+                  "statement": "ادرس الوضعية النسبية بين المنحنى $(C_f)$ و المنحنى $(P)$ الممثل للدالة مكعب .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279746",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "ج",
+                  "sub_label": null,
+                  "statement": "احسب $[\\lim_{x \\to +\\infty} (f(x) - x^3)]$ ، ثم فسر النتيجة بيانيا .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279747",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "2",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279748",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "بين أنه من أجل كل عدد حقيقي $x$ : $f'(x) = -3x g(x)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279749",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "ب",
+                  "sub_label": null,
+                  "statement": "استنتج اتجاه تغير الدالة $f$ ، ثم شكل جدول تغيراتها .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279750",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "3",
+              "sub_label": null,
+              "statement": "أنشىء المنحنى البياني للدالة مكعب و المنحنى $(C_f)$ ، تعطى $f(\\alpha) \\approx 2.8$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279751",
+              "exercise_id": "81969613-2646-444a-939f-262142279723",
+              "label": "4",
+              "sub_label": null,
+              "statement": "من أجل كل عدد حقيقي موجب تماما $\\beta$ ، نرمز بـ $S(\\beta)$ لمساحة الحيز المستوي المحدد بالمنحنيين $(C_f)$ و $(P)$ و المستقيمين ذا المعادلتين $x = 0$ و $x = \\beta$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279752",
+                  "exercise_id": "81969613-2646-444a-939f-262142279723",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "باستعمال المكاملة بالتجزئة أحسب $S(\\beta)$ ، ثم $\\lim_{\\beta \\to +\\infty} S(\\beta)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279753",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 1,
+      "title": null,
+      "statement": "الموضوع الثاني\nيراد تشكيل لجنة تضم رئيسا و نائبه الأول و نائبه الثاني من بين 6 ذكور و 4 إناث .",
+      "topic": "probabilites",
+      "concepts": [
+        "denombrement",
+        "combinaisons",
+        "probabilite_simple",
+        "variable_aleatoire",
+        "esperance"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279754",
+          "exercise_id": "81969613-2646-444a-939f-262142279753",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن عدد اللجان التي يمكن تشكيلها هو : 720 .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279755",
+          "exercise_id": "81969613-2646-444a-939f-262142279753",
+          "label": "2",
+          "sub_label": null,
+          "statement": "أحسب احتمال الأحداث الآتية :\n$A$ \" اللجنة من جنسين مختلفين \"\n$B$ \" الرئيس ذكر و النائب الأول أنثى \"\n$C$ \" باللجنة أنثى على الأقل \"\n$D$ \" اللجنة مشكلة من الذكور فقط \"",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279756",
+          "exercise_id": "81969613-2646-444a-939f-262142279753",
+          "label": "3",
+          "sub_label": null,
+          "statement": "ليكن $X$ المتغير العشوائي الذي يرفق بكل لجنة $X = -ay + 2z$ حيث ($y$ عدد الاناث المتواجدات باللجنة و $z$ عدد الذكور المتواجدون باللجنة ) $a$ عدد حقيقي .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279757",
+              "exercise_id": "81969613-2646-444a-939f-262142279753",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "عين القيم الممكنة التي ياخذها المتغير العشوائي $X$ و عرف قانون احتماله .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279758",
+              "exercise_id": "81969613-2646-444a-939f-262142279753",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "أحسب الأمل الرياضياتي $E(X)$ للمتغير العشوائي $X$ بدلالة $a$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279759",
+              "exercise_id": "81969613-2646-444a-939f-262142279753",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "عين قيمة العدد الحقيقي $a$ ، حتى يكون : $E(X) = -\\frac{6}{5}$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279760",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 2,
+      "title": null,
+      "statement": "$(U_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بـ : $U_0 = \\frac{3}{2}$ و من أجل كل عدد طبيعي $n$ : $U_{n+1} = \\frac{6U_n - 2}{U_n + 3}$ .",
+      "topic": "analyse",
+      "concepts": [
+        "suites_numeriques",
+        "suites_recurrentes",
+        "raisonnement_par_recurrence",
+        "convergence",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279761",
+          "exercise_id": "81969613-2646-444a-939f-262142279760",
+          "label": "1",
+          "sub_label": null,
+          "statement": "عين العددين الحقيقين $a$ و $b$ حيث : $U_{n+1} = a + \\frac{b}{U_n + 3}$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279762",
+          "exercise_id": "81969613-2646-444a-939f-262142279760",
+          "label": "2",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $\\frac{3}{2} \\le U_n \\le 2$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279763",
+          "exercise_id": "81969613-2646-444a-939f-262142279760",
+          "label": "3",
+          "sub_label": null,
+          "statement": "ادرس اتجاه تغير المتتالية $(U_n)$ ، ثم استنتج أنها متقاربة .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279764",
+          "exercise_id": "81969613-2646-444a-939f-262142279760",
+          "label": "4",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279765",
+              "exercise_id": "81969613-2646-444a-939f-262142279760",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "بين أنه من أجل كل عدد طبيعي $n$ : $0 \\le 2 - U_{n+1} \\le \\frac{8}{9} (2 - U_n)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279766",
+              "exercise_id": "81969613-2646-444a-939f-262142279760",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "استنتج أنه من أجل كل عدد طبيعي $n$ : $0 \\le 2 - U_n \\le 2 \\left(\\frac{8}{9}\\right)^n$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279767",
+              "exercise_id": "81969613-2646-444a-939f-262142279760",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{n \\to +\\infty} U_n$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279768",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 3,
+      "title": null,
+      "statement": null,
+      "topic": "nombres_complexes",
+      "concepts": [
+        "equations_complexes",
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "transformations_plan",
+        "rotation",
+        "similitudes"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279769",
+          "exercise_id": "81969613-2646-444a-939f-262142279768",
+          "label": "1",
+          "sub_label": null,
+          "statement": "$(P(z))$ كثير حدود للمتغير المركب $z$ حيث : $P(z) = z^3 - 12z^2 + 48z - 72$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279770",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "تحقق أن 6 هو جذر لكثير الحدود $P(z)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279771",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "جد العددين الحقيقيين $\\alpha$ و $\\beta$ بحيث من أجل كل عدد مركب $z$ : $P(z) = (z - 6)(z^2 + \\alpha z + \\beta)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279772",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "حل في مجموعة الأعدد المركبة $\\mathbb{C}$ ، المعادلة $P(z) = 0$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279773",
+          "exercise_id": "81969613-2646-444a-939f-262142279768",
+          "label": "2",
+          "sub_label": null,
+          "statement": "المستوي المركب مزود بالمعلم المتعامد و المتجانس $(O;\\vec{u}, \\vec{v})$ .\nنعتبر النقط $A$ ، $B$ ، $C$ ذات اللواحق : $z_A = 6$ ، $z_B = 3 + i\\sqrt{3}$ ، $z_C = 3 - i\\sqrt{3}$ على الترتيب .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279774",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "أكتب كلا من $z_A$ ، $z_B$ و $z_C$ على الشكل الأسي .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279775",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "أكتب العدد المركب $\\frac{z_A - z_B}{z_A - z_C}$ على الشكل الجبري ، ثم على الشكل الأسي .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279776",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "استنتج طبيعة المثلث $ABC$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279777",
+          "exercise_id": "81969613-2646-444a-939f-262142279768",
+          "label": "3",
+          "sub_label": null,
+          "statement": "ليكن $S$ التشابه المباشر الذي مركزه $C$ نسبته $\\sqrt{3}$ و زاويته $\\frac{\\pi}{2}$ .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279778",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "أ",
+              "sub_label": null,
+              "statement": "جد الكتابة المركبة للتشابه $S$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279779",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ب",
+              "sub_label": null,
+              "statement": "عين $z_{A'}$ لاحقة النقطة $A'$ صورة النقطة $A$ بالتشابه $S$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279780",
+              "exercise_id": "81969613-2646-444a-939f-262142279768",
+              "label": "ج",
+              "sub_label": null,
+              "statement": "بين أن النقط $B$ ، $A'$ و $A$ في استقامية .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81969613-2646-444a-939f-262142279781",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "number": 4,
+      "title": null,
+      "statement": "المستوي منسوب إلى المعلم المتعامد و المتجانس $(O;\\vec{i}, \\vec{j})$ .\nI) ليكن $(\\gamma)$ التمثيل البياني للدالة $x \\mapsto xe^{-x}$ و $(\\Delta)$ المستقيم ذو المعادلة $y = x$ هي فاصلة نقطة تقاطع $(\\gamma)$ و $(\\Delta)$ .\nII) لتكن الدالة $f$ المعرفة على $\\mathbb{R}$ بـ : $f(x) = x^3 + (3x + 3)e^{-x}$ .\nو $(C_f)$ هو تمثيلها البياني .",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "limites",
+        "derivation",
+        "representation_graphique",
+        "tableau_de_variation",
+        "calcul_integral",
+        "primitives",
+        "integration_par_parties",
+        "aires",
+        "fonction_exponentielle"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": true,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "81969613-2646-444a-939f-262142279782",
+          "exercise_id": "81969613-2646-444a-939f-262142279781",
+          "label": "I",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279783",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بقراءة بيانية حدد وضعية $(\\gamma)$ بالنسبة لـ $(\\Delta)$ على $\\mathbb{R}$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279784",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "2",
+              "sub_label": null,
+              "statement": "الدالة المعرفة على $\\mathbb{R}$ بـ : $g(x) = e^x - x$ .\nاستنتج حسب قيم العدد الحقيقي $x$ إشارة $g(x)$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279785",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "3",
+              "sub_label": null,
+              "statement": "تحقق أن : $0.56 < \\alpha < 0.57$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "81969613-2646-444a-939f-262142279786",
+          "exercise_id": "81969613-2646-444a-939f-262142279781",
+          "label": "II",
+          "sub_label": null,
+          "statement": null,
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "81969613-2646-444a-939f-262142279787",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "1",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279788",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "احسب $\\lim_{x \\to -\\infty} f(x)$ و $\\lim_{x \\to +\\infty} f(x)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279789",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "ب",
+                  "sub_label": null,
+                  "statement": "ادرس الوضعية النسبية بين المنحنى $(C_f)$ و المنحنى $(P)$ الممثل للدالة مكعب .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279790",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "ج",
+                  "sub_label": null,
+                  "statement": "احسب $[\\lim_{x \\to +\\infty} (f(x) - x^3)]$ ، ثم فسر النتيجة بيانيا .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279791",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "2",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279792",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "بين أنه من أجل كل عدد حقيقي $x$ : $f'(x) = -3x g(x)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "81969613-2646-444a-939f-262142279793",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "ب",
+                  "sub_label": null,
+                  "statement": "استنتج اتجاه تغير الدالة $f$ ، ثم شكل جدول تغيراتها .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279794",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "3",
+              "sub_label": null,
+              "statement": "أنشىء المنحنى البياني للدالة مكعب و المنحنى $(C_f)$ ، تعطى $f(\\alpha) \\approx 2.8$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "81969613-2646-444a-939f-262142279795",
+              "exercise_id": "81969613-2646-444a-939f-262142279781",
+              "label": "4",
+              "sub_label": null,
+              "statement": "من أجل كل عدد حقيقي موجب تماما $\\beta$ ، نرمز بـ $S(\\beta)$ لمساحة الحيز المستوي المحدد بالمنحنيين $(C_f)$ و $(P)$ و المستقيمين ذا المعادلتين $x = 0$ و $x = \\beta$ .",
+              "marks": null,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "81969613-2646-444a-939f-262142279796",
+                  "exercise_id": "81969613-2646-444a-939f-262142279781",
+                  "label": "أ",
+                  "sub_label": null,
+                  "statement": "باستعمال المكاملة بالتجزئة أحسب $S(\\beta)$ ، ثم $\\lim_{\\beta \\to +\\infty} S(\\beta)$ .",
+                  "marks": null,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "81969613-2646-444a-939f-262142279797",
+      "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0",
+      "exercise_ref": 4,
+      "part_ref": "I",
+      "figure_type": "graph",
+      "description": "Graph showing two curves, labeled (γ) and (Δ), intersecting at a point with x-coordinate α. The curve (γ) represents $y=xe^{-x}$ and the line (Δ) represents $y=x$. The x-axis is labeled X and the y-axis is labeled Y. The origin is at (0,0).",
+      "source_page": 4
+    }
+  ],
+  "exam_id": "5fbeac37-5ff3-4198-98d0-440227cb72a0"
+}

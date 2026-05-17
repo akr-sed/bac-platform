@@ -1,0 +1,1080 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-191075.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2023,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "الجلفة",
+        "institution": "ثانوية مسعودي عطية",
+        "academic_year": "2022-2023",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "21a3e620-1111-4a2a-8b1b-9c0d1e2f3a4b",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+          "number": 1,
+          "title": null,
+          "statement": "نعتبر في $\\mathbb{Z}^2$، المعادلة (1): $9x+2y=42$.",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "theoreme_bezout",
+            "congruences"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "3b4c5d6e-2222-4f5f-8c2c-9d1e2f3a4b5c",
+              "exercise_id": "21a3e620-1111-4a2a-8b1b-9c0d1e2f3a4b",
+              "label": "1",
+              "sub_label": "a",
+              "statement": "اثبت انه إذا كان $(x,y)$ حلا للمعادلة (1) ، فان $x \\equiv 0 \\pmod{2}$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "4c5d6e7f-3333-4a6a-8d3d-9e1f2a3b4c6d",
+              "exercise_id": "21a3e620-1111-4a2a-8b1b-9c0d1e2f3a4b",
+              "label": "1",
+              "sub_label": "b",
+              "statement": "استنتج حلا خاصا للمعادلة (1).",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-a"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "5d6e7f8a-4444-4b7b-8e4e-9f1a2b3c4d7e",
+              "exercise_id": "21a3e620-1111-4a2a-8b1b-9c0d1e2f3a4b",
+              "label": "1",
+              "sub_label": "c",
+              "statement": "حل المعادلة (1) ثم استنتج الحلول $(x,y)$ التي تحقق : $xy > 0$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-b"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "6e7f8a9b-5555-4c8c-8f5f-9a1b2c3d4e8f",
+              "exercise_id": "21a3e620-1111-4a2a-8b1b-9c0d1e2f3a4b",
+              "label": "2",
+              "sub_label": null,
+              "statement": "N عدد طبيعي يكتب $30aB\\gamma_5$ في النظام ذي الأساس 5 .\nويكتب $55a\\beta_7$ في النظام ذي الأساس 7 .\nعين الأعداد الطبيعية $\\gamma$ ، $B$ ، $a$ ثم أكتب N في النظام العشري .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+          "number": 2,
+          "title": null,
+          "statement": "لكل سؤال تعطى 4 إجابات واحدة منها فقط صحيحة، حدد الجواب الصحيح مع التعليل.\nالمستوي منسوب إلى المعلم المتعامد والمتجانس $(O;\\vec{i};\\vec{j})$ ، لتكن النقط $C,B,A$ لواحقها على الترتيب:\n$Z_A = \\frac{7+3i}{5-2i}$ ، $Z_B = -1+\\sqrt{3}i$ و $Z_C = i$ .",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "forme_algebrique",
+            "forme_trigonometrique",
+            "module",
+            "argument",
+            "equations_complexes",
+            "transformations_plan"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8a9b0c1d-7777-4e0e-8b7b-9c1d2e3f4a0b",
+              "exercise_id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+              "label": "1",
+              "sub_label": null,
+              "statement": "الشكل الجبري لـ $Z_A$ هو :\n\n$\\square \\frac{10}{3}$\n$\\square 1+i$\n$\\square \\frac{29}{21} + \\frac{29}{21}i$\n$\\square \\frac{7}{5} - \\frac{3}{2}i$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "9b0c1d2e-8888-4f1f-8c8c-9d1e2f3a4b1c",
+              "exercise_id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+              "label": "2",
+              "sub_label": null,
+              "statement": "الشكل الأسي للعدد المركب $Z_B$ هو:\n\n$\\square \\sqrt{2}e^{i\\frac{\\pi}{3}}$\n$\\square -2e^{i\\frac{\\pi}{3}}$\n$\\square -e^{i\\sqrt{3}}$\n$\\square 2e^{i\\frac{2\\pi}{3}}$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "0c1d2e3f-9999-4a2a-8d9d-9e1f2a3b4c2d",
+              "exercise_id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$\\arg\\left(\\frac{Z_C-Z_B}{Z_C-Z_A}\\right)$ هو قيس للزاوية:\n\n$\\square (\\vec{BJ},\\vec{AC})$\n$\\square (\\vec{AC},\\vec{BJ})$\n$\\square (\\vec{CA},\\vec{BJ})$\n$\\square (\\vec{AC},\\vec{B})$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "1d2e3f4a-aaaa-4b3b-8e0e-9f1a2b3c4d3e",
+              "exercise_id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+              "label": "4",
+              "sub_label": null,
+              "statement": "أحد حلي المعادلة $z^2-2z+2=0$ هو:\n\n$\\square \\frac{1+\\sqrt{3}}{2}$\n$\\square \\frac{1+i}{4}$\n$\\square Z_B$\n$\\square Z_A$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "2e3f4a5b-bbbb-4c4c-8f1f-9a1b2c3d4e4f",
+              "exercise_id": "7f8a9b0c-6666-4d9d-8a6a-9b1c2d3e4f9a",
+              "label": "5",
+              "sub_label": null,
+              "statement": "مجموعة النقط M ذات اللاحقة $z$ بحيث $|z-i| = |z-\\frac{1+i}{2}|$ هي :\n\n$\\square$ الدائرة ذات المركز B ونصف القطر 1.\n$\\square$ محور القطعة $[BJ]$ .\n$\\square$ المستقيم $(BI)$ .\n$\\square$ المستقيم $(BI)$ ما عدا النقطة $I$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+          "number": 3,
+          "title": null,
+          "statement": "$(u_n)$ ، $(v_n)$ المتتاليتان المعرفتان على $\\mathbb{N}$ بـ : $u_0 = 2$ ، $v_0 = 1$ ومن اجل كل عدد طبيعي $n$:\n$$u_{n+1} = \\frac{u_n+3v_n}{4}$$\n$$v_{n+1} = \\frac{u_n+4v_n}{5}$$",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_arithmetiques",
+            "suites_geometriques",
+            "convergence"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "4a5b6c7d-dddd-4e6e-8b3b-9c1d2e3f4a6b",
+              "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+              "label": "1",
+              "sub_label": null,
+              "statement": "نضع من اجل كل عدد طبيعي $n$ : $w_n = u_n - v_n$ :",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "5b6c7d8e-eeee-4f7f-8c4c-9d1e2f3a4b7c",
+                  "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "اثبت أن $(w_n)$ متتالية هندسية يطلب تعيين أساسها وحدها الأول $w_0$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "6c7d8e9f-ffff-4a8a-8d5d-9e1f2a3b4c8d",
+                  "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "اكتب عبارة الحد العام $w_n$ بدلالة $n$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "7d8e9f0a-1010-4b9b-8e6e-9f1a2b3c4d9e",
+                  "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+                  "label": "c",
+                  "sub_label": null,
+                  "statement": "أحسب : $\\lim_{n \\to +\\infty} w_n$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-b"
+                  ],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "8e9f0a1b-1111-4c0c-8f7f-9a1b2c3d4e0f",
+              "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+              "label": "2",
+              "sub_label": null,
+              "statement": "اثبت ان المتتالية $(u_n)$ متناقصة و المتتالية $(v_n)$ متزايدة .\nاستنتج ان المتتاليتين $(u_n)$ ، $(v_n)$ متجاورتان .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "9f0a1b2c-1212-4d1d-8a8a-9b1c2d3e4f1a",
+              "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+              "label": "3",
+              "sub_label": null,
+              "statement": "نضع من اجل كل عدد طبيعي $n$ : $T_n = 4u_n + 15v_n$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "0a1b2c3d-1313-4e2e-8b9b-9c1d2e3f4a2b",
+                  "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "اثبت أن المتتالية $(T_n)$ ثابتة واستنتج $\\lim_{n \\to +\\infty} u_n$ و $\\lim_{n \\to +\\infty} v_n$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "1b2c3d4e-1414-4f3f-8c0c-9d1e2f3a4b3c",
+                  "exercise_id": "3f4a5b6c-cccc-4d5d-8a2a-9b1c2d3e4f5a",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "باستعمال $w_n = u_n - v_n$ و $T_n = 4u_n + 15v_n$ وعبارة الحد العام $w_n$ . أوجد عبارة الحد العام $u_n$ و $v_n$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-b",
+                    "3-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+          "number": 4,
+          "title": null,
+          "statement": "$g$ دالة معرفة على $\\mathbb{R}$ بـ $g(x)=1-(x+1)e^{-x}$ .",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "derivation",
+            "limites",
+            "tableau_de_variation",
+            "representation_graphique",
+            "fonction_exponentielle",
+            "optimisation"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "3d4e5f6a-1616-4b5b-8e2e-9f1a2b3c4d5e",
+              "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+              "label": "1",
+              "sub_label": null,
+              "statement": "",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "4e5f6a7b-1717-4c6c-8f3f-9a1b2c3d4e6f",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "ادرس اتجاه تغير الدالة $g$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "5f6a7b8c-1818-4d7d-8a4a-9b1c2d3e4f7a",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب $g(0)$ واستنتج إشارة $g(x)$ حسب قيم $x$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "6a7b8c9d-1919-4e8e-8b5b-9c1d2e3f4a8b",
+              "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+              "label": "2",
+              "sub_label": null,
+              "statement": "$f$ الدالة العددية المعرفة على $\\mathbb{R}$ بـ $f(x)=x-2+(x+2)e^{-x}$ .\n$(C)$ تمثيلها البياني في معلم متعامد ومتجانس .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "7b8c9d0e-2020-4f9f-8c6c-9d1e2f3a4b9c",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أحسب نهاية $f$ عند $-\\infty$ ، $+\\infty$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "8c9d0e1f-2121-4a0a-8d7d-9e1f2a3b4c0d",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "بين انه من اجل كل $x$ من $\\mathbb{R}$ : $f'(x) = g(x)$ ، ثم شكل جدول تغيرات الدالة $f$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-b"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "9d0e1f2a-2222-4b1b-8e8e-9f1a2b3c4d1e",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "c",
+                  "sub_label": null,
+                  "statement": "بين أن المنحنى $(C)$ يقبل نقطة انعطاف يطلب تعيين إحداثياتها .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "0e1f2a3b-2323-4c2c-8f9f-9a1b2c3d4e2f",
+              "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+              "label": "3",
+              "sub_label": null,
+              "statement": "",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "1f2a3b4c-2424-4d3d-8a0a-9b1c2d3e4f3a",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "بين أن المنحنى $(C)$ يقبل مماس معامل توجيهه 1 ، ثم اكتب معادلة له .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "2a3b4c5d-2525-4e4e-8b1b-9c1d2e3f4a4b",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "بين أن $(C)$ يقبل مستقيم مقارب $(\\Delta)$ معادلته : $y = x-2$ عند $+\\infty$ ثم أدرس وضعية $(C)$ بالنسبة إلى $(\\Delta)$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "3b4c5d6e-2626-4f5f-8c2c-9d1e2f3a4b5c",
+                  "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+                  "label": "c",
+                  "sub_label": null,
+                  "statement": "أنشئ $(\\Delta)$ و $(C)$ .",
+                  "marks": null,
+                  "has_figure": true,
+                  "depends_on": [
+                    "3-b"
+                  ],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "4c5d6e7f-2727-4a6a-8d3d-9e1f2a3b4c6d",
+              "exercise_id": "2c3d4e5f-1515-4a4a-8d1d-9e1f2a3b4c4d",
+              "label": "4",
+              "sub_label": null,
+              "statement": "باستعمال المنحنى $(C)$ ناقش حسب قيم الوسيط الحقيقي $m$ عدد وإشارة حلول المعادلة: $(x-2-m)e^x+x+2=0$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-c"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "5d6e7f8a-2828-4b7b-8e4e-9f1a2b3c4d7e",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-1",
+          "exercise_ref": 4,
+          "part_ref": "3-c",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A graph showing the curve (C) of function f and its asymptote (Δ) with equation y=x-2.",
+          "source_page": 2,
+          "bounding_box": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-191075.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2023,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "الجلفة",
+        "institution": "ثانوية مسعودي عطية",
+        "academic_year": "2022-2023",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "6e7f8a9b-1111-4c8c-8f5f-9a1b2c3d4e8f",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+          "number": 1,
+          "title": null,
+          "statement": "",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "pgcd",
+            "congruences",
+            "theoreme_bezout",
+            "suites_arithmetiques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "7f8a9b0c-2222-4d9d-8a6a-9b1c2d3e4f9a",
+              "exercise_id": "6e7f8a9b-1111-4c8c-8f5f-9a1b2c3d4e8f",
+              "label": "1",
+              "sub_label": null,
+              "statement": "جد القاسم المشترك الأكبر للأعداد : $32785, 2490, 2905$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8a9b0c1d-3333-4e0e-8b7b-9c1d2e3f4a0b",
+              "exercise_id": "6e7f8a9b-1111-4c8c-8f5f-9a1b2c3d4e8f",
+              "label": "2",
+              "sub_label": null,
+              "statement": "حل في $\\mathbb{Z} \\times \\mathbb{Z}$ المعادلة (1) : $7x+6y=79$ (لاحظ $7+72=79$)",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "9b0c1d2e-4444-4f1f-8c8c-9d1e2f3a4b1c",
+              "exercise_id": "6e7f8a9b-1111-4c8c-8f5f-9a1b2c3d4e8f",
+              "label": "3",
+              "sub_label": null,
+              "statement": "اشترى نادي كرة القدم ملابس رياضية للاعبيه . إذا علمنا أن ثمن بذلة اللاعب هو $DA 2905$ وثمن بذلة اللاعبة هو $DA 2490$ و علمنا أن النادي دفع في المجموع $DA 32785$\n- ما هو عدد اللاعبين و اللاعبات؟",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "0c1d2e3f-5555-4a2a-8d9d-9e1f2a3b4c2d",
+              "exercise_id": "6e7f8a9b-1111-4c8c-8f5f-9a1b2c3d4e8f",
+              "label": "4",
+              "sub_label": null,
+              "statement": "N عدد طبيعي يكتب $aB\\beta_9$ في نظام التعداد أساسه 9 حيث : $a;B;\\beta$ بهذا الترتيب تشكل حدودا متتابعة من متتالية حسابية متزايدة تماما و $(a,B)$ حلا للمعادلة (1)\n- عين $a;B;\\beta$ ثم اكتب N في النظام العشري",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "1d2e3f4a-6666-4b3b-8e0e-9f1a2b3c4d3e",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+          "number": 2,
+          "title": null,
+          "statement": "يحوي كيس أربع قريصات تحمل الأرقام $1, 2, 3, a$ ($a \\in \\mathbb{N}$) .\nنسحب قريصة واحدة و نعتبر $P_k$ هو احتمال سحب القريصة ذات الرقم $k$ .",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "probabilite_conditionnelle",
+            "variable_aleatoire",
+            "esperance",
+            "suites_arithmetiques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "2e3f4a5b-7777-4c4c-8f1f-9a1b2c3d4e4f",
+              "exercise_id": "1d2e3f4a-6666-4b3b-8e0e-9f1a2b3c4d3e",
+              "label": "1",
+              "sub_label": null,
+              "statement": "أحسب الأعداد الحقيقية $P_1, P_2, P_3, P_a$ إذا علمت أنها بهذا الترتيب تشكل حدود متتابعة من متتالية حسابية أساسها $\\frac{1}{18}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "3f4a5b6c-8888-4d5d-8a2a-9b1c2d3e4f5a",
+              "exercise_id": "1d2e3f4a-6666-4b3b-8e0e-9f1a2b3c4d3e",
+              "label": "2",
+              "sub_label": null,
+              "statement": "ليكن $X$ المتغير العشوائي الذي يساوي الرقم الذي تحمله كل قريصة مسحوبة .\nأوجد قيمة العدد $a$ إذا علمت أن الامل الرياضياتي $E(X)$ يساوي $\\frac{43}{9}$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "4a5b6c7d-9999-4e6e-8b3b-9c1d2e3f4a6b",
+              "exercise_id": "1d2e3f4a-6666-4b3b-8e0e-9f1a2b3c4d3e",
+              "label": "3",
+              "sub_label": null,
+              "statement": "من أجل $a=10$ احسب $P(X>2)$ و $P(X^2-3X+2 \\le 0)$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+          "number": 3,
+          "title": null,
+          "statement": "$(u_n)$ متتالية هندسية حدودها موجبة تماما حيث :\n$$\\begin{cases} u_0 + u_4 = 17e \\\\ \\ln(u_3) - \\ln(u_1) = 2\\ln 2 \\end{cases}$$\nحيث $\\ln$ اللوغاريتم النيبري ذو الاساس $e$ .",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_geometriques",
+            "fonction_logarithme",
+            "suites_arithmetiques"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            3,
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "6c7d8e9f-bbbb-4a8a-8d5d-9e1f2a3b4c8d",
+              "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+              "label": "1",
+              "sub_label": null,
+              "statement": "",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "7d8e9f0a-cccc-4b9b-8e6e-9f1a2b3c4d9e",
+                  "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "احسب $q$ أساس المتتالية $(u_n)$ وحدها الأول $u_0$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "8e9f0a1b-dddd-4c0c-8f7f-9a1b2c3d4e0f",
+                  "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "عبر عن $u_n$ بدلالة $n$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "9f0a1b2c-eeee-4d1d-8a8a-9b1c2d3e4f1a",
+              "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+              "label": "2",
+              "sub_label": null,
+              "statement": "أحسب بدلالة $n$ المجموع $S_n = u_1 + u_2 + .... + u_n$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-b"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "0a1b2c3d-ffff-4e2e-8b9b-9c1d2e3f4a2b",
+              "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$(v_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ كما يلي : $v_n = \\ln(u_n) + \\ln(u_{n+1})$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "1b2c3d4e-1010-4f3f-8c0c-9d1e2f3a4b3c",
+                  "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أ) أكتب $v_n$ بدلالة $n$ ثم بين أن $(v_n)$ متتالية حسابية .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-b"
+                  ],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "2c3d4e5f-1111-4a4a-8d1d-9e1f2a3b4c4d",
+                  "exercise_id": "5b6c7d8e-aaaa-4f7f-8c4c-9d1e2f3a4b7c",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "ب) عين العدد الطبيعي $n$ بحيث : $v_0 + v_1 + .... + v_n = 32+128\\ln 4$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "3-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+          "number": 4,
+          "title": null,
+          "statement": "",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "derivation",
+            "limites",
+            "tableau_de_variation",
+            "representation_graphique",
+            "fonction_logarithme",
+            "branches_infinies",
+            "optimisation"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "4e5f6a7b-1313-4c6c-8f3f-9a1b2c3d4e6f",
+              "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+              "label": "I",
+              "sub_label": null,
+              "statement": "نعتبر الدالة $g$ المعرفة على المجال $]0;+\\infty[$ كما يلي : $g(x) = x-x\\ln x$ .",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "5f6a7b8c-1414-4d7d-8a4a-9b1c2d3e4f7a",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "1",
+                  "sub_label": null,
+                  "statement": "احسب نهايات الدالة $g$ عند أطراف مجالات تعريفها .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "6a7b8c9d-1515-4e8e-8b5b-9c1d2e3f4a8b",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "2",
+                  "sub_label": null,
+                  "statement": "ادرس اتجاه تغير الدالة $g$ ثم شكل جدول تغيراتها .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "7b8c9d0e-1616-4f9f-8c6c-9d1e2f3a4b9c",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "3",
+                  "sub_label": null,
+                  "statement": "بين أن المعادلة $g(x)=-1$ تقبل حلا وحيدا $\\alpha$ ، حيث : $3.5 < \\alpha < 3.6$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "I-2"
+                  ],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                },
+                {
+                  "id": "8c9d0e1f-1717-4a0a-8d7d-9e1f2a3b4c0d",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "4",
+                  "sub_label": null,
+                  "statement": "استنتج إشارة العبارة $g(x)+1$ على المجال $]0;+\\infty[$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "I-3"
+                  ],
+                  "solution": null,
+                  "ordering": 4,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "9d0e1f2a-1818-4b1b-8e8e-9f1a2b3c4d1e",
+              "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+              "label": "II",
+              "sub_label": null,
+              "statement": "نعتبر الدالة $f$ المعرفة على المجال $]0;+\\infty[$ كما يلي: $f(x)=\\frac{\\ln x}{x+1}$ .\n$(C)$ التمثيل البياني للدالة $f$ بالنسبة إلى معلم متعامد $(O;\\vec{i};\\vec{j})$ حيث $||\\vec{i}|| = 2cm$ و $||\\vec{j}|| = 4cm$ .",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "0e1f2a3b-1919-4c2c-8f9f-9a1b2c3d4e2f",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "1",
+                  "sub_label": null,
+                  "statement": "بين أن $(C)$ يقبل مستقيمين مقاربين معادلتيهما $x=0$ و $y=0$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "1f2a3b4c-2020-4d3d-8a0a-9b1c2d3e4f3a",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "2",
+                  "sub_label": null,
+                  "statement": "برهن انه من اجل كل عدد حقيقي $x$ من المجال $]0;+\\infty[$ : $f'(x)=\\frac{g(x)+1}{x(x+1)^2}$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "2a3b4c5d-2121-4e4e-8b1b-9c1d2e3f4a4b",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "3",
+                  "sub_label": null,
+                  "statement": "ادرس اتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "II-2",
+                    "I-4"
+                  ],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                },
+                {
+                  "id": "3b4c5d6e-2222-4f5f-8c2c-9d1e2f3a4b5c",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "4",
+                  "sub_label": null,
+                  "statement": "اكتب معادلة للمماس $(T)$ للمنحنى $(C)$ عند النقطة ذات الفاصلة 1 .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 4,
+                  "metadata": {}
+                },
+                {
+                  "id": "4c5d6e7f-2323-4a6a-8d3d-9e1f2a3b4c6d",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "5",
+                  "sub_label": null,
+                  "statement": "احسب $\\lim_{x \\to \\alpha} \\frac{f(x)-f(\\alpha)}{x-\\alpha}$ ، فسر النتيجة هندسيا .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "I-3"
+                  ],
+                  "solution": null,
+                  "ordering": 5,
+                  "metadata": {}
+                },
+                {
+                  "id": "5d6e7f8a-2424-4b7b-8e4e-9f1a2b3c4d7e",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "6",
+                  "sub_label": null,
+                  "statement": "بين أن : $f(\\alpha) = \\frac{1}{\\alpha}$ ثم استنتج حصرا لـ $f(\\alpha)$ (تدور النتائج إلى $10^{-2}$ )",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "I-3"
+                  ],
+                  "solution": null,
+                  "ordering": 6,
+                  "metadata": {}
+                },
+                {
+                  "id": "6e7f8a9b-2525-4c8c-8f5f-9a1b2c3d4e8f",
+                  "exercise_id": "3d4e5f6a-1212-4b5b-8e2e-9f1a2b3c4d5e",
+                  "label": "7",
+                  "sub_label": null,
+                  "statement": "ارسم $(C)$ ثم استنتج إشارة $f(x)$ .",
+                  "marks": null,
+                  "has_figure": true,
+                  "depends_on": [
+                    "II-1",
+                    "II-3",
+                    "II-4",
+                    "II-6"
+                  ],
+                  "solution": null,
+                  "ordering": 7,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "7f8a9b0c-2626-4d9d-8a6a-9b1c2d3e4f9a",
+          "exam_id": "db6370ea-f88f-4c72-b012-283fce198660-2",
+          "exercise_ref": 4,
+          "part_ref": "II-7",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "A graph showing the curve (C) of function f, its vertical asymptote x=0 and horizontal asymptote y=0.",
+          "source_page": 4,
+          "bounding_box": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

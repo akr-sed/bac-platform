@@ -41,7 +41,53 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#codex
+# editors & AI tools
 .codex
 .vscode
 .claude/
+.mcp.json
+.superpowers/
+design-system/
+docs/
+
+# Playwright MCP test artifacts
+.playwright-mcp/
+*.playwright-mcp.png
+
+# UI/code review artifacts
+REVIEW.md
+REVIEW2.md
+UI_REVIEW_*.md
+
+# Local screenshots from manual QA
+/exams-empty-ar.png
+/exercise-*.png
+/exercises-list-ar.png
+/session-*.png
+/sessions-*.png
+/unenroll-dialog.png
+
+# More test artifacts
+/preview-*.png
+/final-*.png
+/library-*.png
+
+# Claude artifacts (do not commit)
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.claude/
+.claude-mem/
+
+# AI-hinting generated artifacts
+runs/
+data/dzexams/**/bac-figures/
+data/dzexams/**/bac-figures-manifest.json
+data/dzexams/**/*.error.json
+
+# Python cache
+**/__pycache__/
+
+# CodeGraph local index (per-machine knowledge graph DB)
+.codegraph/

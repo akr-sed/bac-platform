@@ -1,0 +1,967 @@
+{
+  "exam_metadata": {
+    "id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+    "subject": "mathematics",
+    "source_file": "dzexams-3as-mathematiques-186070.pdf",
+    "exam_type": "bac_blanc",
+    "session": null,
+    "trimester": 3,
+    "filiere": "sciences_experimentales",
+    "year": 2023,
+    "duration_minutes": 210,
+    "total_marks": 20,
+    "language": "ar",
+    "region": null,
+    "institution": "Melina Private School",
+    "academic_year": "2023-2024"
+  },
+  "exercises": [
+    {
+      "id": "78901234-5678-4901-8234-567890123456",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "ثلاث صناديق غير شفافة $U_1$ ، $U_2$ و $U_3$ يحتوي الصندوق $U_1$ على 6 كرات بيضاء و 5 كرات خضراء و 4 كرات حمراء ويحتوي الصندوق $U_2$ على 5 كرات بيضاء و 4 كرات خضراء و 3 كرات حمراء ويحتوي الصندوق $U_3$ على 4 كرات بيضاء و 3 كرات خضراء و 2 كرات حمراء (كل الكرات متشابهة ولانفرق بينها عند اللمس)\nنرمي زهرة نرد غير مزيف ذات 6 اوجه مرقم من 1 إلى 6\nإذا ظهر رقم زوجي فإننا نسحب عشوائيا وفي آن واحد كرتين من $U_1$ وإذا ظهر رقم فردي اكبر من 2 فإننا نسحب عشوائيا كرتين على التوالي دون إرجاع من $U_2$ وفي بقية الحالات نسحب كرتين على التوالي مع الإرجاع من $U_3$\nنعتبر الأحداث : $A$: \"سحب كرتين حمراوين\" ، $B$: \"سحب كرتين من نفس اللون\"",
+      "topic": "probabilites",
+      "concepts": [
+        "arbre_probabilites",
+        "probabilite_conditionnelle",
+        "variable_aleatoire",
+        "esperance",
+        "tirages_successifs",
+        "tirages_simultanees"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": true,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بين أن $P_{U_1}(A) = \\frac{2}{35}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-4123-0456-789012345678",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "2",
+          "sub_label": null,
+          "statement": "أكمل شجرة الإحتمالات المرفقة مبررا خطوات الحساب",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "3",
+          "sub_label": null,
+          "statement": "بين أن $P(A) = \\frac{9721}{187110}$ ثم أحسب $P_{U_3}(B)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "12345678-9012-4345-2678-901234567890",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "4",
+          "sub_label": null,
+          "statement": "علما أن الكرتين حمراوان، ما إحتمال أن تكونا من نفس الصندوق $U_1$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "5",
+          "sub_label": "1",
+          "statement": "نفرغ الآن جميع الكرات من الصناديق الثلاثة ونضعها في صندوق واحد ونسحب عشوائيا 3 كرات بدون إرجاع. ليكن $X$ المتغير العشوائي الذي يرفق بكل سحب عدد الكرات الحمراء المسحوبة. عين قانون إحتمال المتغير العشوائي $X$ ثم أحسب امله الرياضي",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "78901234-5678-4901-8234-567890123456",
+          "label": "5",
+          "sub_label": "2",
+          "statement": "إستنتج $P(\\ln(\\sqrt{x+1}) - \\frac{1}{2} > 0)$",
+          "marks": null,
+          "depends_on": [
+            "5-1"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "45678901-2345-4678-5901-234567890123",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "لكل سؤال إجابة واحدة فقط صحيحة عينها مع التعليل:",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "nombres_complexes",
+        "suites_numeriques",
+        "equation_differentielle_premier_ordre"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "45678901-2345-4678-5901-234567890123",
+          "label": "1",
+          "sub_label": null,
+          "statement": "القيمة المتوسطة للدالة $f(x) = (x-2)e^{x^2-4x+1}$ على المجال $[0;4]$ هي:\n(أ) $m = \\frac{1-e}{4}$ ، (ب) $m = 0$ ، (ج) $m = \\frac{e^2-e}{4}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-4890-7123-456789012345",
+          "exercise_id": "45678901-2345-4678-5901-234567890123",
+          "label": "2",
+          "sub_label": null,
+          "statement": "العدد المركب $A$ حيث : $A = (\\frac{1}{2} + i\\frac{\\sqrt{3}}{2})^{1445} + (-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2})^{2024}$ يساوي:\n(أ) $A = -i\\sqrt{3}$ ، (ب) $A = -1$ ، (ج) $A = i\\sqrt{3}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "45678901-2345-4678-5901-234567890123",
+          "label": "3",
+          "sub_label": null,
+          "statement": "المتتالية العددية $(u_n)$ المعرفة على $\\mathbb{N}$ بـ: $u_n = 8 \\times 3^{2n} - 2n + 1$. نضع $S_n = u_0 + u_1 + .... + u_n$. $S_n$ يساوي:\n(أ) $9^{n+1} - n^2$ ، (ب) $9^{n+1} - (n+1)^2$ ، (ج) $9^{n+1} + n^2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "45678901-2345-4678-5901-234567890123",
+          "label": "4",
+          "sub_label": null,
+          "statement": "نعتبر المعادلة التفاضلية : $2y' + 2y - 2 = 0$. الحل الخاص لها والذي يحقق $y(0) = 2024$ هو:\n(أ) $y = 2023e^{-2x} + 1$ ، (ب) $y = -2023e^{2x} + 1$ ، (ج) $y = 2023e^{2x} + 1$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "90123456-7890-4123-0456-789012345678",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "لتكن $(u_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بـ: $u_n = \\int_n^{n+1} e^{1-x} dx$",
+      "topic": "suites",
+      "concepts": [
+        "suites_numeriques",
+        "suites_geometriques",
+        "calcul_integral",
+        "convergence",
+        "limites"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "1",
+          "sub_label": null,
+          "statement": "أحسب $u_0$ ثم برهن أنه من أجل كل عدد طبيعي $n$ فإن: $u_n > 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "12345678-9012-4345-2678-901234567890",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "2",
+          "sub_label": null,
+          "statement": "أحسب $u_n$ بدلالة $n$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "3",
+          "sub_label": null,
+          "statement": "برهن أن المتتالية $(u_n)$ هندسية اساسها $\\frac{1}{e}$",
+          "marks": null,
+          "depends_on": [
+            "2"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "4",
+          "sub_label": null,
+          "statement": "أدرس إتجاه تغير المتتالية $(u_n)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-4678-5901-234567890123",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "5",
+          "sub_label": null,
+          "statement": "إستنتج أن المتتالية $(u_n)$ متقاربة ثم أحسب نهايتها.",
+          "marks": null,
+          "depends_on": [
+            "4"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "6",
+          "sub_label": null,
+          "statement": "ليكن المجموع $S_n = u_0 + u_1 + u_2 + .... + u_n$. أحسب $S_n$ ثم أحسب $\\lim_{n \\to +\\infty} S_n$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "67890123-4567-4890-7123-456789012345",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I- $g$ دالة معرفة على $\\mathbb{R}$ بـ : $g(x) = 2(e^x + e^{-x}) - 3$\nII- $f$ دالة معرفة على $\\mathbb{R}^*$ بـ : $f(x) = \\frac{2xe^x - 2x - 1}{e^x - 1}$. $(C_f)$ منحناها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "etude_de_fonction",
+        "fonction_exponentielle",
+        "limites",
+        "tableau_de_variation",
+        "branches_infinies",
+        "calcul_integral",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "I-1",
+          "sub_label": null,
+          "statement": "أدرس إتجاه تغير الدالة $g$ ثم شكل جدول تغيراتها. (لايطلب حساب النهايات)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "I-2",
+          "sub_label": null,
+          "statement": "إستنتج أنه من اجل كل عدد حقيقي $x$: $g(x) > 0$",
+          "marks": null,
+          "depends_on": [
+            "I-1"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-4123-0456-789012345678",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-1",
+          "sub_label": null,
+          "statement": "أحسب نهايات الدالة $f$ عند أطراف مجموعة تعريفها .",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-2",
+          "sub_label": "أ",
+          "statement": "بين أن $f'(x) = \\frac{e^x \\times g(x)}{(e^x - 1)^2}$ ثم أدرس إتجاه تغير الدالة $f$.",
+          "marks": null,
+          "depends_on": [
+            "I-2"
+          ],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "12345678-9012-4345-2678-901234567890",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-2",
+          "sub_label": "ب",
+          "statement": "شكل جدول تغيرات الدالة $f$",
+          "marks": null,
+          "depends_on": [
+            "II-2-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-3",
+          "sub_label": "أ",
+          "statement": "بين أن المستقيم $(\\Delta)$ ذو المعادلة $y = 2x$ مقارب مائل لـ $(C_f)$ بجوار $+\\infty$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-3",
+          "sub_label": "ب",
+          "statement": "أدرس الوضع النسبي لـ $(C_f)$ و $(\\Delta)$",
+          "marks": null,
+          "depends_on": [
+            "II-3-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-4678-5901-234567890123",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-3",
+          "sub_label": "ج",
+          "statement": "بين أن المستقيم $(\\Delta')$ ذو المعادلة $y = 2x + 1$ مقارب مائل لـ $(C_f)$ بجوار $-\\infty$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-4",
+          "sub_label": null,
+          "statement": "بين أن $f(-x) + f(x) = 1$ ثم فسر النتيجة هندسيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-4890-7123-456789012345",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-5",
+          "sub_label": "أ",
+          "statement": "ارسم $(\\Delta)$ ، $(\\Delta')$ و $(C_f)$. (يعطى $f(0,6) = f(-0,86) = 0$)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-5",
+          "sub_label": "ب",
+          "statement": "بين أن جميع المستقيمات ذي المعادلات $y = mx + \\frac{1}{2}$ تشمل نقطة ثابته يطلب تعيينها. حيث ($m \\in \\mathbb{R}$)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-5",
+          "sub_label": "ج",
+          "statement": "ناقش بيانيا وحسب قيم الوسيط الحقيقي $m$ عدد وإشارة حلول المعادلة $f(x) = mx + \\frac{1}{2}$",
+          "marks": null,
+          "depends_on": [
+            "II-5-ب"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-4123-0456-789012345678",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-6",
+          "sub_label": "أ",
+          "statement": "تحقق أنه من أجل كل عدد حقيقي $x$ غير معدوم : $f(x) = 2x - \\frac{e^{-x}}{1 - e^{-x}}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 13,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "67890123-4567-4890-7123-456789012345",
+          "label": "II-6",
+          "sub_label": "ب",
+          "statement": "S مساحة الحيز المستوي المحدد بـ $(C_f)$ و $(\\Delta)$ والمستقيمات $x = 1$ و $x = 2$. بين أن : $S = (\\ln(e+1) - 1) u.a$",
+          "marks": null,
+          "depends_on": [
+            "II-6-أ"
+          ],
+          "solution": null,
+          "ordering": 14,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "12345678-9012-4345-2678-901234567890",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 5,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "لتكن $(u_n)$ المتتالية العددية المعرفة على $\\mathbb{N}$ بـحدها الأول $u_0 = 6$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = \\sqrt{u_n - 1} + 1$. في الشكل المقابل المنحنى $(C_f)$ الممثل للدالة $f$ المرفقة بالمتالية $(u_n)$ والمعرفة بالعيارة $f(x) = \\sqrt{x-1} + 1$ والمنصف الأول ذي المعادلة $y = x$",
+      "topic": "suites",
+      "concepts": [
+        "suites_recurrentes",
+        "raisonnement_par_recurrence",
+        "limites",
+        "convergence"
+      ],
+      "difficulty": "medium",
+      "marks": 5,
+      "has_figure": true,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "أعد رسم الشكل ثم مثل الحدود $u_0 ; u_1 ; u_2$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "ماهو تخمينك حول إتجاه تغير المتتالية $(u_n)$",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-4678-5901-234567890123",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "2",
+          "sub_label": null,
+          "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $2 < u_n \\le 6$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "3",
+          "sub_label": null,
+          "statement": "تحقق أنه من أجل كل عدد طبيعي $n$: $u_{n+1} - u_n = \\sqrt{u_n - 1}(1 - \\sqrt{u_n - 1})$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-4890-7123-456789012345",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "4",
+          "sub_label": null,
+          "statement": "إستنتج أن $(u_n)$ متناقصة ثم بين انها متقاربة وعين نهايتها.",
+          "marks": null,
+          "depends_on": [
+            "2",
+            "3"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "5",
+          "sub_label": "أ",
+          "statement": "بين أنه من أجل كل عدد طبيعي $n$: $0 \\le u_{n+1} - 2 \\le \\frac{1}{2}(u_n - 2)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "5",
+          "sub_label": "ب",
+          "statement": "إستنتج أن $0 \\le u_n - 2 \\le 4(\\frac{1}{2})^n$ ثم عين نهاية $(u_n)$",
+          "marks": null,
+          "depends_on": [
+            "5-أ"
+          ],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "90123456-7890-4123-0456-789012345678",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 6,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "1- كيس به 3 كرات بيضاء و 5 كرات سوداء نسحب من الكيس 3 كرات على التوالي بدون إرجاع الكرة المسحوبة.\n(أ) أحسب إحتمال الحادثتين :\n$A$ : \"الحصول على 3 كرات من نفس اللون.\"\n$B$ : \"الحصول على كرة سوداء واحدة على الأقل.\"\n2- في هذا الجزء نفرض ان عدد الكرات السوداء هو $n$ حيث $n$ عدد طبيعي كيفي اكبر تماما من 2. نقوم بسحب كرتين على التوالي بدون إرجاع الكرة المسحوبة. ليكن $X$ المتغير العشوائي الذي يرفق بكل سحب عدد الكرات السوداء المسحوبة.",
+      "topic": "probabilites",
+      "concepts": [
+        "variable_aleatoire",
+        "esperance",
+        "tirages_successifs"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بين أن $P(x = 1) = \\frac{6n}{(n+3)(n+2)}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "12345678-9012-4345-2678-901234567890",
+          "exercise_id": "90123456-7890-4123-0456-789012345678",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عرف قانون الإحتمال لـ $X$ ثم بين أن $E(x) = \\frac{2n}{n+3}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "23456789-0123-4456-3789-012345678901",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 7,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "في المستوي المركب المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$ نعتبر النقط $A; B; C$ حيث : $z_A = 1 + i\\sqrt{3}$ ، $z_B = \\bar{z_A}$ ، $z_C = z_A \\times z_B$",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_exponentielle",
+        "transformations_plan",
+        "rotation"
+      ],
+      "difficulty": "medium",
+      "marks": 4,
+      "has_figure": false,
+      "source_page": 5,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "1",
+          "sub_label": null,
+          "statement": "حل في المجموعة $\\mathbb{C}$ المعادلة ذات المجهول $z$ : $z^2 - 2z + 4 = 0$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-4678-5901-234567890123",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "2",
+          "sub_label": "أ",
+          "statement": "بين أن المثلث $ABC$ متقايس الأضلاع",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "2",
+          "sub_label": "ب",
+          "statement": "عين $z_G$ لاحقة النقطة $G$ مركز ثقل المثث $ABC$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-4890-7123-456789012345",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "2",
+          "sub_label": "ج",
+          "statement": "بين أن $G$ مركز الدائرة المحيطة بالمثلث $ABC$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "3",
+          "sub_label": "أ",
+          "statement": "($\\lambda$) هي مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ حيث: $z = 2 + 2e^{i\\theta}$ و $\\theta \\in \\mathbb{R}$. تحقق أن النقطة $A$ تنتمي إلى المجموعة ($\\lambda$)",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "3",
+          "sub_label": "ب",
+          "statement": "إستنتج مجموعة النقط ($\\lambda$)",
+          "marks": null,
+          "depends_on": [
+            "3-أ"
+          ],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-4123-0456-789012345678",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "$r$ دوران مركزه $A$ ويحول $B$ إلى $C$. أكتب العبارة المركبة للدوران $r$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "23456789-0123-4456-3789-012345678901",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "عين مجموعة النقط $M$ من المستوي ذات اللاحقة $z$ حيث: $|\\bar{z} - 1 - i\\sqrt{3}| = |z - 1 - i\\sqrt{3}|$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "12345678-9012-4345-2678-901234567890",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "number": 8,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "I- $f$ الدالة العددية المعرفة على $D = ]-\\infty; -1[ \\cup ]0; +\\infty[$ بـ: $f(x) = \\ln(1 + \\frac{1}{x}) + x + 1$. $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j})$.\nII- $h$ دالة عددية معرفة على $\\mathbb{R}^*$ بـ: $h(x) = f(|x|)$",
+      "topic": "analyse",
+      "concepts": [
+        "fonction_logarithme",
+        "etude_de_fonction",
+        "limites",
+        "tableau_de_variation",
+        "asymptotes",
+        "aires"
+      ],
+      "difficulty": "hard",
+      "marks": 7,
+      "has_figure": false,
+      "source_page": 6,
+      "solution": null,
+      "metadata": {},
+      "parts": [
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-1",
+          "sub_label": null,
+          "statement": "أحسب $\\lim_{x \\to -1} f(x)$ و نهايات الدالة $f$ عند أطراف مجموعة تعريفها.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-2",
+          "sub_label": "أ",
+          "statement": "بين أنه من أجل كل $x$ من $D$ فإن: $f'(x) = \\frac{x^2 + x - 1}{x^2 + x}$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "45678901-2345-4678-5901-234567890123",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-2",
+          "sub_label": "ب",
+          "statement": "أدرس إتجاه تغير الدالة $f$ ثم شكل جدول تغيراتها.",
+          "marks": null,
+          "depends_on": [
+            "I-2-أ"
+          ],
+          "solution": null,
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "56789012-3456-4789-6012-345678901234",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-3",
+          "sub_label": "أ",
+          "statement": "بين أن المنحنى $(C_f)$ يقبل مستقيم مقارب مائل $(\\Delta)$ معادلته $y = x + 1$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "67890123-4567-4890-7123-456789012345",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-3",
+          "sub_label": "ب",
+          "statement": "أدرس وضعية $(C_f)$ بالنسبة لـ $(\\Delta)$",
+          "marks": null,
+          "depends_on": [
+            "I-3-أ"
+          ],
+          "solution": null,
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "78901234-5678-4901-8234-567890123456",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-4",
+          "sub_label": null,
+          "statement": "بين أنه من أجل كل $x$ من $D$ : $f(-1-x) + f(x) = 1$ ثم فسر النتيجة هندسيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 6,
+          "metadata": {}
+        },
+        {
+          "id": "89012345-6789-4012-9345-678901234567",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-5",
+          "sub_label": null,
+          "statement": "بين أن $(C_f)$ يقبل مماسان $(T_1)$ و $(T_2)$ يوازيان المستقيم ذو المعادلة $y = x + \\frac{1}{2}e$ ثم عين معادلة كل منهما.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 7,
+          "metadata": {}
+        },
+        {
+          "id": "90123456-7890-4123-0456-789012345678",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-6",
+          "sub_label": null,
+          "statement": "أرسم $(T_1)$ ، $(T_2)$ ، $(\\Delta)$ و $(C_f)$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 8,
+          "metadata": {}
+        },
+        {
+          "id": "01234567-8901-4234-1567-890123456789",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-7",
+          "sub_label": null,
+          "statement": "تحقق أن الدالة $x \\ln(1 + \\frac{1}{x}) + \\ln|x+1|$ اصلية لـ $\\ln(1 + \\frac{1}{x})$",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 9,
+          "metadata": {}
+        },
+        {
+          "id": "12345678-9012-4345-2678-901234567890",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "I-8",
+          "sub_label": null,
+          "statement": "نسمي $S$ المساحة للحيز المستوي المحدد بـ $(C_f)$ والمستقيمات $y = x + 1$ ; $x = 1$ و $x = 2$. بين أن: $S = (3\\ln(\\frac{3}{2}) - \\ln(2)) u.a$",
+          "marks": null,
+          "depends_on": [
+            "I-7"
+          ],
+          "solution": null,
+          "ordering": 10,
+          "metadata": {}
+        },
+        {
+          "id": "23456789-0123-4456-3789-012345678901",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "II-1",
+          "sub_label": null,
+          "statement": "بين أن $h$ دالة زوجية.",
+          "marks": null,
+          "depends_on": [],
+          "solution": null,
+          "ordering": 11,
+          "metadata": {}
+        },
+        {
+          "id": "34567890-1234-4567-4890-123456789012",
+          "exercise_id": "12345678-9012-4345-2678-901234567890",
+          "label": "II-2",
+          "sub_label": null,
+          "statement": "إشرح كيف يمكن إنشاء $(C_h)$ إنطلاقا من $(C_f)$ ثم أرسمه في نفس المعلم.",
+          "marks": null,
+          "depends_on": [
+            "II-1"
+          ],
+          "solution": null,
+          "ordering": 12,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "45678901-2345-4678-5901-234567890123",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "exercise_ref": 1,
+      "part_ref": "2",
+      "figure_type": "diagram",
+      "description": "شجرة احتمالات توضح اختيار الصناديق U1, U2, U3 مع احتمالات الفروع 1/2، 1/22، 1/6، واحتمالات الأحداث A و A-bar.",
+      "source_page": 1
+    },
+    {
+      "id": "56789012-3456-4789-6012-345678901234",
+      "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74",
+      "exercise_ref": 5,
+      "part_ref": "1-أ",
+      "figure_type": "graph",
+      "description": "تمثيل بياني للدالة f(x) = sqrt(x-1) + 1 والمنصف الأول y=x على المجال [0, 7]، يظهر تقاطع المنحنى مع المستقيم عند النقطة (2,2).",
+      "source_page": 4
+    }
+  ],
+  "exam_id": "b0376d75-5ea1-4afb-b566-ad3dba167d74"
+}

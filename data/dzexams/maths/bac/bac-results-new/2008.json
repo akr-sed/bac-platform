@@ -1,0 +1,866 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+        "subject": "mathematics",
+        "source_file": "2008.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2008,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2007-2008",
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "9669864b-9721-4603-898f-019369904265",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "number": 1,
+          "title": null,
+          "statement": "المستوي منسوب إلى معلم متعامد ومتجانس $(O; \\vec{u}, \\vec{v})$. نعتبر النقطتين $A$ و $B$ اللتين لاحقتيهما $\\sqrt{3} - i$ و $3 + 3i\\sqrt{3}$ على الترتيب.",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "forme_algebrique",
+            "forme_exponentielle",
+            "transformations_plan",
+            "similitudes",
+            "suites_geometriques",
+            "convergence"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": true,
+          "source_page": [
+            1,
+            7,
+            8,
+            9
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732815",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "1",
+              "sub_label": null,
+              "statement": "أكتب العبارة المركبة للتشابه المباشر $S$ الذي مركزه $O$ ويحول $A$ إلى $B$ ثم عيّن زاويته ونسبته.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "العبارة المركبة للتشابه $S$ هي: $z' = az + b$. بما أن $S(O)=O$ فإن $b=0$. وبما أن $S(A)=B$ فإن $z_B = a z_A$ أي $a = \\frac{z_B}{z_A} = \\frac{3+3i\\sqrt{3}}{\\sqrt{3}-i} = \\frac{3(1+i\\sqrt{3})}{\\sqrt{3}-i} = \\frac{3i(\\sqrt{3}-i)}{\\sqrt{3}-i} = 3i$. إذن $z' = 3iz$. النسبة $k = |3i| = 3$ والزاوية $\\theta = \\arg(3i) = \\frac{\\pi}{2} [2\\pi]$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732815",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "نعرف متتالية النقط من المستوي المركب كما يأتي: $A_0 = A$ ومن أجل كل عدد طبيعي $n$، $A_{n+1} = S(A_n)$. نرمز إلى لاحقة $A_n$ بالرمز $z_n$.\nأنشئ في المستوي المركب النقط $A_0$ و $A_1$ و $A_2$.",
+              "marks": 0.75,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "انظر الشكل في الملحق. $A_0(\\sqrt{3}; -1)$، $A_1(3; 3\\sqrt{3})$، $A_2(-9\\sqrt{3}; 9)$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732816",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "برهن أن: $z_n = 2(\\sqrt{3})^n e^{i(\\frac{n\\pi}{2} - \\frac{\\pi}{6})}$.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$z_n$ متتالية هندسية لاحقتها $z_n = z_0 \\times a^n$. لدينا $z_0 = \\sqrt{3}-i = 2e^{-i\\frac{\\pi}{6}}$ و $a = 3i = 3e^{i\\frac{\\pi}{2}}$. إذن $z_n = 2e^{-i\\frac{\\pi}{6}} \\times (3e^{i\\frac{\\pi}{2}})^n = 2 \\times 3^n e^{i(n\\frac{\\pi}{2} - \\frac{\\pi}{6})}$. ملاحظة: في نص التمرين مكتوب $(\\sqrt{3})^n$ والصحيح هو $3^n$ أو أن النسبة كانت $\\sqrt{3}$. بالرجوع للحل النموذجي، النسبة هي $\\sqrt{3}$ إذا كان $a = i\\sqrt{3}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732817",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "2",
+              "sub_label": "ج",
+              "statement": "عيّن مجموعة الأعداد الطبيعية $n$ التي تنتمي من أجلها النقطة $A_n$ إلى المستقيم $(OA_1)$.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [
+                "2-ب"
+              ],
+              "solution": "$A_n \\in (OA_1)$ يعني $\\arg(z_n) = \\arg(z_1) + k\\pi$. لدينا $\\arg(z_1) = \\frac{\\pi}{2} - \\frac{\\pi}{6} = \\frac{\\pi}{3}$. إذن $n\\frac{\\pi}{2} - \\frac{\\pi}{6} = \\frac{\\pi}{3} + k\\pi \\Rightarrow \\frac{n}{2} = \\frac{1}{2} + k \\Rightarrow n = 2k + 1$. مجموعة قيم $n$ هي الأعداد الفردية.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732818",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "نعتبر المتتالية $(u_n)$ المعرفة كما يلي $u_0 = A_0 A_1$ و $u_n = A_n A_{n+1}$ من أجل كل عدد طبيعي $n$.\nبيّن أن المتتالية $(u_n)$ هندسية يطلب تحديد حدّها الأول $u_0$ وأساسها $q$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_n = |z_{n+1} - z_n| = |S(A_n) - A_n|$. بما أن $S$ تشابه نسبته $k=3$ فإن $A_{n+1}A_{n+2} = 3 A_n A_{n+1}$ أي $u_{n+1} = 3u_n$. المتتالية هندسية أساسها $q=3$. حدها الأول $u_0 = A_0 A_1 = |z_1 - z_0| = |3i(\\sqrt{3}-i) - (\\sqrt{3}-i)| = |(\\sqrt{3}-i)(3i-1)| = 2 \\times \\sqrt{10}$. (بالاعتماد على $a=i\\sqrt{3}$ تكون $q=\\sqrt{3}$ و $u_0=4$).",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732819",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "استنتج عبارة $u_n$ بدلالة $n$.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "$u_n = u_0 \\times q^n = 4(\\sqrt{3})^n$.",
+              "ordering": 6,
+              "metadata": {}
+            },
+            {
+              "id": "6709848c-1741-4775-9988-668670732820",
+              "exercise_id": "9669864b-9721-4603-898f-019369904265",
+              "label": "3",
+              "sub_label": "ج",
+              "statement": "احسب، بدلالة $n$، المجموع $S_n$ حيث: $S_n = u_0 + u_1 + u_2 + \\dots + u_n$ ، ثم احسب $\\lim_{n \\to +\\infty} S_n$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [
+                "3-ب"
+              ],
+              "solution": "$S_n = u_0 \\frac{q^{n+1}-1}{q-1} = 4 \\frac{(\\sqrt{3})^{n+1}-1}{\\sqrt{3}-1}$. بما أن $q = \\sqrt{3} > 1$ فإن $\\lim_{n \\to +\\infty} S_n = +\\infty$.",
+              "ordering": 7,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904266",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "number": 2,
+          "title": null,
+          "statement": "الفضاء منسوب إلى معلم متعامد ومتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. لتكن النقط $A(0, 2, 1)$ ، $B(-1, 1, -3)$ ، $C(1, 0, -1)$.",
+          "topic": "geometrie",
+          "concepts": [
+            "sphere",
+            "equations_cartesiennes",
+            "parametriques",
+            "distances",
+            "positions_relatives"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1,
+            2,
+            9,
+            10
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732821",
+              "exercise_id": "9669864b-9721-4603-898f-019369904266",
+              "label": "1",
+              "sub_label": null,
+              "statement": "أكتب المعادلة الديكارتية لسطح الكرة $S$ التي مركزها $C$ وتشمل النقطة $A$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "نصف قطر الكرة هو $R = CA = \\sqrt{(0-1)^2 + (2-0)^2 + (1+1)^2} = \\sqrt{1+4+4} = 3$. المعادلة هي: $(x-1)^2 + y^2 + (z+1)^2 = 9$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732822",
+              "exercise_id": "9669864b-9721-4603-898f-019369904266",
+              "label": "2",
+              "sub_label": null,
+              "statement": "ليكن المستقيم $(D)$ المعرف بالتمثيل الوسيطي:\n$$\\begin{cases} x = -1 - \\lambda \\\\ y = 1 + 2\\lambda \\\\ z = -3 + 2\\lambda \\end{cases} \\quad \\text{حيث } \\lambda \\text{ عدد حقيقي.}$$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732823",
+              "exercise_id": "9669864b-9721-4603-898f-019369904266",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "اكتب معادلة للمستوي $(P)$ الذي يشمل النقطة $C$ ويعامد المستقيم $(D)$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "شعاع توجيه $(D)$ هو $\\vec{u}(-1; 2; 2)$ وهو شعاع ناظمي لـ $(P)$. معادلة $(P)$ من الشكل $-x + 2y + 2z + d = 0$. بما أن $C(1, 0, -1) \\in (P)$ فإن $-1 + 0 - 2 + d = 0 \\Rightarrow d = 3$. إذن $(P): -x + 2y + 2z + 3 = 0$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732824",
+              "exercise_id": "9669864b-9721-4603-898f-019369904266",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "أحسب المسافة بين النقطة $C$ والمستقيم $(D)$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "لتكن $H$ المسقط العمودي لـ $C$ على $(D)$. $H \\in (D)$ و $\\vec{CH} \\cdot \\vec{u} = 0$. بإحداثيات $H(-1-\\lambda, 1+2\\lambda, -3+2\\lambda)$ نجد $\\vec{CH}(-2-\\lambda, 1+2\\lambda, -2+2\\lambda)$.\n$(-1)(-2-\\lambda) + 2(1+2\\lambda) + 2(-2+2\\lambda) = 0 \\Rightarrow 2+\\lambda + 2+4\\lambda - 4+4\\lambda = 0 \\Rightarrow 9\\lambda = 0 \\Rightarrow \\lambda = 0$. إذن $H(-1, 1, -3)$ (وهي النقطة $B$). المسافة هي $CH = \\sqrt{(-1-1)^2 + (1-0)^2 + (-3+1)^2} = \\sqrt{4+1+4} = 3$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732825",
+              "exercise_id": "9669864b-9721-4603-898f-019369904266",
+              "label": "2",
+              "sub_label": "ج",
+              "statement": "ماذا تستنتج فيما يتعلق بالوضع النسبي لكل من المستقيم $(D)$ وسطح الكرة $S$؟",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [
+                "1",
+                "2-ب"
+              ],
+              "solution": "بما أن المسافة من مركز الكرة $C$ إلى المستقيم $(D)$ تساوي نصف قطر الكرة ($d(C, (D)) = R = 3$)، فإن المستقيم $(D)$ مماس لسطح الكرة $S$ في النقطة $B$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904267",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "number": 3,
+          "title": null,
+          "statement": "نعتبر المعادلة $(E)$ ذات المجهولين الصحيحين $x$ و $y$ حيث: $3x - 21y = 78$.",
+          "topic": "arithmetique",
+          "concepts": [
+            "divisibilite",
+            "pgcd",
+            "congruences",
+            "theoreme_bezout"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            2,
+            10,
+            11
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732826",
+              "exercise_id": "9669864b-9721-4603-898f-019369904267",
+              "label": "1",
+              "sub_label": "أ",
+              "statement": "بيّن أن $(E)$ تقبل حلولا في $\\mathbb{Z}^2$.",
+              "marks": 0.25,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "المعادلة تكافئ $x - 7y = 26$. بما أن $PGCD(1, 7) = 1$ و 1 يقسم 26، فإن المعادلة تقبل حلولاً في $\\mathbb{Z}^2$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732827",
+              "exercise_id": "9669864b-9721-4603-898f-019369904267",
+              "label": "1",
+              "sub_label": "ب",
+              "statement": "أثبت أنه إذا كانت الثنائية $(x, y)$ من $\\mathbb{Z}^2$ حلا للمعادلة $(E)$ فإن $x \\equiv 5 [7]$. استنتج حلول المعادلة $(E)$.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "من $x - 7y = 26$ نجد $x = 7y + 26$. بما أن $26 = 7 \\times 3 + 5$ فإن $x = 7(y+3) + 5$ أي $x \\equiv 5 [7]$.\nالحلول: $x = 7k + 5$. بالتعويض في المعادلة: $7k + 5 - 7y = 26 \\Rightarrow 7y = 7k - 21 \\Rightarrow y = k - 3$. إذن الحلول هي الثنائيات $(7k+5, k-3)$ حيث $k \\in \\mathbb{Z}$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732828",
+              "exercise_id": "9669864b-9721-4603-898f-019369904267",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "ادرس، حسب قيم العدد الطبيعي $n$ ، بواقي القسمة الإقليدية للعدد $5^n$ على 7.",
+              "marks": 0.25,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "البواقي دورية ودورها 6:\n$5^0 \\equiv 1 [7]$\n$5^1 \\equiv 5 [7]$\n$5^2 \\equiv 4 [7]$\n$5^3 \\equiv 6 [7]$\n$5^4 \\equiv 2 [7]$\n$5^5 \\equiv 3 [7]$\n$5^6 \\equiv 1 [7]$",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732829",
+              "exercise_id": "9669864b-9721-4603-898f-019369904267",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "عيّن الثنائيات $(x, y)$ من $\\mathbb{N}^2$ التي هي حلول للمعادلة $(E)$ وتحقق $5^x + 5^y \\equiv 3 [7]$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [
+                "1-ب",
+                "2-أ"
+              ],
+              "solution": "لدينا $x = 7k+5$ و $y = k-3$. بما أن $x, y \\in \\mathbb{N}$ فإن $k \\ge 3$. نضع $k = k' + 3$ مع $k' \\in \\mathbb{N}$.\n$x = 7(k'+3) + 5 = 7k' + 26 = 7k' + 6 \\times k' + k' + 26 \\dots$ (تبسيط الأسس بترديد 6).\n$x \\equiv k' + 2 [6]$ و $y = k'$.\nبالتعويض في $5^x + 5^y \\equiv 3 [7]$ واستخدام جدول البواقي، نجد $k' = 6m + 4$. إذن $y = 6m + 4$ و $x = 7(6m+4+3)+5 = 42m + 54$.",
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904268",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "number": 4,
+          "title": null,
+          "statement": "نعتبر الدالة $f$ المعرفة على المجال $[1; +\\infty[$ بالعبارة: $f(x) = 3 + \\sqrt{x-1}$. يرمز $(C)$ إلى منحنى $f$ في المستوي المزود بالمعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$. (الوحدة على المحورين $2cm$).",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "limites",
+            "derivation",
+            "suites_recurrentes",
+            "raisonnement_par_recurrence",
+            "convergence"
+          ],
+          "difficulty": "hard",
+          "marks": 6,
+          "has_figure": true,
+          "source_page": [
+            2,
+            11,
+            12,
+            13
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732830",
+              "exercise_id": "9669864b-9721-4603-898f-019369904268",
+              "label": "1",
+              "sub_label": null,
+              "statement": "- احسب $\\lim_{x \\to 1^+} \\frac{f(x) - f(1)}{x-1}$ وفسّر النتيجة هندسيا.\n- ادرس تغيرات الدالة $f$.\n- باستعمال منحنى دالة \"الجذر التربيعي\"، أنشئ المنحنى $(C)$.\n- ارسم في نفس المعلم المستقيم $(D)$ الذي معادلته: $y = x$.",
+              "marks": 1.5,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "$\\lim_{x \\to 1^+} \\frac{3+\\sqrt{x-1}-3}{x-1} = \\lim_{x \\to 1^+} \\frac{1}{\\sqrt{x-1}} = +\\infty$. التفسير: المنحنى يقبل مماساً عمودياً عند النقطة ذات الفاصلة 1.\nالدالة متزايدة تماماً لأن $f'(x) = \\frac{1}{2\\sqrt{x-1}} > 0$. المنحنى $(C)$ هو صورة منحنى دالة الجذر التربيعي بالانسحاب الذي شعاعه $\\vec{u}(1; 3)$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732831",
+              "exercise_id": "9669864b-9721-4603-898f-019369904268",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "نعرف المتتالية $(u_n)$ على المجموعة $\\mathbb{N}$ كالآتي: $\\begin{cases} u_0 = 2 \\\\ u_{n+1} = f(u_n) \\end{cases}$\nباستعمال $(D)$ و $(C)$، مثّل الحدود $u_0, u_1, u_2$ على محور الفواصل.",
+              "marks": 0.5,
+              "has_figure": true,
+              "depends_on": [
+                "1"
+              ],
+              "solution": "يتم التمثيل بالانتقال من $u_0$ على محور الفواصل إلى المنحنى $(C)$ ثم أفقياً إلى المستقيم $(D)$ ثم عمودياً إلى محور الفواصل لتعيين $u_1$ وهكذا.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732832",
+              "exercise_id": "9669864b-9721-4603-898f-019369904268",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "ضع تخمينا حول اتجاه تغير المتتالية $(u_n)$ وتقاربها.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "التخمين: المتتالية متزايدة وتتقارب نحو فاصلة نقطة تقاطع $(C)$ مع $(D)$ وهي 5.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732833",
+              "exercise_id": "9669864b-9721-4603-898f-019369904268",
+              "label": "3",
+              "sub_label": "أ",
+              "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ لدينا: $2 \\le u_n \\le 5$ و $u_{n+1} > u_n$.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "من أجل $n=0$: $2 \\le 2 \\le 5$ و $u_1 = f(2) = 4 > 2$ محققة. نفرض صحتها لأجل $n$ ونبرهنها لأجل $n+1$. بما أن $f$ متزايدة فإن $f(2) \\le f(u_n) \\le f(5) \\Rightarrow 4 \\le u_{n+1} \\le 5$ إذن $2 \\le u_{n+1} \\le 5$. وبما أن $u_{n+1} > u_n$ فإن $f(u_{n+1}) > f(u_n)$ أي $u_{n+2} > u_{n+1}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732834",
+              "exercise_id": "9669864b-9721-4603-898f-019369904268",
+              "label": "3",
+              "sub_label": "ب",
+              "statement": "استنتج أن $(u_n)$ متقاربة. احسب $\\lim_{n \\to +\\infty} u_n$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [
+                "3-أ"
+              ],
+              "solution": "المتتالية متزايدة ومحدودة من الأعلى بـ 5 فهي متقاربة. نهايتها $l$ تحقق $f(l) = l \\Rightarrow 3 + \\sqrt{l-1} = l \\Rightarrow \\sqrt{l-1} = l-3 \\Rightarrow l-1 = (l-3)^2 \\Rightarrow l-1 = l^2 - 6l + 9 \\Rightarrow l^2 - 7l + 10 = 0$. الحلول هي 2 و 5. بما أن $u_n \\ge 4$ من أجل $n \\ge 1$ فإن $l=5$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f1a2b3c4-d5e6-4f7g-8h9i-j0k1l2m3n4o5",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "exercise_ref": 1,
+          "part_ref": "2-أ",
+          "context": "solution",
+          "figure_type": "geometric",
+          "description": "إنشاء النقط A0, A1, A2 في معلم متعامد ومتجانس. A0 تقع في الربع الرابع (جذر 3، -1). A1 تقع في الربع الأول (3، 3 جذر 3). A2 تقع في الربع الثاني (-9 جذر 3، 9). النقط تشكل مساراً لولبياً ناتجاً عن التشابه المباشر.",
+          "source_page": 9,
+          "bounding_box": [
+            150,
+            200,
+            380,
+            800
+          ]
+        },
+        {
+          "id": "f1a2b3c4-d5e6-4f7g-8h9i-j0k1l2m3n4o6",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-1",
+          "exercise_ref": 4,
+          "part_ref": "2-أ",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "رسم بياني للدالة f(x) = 3 + sqrt(x-1) والمستقيم y=x. يظهر المنحنى يبدأ من النقطة (1، 3) ويتزايد. المستقيم y=x يقطع المنحنى في النقطة (5، 5). تمثيل حدود المتتالية u_n يبدأ من u0=2 على محور الفواصل، يصعد للمنحنى، ينتقل أفقياً للمستقيم، ثم ينزل لتعيين u1=4، وهكذا يقترب من 5.",
+          "source_page": 13,
+          "bounding_box": [
+            550,
+            200,
+            800,
+            800
+          ]
+        }
+      ]
+    },
+    {
+      "exam_metadata": {
+        "id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+        "subject": "mathematics",
+        "source_file": "2008.pdf",
+        "exam_type": "bac",
+        "session": "principal",
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2008,
+        "duration_minutes": 270,
+        "total_marks": 20,
+        "language": "ar",
+        "region": "national",
+        "institution": null,
+        "academic_year": "2007-2008",
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "9669864b-9721-4603-898f-019369904269",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+          "number": 1,
+          "title": null,
+          "statement": "نعتبر في مجموعة الأعداد المركبة $\\mathbb{C}$ كثير الحدود $P(z)$ المعرف كما يلي:\n$P(z) = 2z^4 - 2iz^3 - z^2 - 2iz + 2$",
+          "topic": "nombres_complexes",
+          "concepts": [
+            "racines",
+            "equations_complexes",
+            "transformations_plan"
+          ],
+          "difficulty": "medium",
+          "marks": 5,
+          "has_figure": false,
+          "source_page": [
+            3,
+            16,
+            17
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732835",
+              "exercise_id": "9669864b-9721-4603-898f-019369904269",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أنه إذا كان $a$ جذرا لكثير الحدود $P(z)$ فإن $\\frac{1}{a}$ جذر له أيضا.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "لدينا $P(1/a) = 2(1/a)^4 - 2i(1/a)^3 - (1/a)^2 - 2i(1/a) + 2 = \\frac{2 - 2ia - a^2 - 2ia^3 + 2a^4}{a^4} = \\frac{P(a)}{a^4}$. بما أن $P(a)=0$ فإن $P(1/a)=0$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732836",
+              "exercise_id": "9669864b-9721-4603-898f-019369904269",
+              "label": "2",
+              "sub_label": null,
+              "statement": "تحقق أن $1+i$ جذر لكثير الحدود $P(z)$.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "بالتعويض المباشر لـ $z=1+i$ في عبارة $P(z)$ نجد النتيجة 0.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732837",
+              "exercise_id": "9669864b-9721-4603-898f-019369904269",
+              "label": "3",
+              "sub_label": null,
+              "statement": "حل في $\\mathbb{C}$ المعادلة $P(z) = 0$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [
+                "1",
+                "2"
+              ],
+              "solution": "الجذور هي $1+i$ و مقلوبه $\\frac{1}{1+i} = \\frac{1-i}{2}$. وبما أن المعاملات ليست كلها حقيقية، نبحث عن الجذور الأخرى بالقسمة الإقليدية أو المطابقة. نجد الجذور الأربعة هي: $1+i, \\frac{1-i}{2}, -1+i, \\frac{-1-i}{2}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732838",
+              "exercise_id": "9669864b-9721-4603-898f-019369904269",
+              "label": "4",
+              "sub_label": null,
+              "statement": "اكتب الحلول على الشكل الأسي.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": "$1+i = \\sqrt{2}e^{i\\frac{\\pi}{4}}$, $\\frac{1-i}{2} = \\frac{\\sqrt{2}}{2}e^{-i\\frac{\\pi}{4}}$, $-1+i = \\sqrt{2}e^{i\\frac{3\\pi}{4}}$, $\\frac{-1-i}{2} = \\frac{\\sqrt{2}}{2}e^{-i\\frac{3\\pi}{4}}$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732839",
+              "exercise_id": "9669864b-9721-4603-898f-019369904269",
+              "label": "5",
+              "sub_label": null,
+              "statement": "لتكن $A, B, C$ و $D$ النقط من المستوي المركب المنسوب إلى معلم متعامد ومتجانس $(O; \\vec{u}, \\vec{v})$ والتي لاحقاتها على الترتيب: $1+i$ ، $-1+i$ ، $\\frac{-m}{2} - \\frac{m}{2}i$ و $\\frac{m}{2} - \\frac{m}{2}i$ حيث $m$ عدد حقيقي. عيّن $m$ حتى يكون الرباعي $ABCD$ مربعا.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "يكون $ABCD$ مربعاً إذا كان قطراه متعامدين ومتناصفين ومتساويين. نجد $m=2$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904270",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+          "number": 2,
+          "title": null,
+          "statement": "المتتالية $(u_n)$ المعرفة بحدها الأول $u_0 = 2$ ومن أجل كل عدد طبيعي $n$: $u_{n+1} = \\frac{2}{3}u_n + 1$.",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_recurrentes",
+            "suites_geometriques",
+            "limites"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3,
+            18,
+            19
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732840",
+              "exercise_id": "9669864b-9721-4603-898f-019369904270",
+              "label": "1",
+              "sub_label": null,
+              "statement": "احسب $u_1, u_2$ و $u_3$.",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$u_1 = \\frac{2}{3}(2) + 1 = \\frac{7}{3}$. $u_2 = \\frac{2}{3}(\\frac{7}{3}) + 1 = \\frac{23}{9}$. $u_3 = \\frac{2}{3}(\\frac{23}{9}) + 1 = \\frac{73}{27}$.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732841",
+              "exercise_id": "9669864b-9721-4603-898f-019369904270",
+              "label": "2",
+              "sub_label": null,
+              "statement": "$(v_n)$ المتتالية العددية المعرفة من أجل كل عدد طبيعي $n$ بـ: $v_n = u_n + (\\frac{2}{3})^n$.\n- برهن بالتراجع أن $(v_n)$ متتالية ثابتة.\n- استنتج عبارة $u_n$ بدلالة $n$.\n- احسب $\\lim_{n \\to +\\infty} u_n$.",
+              "marks": 2.25,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$v_0 = u_0 + 1 = 3$. $v_{n+1} = u_{n+1} + (\\frac{2}{3})^{n+1} = \\frac{2}{3}u_n + 1 + \\frac{2}{3}(\\frac{2}{3})^n = \\frac{2}{3}(u_n + (\\frac{2}{3})^n) + 1 = \\frac{2}{3}v_n + 1$. إذا كانت $v_n=3$ فإن $v_{n+1} = \\frac{2}{3}(3) + 1 = 3$. إذن $v_n=3$ دوماً.\nعبارة $u_n$: $u_n = v_n - (\\frac{2}{3})^n = 3 - (\\frac{2}{3})^n$.\nالنهاية: $\\lim_{n \\to +\\infty} u_n = 3$ لأن $\\lim (2/3)^n = 0$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732842",
+              "exercise_id": "9669864b-9721-4603-898f-019369904270",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$(w_n)$ المتتالية العددية المعرفة من أجل كل عدد طبيعي $n$ بـ: $w_n = \\frac{2}{3}n - (\\frac{2}{3})^n$.\n- احسب المجموع $S$ حيث: $S = w_0 + w_1 + w_2 + \\dots + w_n$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$S = \\sum_{k=0}^n (\\frac{2}{3}k - (\\frac{2}{3})^k) = \\frac{2}{3} \\sum k - \\sum (\\frac{2}{3})^k = \\frac{2}{3} \\frac{n(n+1)}{2} - \\frac{1-(2/3)^{n+1}}{1-2/3} = \\frac{n(n+1)}{3} - 3(1 - (\\frac{2}{3})^{n+1})$.",
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904271",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+          "number": 3,
+          "title": null,
+          "statement": "نعتبر في الفضاء المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$ المستقيمين $(\\Delta)$ و $(\\Delta')$ المعرفين بالتمثيلين الوسيطيين الآتيين:\n$(\\Delta): \\begin{cases} x = 3 + \\lambda \\\\ y = 2 + \\frac{1}{2}\\lambda \\\\ z = -2 - 2\\lambda \\end{cases} (\\lambda \\in \\mathbb{R}) \\quad (\\Delta'): \\begin{cases} x = 6 + \\alpha \\\\ y = 1 - 2\\alpha \\\\ z = 5 + \\alpha \\end{cases} (\\alpha \\in \\mathbb{R})$",
+          "topic": "geometrie",
+          "concepts": [
+            "droites",
+            "positions_relatives",
+            "distances"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3,
+            4,
+            19,
+            20,
+            21
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732843",
+              "exercise_id": "9669864b-9721-4603-898f-019369904271",
+              "label": "1",
+              "sub_label": null,
+              "statement": "بيّن أن المستقيمين $(\\Delta)$ و $(\\Delta')$ ليسا من نفس المستوي.",
+              "marks": 0.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "أشعة التوجيه $\\vec{u}(1; 0.5; -2)$ و $\\vec{v}(1; -2; 1)$ غير متوازية. نبحث عن تقاطع: $3+\\lambda = 6+\\alpha$ و $2+0.5\\lambda = 1-2\\alpha$. نجد $\\lambda=2, \\alpha=-1$. بالتعويض في معادلة $z$: $-2-2(2) = -6$ و $5+(-1) = 4$. بما أن $-6 \\ne 4$ فالمستقيمان لا يتقاطعان. إذن هما غير متساويين.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732844",
+              "exercise_id": "9669864b-9721-4603-898f-019369904271",
+              "label": "2",
+              "sub_label": "أ",
+              "statement": "$M$ نقطة كيفية من $(\\Delta)$ و $N$ نقطة كيفية من $(\\Delta')$. عيّن إحداثيات النقطتين $M$ و $N$ بحيث يكون المستقيم $(MN)$ عموديا على كل من $(\\Delta)$ و $(\\Delta')$.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "نفرض $M(3+\\lambda, 2+0.5\\lambda, -2-2\\lambda)$ و $N(6+\\alpha, 1-2\\alpha, 5+\\alpha)$. الشعاع $\\vec{MN}$ يجب أن يعامد $\\vec{u}$ و $\\vec{v}$. نجد جملة معادلات تعطي $\\alpha = -16/11$ و $\\lambda = -18/11$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732845",
+              "exercise_id": "9669864b-9721-4603-898f-019369904271",
+              "label": "2",
+              "sub_label": "ب",
+              "statement": "احسب الطول $MN$.",
+              "marks": 0.25,
+              "has_figure": false,
+              "depends_on": [
+                "2-أ"
+              ],
+              "solution": "$MN = \\frac{5\\sqrt{110}}{11}$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732846",
+              "exercise_id": "9669864b-9721-4603-898f-019369904271",
+              "label": "3",
+              "sub_label": null,
+              "statement": "عيّن معادلة للمستوي $(P)$ الذي يشمل المستقيم $(\\Delta)$ ويوازي المستقيم $(\\Delta')$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "الناظم $\\vec{n} = \\vec{u} \\times \\vec{v} = (-3.5; -3; -2.5)$ أو $(7; 6; 5)$. المعادلة: $7x + 6y + 5z - 23 = 0$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732847",
+              "exercise_id": "9669864b-9721-4603-898f-019369904271",
+              "label": "4",
+              "sub_label": null,
+              "statement": "احسب المسافة بين نقطة كيفية من $(\\Delta')$ والمستوي $(P)$. ماذا تلاحظ؟",
+              "marks": 0.75,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": "المسافة هي $d = \\frac{|7(6) + 6(1) + 5(5) - 23|}{\\sqrt{7^2+6^2+5^2}} = \\frac{50}{\\sqrt{110}} = \\frac{5\\sqrt{110}}{11}$. نلاحظ أنها تساوي الطول $MN$.",
+              "ordering": 5,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "9669864b-9721-4603-898f-019369904272",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+          "number": 4,
+          "title": null,
+          "statement": "I) $f$ الدالة العددية المعرفة على $\\mathbb{R}$ بالعبارة: $f(x) = x - 1 + \\frac{4}{e^x + 1}$ و $C_f$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.\nII) $g$ الدالة العددية المعرفة على $\\mathbb{R}$ بالعبارة: $g(x) = -x + 3 - \\frac{4}{e^x + 1}$ و $C_g$ منحنى الدالة $g$.",
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "limites",
+            "derivation",
+            "branches_infinies",
+            "representation_graphique",
+            "fonction_exponentielle"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            4,
+            21,
+            22,
+            23
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "8400037c-3831-4963-886d-668670732848",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "I-1",
+              "sub_label": null,
+              "statement": "ادرس تغيرات الدالة $f$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$f'(x) = 1 - \\frac{4e^x}{(e^x+1)^2} = \\frac{(e^x+1)^2 - 4e^x}{(e^x+1)^2} = \\frac{(e^x-1)^2}{(e^x+1)^2} \\ge 0$. الدالة متزايدة تماماً.",
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732849",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "I-2",
+              "sub_label": null,
+              "statement": "بيّن أن $C_f$ يقبل نقطة انعطاف $\\omega$ واكتب معادلة لمماس $C_f$ عند النقطة $\\omega$. أثبت أن $\\omega$ مركز تناظر للمنحنى $C_f$.",
+              "marks": 1.5,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$f''(x) = \\frac{4e^x(e^x-1)}{(e^x+1)^3}$. تنعدم عند $x=0$ وتغير إشارتها، إذن $\\omega(0, 1)$ نقطة انعطاف. المماس: $y = f'(0)(x-0) + f(0) = 0(x) + 1 \\Rightarrow y=1$. لإثبات مركز التناظر: $f(x) + f(-x) = 2$.",
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732850",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "I-3",
+              "sub_label": null,
+              "statement": "احسب $\\lim_{x \\to +\\infty} [f(x) - (x-1)]$ و $\\lim_{x \\to -\\infty} [f(x) - (x+3)]$. استنتج أن $C_f$ يقبل مستقيمين مقاربين يطلب إعطاء معادلة لكل منهما.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "النهاية الأولى 0، إذن $y=x-1$ مقارب مائل عند $+\\infty$. النهاية الثانية 0، إذن $y=x+3$ مقارب مائل عند $-\\infty$.",
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732851",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "I-4",
+              "sub_label": null,
+              "statement": "بيّن أن $C_f$ يقطع محور الفواصل في نقطة وحيدة فاصلتها $x_0$ من المجال $]-2.77; -2.76[$. احسب $f(1)$ و $f(-1)$ ثم ارسم $C_f$ ومستقيميه المقاربين.",
+              "marks": 2,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": "باستخدام مبرهنة القيم المتوسطة. $f(1) \\approx 1.08$ و $f(-1) \\approx 0.92$.",
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732852",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "II-1",
+              "sub_label": null,
+              "statement": "بيّن أنه من أجل كل عدد حقيقي $x$ فإن: $g(x) = f(-x)$. استنتج أنه يوجد تحويل نقطي بسيط يحول $C_f$ إلى $C_g$.",
+              "marks": 1,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": "$f(-x) = -x - 1 + \\frac{4}{e^{-x}+1} = -x - 1 + \\frac{4e^x}{1+e^x} = -x - 1 + \\frac{4(e^x+1-1)}{e^x+1} = -x - 1 + 4 - \\frac{4}{e^x+1} = -x + 3 - \\frac{4}{e^x+1} = g(x)$. التحويل هو التناظر بالنسبة لمحور التراتيب.",
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "8400037c-3831-4963-886d-668670732853",
+              "exercise_id": "9669864b-9721-4603-898f-019369904272",
+              "label": "II-2",
+              "sub_label": null,
+              "statement": "أنشئ في نفس المعلم السابق $C_g$ (دون دراسة الدالة $g$).",
+              "marks": 0.5,
+              "has_figure": true,
+              "depends_on": [
+                "II-1"
+              ],
+              "solution": "يتم رسم $C_g$ بتناظر $C_f$ بالنسبة لمحور التراتيب.",
+              "ordering": 6,
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "f1a2b3c4-d5e6-4f7g-8h9i-j0k1l2m3n4o7",
+          "exam_id": "9e94a47b-d748-4302-b01c-6861fffd0a58-2",
+          "exercise_ref": 4,
+          "part_ref": "II-2",
+          "context": "solution",
+          "figure_type": "graph",
+          "description": "رسم بياني يجمع المنحنيين Cf و Cg. Cf متزايد ويقطع محور التراتيب في (0، 1). Cg متناقص ويقطع محور التراتيب في (0، 1). المنحنيان متناظران بالنسبة لمحور التراتيب. تظهر المستقيمات المقاربة المائلة y=x-1 و y=x+3 لـ Cf، ونظائرها لـ Cg.",
+          "source_page": 23,
+          "bounding_box": [
+            500,
+            200,
+            850,
+            800
+          ]
+        }
+      ]
+    }
+  ]
+}

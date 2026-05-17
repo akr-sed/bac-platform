@@ -1,0 +1,594 @@
+{
+  "exam_metadata": {
+    "id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+    "subject": "mathematics",
+    "source_file": "2010.pdf",
+    "exam_type": "bac",
+    "session": "principal",
+    "trimester": null,
+    "filiere": "mathematiques",
+    "year": 2010,
+    "duration_minutes": 270,
+    "total_marks": 20,
+    "language": "ar",
+    "region": "national",
+    "institution": null,
+    "academic_year": "2009-2010"
+  },
+  "exercises": [
+    {
+      "id": "7668987d-9669-498b-990e-898499990001",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 1,
+      "title": "الموضوع الأول - التمرين الأول",
+      "statement": "1. نعتبر المعادلة: $(1) \\dots 7x + 65y = 2009$ ، حيث: $x$ و $y$ عددان صحيحان.\n2. ادرس حسب قيم العدد الطبيعي $n$ بواقي القسمة الإقليدية للعدد $2^n$ على 9.\n3. عيّن قيم العدد الطبيعي $n$ بحيث يقبل العدد $2^{6n} + 3n + 2$ القسمة على 9.\n4. نضع من أجل كل عدد طبيعي $n$ ، $u_n = 2^{6n} - 1$.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "congruences",
+        "theoreme_gauss",
+        "theoreme_bezout"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990002",
+          "exercise_id": "7668987d-9669-498b-990e-898499990001",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "بيّن أنه إذا كانت الثنائية $(x, y)$ حلا للمعادلة (1) فإن $y$ مضاعف للعدد 7.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "لدينا $7x + 65y = 2009$ ومنه $65y = 2009 - 7x = 7(287 - x)$. بما أن 7 يقسم $7(287 - x)$ فإن 7 يقسم $65y$. وحسب مبرهنة غوص، بما أن $PGCD(7, 65) = 1$ فإن 7 يقسم $y$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990003",
+          "exercise_id": "7668987d-9669-498b-990e-898499990001",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "حل المعادلة (1).",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "نضع $y = 7k$ ($k \\in \\mathbb{Z}$). بالتعويض في (1): $7x + 65(7k) = 2009 \\Rightarrow x + 65k = 287 \\Rightarrow x = -65k + 287$. الحلول هي الثنائيات $(x, y) = (-65k + 287, 7k)$ مع $k \\in \\mathbb{Z}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990004",
+          "exercise_id": "7668987d-9669-498b-990e-898499990001",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "تحقق أن $u_n$ يقبل القسمة على 9.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$u_n = 2^{6n} - 1 = (2^6)^n - 1 = 64^n - 1$. بما أن $64 \\equiv 1 \\pmod 9$ فإن $64^n \\equiv 1^n \\equiv 1 \\pmod 9$. إذن $u_n \\equiv 1 - 1 \\equiv 0 \\pmod 9$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990005",
+          "exercise_id": "7668987d-9669-498b-990e-898499990001",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "حل المعادلة: $(2) \\dots (7u_1)x + (u_2)y = 126567$ ذات المجهول $(x, y)$ ، حيث: $x$ و $y$ عددان صحيحان.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$u_1 = 63$, $u_2 = 4095$. المعادلة تصبح: $441x + 4095y = 126567$. بالقسمة على 63 نجد: $7x + 65y = 2009$. وهي المعادلة (1). الحلول هي $(-65k + 287, 7k)$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990006",
+          "exercise_id": "7668987d-9669-498b-990e-898499990001",
+          "label": "4",
+          "sub_label": "ج",
+          "statement": "عيّن الثنائية $(x_0, y_0)$ حل (2) حيث $x_0$ و $y_0$ عددان طبيعيان مع $y_0 \\ge 25$.",
+          "marks": null,
+          "depends_on": [
+            "4-ب"
+          ],
+          "solution": "$y_0 = 7k \\ge 25 \\Rightarrow k \\ge 3.57$. و $x_0 = -65k + 287 \\ge 0 \\Rightarrow k \\le 4.41$. إذن $k = 4$. الثنائية هي $(x_0, y_0) = (27, 28)$.",
+          "ordering": 5,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990007",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 2,
+      "title": "الموضوع الأول - التمرين الثاني",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. نعتبر النقط $A(2,0,0)$ و $B(0,1,0)$ و $C(0,0,2)$.",
+      "topic": "geometrie",
+      "concepts": [
+        "vecteurs",
+        "plans",
+        "droites",
+        "positions_relatives",
+        "equations_cartesiennes"
+      ],
+      "difficulty": "medium",
+      "marks": 4.5,
+      "has_figure": false,
+      "source_page": 1,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990008",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بيّن أن النقط $A$ و $B$ و $C$ ليست في استقامية.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\vec{AB}(-2, 1, 0)$ و $\\vec{AC}(-2, 0, 2)$. المركبات ليست متناسبة، إذن الشعاعان غير مرتبطين خطيا، فالنقط ليست في استقامية.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990009",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "2",
+          "sub_label": null,
+          "statement": "جد معادلة للمستوي $(ABC)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "المعادلة من الشكل $ax + by + cz + d = 0$. بتعويض إحداثيات $A, B, C$ نجد: $x + 2y + z - 2 = 0$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990010",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "3",
+          "sub_label": null,
+          "statement": "جد تمثيلا وسيطيا للمستقيم $(BC)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\vec{BC}(0, -1, 2)$. التمثيل الوسيطي: $x=0, y=1-t, z=2t$ مع $t \\in \\mathbb{R}$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990011",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "بيّن أن: $(P)$ و $(ABC)$ متقاطعان، حيث $(P)$ المستوي الذي معادلته: $2x + 2y + z - 2 = 0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "ناظم $(ABC)$ هو $\\vec{n_1}(1, 2, 1)$ وناظم $(P)$ هو $\\vec{n_2}(2, 2, 1)$. الشعاعان غير مرتبطين خطيا، إذن المستويان متقاطعان.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990012",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "بيّن أن: $(P)$ يشمل $B$ و $C$ ، ماذا تستنتج؟",
+          "marks": null,
+          "depends_on": [],
+          "solution": "بالتعويض: $B(0,1,0) \\Rightarrow 2(0)+2(1)+0-2=0$ (محققة). $C(0,0,2) \\Rightarrow 2(0)+2(0)+2-2=0$ (محققة). الاستنتاج: المستقيم $(BC)$ هو فصل مشترك للمستويين.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990013",
+          "exercise_id": "7668987d-9669-498b-990e-898499990007",
+          "label": "5",
+          "sub_label": null,
+          "statement": "عيّن $(E)$ مجموعة النقط $M$ من الفضاء التي تحقق: $\\| \\vec{MA} + \\vec{MB} + \\vec{MC} \\| = \\| 2\\vec{MA} - \\vec{MB} - \\vec{MC} \\|$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "لتكن $G$ مركز ثقل المثلث $ABC$. الطرف الأول هو $3MG$. الطرف الثاني: $\\| 2\\vec{MA} - (\\vec{MA}+\\vec{AB}) - (\\vec{MA}+\\vec{AC}) \\| = \\| -(\\vec{AB}+\\vec{AC}) \\| = \\| -\\vec{AD} \\|$ حيث $ABDC$ متوازي أضلاع. إذن $3MG = AD \\Rightarrow MG = \\frac{1}{3}AD$. المجموعة هي كرة مركزها $G$ ونصف قطرها $\\frac{1}{3}AD$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990014",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 3,
+      "title": "الموضوع الأول - التمرين الثالث",
+      "statement": "نعتبر في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة: $(E) \\dots z^3 - 3z^2 + 3z - 9 = 0$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "forme_exponentielle",
+        "module",
+        "argument",
+        "equations_complexes",
+        "rotation"
+      ],
+      "difficulty": "medium",
+      "marks": 4.5,
+      "has_figure": false,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990015",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "1",
+          "sub_label": "أ",
+          "statement": "تحقق أن 3 حل للمعادلة $(E)$ ، ثم عيّن الأعداد الحقيقية $a, b, c$ بحيث، من أجل كل عدد مركب $z$ فإن: $z^3 - 3z^2 + 3z - 9 = (z - 3)(az^2 + bz + c)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$3^3 - 3(3^2) + 3(3) - 9 = 27 - 27 + 9 - 9 = 0$. بالقسمة الإقليدية نجد $a=1, b=0, c=3$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990016",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "حل في $\\mathbb{C}$ المعادلة $(E)$.",
+          "marks": null,
+          "depends_on": [
+            "1-أ"
+          ],
+          "solution": "$(z-3)(z^2+3)=0 \\Rightarrow z=3$ أو $z^2=-3 \\Rightarrow z=i\\sqrt{3}$ أو $z=-i\\sqrt{3}$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990017",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "2",
+          "sub_label": null,
+          "statement": "المستوي منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$. النقط $A, B, C$ صور الأعداد المركبة $z_A=3, z_B=i\\sqrt{3}, z_C=-i\\sqrt{3}$. بيّن أن المثلث $ABC$ متقايس الأضلاع.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$AB = |z_B - z_A| = |i\\sqrt{3} - 3| = \\sqrt{3+9} = \\sqrt{12} = 2\\sqrt{3}$. $AC = |-i\\sqrt{3} - 3| = 2\\sqrt{3}$. $BC = |-2i\\sqrt{3}| = 2\\sqrt{3}$. المثلث متقايس الأضلاع.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990018",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "3",
+          "sub_label": null,
+          "statement": "$D$ النقطة التي لاحقتها $z_D = 2e^{i\\frac{5\\pi}{6}}$ و $E$ صورتها بالدوران الذي مركزه $O$ وزاويته $\\frac{\\pi}{3}$. عيّن $z_E$ لاحقة النقطة $E$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$z_E = z_D e^{i\\frac{\\pi}{3}} = 2e^{i\\frac{5\\pi}{6}} e^{i\\frac{\\pi}{3}} = 2e^{i\\frac{7\\pi}{6}} = 2(\\cos\\frac{7\\pi}{6} + i\\sin\\frac{7\\pi}{6}) = 2(-\\frac{\\sqrt{3}}{2} - i\\frac{1}{2}) = -\\sqrt{3} - i$.",
+          "ordering": 4,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990019",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "$F$ النقطة التي لاحقتها $z_F = 1 - i\\sqrt{3}$. احسب $\\frac{z_F}{z_E}$ واستنتج أن المستقيمين $(OE)$ و $(OF)$ متعامدان.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\frac{z_F}{z_E} = \\frac{1-i\\sqrt{3}}{-\\sqrt{3}-i} = \\frac{(1-i\\sqrt{3})(-\\sqrt{3}+i)}{3+1} = \\frac{-\\sqrt{3}+i+3i+\\sqrt{3}}{4} = \\frac{4i}{4} = i$. بما أن النسبة تخيلية صرفة، فإن الشعاعين متعامدان.",
+          "ordering": 5,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990020",
+          "exercise_id": "7668987d-9669-498b-990e-898499990014",
+          "label": "4",
+          "sub_label": "ب",
+          "statement": "عيّن $z_G$ لاحقة النقطة $G$ بحيث يكون $OEGF$ مربعا.",
+          "marks": null,
+          "depends_on": [
+            "4-أ"
+          ],
+          "solution": "$OEGF$ مربع يعني $\\vec{OG} = \\vec{OE} + \\vec{OF} \\Rightarrow z_G = z_E + z_F = (-\\sqrt{3}-i) + (1-i\\sqrt{3}) = (1-\\sqrt{3}) - i(1+\\sqrt{3})$.",
+          "ordering": 6,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990021",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 4,
+      "title": "الموضوع الأول - التمرين الرابع",
+      "statement": "I- $g$ الدالة العددية المعرفة على $\\mathbb{R}$ كما يلي: $g(x) = (3-x)e^x - 3$.\nII- $f$ الدالة العددية المعرفة على $\\mathbb{R}$ كما يلي: $f(x) = \\frac{x^3}{e^x - 1}$ لـ $x \\neq 0$ و $f(0)=0$. $(C_f)$ تمثيلها البياني في المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j})$.",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "continuite",
+        "derivation",
+        "etude_de_fonction",
+        "fonction_exponentielle",
+        "tableau_de_variation",
+        "representation_graphique"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 2,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الأول"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990022",
+          "exercise_id": "7668987d-9669-498b-990e-898499990021",
+          "label": "I-1",
+          "sub_label": null,
+          "statement": "ادرس تغيرات الدالة $g$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$g'(x) = -e^x + (3-x)e^x = (2-x)e^x$. $g'(x)=0 \\Rightarrow x=2$. متزايدة على $(-\\infty, 2]$ ومتناقصة على $[2, +\\infty)$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990023",
+          "exercise_id": "7668987d-9669-498b-990e-898499990021",
+          "label": "I-2",
+          "sub_label": null,
+          "statement": "بيّن أن المعادلة $g(x)=0$ تقبل في $\\mathbb{R}$ حلين أحدهما معدوم والآخر $\\alpha$ حيث: $2.82 < \\alpha < 2.83$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$g(0) = (3-0)e^0 - 3 = 0$. حسب مبرهنة القيم المتوسطة على $[2, +\\infty)$، بما أن $g(2.82) > 0$ و $g(2.83) < 0$ يوجد حل $\\alpha$.",
+          "ordering": 2,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990024",
+          "exercise_id": "7668987d-9669-498b-990e-898499990021",
+          "label": "II-1",
+          "sub_label": null,
+          "statement": "بيّن أن الدالة $f$ تقبل الاشتقاق عند $x_0=0$ ، اكتب معادلة لـ $(T)$ مماس $(C_f)$ عند المبدأ $O$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to 0} \\frac{f(x)-f(0)}{x} = \\lim_{x \\to 0} \\frac{x^2}{e^x-1} = 0$. إذن $f'(0)=0$. المماس $(T): y=0$.",
+          "ordering": 3,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990025",
+          "exercise_id": "7668987d-9669-498b-990e-898499990021",
+          "label": "II-2",
+          "sub_label": "ب",
+          "statement": "بيّن أنه من أجل $x \\neq 0$ فإن: $f'(x) = \\frac{x^2}{(e^x-1)^2} g(x)$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$f'(x) = \\frac{3x^2(e^x-1) - x^3 e^x}{(e^x-1)^2} = \\frac{x^2[3e^x-3-xe^x]}{(e^x-1)^2} = \\frac{x^2[(3-x)e^x-3]}{(e^x-1)^2} = \\frac{x^2 g(x)}{(e^x-1)^2}$.",
+          "ordering": 4,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990026",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 5,
+      "title": "الموضوع الثاني - التمرين الأول",
+      "statement": "1- برهن أنه من أجل كل عدد طبيعي $n$ ، العدد $3^{3n} - 1$ يقبل القسمة على 13.\n2- استنتج أنه من أجل كل عدد طبيعي $n$ ، يقبل كل من العددين $3^{3n+1} - 3$ و $3^{3n+2} - 9$ القسمة على 13.\n3- عيّن، حسب قيم $n$ ، باقي القسمة الإقليدية للعدد $3^n$ على 13، واستنتج باقي قسمة $2005^{2010}$ على 13.\n4- نضع من أجل كل عدد طبيعي $p$ : $A_p = 3^p + 3^{2p} + 3^{3p}$.",
+      "topic": "arithmetique",
+      "concepts": [
+        "divisibilite",
+        "congruences",
+        "nombres_premiers"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990027",
+          "exercise_id": "7668987d-9669-498b-990e-898499990026",
+          "label": "4",
+          "sub_label": "أ",
+          "statement": "من أجل $p=3n$ ، عيّن باقي القسمة الإقليدية للعدد $A_p$ على 13.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$A_{3n} = 3^{3n} + 3^{6n} + 3^{9n} \\equiv 1 + 1 + 1 \\equiv 3 \\pmod{13}$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990028",
+          "exercise_id": "7668987d-9669-498b-990e-898499990026",
+          "label": "5",
+          "sub_label": "أ",
+          "statement": "تحقق أن العددين $a = \\overline{1001001000}_3$ و $b = \\overline{1000100010000}_3$ يكتبان على الشكل $A_p$ في النظام العشري.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$a = 3^9 + 3^6 + 3^3 = A_3$. $b = 3^{12} + 3^8 + 3^4 = A_4$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990029",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 6,
+      "title": "الموضوع الثاني - التمرين الثاني",
+      "statement": "المستوي منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{u}, \\vec{v})$.\n1. نسمي $A, B$ و $I$ النقط التي لاحقاتها على الترتيب: $z_A=1-4i, z_B=-1-2i, z_I=1-2i$.",
+      "topic": "nombres_complexes",
+      "concepts": [
+        "forme_algebrique",
+        "homothetie",
+        "transformations_plan",
+        "similitudes"
+      ],
+      "difficulty": "medium",
+      "marks": 5.0,
+      "has_figure": false,
+      "source_page": 3,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990030",
+          "exercise_id": "7668987d-9669-498b-990e-898499990029",
+          "label": "1",
+          "sub_label": "ب",
+          "statement": "اكتب على الشكل الجبري العدد المركب $Z = \\frac{z_I - z_A}{z_I - z_B}$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$Z = \\frac{(1-2i)-(1-4i)}{(1-2i)-(-1-2i)} = \\frac{2i}{2} = i$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990031",
+          "exercise_id": "7668987d-9669-498b-990e-898499990029",
+          "label": "1",
+          "sub_label": "ج",
+          "statement": "ما هو نوع المثلث $IAB$ ؟",
+          "marks": null,
+          "depends_on": [
+            "1-ب"
+          ],
+          "solution": "بما أن $Z=i$ فإن $|Z|=1$ و $arg(Z)=\\frac{\\pi}{2}$. إذن المثلث $IAB$ قائم ومتساوي الساقين في $I$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990032",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 7,
+      "title": "الموضوع الثاني - التمرين الثالث",
+      "statement": "الفضاء منسوب إلى المعلم المتعامد والمتجانس $(O; \\vec{i}, \\vec{j}, \\vec{k})$. نعتبر النقط $A(-1,2,1), B(2,1,3), C(0,-1,2)$ ، ولتكن $(P)$ مجموعة النقط $M$ من الفضاء بحيث: $AM=BM$.",
+      "topic": "geometrie",
+      "concepts": [
+        "plans",
+        "droites",
+        "distances",
+        "equations_cartesiennes"
+      ],
+      "difficulty": "medium",
+      "marks": 4.0,
+      "has_figure": false,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990033",
+          "exercise_id": "7668987d-9669-498b-990e-898499990032",
+          "label": "1",
+          "sub_label": null,
+          "statement": "بيّن أن $(P)$ هو المستوي الذي معادلته: $3x - y + 2z - 4 = 0$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$AM^2 = BM^2 \\Rightarrow (x+1)^2 + (y-2)^2 + (z-1)^2 = (x-2)^2 + (y-1)^2 + (z-3)^2$. بالتبسيط نجد $3x - y + 2z - 4 = 0$.",
+          "ordering": 1,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990034",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "number": 8,
+      "title": "الموضوع الثاني - التمرين الرابع",
+      "statement": "$g$ الدالة المعرفة على المجال $]0, +\\infty[$ كما يلي: $g(x) = x - 1 - 2\\ln x$. $(C_g)$ تمثيلها البياني.\n$f$ الدالة العددية المعرفة على $[0, +\\infty[$ كما يلي: $f(x) = -x^2 + x + x^2\\ln x$ لـ $x > 0$ و $f(0)=0$.",
+      "topic": "analyse",
+      "concepts": [
+        "limites",
+        "derivation",
+        "fonction_logarithme",
+        "tableau_de_variation",
+        "representation_graphique"
+      ],
+      "difficulty": "hard",
+      "marks": 7.0,
+      "has_figure": true,
+      "source_page": 4,
+      "solution": null,
+      "metadata": {
+        "subject_part": "الموضوع الثاني"
+      },
+      "parts": [
+        {
+          "id": "7668987d-9669-498b-990e-898499990035",
+          "exercise_id": "7668987d-9669-498b-990e-898499990034",
+          "label": "1",
+          "sub_label": null,
+          "statement": "احسب $\\lim_{x \\to 0^+} g(x)$ ثم فسر النتيجة هندسيا.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$\\lim_{x \\to 0^+} g(x) = +\\infty$. التفسير: المستقيم $x=0$ مقارب عمودي لـ $(C_g)$.",
+          "ordering": 1,
+          "metadata": {}
+        },
+        {
+          "id": "7668987d-9669-498b-990e-898499990036",
+          "exercise_id": "7668987d-9669-498b-990e-898499990034",
+          "label": "3",
+          "sub_label": "ج",
+          "statement": "بيّن أنه من أجل كل $x$ من $]0, +\\infty[$ فإن: $f'(x) = x g(\\frac{1}{x})$.",
+          "marks": null,
+          "depends_on": [],
+          "solution": "$f'(x) = -2x + 1 + 2x\\ln x + x^2(\\frac{1}{x}) = -x + 1 + 2x\\ln x = x[-1 + \\frac{1}{x} + 2\\ln x] = x[\\frac{1}{x} - 1 - 2\\ln(\\frac{1}{x})] = x g(\\frac{1}{x})$.",
+          "ordering": 2,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "7668987d-9669-498b-990e-898499990037",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "exercise_ref": 4,
+      "part_ref": null,
+      "figure_type": "graph",
+      "description": "التمثيل البياني للدالة f (الموضوع الأول) يظهر منحنى يمر بالمبدأ O، له ذروة عند x=α، ويقارب المنحنى y=-x^3 عند -∞.",
+      "source_page": 20
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990038",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "exercise_ref": 6,
+      "part_ref": "1-أ",
+      "figure_type": "geometric",
+      "description": "تمثيل النقط A, B, I والمربع ABCD في المستوي المركب، مع توضيح المجموعات Γ1 و Γ2.",
+      "source_page": 25
+    },
+    {
+      "id": "7668987d-9669-498b-990e-898499990039",
+      "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0",
+      "exercise_ref": 8,
+      "part_ref": "4",
+      "figure_type": "graph",
+      "description": "التمثيل البياني للدالة f (الموضوع الثاني) على المجال [0, 3]، يظهر تزايد الدالة من المبدأ.",
+      "source_page": 32
+    }
+  ],
+  "exam_id": "b9f83b62-85e3-4bd6-9ec6-efd6f5b6e0b0"
+}

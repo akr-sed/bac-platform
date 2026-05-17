@@ -1,0 +1,1429 @@
+{
+  "exams": [
+    {
+      "exam_metadata": {
+        "id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-1",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-123067.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2025,
+        "duration_minutes": 210,
+        "total_marks": null,
+        "language": "ar",
+        "region": "المسيلة",
+        "institution": "ثانوية العلامة عبد الله بن غانم الدراجي",
+        "academic_year": null,
+        "sujet": 1
+      },
+      "exercises": [
+        {
+          "id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-1",
+          "number": 1,
+          "title": null,
+          "statement": "صندوق $U_1$ يحتوي على 6 كريات حمراء و4 سوداء.\nو صندوق $U_2$ يحتوي على 3 كريات حمراء و 1 كرية سوداء و 1 كرية زرقاء، جميع الكريات متماثلة.",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "probabilite_conditionnelle",
+            "variable_aleatoire",
+            "esperance",
+            "variance",
+            "arbre_probabilites",
+            "tirages_successifs",
+            "tirages_simultanees"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "3c4d5e6f-7a8b-49c0-d1e2-f3a4b5c6d7e9",
+              "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+              "label": "1",
+              "sub_label": null,
+              "statement": "نسحب عشوائيا ثلاث كريات على التوالي وبدون إرجاع من الصندوق $U_1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "4d5e6f7a-8b9c-4a0d-b1c2-d3e4f5a6b7c0",
+                  "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "شكل شجرة الإحتمال المناسبة لهذه الوضعية.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "5e6f7a8b-9c0d-4b1e-c2d3-e4f5a6b7c8d1",
+                  "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب إحتمال الحصول على 3 كريات من نفس اللون.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "6f7a8b9c-0d1e-4c2f-d3e4-f5a6b7c8d9e2",
+                  "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+                  "label": "c",
+                  "sub_label": null,
+                  "statement": "أحسب إحتمال الحصول على كرية حمراء على الأقل.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "7a8b9c0d-1e2f-4d3a-e4f5-a6b7c8d9e0f3",
+              "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نسحب عشوائيا كريتين في آن واحد من الصندوق $U_1$ وكرية واحدة من الصندوق $U_2$. ليكن $X$ المتغير العشوائي الذي يرفق بكل عملية سحب عدد الكريات السوداء المسحوبة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "8b9c0d1e-2f3a-4e4b-f5a6-b7c8d9e0f1a4",
+                  "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "عين قانون الإحتمال للمتغير العشوائي $X$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "9c0d1e2f-3a4b-4f5c-a6b7-c8d9e0f1a2b5",
+                  "exercise_id": "2b3c4d5e-6f7a-489b-c0d1-e2f3a4b5c6d8",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب أمله الرياضياتي ، التباين و الإنحراف المعياري.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-1",
+          "number": 2,
+          "title": null,
+          "statement": "$(U_n)$ و $(V_n)$ متتاليتان معرفتان على مجموعة الأعداد الطبيعية $\\mathbb{N}$ كما يلي: $u_0 = 3$ ومن أجل كل عدد طبيعي $n$:\n$$U_{n+1} = \\frac{5U_n - 4}{1 + U_n}$$\nو\n$$V_n = \\frac{U_n - 3}{U_n - 2}$$",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_recurrentes",
+            "convergence",
+            "raisonnement_par_recurrence",
+            "suites_arithmetiques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "b1e2f3a4-5b6c-41d7-e8f9-a0b1c2d3e4f7",
+              "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+              "label": "1",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "c2f3a4b5-6c7d-42e8-f9a0-b1c2d3e4f5a8",
+                  "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ ، $U_n > 2$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "d3a4b5c6-7d8e-43f9-a0b1-c2d3e4f5a6b9",
+                  "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "بين أن المتتالية $(U_n)$ متناقصة تماما ثم إستنتج أنها متقاربة.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "e4b5c6d7-8e9f-44a0-b1c2-d3e4f5a6b7c0",
+              "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+              "label": "2",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "f5c6d7e8-9f0a-45b1-c2d3-e4f5a6b7c8d1",
+                  "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "بين أن المتتالية $(V_n)$ حسابية أساسها $\\frac{5}{3}$ ثم عبر عن حدها العام $V_n$ بدلالة $n$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "g6d7e8f9-0a1b-46c2-d3e4-f5a6b7c8d9e2",
+                  "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "إستنتج عبارة الحد العام $U_n$ بدلالة $n$ ، ثم أحسب $\\lim_{n \\to +\\infty} U_n$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "h7e8f90a-1b2c-47d3-e4f5-a6b7c8d9e0f3",
+              "exercise_id": "a0d1e2f3-4a5b-40c6-d7e8-f9a0b1c2d3e6",
+              "label": "3",
+              "sub_label": null,
+              "statement": "أحسب بدلالة $n$ المجموع:\n$$S_n = \\frac{1}{U_0 - 2} + \\frac{1}{U_1 - 2} + ... + \\frac{1}{U_n - 2}$$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-1",
+          "number": 3,
+          "title": null,
+          "statement": null,
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "forme_algebrique",
+            "transformations_plan",
+            "rotation",
+            "module",
+            "argument"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            1,
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "j90a1b2c-3d4e-49f5-a6b7-c8d9e0f1a2b5",
+              "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+              "label": "1",
+              "sub_label": null,
+              "statement": "حل في مجموعة الأعداد المركبة $\\mathbb{C}$ المعادلة ذات المجهول المركب $z$ التالية : $(z^2 + 3 + 2i)(z^2 - z + 5) = 0$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "k0a1b2c3-4d5e-4a0f-b1c2-d3e4f5a6b7c6",
+              "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+              "label": "2",
+              "sub_label": null,
+              "statement": "نعتبر في المستوي المركب منسوب إلى المعلم المتعامد و المتجانس $(O; \\vec{u}, \\vec{v})$ النقط $A$ ، $B$ ، $C$ و $D$ لواحقها على الترتيب $z_A = 1 - 2i$ ، $z_B = \\overline{z_A}$ ، $z_C = -3 + 2i$ و $z_D = -1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "l1b2c3d4-5e6f-4b10-c2d3-e4f5a6b7c8d7",
+                  "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أحسب $|z_A - z_D|$ ، $|z_B - z_D|$ و $|z_C - z_D|$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "m2c3d4e5-6f7a-4c21-d3e4-f5a6b7c8d9e8",
+                  "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "إستنتج أن النقط $A$ ، $B$ و $C$ تنتمي إلى نفس الدائرة، يطلب تعيين مركزها ونصف قطرها.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "n3d4e5f6-7a8b-4d32-e4f5-a6b7c8d9e0f9",
+              "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+              "label": "3",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "o4e5f6a7-8b9c-4e43-f5a6-b7c8d9e0f1a0",
+                  "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أكتب العدد المركب $\\frac{z_A - z_B}{z_C - z_B}$ على الشكل الأسي، ثم إستنتج طبيعة المثلث $ABC$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "p5f6a7b8-9c0d-4f54-a6b7-c8d9e0f1a2b1",
+                  "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "عين لاحقة النقطة $G$ مرجح الجملة المثقلة $\\{(A; 1), (B; -1), (C; 1)\\}$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "q6a7b8c9-0d1e-40f5-b1c2-d3e4f5a6b7c2",
+              "exercise_id": "i8f90a1b-2c3d-48e4-f5a6-b7c8d9e0f1a4",
+              "label": "4",
+              "sub_label": null,
+              "statement": "بين أن الرباعي $ABCG$ مربع.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3-b"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-1",
+          "number": 4,
+          "title": null,
+          "statement": null,
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "derivation",
+            "tableau_de_variation",
+            "limites",
+            "representation_graphique",
+            "calcul_integral",
+            "primitives",
+            "integration_par_parties",
+            "aires",
+            "fonction_exponentielle",
+            "fonction_logarithme"
+          ],
+          "difficulty": "hard",
+          "marks": 8,
+          "has_figure": false,
+          "source_page": [
+            2
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "s8c90d1e-2f3a-42b7-d3e4-f5a6b7c8d9e4",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "1",
+              "sub_label": null,
+              "statement": "$g$ دالة معرفة على $]0; +\\infty[$ بـ : $g(x) = \\frac{\\ln x}{x} + e^x - e$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "t90d1e2f-3a4b-43c8-e4f5-a6b7c8d9e0f5",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أدرس تغيرات الدالة $g$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "u0d1e2f3-4a5b-44d9-f5a6-b7c8d9e0f1a6",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب $g(\\frac{1}{e})$ ثم إستنتج إشارة $g(x)$ على $]0; +\\infty[$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "v1e2f3a4-5b6c-45e0-a6b7-c8d9e0f1a2b7",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "2",
+              "sub_label": null,
+              "statement": "$f$ دالة معرفة على $]0; +\\infty[$ بـ : $f(x) = \\frac{1}{2}(\\ln x)^2 + e^x - e$ . $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى المعلم المتعامد و المتجانس $(O; \\vec{i}, \\vec{j})$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "w2f3a4b5-6c7d-46f1-b7c8-d9e0f1a2b3c8",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "بين أنه من أجل كل $x$ من $]0; +\\infty[$ : $f'(x) = g(x)$ ، إستنتج إتجاه تغير الدالة $f$ على المجال $]0; +\\infty[$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1-b"
+                  ],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "x3a4b5c6-7d8e-47a2-c8d9-e0f1a2b3c4d9",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "عين نهايات الدالة $f$ عند $0$ و $+\\infty$ ثم شكل جدول تغيراتها.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "y4b5c6d7-8e9f-48b3-d9e0-f1a2b3c4d5e0",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "3",
+              "sub_label": null,
+              "statement": "اكتب معادلة المماس $(T)$ للمنحنى $(C_f)$ عند النقطة ذات الفاصلة $1$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "z5c6d7e8-9f0a-49c4-e0f1-a2b3c4d5e6f1",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "4",
+              "sub_label": null,
+              "statement": "أدرس وضعية $(C_f)$ بالنسبة إلى $(T)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "a6d7e8f9-0a1b-4a05-f1a2-b3c4d5e6f7a2",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "5",
+              "sub_label": null,
+              "statement": "ارسم $(T)$ والمنحنى $(C_f)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "b7e8f90a-1b2c-4b16-a2b3-c4d5e6f7a8b3",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "6",
+              "sub_label": null,
+              "statement": "$h$ الدالة المعرفة على $]0; +\\infty[$ كما يلي : $h(x) = x[(\\ln x)^2 + a\\ln x + b]$ ، حيث $a$ و $b$ عددان حقيقيان.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "c8f90a1b-2c3d-4c27-b3c4-d5e6f7a8b9c4",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "عين $a$ و $b$ بحيث تكون $h$ دالة أصلية للدالة $(\\ln x)^2$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "d90a1b2c-3d4e-4d38-c4d5-e6f7a8b9c0d5",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب بـ $cm^2$ المساحة $A$ للحيز المستوي المحدد بالمنحنى $(C_f)$ و المستقيمات التي معادلاتها $x = \\frac{1}{e}$ و $x = 1$ ، و $y = e^x - e$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "e0a1b2c3-4d5e-4e49-d5e6-f7a8b9c0d1e6",
+              "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+              "label": "7",
+              "sub_label": null,
+              "statement": "لتكن $k$ الدالة المعرفة على $\\mathbb{R}$ بـ : $k(x) = e^{2x+1} + 2x^2 - e$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "f1b2c3d4-5e6f-4f50-e6f7-a8b9c0d1e2f7",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أثبت أنه من أجل كل $x$ من $\\mathbb{R}$ لدينا: $k'(x) = f(e^{2x})$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "g2c3d4e5-6f7a-4061-f7a8-b9c0d1e2f3a8",
+                  "exercise_id": "r7b8c90d-1e2f-41a6-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "بإستعمال مشتقة دالة مركبة عين إتجاه تغير الدالة $k$ ثم شكل جدول تغيراتها.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "7-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "exam_metadata": {
+        "id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+        "subject": "mathematics",
+        "source_file": "dzexams-3as-mathematiques-123067.pdf",
+        "exam_type": "bac_blanc",
+        "session": null,
+        "trimester": null,
+        "filiere": "mathematiques",
+        "year": 2025,
+        "duration_minutes": 210,
+        "total_marks": null,
+        "language": "ar",
+        "region": "المسيلة",
+        "institution": "ثانوية العلامة عبد الله بن غانم الدراجي",
+        "academic_year": null,
+        "sujet": 2
+      },
+      "exercises": [
+        {
+          "id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+          "number": 1,
+          "title": null,
+          "statement": "يحتوي كيس غير شفاف على ثلاث كريات بيضاء تحمل الأرقام : 0 ، 1 ، 1 وثلاث كريات حمراء تحمل الأرقام 1، 2، 2 وكريتين سوداوين تحملان الرقمين 0 ، 2 . كل الكريات متماثلة و لا نفرق بينها عند اللمس. نسحب عشوائيا من الكيس ثلاث كريات على التوالي دون إرجاع.",
+          "topic": "probabilites",
+          "concepts": [
+            "denombrement",
+            "probabilite_conditionnelle",
+            "variable_aleatoire",
+            "esperance",
+            "tirages_successifs",
+            "schema_bernoulli"
+          ],
+          "difficulty": "medium",
+          "marks": 6,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "j5f6a7b8-9c0d-4394-c0d1-e2f3a4b5c6d1",
+              "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+              "label": "1",
+              "sub_label": null,
+              "statement": "أحسب إحتمال الأحداث التالية:",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "k6a7b8c9-0d1e-44a5-d1e2-f3a4b5c6d7e2",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "A",
+                  "sub_label": null,
+                  "statement": "$A$ : الكريات المسحوبة من نفس اللون",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "l7b8c90d-1e2f-45b6-e2f3-a4b5c6d7e8f3",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "B",
+                  "sub_label": null,
+                  "statement": "$B$ : ظهور الرقم 1 مرة واحدة فقط في السحبات الثلاث",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "m8c90d1e-2f3a-46c7-f3a4-b5c6d7e8f9a4",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "C",
+                  "sub_label": null,
+                  "statement": "$C$ : ظهور الرقم 1 مرتين فقط في السحبات الثلاث",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                },
+                {
+                  "id": "n90d1e2f-3a4b-47d8-a4b5-c6d7e8f9a0b5",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "D",
+                  "sub_label": null,
+                  "statement": "$D$ : الكرية المسحوبة ثانيا حمراء",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 4,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "o0d1e2f3-4a5b-48e9-b5c6-d7e8f9a0b1c6",
+              "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+              "label": "2",
+              "sub_label": null,
+              "statement": "بين أن: $P(B \\cap D) = \\frac{17}{84}$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-B",
+                "1-D"
+              ],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {}
+            },
+            {
+              "id": "p1e2f3a4-5b6c-49f0-c6d7-e8f9a0b1c2d7",
+              "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+              "label": "3",
+              "sub_label": null,
+              "statement": "ليكن $X$ المتغير العشوائي الذي يرفق بكل نتيجة سحب عدد الكريات السوداء المتبقية في الكيس.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "q2f3a4b5-6c7d-4a01-d7e8-f9a0b1c2d3e8",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "عين قيم المتغير العشوائي $X$ واكتب قانون إحتماله.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "r3a4b5c6-7d8e-4b12-e8f9-a0b1c2d3e4f9",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب الأمل الرياضياتي $(E(X))$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "3-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "s4b5c6d7-8e9f-4c23-f9a0-b1c2d3e4f5a0",
+              "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+              "label": "4",
+              "sub_label": null,
+              "statement": "ننزع الآن من الكيس الكريتان السوداوتان فتبقى فيه ثلاث كريات بيضاء وثلاث كريات حمراء. نسحب من الكيس كرية واحدة $n$ مرة على التوالي مع الإرجاع في كل مرة.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "t5c6d7e8-9f0a-4d34-a0b1-c2d3e4f5a6b1",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "عبر بدلالة $n$ عن إحتمال أن تكون كل الكريات المسحوبة من نفس اللون.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "u6d7e8f9-0a1b-4e45-b1c2-d3e4f5a6b7c2",
+                  "exercise_id": "i4e5f6a7-8b9c-4283-b9c0-d1e2f3a4b5c0",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "أحسب إحتمال أن تكون في كل السحبات على الأقل كرية واحدة حمراء.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+          "number": 2,
+          "title": null,
+          "statement": "$(u_n)$ المتتالية المعرفة بـ $u_0 = 1$ ومن أجل كل عدد طبيعي $n$ : $$u_{n+1} = \\frac{4u_n}{1 + u_n}$$",
+          "topic": "analyse",
+          "concepts": [
+            "suites_numeriques",
+            "suites_recurrentes",
+            "convergence",
+            "raisonnement_par_recurrence",
+            "suites_geometriques"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            3
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "w8f90a1b-2c3d-4067-d3e4-f5a6b7c8d9e4",
+              "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+              "label": "1",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "x90a1b2c-3d4e-4178-e4f5-a6b7c8d9e0f5",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أحسب $u_1$ و $u_2$ ثم برهن بالتراجع أنه من أجل كل عدد طبيعي $n$ : $u_n < 3$ .",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "y0a1b2c3-4d5e-4289-f5a6-b7c8d9e0f1a6",
+              "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+              "label": "2",
+              "sub_label": null,
+              "statement": "لتكن $(v_n)$ متتالية معرفة من أجل كل عدد طبيعي $n$ : $$v_n = \\frac{u_n - 3}{u_n}$$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "z1b2c3d4-5e6f-4390-a6b7-c8d9e0f1a2b7",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "بين أن $(v_n)$ متتالية هندسية أساسها $\\frac{1}{4}$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "a2c3d4e5-6f7a-44a1-b7c8-d9e0f1a2b3c8",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "اكتب $v_n$ ثم $u_n$ بدلالة $n$ ثم أحسب نهاية المتتالية $(u_n)$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "b3d4e5f6-7a8b-45b2-c8d9-e0f1a2b3c4d9",
+              "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$(w_n)$ المتتالية المعرفة من أجل كل عدد طبيعي $n$ : $W_n = \\frac{3}{u_n}$ نضع ، $S_n = W_0 + W_1 + W_2 + ... + W_n$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "c4e5f6a7-8b9c-46c3-d9e0-f1a2b3c4d5e0",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "تحقق أنه من أجل كل عدد طبيعي $n$ : $W_n = 1 - v_n$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2-b"
+                  ],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "d5f6a7b8-9c0d-47d4-e0f1-a2b3c4d5e6f1",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "بين أنه من أجل كل عدد طبيعي $n$ : $$S_n = n + 1 + \\frac{8}{3}(1 - (\\frac{1}{4})^{n+1})$$",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "3-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                },
+                {
+                  "id": "e6a7b8c9-0d1e-48e5-f1a2-b3c4d5e6f7a2",
+                  "exercise_id": "v7e8f90a-1b2c-4f56-c2d3-e4f5a6b7c8d3",
+                  "label": "c",
+                  "sub_label": null,
+                  "statement": "أحسب نهاية: $\\lim_{n \\to +\\infty} \\frac{S_n}{n}$",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "3-b"
+                  ],
+                  "solution": null,
+                  "ordering": 3,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+          "number": 3,
+          "title": null,
+          "statement": null,
+          "topic": "nombres_complexes",
+          "concepts": [
+            "equations_complexes",
+            "forme_algebrique",
+            "transformations_plan",
+            "rotation",
+            "module",
+            "argument"
+          ],
+          "difficulty": "medium",
+          "marks": 4,
+          "has_figure": false,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "g8c90d1e-2f3a-40a7-b3c4-d5e6f7a8b9c4",
+              "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+              "label": "1",
+              "sub_label": null,
+              "statement": "عين العددين المركبين $\\alpha$ و $\\beta$ حيث:\n$$\\begin{cases} \\alpha + \\beta = -1 \\\\ 2\\alpha + \\beta = 6i \\end{cases}$$",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {}
+            },
+            {
+              "id": "h90d1e2f-3a4b-41b8-c4d5-e6f7a8b9c0d5",
+              "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+              "label": "2",
+              "sub_label": null,
+              "statement": "المستوي منسوب إلى المعلم المتعامد و المتجانس $(O; \\vec{u}, \\vec{v})$ نعتبر النقط $A$ ، $I$ و $B$ لواحقها على الترتيب $z_I = 1$ ، $z_A = 1 - 2i$ و $z_B = -2 + 2i$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "i0d1e2f3-4a5b-42c9-d5e6-f7a8b9c0d1e6",
+                  "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أنشئ النقط $A$ ، $I$ و $B$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "j1e2f3a4-5b6c-43d0-e6f7-a8b9c0d1e2f7",
+                  "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "عين $z_w$ لاحقة النقطة $W$ مركز الدائرة $(C)$ ذات القطر $[AB]$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "k2f3a4b5-6c7d-44e1-f7a8-b9c0d1e2f3a8",
+              "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+              "label": "3",
+              "sub_label": null,
+              "statement": "$D$ نقطة لاحقتها $z_D = \\frac{3+9i}{4+2i}$ ، اكتب $z_D$ على الشكل الجبري ثم بين أن النقطة $D$ تنتمي إلى الدائرة $(C)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-b"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "l3a4b5c6-7d8e-45f2-a8b9-c0d1e2f3a4b9",
+              "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+              "label": "4",
+              "sub_label": null,
+              "statement": "$E$ نقطة من الدائرة $(C)$ لاحقتها $z_E = e^{i\\frac{\\pi}{4}} z_I + (1 - e^{i\\frac{\\pi}{4}})z_A$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "m4b5c6d7-8e9f-46a3-b9c0-d1e2f3a4b5c0",
+                  "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "اكتب العدد $e^{i\\frac{\\pi}{4}} + \\frac{1}{2}$ على الشكل الأسي.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "n5c6d7e8-9f0a-47b4-c0d1-e2f3a4b5c6d1",
+                  "exercise_id": "f7b8c90d-1e2f-49f6-a2b3-c4d5e6f7a8b3",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "إستنتج أن $\\frac{z_E - z_A}{z_I - z_A} = \\frac{3\\sqrt{2} - 2}{4} + i\\frac{3\\sqrt{2}}{4}$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "4-a"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+          "number": 4,
+          "title": null,
+          "statement": null,
+          "topic": "analyse",
+          "concepts": [
+            "etude_de_fonction",
+            "derivation",
+            "tableau_de_variation",
+            "limites",
+            "representation_graphique",
+            "calcul_integral",
+            "primitives",
+            "integration_par_parties",
+            "aires",
+            "fonction_exponentielle"
+          ],
+          "difficulty": "hard",
+          "marks": 7,
+          "has_figure": true,
+          "source_page": [
+            4
+          ],
+          "solution": null,
+          "metadata": {},
+          "parts": [
+            {
+              "id": "p7e8f90a-1b2c-49d6-e2f3-a4b5c6d7e8f3",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "1",
+              "sub_label": null,
+              "statement": "التمثيل البياني للدالة $x \\mapsto e^{-2x} - 2x^2$ و $(\\Delta)$ المستقيم ذو المعادلة $y = 4x + 2$ هي فاصلة نقطة تقاطع $(\\gamma)$ و $(\\Delta)$.\n$g$ الدالة المعرفة على المجال $\\mathbb{R}$ بـ : $g(x) = e^{-2x} - 4x - 2$.",
+              "marks": null,
+              "has_figure": true,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 1,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "q8f90a1b-2c3d-40e7-f3a4-b5c6d7e8f9a4",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "براءة بيانية حدد وضعية $(\\gamma)$ بالنسبة إلى $(\\Delta)$ على $\\mathbb{R}$ ثم إستنتج حسب قيم $x$ إشارة $g(x)$.",
+                  "marks": null,
+                  "has_figure": true,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "r90a1b2c-3d4e-41f8-a4b5-c6d7e8f9a0b5",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "تحقق أن: $-0,16 < \\alpha < -0,15$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "s0a1b2c3-4d5e-42a9-b5c6-d7e8f9a0b1c6",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "2",
+              "sub_label": null,
+              "statement": "لتكن الدالة العددية $f$ المعرفة على $\\mathbb{R}$ كما يلي: $f(x) = x + 3 - 2e^{-2x}$ . $(C_f)$ تمثيلها البياني في المستوي المنسوب إلى معلم متعامد و متجانس $(O; \\vec{i}, \\vec{j})$ وحدة الطول $2cm$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 2,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "t1b2c3d4-5e6f-43b0-c6d7-e8f9a0b1c2d7",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أحسب نهايات الدالة $f$ عند $-\\infty$ و $+\\infty$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "u2c3d4e5-6f7a-44c1-d7e8-f9a0b1c2d3e8",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "برهن أنه من أجل كل عدد حقيقي $x$ لدينا $f'(x) = e^{-2x}g(x)$ ثم شكل جدول تغيرات الدالة $f$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "1"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "v3d4e5f6-7a8b-45d2-e8f9-a0b1c2d3e4f9",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "3",
+              "sub_label": null,
+              "statement": "بين أن $(C_f)$ يقبل مستقيما مقاربا مائلا $(D)$ يطلب تعيين معادلة له ثم أدرس وضعية $(C_f)$ بالنسبة لـ $(D)$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "2-a"
+              ],
+              "solution": null,
+              "ordering": 3,
+              "metadata": {}
+            },
+            {
+              "id": "w4e5f6a7-8b9c-46e3-f9a0-b1c2d3e4f5a0",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "4",
+              "sub_label": null,
+              "statement": "بين أن: $f(\\alpha) = \\frac{2\\alpha^2 + 6\\alpha + 3}{2\\alpha + 1}$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "1-b"
+              ],
+              "solution": null,
+              "ordering": 4,
+              "metadata": {}
+            },
+            {
+              "id": "x5f6a7b8-9c0d-47f4-a0b1-c2d3e4f5a6b1",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "5",
+              "sub_label": null,
+              "statement": "ارسم المستقيم $(D)$ والمنحنى $(C_f)$ نأخذ $f(\\alpha) = 3,07$.",
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [
+                "3",
+                "4"
+              ],
+              "solution": null,
+              "ordering": 5,
+              "metadata": {}
+            },
+            {
+              "id": "y6a7b8c9-0d1e-48a5-b1c2-d3e4f5a6b7c2",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "6",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 6,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "z7b8c90d-1e2f-49b6-c2d3-e4f5a6b7c8d3",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "أثبت أن المنحنى $(C_f)$ يقبل مماسا موازيا للمستقيم $(D)$ يطلب تعيين معادلة له.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "3"
+                  ],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "a8c90d1e-2f3a-40c7-d3e4-f5a6b7c8d9e4",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "عين بيانيا قيم الوسيط الحقيقي $m$ بحيث تقبل المعادلة $f(x) = x + m$ حلين متمايزين.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "5"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            },
+            {
+              "id": "b90d1e2f-3a4b-41d8-e4f5-a6b7c8d9e0f5",
+              "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+              "label": "7",
+              "sub_label": null,
+              "statement": null,
+              "marks": null,
+              "has_figure": false,
+              "depends_on": [],
+              "solution": null,
+              "ordering": 7,
+              "metadata": {},
+              "parts": [
+                {
+                  "id": "c0d1e2f3-4a5b-42e9-f5a6-b7c8d9e0f1a6",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "a",
+                  "sub_label": null,
+                  "statement": "$x$ عدد حقيقي، بإستعمال التكامل بالتجزئة جد $\\int_{0}^{X} 2te^{2t} dt$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [],
+                  "solution": null,
+                  "ordering": 1,
+                  "metadata": {}
+                },
+                {
+                  "id": "d1e2f3a4-5b6c-43f0-a6b7-c8d9e0f1a2b7",
+                  "exercise_id": "o6d7e8f9-0a1b-48c5-d1e2-f3a4b5c6d7e2",
+                  "label": "b",
+                  "sub_label": null,
+                  "statement": "$\\lambda$ عدد حقيقي أصغر تماما من $0$ ، أحسب بدلالة $\\lambda$ المساحة $(A(\\lambda))$ للحيز المستوي المحدد بالمنحنى $(C_f)$ المستقيمات التي معادلاتها $x = 0$ و $x = \\lambda$ و $y = x + 3$ ، ثم جد $\\lim_{\\lambda \\to -\\infty} A(\\lambda)$.",
+                  "marks": null,
+                  "has_figure": false,
+                  "depends_on": [
+                    "2",
+                    "3"
+                  ],
+                  "solution": null,
+                  "ordering": 2,
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "e2f3a4b5-6c7d-44a1-b7c8-d9e0f1a2b3c8",
+          "exam_id": "aea3f30c-c5a0-4aa6-8f62-b743701962ed-2",
+          "exercise_ref": 4,
+          "part_ref": "1-a",
+          "context": "question",
+          "figure_type": "graph",
+          "description": "Graph showing a curve labeled $(\\gamma)$ and a line labeled $(\\Delta)$. The curve $(\\gamma)$ passes through $(0, -1)$ and $(1, 2)$. The line $(\\Delta)$ passes through $(0, -1)$ and $(1, 2)$. The axes are labeled $O$, $i$, $j$. The x-axis has tick marks at $-1, 1, 2$. The y-axis has tick marks at $-1, 1, 2$. The curve $(\\gamma)$ appears to be a parabola opening upwards, intersecting the x-axis around $x=0.5$ and $x=1.5$. The line $(\\Delta)$ is a straight line passing through the points of intersection of $(\\gamma)$ and $(\\Delta)$.",
+          "source_page": 4,
+          "bounding_box": [
+            400,
+            50,
+            580,
+            280
+          ]
+        }
+      ]
+    }
+  ]
+}

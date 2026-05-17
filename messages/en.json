@@ -1,10 +1,22 @@
 {
+  "actions": {
+    "report": "Report"
+  },
+  "reportDialog": {
+    "title": "Report this content",
+    "reasonLabel": "Reason",
+    "reasonPlaceholder": "Explain why you're reporting...",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "success": "Report submitted",
+    "error": "Could not submit report"
+  },
   "common": {
     "welcome": "Welcome to BAC Platform",
     "save": "Save",
     "cancel": "Cancel",
     "submit": "Submit",
-    "loading": "Loading...",
+    "loading": "Loading…",
     "error": "An error occurred",
     "success": "Success",
     "delete": "Delete",
@@ -23,12 +35,27 @@
   "navigation": {
     "home": "Home",
     "exercises": "Exercises",
+    "sessions": "Sessions",
     "profile": "Profile",
     "admin": "Admin",
     "login": "Login",
     "register": "Register",
     "logout": "Logout",
-    "language": "Language"
+    "language": "Language",
+    "library": "Library",
+    "notifications": "Notifications",
+    "leaderboard": "Leaderboard",
+    "search": "Search",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "liveSessions": "Live Sessions",
+    "saved": "Saved",
+    "tutor": "AI Tutor",
+    "teacherHeader": "Teacher Dashboard",
+    "teacherSubtitle": "Manage educational content",
+    "exerciseBank": "Exercise Bank",
+    "myLiveSessions": "My Live Sessions",
+    "statistics": "Statistics"
   },
   "auth": {
     "login": {
@@ -52,6 +79,21 @@
       "role": "I am a",
       "student": "Student",
       "teacher": "Teacher"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "email": "Email Address",
+      "submit": "Send Reset Link",
+      "success": "If an account exists with this email, a reset link has been sent.",
+      "backToLogin": "Back to Login"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Reset Password",
+      "success": "Your password has been reset successfully.",
+      "invalidToken": "This reset link is invalid or has expired."
     },
     "errors": {
       "invalidCredentials": "Invalid email or password",
@@ -80,6 +122,13 @@
       "medium": "Medium",
       "hard": "Hard"
     },
+    "compose": {
+      "write": "Write",
+      "preview": "Preview",
+      "placeholderWithMath": "Write your exercise. Use $...$ for inline math, $$...$$ for display math.",
+      "previewEmpty": "Nothing to preview yet. Start writing in the Write tab.",
+      "mathHint": "Tip: wrap math in $...$ (inline) or $$...$$ (block)."
+    },
     "fields": {
       "title": "Title",
       "description": "Description",
@@ -93,7 +142,15 @@
       "noSolutions": "No solutions yet. Be the first to post one!",
       "similarExercises": "Similar Exercises",
       "postedBy": "Posted by",
-      "postedAt": "Posted on"
+      "postedAt": "Posted on",
+      "backToExam": "Back to exam",
+      "backToExercises": "Back to exercises",
+      "figureDescription": "Figure description",
+      "part": "Question {label}",
+      "parts": "Questions",
+      "dependsOn": "Uses result from {refs}",
+      "questionFigure": "Figure for question",
+      "solutionFigure": "Figure for solution"
     }
   },
   "solutions": {
@@ -105,13 +162,38 @@
     "comment": "Comment",
     "comments": "{count, plural, one {# comment} other {# comments}}",
     "addComment": "Add a comment",
+    "kindLabel": "Type",
+    "kind": {
+      "comment": "Comment",
+      "tip": "Tip",
+      "mistake": "Mistake"
+    },
+    "images": "Images",
+    "imagesLabel": "images",
+    "addImages": "Add images",
+    "attachments": "Attachments",
+    "attachmentsLabel": "attachments",
+    "addAttachments": "Add images or PDFs",
+    "pdfAttachment": "PDF #{index}",
+    "maxImagesNote": "{count}/{max} {label}",
     "fields": {
       "content": "Your Solution",
       "images": "Attach Images"
     },
     "placeholder": "Write your solution here...",
+    "compose": {
+      "modeLabel": "Editor mode",
+      "write": "Write",
+      "preview": "Preview",
+      "placeholderWithMath": "Write your solution. Use $...$ for inline math, $$...$$ for display math.",
+      "previewEmpty": "Nothing to preview yet. Start writing in the Write tab.",
+      "mathHint": "Tip: wrap math in $...$ (inline) or $$...$$ (block)."
+    },
     "submitSuccess": "Solution submitted successfully",
-    "editSuccess": "Solution updated successfully"
+    "editSuccess": "Solution updated successfully",
+    "officialBadge": "Official",
+    "markOfficial": "Mark as official",
+    "unmarkOfficial": "Unmark as official"
   },
   "profile": {
     "title": "My Profile",
@@ -123,7 +205,13 @@
     "reputation": "Reputation",
     "joinedAt": "Member since",
     "verifiedTeacher": "Verified Teacher",
-    "editProfile": "Edit Profile"
+    "editProfile": "Edit Profile",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "followers": "Followers",
+    "following": "Following",
+    "followError": "Could not follow user. Please try again.",
+    "unfollowError": "Could not unfollow user. Please try again."
   },
   "moderation": {
     "delete": "Delete",
@@ -175,6 +263,774 @@
     "stats": "Statistics",
     "totalUsers": "Total Users",
     "totalExercises": "Total Exercises",
-    "pendingReports": "Pending Reports"
+    "totalSolutions": "Total Solutions",
+    "pendingReports": "Pending Reports",
+    "importExam": {
+      "title": "Import a BAC Exam",
+      "subtitle": "Upload the parser-generated JSON file or paste its contents, then preview the exercise list before importing.",
+      "uploadLabel": "JSON file",
+      "uploadHelp": "Pick a .json file produced by the parsing pipeline",
+      "pasteLabel": "Or paste JSON contents here",
+      "pastePlaceholder": "{\n  \"exam_id\": \"...\",\n  \"exercises\": [...]\n}",
+      "examMetadata": "Exam metadata",
+      "fieldTitle": "Exam title",
+      "fieldYear": "Year",
+      "fieldSubject": "Subject",
+      "fieldLevel": "Level",
+      "preview": "Exercise preview",
+      "previewEmpty": "Nothing to preview yet. Upload a file or paste JSON.",
+      "previewExerciseLabel": "Exercise {number}",
+      "previewMarks": "{marks} pts",
+      "previewHasFigure": "Has figure",
+      "previewPage": "Page {page}",
+      "submit": "Import exam",
+      "submitting": "Importing…",
+      "successRedirect": "Import succeeded, redirecting…",
+      "errorParse": "Could not parse JSON — check the contents.",
+      "errorRequired": "Please provide a file or paste JSON content.",
+      "errorServer": "Import failed, please try again.",
+      "teacherOnly": "This page is for teachers and admins only",
+      "teacherOnlyHint": "If you are a teacher and see this message, contact the admin team to enable your access.",
+      "teacherOnlyAction": "Back to dashboard"
+    }
+  },
+  "categories": {
+    "manage": "Manage Categories",
+    "addSubject": "Add Subject",
+    "addTopic": "Add Topic",
+    "addSubtopic": "Add Subtopic",
+    "editCategory": "Edit Category",
+    "deleteCategory": "Delete Category",
+    "confirmDelete": "Are you sure you want to delete this category? All subcategories will also be deleted.",
+    "noCategories": "No categories found",
+    "subject": "Subject",
+    "topic": "Topic",
+    "subtopic": "Subtopic"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "exercisesPosted": "Exercises Posted",
+    "solutionsSubmitted": "Solutions Submitted",
+    "commentsCount": "Comments",
+    "likesReceived": "Likes Received",
+    "recentActivity": "Recent Activity",
+    "noActivity": "No activity yet. Start by posting an exercise or submitting a solution!",
+    "postExercise": "Post an Exercise",
+    "browseExercises": "Browse Exercises",
+    "viewProfile": "View Profile",
+    "pointsBreakdown": "Points Breakdown",
+    "feedTitle": "Feed",
+    "emptyTitle": "No exercises to show yet",
+    "emptyDescription": "Pick the subjects you care about to personalize your feed",
+    "pickSubjects": "Pick subjects"
+  },
+  "feed": {
+    "like": "Like",
+    "save": "Save",
+    "comments": "Comments",
+    "loading": "Loading…",
+    "tabs": {
+      "forYou": "For You",
+      "trending": "Trending",
+      "latest": "Latest"
+    }
+  },
+  "preferences": {
+    "title": "Subject preferences",
+    "help": "Pick the subjects you want in your feed",
+    "save": "Save preferences",
+    "saving": "Saving…",
+    "savedOk": "Preferences saved",
+    "saveError": "Server error"
+  },
+  "saved": {
+    "tab": "Saved",
+    "empty": "No saved exercises yet",
+    "loadError": "Failed to load saved exercises"
+  },
+  "exam": {
+    "headerLabel": "BAC Exam",
+    "year": "Year",
+    "subject": "Subject",
+    "level": "Level",
+    "exerciseCount": "{count, plural, one {# exercise} other {# exercises}}",
+    "pageHeading": "Page {page}",
+    "exerciseLabel": "Exercise {number}",
+    "marks": "{marks} pts",
+    "openExercise": "Open exercise",
+    "noExercises": "No exercises in this exam",
+    "notFound": "Exam not found",
+    "indexTitle": "BAC Exams",
+    "indexSubtitle": "Browse imported exams and jump straight into their exercises.",
+    "indexEmpty": "No exams have been imported yet."
+  },
+  "subjects": {
+    "math": "Math",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "biology": "Biology",
+    "arabic-lit": "Arabic Literature",
+    "french-lit": "French Literature",
+    "philosophy": "Philosophy",
+    "history": "History",
+    "english": "English"
+  },
+  "errors": {
+    "notFound": "Not Found",
+    "pageNotFound": "The page you are looking for does not exist.",
+    "backToHome": "Back to Home",
+    "somethingWentWrong": "Something went wrong. Please try again later.",
+    "tryAgain": "Try again",
+    "offline": "You're offline",
+    "offlineDescription": "We'll wake up when you reconnect."
+  },
+  "sessions": {
+    "title": "Live Sessions",
+    "browse": "Browse Sessions",
+    "upcoming": "Upcoming Sessions",
+    "myUpcoming": "My Upcoming Sessions",
+    "mySessions": "My Sessions",
+    "create": "Create Session",
+    "newSession": "New Session",
+    "noSessions": "No upcoming sessions",
+    "noSessionsHint": "Check back later — teachers will publish new sessions soon",
+    "liveBadge": "Live Session",
+    "free": "Free",
+    "priceDA": "{price} DA",
+    "spotsLeft": "{remaining} spots left of {total}",
+    "spotsTotal": "{enrolled} / {capacity}",
+    "spotsUnlimited": "{enrolled} enrolled",
+    "duration": "{minutes} min",
+    "durationLabel": "Duration",
+    "capacityLabel": "Capacity",
+    "verifiedTeacher": "Verified teacher",
+    "scheduledFor": "Scheduled for",
+    "topicsLabel": "Topics",
+    "openMeeting": "Open meeting link",
+    "meetingHidden": "The meeting link will appear after you enroll",
+    "enroll": "Enroll in session",
+    "enrolling": "Enrolling…",
+    "enrolled": "You're enrolled",
+    "unenroll": "Cancel enrollment",
+    "unenrollConfirmTitle": "Cancel your enrollment?",
+    "unenrollConfirmDescription": "You'll lose your spot in this session. You can re-enroll as long as it's not full.",
+    "full": "Session full",
+    "cancelled": "This session has been cancelled",
+    "ownerCannotEnroll": "You are the teacher of this session",
+    "loginToEnroll": "Log in to enroll",
+    "teacherOnly": "This page is for teachers only",
+    "backToSessions": "Back to sessions",
+    "filters": {
+      "all": "All subjects",
+      "subject": "Subject"
+    },
+    "form": {
+      "title": "Session title",
+      "titlePlaceholder": "e.g. Exponential functions review",
+      "description": "Description",
+      "descriptionPlaceholder": "What will students learn?",
+      "subject": "Subject",
+      "scheduledAt": "Date and time",
+      "duration": "Duration (minutes)",
+      "meetingUrl": "Meeting URL",
+      "meetingUrlPlaceholder": "https://meet.google.com/abc-defg-hij",
+      "meetingUrlHelp": "Paste your Google Meet or Zoom link",
+      "capacity": "Maximum participants (optional)",
+      "capacityPlaceholder": "Leave empty for unlimited",
+      "priceDA": "Price in Algerian dinars",
+      "priceHelp": "Enter 0 for a free session",
+      "topics": "Topics (comma-separated)",
+      "topicsPlaceholder": "functions, limits, derivatives",
+      "submit": "Create session",
+      "submitting": "Creating…",
+      "success": "Session created successfully",
+      "error": "Failed to create session"
+    },
+    "joinNow": "Join now",
+    "reserveSeat": "Reserve seat",
+    "inLabel": "In {time}",
+    "priceLabel": "Price",
+    "teacher": "Teacher"
+  },
+  "library": {
+    "eyebrow": "BAC Library",
+    "title": "Exercise Bank",
+    "subtitle": "Curated exercises from real Baccalaureate papers, organized by year, subject, and topic.",
+    "empty": "No exercises have been imported yet.",
+    "hub": {
+      "heading": "Choose where to start",
+      "subheading": "Pick a source. You can refine by year and stream once you're inside.",
+      "exerciseCount": "{count, plural, =0 {no exercises yet} one {# exercise} other {# exercises}}",
+      "explore": "Explore",
+      "backToHub": "Back to library"
+    },
+    "types": {
+      "bac": "BAC official",
+      "bacDesc": "Real Baccalaureate exams, by year and stream.",
+      "bac_blanc": "BAC blanc",
+      "bacBlancDesc": "Mock exams and trial papers used by schools.",
+      "external": "Community",
+      "externalDesc": "Exercises shared by teachers and students outside the official corpus."
+    },
+    "years": {
+      "all": "All years",
+      "label": "Year",
+      "year": "Year {year}"
+    },
+    "filter": {
+      "filiere": "Stream",
+      "topic": "Topic",
+      "difficulty": "Difficulty",
+      "all": "All"
+    },
+    "filiere": {
+      "mathematiques": "Mathematics",
+      "sciences-experimentales": "Experimental Sciences",
+      "lettres-philosophie": "Letters & Philosophy",
+      "langues-etrangeres": "Foreign Languages",
+      "gestion-economie": "Management & Economics",
+      "mathematiques-techniques": "Technical Mathematics"
+    },
+    "featuredBadge": "Featured",
+    "officialBadge": "Official"
+  },
+  "verifyEmail": {
+    "title": "Email Verification",
+    "successTitle": "Email Verified!",
+    "successDescription": "Your email address has been successfully verified. You can now log in.",
+    "errorTitle": "Verification Failed",
+    "errorDescription": "This verification link is invalid or has expired. Please request a new one.",
+    "backToLogin": "Back to Login"
+  },
+  "onboarding": {
+    "title": "Welcome to NAJAH",
+    "subtitle": "Let's personalize your experience",
+    "step1Title": "What is your stream?",
+    "step2Title": "What year are you in?",
+    "step3Title": "What subjects interest you?",
+    "step3Help": "Pick at least 3",
+    "streams": {
+      "sciences": "Sciences",
+      "math": "Maths",
+      "lettres": "Lettres",
+      "techmath": "Tech Math",
+      "languages": "Languages"
+    },
+    "years": {
+      "premiere": "1ère AS",
+      "terminale": "Terminale AS"
+    },
+    "interests": {
+      "math": "Math",
+      "physics": "Physics",
+      "chemistry": "Chemistry",
+      "biology": "Biology",
+      "philosophy": "Philosophy",
+      "arabic": "Arabic",
+      "french": "French",
+      "english": "English",
+      "history": "History",
+      "geography": "Geography"
+    },
+    "next": "Next",
+    "finish": "Finish",
+    "celebrate": "You're all set, {name}!",
+    "celebrateDesc": "Your feed is ready. Start exploring exercises tailored to you.",
+    "takeMeToFeed": "Take me to the feed",
+    "saving": "Setting up…"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your personal information and account preferences",
+    "account": "Personal Information",
+    "password": "Password & Security",
+    "notifications": "Notifications",
+    "language": "Language",
+    "privacy": "Privacy",
+    "preferences": "Preferences",
+    "dangerZone": "Danger Zone",
+    "accountSection": {
+      "title": "Account Details",
+      "name": "Full Name",
+      "email": "Email Address",
+      "bio": "Bio",
+      "bioPlaceholder": "A short description about yourself",
+      "avatar": "Profile Photo",
+      "changeAvatar": "Change Photo",
+      "save": "Save Changes",
+      "saving": "Saving…",
+      "savedOk": "Changes saved",
+      "saveError": "Failed to save changes"
+    },
+    "passwordSection": {
+      "title": "Change Password",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm New Password",
+      "hint": "8+ characters, mix of letters and digits",
+      "save": "Update Password",
+      "saving": "Updating…",
+      "savedOk": "Password updated",
+      "saveError": "Failed to update password",
+      "mismatch": "Passwords do not match",
+      "tooShort": "Password must be at least 8 characters"
+    },
+    "notificationsSection": {
+      "title": "Notification Preferences",
+      "likes": "Likes on your posts",
+      "comments": "Comments on your posts",
+      "mentions": "Mentions",
+      "weeklyDigest": "Weekly digest",
+      "marketing": "Product updates & tips",
+      "save": "Save",
+      "savedOk": "Preferences saved"
+    },
+    "languageSection": {
+      "title": "Language & Region",
+      "language": "Interface language",
+      "dateFormat": "Date format"
+    },
+    "privacySection": {
+      "title": "Privacy",
+      "profileVisibility": "Public profile",
+      "profileVisibilityHint": "Allow other users to see your profile",
+      "searchIndexing": "Appear in search",
+      "searchIndexingHint": "Allow your profile to appear in search results",
+      "save": "Save",
+      "savedOk": "Privacy settings saved"
+    },
+    "dangerZoneSection": {
+      "title": "Danger Zone",
+      "exportData": "Export My Data",
+      "exportDataDesc": "Download all your data",
+      "exportComingSoon": "Data export is coming soon. We'll notify you when it's available.",
+      "deleteAccount": "Delete Account",
+      "deleteAccountDesc": "Permanently delete your account and all associated data. This cannot be undone.",
+      "deleteConfirmTitle": "Delete your account?",
+      "deleteConfirmDescription": "This will permanently delete your account, exercises, solutions, and all other data. Type your email address to confirm.",
+      "deleteConfirmPlaceholder": "Enter your email to confirm",
+      "deleteConfirmAction": "Delete my account",
+      "deleting": "Deleting…",
+      "deleteError": "Failed to delete account"
+    }
+  },
+  "footer": {
+    "slogan": "All you need in one place — NAJAH for Algerian baccalaureate",
+    "productTitle": "Product",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "about": "About",
+    "help": "Help",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "madeFor": "Made for Algerian baccalaureate students"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Algerian BAC platform",
+      "h1": "All you need in one place",
+      "subtitle": "Curated exercises from real papers, solutions from peers and verified teachers, and live sessions for the hard topics.",
+      "ctaPrimary": "Start for free",
+      "ctaSecondary": "Browse exercises"
+    },
+    "pillars": {
+      "title": "Everything in one place",
+      "exercises": {
+        "title": "BAC Exercises",
+        "body": "Exercises sourced from real BAC papers, organized by subject, topic and difficulty level."
+      },
+      "sessions": {
+        "title": "Live Sessions",
+        "body": "Book a session with a verified teacher to review hard topics before your exam."
+      },
+      "hints": {
+        "title": "AI Hints",
+        "body": "Get AI-powered coaching hints to help you reason through solutions on your own."
+      }
+    },
+    "exercises": {
+      "title": "Exercises from our platform",
+      "cta": "View all exercises"
+    },
+    "howItWorks": {
+      "title": "How NAJAH works",
+      "step1": {
+        "title": "Sign up",
+        "body": "Create a free account in seconds."
+      },
+      "step2": {
+        "title": "Pick your stream",
+        "body": "Tailor your experience to your BAC stream."
+      },
+      "step3": {
+        "title": "Practice daily",
+        "body": "Solve exercises and learn from explanations."
+      },
+      "step4": {
+        "title": "Track progress",
+        "body": "Earn points and climb the rankings."
+      }
+    },
+    "trust": {
+      "students": "10K+",
+      "studentsLabel": "students",
+      "exercises": "5K+",
+      "exercisesLabel": "exercises",
+      "satisfaction": "96%",
+      "satisfactionLabel": "satisfaction rate"
+    },
+    "cta": {
+      "h2": "Ready to ace your bac?",
+      "button": "Start for free now"
+    }
+  },
+  "help": {
+    "title": "Help & FAQ",
+    "subtitle": "Answers to the most common questions",
+    "contactTitle": "Contact us",
+    "contactSubtitle": "Couldn't find an answer? Send us a message.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "message": "Your message",
+      "messagePlaceholder": "Describe your issue or question...",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Message sent!",
+      "successBody": "Thank you for reaching out. We'll get back to you as soon as possible.",
+      "errorBody": "Failed to send message. Please try again."
+    },
+    "faq": {
+      "q1": "What is NAJAH?",
+      "a1": "NAJAH is an Algerian educational platform for BAC students. It offers curated exercises from real exams, solutions from peers and verified teachers, and live study sessions.",
+      "q2": "How do I sign up?",
+      "a2": "Click \"Create account\" on the home page, enter your name, email, and a password, then follow the setup steps.",
+      "q3": "Is NAJAH free?",
+      "a3": "Yes, signing up and accessing most content is completely free. Some teacher sessions may have a small fee set by the teacher.",
+      "q4": "How do I find exercises for my stream?",
+      "a4": "After creating your account, choose your stream and preferred subjects during setup. Your feed will automatically show the most relevant exercises.",
+      "q5": "How do I save an exercise to my library?",
+      "a5": "Click the bookmark icon on any exercise card. You can access your saved exercises anytime from the Library section.",
+      "q6": "How do I join a session?",
+      "a6": "Browse the Sessions page, pick a session that suits you, and click Register. The meeting link will appear just before session time.",
+      "q7": "Can I share my own solutions?",
+      "a7": "Absolutely! Open any exercise and you'll find an option to add your solution. Share it with classmates and help them understand.",
+      "q8": "Are AI hints reliable?",
+      "a8": "AI-generated hints are an experimental learning tool. They may contain errors — always verify important information with your teacher.",
+      "q9": "How do I change my password?",
+      "a9": "Go to Settings → Password section, enter your current and new password, then click Update.",
+      "q10": "How do I switch language?",
+      "a10": "Click your name or the language menu in the navbar and choose your preferred language (Arabic, French, English).",
+      "q11": "How do I delete my account?",
+      "a11": "Go to Settings → Danger Zone and click Delete account. You'll be asked to confirm your email. This action cannot be undone.",
+      "q12": "How do I report a problem?",
+      "a12": "You can report any inappropriate content using the Report button on any post. For technical issues, use the contact form below."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "tabs": {
+      "all": "All",
+      "mentions": "Mentions",
+      "reactions": "Reactions",
+      "replies": "Replies"
+    },
+    "empty": {
+      "title": "No notifications yet",
+      "description": "Your notifications will appear here when others interact with your content."
+    },
+    "verbs": {
+      "like": "liked",
+      "comment": "commented on",
+      "mention": "mentioned you in",
+      "reply": "replied to",
+      "follow": "started following you"
+    },
+    "targets": {
+      "exercise": "exercise",
+      "solution": "solution",
+      "comment": "comment",
+      "session": "session"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "description": "Top contributing students and teachers on the platform",
+    "tabs": {
+      "week": "This week",
+      "month": "This month",
+      "all": "All time"
+    },
+    "streams": {
+      "all": "All streams",
+      "sciences": "Sciences",
+      "math": "Mathematics",
+      "lettres": "Literature",
+      "tech-math": "Tech. Math.",
+      "languages": "Foreign languages"
+    },
+    "points": "pts",
+    "rank": "Rank",
+    "podium": {
+      "gold": "1st place",
+      "silver": "2nd place",
+      "bronze": "3rd place"
+    },
+    "empty": {
+      "title": "No leaders yet",
+      "description": "Be the first to climb the board."
+    }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Level {level}",
+    "streak": "{days}-day streak",
+    "streakLabel": "day streak",
+    "rank": "Rank #{rank}",
+    "unranked": "Unranked",
+    "quests": {
+      "title": "Daily Quests",
+      "comment-3": {
+        "title": "Comment 3 times",
+        "description": "Add 3 comments on solutions"
+      },
+      "solve-1": {
+        "title": "Solve an exercise",
+        "description": "Submit a solution to any exercise"
+      },
+      "post-1": {
+        "title": "Post an exercise",
+        "description": "Publish a new exercise for the community"
+      }
+    },
+    "achievements": {
+      "title": "Achievements",
+      "locked": "Locked",
+      "unlocked": "Unlocked",
+      "first-exercise": {
+        "title": "First Step",
+        "description": "Submit your very first solution"
+      },
+      "streak-7": {
+        "title": "Week of Consistency",
+        "description": "Maintain a 7-day streak"
+      },
+      "streak-30": {
+        "title": "Month of Dedication",
+        "description": "Maintain a 30-day streak"
+      },
+      "level-5": {
+        "title": "Reached Level 5",
+        "description": "Level up to level 5"
+      },
+      "comments-50": {
+        "title": "Community Voice",
+        "description": "Post 50 comments on peers' solutions"
+      },
+      "top-100": {
+        "title": "National Elite",
+        "description": "Reach top 100 nationally"
+      }
+    },
+    "searchPlaceholder": "Search for exercises, sessions, or summaries...",
+    "startSolving": "Start solving",
+    "dashboard": "Dashboard",
+    "featured": "Featured"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search exercises, sessions, teachers...",
+    "tabs": {
+      "all": "All",
+      "exercises": "Exercises",
+      "sessions": "Sessions",
+      "profiles": "People"
+    },
+    "sections": {
+      "exercises": "Exercises",
+      "sessions": "Sessions",
+      "profiles": "People"
+    },
+    "seeAll": "See all",
+    "empty": {
+      "title": "No results found",
+      "description": "Try different keywords or check your spelling."
+    },
+    "noQuery": {
+      "title": "Start searching",
+      "description": "Type a keyword to search exercises, sessions, and people."
+    }
+  },
+  "profileDashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your progress overview",
+    "streak": {
+      "title": "Activity Streak",
+      "days": "{count} days"
+    },
+    "badges": {
+      "title": "Badges",
+      "viewAll": "View all"
+    },
+    "xpLevel": {
+      "title": "Reputation & Rank",
+      "totalXp": "Total XP",
+      "nextLevel": "{remaining} XP to level {next}",
+      "nationalRank": "National rank"
+    },
+    "identity": {
+      "editProfile": "Edit profile"
+    },
+    "subjectProgress": {
+      "title": "Progress by subject",
+      "completed": "{completed} of {total} exercises",
+      "empty": "No progress data yet"
+    },
+    "activityTab": "Recent Activity",
+    "savedTab": "Saved Exercises",
+    "mineTab": "My Posts",
+    "activityEmpty": "No activity yet",
+    "savedEmpty": "No saved exercises yet",
+    "mineEmpty": "You haven't posted any exercises yet",
+    "mineCompose": "Post an exercise",
+    "weekdays": {
+      "sat": "Sat",
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri"
+    }
+  },
+  "saves": {
+    "title": "Saved exercises",
+    "empty": "You haven't saved any exercises yet. Browse the library and bookmark anything you want to come back to."
+  },
+  "collections": {
+    "title": "Collections",
+    "myCollections": "My Collections",
+    "create": "Create collection",
+    "empty": "No collections yet",
+    "addExercise": "Add exercise",
+    "removeExercise": "Remove",
+    "manage": "Manage",
+    "delete": "Delete collection",
+    "noDescription": "",
+    "visibility": {
+      "label": "Visibility",
+      "public": "Public",
+      "private": "Private"
+    },
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Bac 2024 — calculus essentials",
+      "description": "Description",
+      "descriptionPlaceholder": "What does this collection cover?",
+      "submit": "Create",
+      "submitting": "Creating…",
+      "cancel": "Cancel",
+      "error": "Failed to create collection"
+    },
+    "exerciseCount": "{count, plural, one {# exercise} other {# exercises}}",
+    "loadError": "Failed to load collections",
+    "addToCollection": "Add to collection",
+    "addedToCollection": "Added to collection",
+    "addToCollectionEmpty": "You don't have any collections yet.",
+    "deleteConfirm": "This will permanently delete this collection. The exercises themselves remain.",
+    "rename": "Rename",
+    "save": "Save",
+    "saving": "Saving…",
+    "search": "Search exercises",
+    "searchPlaceholder": "Type to search by title or description",
+    "searchEmpty": "No matching exercises found"
+  },
+  "tutor": {
+    "title": "AI Tutor",
+    "subtitle": "Get hints, feedback, and recommendations from AI",
+    "preview": "AI Tutor is in preview — responses are placeholders for now.",
+    "tabs": {
+      "hint": "Get a hint",
+      "feedback": "Submit my attempt",
+      "similar": "Find similar"
+    },
+    "selectExercise": "Choose an exercise…",
+    "loadingExercises": "Loading exercises…",
+    "exerciseLabel": "Exercise",
+    "pickerHeading": "Working exercise",
+    "pickerHelp": "Pick an exercise above to unlock hints, feedback and similar problems.",
+    "pickerTitle": "Choose an exercise",
+    "pickerSubtitle": "Search the BAC library and community posts.",
+    "searchPlaceholder": "Search by title, topic or year…",
+    "change": "Change",
+    "noMatches": "No exercises match your search.",
+    "noMatchesHint": "Try a different keyword or clear the source filter.",
+    "hasFigureHint": "Includes a figure",
+    "disabledHint": "Pick an exercise to use this tool.",
+    "emptyTitle": "Pick an exercise to start",
+    "emptyBody": "Choose an exercise above and the tutor will help you crack it — hints, feedback on your attempt, or similar problems.",
+    "source": {
+      "all": "All",
+      "bac": "BAC",
+      "bac_blanc": "BAC blanc",
+      "community": "Community"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "hintLevel": "Hint level",
+    "level1": "Level 1 — Subtle",
+    "level2": "Level 2 — Guided",
+    "level3": "Level 3 — Explicit",
+    "getHint": "Get hint",
+    "thinking": "Thinking…",
+    "exhaustedHints": "No more hints available — try submitting your full attempt.",
+    "attempt": "Your attempt",
+    "attemptHint": "You can write inline math with $…$ — it renders in the response too.",
+    "attemptRequired": "Add your attempt before requesting feedback.",
+    "placeholderAttempt": "Paste your solution here…",
+    "attachImages": "Attach images of your work",
+    "submitForFeedback": "Get feedback",
+    "score": "Score",
+    "summary": "Summary",
+    "lineComments": "Line-by-line comments",
+    "lineLabel": "Line {line}",
+    "noResults": "No similar exercises found yet.",
+    "findSimilar": "Find similar exercises",
+    "selectFirst": "Pick an exercise to continue.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "placeholderBadge": "Placeholder response"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "comingSoon": "Coming soon",
+    "comingSoonHint": "We're preparing a detailed analytics dashboard for your teaching activity and your students' performance."
+  },
+  "teacher": {
+    "feedTitle": "Recent Student Questions",
+    "quickActions": "Quick actions:",
+    "actions": {
+      "uploadExercise": "Upload exercise",
+      "scheduleSession": "Schedule session",
+      "announceToStudents": "Announce to students",
+      "announceComingSoon": "Coming soon"
+    },
+    "cards": {
+      "addDetailedSolution": "Add detailed solution",
+      "viewStudentAnswer": "View student's answer"
+    },
+    "upcomingClasses": {
+      "title": "Your Upcoming Classes",
+      "today": "Today",
+      "enterRoom": "Enter Room",
+      "editTime": "Edit Time",
+      "viewAll": "View more details",
+      "noUpcoming": "No upcoming classes yet. Create one to see it here."
+    }
   }
 }

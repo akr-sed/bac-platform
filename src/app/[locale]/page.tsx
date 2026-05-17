@@ -1,31 +1,53 @@
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { getSession } from '@/lib/auth';
+import { MarketingLanding } from '@/components/landing/MarketingLanding';
+import { HomeFeed } from '@/components/feed/HomeFeed';
+import { TeacherHomeFeed } from '@/components/feed/TeacherHomeFeed';
+import { parseFeedFilter, parseFeedSort } from '@/lib/feed-ranking';
 
-export default function HomePage() {
-  const t = useTranslations('common');
-  const nav = useTranslations('navigation');
+type SearchParams = Promise<{ sort?: string; filter?: string; topic?: string }>;
+type Params = {
+  params: Promise<{ locale: string }>;
+  searchParams?: SearchParams;
+};
+
+export default async function HomePage({ params, searchParams }: Params) {
+  const { locale } = await params;
+  const search = (await searchParams) ?? {};
+  const sort = parseFeedSort(search.sort);
+  const filter = parseFeedFilter(search.filter);
+  const topic =
+    typeof search.topic === 'string' && search.topic.length > 0 ? search.topic : undefined;
+  const session = await getSession();
+
+  if (!session) {
+    return <MarketingLanding locale={locale} />;
+  }
+
+  // Teachers (and admins) get a slightly different shell: QuickActionBar
+  // above the feed and UpcomingClassesPanel on the end-side. The feed
+  // content itself is identical to the student feed (same sort/filter
+  // tabs, same cards).
+  if (session.role === 'teacher' || session.role === 'admin') {
+    return (
+      <TeacherHomeFeed
+        userId={session.userId}
+        userName={session.name}
+        locale={locale}
+        sort={sort}
+        filter={filter}
+        topic={topic}
+      />
+    );
+  }
 
   return (
-    <main className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16">
-      <section className="rounded-3xl border border-slate-200 bg-white p-10 shadow-sm">
-        <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-950">
-          {t('welcome')}
-        </h1>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/exercises"
-            className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-          >
-            {nav('exercises')}
-          </Link>
-          <Link
-            href="/register"
-            className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-950"
-          >
-            {nav('register')}
-          </Link>
-        </div>
-      </section>
-    </main>
+    <HomeFeed
+      userId={session.userId}
+      userName={session.name}
+      locale={locale}
+      sort={sort}
+      filter={filter}
+      topic={topic}
+    />
   );
 }
