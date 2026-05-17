@@ -39,8 +39,12 @@ interface Comment {
     name: string;
     avatar?: string | null;
     points?: number;
+    role?: string;
+    isVerifiedTeacher?: boolean;
   };
   createdAt?: string;
+  // Set on optimistic placeholders so we can reconcile / roll back.
+  _optimisticId?: string;
 }
 
 interface CommentsThreadProps {
@@ -85,22 +89,58 @@ export function CommentsThread({ solutionId }: CommentsThreadProps) {
   }, [solutionId]);
 
   const handleSend = async () => {
-    if (!newComment.trim()) return;
+    const trimmed = newComment.trim();
+    if (!trimmed || !authUser) return;
+
+    // Build an optimistic placeholder from the current auth user so the new
+    // row renders identically to a server-fetched comment (avatar + name +
+    // ReputationBadge + kind chip + timestamp) without waiting on the POST.
+    const optimisticId = `optimistic-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const kindToSend = newKind;
+    const optimistic: Comment = {
+      _id: optimisticId,
+      _optimisticId: optimisticId,
+      content: trimmed,
+      kind: kindToSend,
+      createdAt: new Date().toISOString(),
+      author: {
+        _id: authUser._id,
+        name: authUser.name,
+        avatar: authUser.avatar ?? null,
+        points: authUser.points,
+        role: authUser.role,
+        isVerifiedTeacher: authUser.isVerifiedTeacher,
+      },
+    };
+
+    setComments((prev) => [...prev, optimistic]);
+    setNewComment('');
+    setNewKind('comment');
     setSending(true);
+
     try {
       const res = await fetch(`/api/solutions/${solutionId}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: newComment, kind: newKind }),
+        body: JSON.stringify({ content: trimmed, kind: kindToSend }),
       });
       if (res.ok) {
-        const data = await res.json();
-        setComments((prev) => [...prev, data]);
-        setNewComment('');
-        setNewKind('comment');
+        const data: Comment = await res.json();
+        // Replace the optimistic placeholder with the server response so
+        // `_id` (used for delete) and any server-side normalisations stick.
+        setComments((prev) =>
+          prev.map((c) => (c._optimisticId === optimisticId ? data : c))
+        );
+      } else {
+        // Roll back on failure (validation, auth, server error).
+        setComments((prev) => prev.filter((c) => c._optimisticId !== optimisticId));
+        setNewComment(trimmed);
+        setNewKind(kindToSend);
       }
     } catch {
-      /* handle error */
+      setComments((prev) => prev.filter((c) => c._optimisticId !== optimisticId));
+      setNewComment(trimmed);
+      setNewKind(kindToSend);
     } finally {
       setSending(false);
     }
