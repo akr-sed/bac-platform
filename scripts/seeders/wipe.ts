@@ -7,6 +7,8 @@ import Comment from '../../src/models/Comment';
 import ExerciseLike from '../../src/models/ExerciseLike';
 import SavedExercise from '../../src/models/SavedExercise';
 import Follow from '../../src/models/Follow';
+import Session from '../../src/models/Session';
+import SessionEnrollment from '../../src/models/SessionEnrollment';
 
 export interface WipeReport {
   byCollection: Record<string, number>;
@@ -60,6 +62,14 @@ export async function wipeAllExceptUser(
 
   byCollection.exercises = (
     await Exercise.deleteMany({ authorId: { $ne: preservedUserId } })
+  ).deletedCount ?? 0;
+
+  byCollection.sessionEnrollments = (
+    await SessionEnrollment.deleteMany({})
+  ).deletedCount ?? 0;
+
+  byCollection.sessions = (
+    await Session.deleteMany({ teacherId: { $ne: preservedUserId } })
   ).deletedCount ?? 0;
 
   byCollection.exams = (await Exam.deleteMany({})).deletedCount ?? 0;

@@ -99,6 +99,73 @@ const UserSchema = new Schema<IUser>(
   { timestamps: true }
 );
 
+// ---------------------------------------------------------------------------
+// Cascade: when a user is deleted, drop their owned Sessions + any
+// SessionEnrollment they participated in. Models are resolved lazily through
+// `mongoose.models` to avoid the User → Session → User circular import.
+// ---------------------------------------------------------------------------
+
+interface CascadeModels {
+  Session: Model<{ teacherId: mongoose.Types.ObjectId }> | null;
+  SessionEnrollment: Model<{
+    sessionId: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
+  }> | null;
+}
+
+function getCascadeModels(): CascadeModels {
+  return {
+    Session:
+      (mongoose.models.Session as CascadeModels['Session']) ?? null,
+    SessionEnrollment:
+      (mongoose.models.SessionEnrollment as CascadeModels['SessionEnrollment']) ??
+      null,
+  };
+}
+
+async function cascadeForUserIds(userIds: mongoose.Types.ObjectId[]) {
+  if (userIds.length === 0) return;
+  const { Session, SessionEnrollment } = getCascadeModels();
+  if (SessionEnrollment) {
+    // Enrollments where the user is the student OR the user is the teacher
+    // (i.e. via their session). Resolve owned session ids first.
+    const ownedSessionIds = Session
+      ? (await Session.find({ teacherId: { $in: userIds } }).select('_id').lean())
+          .map((s) => s._id)
+      : [];
+    await SessionEnrollment.deleteMany({
+      $or: [
+        { userId: { $in: userIds } },
+        ...(ownedSessionIds.length > 0
+          ? [{ sessionId: { $in: ownedSessionIds } }]
+          : []),
+      ],
+    });
+  }
+  if (Session) {
+    await Session.deleteMany({ teacherId: { $in: userIds } });
+  }
+}
+
+// Document-level: `userDoc.deleteOne()`
+UserSchema.pre('deleteOne', { document: true, query: false }, async function () {
+  await cascadeForUserIds([this._id as mongoose.Types.ObjectId]);
+});
+
+// Query-level: `User.deleteOne(filter)` / `User.deleteMany(filter)` /
+// `User.findOneAndDelete(filter)`. We resolve the impacted ids ahead of the
+// delete so the cascade query can use them after the parent rows are gone.
+async function resolveAndCascade(this: mongoose.Query<unknown, IUser>) {
+  const filter = this.getFilter();
+  const Model = this.model;
+  const docs = await Model.find(filter).select('_id').lean<{ _id: mongoose.Types.ObjectId }[]>();
+  await cascadeForUserIds(docs.map((d) => d._id));
+}
+
+UserSchema.pre('deleteOne', { document: false, query: true }, resolveAndCascade);
+UserSchema.pre('deleteMany', { document: false, query: true }, resolveAndCascade);
+UserSchema.pre('findOneAndDelete', resolveAndCascade);
+
 const User: Model<IUser> =
   (mongoose.models.User as Model<IUser>) ??
   mongoose.model<IUser>('User', UserSchema);

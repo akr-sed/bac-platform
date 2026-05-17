@@ -28,6 +28,7 @@ import { seedCommunityExercises } from './seeders/community-exercises';
 import { seedSolutions } from './seeders/solutions';
 import { seedComments } from './seeders/comments';
 import { seedEngagement } from './seeders/engagement';
+import { seedSessions } from './seeders/sessions';
 
 interface CliFlags {
   confirm: boolean;
@@ -142,6 +143,17 @@ async function main(): Promise<void> {
   } else {
     console.log('\n━━━ phase 5-8 SKIPPED (--skip-community) ━━━');
   }
+
+  console.log('\n━━━ phase 9: live sessions ━━━');
+  const sessionsReport = await seedSessions(ctx);
+  console.log(
+    ` ${sessionsReport.total} sessions, ${sessionsReport.enrollments} enrollments`
+  );
+  console.log(`  by status: ${JSON.stringify(sessionsReport.byStatus)}`);
+  console.log(`  by topic:  ${JSON.stringify(sessionsReport.byTopic)}`);
+  console.log(
+    `  ${sessionsReport.freeSessions} free / ${sessionsReport.paidSessions} paid, ${sessionsReport.linkedExercises} library exercises linked`
+  );
 
   console.log('\n━━━ done ━━━');
   console.log(' Sign in as any seeded user with:');

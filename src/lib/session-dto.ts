@@ -32,6 +32,9 @@ function asString(v: { toString(): string } | string): string {
 }
 
 function asTeacher(t: RawSession['teacherId']): SessionTeacherDTO {
+  // teacherId is required + cascade-deleted (see User model). If a session is
+  // ever loaded with a missing/null teacher, that's a data-integrity bug — let
+  // it surface loudly rather than silently rendering a blank author.
   if (typeof t === 'string' || !('name' in (t as RawTeacher))) {
     return {
       _id: asString(t as { toString(): string } | string),
