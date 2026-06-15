@@ -13,6 +13,7 @@ import {
   Sparkles,
   Settings,
 } from 'lucide-react';
+import { useAuth } from '@/components/providers/AuthProvider';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -21,7 +22,7 @@ interface NavItem {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const MAIN_ITEMS: NavItem[] = [
+const STUDENT_MAIN_ITEMS: NavItem[] = [
   { href: '/', labelKey: 'home', icon: Home },
   { href: '/profile', labelKey: 'dashboard', icon: BarChart3 },
   { href: '/sessions', labelKey: 'liveSessions', icon: Video },
@@ -29,6 +30,13 @@ const MAIN_ITEMS: NavItem[] = [
   { href: '/library', labelKey: 'library', icon: BookOpen },
   { href: '/saves', labelKey: 'saved', icon: Bookmark },
   { href: '/tutor', labelKey: 'tutor', icon: Sparkles },
+];
+
+const TEACHER_MAIN_ITEMS: NavItem[] = [
+  { href: '/', labelKey: 'home', icon: Home },
+  { href: '/library', labelKey: 'exerciseBank', icon: BookOpen },
+  { href: '/sessions', labelKey: 'myLiveSessions', icon: Video },
+  { href: '/statistics', labelKey: 'statistics', icon: BarChart3 },
 ];
 // All keys come from the 'navigation' namespace
 
@@ -39,6 +47,10 @@ const BOTTOM_ITEMS: NavItem[] = [
 export function VerticalNavRail() {
   const t = useTranslations('navigation');
   const pathname = usePathname();
+  const { user } = useAuth();
+
+  const isTeacherView = user?.role === 'teacher' || user?.role === 'admin';
+  const mainItems = isTeacherView ? TEACHER_MAIN_ITEMS : STUDENT_MAIN_ITEMS;
 
   function isActive(href: string) {
     if (href === '/') return pathname === '/';
@@ -50,9 +62,21 @@ export function VerticalNavRail() {
       className="flex h-full w-[256px] shrink-0 flex-col rounded-[12px] border-e border-[#D9EFF8] bg-white py-5 px-4"
       aria-label="Primary navigation"
     >
+      {/* Teacher header — only shown for teachers/admins */}
+      {isTeacherView && (
+        <div className="mb-4 border-b border-[rgba(190,200,209,0.3)] pb-4">
+          <h2 className="text-[24px] font-bold leading-tight text-[#0095D1]">
+            {t('teacherHeader')}
+          </h2>
+          <p className="mt-1 text-[14px] text-[#3E4850]">
+            {t('teacherSubtitle')}
+          </p>
+        </div>
+      )}
+
       {/* Main nav items */}
       <ul className="flex flex-col gap-1" role="list">
-        {MAIN_ITEMS.map((item) => {
+        {mainItems.map((item) => {
           const active = isActive(item.href);
           return (
             <li key={item.href}>

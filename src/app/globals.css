@@ -216,3 +216,35 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================ */
+/* Owl illustration animations (loading state)                  */
+/* Used by <OwlIllustration animate /> and <PageSkeleton />.    */
+/* ============================================================ */
+@keyframes owl-bob {
+  0%   { transform: translateY(-4px); }
+  100% { transform: translateY(4px); }
+}
+
+@keyframes owl-blink {
+  0%, 94%, 100% { transform: scaleY(1); }
+  96%, 98%      { transform: scaleY(0.1); }
+}
+
+.owl-anim-body {
+  animation: owl-bob 1400ms ease-in-out infinite alternate;
+  transform-box: fill-box;
+}
+
+.owl-anim-eyes {
+  animation: owl-blink 3500ms ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .owl-anim-body,
+  .owl-anim-eyes {
+    animation: none !important;
+  }
+}

@@ -6,6 +6,10 @@ export interface ISolution extends Document {
   content: string;
   images: string[];
   likes: Types.ObjectId[];
+  // Teacher-marked "official correction" — sorts first on the exercise detail
+  // page and shows an Official badge. Settable only by the author when their
+  // current role is teacher (enforced server-side).
+  isOfficial: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -17,6 +21,7 @@ const SolutionSchema = new Schema<ISolution>(
     content: { type: String, required: true },
     images: [{ type: String }],
     likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    isOfficial: { type: Boolean, default: false, index: true },
   },
   { timestamps: true }
 );

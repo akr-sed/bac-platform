@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
       const [items, total] = await Promise.all([
         Exercise.find()
           .populate('authorId', 'name email role isVerifiedTeacher avatar')
-          .select('title description difficulty subject createdAt likesCount commentsCount solutionCount')
+          .select('title description difficulty subject createdAt likesCount commentsCount solutionCount featured')
           .sort({ createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit)
@@ -107,6 +107,66 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
   } catch (err) {
     console.error('[admin:content GET]', err);
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+  }
+}
+
+/**
+ * PATCH /api/admin/content
+ * Body: { type: 'exercises', id: '...', featured?: boolean }
+ *
+ * Admin-only toggles on a piece of content. Currently supports the
+ * `featured` flag on exercises. Other content types reject silently to
+ * avoid leaking which actions are valid for which model.
+ */
+export async function PATCH(request: NextRequest) {
+  try {
+    const session = await getSession();
+    if (!session || session.role !== 'admin') {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
+    const body = await request.json().catch(() => null);
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Invalid body' }, { status: 400 });
+    }
+
+    const { type, id, featured } = body as {
+      type?: string;
+      id?: string;
+      featured?: boolean;
+    };
+    if (!type || !id) {
+      return NextResponse.json(
+        { error: 'Missing type or id' },
+        { status: 400 }
+      );
+    }
+
+    await connectToDatabase();
+
+    if (type === 'exercises' && typeof featured === 'boolean') {
+      const updated = await Exercise.findByIdAndUpdate(
+        id,
+        { $set: { featured } },
+        { new: true }
+      ).select('_id featured');
+      if (!updated) {
+        return NextResponse.json({ error: 'Not found' }, { status: 404 });
+      }
+      return NextResponse.json({
+        ok: true,
+        _id: String(updated._id),
+        featured: updated.featured,
+      });
+    }
+
+    return NextResponse.json(
+      { error: 'No supported toggle for this type' },
+      { status: 400 }
+    );
+  } catch (err) {
+    console.error('[admin:content PATCH]', err);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

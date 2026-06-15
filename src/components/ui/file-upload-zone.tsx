@@ -207,32 +207,49 @@ export function FileUploadZone({
       {/* URL preview list — auto-upload (controlled) mode */}
       {isControlled && (value ?? []).length > 0 && (
         <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {(value ?? []).map((url, i) => (
-            <li
-              key={`${url}-${i}`}
-              className="relative aspect-square overflow-hidden rounded-lg border border-border bg-muted"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={url}
-                alt={`Attachment ${i + 1}`}
-                className="h-full w-full object-cover"
-              />
-              <Button
-                variant="ghost"
-                size="icon-xs"
-                type="button"
-                aria-label="Remove image"
-                className="absolute end-1 top-1 cursor-pointer rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  removeFile(i);
-                }}
+          {(value ?? []).map((url, i) => {
+            const isPdf = /\.pdf(\?|#|$)/i.test(url);
+            return (
+              <li
+                key={`${url}-${i}`}
+                className="relative aspect-square overflow-hidden rounded-lg border border-border bg-muted"
               >
-                <X className="size-3.5" />
-              </Button>
-            </li>
-          ))}
+                {isPdf ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-full w-full flex-col items-center justify-center gap-1 bg-destructive/5 p-2 text-center"
+                  >
+                    <FileText className="size-8 text-destructive" />
+                    <span className="line-clamp-2 text-xs font-medium text-foreground">
+                      PDF
+                    </span>
+                  </a>
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={url}
+                    alt={`Attachment ${i + 1}`}
+                    className="h-full w-full object-cover"
+                  />
+                )}
+                <Button
+                  variant="ghost"
+                  size="icon-xs"
+                  type="button"
+                  aria-label="Remove attachment"
+                  className="absolute end-1 top-1 cursor-pointer rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeFile(i);
+                  }}
+                >
+                  <X className="size-3.5" />
+                </Button>
+              </li>
+            );
+          })}
         </ul>
       )}
 

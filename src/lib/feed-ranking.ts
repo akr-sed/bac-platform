@@ -3,9 +3,11 @@ import { Types, type PipelineStage } from 'mongoose';
 
 export type FeedSort = 'for-you' | 'trending' | 'latest';
 export type FeedFilter = 'all' | 'following';
+export type FeedAuthorRole = 'student' | 'teacher';
 
 export const FEED_SORTS = ['for-you', 'trending', 'latest'] as const;
 export const FEED_FILTERS = ['all', 'following'] as const;
+export const FEED_AUTHOR_ROLES = ['student', 'teacher'] as const;
 
 /**
  * Coerce an arbitrary query-string value to a valid FeedSort.
@@ -27,6 +29,19 @@ export function parseFeedFilter(value: string | null | undefined): FeedFilter {
   return 'all';
 }
 
+/**
+ * Coerce an arbitrary query-string value to a valid FeedAuthorRole, or
+ * `null` when the caller did not request any author-role restriction. The
+ * teacher home page uses `?authorRole=student` to surface only student
+ * questions.
+ */
+export function parseFeedAuthorRole(
+  value: string | null | undefined
+): FeedAuthorRole | null {
+  if (value === 'student' || value === 'teacher') return value;
+  return null;
+}
+
 interface BuildFeedPipelineArgs {
   preferredSubjects: string[];
   page: number;
@@ -41,6 +56,13 @@ interface BuildFeedPipelineArgs {
    * viewer follows nobody).
    */
   authorIds?: Types.ObjectId[];
+  /**
+   * Optional author-role restriction. When provided we re-use the existing
+   * `AUTHOR_LOOKUP` (which already projects `role`) and `$match` on the
+   * joined `author.role` field AFTER the lookup. Used by the teacher home
+   * page (`authorRole: 'student'`) to surface only student questions.
+   */
+  authorRole?: FeedAuthorRole;
 }
 
 const AUTHOR_LOOKUP: PipelineStage[] = [
@@ -64,8 +86,20 @@ const PROJECT_FIELDS: PipelineStage = {
     likesCount: 1, solutionCount: 1, commentsCount: 1,
     createdAt: 1, updatedAt: 1, lastActivityAt: 1,
     author: 1,
+    featured: 1,
+    filiere: 1,
     _score: 1,
   },
+};
+
+/**
+ * Featured exercises always sort first within whatever ranking is active.
+ * Implemented as a stable secondary sort: `{ featured: -1, ...ranking }` —
+ * we project `featured` so the field is always present in the document
+ * stream even when the underlying record predates the field.
+ */
+const ENSURE_FEATURED_FIELD: PipelineStage = {
+  $addFields: { featured: { $ifNull: ['$featured', false] } },
 };
 
 /**
@@ -119,7 +153,7 @@ function forYouStages(preferredSubjects: string[]): PipelineStage[] {
         },
       },
     },
-    { $sort: { _score: -1, lastActivityAt: -1 } },
+    { $sort: { featured: -1, _score: -1, lastActivityAt: -1 } },
   ];
 }
 
@@ -166,7 +200,7 @@ function trendingStages(): PipelineStage[] {
         _score: { $multiply: ['$_engagement', '$_decay'] },
       },
     },
-    { $sort: { _score: -1, createdAt: -1 } },
+    { $sort: { featured: -1, _score: -1, createdAt: -1 } },
   ];
 }
 
@@ -174,7 +208,7 @@ function trendingStages(): PipelineStage[] {
  * "Latest" ranking — strict reverse-chronological by createdAt.
  */
 function latestStages(): PipelineStage[] {
-  return [{ $sort: { createdAt: -1 } }];
+  return [{ $sort: { featured: -1, createdAt: -1 } }];
 }
 
 export function buildFeedPipeline({
@@ -183,6 +217,7 @@ export function buildFeedPipeline({
   limit,
   sort = 'for-you',
   authorIds,
+  authorRole,
 }: BuildFeedPipelineArgs): PipelineStage[] {
   let rankingStages: PipelineStage[];
   if (sort === 'trending') {
@@ -200,12 +235,22 @@ export function buildFeedPipeline({
     ? [{ $match: { authorId: { $in: authorIds } } }]
     : [];
 
+  // Author-role match runs AFTER the lookup so we can match on the joined
+  // `author.role` field that AUTHOR_LOOKUP already projects. This keeps the
+  // ranking stages unchanged and re-uses an existing lookup rather than
+  // adding a second one.
+  const authorRoleStages: PipelineStage[] = authorRole
+    ? [{ $match: { 'author.role': authorRole } }]
+    : [];
+
   return [
     ...preStages,
+    ENSURE_FEATURED_FIELD,
     ...rankingStages,
     { $skip: page * limit },
     { $limit: limit },
     ...AUTHOR_LOOKUP,
+    ...authorRoleStages,
     PROJECT_FIELDS,
   ];
 }

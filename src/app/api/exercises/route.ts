@@ -32,6 +32,8 @@ export async function GET(request: NextRequest) {
     const difficulty = searchParams.get('difficulty');
     const search = searchParams.get('search');
     const source = searchParams.get('source'); // 'community' | 'library' | null (= both)
+    const filiere = searchParams.get('filiere');
+    const featured = searchParams.get('featured');
 
     const filter: Record<string, unknown> = {};
 
@@ -42,6 +44,8 @@ export async function GET(request: NextRequest) {
     }
     if (source === 'community') filter.examId = { $exists: false };
     if (source === 'library') filter.examId = { $exists: true };
+    if (filiere) filter.filiere = filiere;
+    if (featured === '1' || featured === 'true') filter.featured = true;
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: 'i' } },

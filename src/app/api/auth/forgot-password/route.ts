@@ -3,10 +3,20 @@ import { z } from 'zod';
 import crypto from 'crypto';
 import { connectToDatabase } from '@/lib/mongodb';
 import User from '@/models/User';
+import { sendPasswordResetEmail } from '@/lib/email';
 
 const forgotPasswordSchema = z.object({
   email: z.string().email(),
+  locale: z.enum(['ar', 'fr', 'en']).optional(),
 });
+
+function resolveBaseUrl(request: NextRequest): string {
+  const envBase = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, '');
+  if (envBase) return envBase;
+  // Fall back to the request's own origin so dev/preview deployments still
+  // produce a working link without manual env setup.
+  return request.nextUrl.origin;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,7 +32,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { email } = result.data;
+    const { email, locale } = result.data;
 
     // Always return the same response to avoid revealing whether email exists
     const successMessage =
@@ -45,16 +55,12 @@ export async function POST(request: NextRequest) {
     user.resetTokenExpiry = new Date(Date.now() + 60 * 60 * 1000);
     await user.save();
 
-    // Until an email integration ships, surface the reset link locally only.
-    // Never log secrets in production — silently no-op when NODE_ENV is set.
-    if (process.env.NODE_ENV !== 'production') {
-      console.log(
-        `[Password Reset] Token for ${email}: ${resetTokenRaw}`
-      );
-      console.log(
-        `[Password Reset] Reset link: /reset-password?token=${resetTokenRaw}`
-      );
-    }
+    const lang = locale ?? 'ar';
+    const resetUrl = `${resolveBaseUrl(request)}/${lang}/reset-password?token=${resetTokenRaw}`;
+
+    // Best-effort: dispatch via Resend when configured. Failures are swallowed
+    // so we never leak whether an email exists or whether delivery succeeded.
+    await sendPasswordResetEmail({ to: email, resetUrl, locale: lang });
 
     return NextResponse.json({ message: successMessage });
   } catch {
